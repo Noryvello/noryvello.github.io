@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Push-Up and Plank Challenge Tracker: 30-Day Plan | Noryvello</title>
+<meta name="description" content="Build a simple 30-day push-up and plank routine with beginner, intermediate and advanced levels, daily targets, rest days and progress saved in your browser.">
+<link rel="canonical" href="https://noryvello.github.io/push-up-plank-challenge-tracker/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Push-Up and Plank Challenge Tracker: 30-Day Plan">
+<meta property="og:description" content="Choose your level and challenge day, follow a complete 30-day push-up and plank plan, and save completed days in your browser.">
+<meta property="og:url" content="https://noryvello.github.io/push-up-plank-challenge-tracker/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc .target-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.target{background:#eef2ff;border:1px solid #c7d2fe;border-radius:10px;padding:12px}
+.target strong{display:block;font-size:26px;line-height:1.2;color:#312e81}
+.target span{font-size:13px;color:#475569}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+button{border:0;border-radius:8px;padding:10px 14px;background:#4338ca;color:#fff;font-size:15px;font-weight:650;cursor:pointer}
+button.secondary{background:#e2e8f0;color:#1e293b}
+button:focus-visible,select:focus-visible{outline:3px solid #0d9488;outline-offset:2px}
+.status{margin-top:10px;font-size:14px;color:#0f766e;min-height:22px}
+.plan-wrap{overflow-x:auto;margin-top:10px}
+table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.72);font-size:14px}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid #cbd5e1;vertical-align:middle}
+th{background:#e0e7ff}
+tr.today{outline:2px solid #4338ca;outline-offset:-2px}
+tr.rest td{color:#64748b}
+.day-action{padding:6px 9px;font-size:12px;white-space:nowrap}
+@media(max-width:430px){.calc .target-grid{grid-template-columns:1fr 1fr}h1{font-size:25px}th,td{padding:7px 6px;font-size:12.5px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the 30-day progression work?","acceptedAnswer":{"@type":"Answer","text":"Choose a starting level and challenge day. Training targets rise by a small step after each three training days, while every seventh day is a rest day."}},{"@type":"Question","name":"Can I start from a day other than Day 1?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose any day from 1 to 30 to view that day's target. The full plan remains visible, and progress is tracked by challenge day."}},{"@type":"Question","name":"Where is my progress saved?","acceptedAnswer":{"@type":"Answer","text":"Progress is saved in this browser on this device using local storage. It is not synced across browsers or devices, and clearing site data may erase it."}},{"@type":"Question","name":"What if a target feels too difficult?","acceptedAnswer":{"@type":"Answer","text":"Do not force a target. Pause, reduce the effort, or skip the session if needed. This tracker is a simple planning tool, not an assessment of your ability or a personalised training programme."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Push-Up and Plank Challenge Tracker — Build a 30-Day Plan</h1>
+<p class="answer">Choose a starting level and any day of the challenge to see your push-up and plank targets. The tracker lays out all 30 days, includes a weekly rest day, and saves the days you mark as complete in this browser.</p>
+
+<div class="calc" aria-label="30-day challenge tracker">
+  <h2 style="margin-top:0">Set up your challenge</h2>
+  <label for="level">Starting level</label>
+  <select id="level">
+    <option value="beginner">Beginner</option>
+    <option value="intermediate">Intermediate</option>
+    <option value="advanced">Advanced</option>
+  </select>
+  <label for="day">Challenge day to view</label>
+  <select id="day">
+    <option value="1">Day 1</option><option value="2">Day 2</option><option value="3">Day 3</option><option value="4">Day 4</option><option value="5">Day 5</option><option value="6">Day 6</option><option value="7">Day 7</option><option value="8">Day 8</option><option value="9">Day 9</option><option value="10">Day 10</option><option value="11">Day 11</option><option value="12">Day 12</option><option value="13">Day 13</option><option value="14">Day 14</option><option value="15">Day 15</option><option value="16">Day 16</option><option value="17">Day 17</option><option value="18">Day 18</option><option value="19">Day 19</option><option value="20">Day 20</option><option value="21">Day 21</option><option value="22">Day 22</option><option value="23">Day 23</option><option value="24">Day 24</option><option value="25">Day 25</option><option value="26">Day 26</option><option value="27">Day 27</option><option value="28">Day 28</option><option value="29">Day 29</option><option value="30">Day 30</option>
+  </select>
+  <div class="target-grid" aria-live="polite">
+    <div class="target"><span>Today's push-up target</span><strong id="pushTarget">3 reps</strong></div>
+    <div class="target"><span>Today's plank target</span><strong id="plankTarget">10 sec</strong></div>
+  </div>
+  <p class="steps" id="targetSteps">Day 1 · Beginner · Training day</p>
+  <div class="actions">
+    <button type="button" id="markBtn">Mark this day complete</button>
+    <button type="button" class="secondary" id="resetBtn">Reset saved progress</button>
+  </div>
+  <p class="status" id="status" role="status" aria-live="polite"></p>
+  <p class="note">Targets are daily totals, not a requirement to do everything in one set. Break them into manageable sets if you choose.</p>
+</div>
+
+<div class="warn"><strong>Important limit:</strong> This is a simple, fixed progression template, not a personalised fitness assessment or medical guidance. It cannot check your form, current ability, injuries or recovery. Adjust or skip a session rather than forcing a target, and stop if you feel pain. Your saved progress stays only in this browser and may be lost if browser data is cleared.</div>
+
+<h2>Your full 30-day plan</h2>
+<p>The plan uses six training days followed by one rest day. On each training day, the target increases by one small step after every three training days. Your chosen level sets the starting target and step size.</p>
+<div class="plan-wrap">
+<table>
+<thead><tr><th>Day</th><th>Session</th><th>Push-ups</th><th>Plank</th><th>Progress</th></tr></thead>
+<tbody id="planBody"></tbody>
+</table>
+</div>
+<p class="note">The selected day is outlined in the table. A rest day has no push-up or plank target; marking it complete records that you observed the planned rest day.</p>
+
+<h2>How the targets are calculated</h2>
+<ul>
+<li><strong>Beginner:</strong> starts at 3 push-ups and a 10-second plank; each step adds 1 push-up and 5 seconds.</li>
+<li><strong>Intermediate:</strong> starts at 8 push-ups and a 25-second plank; each step adds 2 push-ups and 10 seconds.</li>
+<li><strong>Advanced:</strong> starts at 15 push-ups and a 45-second plank; each step adds 3 push-ups and 15 seconds.</li>
+</ul>
+<p>For a training day, count the number of training days completed so far, excluding every seventh-day rest day. The step number is the whole number of completed groups of three training days, starting from zero. The target equals the level's starting amount plus the step number multiplied by that level's step size.</p>
+
+<h2>Worked examples</h2>
+<ol>
+<li><strong>Beginner, Day 1:</strong> This is training day 1, so the step number is 0. Push-ups: 3 + (0 × 1) = <strong>3 reps</strong>. Plank: 10 + (0 × 5) = <strong>10 seconds</strong>.</li>
+<li><strong>Intermediate, Day 10:</strong> Day 7 is a rest day, so Day 10 is the 9th training day. Step number: floor((9 − 1) ÷ 3) = 2. Push-ups: 8 + (2 × 2) = <strong>12 reps</strong>. Plank: 25 + (2 × 10) = <strong>45 seconds</strong>.</li>
+<li><strong>Advanced, Day 30:</strong> Rest days are 7, 14, 21 and 28, so Day 30 is the 26th training day. Step number: floor((26 − 1) ÷ 3) = 8. Push-ups: 15 + (8 × 3) = <strong>39 reps</strong>. Plank: 45 + (8 × 15) = <strong>165 seconds</strong>.</li>
+</ol>
+
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How does the 30-day progression work?</h3><p>Choose a starting level and challenge day. Training targets rise by a small step after each three training days, while every seventh day is a rest day.</p></div><div class="faq"><h3>Can I start from a day other than Day 1?</h3><p>Yes. Choose any day from 1 to 30 to view that day's target. The full plan remains visible, and progress is tracked by challenge day.</p></div><div class="faq"><h3>Where is my progress saved?</h3><p>Progress is saved in this browser on this device using local storage. It is not synced across browsers or devices, and clearing site data may erase it.</p></div><div class="faq"><h3>What if a target feels too difficult?</h3><p>Do not force a target. Pause, reduce the effort, or skip the session if needed. This tracker is a simple planning tool, not an assessment of your ability or a personalised training programme.</p></div>
+
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../running-pace-calculator/">Running Pace Calculator</a> · <a href="../debt-payoff-calculator/">Debt Payoff Calculator</a> · <a href="../buying-used-laptop-mistakes/">7 Mistakes to Avoid When Buying a Used Laptop</a> · <a href="../online-sale-mistakes/">Online Sale Season: 7 Mistakes That Waste Your Money</a></p>
+
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function () {
+  "use strict";
+  const levels = {
+    beginner: {label:"Beginner", push:3, plank:10, pushStep:1, plankStep:5},
+    intermediate: {label:"Intermediate", push:8, plank:25, pushStep:2, plankStep:10},
+    advanced: {label:"Advanced", push:15, plank:45, pushStep:3, plankStep:15}
+  };
+  const levelEl = document.getElementById("level");
+  const dayEl = document.getElementById("day");
+  const pushEl = document.getElementById("pushTarget");
+  const plankEl = document.getElementById("plankTarget");
+  const stepsEl = document.getElementById("targetSteps");
+  const bodyEl = document.getElementById("planBody");
+  const statusEl = document.getElementById("status");
+  const markBtn = document.getElementById("markBtn");
+  const resetBtn = document.getElementById("resetBtn");
+  const storageKey = "noryvello-push-up-plank-challenge-v1";
+  let saved = {level:"beginner", day:1, completed:{beginner:[], intermediate:[], advanced:[]}};
+
+  function loadSaved() {
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (!raw) return;
+      const parsed = JSON.parse(raw);
+      if (parsed && levels[parsed.level] && Number.isInteger(parsed.day) && parsed.day >= 1 && parsed.day <= 30) {
+        saved.level = parsed.level;
+        saved.day = parsed.day;
+      }
+      if (parsed && parsed.completed && typeof parsed.completed === "object") {
+        Object.keys(levels).forEach(key => {
+          const list = parsed.completed[key];
+          saved.completed[key] = Array.isArray(list) ? list.filter(n => Number.isInteger(n) && n >= 1 && n <= 30) : [];
+        });
+      }
+    } catch (e) {
+      statusEl.textContent = "Progress storage is unavailable in this browser session.";
+    }
+  }
+  function persist() {
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(saved));
+      return true;
+    } catch (e) {
+      statusEl.textContent = "Could not save progress. Browser storage may be disabled or full.";
+      return false;
+    }
+  }
+  function targetFor(levelKey, day) {
+    const level = levels[levelKey];
+    if (day % 7 === 0) return {rest:true, push:0, plank:0, trainingDay:day - Math.floor(day / 7), step:0};
+    const trainingDay = day - Math.floor(day / 7);
+    const step = Math.floor((trainingDay - 1) / 3);
+    return {
+      rest:false,
+      push:level.push + step * level.pushStep,
+      plank:level.plank + step * level.plankStep,
+      trainingDay:trainingDay,
+      step:step
+    };
+  }
+  function isComplete(levelKey, day) {
+    return saved.completed[levelKey].includes(day);
+  }
+  function render() {
+    const levelKey = levelEl.value;
+    const day = Number(dayEl.value);
+    const level = levels[levelKey];
+    const target = targetFor(levelKey, day);
+    saved.level = levelKey;
+    saved.day = day;
+    if (target.rest) {
+      pushEl.textContent = "Rest day";
+      plankEl.textContent = "Rest day";
+      stepsEl.textContent = "Day " + day + " · " + level.label + " · Planned recovery day; no challenge reps or seconds.";
+    } else {
+      pushEl.textContent = target.push + " reps";
+      plankEl.textContent = target.plank + " sec";
+      stepsEl.textContent = "Day " + day + " · " + level.label + " · Training day " + target.trainingDay + " · Progression step " + target.step + ".";
+    }
+    markBtn.textContent = isComplete(levelKey, day) ? "Mark this day incomplete" : "Mark this day complete";
+    bodyEl.innerHTML = "";
+    for (let d = 1; d <= 30; d++) {
+      const t = targetFor(levelKey, d);
+      const done = isComplete(levelKey, d);
+      const tr = document.createElement("tr");
+      if (d === day) tr.classList.add("today");
+      if (t.rest) tr.classList.add("rest");
+      const values = [
+        "Day " + d,
+        t.rest ? "Rest" : "Training",
+        t.rest ? "—" : t.push + " reps",
+        t.rest ? "—" : t.plank + " sec"
+      ];
+      values.forEach(value => {
+        const td = document.createElement("td");
+        td.textContent = value;
+        tr.appendChild(td);
+      });
+      const actionCell = document.createElement("td");
+      const action = document.createElement("button");
+      action.type = "button";
+      action.className = "day-action " + (done ? "secondary" : "");
+      action.textContent = done ? "Completed" : "Mark done";
+      action.setAttribute("aria-label", (done ? "Unmark " : "Mark ") + "day " + d + (t.rest ? " rest day" : " workout") + (done ? " complete" : " complete"));
+      action.addEventListener("click", function () {
+        toggleDay(levelKey, d);
+      });
+      actionCell.appendChild(action);
+      tr.appendChild(actionCell);
+      bodyEl.appendChild(tr);
+    }
+    const count = saved.completed[levelKey].length;
+    statusEl.textContent = count + " of 30 days marked complete for " + level.label + ".";
+  }
+  function toggleDay(levelKey, day) {
+    const list = saved.completed[levelKey];
+    const index = list.indexOf(day);
+    if (index >= 0) list.splice(index, 1);
+    else list.push(day);
+    persist();
+    render();
+  }
+  levelEl.addEventListener("input", function () { render(); persist(); });
+  levelEl.addEventListener("change", function () { render(); persist(); });
+  dayEl.addEventListener("input", function () { render(); persist(); });
+  dayEl.addEventListener("change", function () { render(); persist(); });
+  markBtn.addEventListener("click", function () {
+    toggleDay(levelEl.value, Number(dayEl.value));
+  });
+  resetBtn.addEventListener("click", function () {
+    saved.completed[saved.level] = [];
+    persist();
+    render();
+    statusEl.textContent = "Saved progress cleared for " + levels[saved.level].label + ".";
+  });
+  loadSaved();
+  levelEl.value = saved.level;
+  dayEl.value = String(saved.day);
+  render();
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>
