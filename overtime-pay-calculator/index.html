@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overtime Pay Calculator — Regular + Overtime Pay, Worked Out | Noryvello</title>
+<meta name="description" content="How much extra will you really earn? Type your hourly rate, regular hours and overtime hours — see regular pay, overtime pay and total gross, with the working shown. Free on Noryvello.">
+<link rel="canonical" href="https://noryvello.github.io/overtime-pay-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Overtime Pay Calculator — Regular + Overtime Pay, Worked Out">
+<meta property="og:description" content="Type your rate and hours and see regular pay, overtime pay and total gross, with the working shown. Free on Noryvello.">
+<meta property="og:url" content="https://noryvello.github.io/overtime-pay-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is overtime pay calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply your regular hours by your hourly rate for regular pay, then multiply your overtime hours by your rate times the overtime multiplier (commonly 1.5) for overtime pay. Add the two together for total gross pay."}}, {"@type": "Question", "name": "What does time-and-a-half mean?", "acceptedAnswer": {"@type": "Answer", "text": "Time-and-a-half means overtime hours are paid at 1.5 times the normal hourly rate. At a rate of 20 per hour, each overtime hour pays 30."}}, {"@type": "Question", "name": "Does this calculator include tax?", "acceptedAnswer": {"@type": "Answer", "text": "No. The result is gross pay before tax and deductions, which vary by country, employer, and contract. Your take-home pay will be lower."}}, {"@type": "Question", "name": "Is the Overtime Pay Calculator free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — free, with no sign-up, and it runs in your browser on any phone or computer."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Overtime Pay Calculator</h1>
+<p class="answer"><strong>Short answer:</strong> type your hourly rate, your regular hours and your overtime hours — the calculator shows your <strong>regular pay</strong>, your <strong>overtime pay</strong> and your <strong>total gross pay</strong>, with every step of the working.</p>
+<div class="calc">
+<label for="rate">Hourly rate</label>
+<input id="rate" type="number" inputmode="decimal" min="0" value="20">
+<label for="reg">Regular hours</label>
+<input id="reg" type="number" inputmode="decimal" min="0" value="40">
+<label for="ot">Overtime hours</label>
+<input id="ot" type="number" inputmode="decimal" min="0" value="10">
+<label for="mult">Overtime multiplier (1.5 = time-and-a-half, 2 = double time)</label>
+<input id="mult" type="number" inputmode="decimal" min="0" step="0.25" value="1.5">
+<div class="out" id="out"></div>
+<div class="steps" id="steps"></div>
+</div>
+<div class="warn"><strong>Gross pay only — not take-home pay.</strong> The result is before tax and deductions, and overtime rules (when overtime starts, which multiplier applies) depend on your contract and local law. This page only does the arithmetic.</div>
+<h2>The formula</h2>
+<ul>
+<li><strong>Regular pay</strong> = hourly rate × regular hours</li>
+<li><strong>Overtime pay</strong> = hourly rate × multiplier × overtime hours</li>
+<li><strong>Total gross pay</strong> = regular pay + overtime pay</li>
+</ul>
+<h2>Worked examples</h2>
+<ol>
+<li><strong>Rate 20, 40 regular hours, 10 overtime hours at 1.5×:</strong> regular pay 800, overtime pay 300 → total <strong>1,100</strong>.</li>
+<li><strong>Rate 15, 40 regular hours, 5 overtime hours at 2×:</strong> regular pay 600, overtime pay 150 → total <strong>750</strong>.</li>
+<li><strong>Rate 25, 35 regular hours, 8 overtime hours at 1.5×:</strong> regular pay 875, overtime pay 300 → total <strong>1,175</strong>.</li>
+</ol>
+<p class="note">The math works with any currency — type your rate in your own currency and the answers come back in the same currency.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How is overtime pay calculated?</h3><p>Multiply your regular hours by your hourly rate for regular pay, then multiply your overtime hours by your rate times the overtime multiplier (commonly 1.5) for overtime pay. Add the two together for total gross pay.</p></div>
+<div class="faq"><h3>What does time-and-a-half mean?</h3><p>Time-and-a-half means overtime hours are paid at 1.5 times the normal hourly rate. At a rate of 20 per hour, each overtime hour pays 30.</p></div>
+<div class="faq"><h3>Does this calculator include tax?</h3><p>No. The result is gross pay before tax and deductions, which vary by country, employer, and contract. Your take-home pay will be lower.</p></div>
+<div class="faq"><h3>Is the Overtime Pay Calculator free?</h3><p>Yes — free, with no sign-up, and it runs in your browser on any phone or computer.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links">
+<a href="../rent-vs-buy-calculator/">Rent vs Buy Calculator</a> ·
+<a href="../debt-payoff-calculator/">Debt Payoff Calculator</a> ·
+<a href="../flat-rate-vs-reducing-balance/">Flat Rate vs Reducing Balance</a> ·
+<a href="../running-pace-calculator/">Running Pace Calculator</a>
+</p>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n){return (Math.round(n*100)/100).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:2})}
+var rate=document.getElementById('rate'),reg=document.getElementById('reg'),ot=document.getElementById('ot'),mult=document.getElementById('mult'),out=document.getElementById('out'),steps=document.getElementById('steps');
+function calc(){
+  var r=parseFloat(rate.value),h=parseFloat(reg.value),o=parseFloat(ot.value),m=parseFloat(mult.value);
+  if([r,h,o,m].some(isNaN)||r<0||h<0||o<0||m<0){out.textContent='';steps.textContent='Type all four numbers (zero or more) to see the answer.';return}
+  var regular=r*h,over=r*m*o,total=regular+over;
+  out.textContent='Regular pay '+fmt(regular)+' · Overtime pay '+fmt(over)+' · Total gross '+fmt(total);
+  steps.textContent='Step 1: regular pay = '+fmt(r)+' × '+fmt(h)+' = '+fmt(regular)+'\nStep 2: overtime pay = '+fmt(r)+' × '+fmt(m)+' × '+fmt(o)+' = '+fmt(over)+'\nStep 3: total gross = '+fmt(regular)+' + '+fmt(over)+' = '+fmt(total)+(h+o>0?'\nEffective rate across all ' + fmt(h+o) + ' hours: '+fmt(total/(h+o))+' per hour.':'');
+}
+[rate,reg,ot,mult].forEach(function(el){el.addEventListener('input',calc);el.addEventListener('change',calc)});
+calc();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Secret Santa Generator — Fair Draws, No One Picks Themselves | Noryvello</title>
+<meta name="description" content="Draw Secret Santa names fairly: no one ever picks themselves, every name is drawn exactly once. Enter names, draw, and reveal one gift-pair at a time. Free on Noryvello.">
+<link rel="canonical" href="https://noryvello.github.io/secret-santa-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Secret Santa Generator — Fair Draws, No One Picks Themselves">
+<meta property="og:description" content="No one ever picks themselves, every name drawn exactly once. Enter names, draw, reveal one pair at a time. Free on Noryvello.">
+<meta property="og:url" content="https://noryvello.github.io/secret-santa-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;min-height:130px;resize:vertical}
+.btn{display:inline-block;background:#4338ca;color:#fff;font-weight:700;padding:11px 20px;border:none;border-radius:999px;font-size:15.5px;cursor:pointer;margin:8px 6px 0 0;box-shadow:0 8px 16px rgba(67,56,202,.3)}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:#fff;color:#4338ca;border:1.5px solid #4338ca;box-shadow:none}
+.pair{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:10px 14px;margin:8px 0;font-size:16px}
+.pair .who{font-weight:600}
+.pair .gift{color:#0d9488;font-weight:700}
+.pair .hidden{color:#94a3b8;letter-spacing:2px}
+.reveal{background:#0d9488;color:#fff;border:none;border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+.msg{font-size:15.5px;color:#334155;margin-top:10px;white-space:pre-line}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can someone draw their own name?", "acceptedAnswer": {"@type": "Answer", "text": "No. The draw is a derangement: every name is shuffled until nobody is matched with themselves, and every name is drawn exactly once. The check runs on every draw, and the draw is repeated if any name lands on itself."}}, {"@type": "Question", "name": "How many people can join a Secret Santa draw?", "acceptedAnswer": {"@type": "Answer", "text": "At least 3. With only 2 people, each person would know exactly who drew them, so the secrecy fails. There is no upper limit on this page — paste as many names as your group has."}}, {"@type": "Question", "name": "Are the names or results sent anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. Names stay in your browser and are never uploaded. Reveal pairs one at a time on one shared screen, or copy the full list only if you are the organiser sharing results privately."}}, {"@type": "Question", "name": "Is the Secret Santa Generator free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — free, with no sign-up, and it runs in your browser on any phone or computer."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Secret Santa Generator</h1>
+<p class="answer"><strong>Short answer:</strong> type one name per line, press <strong>Draw names</strong> — every person gets exactly one gift to buy, and <strong>no one ever draws themselves</strong>. Reveal pairs one at a time so the secret holds.</p>
+<div class="calc">
+<label for="names">Names — one per line (at least 3)</label>
+<textarea id="names" placeholder="Ayesha&#10;Bilal&#10;Chloe&#10;Daniel&#10;Elena&#10;Farid"></textarea>
+<button class="btn" id="drawBtn" type="button">Draw names</button>
+<button class="btn ghost" id="revealAllBtn" type="button" disabled>Reveal all</button>
+<button class="btn ghost" id="copyBtn" type="button" disabled>Copy results</button>
+<div class="msg" id="msg"></div>
+<div id="pairs"></div>
+</div>
+<div class="warn"><strong>Keeping it secret:</strong> results are generated in your browser and never sent anywhere. Reveal one pair at a time with only that giver watching, then hide the screen before the next reveal. The "Copy results" button is for the organiser only.</div>
+<h2>How the draw stays fair</h2>
+<ol>
+<li>Names are shuffled at random.</li>
+<li>The draw is checked: if <strong>any</strong> name matched itself, the whole shuffle is thrown away and drawn again.</li>
+<li>Every name appears exactly once as a giver and exactly once as a receiver — nobody is left out and nobody is drawn twice.</li>
+<li>With 3 or more names, a fair draw always exists. With only 2 names, secrecy is impossible, so the page asks for at least 3.</li>
+</ol>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Can someone draw their own name?</h3><p>No. The draw is a derangement: every name is shuffled until nobody is matched with themselves, and every name is drawn exactly once. The check runs on every draw, and the draw is repeated if any name lands on itself.</p></div>
+<div class="faq"><h3>How many people can join a Secret Santa draw?</h3><p>At least 3. With only 2 people, each person would know exactly who drew them, so the secrecy fails. There is no upper limit on this page — paste as many names as your group has.</p></div>
+<div class="faq"><h3>Are the names or results sent anywhere?</h3><p>No. Names stay in your browser and are never uploaded. Reveal pairs one at a time on one shared screen, or copy the full list only if you are the organiser sharing results privately.</p></div>
+<div class="faq"><h3>Is the Secret Santa Generator free?</h3><p>Yes — free, with no sign-up, and it runs in your browser on any phone or computer.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links">
+<a href="../wedding-budget-planner/">Wedding Budget Planner</a> ·
+<a href="../online-piano/">Free Online Piano</a> ·
+<a href="../online-sale-mistakes/">Online Sale Mistakes</a> ·
+<a href="../running-pace-calculator/">Running Pace Calculator</a>
+</p>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var namesEl=document.getElementById('names'),drawBtn=document.getElementById('drawBtn'),
+    revealAllBtn=document.getElementById('revealAllBtn'),copyBtn=document.getElementById('copyBtn'),
+    msg=document.getElementById('msg'),pairsEl=document.getElementById('pairs'),pairs=[];
+function parseNames(){
+  var seen={},out=[];
+  namesEl.value.split('\n').forEach(function(line){
+    var name=line.trim();
+    if(!name)return;
+    var key=name.toLowerCase();
+    if(seen[key])return;
+    seen[key]=true;out.push(name);
+  });
+  return out;
+}
+function shuffled(arr){
+  var a=arr.slice();
+  for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}
+  return a;
+}
+function derange(names){
+  for(var attempt=0;attempt<1000;attempt++){
+    var s=shuffled(names),ok=true;
+    for(var i=0;i<names.length;i++){if(s[i]===names[i]){ok=false;break}}
+    if(ok)return s;
+  }
+  /* Fallback (practically unreachable): rotate by one — still a valid derangement. */
+  return names.slice(1).concat(names[0]);
+}
+function render(){
+  pairsEl.innerHTML='';
+  pairs.forEach(function(pair,idx){
+    var row=document.createElement('div');row.className='pair';
+    var who=document.createElement('span');who.className='who';who.textContent=pair.giver+' buys for';
+    var gift=document.createElement('span');gift.className='hidden';gift.textContent='••••••';
+    var btn=document.createElement('button');btn.type='button';btn.className='reveal';btn.textContent='Reveal';
+    btn.addEventListener('click',function(){
+      gift.textContent=pair.receiver;gift.className='gift';btn.disabled=true;btn.textContent='Revealed';
+    });
+    row.appendChild(who);row.appendChild(gift);row.appendChild(btn);pairsEl.appendChild(row);
+  });
+  revealAllBtn.disabled=pairs.length===0;copyBtn.disabled=pairs.length===0;
+}
+drawBtn.addEventListener('click',function(){
+  var names=parseNames();
+  if(names.length<3){pairs=[];render();msg.textContent='Add at least 3 different names — with 2 names, each person would know who drew them.';return}
+  var receivers=derange(names);
+  pairs=names.map(function(giver,i){return {giver:giver,receiver:receivers[i]}});
+  render();
+  msg.textContent='Draw complete for '+names.length+' people. No one drew themselves. Reveal one pair at a time.';
+});
+revealAllBtn.addEventListener('click',function(){
+  pairsEl.querySelectorAll('.reveal').forEach(function(b){b.click()});
+});
+copyBtn.addEventListener('click',function(){
+  var text=pairs.map(function(p){return p.giver+' -> '+p.receiver}).join('\n');
+  function done(){msg.textContent='Results copied. Share them privately — the list reveals every pairing.'}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done,function(){fallback()})}
+  else fallback();
+  function fallback(){
+    var ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy');done()}catch(e){msg.textContent='Copy did not work in this browser — select the list and copy it by hand.'}
+    document.body.removeChild(ta);
+  }
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

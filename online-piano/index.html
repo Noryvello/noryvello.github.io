@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Online Piano — Play With Your Keyboard or Fingers | Noryvello</title>
+<meta name="description" content="Play a real online piano in your browser: two octaves, true piano notes, your mouse, fingers, or computer keyboard. Nothing to install, free on Noryvello.">
+<link rel="canonical" href="https://noryvello.github.io/online-piano/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Free Online Piano — Play With Your Keyboard or Fingers">
+<meta property="og:description" content="Two octaves, true piano notes, mouse, fingers, or computer keyboard. Nothing to install, free on Noryvello.">
+<meta property="og:url" content="https://noryvello.github.io/online-piano/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:820px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.piano-shell{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.controls{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:14px;font-size:15px}
+.controls label{display:flex;align-items:center;gap:6px;cursor:pointer}
+.controls input[type=range]{width:120px}
+.btn{display:inline-block;background:#4338ca;color:#fff;font-weight:700;padding:8px 16px;border:none;border-radius:999px;font-size:14.5px;cursor:pointer}
+.btn:hover{transform:translateY(-1px)}
+.piano{position:relative;height:220px;user-select:none;-webkit-user-select:none;touch-action:none}
+.white-row{display:flex;height:100%}
+.white{flex:1;background:#fff;border:1px solid #94a3b8;border-top:none;border-radius:0 0 6px 6px;position:relative;cursor:pointer;box-shadow:inset 0 -6px 8px rgba(0,0,0,.06)}
+.white.active{background:#ddd6fe;box-shadow:inset 0 -3px 6px rgba(67,56,202,.25)}
+.black{position:absolute;top:0;height:58%;background:#1e293b;border-radius:0 0 5px 5px;z-index:2;cursor:pointer;box-shadow:0 4px 8px rgba(0,0,0,.35)}
+.black.active{background:#4338ca}
+.key-label{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-size:12px;color:#64748b;pointer-events:none}
+.black .key-label{color:#cbd5e1}
+.key-letter{display:block;font-size:11px;color:#94a3b8}
+.black .key-letter{color:#94a3b8}
+.now{font-size:16px;font-weight:700;margin-top:12px;min-height:24px}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+kbd{background:#eef2ff;padding:1px 6px;border-radius:5px;border:1px solid #c7d2fe;font-family:inherit}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I play the online piano?", "acceptedAnswer": {"@type": "Answer", "text": "Click or tap any key with your mouse or finger, or use your computer keyboard: the A row plays the white keys and the W, E, T, Y, U keys play the black keys. Hold a key to hold the note, and slide across keys while holding to play a run."}}, {"@type": "Question", "name": "Are the notes real piano notes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every key plays its true pitch from the standard tuning (A4 = 440 Hz, equal temperament), generated live in your browser. The piano covers two octaves, and the octave buttons shift the whole keyboard down or up."}}, {"@type": "Question", "name": "Why is there no sound?", "acceptedAnswer": {"@type": "Answer", "text": "Browsers only allow sound after you interact with the page, so the first click or key press starts the audio. If you still hear nothing, check the device volume, the silent switch on phones, and the volume slider on the piano."}}, {"@type": "Question", "name": "Is the online piano free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — free, with no sign-up, no download, and nothing to install. It runs in your browser on any phone or computer."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Free Online Piano</h1>
+<p class="answer"><strong>Short answer:</strong> play right below — <strong>click or tap</strong> the keys, or use your <strong>computer keyboard</strong>. Two octaves of true piano notes, generated live in your browser. Nothing to install.</p>
+<div class="piano-shell">
+<div class="controls">
+<button class="btn" id="octDown" type="button">− Octave</button>
+<span id="octLabel">Octave: C4 – B5</span>
+<button class="btn" id="octUp" type="button">+ Octave</button>
+<label><input type="checkbox" id="labels" checked> Note names</label>
+<label><input type="checkbox" id="sustain"> Sustain</label>
+<label>Volume <input type="range" id="volume" min="0" max="100" value="80"></label>
+</div>
+<div class="piano" id="piano"></div>
+<div class="now" id="nowPlaying"></div>
+</div>
+<div class="warn"><strong>Sound starts on your first tap or key press.</strong> Browsers block audio until you interact with the page — that is normal, not a fault. If you hear nothing after playing a key, check the device volume and the silent switch on phones.</div>
+<h2>Computer keyboard map</h2>
+<p>White keys: <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> <kbd>F</kbd> <kbd>G</kbd> <kbd>H</kbd> <kbd>J</kbd> <kbd>K</kbd> <kbd>L</kbd> <kbd>;</kbd> — black keys: <kbd>W</kbd> <kbd>E</kbd> <kbd>T</kbd> <kbd>Y</kbd> <kbd>U</kbd> <kbd>O</kbd> <kbd>P</kbd>. The octave buttons shift the whole map down or up. Hold a key to hold its note.</p>
+<h2>What you can do with it</h2>
+<ul>
+<li>Learn a melody by ear — slow, one note at a time, with the note names on.</li>
+<li>Check a tune stuck in your head, or find the starting note of a song.</li>
+<li>Teach a child the notes: middle C is the first white key, marked C4.</li>
+<li>Play together: two people can share one keyboard, one on each side.</li>
+</ul>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How do I play the online piano?</h3><p>Click or tap any key with your mouse or finger, or use your computer keyboard: the A row plays the white keys and the W, E, T, Y, U keys play the black keys. Hold a key to hold the note, and slide across keys while holding to play a run.</p></div>
+<div class="faq"><h3>Are the notes real piano notes?</h3><p>Yes. Every key plays its true pitch from the standard tuning (A4 = 440 Hz, equal temperament), generated live in your browser. The piano covers two octaves, and the octave buttons shift the whole keyboard down or up.</p></div>
+<div class="faq"><h3>Why is there no sound?</h3><p>Browsers only allow sound after you interact with the page, so the first click or key press starts the audio. If you still hear nothing, check the device volume, the silent switch on phones, and the volume slider on the piano.</p></div>
+<div class="faq"><h3>Is the online piano free?</h3><p>Yes — free, with no sign-up, no download, and nothing to install. It runs in your browser on any phone or computer.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links">
+<a href="../secret-santa-generator/">Secret Santa Generator</a> ·
+<a href="../running-pace-calculator/">Running Pace Calculator</a> ·
+<a href="../wedding-budget-planner/">Wedding Budget Planner</a> ·
+<a href="../overtime-pay-calculator/">Overtime Pay Calculator</a>
+</p>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var NOTE_NAMES=['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+function midiToFreq(m){return 440*Math.pow(2,(m-69)/12)}
+function noteName(m){return NOTE_NAMES[m%12]+(Math.floor(m/12)-1)}
+var KEYMAP={KeyA:0,KeyW:1,KeyS:2,KeyE:3,KeyD:4,KeyF:5,KeyT:6,KeyG:7,KeyY:8,KeyH:9,KeyU:10,KeyJ:11,KeyK:12,KeyO:13,KeyL:14,KeyP:15,Semicolon:16};
+var baseMidi=60,baseMin=48,baseMax=72;
+var pianoEl=document.getElementById('piano'),nowEl=document.getElementById('nowPlaying'),
+    labelsEl=document.getElementById('labels'),sustainEl=document.getElementById('sustain'),
+    volumeEl=document.getElementById('volume'),octLabel=document.getElementById('octLabel');
+var ctx=null,master=null,active={},keyEls={};
+function ensureAudio(){
+  if(ctx)return true;
+  var AC=window.AudioContext||window.webkitAudioContext;
+  if(!AC)return false;
+  ctx=new AC();
+  master=ctx.createGain();master.gain.value=volumeEl.value/100;master.connect(ctx.destination);
+  return true;
+}
+function noteOn(midi){
+  if(!ensureAudio())return;
+  if(ctx.state==='suspended')ctx.resume();
+  if(active[midi])return;
+  var osc=ctx.createOscillator(),gain=ctx.createGain();
+  osc.type='triangle';osc.frequency.value=midiToFreq(midi);
+  gain.gain.setValueAtTime(0.0001,ctx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.5,ctx.currentTime+0.02);
+  osc.connect(gain);gain.connect(master);osc.start();
+  active[midi]={osc:osc,gain:gain};
+  if(keyEls[midi])keyEls[midi].classList.add('active');
+  nowEl.textContent='Playing: '+noteName(midi)+' ('+Math.round(midiToFreq(midi)*10)/10+' Hz)';
+}
+function noteOff(midi){
+  var a=active[midi];if(!a)return;
+  delete active[midi];
+  var release=sustainEl.checked?1.2:0.15;
+  try{
+    a.gain.gain.cancelScheduledValues(ctx.currentTime);
+    a.gain.gain.setValueAtTime(Math.max(a.gain.gain.value,0.0001),ctx.currentTime);
+    a.gain.gain.exponentialRampToValueAtTime(0.0001,ctx.currentTime+release);
+    a.osc.stop(ctx.currentTime+release+0.05);
+  }catch(e){try{a.osc.stop()}catch(e2){}}
+  if(keyEls[midi])keyEls[midi].classList.remove('active');
+}
+function buildKeys(){
+  pianoEl.innerHTML='';keyEls={};
+  var whiteRow=document.createElement('div');whiteRow.className='white-row';
+  pianoEl.appendChild(whiteRow);
+  var whites=[],blacks=[];
+  for(var s=0;s<24;s++){
+    var midi=baseMidi+s,name=NOTE_NAMES[midi%12];
+    if(name.indexOf('#')===-1)whites.push(midi);else blacks.push(midi);
+  }
+  var whiteW=100/whites.length,blackW=whiteW*0.62;
+  whites.forEach(function(midi){
+    var key=document.createElement('div');key.className='white';key.dataset.midi=midi;
+    key.appendChild(makeLabel(midi));
+    whiteRow.appendChild(key);keyEls[midi]=key;bindKey(key,midi);
+  });
+  var whiteIndex={};
+  whites.forEach(function(midi,i){whiteIndex[midi]=i});
+  blacks.forEach(function(midi){
+    var prevWhite=midi-1,idx=whiteIndex[prevWhite];
+    var key=document.createElement('div');key.className='black';key.dataset.midi=midi;
+    key.style.width=blackW+'%';
+    key.style.left=((idx+1)*whiteW-blackW/2)+'%';
+    key.appendChild(makeLabel(midi));
+    pianoEl.appendChild(key);keyEls[midi]=key;bindKey(key,midi);
+  });
+  octLabel.textContent='Octave: '+noteName(baseMidi)+' – '+noteName(baseMidi+23);
+  applyLabels();
+}
+function makeLabel(midi){
+  var span=document.createElement('span');span.className='key-label';
+  span.textContent=noteName(midi);
+  var letter=document.createElement('span');letter.className='key-letter';
+  letter.textContent=keyLetterFor(midi);
+  span.appendChild(document.createElement('br'));span.appendChild(letter);
+  return span;
+}
+function keyLetterFor(midi){
+  var off=midi-baseMidi;
+  for(var code in KEYMAP){if(KEYMAP[code]===off)return code.replace('Key','').replace('Semicolon',';')}
+  return '';
+}
+var pointerNotes={};
+function bindKey(key,midi){
+  key.addEventListener('pointerdown',function(e){e.preventDefault();pointerNotes[e.pointerId]=midi;noteOn(midi)});
+  key.addEventListener('pointerup',function(e){delete pointerNotes[e.pointerId];noteOff(midi)});
+  key.addEventListener('pointercancel',function(e){delete pointerNotes[e.pointerId];noteOff(midi)});
+  key.addEventListener('pointerleave',function(e){if(pointerNotes[e.pointerId]===midi){delete pointerNotes[e.pointerId];noteOff(midi)}});
+  key.addEventListener('pointerenter',function(e){if(e.buttons>0){pointerNotes[e.pointerId]=midi;noteOn(midi)}});
+  key.addEventListener('contextmenu',function(e){e.preventDefault()});
+}
+['pointerup','pointercancel'].forEach(function(ev){
+  document.addEventListener(ev,function(e){
+    var midi=pointerNotes[e.pointerId];
+    if(midi!==undefined){delete pointerNotes[e.pointerId];noteOff(midi)}
+  });
+});
+function applyLabels(){
+  var show=labelsEl.checked;
+  pianoEl.querySelectorAll('.key-label').forEach(function(l){l.style.display=show?'':'none'});
+}
+document.addEventListener('keydown',function(e){
+  if(e.repeat||!(e.code in KEYMAP))return;
+  if(e.target&&(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA'))return;
+  noteOn(baseMidi+KEYMAP[e.code]);
+});
+document.addEventListener('keyup',function(e){
+  if(!(e.code in KEYMAP))return;
+  noteOff(baseMidi+KEYMAP[e.code]);
+});
+document.getElementById('octDown').addEventListener('click',function(){
+  if(baseMidi>baseMin){baseMidi-=12;buildKeys()}
+});
+document.getElementById('octUp').addEventListener('click',function(){
+  if(baseMidi<baseMax){baseMidi+=12;buildKeys()}
+});
+labelsEl.addEventListener('change',applyLabels);
+volumeEl.addEventListener('input',function(){if(master)master.gain.value=volumeEl.value/100});
+buildKeys();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>
