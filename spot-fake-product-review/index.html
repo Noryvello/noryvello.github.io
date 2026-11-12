@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Spot a Fake Product Review — Warning Signs &amp; Checker | Noryvello</title>
+  <meta name="description" content="Learn observable patterns that distinguish genuine customer feedback from manipulated product reviews, plus an interactive review-trust checker.">
+  <link rel="canonical" href="https://noryvello.github.io/spot-fake-product-review/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to Spot a Fake Product Review — Warning Signs &amp; Checker">
+  <meta property="og:description" content="Check product listings for swapped-item reviews, date clusters, repetitive phrasing, and missing specifics before buying.">
+  <meta property="og:url" content="https://noryvello.github.io/spot-fake-product-review/">
+  <style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+.chk-row{display:flex;align-items:flex-start;gap:10px;margin:10px 0;font-weight:600;font-size:15px;cursor:pointer}
+.chk-row input[type="checkbox"]{width:20px;height:20px;margin-top:2px;flex-shrink:0}
+.btn-reset{margin-top:12px;padding:8px 14px;border:1px solid #cbd5e1;border-radius:8px;background:#eef2ff;color:#1e293b;font-weight:600;font-size:14.5px;cursor:pointer}
+</style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why do some product listings have hundreds of five-star reviews for a completely different item?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some sellers hijack older listings that already accumulated high ratings for an inexpensive accessory, then swap the product title and photos to a new item so it inherits the old star score."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a sudden burst of reviews on the same date indicate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When dozens of five-star reviews appear within one or two days with short, generic praise, it often points to coordinated review campaigns rather than steady organic customer purchases."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are unverified purchase reviews always fake?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not always\u2014a buyer might have received the item as a gift or bought it from another retailer\u2014but a high ratio of unverified five-star reviews compared to verified purchases lowers reliability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do genuine critical reviews help evaluate a product?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Authentic three-star and four-star reviews usually explain specific trade-offs, sizing quirks, or setup steps, helping you decide whether those limitations matter for your actual use."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+    <h1>How to Spot a Fake Product Review — Warning Signs &amp; Checker</h1>
+    <p class="answer">You can spot unreliable product reviews by checking for five observable patterns: reviews describing a completely different product, large clusters of five-star ratings posted on the same day, generic praise with zero usage details, a high share of unverified purchases, and reviewer profiles that only post five-star ratings. Answer the five questions below to evaluate any listing.</p>
+
+    <div class="calc">
+      <label for="q1">1. Do older reviews describe a completely different product or color/model?</label>
+      <select id="q1">
+        <option value="no">No — reviews match this exact product</option>
+        <option value="yes">Yes — older reviews mention an unrelated item</option>
+      </select>
+
+      <label for="q2">2. Were many five-star reviews posted in a tight cluster on the same 1–2 dates?</label>
+      <select id="q2">
+        <option value="no">No — dates are spread out naturally over time</option>
+        <option value="yes">Yes — sudden burst of five-star reviews on the same dates</option>
+      </select>
+
+      <label for="q3">3. Do top reviews rely on vague superlatives with no specific details or photos?</label>
+      <select id="q3">
+        <option value="no">No — reviews describe real setup, fit, or daily use</option>
+        <option value="yes">Yes — mostly generic one-liners like "Best ever, must buy"</option>
+      </select>
+
+      <label for="q4">4. Are most five-star reviews missing a "Verified Purchase" badge?</label>
+      <select id="q4">
+        <option value="no">No — most are verified purchases</option>
+        <option value="yes">Yes — many lack verified purchase status</option>
+      </select>
+
+      <label for="q5">5. Do 1-star and 3-star reviews report repeated defects that 5-star reviews ignore?</label>
+      <select id="q5">
+        <option value="no">No — critical feedback is minor or isolated</option>
+        <option value="yes">Yes — consistent reports of breakage or misleading specs</option>
+      </select>
+
+      <div class="out" id="result"></div>
+      <div class="steps" id="steps"></div>
+    </div>
+
+    <div class="warn">
+      <strong>Honest limit:</strong> Individual warning signs are pattern indicators, not legal proof that a specific reviewer was paid. Even a legitimate new product can have enthusiastic early buyers, so always weigh multiple signals together before deciding.
+    </div>
+
+    <h2>1. Check Whether Reviews Match the Current Product</h2>
+    <ul>
+      <li><strong>What to do:</strong> Sort reviews by oldest first or filter by image reviews to see what earlier buyers actually received.</li>
+      <li><strong>Why:</strong> Listing hijacking occurs when a seller updates an existing high-rated page to sell a totally different item while keeping the old star average.</li>
+      <li><strong>How to check it:</strong> Look at buyer-uploaded photos and product variant tags under each review—if a phone charger page shows reviews for socks or cables, do not trust the overall star score.</li>
+    </ul>
+
+    <h2>2. Inspect Review Dates for Unnatural Spikes</h2>
+    <ul>
+      <li><strong>What to do:</strong> Sort reviews by "Most Recent" and scan the timestamps across the first two or three pages.</li>
+      <li><strong>Why:</strong> Real customer feedback trickles in gradually as orders arrive, whereas paid review batches often land within a narrow 24-to-48-hour window.</li>
+      <li><strong>How to check it:</strong> Count how many five-star reviews share the exact same date and compare their writing style and length.</li>
+    </ul>
+
+    <h2>3. Look for Concrete Usage Details Over Generic Praise</h2>
+    <ul>
+      <li><strong>What to do:</strong> Read the text of top-rated reviews to see if the writer mentions dimensions, compatibility, battery life, or how they used the product.</li>
+      <li><strong>Why:</strong> People who have never used an item rely on broad marketing phrases ("amazing quality, works great, fast shipping") instead of practical observations.</li>
+      <li><strong>How to check it:</strong> Favor reviews that explain both what worked well and any minor quirk encountered during real use.</li>
+    </ul>
+
+    <h2>4. Compare Verified Purchases Against Unverified Ratings</h2>
+    <ul>
+      <li><strong>What to do:</strong> Filter reviews by "Verified Purchase" whenever the platform provides that toggle.</li>
+      <li><strong>Why:</strong> Verified purchase tags confirm the reviewer bought the item through that marketplace rather than creating free accounts to boost a score.</li>
+      <li><strong>How to check it:</strong> Notice if the overall rating drops sharply once unverified reviews are filtered out.</li>
+    </ul>
+
+    <h2>5. Read 3-Star and 4-Star Reviews First</h2>
+    <ul>
+      <li><strong>What to do:</strong> Open the middle-tier ratings (3 and 4 stars) before reading 5-star or 1-star extremes.</li>
+      <li><strong>Why:</strong> Middle ratings rarely come from automated review farms or angry shipping mix-ups, making them the clearest source of balanced product pros and cons.</li>
+      <li><strong>How to check it:</strong> Look for recurring themes across several 3-star reviews—if three separate buyers mention the same weak hinge or tight sizing, expect that exact issue.</li>
+    </ul>
+
+    <h2>Questions people ask</h2>
+<div class="faq"><h3>Why do some product listings have hundreds of five-star reviews for a completely different item?</h3><p>Some sellers hijack older listings that already accumulated high ratings for an inexpensive accessory, then swap the product title and photos to a new item so it inherits the old star score.</p></div>
+<div class="faq"><h3>What does a sudden burst of reviews on the same date indicate?</h3><p>When dozens of five-star reviews appear within one or two days with short, generic praise, it often points to coordinated review campaigns rather than steady organic customer purchases.</p></div>
+<div class="faq"><h3>Are unverified purchase reviews always fake?</h3><p>Not always—a buyer might have received the item as a gift or bought it from another retailer—but a high ratio of unverified five-star reviews compared to verified purchases lowers reliability.</p></div>
+<div class="faq"><h3>How do genuine critical reviews help evaluate a product?</h3><p>Authentic three-star and four-star reviews usually explain specific trade-offs, sizing quirks, or setup steps, helping you decide whether those limitations matter for your actual use.</p></div>
+
+    <h2>More free tools on Noryvello</h2>
+    <p class="links">
+      <a href="../online-sale-mistakes/">Online Sale Season: 7 Mistakes That Waste Your Money</a> ·
+      <a href="../buying-used-laptop-mistakes/">7 Mistakes to Avoid When Buying a Used Laptop</a> ·
+      <a href="../flat-rate-vs-reducing-balance/">Flat Rate vs Reducing Balance</a> ·
+      <a href="../debt-payoff-calculator/">Debt Payoff Calculator</a>
+    </p>
+
+    <footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+  </div>
+
+  <script>
+    (function () {
+      var selects = [
+        { el: document.getElementById('q1'), label: 'Mismatched product history' },
+        { el: document.getElementById('q2'), label: 'Suspicious date clustering' },
+        { el: document.getElementById('q3'), label: 'Generic praise lacking specifics' },
+        { el: document.getElementById('q4'), label: 'High unverified purchase share' },
+        { el: document.getElementById('q5'), label: 'Unaddressed defect reports in critical reviews' }
+      ];
+      var resEl = document.getElementById('result');
+      var stpEl = document.getElementById('steps');
+
+      function evaluate() {
+        var flags = [];
+        for (var i = 0; i < selects.length; i++) {
+          if (selects[i].el.value === 'yes') {
+            flags.push(selects[i].label);
+          }
+        }
+
+        var verdict = '';
+        if (flags.length === 0) {
+          verdict = 'Verdict: Low manipulation risk (0 of 5 warning signs)';
+          stpEl.textContent = 'Reviews show natural dates, product consistency, and specific buyer details. Still check the return policy before ordering.';
+        } else if (flags.length <= 2) {
+          verdict = 'Verdict: Mixed signals — inspect closely (' + flags.length + ' of 5 warning signs)';
+          stpEl.textContent = 'Flagged patterns: ' + flags.join('; ') + '. Filter by Verified Purchase and read 3-star reviews before deciding.';
+        } else {
+          verdict = 'Verdict: High review-manipulation risk (' + flags.length + ' of 5 warning signs)';
+          stpEl.textContent = 'Flagged patterns: ' + flags.join('; ') + '. Do not rely on the headline star rating—look for independent off-site reviews or another seller.';
+        }
+        resEl.textContent = verdict;
+      }
+
+      for (var i = 0; i < selects.length; i++) {
+        selects[i].el.addEventListener('change', evaluate);
+        selects[i].el.addEventListener('input', evaluate);
+      }
+
+      evaluate();
+    })();
+  </script>
+  <script src="../ads-config.js"></script>
+</body>
+</html>
