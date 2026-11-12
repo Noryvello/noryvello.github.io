@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paint Calculator — How Much Paint Do I Need for a Room? | Noryvello</title>
+  <meta name="description" content="Calculate how much paint you need for any room using wall dimensions, coats, windows, doors, and paint coverage rate with step-by-step working.">
+  <link rel="canonical" href="https://noryvello.github.io/paint-calculator/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Paint Calculator — How Much Paint Do I Need for a Room?">
+  <meta property="og:description" content="Calculate exact paint volume needed for your walls based on room size, number of coats, openings, and container coverage.">
+  <meta property="og:url" content="https://noryvello.github.io/paint-calculator/">
+  <style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I calculate paintable wall area for a room?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Add the room length and width, multiply by 2 to get the perimeter, and multiply by the wall height to find gross wall area. Then subtract the total area of doors and windows that will not be painted."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I use feet or meters in this paint calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can use either feet or meters as long as your wall dimensions, opening area, and paint coverage rate use the same unit system. For example, enter dimensions in feet if your paint label lists coverage in square feet per liter or gallon."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many coats of paint should I enter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Enter 2 coats for most standard repaints over a similar color. Use 3 coats if you are painting a light color over a dark wall or covering raw, porous plaster."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why should I round up to whole cans or buckets?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Paint is sold in fixed container sizes, and having extra paint from the same batch makes future touch-ups match cleanly without color differences."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+    <h1>Paint Calculator — How Much Paint Do I Need for a Room?</h1>
+    <p class="answer">To find how much paint a room needs, multiply the wall perimeter by the ceiling height, subtract doors and windows, multiply by the number of coats, and divide by the coverage rate printed on your paint container. Enter your room measurements below to see the exact net wall area, total paint volume, and step-by-step math.</p>
+
+    <div class="calc">
+      <label for="unit">Measurement Unit System</label>
+      <select id="unit">
+        <option value="ft">Feet (sq ft per liter or gallon)</option>
+        <option value="m">Meters (sq m per liter)</option>
+      </select>
+
+      <label for="length">Room Length</label>
+      <input type="number" id="length" value="12" min="0" step="any">
+
+      <label for="width">Room Width</label>
+      <input type="number" id="width" value="10" min="0" step="any">
+
+      <label for="height">Wall Height</label>
+      <input type="number" id="height" value="9" min="0" step="any">
+
+      <label for="openings">Doors &amp; Windows Area to Subtract (sq ft or sq m)</label>
+      <input type="number" id="openings" value="36" min="0" step="any">
+
+      <label for="coats">Number of Coats</label>
+      <input type="number" id="coats" value="2" min="1" step="1">
+
+      <label for="coverage">Paint Coverage Rate (area per 1 unit of paint)</label>
+      <input type="number" id="coverage" value="350" min="0" step="any">
+
+      <div class="out" id="result"></div>
+      <div class="steps" id="steps"></div>
+    </div>
+
+    <div class="warn">
+      <strong>Honest limit:</strong> This calculator measures flat four-wall rooms and assumes uniform paint absorption. Rough or textured plaster, deep color changes, ceiling painting, trim work, and brush or roller waste can increase actual paint usage beyond the mathematical estimate.
+    </div>
+
+    <h2>How the Paint Formula Works</h2>
+    <p>Every room paint estimate follows four straightforward steps:</p>
+    <ol>
+      <li><strong>Gross wall area:</strong> <code>2 × (Length + Width) × Height</code></li>
+      <li><strong>Net paintable area:</strong> <code>Gross Wall Area − Doors and Windows Area</code></li>
+      <li><strong>Total coat area:</strong> <code>Net Paintable Area × Number of Coats</code></li>
+      <li><strong>Paint required:</strong> <code>Total Coat Area ÷ Coverage Rate per Container Unit</code></li>
+    </ol>
+    <p>The math works identically with any volume unit (liters, gallons, or quarts) and any currency when budgeting your purchase—just match the area unit in your dimensions with the area unit printed on the paint tin.</p>
+
+    <h2>3 Worked Examples</h2>
+    <ul>
+      <li><strong>Example 1 — Standard Bedroom (Feet &amp; Gallons):</strong> A room is 12 ft long, 10 ft wide, and 9 ft high, with 36 sq ft of doors and windows. Gross wall area is <code>2 × (12 + 10) × 9 = 396 sq ft</code>. Subtracting 36 sq ft leaves <code>360 sq ft</code>. For 2 coats, total coverage needed is <code>360 × 2 = 720 sq ft</code>. At 350 sq ft per gallon, you need <code>720 ÷ 350 = 2.06 gallons</code> (round up to 3 gallons or 2 gallons plus 1 quart).</li>
+      <li><strong>Example 2 — Small Home Office (Feet &amp; Liters):</strong> A room is 10 ft long, 8 ft wide, and 8 ft high, with 28 sq ft of openings. Gross wall area is <code>2 × (10 + 8) × 8 = 288 sq ft</code>. Net area is <code>288 − 28 = 260 sq ft</code>. For 2 coats, total area is <code>260 × 2 = 520 sq ft</code>. At 100 sq ft per liter, you need <code>520 ÷ 100 = 5.20 liters</code> (buy 6 liters).</li>
+      <li><strong>Example 3 — Living Room in Metric (Meters &amp; Liters):</strong> A room is 5 m long, 4 m wide, and 3 m high, with 6 sq m of doors and windows. Gross wall area is <code>2 × (5 + 4) × 3 = 54 sq m</code>. Net area is <code>54 − 6 = 48 sq m</code>. For 2 coats, total area is <code>48 × 2 = 96 sq m</code>. At 12 sq m per liter, you need <code>96 ÷ 12 = 8.00 liters</code>.</li>
+    </ul>
+
+    <h2>Questions people ask</h2>
+    <div class="faq">
+      <h3>How do I calculate paintable wall area for a room?</h3>
+      <p>Add the room length and width, multiply by 2 to get the perimeter, and multiply by the wall height to find gross wall area. Then subtract the total area of doors and windows that will not be painted.</p>
+    </div>
+    <div class="faq">
+      <h3>Should I use feet or meters in this paint calculator?</h3>
+      <p>You can use either feet or meters as long as your wall dimensions, opening area, and paint coverage rate use the same unit system. For example, enter dimensions in feet if your paint label lists coverage in square feet per liter or gallon.</p>
+    </div>
+    <div class="faq">
+      <h3>How many coats of paint should I enter?</h3>
+      <p>Enter 2 coats for most standard repaints over a similar color. Use 3 coats if you are painting a light color over a dark wall or covering raw, porous plaster.</p>
+    </div>
+    <div class="faq">
+      <h3>Why should I round up to whole cans or buckets?</h3>
+      <p>Paint is sold in fixed container sizes, and having extra paint from the same batch makes future touch-ups match cleanly without color differences.</p>
+    </div>
+
+    <h2>More free tools on Noryvello</h2>
+    <p class="links">
+      <a href="../rent-vs-buy-calculator/">Rent vs Buy Calculator</a> ·
+      <a href="../online-sale-mistakes/">Online Sale Season: 7 Mistakes That Waste Your Money</a> ·
+      <a href="../debt-payoff-calculator/">Debt Payoff Calculator</a> ·
+      <a href="../overtime-pay-calculator/">Overtime Pay Calculator</a>
+    </p>
+
+    <footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+  </div>
+
+  <script>
+    (function () {
+      var unitEl = document.getElementById('unit');
+      var lenEl = document.getElementById('length');
+      var widEl = document.getElementById('width');
+      var hgtEl = document.getElementById('height');
+      var opnEl = document.getElementById('openings');
+      var ctsEl = document.getElementById('coats');
+      var covEl = document.getElementById('coverage');
+      var resEl = document.getElementById('result');
+      var stpEl = document.getElementById('steps');
+
+      function updateDefaultsForUnit() {
+        if (unitEl.value === 'm') {
+          if (lenEl.value === '12' && widEl.value === '10' && hgtEl.value === '9') {
+            lenEl.value = '5';
+            widEl.value = '4';
+            hgtEl.value = '3';
+            opnEl.value = '6';
+            covEl.value = '12';
+          }
+        } else {
+          if (lenEl.value === '5' && widEl.value === '4' && hgtEl.value === '3') {
+            lenEl.value = '12';
+            widEl.value = '10';
+            hgtEl.value = '9';
+            opnEl.value = '36';
+            covEl.value = '350';
+          }
+        }
+        calculate();
+      }
+
+      function calculate() {
+        var areaUnit = unitEl.value === 'm' ? 'sq m' : 'sq ft';
+        var len = parseFloat(lenEl.value);
+        var wid = parseFloat(widEl.value);
+        var hgt = parseFloat(hgtEl.value);
+        var opn = parseFloat(opnEl.value);
+        var cts = parseFloat(ctsEl.value);
+        var cov = parseFloat(covEl.value);
+
+        if (isNaN(len) || isNaN(wid) || isNaN(hgt) || len <= 0 || wid <= 0 || hgt <= 0) {
+          resEl.textContent = 'Enter positive numbers for room length, width, and wall height.';
+          stpEl.textContent = '';
+          return;
+        }
+        if (isNaN(opn) || opn < 0) {
+          resEl.textContent = 'Enter 0 or a positive number for doors and windows area.';
+          stpEl.textContent = '';
+          return;
+        }
+        if (isNaN(cts) || cts < 1) {
+          resEl.textContent = 'Enter at least 1 coat of paint.';
+          stpEl.textContent = '';
+          return;
+        }
+        if (isNaN(cov) || cov <= 0) {
+          resEl.textContent = 'Enter a positive paint coverage rate from your paint container.';
+          stpEl.textContent = '';
+          return;
+        }
+
+        var perimeter = 2 * (len + wid);
+        var grossArea = perimeter * hgt;
+        var netArea = grossArea - opn;
+
+        if (netArea <= 0) {
+          resEl.textContent = 'Doors and windows area must be smaller than the total wall area.';
+          stpEl.textContent = 'Gross wall area is ' + grossArea.toFixed(2) + ' ' + areaUnit + ', which is not larger than ' + opn.toFixed(2) + ' ' + areaUnit + ' of openings.';
+          return;
+        }
+
+        var totalArea = netArea * cts;
+        var paintNeeded = totalArea / cov;
+        var wholeUnits = Math.ceil(paintNeeded);
+
+        resEl.textContent = 'Paint needed: ' + paintNeeded.toFixed(2) + ' units (buy ' + wholeUnits + ' whole units)';
+        stpEl.textContent =
+          '1. Perimeter: 2 × (' + len + ' + ' + wid + ') = ' + perimeter.toFixed(2) + ' ' + unitEl.value + '\n' +
+          '2. Gross wall area: ' + perimeter.toFixed(2) + ' × ' + hgt + ' = ' + grossArea.toFixed(2) + ' ' + areaUnit + '\n' +
+          '3. Net paintable area: ' + grossArea.toFixed(2) + ' − ' + opn + ' = ' + netArea.toFixed(2) + ' ' + areaUnit + '\n' +
+          '4. Total area for ' + cts + ' coat(s): ' + netArea.toFixed(2) + ' × ' + cts + ' = ' + totalArea.toFixed(2) + ' ' + areaUnit + '\n' +
+          '5. Paint volume: ' + totalArea.toFixed(2) + ' ÷ ' + cov + ' = ' + paintNeeded.toFixed(2) + ' units';
+      }
+
+      var inputs = [lenEl, widEl, hgtEl, opnEl, ctsEl, covEl];
+      for (var i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener('input', calculate);
+        inputs[i].addEventListener('change', calculate);
+      }
+      unitEl.addEventListener('change', updateDefaultsForUnit);
+
+      calculate();
+    })();
+  </script>
+  <script src="../ads-config.js"></script>
+</body>
+</html>
