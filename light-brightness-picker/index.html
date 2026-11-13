@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Many Lumens Does Your Room Need? Choose the Right Brightness | Noryvello</title>
+  <meta name="description" content="Estimate total lighting lumens by room area and intended use. Select a room purpose and see a practical range with important limitations.">
+  <link rel="canonical" href="https://noryvello.github.io/light-brightness-picker/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How Many Lumens Does Your Room Need? Choose the Right Brightness">
+  <meta property="og:description" content="Estimate total lighting lumens by room area and intended use. Select a room purpose and see a practical range with important limitations.">
+  <meta property="og:url" content="https://noryvello.github.io/light-brightness-picker/">
+  <style>*{box-sizing:border-box;margin:0;padding:0}
+ body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+ .wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+ .brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+ .brand a{text-decoration:none}
+ .brand .n{color:#4338ca}.brand .v{color:#0d9488}
+ h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+ .answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+ h2{font-size:21px;margin:26px 0 8px}
+ ol,ul{margin:8px 0 8px 22px}
+ li{margin:5px 0}
+ .faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+ .faq h3{font-size:16.5px;margin-bottom:4px}
+ .note{font-size:14px;color:#64748b}
+ .links a{color:#4338ca}
+ footer{margin-top:36px;font-size:13.5px;color:#64748b}
+ .calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+ .calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+ .calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+ .calc .out{font-size:19px;font-weight:700;margin-top:14px}
+ .calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+ .warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+ code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are lumens?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lumens measure the total visible light output from a light source. They are different from watts, which measure electrical power."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many lumens does a living room need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This guide uses a simplified planning target of 10 lumens per square foot for general living-room lighting, then displays an approximate range. Room finishes and fixture placement can change the result."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do kitchens and study rooms need more light?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They often need brighter task lighting than relaxed ambient areas. This guide uses higher planning targets for kitchens and study or reading areas, but work-surface lighting should be planned separately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this estimate account for dark walls or high ceilings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Dark finishes, high ceilings, fixture efficiency, shades, and room layout can require more light than the simple area-based guide suggests."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+    <h1>Light Brightness Picker — How Many Lumens Does Your Room Need?</h1>
+    <p class="answer">Choose the room purpose and enter its floor area to estimate a total lumen range. The guide uses a simple target illuminance for each purpose; layered lighting and room finishes can change what feels bright enough.</p>
+    <div class="calc">
+      <label for="unit">Room measurement units</label><select id="unit"><option value="ft">Feet (area in sq ft)</option><option value="m">Meters (area in sq m)</option></select>
+<label for="length">Room length (<span id="u1">feet</span>)</label><input id="length" type="number" min="0.1" step="any" value="12">
+<label for="width">Room width (<span id="u2">feet</span>)</label><input id="width" type="number" min="0.1" step="any" value="10">
+<label for="purpose">Room purpose</label><select id="purpose"><option value="10">Living room / general ambient light</option><option value="20">Kitchen / work surfaces</option><option value="15">Bedroom / comfortable general light</option><option value="30">Study / reading area</option><option value="8">Hallway / circulation</option><option value="12">Dining area</option></select>
+      <div class="out" id="result" aria-live="polite"></div>
+      <div class="steps" id="steps"></div>
+    </div>
+    <div class="warn"><strong>Honest limit:</strong> Dark walls and high ceilings need more light than the guide number.</div>
+    <h2>How the Lumen Estimate Works</h2><p>The calculator multiplies room floor area by a selected target in lumens per square foot. The built-in targets are simplified planning assumptions for general room use: 8 for hallways, 10 for living rooms, 12 for dining areas, 15 for bedrooms, 20 for kitchens, and 30 for study or reading areas. It shows a range around the calculated midpoint.</p><p>Lumens describe the light output of a source. The amount reaching a work surface also depends on fixture design, mounting height, beam spread, shades, surface reflectance, and the number and placement of fixtures. Task lighting may be needed even when total room lumens appear sufficient.</p>
+    <h2>Questions people ask</h2>
+    <div class="faq">
+      <h3>What are lumens?</h3>
+      <p>Lumens measure the total visible light output from a light source. They are different from watts, which measure electrical power.</p>
+    </div>
+    <div class="faq">
+      <h3>How many lumens does a living room need?</h3>
+      <p>This guide uses a simplified planning target of 10 lumens per square foot for general living-room lighting, then displays an approximate range. Room finishes and fixture placement can change the result.</p>
+    </div>
+    <div class="faq">
+      <h3>Do kitchens and study rooms need more light?</h3>
+      <p>They often need brighter task lighting than relaxed ambient areas. This guide uses higher planning targets for kitchens and study or reading areas, but work-surface lighting should be planned separately.</p>
+    </div>
+    <div class="faq">
+      <h3>Does this estimate account for dark walls or high ceilings?</h3>
+      <p>No. Dark finishes, high ceilings, fixture efficiency, shades, and room layout can require more light than the simple area-based guide suggests.</p>
+    </div>
+    <h2>More free tools on Noryvello</h2>
+    <p class="links">
+      <a href="../paint-calculator/">Paint Calculator</a> ·
+      <a href="../flooring-area-calculator/">Flooring Area Calculator</a> ·
+      <a href="../sleep-calculator/">Sleep Calculator</a> ·
+      <a href="../first-time-renter-checklist/">First-Time Renter Checklist</a>
+    </p>
+    <footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+  </div>
+  <script>
+    (function(){var $=function(x){return document.getElementById(x)},u=$('unit'),l=$('length'),w=$('width'),p=$('purpose'),r=$('result'),s=$('steps');function calc(){var a=+l.value,b=+w.value;if(!(a>0&&b>0)){r.textContent='Enter positive room dimensions.';s.textContent='';return;}var area=a*b*(u.value==='m'?10.7639:1),mid=area*(+p.value),lo=mid*.8,hi=mid*1.2;r.textContent='Estimated brightness: '+Math.round(lo/10)*10+'–'+Math.round(hi/10)*10+' lumens (total room output)';s.textContent='Room area: '+area.toFixed(1)+' sq ft\nSelected planning target: '+p.value+' lumens per sq ft\nMidpoint estimate: '+Math.round(mid)+' lumens\nDisplayed range: approximately ±20% (guide only).';}[u,l,w,p].forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc)});u.addEventListener('change',function(){var t=u.value==='m'?'meters':'feet';$('u1').textContent=$('u2').textContent=t;calc()});calc()})();
+  </script>
+  <script src="../ads-config.js"></script>
+</body>
+</html>

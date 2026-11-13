@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Garden Mistakes and Checklist for Beginners | Noryvello</title>
+<meta name="description" content="The 7 beginner vegetable garden mistakes to avoid, a seasonal checklist, and a planting-date helper for tomatoes, lettuce, carrots and cucumbers.">
+<link rel="canonical" href="https://noryvello.github.io/garden-mistakes/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Garden Mistakes and Checklist for Beginners">
+<meta property="og:description" content="7 garden mistakes, a seasonal checklist and a planting-date helper.">
+<meta property="og:url" content="https://noryvello.github.io/garden-mistakes/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+button{background:#4338ca;color:#fff;border:none;padding:11px 20px;font-size:16px;font-weight:600;border-radius:8px;cursor:pointer;margin-top:12px}
+button:hover{background:#0d9488}
+.checklist label{font-weight:400;display:block;margin:8px 0}
+.checklist input{width:auto;display:inline-block;margin-right:8px}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid #e2e8f0}
+th{background:#eef2ff;font-weight:600}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How often should I water my vegetable garden?","acceptedAnswer":{"@type":"Answer","text":"Water deeply 1-2 times per week, adjusting for rainfall and soil type."}},{"@type":"Question","name":"When is the best time to add compost?","acceptedAnswer":{"@type":"Answer","text":"Add compost in early spring before planting and again in fall after harvest."}},{"@type":"Question","name":"Can I grow vegetables in containers?","acceptedAnswer":{"@type":"Answer","text":"Yes, many vegetables thrive in containers with good drainage and regular feeding."}},{"@type":"Question","name":"How do I prevent common pests without chemicals?","acceptedAnswer":{"@type":"Answer","text":"Use row covers, companion planting, and hand-pick pests early."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>7 Beginner Vegetable Garden Mistakes + Seasonal Checklist</h1>
+<p class="answer"><strong>Short answer:</strong> avoid the seven mistakes below, follow the seasonal checklist, and use the planting-date helper to check whether the current month suits your crop. Local conditions always win over general dates.</p>
+<div class="calc">
+<label for="crop">Select crop</label>
+<select id="crop">
+<option value="tomato">Tomato (warm season)</option>
+<option value="lettuce">Lettuce (cool season)</option>
+<option value="carrot">Carrot (cool season)</option>
+<option value="cucumber">Cucumber (warm season)</option>
+</select>
+<label for="month">Current month (1-12)</label>
+<input id="month" type="number" inputmode="numeric" min="1" max="12" value="4">
+<button id="calcBtn" type="button">Check Planting Month</button>
+<div class="out" id="result"></div>
+</div>
+<div class="warn"><strong>General guidance only.</strong> Planting windows vary by climate zone, frost dates and micro-climate. For precise dates, consult local extension services or a local gardening calendar.</div>
+<h2>Common mistakes</h2>
+<ol>
+<li><strong>Planting too early or too late</strong> for your climate — frost kills warm-season seedlings.</li>
+<li><strong>Wrong varieties</strong> for your soil or sunlight — read the seed packet's needs first.</li>
+<li><strong>Over- or under-watering</strong> — deep, less frequent watering beats daily sprinkles.</li>
+<li><strong>Skipping soil preparation</strong> — compost and loose soil matter more than fertilizer.</li>
+<li><strong>Planting too close together</strong> — crowded plants compete for light, water and air.</li>
+<li><strong>Neglecting crop rotation</strong> — growing the same crop in the same spot invites pests and disease.</li>
+<li><strong>Ignoring pest monitoring</strong> — check plants often and act early with row covers or hand-picking.</li>
+</ol>
+<h2>Seasonal checklist</h2>
+<ul>
+<li><strong>Early spring</strong> — test soil pH, add compost, start seeds indoors.</li>
+<li><strong>Mid-spring</strong> — direct-sow cool-season crops, set up irrigation.</li>
+<li><strong>Summer</strong> — mulch to retain moisture, monitor for pests.</li>
+<li><strong>Fall</strong> — plant cover crops, clean garden beds, store tools.</li>
+</ul>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How often should I water my vegetable garden?</h3><p>Water deeply 1-2 times per week, adjusting for rainfall and soil type.</p></div>
+<div class="faq"><h3>When is the best time to add compost?</h3><p>Add compost in early spring before planting and again in fall after harvest.</p></div>
+<div class="faq"><h3>Can I grow vegetables in containers?</h3><p>Yes, many vegetables thrive in containers with good drainage and regular feeding.</p></div>
+<div class="faq"><h3>How do I prevent common pests without chemicals?</h3><p>Use row covers, companion planting, and hand-pick pests early.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links">
+<a href="../seed-spacing-calculator/">Seed Spacing Calculator — How Many Plants Fit in Your Garden Bed?</a> ·
+<a href="../lawn-seed-calculator/">Lawn Seed Calculator — How Much Grass Seed Does Your Lawn Need?</a> ·
+<a href="../deck-board-calculator/">Deck Board Calculator — How Many Boards and Fasteners Do You Need?</a> ·
+<a href="../paver-calculator/">Paver Calculator — How Many Pavers and How Much Sand Do You Need?</a>
+</p>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+var WINDOWS = {
+  tomato: {start: 5, end: 9, label: 'Tomato (warm season)'},
+  cucumber: {start: 5, end: 9, label: 'Cucumber (warm season)'},
+  lettuce: {start: 3, end: 8, label: 'Lettuce (cool season)'},
+  carrot: {start: 3, end: 8, label: 'Carrot (cool season)'}
+};
+function calcPlant(){
+  var crop = document.getElementById('crop').value;
+  var month = parseInt(document.getElementById('month').value, 10);
+  var out = document.getElementById('result');
+  if(!WINDOWS[crop] || isNaN(month) || month < 1 || month > 12){
+    out.textContent = 'Choose a crop and enter a month from 1 to 12.';
+    return;
+  }
+  var w = WINDOWS[crop];
+  var name = MONTHS[month - 1];
+  if(month >= w.start && month <= w.end){
+    out.textContent = name + ' is within the usual planting window for ' + crop + ' (' + MONTHS[w.start - 1] + ' to ' + MONTHS[w.end - 1] + '). General guidance for temperate climates — check local frost dates.';
+  } else if(month < w.start){
+    out.textContent = name + ' is before the usual window for ' + crop + '. The usual window starts in ' + MONTHS[w.start - 1] + ' — consider starting seeds indoors. General guidance for temperate climates.';
+  } else {
+    out.textContent = name + ' is after the usual window for ' + crop + ' (' + MONTHS[w.start - 1] + ' to ' + MONTHS[w.end - 1] + '). Next season, aim for ' + MONTHS[w.start - 1] + '. General guidance for temperate climates.';
+  }
+}
+document.getElementById('calcBtn').addEventListener('click', calcPlant);
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

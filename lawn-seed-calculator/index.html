@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Much Lawn Seed Do You Really Need? Simple Coverage Calculator | Noryvello</title>
+  <meta name="description" content="Estimate lawn seed weight from lawn area and the coverage rate printed on the seed bag. Choose units and see the calculation clearly.">
+  <link rel="canonical" href="https://noryvello.github.io/lawn-seed-calculator/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How Much Lawn Seed Do You Really Need? Simple Coverage Calculator">
+  <meta property="og:description" content="Estimate lawn seed weight from lawn area and the coverage rate printed on the seed bag. Choose units and see the calculation clearly.">
+  <meta property="og:url" content="https://noryvello.github.io/lawn-seed-calculator/">
+  <style>*{box-sizing:border-box;margin:0;padding:0}
+ body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+ .wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+ .brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+ .brand a{text-decoration:none}
+ .brand .n{color:#4338ca}.brand .v{color:#0d9488}
+ h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+ .answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+ h2{font-size:21px;margin:26px 0 8px}
+ ol,ul{margin:8px 0 8px 22px}
+ li{margin:5px 0}
+ .faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+ .faq h3{font-size:16.5px;margin-bottom:4px}
+ .note{font-size:14px;color:#64748b}
+ .links a{color:#4338ca}
+ footer{margin-top:36px;font-size:13.5px;color:#64748b}
+ .calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+ .calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+ .calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+ .calc .out{font-size:19px;font-weight:700;margin-top:14px}
+ .calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+ .warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+ code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate how much grass seed I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divide your lawn area by the coverage area listed on the seed bag, then multiply by the seed weight listed for that coverage area."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I use the same seed rate for overseeding and a new lawn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Overseeding rates can differ from new-lawn rates. Follow the seed bag instructions for the exact use and grass mix."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I enter a coverage rate from a seed bag range?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Choose the specific rate on the package that matches your lawn condition and application. The calculator scales that entered rate; it does not decide which rate is appropriate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this calculator account for uneven ground or seed loss?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It is a simple area-based estimate and does not account for uneven coverage, spreading technique, runoff, or site conditions."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+    <h1>Lawn Seed Calculator — How Much Grass Seed Does Your Lawn Need?</h1>
+    <p class="answer">Enter your lawn area and the seed bag&#x27;s coverage rate to estimate the seed weight required. Use the rate for your specific grass mix and whether you are starting a new lawn or overseeding.</p>
+    <div class="calc">
+      <label for="unit">Measurement units</label><select id="unit"><option value="ft">Square feet and pounds</option><option value="m">Square meters and kilograms</option></select>
+<label for="area">Lawn area (<span id="areaUnit">sq ft</span>)</label><input id="area" type="number" min="0.01" step="any" value="2500">
+<label for="coverage">Area covered by one unit of seed (<span id="covUnit">sq ft</span>)</label><input id="coverage" type="number" min="0.01" step="any" value="1000">
+<label for="weight">Seed weight per coverage unit (<span id="weightUnit">lb</span>)</label><input id="weight" type="number" min="0.001" step="any" value="5">
+      <div class="out" id="result" aria-live="polite"></div>
+      <div class="steps" id="steps"></div>
+    </div>
+    <div class="warn"><strong>Honest limit:</strong> Overseeding rates differ from new lawns; follow the seed bag&#x27;s rate.</div>
+    <h2>How the Lawn Seed Estimate Works</h2><p>The calculator scales the seed weight on the bag to your lawn area:</p><ol><li>Find the coverage area printed on the seed packaging.</li><li>Enter the seed weight associated with that coverage area.</li><li>Multiply your lawn area by the package weight, then divide by the package coverage area.</li></ol><p>Use matching area and weight units. If the label gives a range, calculate using the rate appropriate for your grass type, application method, and lawn condition.</p><h2>New Lawn or Overseeding?</h2><p>New lawns and overseeding often use different application rates. The calculator does not choose a rate for you; it simply scales the rate you enter from the seed label.</p>
+    <h2>Questions people ask</h2>
+    <div class="faq">
+      <h3>How do I calculate how much grass seed I need?</h3>
+      <p>Divide your lawn area by the coverage area listed on the seed bag, then multiply by the seed weight listed for that coverage area.</p>
+    </div>
+    <div class="faq">
+      <h3>Should I use the same seed rate for overseeding and a new lawn?</h3>
+      <p>No. Overseeding rates can differ from new-lawn rates. Follow the seed bag instructions for the exact use and grass mix.</p>
+    </div>
+    <div class="faq">
+      <h3>Can I enter a coverage rate from a seed bag range?</h3>
+      <p>Yes. Choose the specific rate on the package that matches your lawn condition and application. The calculator scales that entered rate; it does not decide which rate is appropriate.</p>
+    </div>
+    <div class="faq">
+      <h3>Does this calculator account for uneven ground or seed loss?</h3>
+      <p>No. It is a simple area-based estimate and does not account for uneven coverage, spreading technique, runoff, or site conditions.</p>
+    </div>
+    <h2>More free tools on Noryvello</h2>
+    <p class="links">
+      <a href="../paint-calculator/">Paint Calculator</a> ·
+      <a href="../flooring-area-calculator/">Flooring Area Calculator</a> ·
+      <a href="../running-pace-calculator/">Running Pace Calculator</a> ·
+      <a href="../sleep-calculator/">Sleep Calculator</a>
+    </p>
+    <footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+  </div>
+  <script>
+    (function(){var $=function(x){return document.getElementById(x)},u=$('unit'),a=$('area'),c=$('coverage'),w=$('weight'),r=$('result'),s=$('steps');function calc(){var A=+a.value,C=+c.value,W=+w.value;if(!(A>0&&C>0&&W>0)){r.textContent='Enter positive values for area, coverage, and seed weight.';s.textContent='';return;}var need=A/C*W;r.textContent='Estimated seed needed: '+need.toFixed(2)+' '+(u.value==='m'?'kg':'lb');s.textContent='Calculation: ('+A+' ÷ '+C+') × '+W+' = '+need.toFixed(2)+' '+(u.value==='m'?'kg':'lb')+'\nThis is an estimate based on the package rate you entered.';}[u,a,c,w].forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc)});u.addEventListener('change',function(){var m=u.value==='m';$('areaUnit').textContent=m?'sq m':'sq ft';$('covUnit').textContent=m?'sq m':'sq ft';$('weightUnit').textContent=m?'kg':'lb';calc()});calc()})();
+  </script>
+  <script src="../ads-config.js"></script>
+</body>
+</html>

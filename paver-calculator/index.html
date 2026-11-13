@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Many Pavers Do You Need? Patio Count and Sand Base Calculator | Noryvello</title>
+  <meta name="description" content="Calculate patio paver quantity and an approximate bedding-sand volume from patio area, paver dimensions, and base depth.">
+  <link rel="canonical" href="https://noryvello.github.io/paver-calculator/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How Many Pavers Do You Need? Patio Count and Sand Base Calculator">
+  <meta property="og:description" content="Calculate patio paver quantity and an approximate bedding-sand volume from patio area, paver dimensions, and base depth.">
+  <meta property="og:url" content="https://noryvello.github.io/paver-calculator/">
+  <style>*{box-sizing:border-box;margin:0;padding:0}
+ body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+ .wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+ .brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+ .brand a{text-decoration:none}
+ .brand .n{color:#4338ca}.brand .v{color:#0d9488}
+ h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+ .answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+ h2{font-size:21px;margin:26px 0 8px}
+ ol,ul{margin:8px 0 8px 22px}
+ li{margin:5px 0}
+ .faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+ .faq h3{font-size:16.5px;margin-bottom:4px}
+ .note{font-size:14px;color:#64748b}
+ .links a{color:#4338ca}
+ footer{margin-top:36px;font-size:13.5px;color:#64748b}
+ .calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+ .calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+ .calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+ .calc .out{font-size:19px;font-weight:700;margin-top:14px}
+ .calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+ .warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+ code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate the number of patio pavers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Convert the paver length and width to the same area unit as the patio, divide patio area by one paver's face area, and round up to a whole paver."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the paver count include cutting waste?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The count is the area-based minimum estimate. Add extra pavers for cuts, breakage, pattern layout, and any future replacements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much sand do I need under pavers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply the patio area by the planned bedding-sand depth to estimate volume. This geometric estimate does not account for compaction, uneven ground, or site preparation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is bedding sand enough to prepare a patio base?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not necessarily. A durable patio depends on excavation, drainage, a suitable compacted base, edge restraint, and the correct bedding layer for the site and paver system."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+    <h1>Paver Calculator — How Many Pavers and How Much Sand Do You Need?</h1>
+    <p class="answer">Divide patio area by the face area of one paver and round up to estimate the paver count. Estimate bedding sand by multiplying patio area by the planned sand depth; the result is a volume estimate before compaction or site adjustments.</p>
+    <div class="calc">
+      <label for="unit">Measurement units</label><select id="unit"><option value="ft">Feet (area in sq ft; paver dimensions in inches)</option><option value="m">Meters (area in sq m; paver dimensions in cm)</option></select>
+<label for="area">Patio area (<span id="areaUnit">sq ft</span>)</label><input id="area" type="number" min="0.01" step="any" value="200">
+<label for="pw">Paver length (<span id="dimUnit">inches</span>)</label><input id="pw" type="number" min="0.01" step="any" value="8">
+<label for="ph">Paver width (<span id="dimUnit2">inches</span>)</label><input id="ph" type="number" min="0.01" step="any" value="4">
+<label for="depth">Sand base depth (<span id="depthUnit">inches</span>)</label><input id="depth" type="number" min="0" step="any" value="1">
+      <div class="out" id="result" aria-live="polite"></div>
+      <div class="steps" id="steps"></div>
+    </div>
+    <div class="warn">
+      <strong>Honest limit:</strong> Add extra pavers for cuts and breakage. Ground preparation matters more than the count.
+    </div>
+    <h2>How the Paver Formula Works</h2><ol><li><strong>One paver's face area:</strong> length × width, converted to square feet or square meters.</li><li><strong>Paver count:</strong> patio area ÷ paver face area, rounded up.</li><li><strong>Sand volume:</strong> patio area × planned bedding depth.</li></ol><p>The sand figure is a simple geometric volume estimate. It does not add extra material for uneven excavation, compaction, grading, spills, or site-specific base construction.</p><h2>Worked Example</h2><p>A 200 sq ft patio using 8 × 4 inch pavers has a paver face area of 32 square inches, or about 0.222 sq ft. The area-only estimate is about 901 pavers before adding a cutting and breakage allowance. A 1-inch bedding layer over 200 sq ft has a geometric volume of about 16.7 cubic feet.</p>
+    <h2>Questions people ask</h2>
+    <div class="faq">
+      <h3>How do I calculate the number of patio pavers?</h3>
+      <p>Convert the paver length and width to the same area unit as the patio, divide patio area by one paver&#x27;s face area, and round up to a whole paver.</p>
+    </div>
+    <div class="faq">
+      <h3>Does the paver count include cutting waste?</h3>
+      <p>No. The count is the area-based minimum estimate. Add extra pavers for cuts, breakage, pattern layout, and any future replacements.</p>
+    </div>
+    <div class="faq">
+      <h3>How much sand do I need under pavers?</h3>
+      <p>Multiply the patio area by the planned bedding-sand depth to estimate volume. This geometric estimate does not account for compaction, uneven ground, or site preparation.</p>
+    </div>
+    <div class="faq">
+      <h3>Is bedding sand enough to prepare a patio base?</h3>
+      <p>Not necessarily. A durable patio depends on excavation, drainage, a suitable compacted base, edge restraint, and the correct bedding layer for the site and paver system.</p>
+    </div>
+    <h2>More free tools on Noryvello</h2>
+    <p class="links">
+      <a href="../paint-calculator/">Paint Calculator</a> ·
+      <a href="../flooring-area-calculator/">Flooring Area Calculator</a> ·
+      <a href="../first-time-renter-checklist/">First-Time Renter Checklist</a> ·
+      <a href="../website-safety-checks/">Website Safety Checks</a>
+    </p>
+    <footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+  </div>
+  <script>
+    (function(){var $=function(x){return document.getElementById(x)};var els=['unit','area','pw','ph','depth'].map($),u=$('unit'),a=$('area'),w=$('pw'),h=$('ph'),d=$('depth'),r=$('result'),s=$('steps');function calc(){var metric=u.value==='m',area=+a.value,x=+w.value,y=+h.value,z=+d.value;if(!(area>0&&x>0&&y>0&&z>=0)){r.textContent='Enter positive area and paver dimensions, plus a zero or positive sand depth.';s.textContent='';return;}var pArea=metric?(x/100)*(y/100):(x*y/144),count=Math.ceil(area/pArea),sand=metric?area*(z/100):area*(z/12),volume=metric?sand:sand/27;r.textContent='Pavers needed: '+count+' | Sand volume: '+volume.toFixed(2)+' '+(metric?'cubic meters':'cubic yards');s.textContent='Paver face area: '+pArea.toFixed(4)+' '+(metric?'sq m':'sq ft')+'\nPaver count: '+area+' ÷ '+pArea.toFixed(4)+' = '+count+' (rounded up)\nSand volume before site adjustments: '+sand.toFixed(2)+' '+(metric?'cubic meters':'cubic feet')+(metric?'':' = '+volume.toFixed(2)+' cubic yards');}els.forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc)});u.addEventListener('change',function(){$('areaUnit').textContent=u.value==='m'?'sq m':'sq ft';$('dimUnit').textContent=$('dimUnit2').textContent=u.value==='m'?'cm':'inches';$('depthUnit').textContent=u.value==='m'?'cm':'inches';calc()});calc()})();
+  </script>
+  <script src="../ads-config.js"></script>
+</body>
+</html>

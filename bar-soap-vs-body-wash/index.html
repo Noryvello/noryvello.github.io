@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bar Soap or Body Wash: Which Costs Less Per Wash? | Noryvello</title>
+<meta name="description" content="Compare estimated cost per wash for bar soap and body wash using your package prices, sizes and typical amount used.">
+<link rel="canonical" href="https://noryvello.github.io/bar-soap-vs-body-wash/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bar Soap or Body Wash: Which Costs Less Per Wash?">
+<meta property="og:description" content="Compare estimated cost per wash for bar soap and body wash using your package prices, sizes and typical amount used.">
+<meta property="og:url" content="https://noryvello.github.io/bar-soap-vs-body-wash/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+ body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+ .wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+ .brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+ .brand a{text-decoration:none}
+ .brand .n{color:#4338ca}.brand .v{color:#0d9488}
+ h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+ .answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+ h2{font-size:21px;margin:26px 0 8px}
+ ol,ul{margin:8px 0 8px 22px}
+ li{margin:5px 0}
+ .faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+ .faq h3{font-size:16.5px;margin-bottom:4px}
+ .note{font-size:14px;color:#64748b}
+ .links a{color:#4338ca}
+ footer{margin-top:36px;font-size:13.5px;color:#64748b}
+ .calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+ .calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+ .calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+ .calc button{padding:10px 14px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:15px;font-weight:700;margin-top:12px;cursor:pointer}
+ .calc .out{font-size:19px;font-weight:700;margin-top:14px}
+ .calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+ .warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+ code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+ table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.78);font-size:14px}
+ th,td{padding:9px;text-align:left;border-bottom:1px solid #cbd5e1;vertical-align:top}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate cost per wash?","acceptedAnswer":{"@type":"Answer","text":"Divide the product cost by the number of washes you estimate it provides. The calculator uses the package size and amount used per wash to estimate that count."}},{"@type":"Question","name":"Can I compare different package sizes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter each package's total amount and price, then enter how much you use per wash in the same unit, such as grams or milliliters."}},{"@type":"Question","name":"Does body wash always cost more than bar soap?","acceptedAnswer":{"@type":"Answer","text":"No. Cost per wash depends on package price, product amount and how much you use each time. Your own inputs determine the comparison."}},{"@type":"Question","name":"Should I use the same amount for both products?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. Enter the amount you actually use for a normal wash with each product. The amounts can differ."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Bar Soap or Body Wash: Which Costs Less Per Wash?</h1>
+<p class="answer"><strong>Short answer:</strong> enter the package size, price and amount you use per wash to calculate each product's estimated cost per wash.</p>
+<div class="calc">
+<label for="barPrice">Bar soap price</label><input id="barPrice" type="number" min="0" step="0.01" value="0">
+<label for="barSize">Bar soap size (grams)</label><input id="barSize" type="number" min="0.01" step="0.1" value="100">
+<label for="barUse">Bar soap used per wash (grams)</label><input id="barUse" type="number" min="0.01" step="0.1" value="2">
+<label for="washPrice">Body wash price</label><input id="washPrice" type="number" min="0" step="0.01" value="0">
+<label for="washSize">Body wash size (milliliters)</label><input id="washSize" type="number" min="0.01" step="1" value="400">
+<label for="washUse">Body wash used per wash (milliliters)</label><input id="washUse" type="number" min="0.01" step="0.1" value="5">
+<div class="out" id="soapOut" aria-live="polite"></div><div class="steps" id="soapDetails"></div>
+</div>
+<h2>Formula</h2>
+<p>Estimated washes per package equal package size divided by amount used per wash. Cost per wash equals package price divided by estimated washes. The result is a practical estimate: actual use changes with dispensing habits, product loss and how long a bar lasts.</p>
+<h2>Compare your own routine</h2>
+<ul><li>Use the price and size printed on the package you buy.</li><li>Measure your typical use over several washes if you want a better estimate.</li><li>Compare products used for the same purpose and routine.</li><li>Do not assume a bar or liquid product is automatically more economical.</li></ul>
+<div class="warn"><strong>Important limit:</strong> Skin sensitivity beats cost; what irritates your skin is the wrong choice at any price.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How do I calculate cost per wash?</h3><p>Divide the product cost by the number of washes you estimate it provides. The calculator uses the package size and amount used per wash to estimate that count.</p></div>
+<div class="faq"><h3>Can I compare different package sizes?</h3><p>Yes. Enter each package&#x27;s total amount and price, then enter how much you use per wash in the same unit, such as grams or milliliters.</p></div>
+<div class="faq"><h3>Does body wash always cost more than bar soap?</h3><p>No. Cost per wash depends on package price, product amount and how much you use each time. Your own inputs determine the comparison.</p></div>
+<div class="faq"><h3>Should I use the same amount for both products?</h3><p>Not necessarily. Enter the amount you actually use for a normal wash with each product. The amounts can differ.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="https://noryvello.github.io/buying-used-laptop-mistakes/">Buying a Used Laptop: Mistakes</a> · <a href="https://noryvello.github.io/online-sale-mistakes/">Online Sale Mistakes</a> · <a href="https://noryvello.github.io/rent-vs-buy-calculator/">Rent vs Buy Calculator</a> · <a href="https://noryvello.github.io/debt-payoff-calculator/">Debt Payoff Calculator</a></p>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+const soapIds=['barPrice','barSize','barUse','washPrice','washSize','washUse'];function soapCalc(){const v=soapIds.map(id=>Number(document.getElementById(id).value));const [bp,bs,bu,wp,ws,wu]=v;const out=document.getElementById('soapOut'),detail=document.getElementById('soapDetails');if(v.some(x=>!Number.isFinite(x)||x<0)||bs<=0||bu<=0||ws<=0||wu<=0){out.textContent='Enter valid prices and positive package sizes and amounts per wash.';detail.textContent='';return}const bc=bp/(bs/bu),wc=wp/(ws/wu);out.textContent='Estimated cost per wash — bar soap: '+bc.toFixed(4)+' | body wash: '+wc.toFixed(4);detail.textContent='Estimated washes per package — bar: '+(bs/bu).toFixed(1)+' | body wash: '+(ws/wu).toFixed(1)+'. Difference per wash: '+Math.abs(bc-wc).toFixed(4)+' in your chosen currency. Units are separate for grams and milliliters.'}soapIds.forEach(id=>document.getElementById(id).addEventListener('input',soapCalc));soapCalc();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

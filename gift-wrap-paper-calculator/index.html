@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Big Should Your Gift-Wrapping Paper Be? | Noryvello</title>
+<meta name="description" content="Calculate an estimated sheet size for wrapping a rectangular gift box from its length, width and height, with extra allowance.">
+<link rel="canonical" href="https://noryvello.github.io/gift-wrap-paper-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Big Should Your Gift-Wrapping Paper Be?">
+<meta property="og:description" content="Calculate an estimated sheet size for wrapping a rectangular gift box from its length, width and height, with extra allowance.">
+<meta property="og:url" content="https://noryvello.github.io/gift-wrap-paper-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+ body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+ .wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+ .brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+ .brand a{text-decoration:none}
+ .brand .n{color:#4338ca}.brand .v{color:#0d9488}
+ h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+ .answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+ h2{font-size:21px;margin:26px 0 8px}
+ ol,ul{margin:8px 0 8px 22px}
+ li{margin:5px 0}
+ .faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+ .faq h3{font-size:16.5px;margin-bottom:4px}
+ .note{font-size:14px;color:#64748b}
+ .links a{color:#4338ca}
+ footer{margin-top:36px;font-size:13.5px;color:#64748b}
+ .calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+ .calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+ .calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+ .calc button{padding:10px 14px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:15px;font-weight:700;margin-top:12px;cursor:pointer}
+ .calc .out{font-size:19px;font-weight:700;margin-top:14px}
+ .calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+ .warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+ code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+ table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.78);font-size:14px}
+ th,td{padding:9px;text-align:left;border-bottom:1px solid #cbd5e1;vertical-align:top}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What measurements do I need?","acceptedAnswer":{"@type":"Answer","text":"Measure the box length, width and height in the same unit, using the widest points."}},{"@type":"Question","name":"Does the estimate include overlap?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter an extra allowance and it is added to both suggested sheet dimensions."}},{"@type":"Question","name":"Will this work for round or irregular gifts?","acceptedAnswer":{"@type":"Answer","text":"No. The estimate is for a rectangular box; round or irregular shapes need a different wrapping approach."}},{"@type":"Question","name":"Why might I need more paper than the result?","acceptedAnswer":{"@type":"Answer","text":"Paper thickness, fold style, large flaps, uneven boxes and decorative layers can all require extra material."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How Big Should Your Gift-Wrapping Paper Be?</h1>
+<p class="answer"><strong>Short answer:</strong> Measure the length, width and height of your rectangular box, then add an overlap allowance. This calculator estimates a practical sheet size; it cannot guarantee a fit for unusual folds or thick paper.</p>
+<div class="calc"><label for="boxL">Box length (cm)</label><input id="boxL" type="number" min="0.1" step="0.1" value="30"><label for="boxW">Box width (cm)</label><input id="boxW" type="number" min="0.1" step="0.1" value="20"><label for="boxH">Box height (cm)</label><input id="boxH" type="number" min="0.1" step="0.1" value="10"><label for="overlap">Extra overlap per edge (cm)</label><input id="overlap" type="number" min="0" step="0.5" value="5"><div class="out" id="wrapOut" aria-live="polite"></div><div class="steps" id="wrapDetails"></div></div>
+<h2>How the sheet estimate works</h2><p>For a simple rectangular box, a useful starting sheet has a length of about twice the box length plus twice the height, and a width of about twice the box width plus twice the height. The calculator adds your chosen overlap allowance to both dimensions.</p><ul><li>Measure the box at its widest points, including any lid or raised parts.</li><li>Keep the box centred and test-fold a paper offcut if the gift is valuable.</li><li>Thick paper, deep folds, bows and decorative layers may need more material.</li><li>For very large boxes, check that the roll width is sufficient before cutting.</li></ul>
+<div class="warn"><strong>Important limit:</strong> Measure the box first; odd shapes need extra paper.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What measurements do I need?</h3><p>Measure the box length, width and height in the same unit, using the widest points.</p></div>
+<div class="faq"><h3>Does the estimate include overlap?</h3><p>Yes. Enter an extra allowance and it is added to both suggested sheet dimensions.</p></div>
+<div class="faq"><h3>Will this work for round or irregular gifts?</h3><p>No. The estimate is for a rectangular box; round or irregular shapes need a different wrapping approach.</p></div>
+<div class="faq"><h3>Why might I need more paper than the result?</h3><p>Paper thickness, fold style, large flaps, uneven boxes and decorative layers can all require extra material.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="https://noryvello.github.io/wedding-budget-planner/">Wedding Budget Planner</a> · <a href="https://noryvello.github.io/paint-calculator/">Paint Calculator</a> · <a href="https://noryvello.github.io/flooring-area-calculator/">Flooring Area Calculator</a> · <a href="https://noryvello.github.io/secret-santa-generator/">Secret Santa Generator</a></p>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+const ids=['boxL','boxW','boxH','overlap'];function wrapCalc(){const [l,w,h,x]=ids.map(id=>Number(document.getElementById(id).value));const o=document.getElementById('wrapOut'),d=document.getElementById('wrapDetails');if(![l,w,h,x].every(Number.isFinite)||l<=0||w<=0||h<=0||x<0){o.textContent='Enter positive box dimensions and a non-negative overlap.';d.textContent='';return}const a=2*l+2*h+2*x,b=2*w+2*h+2*x;o.textContent='Estimated paper sheet: '+a.toFixed(1)+' × '+b.toFixed(1)+' cm';d.textContent='Cut area estimate: '+(a*b/10000).toFixed(3)+' m². This is a rectangular-box planning estimate.'}ids.forEach(id=>document.getElementById(id).addEventListener('input',wrapCalc));wrapCalc();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

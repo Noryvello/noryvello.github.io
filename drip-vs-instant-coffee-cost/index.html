@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drip or Instant Coffee: Which Costs Less Over a Year? | Noryvello</title>
+<meta name="description" content="Compare estimated yearly drip and instant coffee costs and preparation time using your own cup count, coffee amounts, prices and equipment cost.">
+<link rel="canonical" href="https://noryvello.github.io/drip-vs-instant-coffee-cost/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Drip or Instant Coffee: Which Costs Less Over a Year?">
+<meta property="og:description" content="Compare estimated yearly drip and instant coffee costs and preparation time using your own cup count, coffee amounts, prices and equipment cost.">
+<meta property="og:url" content="https://noryvello.github.io/drip-vs-instant-coffee-cost/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+ body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+ .wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+ .brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+ .brand a{text-decoration:none}
+ .brand .n{color:#4338ca}.brand .v{color:#0d9488}
+ h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+ .answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+ h2{font-size:21px;margin:26px 0 8px}
+ ol,ul{margin:8px 0 8px 22px}
+ li{margin:5px 0}
+ .faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+ .faq h3{font-size:16.5px;margin-bottom:4px}
+ .note{font-size:14px;color:#64748b}
+ .links a{color:#4338ca}
+ footer{margin-top:36px;font-size:13.5px;color:#64748b}
+ .calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+ .calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+ .calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+ .calc button{padding:10px 14px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:15px;font-weight:700;margin-top:12px;cursor:pointer}
+ .calc .out{font-size:19px;font-weight:700;margin-top:14px}
+ .calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+ .warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+ code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+ table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.78);font-size:14px}
+ th,td{padding:9px;text-align:left;border-bottom:1px solid #cbd5e1;vertical-align:top}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is drip coffee always cheaper than instant coffee?","acceptedAnswer":{"@type":"Answer","text":"No. The result depends on the amount of coffee used, the price per unit, and any equipment cost you choose to include."}},{"@type":"Question","name":"How do I compare coffee cost per cup?","acceptedAnswer":{"@type":"Answer","text":"Enter the amount of coffee used per cup and the price per gram for each type. The calculator multiplies those values by your cups per day and days per year."}},{"@type":"Question","name":"Should I include the coffee maker?","acceptedAnswer":{"@type":"Answer","text":"Include an annual share of the maker cost if you are buying it for this comparison. Divide its cost by the years you expect to use it."}},{"@type":"Question","name":"Does the time estimate include cleanup?","acceptedAnswer":{"@type":"Answer","text":"The time fields are your own estimates for preparation and cleanup per cup. The calculator does not measure your actual routine."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Drip or Instant Coffee: Which Costs Less Over a Year?</h1>
+<p class="answer"><strong>Short answer:</strong> enter your coffee use, prices and preparation times to see estimated yearly spending and time for both methods.</p>
+<div class="calc">
+<label for="cups">Cups per day</label><input id="cups" type="number" min="0" step="1" value="2">
+<label for="days">Days per year</label><input id="days" type="number" min="0" max="366" step="1" value="365">
+<label for="dg">Drip coffee used per cup (grams)</label><input id="dg" type="number" min="0" step="0.1" value="12">
+<label for="dp">Drip coffee price per gram (your currency)</label><input id="dp" type="number" min="0" step="0.001" value="0.1">
+<label for="ig">Instant coffee used per cup (grams)</label><input id="ig" type="number" min="0" step="0.1" value="2">
+<label for="ip">Instant coffee price per gram (same currency)</label><input id="ip" type="number" min="0" step="0.001" value="0.2">
+<label for="machine">Drip equipment cost (optional)</label><input id="machine" type="number" min="0" step="0.01" value="0">
+<label for="life">Equipment life in years</label><input id="life" type="number" min="1" step="1" value="5">
+<label for="dt">Drip preparation and cleanup minutes per cup</label><input id="dt" type="number" min="0" step="0.1" value="5">
+<label for="it">Instant preparation minutes per cup</label><input id="it" type="number" min="0" step="0.1" value="1">
+<div class="out" id="coffeeOut" aria-live="polite"></div><div class="steps" id="coffeeDetails"></div>
+</div>
+<h2>How the comparison works</h2>
+<p>Annual coffee cost is cups per day multiplied by days per year, grams per cup, and price per gram. The drip total also includes the equipment cost divided by its expected useful life. Annual time is cups per year multiplied by the preparation and cleanup minutes you enter. These are estimates based entirely on your inputs.</p>
+<h2>Keep the inputs comparable</h2>
+<ul><li>Use the same cup size and strength target for both methods.</li><li>Use the price you actually pay, not a generic market average.</li><li>Add filters, electricity, water, and other extras separately if they matter to your routine.</li><li>Do not count a coffee maker's full cost every year; spread it over the years you expect to use it.</li></ul>
+<div class="warn"><strong>Important limit:</strong> Taste is personal; cost is only half the choice.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Is drip coffee always cheaper than instant coffee?</h3><p>No. The result depends on the amount of coffee used, the price per unit, and any equipment cost you choose to include.</p></div>
+<div class="faq"><h3>How do I compare coffee cost per cup?</h3><p>Enter the amount of coffee used per cup and the price per gram for each type. The calculator multiplies those values by your cups per day and days per year.</p></div>
+<div class="faq"><h3>Should I include the coffee maker?</h3><p>Include an annual share of the maker cost if you are buying it for this comparison. Divide its cost by the years you expect to use it.</p></div>
+<div class="faq"><h3>Does the time estimate include cleanup?</h3><p>The time fields are your own estimates for preparation and cleanup per cup. The calculator does not measure your actual routine.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="https://noryvello.github.io/rent-vs-buy-calculator/">Rent vs Buy Calculator</a> · <a href="https://noryvello.github.io/debt-payoff-calculator/">Debt Payoff Calculator</a> · <a href="https://noryvello.github.io/hotel-booking-mistakes/">Hotel Booking Mistakes</a> · <a href="https://noryvello.github.io/sleep-calculator/">Sleep Calculator</a></p>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+const coffeeIds=['cups','days','dg','dp','ig','ip','machine','life','dt','it'];function coffeeCalc(){const v=coffeeIds.map(id=>Number(document.getElementById(id).value));const [cups,days,dg,dp,ig,ip,machine,life,dt,it]=v;const out=document.getElementById('coffeeOut'),detail=document.getElementById('coffeeDetails');if(v.some(x=>!Number.isFinite(x)||x<0)||!Number.isInteger(cups)||!Number.isInteger(days)||days>366||life<1){out.textContent='Enter valid non-negative values; equipment life must be at least one year.';detail.textContent='';return}const count=cups*days,drip=count*dg*dp+machine/life,instant=count*ig*ip,dripMin=count*dt,instantMin=count*it;out.textContent='Estimated yearly cost — drip: '+drip.toFixed(2)+' | instant: '+instant.toFixed(2);detail.textContent='Estimated yearly preparation time — drip: '+(dripMin/60).toFixed(1)+' hours | instant: '+(instantMin/60).toFixed(1)+' hours. Cost difference: '+Math.abs(drip-instant).toFixed(2)+' in your chosen currency. Estimates exclude extras you did not enter.'}coffeeIds.forEach(id=>document.getElementById(id).addEventListener('input',coffeeCalc));coffeeCalc();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

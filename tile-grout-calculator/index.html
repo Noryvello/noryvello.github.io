@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tile Grout Calculator | Noryvello</title>
+<meta name="description" content="How much grout does your tiling job need? Enter tile size, grout gap and area to estimate grout by weight, with the working shown. Free on Noryvello.">
+<link rel="canonical" href="https://noryvello.github.io/tile-grout-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tile Grout Calculator">
+<meta property="og:description" content="Calculate tile grout weight needed based on tile size, area, and joint width.">
+<meta property="og:url" content="https://noryvello.github.io/tile-grout-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:14px 0}
+.form-group{margin-bottom:14px}
+.calc label,.form-group label,form label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+input,select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;color:#1e293b}
+button,.btn{background:#4338ca;color:#fff;border:none;padding:11px 20px;font-size:16px;font-weight:600;border-radius:8px;cursor:pointer}
+button:hover,.btn:hover{background:#0d9488}
+.btn-secondary{background:#e2e8f0;color:#1e293b;margin-left:8px}
+.btn-secondary:hover{background:#cbd5e1}
+.result-panel,.results{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:10px}
+.stat-box{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:12px 14px}
+.stat-label{font-size:13.5px;color:#64748b;display:block}
+.stat-value{font-size:19px;font-weight:700}
+.result-item{display:flex;justify-content:space-between;margin-bottom:8px;font-size:16.5px}
+.result-value{font-weight:700}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid #e2e8f0}
+th{background:#eef2ff;font-weight:600}
+.checklist-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;background:#fff;cursor:pointer}
+.checklist-item input[type=checkbox]{margin-top:4px;width:18px;height:18px;accent-color:#4338ca;cursor:pointer;flex:none}
+.checklist-item.checked span{text-decoration:line-through;color:#64748b}
+.progress-bar-wrap{background:#e2e8f0;border-radius:999px;height:12px;overflow:hidden;margin:10px 0 16px}
+.progress-bar-fill{background:#0d9488;height:100%;width:0%;transition:width .2s ease}
+.name-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-top:14px}
+.name-pill{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:10px 12px;text-align:center;font-weight:600}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is tile grout quantity calculated?","acceptedAnswer":{"@type":"Answer","text":"Grout quantity depends on tile length, width, thickness, joint width, and total area covered."}},{"@type":"Question","name":"Why do deep joints and uneven tiles use more grout?","acceptedAnswer":{"@type":"Answer","text":"Thicker tiles create deeper grout channels, and uneven or textured tiles require more material to fill gaps correctly."}},{"@type":"Question","name":"What joint width should I use for wall tiles?","acceptedAnswer":{"@type":"Answer","text":"Wall tiles often use narrow joints like 1/16 inch or 1/8 inch, while floor tiles often use 1/8 inch to 1/4 inch."}},{"@type":"Question","name":"Should I buy extra grout?","acceptedAnswer":{"@type":"Answer","text":"Yes, always buy 10% extra to account for mixing loss and future touch-ups."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Tile Grout Calculator</h1>
+<p class="answer"><strong>Short answer:</strong> Enter your tile dimensions, coverage area, thickness, and joint width to calculate the exact grout weight required.</p>
+
+<div class="warn"><strong>Warning:</strong> Deep joints, tile thickness, and uneven tiles use significantly more grout.</div>
+<div><div class="form-group"><label for="length">Tile Length (inches):</label><input type="number" id="length" value="12" min="0.5" step="0.25"></div><div class="form-group"><label for="width">Tile Width (inches):</label><input type="number" id="width" value="12" min="0.5" step="0.25"></div><div class="form-group"><label for="thickness">Tile Thickness (inches):</label><input type="number" id="thickness" value="0.3" min="0.1" step="0.05"></div><div class="form-group"><label for="area">Total Coverage Area (sq ft):</label><input type="number" id="area" value="100" min="1" step="1"></div><div class="form-group"><label for="joint">Joint Width (inches):</label><input type="number" id="joint" value="0.125" min="0.03125" step="0.03125"></div><button id="calc-btn">Calculate Grout</button><div class="results" id="results"><div class="result-item"><span>Estimated Grout Weight:</span><span class="result-value" id="res-grout">--</span></div></div></div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How is tile grout quantity calculated?</h3><p>Grout quantity depends on tile length, width, thickness, joint width, and total area covered.</p></div>
+<div class="faq"><h3>Why do deep joints and uneven tiles use more grout?</h3><p>Thicker tiles create deeper grout channels, and uneven or textured tiles require more material to fill gaps correctly.</p></div>
+<div class="faq"><h3>What joint width should I use for wall tiles?</h3><p>Wall tiles often use narrow joints like 1/16 inch or 1/8 inch, while floor tiles often use 1/8 inch to 1/4 inch.</p></div>
+<div class="faq"><h3>Should I buy extra grout?</h3><p>Yes, always buy 10% extra to account for mixing loss and future touch-ups.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links">
+<a href="../flooring-area-calculator/">Flooring Area Calculator: How Much Flooring Do I Need?</a> ·
+<a href="../paint-calculator/">Paint Calculator — How Much Paint Do I Need for a Room?</a> ·
+<a href="../wedding-budget-planner/">Wedding Budget Planner</a> ·
+<a href="../rent-vs-buy-calculator/">Rent vs Buy Calculator</a>
+</p>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+document.getElementById('calc-btn').addEventListener('click', function() {
+  const l = parseFloat(document.getElementById('length').value) || 12;
+  const w = parseFloat(document.getElementById('width').value) || 12;
+  const t = parseFloat(document.getElementById('thickness').value) || 0.3;
+  const area = parseFloat(document.getElementById('area').value) || 100;
+  const j = parseFloat(document.getElementById('joint').value) || 0.125;
+
+  // Approximate industry formula for grout weight in lbs per sq ft
+  // Factor = (l + w) * j * t * density constant (~0.043 for standard cement grout)
+  const factor = (l + w) / (l * w);
+  const lbsPerSqFt = factor * j * t * 18.5 * 1.1; // 10% safety margin
+  const totalLbs = area * lbsPerSqFt;
+
+  document.getElementById('res-grout').textContent = totalLbs.toFixed(1) + ' lbs (' + (totalLbs / 2.2).toFixed(1) + ' kg)';
+});
+document.getElementById('calc-btn').click();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

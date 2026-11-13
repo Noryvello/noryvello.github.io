@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cloud Storage or an External Drive: Which Costs Less Per Year? | Noryvello</title>
+<meta name="description" content="Compare annual cloud storage fees with the annualized cost of an external drive for your chosen storage amount.">
+<link rel="canonical" href="https://noryvello.github.io/cloud-storage-vs-external-drive/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cloud Storage or an External Drive: Which Costs Less Per Year?">
+<meta property="og:description" content="Compare annual cloud storage fees with the annualized cost of an external drive for your chosen storage amount.">
+<meta property="og:url" content="https://noryvello.github.io/cloud-storage-vs-external-drive/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+ body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+ .wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+ .brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+ .brand a{text-decoration:none}
+ .brand .n{color:#4338ca}.brand .v{color:#0d9488}
+ h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+ .answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+ h2{font-size:21px;margin:26px 0 8px}
+ ol,ul{margin:8px 0 8px 22px}
+ li{margin:5px 0}
+ .faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+ .faq h3{font-size:16.5px;margin-bottom:4px}
+ .note{font-size:14px;color:#64748b}
+ .links a{color:#4338ca}
+ footer{margin-top:36px;font-size:13.5px;color:#64748b}
+ .calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+ .calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+ .calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+ .calc button{padding:10px 14px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:15px;font-weight:700;margin-top:12px;cursor:pointer}
+ .calc .out{font-size:19px;font-weight:700;margin-top:14px}
+ .calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+ .warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+ code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+ table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.78);font-size:14px}
+ th,td{padding:9px;text-align:left;border-bottom:1px solid #cbd5e1;vertical-align:top}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much cloud storage should I compare?","acceptedAnswer":{"@type":"Answer","text":"Choose the amount of storage you actually need, then enter a cloud plan cost and an external drive capacity and cost that can hold at least that amount."}},{"@type":"Question","name":"Does the calculator include an external drive's replacement cost?","acceptedAnswer":{"@type":"Answer","text":"It spreads the drive purchase cost over the useful-life years you enter. This is an estimate and does not predict when a drive will fail."}},{"@type":"Question","name":"Are cloud subscriptions and external drives directly equivalent?","acceptedAnswer":{"@type":"Answer","text":"Not completely. Cloud plans can include syncing and remote access, while a drive is local storage. Compare the features and access needs as well as the annualized cost."}},{"@type":"Question","name":"Is one copy of my files enough?","acceptedAnswer":{"@type":"Answer","text":"No single storage method is risk-free. Keep important files in two copies in two places, and periodically check that backups can be opened."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Cloud Storage or an External Drive: Which Costs Less Per Year?</h1>
+<p class="answer"><strong>Short answer:</strong> enter the storage you need and your own plan and drive costs to compare estimated yearly spending and capacity.</p>
+<div class="calc">
+<label for="needed">Storage needed (GB)</label><input id="needed" type="number" min="1" step="1" value="500">
+<label for="cloudMonthly">Cloud plan cost per month</label><input id="cloudMonthly" type="number" min="0" step="0.01" value="0">
+<label for="driveCapacity">External drive capacity (GB)</label><input id="driveCapacity" type="number" min="1" step="1" value="1000">
+<label for="driveCost">External drive purchase cost</label><input id="driveCost" type="number" min="0" step="0.01" value="0">
+<label for="driveLife">Expected drive life for budgeting (years)</label><input id="driveLife" type="number" min="1" step="1" value="4">
+<label for="cloudSetup">Optional yearly cloud extras</label><input id="cloudSetup" type="number" min="0" step="0.01" value="0">
+<div class="out" id="storageOut" aria-live="polite"></div><div class="steps" id="storageDetails"></div>
+</div>
+<h2>How the yearly estimate works</h2>
+<p>Cloud cost is the monthly plan cost multiplied by 12, plus any yearly extras you enter. External-drive cost is the purchase cost divided by the useful-life years you enter. The calculator checks whether the drive capacity meets your stated storage need; it does not price multiple drives or RAID systems.</p>
+<h2>What cost cannot tell you</h2>
+<ul><li>Cloud storage may include syncing, sharing and access from multiple devices.</li><li>An external drive may work without an internet connection but needs physical care.</li><li>Upload speeds, download limits, privacy terms and recovery options differ by provider and device.</li><li>Budget for a second copy if the files matter.</li></ul>
+<div class="warn"><strong>Important limit:</strong> Drives fail and accounts get locked; important files need two copies in two places.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How much cloud storage should I compare?</h3><p>Choose the amount of storage you actually need, then enter a cloud plan cost and an external drive capacity and cost that can hold at least that amount.</p></div>
+<div class="faq"><h3>Does the calculator include an external drive&#x27;s replacement cost?</h3><p>It spreads the drive purchase cost over the useful-life years you enter. This is an estimate and does not predict when a drive will fail.</p></div>
+<div class="faq"><h3>Are cloud subscriptions and external drives directly equivalent?</h3><p>Not completely. Cloud plans can include syncing and remote access, while a drive is local storage. Compare the features and access needs as well as the annualized cost.</p></div>
+<div class="faq"><h3>Is one copy of my files enough?</h3><p>No single storage method is risk-free. Keep important files in two copies in two places, and periodically check that backups can be opened.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="https://noryvello.github.io/buying-used-laptop-mistakes/">Buying a Used Laptop: Mistakes</a> · <a href="https://noryvello.github.io/selling-phone-online-mistakes/">Selling a Phone Online: Mistakes</a> · <a href="https://noryvello.github.io/website-safety-checks/">Website Safety Checks</a> · <a href="https://noryvello.github.io/debt-payoff-calculator/">Debt Payoff Calculator</a></p>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+const storageIds=['needed','cloudMonthly','driveCapacity','driveCost','driveLife','cloudSetup'];function storageCalc(){const v=storageIds.map(id=>Number(document.getElementById(id).value));const [need,monthly,capacity,cost,life,extra]=v;const out=document.getElementById('storageOut'),detail=document.getElementById('storageDetails');if(v.some(x=>!Number.isFinite(x)||x<0)||need<=0||capacity<=0||life<1){out.textContent='Enter positive storage and lifespan values and non-negative costs.';detail.textContent='';return}const cloud=monthly*12+extra,drive=cost/life;out.textContent='Estimated yearly cost — cloud: '+cloud.toFixed(2)+' | external drive: '+drive.toFixed(2);detail.textContent='Drive capacity '+(capacity>=need?'covers':'does not cover')+' your stated need of '+need.toFixed(0)+' GB. The drive estimate annualizes one purchase; it excludes a second backup drive, replacement surprises, electricity and any accessories.'}storageIds.forEach(id=>document.getElementById(id).addEventListener('input',storageCalc));storageCalc();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

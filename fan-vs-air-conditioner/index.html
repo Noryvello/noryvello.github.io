@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fan vs Air Conditioner: Which Costs Less to Run in Your Room? | Noryvello</title>
+  <meta name="description" content="Compare estimated electricity use and running cost for a fan and an air conditioner using your own wattage, daily hours, and electricity rate.">
+  <link rel="canonical" href="https://noryvello.github.io/fan-vs-air-conditioner/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Fan vs Air Conditioner: Which Costs Less to Run in Your Room?">
+  <meta property="og:description" content="Compare estimated electricity use and running cost for a fan and an air conditioner using your own wattage, daily hours, and electricity rate.">
+  <meta property="og:url" content="https://noryvello.github.io/fan-vs-air-conditioner/">
+  <style>*{box-sizing:border-box;margin:0;padding:0}
+ body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+ .wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+ .brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+ .brand a{text-decoration:none}
+ .brand .n{color:#4338ca}.brand .v{color:#0d9488}
+ h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+ .answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+ h2{font-size:21px;margin:26px 0 8px}
+ ol,ul{margin:8px 0 8px 22px}
+ li{margin:5px 0}
+ .faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+ .faq h3{font-size:16.5px;margin-bottom:4px}
+ .note{font-size:14px;color:#64748b}
+ .links a{color:#4338ca}
+ footer{margin-top:36px;font-size:13.5px;color:#64748b}
+ .calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+ .calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+ .calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+ .calc .out{font-size:19px;font-weight:700;margin-top:14px}
+ .calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+ .warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+ code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does a fan cool a room like an air conditioner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A fan moves air and can make people feel cooler, but it does not remove heat from the room. An air conditioner actively removes heat and usually also removes moisture."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate the electricity cost of a fan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply fan watts by hours of use per day, divide by 1,000 to get daily kilowatt-hours, and multiply by your electricity rate per kilowatt-hour."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What wattage should I enter for my air conditioner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enter the unit's average electrical input power in watts while it is running. Do not enter its cooling capacity in BTU per hour; check the product label or technical specifications."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the monthly costs exact?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. They are estimates based on the wattage, hours, and rate you enter, using a 30-day month. Actual consumption can vary with climate, thermostat settings, inverter behavior, and your electricity tariff."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+    <h1>Fan vs Air Conditioner — Which One Costs Less to Run?</h1>
+    <p class="answer">Enter each appliance&#x27;s power use, daily operating hours, and your electricity price per kilowatt-hour. The calculator estimates daily and monthly energy use and running cost, then explains when a fan or air conditioner may make more sense.</p>
+    <div class="calc">
+      <label for="fanW">Fan power (watts)</label><input id="fanW" type="number" min="0" step="any" value="60">
+<label for="fanH">Fan use per day (hours)</label><input id="fanH" type="number" min="0" max="24" step="any" value="8">
+<label for="acW">Air conditioner average input power (watts)</label><input id="acW" type="number" min="0" step="any" value="1000">
+<label for="acH">AC use per day (hours)</label><input id="acH" type="number" min="0" max="24" step="any" value="6">
+<label for="rate">Your electricity rate (per kWh)</label><input id="rate" type="number" min="0" step="any" value="0.15">
+<label for="currency">Rate currency label (optional)</label><input id="currency" type="text" maxlength="8" value="$" placeholder="e.g. ৳ or $">
+      <div class="out" id="result" aria-live="polite"></div>
+      <div class="steps" id="steps"></div>
+    </div>
+    <div class="warn"><strong>Honest limit:</strong> Costs depend on your own electricity rate and climate; enter your real numbers.</div>
+    <h2>How the Running-Cost Comparison Works</h2><p>For each appliance, the calculator multiplies watts by daily hours and divides by 1,000 to estimate kilowatt-hours (kWh) per day. It multiplies that energy by your entered rate to estimate daily cost, then uses 30 days for a monthly estimate.</p><p>For an air conditioner, enter its average electrical input while operating, not its cooling capacity in BTU per hour. Actual AC power can vary with inverter operation, thermostat settings, room heat load, and outdoor temperature. The calculator does not include demand charges, taxes, tiered tariffs, or changing usage.</p><h2>When Each Option Makes Sense</h2><ul><li><strong>Fan:</strong> often useful for air movement and personal comfort when the room is not too hot or humid. A fan does not lower the room's air temperature.</li><li><strong>Air conditioner:</strong> useful when active cooling and humidity control are needed, but it generally uses more electricity than a small fan.</li><li><strong>Both together:</strong> a fan can help distribute cooled air, potentially allowing a higher thermostat setting if occupants remain comfortable.</li></ul>
+    <h2>Questions people ask</h2>
+    <div class="faq">
+      <h3>Does a fan cool a room like an air conditioner?</h3>
+      <p>No. A fan moves air and can make people feel cooler, but it does not remove heat from the room. An air conditioner actively removes heat and usually also removes moisture.</p>
+    </div>
+    <div class="faq">
+      <h3>How do I calculate the electricity cost of a fan?</h3>
+      <p>Multiply fan watts by hours of use per day, divide by 1,000 to get daily kilowatt-hours, and multiply by your electricity rate per kilowatt-hour.</p>
+    </div>
+    <div class="faq">
+      <h3>What wattage should I enter for my air conditioner?</h3>
+      <p>Enter the unit&#x27;s average electrical input power in watts while it is running. Do not enter its cooling capacity in BTU per hour; check the product label or technical specifications.</p>
+    </div>
+    <div class="faq">
+      <h3>Are the monthly costs exact?</h3>
+      <p>No. They are estimates based on the wattage, hours, and rate you enter, using a 30-day month. Actual consumption can vary with climate, thermostat settings, inverter behavior, and your electricity tariff.</p>
+    </div>
+    <h2>More free tools on Noryvello</h2>
+    <p class="links">
+      <a href="../overtime-pay-calculator/">Overtime Pay Calculator</a> ·
+      <a href="../debt-payoff-calculator/">Debt Payoff Calculator</a> ·
+      <a href="../paint-calculator/">Paint Calculator</a> ·
+      <a href="../sleep-calculator/">Sleep Calculator</a>
+    </p>
+    <footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+  </div>
+  <script>
+    (function(){var $=function(x){return document.getElementById(x)},ids=['fanW','fanH','acW','acH','rate','currency'],els=ids.map($),r=$('result'),s=$('steps');function calc(){var fw=+$('fanW').value,fh=+$('fanH').value,aw=+$('acW').value,ah=+$('acH').value,rate=+$('rate').value,cur=$('currency').value.trim();if(!(fw>=0&&aw>=0&&fh>=0&&fh<=24&&ah>=0&&ah<=24&&rate>=0)){r.textContent='Enter non-negative watts and rates, with daily hours from 0 to 24.';s.textContent='';return;}var fd=fw*fh/1000,ad=aw*ah/1000,fc=fd*rate,ac=ad*rate,fmt=function(v){return (cur?cur+' ':'')+v.toFixed(2)};r.textContent='Daily cost — Fan: '+fmt(fc)+' | AC: '+fmt(ac);s.textContent='Fan: '+fd.toFixed(3)+' kWh/day; '+fmt(fc)+' per day; '+fmt(fc*30)+' per 30 days\nAir conditioner: '+ad.toFixed(3)+' kWh/day; '+fmt(ac)+' per day; '+fmt(ac*30)+' per 30 days\nMonthly energy: fan '+(fd*30).toFixed(2)+' kWh; AC '+(ad*30).toFixed(2)+' kWh\nThese are estimates based on the values you entered.';}els.forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc)});calc()})();
+  </script>
+  <script src="../ads-config.js"></script>
+</body>
+</html>

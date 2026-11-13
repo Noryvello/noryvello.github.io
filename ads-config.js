@@ -3,9 +3,11 @@
  * Site approved in Adsterra 2026-11-13 (site ID 6196082, publisher 1Faisal1).
  * Popunder + Social Bar codes below are the EXACT codes Adsterra issued for
  * noryvello.github.io — nothing invented, nothing copied from ToolBari.
- * In-Page Push: no unit exists for this site yet (not offered in the
- * add-website form); create it in Adsterra via AD UNIT if wanted, then
- * fill its slot and set enabled to true.
+ * In-Page Push: NOT a separate unit in Adsterra's current platform (verified
+ * 2026-11-13: AD UNIT dialog offers only Popunder, Social Bar, Native Banner,
+ * Banner, Smartlink). Per Adsterra's own docs, In-Page Push is a Social Bar
+ * subformat/skin — and SocialBar_1 is already placed below. Do not chase a
+ * separate In-Page Push code; a different presentation needs Adsterra support.
  *
  * The loader runs after the DOM is ready and only touches slots that are
  * both enabled AND non-empty. Popunder exception applies here (NEW site):

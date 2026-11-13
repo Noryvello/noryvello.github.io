@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EV vs Petrol Running Cost Comparison &amp; Calculator | Noryvello</title>
+<meta name="description" content="Compare electric vehicle (EV) vs petrol car energy running cost per 100 km or 100 miles using your own electricity rate, fuel price, and vehicle efficiency.">
+<link rel="canonical" href="https://noryvello.github.io/ev-vs-petrol-running-cost/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EV vs Petrol Running Cost Comparison &amp; Calculator">
+<meta property="og:description" content="Compare electric vehicle (EV) vs petrol car energy running cost per 100 km or 100 miles using your own electricity rate, fuel price, and vehicle efficiency.">
+<meta property="og:url" content="https://noryvello.github.io/ev-vs-petrol-running-cost/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:14px 0}
+.form-group{margin-bottom:14px}
+.calc label,.form-group label,form label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+input,select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;color:#1e293b}
+button,.btn{background:#4338ca;color:#fff;border:none;padding:11px 20px;font-size:16px;font-weight:600;border-radius:8px;cursor:pointer}
+button:hover,.btn:hover{background:#0d9488}
+.btn-secondary{background:#e2e8f0;color:#1e293b;margin-left:8px}
+.btn-secondary:hover{background:#cbd5e1}
+.result-panel,.results{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:10px}
+.stat-box{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:12px 14px}
+.stat-label{font-size:13.5px;color:#64748b;display:block}
+.stat-value{font-size:19px;font-weight:700}
+.result-item{display:flex;justify-content:space-between;margin-bottom:8px;font-size:16.5px}
+.result-value{font-weight:700}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid #e2e8f0}
+th{background:#eef2ff;font-weight:600}
+.checklist-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;background:#fff;cursor:pointer}
+.checklist-item input[type=checkbox]{margin-top:4px;width:18px;height:18px;accent-color:#4338ca;cursor:pointer;flex:none}
+.checklist-item.checked span{text-decoration:line-through;color:#64748b}
+.progress-bar-wrap{background:#e2e8f0;border-radius:999px;height:12px;overflow:hidden;margin:10px 0 16px}
+.progress-bar-fill{background:#0d9488;height:100%;width:0%;transition:width .2s ease}
+.name-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-top:14px}
+.name-pill{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:10px 12px;text-align:center;font-weight:600}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does the calculator ask me to enter my own electricity and petrol rates?","acceptedAnswer":{"@type":"Answer","text":"Electricity tariffs and fuel taxes vary dramatically by country, region, time-of-use plan, and whether you charge at home or at a public DC fast charger. Entering your actual local numbers gives an accurate comparison."}},{"@type":"Question","name":"Does home charging cost differently than public fast charging?","acceptedAnswer":{"@type":"Answer","text":"Yes. Off-peak home electricity rates are often substantially lower per kWh than commercial public fast-charging stations, which can narrow or reverse the running-cost gap."}},{"@type":"Question","name":"What is charging efficiency loss in an EV?","acceptedAnswer":{"@type":"Answer","text":"When charging an EV from a wall outlet or charger, a small percentage of electricity is lost as heat during AC-to-DC conversion and battery thermal management, meaning meter consumption is slightly higher than energy stored in the battery."}},{"@type":"Question","name":"What other costs matter besides energy per distance?","acceptedAnswer":{"@type":"Answer","text":"Upfront vehicle price, financing interest, insurance rates, tire wear, registration fees, and scheduled maintenance all affect total cost of ownership over several years."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>EV vs Petrol Running Cost Calculator</h1>
+<p class="answer"><strong>Short answer:</strong> To compare energy running costs fairly between an electric vehicle (EV) and a petrol car, divide your electricity rate per kWh by the EV's distance per kWh, and compare that figure against your petrol price divided by the petrol car's distance per liter or gallon. Enter your own local rates and vehicle efficiency figures below to see both costs side by side.</p>
+
+<div class="warn"><strong>Important Note:</strong> This calculator compares direct electricity and fuel energy costs only. Total vehicle ownership also depends heavily on upfront purchase price, home versus public fast-charging access, charging losses, routine servicing, insurance, tires, and depreciation.</div>
+<div><h2>Side-by-Side Energy Cost Calculator</h2><p>Enter your own electricity tariff, petrol price, and efficiency specs in your preferred unit system. No preset prices are assumed.</p><div class="form-grid"><div><label for="ev-unit-sys">Measurement System</label><select id="ev-unit-sys"><option value="metric" selected="None">Metric (km, kWh/100 km, L/100 km)</option><option value="imperial">Imperial (miles, mi/kWh, MPG)</option></select></div><div><label for="ev-elec-price" id="lbl-elec-price">Your Electricity Rate (per kWh)</label><input type="number" id="ev-elec-price" min="0" step="0.01" placeholder="Enter your rate"></div><div><label for="ev-eff" id="lbl-ev-eff">EV Consumption (kWh per 100 km)</label><input type="number" id="ev-eff" min="0.1" step="0.1" placeholder="e.g. 16"></div><div><label for="petrol-price" id="lbl-petrol-price">Your Petrol Price (per Liter)</label><input type="number" id="petrol-price" min="0" step="0.01" placeholder="Enter fuel price"></div><div><label for="petrol-eff" id="lbl-petrol-eff">Petrol Consumption (Liters per 100 km)</label><input type="number" id="petrol-eff" min="0.1" step="0.1" placeholder="e.g. 7.5"></div><div><label for="trip-dist" id="lbl-trip-dist">Comparison Distance (km)</label><input type="number" id="trip-dist" min="1" step="10" value="100"></div></div><button type="button" class="btn" id="calc-ev-btn">Calculate Side-by-Side Cost</button><div class="result-panel"><strong id="ev-res-title">Running Cost Comparison (enter your rates above):</strong><div class="result-grid"><div class="stat-box"><span class="stat-label" id="ev-stat-lbl">EV Energy Cost</span><span class="stat-value" id="ev-cost-val">—</span></div><div class="stat-box"><span class="stat-label" id="pet-stat-lbl">Petrol Fuel Cost</span><span class="stat-value" id="pet-cost-val">—</span></div><div class="stat-box"><span class="stat-label">Cost Per Unit Distance</span><span class="stat-value" id="unit-dist-val">—</span></div></div></div><h2 style="margin-top:24px;">How the Calculation Works</h2><ul class="clean-list"><li><strong>Metric Formula:</strong> EV Cost = (Distance  100)  (kWh per 100 km)  Electricity Rate. Petrol Cost = (Distance  100)  (Liters per 100 km)  Petrol Price.</li><li><strong>Imperial Formula:</strong> EV Cost = (Distance  Miles per kWh)  Electricity Rate. Petrol Cost = (Distance  MPG)  Petrol Price per Gallon.</li></ul></div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Why does the calculator ask me to enter my own electricity and petrol rates?</h3><p>Electricity tariffs and fuel taxes vary dramatically by country, region, time-of-use plan, and whether you charge at home or at a public DC fast charger. Entering your actual local numbers gives an accurate comparison.</p></div>
+<div class="faq"><h3>Does home charging cost differently than public fast charging?</h3><p>Yes. Off-peak home electricity rates are often substantially lower per kWh than commercial public fast-charging stations, which can narrow or reverse the running-cost gap.</p></div>
+<div class="faq"><h3>What is charging efficiency loss in an EV?</h3><p>When charging an EV from a wall outlet or charger, a small percentage of electricity is lost as heat during AC-to-DC conversion and battery thermal management, meaning meter consumption is slightly higher than energy stored in the battery.</p></div>
+<div class="faq"><h3>What other costs matter besides energy per distance?</h3><p>Upfront vehicle price, financing interest, insurance rates, tire wear, registration fees, and scheduled maintenance all affect total cost of ownership over several years.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links">
+<a href="../rent-vs-buy-calculator/">Rent vs Buy Calculator</a> ·
+<a href="../flat-rate-vs-reducing-balance/">Flat Rate vs Reducing Balance</a> ·
+<a href="../running-pace-calculator/">Running Pace Calculator</a> ·
+<a href="../overtime-pay-calculator/">Overtime Pay Calculator</a>
+</p>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function() {
+      var sysEl = document.getElementById("ev-unit-sys");
+      var lblElec = document.getElementById("lbl-elec-price");
+      var lblEvEff = document.getElementById("lbl-ev-eff");
+      var lblPetPrice = document.getElementById("lbl-petrol-price");
+      var lblPetEff = document.getElementById("lbl-petrol-eff");
+      var lblDist = document.getElementById("lbl-trip-dist");
+
+      function updateLabels() {
+        if (sysEl.value === "metric") {
+          lblElec.textContent = "Your Electricity Rate (per kWh)";
+          lblEvEff.textContent = "EV Consumption (kWh per 100 km)";
+          lblPetPrice.textContent = "Your Petrol Price (per Liter)";
+          lblPetEff.textContent = "Petrol Consumption (Liters per 100 km)";
+          lblDist.textContent = "Comparison Distance (km)";
+        } else {
+          lblElec.textContent = "Your Electricity Rate (per kWh)";
+          lblEvEff.textContent = "EV Efficiency (Miles per kWh)";
+          lblPetPrice.textContent = "Your Petrol Price (per Gallon)";
+          lblPetEff.textContent = "Petrol Efficiency (Miles per Gallon / MPG)";
+          lblDist.textContent = "Comparison Distance (miles)";
+        }
+      }
+
+      function calculateEvVsPetrol() {
+        var sys = sysEl.value;
+        var elecRate = parseFloat(document.getElementById("ev-elec-price").value);
+        var evEff = parseFloat(document.getElementById("ev-eff").value);
+        var petPrice = parseFloat(document.getElementById("petrol-price").value);
+        var petEff = parseFloat(document.getElementById("petrol-eff").value);
+        var dist = parseFloat(document.getElementById("trip-dist").value);
+
+        if ([elecRate, evEff, petPrice, petEff, dist].some(function(v) { return isNaN(v) || v <= 0; })) {
+          document.getElementById("ev-res-title").textContent = "Please enter positive numbers in all fields above to calculate:";
+          document.getElementById("ev-cost-val").textContent = "—";
+          document.getElementById("pet-cost-val").textContent = "—";
+          document.getElementById("unit-dist-val").textContent = "—";
+          return;
+        }
+
+        var evCost, petCost, unitLabel;
+        if (sys === "metric") {
+          evCost = (dist / 100) * evEff * elecRate;
+          petCost = (dist / 100) * petEff * petPrice;
+          unitLabel = "km";
+        } else {
+          evCost = (dist / evEff) * elecRate;
+          petCost = (dist / petEff) * petPrice;
+          unitLabel = "mi";
+        }
+
+        var evPerUnit = evCost / dist;
+        var petPerUnit = petCost / dist;
+
+        document.getElementById("ev-res-title").textContent = "Estimated Energy Cost for " + dist + " " + unitLabel + ":";
+        document.getElementById("ev-cost-val").textContent = evCost.toFixed(2);
+        document.getElementById("pet-cost-val").textContent = petCost.toFixed(2);
+        document.getElementById("unit-dist-val").textContent = "EV: " + evPerUnit.toFixed(3) + "/" + unitLabel + " | Petrol: " + petPerUnit.toFixed(3) + "/" + unitLabel;
+      }
+
+      sysEl.addEventListener("change", function() {
+        updateLabels();
+        calculateEvVsPetrol();
+      });
+      document.getElementById("calc-ev-btn").addEventListener("click", calculateEvVsPetrol);
+      updateLabels();
+    })();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Easter Date Finder | Noryvello</title>
+<meta name="description" content="Enter any year from 1583 onward to find Easter Sunday, Good Friday and Easter Monday, calculated with the official Computus algorithm.">
+<link rel="canonical" href="https://noryvello.github.io/easter-date-finder/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Easter Date Finder">
+<meta property="og:description" content="Any year in — Easter Sunday, Good Friday and Easter Monday out.">
+<meta property="og:url" content="https://noryvello.github.io/easter-date-finder/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+button{background:#4338ca;color:#fff;border:none;padding:11px 20px;font-size:16px;font-weight:600;border-radius:8px;cursor:pointer;margin-top:12px}
+button:hover{background:#0d9488}
+.checklist label{font-weight:400;display:block;margin:8px 0}
+.checklist input{width:auto;display:inline-block;margin-right:8px}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid #e2e8f0}
+th{background:#eef2ff;font-weight:600}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is the Easter date calculated?","acceptedAnswer":{"@type":"Answer","text":"Easter is the first Sunday after the first full moon on or after 21 March, using the Church's ecclesiastical calendar rather than the astronomical moon. The Computus algorithm in this tool reproduces that calculation for the Gregorian calendar."}},{"@type":"Question","name":"Can I use this tool for any year?","acceptedAnswer":{"@type":"Answer","text":"The tool works for years from 1583 onward, when the Gregorian calendar began. Earlier years used the Julian calendar and need a different calculation."}},{"@type":"Question","name":"Why does Easter change every year?","acceptedAnswer":{"@type":"Answer","text":"Easter moves because it is tied to the moon: the first Sunday after the first full moon following the spring equinox. That Sunday can fall anywhere between 22 March and 25 April."}},{"@type":"Question","name":"Is the date the same for all Christian denominations?","acceptedAnswer":{"@type":"Answer","text":"Most Western churches use the Gregorian calculation. Many Orthodox churches follow the Julian calendar, which can give a different date — often one to five weeks later. In 2027, Orthodox Easter falls on 2 May."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Easter Date Finder</h1>
+<p class="answer"><strong>Short answer:</strong> enter a year to see Easter Sunday, Good Friday and Easter Monday. Easter 2026 falls on 5 April; Easter 2027 falls on 28 March. Dates use the Gregorian Computus, the calculation most Western churches follow.</p>
+<div class="calc">
+<label for="year">Year (1583 or later)</label>
+<input id="year" type="number" inputmode="numeric" min="1583" max="4099" value="2027">
+<button id="findBtn" type="button">Find Dates</button>
+<div class="steps" id="result"></div>
+</div>
+<div class="warn"><strong>Western churches only.</strong> Most Western churches use the Gregorian calculation. Many Orthodox churches follow the Julian calendar, which usually gives a different date — in 2027, Orthodox Easter falls on 2 May.</div>
+<h2>How the date is calculated</h2>
+<p>Easter is the first Sunday after the first full moon on or after 21 March, using the Church's ecclesiastical calendar rather than the astronomical moon. The Computus algorithm reproduces that calculation, which is why Easter can fall anywhere between 22 March and 25 April.</p>
+<h2>Easter dates 2025–2030</h2>
+<table>
+<tr><th>Year</th><th>Easter Sunday</th><th>Good Friday</th><th>Easter Monday</th></tr>
+<tr><td>2025</td><td>20 April</td><td>18 April</td><td>21 April</td></tr>
+<tr><td>2026</td><td>5 April</td><td>3 April</td><td>6 April</td></tr>
+<tr><td>2027</td><td>28 March</td><td>26 March</td><td>29 March</td></tr>
+<tr><td>2028</td><td>16 April</td><td>14 April</td><td>17 April</td></tr>
+<tr><td>2029</td><td>1 April</td><td>30 March</td><td>2 April</td></tr>
+<tr><td>2030</td><td>21 April</td><td>19 April</td><td>22 April</td></tr>
+</table>
+<h2>Related dates</h2>
+<p>Good Friday falls two days before Easter Sunday, and Easter Monday the day after. The finder shows all three for any year you enter.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How is the Easter date calculated?</h3><p>Easter is the first Sunday after the first full moon on or after 21 March, using the Church&#x27;s ecclesiastical calendar rather than the astronomical moon. The Computus algorithm in this tool reproduces that calculation for the Gregorian calendar.</p></div>
+<div class="faq"><h3>Can I use this tool for any year?</h3><p>The tool works for years from 1583 onward, when the Gregorian calendar began. Earlier years used the Julian calendar and need a different calculation.</p></div>
+<div class="faq"><h3>Why does Easter change every year?</h3><p>Easter moves because it is tied to the moon: the first Sunday after the first full moon following the spring equinox. That Sunday can fall anywhere between 22 March and 25 April.</p></div>
+<div class="faq"><h3>Is the date the same for all Christian denominations?</h3><p>Most Western churches use the Gregorian calculation. Many Orthodox churches follow the Julian calendar, which can give a different date — often one to five weeks later. In 2027, Orthodox Easter falls on 2 May.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links">
+<a href="../daylight-saving-dates-guide/">Daylight Saving Time Dates Guide</a> ·
+<a href="../sleep-calculator/">Sleep Calculator — Bedtime and Wake-Up Time Calculator</a> ·
+<a href="../secret-santa-generator/">Secret Santa Generator</a> ·
+<a href="../wedding-budget-planner/">Wedding Budget Planner</a>
+</p>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function calculateEaster(){
+  const year = parseInt(document.getElementById('year').value);
+  if(isNaN(year)||year<1583){
+    document.getElementById('result').innerHTML = '<p>Please enter a valid year (1583 or later).</p>';
+    return;
+  }
+  const a = year % 19;
+  const b = Math.floor(year/100);
+  const c = year % 100;
+  const d = Math.floor(b/4);
+  const e = b % 4;
+  const f = Math.floor((b+8)/25);
+  const g = Math.floor((b-f+1)/3);
+  const h = (19*a + b - d - g + 15) % 30;
+  const i = Math.floor(c/4);
+  const k = c % 4;
+  const l = (32 + 2*e + 2*i - h - k) % 7;
+  const m = Math.floor((a + 11*h + 22*l)/451);
+  const month = Math.floor((h + l - 7*m + 114)/31); // 3=Mar,4=Apr
+  const day = ((h + l - 7*m + 114) % 31) + 1;
+  const easter = new Date(year, month-1, day);
+  const format = d=>d.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  const goodFriday = new Date(easter);
+  goodFriday.setDate(easter.getDate()-2);
+  const easterMonday = new Date(easter);
+  easterMonday.setDate(easter.getDate()+1);
+  document.getElementById('result').innerHTML = `
+    <p><strong>Easter Sunday:</strong> ${format(easter)}</p>
+    <p><strong>Good Friday:</strong> ${format(goodFriday)}</p>
+    <p><strong>Easter Monday:</strong> ${format(easterMonday)}</p>
+  `;
+}
+document.getElementById('findBtn').addEventListener('click', calculateEaster);
+calculateEaster();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

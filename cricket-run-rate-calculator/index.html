@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cricket Run Rate Calculator | Noryvello</title>
+<meta name="description" content="Current run rate, required run rate, runs needed and balls left for any match. Enter runs, overs and target — 10.3 means 10 overs, 3 balls.">
+<link rel="canonical" href="https://noryvello.github.io/cricket-run-rate-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cricket Run Rate Calculator">
+<meta property="og:description" content="Runs, overs and target in — current and required run rates out, with the working shown.">
+<meta property="og:url" content="https://noryvello.github.io/cricket-run-rate-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+button{background:#4338ca;color:#fff;border:none;padding:11px 20px;font-size:16px;font-weight:600;border-radius:8px;cursor:pointer;margin-top:12px}
+button:hover{background:#0d9488}
+.checklist label{font-weight:400;display:block;margin:8px 0}
+.checklist input{width:auto;display:inline-block;margin-right:8px}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid #e2e8f0}
+th{background:#eef2ff;font-weight:600}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is run rate in cricket?","acceptedAnswer":{"@type":"Answer","text":"Run rate is the average number of runs scored per over. Divide the runs scored by the overs bowled, converting balls correctly: 10.3 overs is 63 balls, which is 10.5 overs for the division."}},{"@type":"Question","name":"How do I enter overs with balls?","acceptedAnswer":{"@type":"Answer","text":"Type overs the way the scorecard shows them, as overs.balls — for example 10.3 for 10 overs and 3 balls. The last digit must be 0 to 5, because six balls make an over."}},{"@type":"Question","name":"What is the difference between current run rate and required run rate?","acceptedAnswer":{"@type":"Answer","text":"Current run rate is based on runs already scored divided by overs bowled. Required run rate is the runs still needed divided by the overs remaining — the pace the batting side must keep to reach the target."}},{"@type":"Question","name":"Can this calculator be used for all formats of cricket?","acceptedAnswer":{"@type":"Answer","text":"Yes. The run rate arithmetic is the same in Tests, one-day matches and T20s, as long as the inputs are entered correctly. It does not apply Duckworth-Lewis-Stern adjustments for rain-shortened matches."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Cricket Run Rate Calculator</h1>
+<p class="answer"><strong>Short answer:</strong> current run rate is runs divided by overs bowled; required run rate is runs still needed divided by overs left. Type the match numbers below — overs use cricket notation, so 10.3 means 10 overs and 3 balls.</p>
+<div class="calc">
+<label for="runs">Runs scored</label>
+<input id="runs" type="number" inputmode="decimal" min="0" value="120">
+<label for="overs">Overs bowled (e.g. 10.3 for 10 overs, 3 balls)</label>
+<input id="overs" type="text" inputmode="decimal" value="15">
+<label for="target">Target runs (leave empty for current run rate only)</label>
+<input id="target" type="number" inputmode="decimal" min="0" value="180">
+<label for="remaining">Overs remaining (e.g. 5.2)</label>
+<input id="remaining" type="text" inputmode="decimal" value="5">
+<button id="calcBtn" type="button">Calculate</button>
+<div class="out" id="out"></div>
+<div class="steps" id="steps"></div>
+</div>
+<div class="warn"><strong>Overs are not decimals.</strong> In cricket notation 10.3 means 10 overs and 3 balls (63 balls), not 10.3 overs. The calculator converts for you — just type overs the way the scorecard shows them.</div>
+<h2>How the overs conversion works</h2>
+<p>Cricket overs count balls, not decimals. The number after the point is a ball count from 0 to 5: 10.3 overs is 10 overs and 3 balls, which is 63 balls, or 10.5 overs for division. The calculator converts every overs entry to balls first, then divides.</p>
+<h2>Worked examples</h2>
+<ol>
+<li><strong>120 runs in 15 overs:</strong> 120 ÷ 15 = <strong>8.00 runs per over</strong>.</li>
+<li><strong>Target 180, 120 scored, 5 overs left:</strong> 60 runs needed ÷ 5 overs = <strong>12.00 required</strong>.</li>
+<li><strong>87 runs in 10.3 overs:</strong> 10.3 is 63 balls = 10.5 overs, so 87 ÷ 10.5 = <strong>8.29 current run rate</strong>.</li>
+</ol>
+<h2>What this calculator does not do</h2>
+<p>It does not apply Duckworth-Lewis-Stern adjustments for rain-shortened matches, and it does not calculate net run rate, which needs both teams' full runs and overs across a tournament.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is run rate in cricket?</h3><p>Run rate is the average number of runs scored per over. Divide the runs scored by the overs bowled, converting balls correctly: 10.3 overs is 63 balls, which is 10.5 overs for the division.</p></div>
+<div class="faq"><h3>How do I enter overs with balls?</h3><p>Type overs the way the scorecard shows them, as overs.balls — for example 10.3 for 10 overs and 3 balls. The last digit must be 0 to 5, because six balls make an over.</p></div>
+<div class="faq"><h3>What is the difference between current run rate and required run rate?</h3><p>Current run rate is based on runs already scored divided by overs bowled. Required run rate is the runs still needed divided by the overs remaining — the pace the batting side must keep to reach the target.</p></div>
+<div class="faq"><h3>Can this calculator be used for all formats of cricket?</h3><p>Yes. The run rate arithmetic is the same in Tests, one-day matches and T20s, as long as the inputs are entered correctly. It does not apply Duckworth-Lewis-Stern adjustments for rain-shortened matches.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links">
+<a href="../running-pace-calculator/">Running Pace Calculator</a> ·
+<a href="../push-up-plank-challenge-tracker/">Push-Up and Plank Challenge Tracker — Build a 30-Day Plan</a> ·
+<a href="../beginner-running-mistakes/">Beginner Running Mistakes and a First‑Week Plan</a> ·
+<a href="../sleep-calculator/">Sleep Calculator — Bedtime and Wake-Up Time Calculator</a>
+</p>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function parseOvers(s){
+  s = String(s).trim();
+  if(!/^[0-9]+(\.[0-5])?$/.test(s)) return null;
+  var parts = s.split('.');
+  var overs = parseInt(parts[0], 10);
+  var balls = parts.length > 1 ? parseInt(parts[1], 10) : 0;
+  return { balls: overs * 6 + balls, text: overs + '.' + balls };
+}
+function calc(){
+  var runs = parseFloat(document.getElementById('runs').value);
+  var ov = parseOvers(document.getElementById('overs').value);
+  var targetRaw = document.getElementById('target').value.trim();
+  var rem = parseOvers(document.getElementById('remaining').value);
+  var out = document.getElementById('out'), steps = document.getElementById('steps');
+  if(isNaN(runs) || runs < 0 || !ov || ov.balls <= 0){
+    out.textContent = '';
+    steps.textContent = 'Enter runs scored (0 or more) and overs bowled in cricket notation, e.g. 10.3.';
+    return;
+  }
+  var oversDecimal = ov.balls / 6;
+  var crr = runs / oversDecimal;
+  var lines = 'Overs bowled: ' + ov.text + ' = ' + ov.balls + ' balls = ' + oversDecimal.toFixed(2) + ' overs\nCurrent run rate: ' + runs + ' ÷ ' + oversDecimal.toFixed(2) + ' = ' + crr.toFixed(2) + ' runs per over';
+  var headline = 'Current run rate: ' + crr.toFixed(2);
+  if(targetRaw !== '' && rem && rem.balls > 0){
+    var target = parseFloat(targetRaw);
+    if(!isNaN(target) && target > 0){
+      var needed = target - runs;
+      var remDecimal = rem.balls / 6;
+      var rrr = needed / remDecimal;
+      headline += '  ·  Required run rate: ' + (needed <= 0 ? '0.00 (target reached)' : rrr.toFixed(2));
+      lines += '\nRuns needed: ' + target + ' − ' + runs + ' = ' + needed + ' runs\nOvers remaining: ' + rem.text + ' = ' + rem.balls + ' balls (' + remDecimal.toFixed(2) + ' overs)\nRequired run rate: ' + needed + ' ÷ ' + remDecimal.toFixed(2) + ' = ' + rrr.toFixed(2) + ' runs per over';
+    }
+  }
+  out.textContent = headline;
+  steps.textContent = lines;
+}
+document.getElementById('calcBtn').addEventListener('click', calc);
+['runs', 'overs', 'target', 'remaining'].forEach(function(id){
+  document.getElementById(id).addEventListener('input', calc);
+});
+calc();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

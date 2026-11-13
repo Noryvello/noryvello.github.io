@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Many Deck Boards Do You Need? Calculator &amp; Fastener Estimate | Noryvello</title>
+  <meta name="description" content="Estimate deck board quantity and fasteners from your deck area, board dimensions, and joist spacing. See the formula and planning limits.">
+  <link rel="canonical" href="https://noryvello.github.io/deck-board-calculator/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How Many Deck Boards Do You Need? Calculator &amp; Fastener Estimate">
+  <meta property="og:description" content="Estimate deck board quantity and fasteners from your deck area, board dimensions, and joist spacing. See the formula and planning limits.">
+  <meta property="og:url" content="https://noryvello.github.io/deck-board-calculator/">
+  <style>*{box-sizing:border-box;margin:0;padding:0}
+ body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+ .wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+ .brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+ .brand a{text-decoration:none}
+ .brand .n{color:#4338ca}.brand .v{color:#0d9488}
+ h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+ .answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+ h2{font-size:21px;margin:26px 0 8px}
+ ol,ul{margin:8px 0 8px 22px}
+ li{margin:5px 0}
+ .faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+ .faq h3{font-size:16.5px;margin-bottom:4px}
+ .note{font-size:14px;color:#64748b}
+ .links a{color:#4338ca}
+ footer{margin-top:36px;font-size:13.5px;color:#64748b}
+ .calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+ .calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+ .calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+ .calc .out{font-size:19px;font-weight:700;margin-top:14px}
+ .calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+ .warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+ code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate how many deck boards I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divide the deck area by the area covered by one board, then round up to a whole board. Add an allowance for cuts, waste, and the actual board layout."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this calculator include gaps between deck boards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It uses the board's face width as its coverage width and does not model installation gaps, borders, angled cuts, stairs, or complex deck shapes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are deck fasteners estimated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The estimate uses the calculated board count, joist spacing, and two fasteners at each board-to-joist crossing. Your fastening system may require a different quantity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this estimate for structural deck design?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It estimates material quantities only. Structural sizing, connections, guards, foundations, and permitted construction must follow local requirements and qualified guidance."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+    <h1>Deck Board Calculator — How Many Boards and Fasteners Do You Need?</h1>
+    <p class="answer">Estimate deck boards by dividing the deck area by the face area covered by one board, then round up to a whole board. This calculator also estimates fasteners from board count, joist spacing, and two fasteners at each board-to-joist crossing.</p>
+    <div class="calc">
+      <label for="unit">Area and board measurement units</label><select id="unit"><option value="ft">Feet (area in sq ft)</option><option value="m">Meters (area in sq m)</option></select>
+<label for="area">Deck area (<span id="areaUnit">sq ft</span>)</label><input id="area" type="number" min="0.01" step="any" value="240">
+<label for="width">Board face width (<span id="widthUnit">inches</span>)</label><input id="width" type="number" min="0.01" step="any" value="5.5">
+<label for="length">Board length (<span id="boardLengthUnit">feet</span>)</label><input id="length" type="number" min="0.01" step="any" value="12">
+<label for="spacing">Joist spacing (inches, center to center)</label><input id="spacing" type="number" min="1" step="any" value="16">
+      <div class="out" id="result" aria-live="polite"></div>
+      <div class="steps" id="steps"></div>
+    </div>
+    <div class="warn">
+      <strong>Honest limit:</strong> Add 10% extra for cuts and waste. Check local building rules for structural decks.
+    </div>
+    <h2>How the Deck Board Estimate Works</h2><p>The calculation assumes boards cover the deck without accounting for gaps, picture-frame borders, stairs, angled edges, or board-length optimization.</p><ol><li><strong>Board coverage:</strong> board face width × board length, converted to the selected area unit.</li><li><strong>Board count:</strong> deck area ÷ coverage per board, rounded up.</li><li><strong>Joist crossings per board:</strong> board length ÷ joist spacing, rounded up, plus one end crossing.</li><li><strong>Fasteners:</strong> board count × estimated joist crossings per board × 2 fasteners per crossing.</li></ol><p>The fastener result is a planning estimate, not a fastening specification. Actual layouts, hidden-fastener systems, edge details, and manufacturer instructions can change the quantity.</p><h2>Worked Example</h2><p>For a 240 sq ft deck using 5.5-inch-wide, 12-foot boards, one board covers about 5.5 sq ft before gaps or layout adjustments. The area-only estimate is therefore about 44 boards. The calculator rounds board counts up and separately estimates fasteners from the entered joist spacing and estimated joist crossings along each board.</p>
+    <h2>Questions people ask</h2>
+    <div class="faq">
+      <h3>How do I calculate how many deck boards I need?</h3>
+      <p>Divide the deck area by the area covered by one board, then round up to a whole board. Add an allowance for cuts, waste, and the actual board layout.</p>
+    </div>
+    <div class="faq">
+      <h3>Does this calculator include gaps between deck boards?</h3>
+      <p>No. It uses the board&#x27;s face width as its coverage width and does not model installation gaps, borders, angled cuts, stairs, or complex deck shapes.</p>
+    </div>
+    <div class="faq">
+      <h3>How are deck fasteners estimated?</h3>
+      <p>The estimate uses the calculated board count, joist spacing, and two fasteners at each board-to-joist crossing. Your fastening system may require a different quantity.</p>
+    </div>
+    <div class="faq">
+      <h3>Can I use this estimate for structural deck design?</h3>
+      <p>No. It estimates material quantities only. Structural sizing, connections, guards, foundations, and permitted construction must follow local requirements and qualified guidance.</p>
+    </div>
+    <h2>More free tools on Noryvello</h2>
+    <p class="links">
+      <a href="../paint-calculator/">Paint Calculator</a> ·
+      <a href="../flooring-area-calculator/">Flooring Area Calculator</a> ·
+      <a href="../running-pace-calculator/">Running Pace Calculator</a> ·
+      <a href="../website-safety-checks/">Website Safety Checks</a>
+    </p>
+    <footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+  </div>
+  <script>
+    (function(){var $=function(id){return document.getElementById(id)};var unit=$('unit'),area=$('area'),width=$('width'),length=$('length'),spacing=$('spacing'),result=$('result'),steps=$('steps');function calc(){var a=+area.value,w=+width.value,l=+length.value,s=+spacing.value;if(!(a>0&&w>0&&l>0&&s>0)){result.textContent='Enter positive values in every field.';steps.textContent='';return;}var metric=unit.value==='m',boardArea=metric?(w/100)*l:(w/12)*l,boardCount=Math.ceil(a/boardArea),joists=Math.ceil((metric?l*39.3701:l*12)/s)+1,fasteners=boardCount*joists*2;result.textContent='Boards needed: '+boardCount+' | Fasteners estimate: '+fasteners;steps.textContent='Board coverage: '+boardArea.toFixed(2)+' '+(metric?'sq m':'sq ft')+'\nBoard count: '+a+' ÷ '+boardArea.toFixed(2)+' = '+boardCount+' (rounded up)\nEstimated joist crossings per board: '+joists+'\nFasteners: '+boardCount+' × '+joists+' × 2 = '+fasteners+' (estimate)';}[unit,area,width,length,spacing].forEach(function(x){x.addEventListener('input',calc);x.addEventListener('change',calc)});unit.addEventListener('change',function(){$('areaUnit').textContent=unit.value==='m'?'sq m':'sq ft';$('widthUnit').textContent=unit.value==='m'?'cm':'inches';$('boardLengthUnit').textContent=unit.value==='m'?'meters':'feet';calc()});calc();})();
+  </script>
+  <script src="../ads-config.js"></script>
+</body>
+</html>

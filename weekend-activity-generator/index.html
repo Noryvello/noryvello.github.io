@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Can You Do This Weekend? Generate Ideas by Weather and Company | Noryvello</title>
+<meta name="description" content="Generate flexible weekend activity ideas based on whether the weather is sunny, rainy or uncertain and whether you are solo, with friends, family or a partner.">
+<link rel="canonical" href="https://noryvello.github.io/weekend-activity-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Can You Do This Weekend? Generate Ideas by Weather and Company">
+<meta property="og:description" content="A weekend activity idea generator organized by weather and who is joining.">
+<meta property="og:url" content="https://noryvello.github.io/weekend-activity-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.mistake{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:12px 0}
+.mistake h3{font-size:18px;margin-bottom:4px}
+.check{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.check label{display:block;font-size:15.5px;margin:8px 0;cursor:pointer}
+.check input{margin-right:9px;width:17px;height:17px;vertical-align:-3px}
+.check .out{font-size:17px;font-weight:700;margin-top:12px}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How should I choose a weekend activity for unpredictable weather?", "acceptedAnswer": {"@type": "Answer", "text": "Choose a flexible plan with an indoor alternative, check the forecast close to the time and avoid depending on conditions that may change."}}, {"@type": "Question", "name": "What are good weekend activities to do alone?", "acceptedAnswer": {"@type": "Answer", "text": "A personal project, reading session, local walk, photography practice or learning activity can make a satisfying solo plan."}}, {"@type": "Question", "name": "How do I choose an activity for a mixed-age family?", "acceptedAnswer": {"@type": "Answer", "text": "Look for an activity with flexible participation, suitable facilities and options for different energy levels. Check age guidance and accessibility where relevant."}}, {"@type": "Question", "name": "Should I check opening hours before a weekend outing?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Hours, entry arrangements and availability can change, so confirm details with the venue or organizer before setting out."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>What Can You Do This Weekend? Generate Ideas by Weather and Company</h1>
+<p class="answer"><strong>Short answer:</strong> Choose the weather you expect and who will join you, then generate an activity that fits. Treat the result as inspiration: adapt it to local conditions, available time, mobility and the interests of your group.</p>
+<h2>Generate a weekend activity</h2><div class="check"><label>Weather <select id="weather"><option value="any">Any / not sure</option><option value="sun">Sunny or clear</option><option value="rain">Rainy</option><option value="mixed">Mixed or changeable</option></select></label><label>Company <select id="company"><option value="any">Anyone</option><option value="solo">Solo</option><option value="friends">Friends</option><option value="family">Family</option><option value="partner">Partner</option></select></label><button type="button" id="generate">Generate weekend idea</button><p class="out" id="idea" aria-live="polite">Your weekend idea will appear here.</p><button type="button" id="again">Try another idea</button></div>
+<h2>Flexible ideas by weather</h2><div class="mistake"><h3>Clear weather</h3><p>Try a nature walk, outdoor sketching, a picnic, a neighborhood photo challenge or a visit to an open public space.</p></div><div class="mistake"><h3>Rainy weather</h3><p>Try a home cooking project, puzzle session, indoor exercise, library visit or a film afternoon.</p></div><div class="mistake"><h3>Changeable weather</h3><p>Choose a plan with an indoor backup, such as visiting a market or café area near a walkable public space.</p></div>
+<h2>Make the activity fit the group</h2><ul><li><strong>Solo:</strong> choose a personal project, reading session or exploratory walk.</li><li><strong>Friends:</strong> try a group game, shared meal preparation or a photo challenge.</li><li><strong>Family:</strong> choose an activity with options for different ages and energy levels.</li><li><strong>Partner:</strong> plan a shared hobby, relaxed outing or collaborative project.</li></ul>
+<div class="warn"><strong>A note before you act:</strong> Check weather and opening hours; plans change. Confirm local conditions and accessibility before traveling or committing to an outdoor activity.</div>
+<h2>Frequently asked questions</h2>
+<div class="faq"><h3>How should I choose a weekend activity for unpredictable weather?</h3><p>Choose a flexible plan with an indoor alternative, check the forecast close to the time and avoid depending on conditions that may change.</p></div>
+<div class="faq"><h3>What are good weekend activities to do alone?</h3><p>A personal project, reading session, local walk, photography practice or learning activity can make a satisfying solo plan.</p></div>
+<div class="faq"><h3>How do I choose an activity for a mixed-age family?</h3><p>Look for an activity with flexible participation, suitable facilities and options for different energy levels. Check age guidance and accessibility where relevant.</p></div>
+<div class="faq"><h3>Should I check opening hours before a weekend outing?</h3><p>Yes. Hours, entry arrangements and availability can change, so confirm details with the venue or organizer before setting out.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../running-pace-calculator/">Running Pace Calculator</a>
+<a href="../paint-calculator/">Paint Calculator</a>
+<a href="../flooring-area-calculator/">Flooring Area Calculator</a>
+<a href="../push-up-plank-challenge-tracker/">Push-Up and Plank Challenge Tracker</a></p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var acts=[{w:'sun',c:'solo',t:'Take a photo walk and capture five interesting patterns or colors.'},{w:'sun',c:'friends',t:'Organize a relaxed outdoor game or group photo challenge.'},{w:'sun',c:'family',t:'Explore a suitable public garden or open space together.'},{w:'sun',c:'partner',t:'Plan a scenic walk with a snack break.'},{w:'rain',c:'solo',t:'Spend an hour learning a new skill or starting a small creative project.'},{w:'rain',c:'friends',t:'Host a board-game, puzzle or trivia session.'},{w:'rain',c:'family',t:'Choose a collaborative cooking or craft activity.'},{w:'rain',c:'partner',t:'Make a new recipe together or have a themed movie afternoon.'},{w:'mixed',c:'solo',t:'Visit a library or indoor public space, with a short walk if conditions allow.'},{w:'mixed',c:'friends',t:'Meet somewhere with indoor seating and an optional nearby walk.'},{w:'mixed',c:'family',t:'Plan a flexible outing with an indoor backup.'},{w:'mixed',c:'partner',t:'Explore a local area and keep a cozy indoor alternative ready.'}];function pick(){var w=document.getElementById('weather').value,c=document.getElementById('company').value;var a=acts.filter(function(x){return (w==='any'||x.w===w)&&(c==='any'||x.c===c);});if(!a.length){document.getElementById('idea').textContent='No exact match. Choose “Any” for weather or company to broaden the ideas.';return;}document.getElementById('idea').textContent=a[Math.floor(Math.random()*a.length)].t;}document.getElementById('generate').addEventListener('click',pick);document.getElementById('again').addEventListener('click',pick);
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>
