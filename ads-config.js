@@ -1,23 +1,21 @@
-/* Noryvello ad slots — STRUCTURE ONLY. No live ad code lives here yet.
+/* Noryvello ad slots — LIVE since 2026-11-13.
  *
- * HOW TO ACTIVATE (one day, when the site is ready):
- *   1. Add noryvello.github.io as a site in Adsterra and get it approved.
- *   2. Create one unit per format: Popunder, Social Bar, In-Page Push.
- *   3. Paste ONLY the exact code Adsterra gives you into the matching slot
- *      below and set that slot's enabled flag to true.
+ * Site approved in Adsterra 2026-11-13 (site ID 6196082, publisher 1Faisal1).
+ * Popunder + Social Bar codes below are the EXACT codes Adsterra issued for
+ * noryvello.github.io — nothing invented, nothing copied from ToolBari.
+ * In-Page Push: no unit exists for this site yet (not offered in the
+ * add-website form); create it in Adsterra via AD UNIT if wanted, then
+ * fill its slot and set enabled to true.
  *
- * Until then every slot stays empty and the loader below injects NOTHING:
- * pages show no ads, no placeholders, and no errors. NEVER invent, guess,
- * or copy ad codes from another site — a wrong code earns nothing and can
- * get the account flagged.
- *
- * Each page on the site loads this file. The loader runs after the DOM is
- * ready and only touches slots that are both enabled AND non-empty.
+ * The loader runs after the DOM is ready and only touches slots that are
+ * both enabled AND non-empty. Popunder exception applies here (NEW site):
+ * aggressive Adsterra formats are allowed during the Adsterra phase, and
+ * are removed before any AdSense application.
  */
 window.NORYVELLO_ADS = {
-  popunder:   { enabled: false, code: "" }, /* Adsterra Popunder snippet goes here */
-  socialBar:  { enabled: false, code: "" }, /* Adsterra Social Bar snippet goes here */
-  inPagePush: { enabled: false, code: "" }  /* Adsterra In-Page Push snippet goes here */
+  popunder:   { enabled: true, code: "<script data-cfasync=\"false\" src=\"https://abscloud.org/1/ed75688592e9e156b7406d2363b76c44\"></script>" }, /* Adsterra Popunder_1, ID 32242761, issued 2026-11-13 */
+  socialBar:  { enabled: true, code: "<script data-cfasync=\"false\" src=\"https://bauval.org/14/421055aafe4956dd5c498c37c06637ed\"></script>" }, /* Adsterra SocialBar_1, ID 32242762, issued 2026-11-13 */
+  inPagePush: { enabled: false, code: "" }  /* No In-Page Push unit for this site yet */
 };
 
 (function () {
