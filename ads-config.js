@@ -10,12 +10,13 @@
  * separate In-Page Push code; a different presentation needs Adsterra support.
  *
  * The loader runs after the DOM is ready and only touches slots that are
- * both enabled AND non-empty. Popunder exception applies here (NEW site):
- * aggressive Adsterra formats are allowed during the Adsterra phase, and
- * are removed before any AdSense application.
+ * both enabled AND non-empty. POPUNDER DISABLED 2026-11-15 (owner order):
+ * it hijacked the first click and opened ad tabs, making the site unusable
+ * on phones, while earning 0 impressions in 2 days. Do NOT re-enable it
+ * without the owner's word. Social Bar + Banner + Native stay live.
  */
 window.NORYVELLO_ADS = {
-  popunder:   { enabled: true, code: "<script data-cfasync=\"false\" src=\"https://abscloud.org/1/ed75688592e9e156b7406d2363b76c44\"></script>" }, /* Adsterra Popunder_1, ID 32242761, issued 2026-11-13 */
+  popunder:   { enabled: false, code: "<script data-cfasync=\"false\" src=\"https://abscloud.org/1/ed75688592e9e156b7406d2363b76c44\"></script>" }, /* Adsterra Popunder_1, ID 32242761, issued 2026-11-13 */
   socialBar:  { enabled: true, code: "<script data-cfasync=\"false\" src=\"https://bauval.org/14/421055aafe4956dd5c498c37c06637ed\"></script>" }, /* Adsterra SocialBar_1, ID 32242762, issued 2026-11-13 */
   inPagePush: { enabled: false, code: "" }  /* No In-Page Push unit for this site yet */
 };
