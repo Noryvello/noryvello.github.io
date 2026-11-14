@@ -10,13 +10,16 @@
  * separate In-Page Push code; a different presentation needs Adsterra support.
  *
  * The loader runs after the DOM is ready and only touches slots that are
- * both enabled AND non-empty. POPUNDER DISABLED 2026-11-15 (owner order):
- * it hijacked the first click and opened ad tabs, making the site unusable
- * on phones, while earning 0 impressions in 2 days. Do NOT re-enable it
- * without the owner's word. Social Bar + Banner + Native stay live.
+ * both enabled AND non-empty. POPUNDER GATED 2026-11-15 (owner order):
+ * it hijacked clicks and opened ad tabs on every visit, making the site
+ * unusable on phones, while earning 0 impressions in 2 days. It now loads
+ * at most ONCE per visitor per 24 hours (localStorage gate in run() below)
+ * so the site stays clean and usable while the format still earns.
+ * Do NOT remove the gate without the owner's word.
+ * Social Bar + Banner + Native stay live, ungated.
  */
 window.NORYVELLO_ADS = {
-  popunder:   { enabled: false, code: "<script data-cfasync=\"false\" src=\"https://abscloud.org/1/ed75688592e9e156b7406d2363b76c44\"></script>" }, /* Adsterra Popunder_1, ID 32242761, issued 2026-11-13 */
+  popunder:   { enabled: true, code: "<script data-cfasync=\"false\" src=\"https://abscloud.org/1/ed75688592e9e156b7406d2363b76c44\"></script>" }, /* Adsterra Popunder_1, ID 32242761, issued 2026-11-13 */
   socialBar:  { enabled: true, code: "<script data-cfasync=\"false\" src=\"https://bauval.org/14/421055aafe4956dd5c498c37c06637ed\"></script>" }, /* Adsterra SocialBar_1, ID 32242762, issued 2026-11-13 */
   inPagePush: { enabled: false, code: "" }  /* No In-Page Push unit for this site yet */
 };
@@ -47,8 +50,24 @@ window.NORYVELLO_ADS = {
     if (!slot || !slot.enabled || !slot.code || !String(slot.code).trim()) return;
     injectHTML(String(slot.code), holderId);
   }
+  /* Popunder gate: at most once per visitor per 24 hours. The timestamp is
+   * written when the script is allowed to load; later loads inside the
+   * window skip the slot entirely, so repeat visits stay popunder-free.
+   * If storage is unavailable (private mode), fall back to loading. */
+  var POPUNDER_GATE_KEY = "noryvello_popunder_last";
+  var POPUNDER_GATE_MS = 24 * 60 * 60 * 1000;
+  function popunderAllowed() {
+    try {
+      var last = parseInt(localStorage.getItem(POPUNDER_GATE_KEY) || "0", 10);
+      if (Date.now() - last < POPUNDER_GATE_MS) return false;
+      localStorage.setItem(POPUNDER_GATE_KEY, String(Date.now()));
+      return true;
+    } catch (e) {
+      return true;
+    }
+  }
   function run() {
-    inject(slots.popunder, "noryvello-ad-popunder");
+    if (popunderAllowed()) inject(slots.popunder, "noryvello-ad-popunder");
     inject(slots.socialBar, "noryvello-ad-socialbar");
     inject(slots.inPagePush, "noryvello-ad-inpagepush");
   }
