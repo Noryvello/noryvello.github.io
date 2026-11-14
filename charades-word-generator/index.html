@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Charades Word Generator | Noryvello</title>
+<meta name="description" content="Pick a category and difficulty, then act out the word. A free charades word generator with 150 family-friendly words and phrases, hints, and a skip button for party games.">
+<link rel="canonical" href="https://noryvello.github.io/charades-word-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Charades Word Generator">
+<meta property="og:description" content="A free charades word generator with 150 family-friendly words and phrases to act out, with hints and a skip button.">
+<meta property="og:url" content="https://noryvello.github.io/charades-word-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc .word{font-size:26px;font-weight:800;text-align:center;margin:18px 0 6px}
+.calc .hint{font-size:15px;color:#334155;text-align:center;margin:6px 0}
+.btnrow{display:flex;gap:10px;margin-top:14px}
+.btnrow button{flex:1;padding:12px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.btnrow button:last-child{background:#0d9488}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do you play charades?","acceptedAnswer":{"@type":"Answer","text":"Split into two teams. One player acts out a word without speaking while their team guesses. If the team guesses the word before time runs out, they score a point. Take turns acting, and the team with the most points at the end wins."}},{"@type":"Question","name":"What if the word is too hard?","acceptedAnswer":{"@type":"Answer","text":"Press Skip to get a different word from the same category and difficulty. You can also switch to an easier difficulty, or press Reveal hint to see a one-line clue for the current word."}},{"@type":"Question","name":"Is there a timer on this page?","acceptedAnswer":{"@type":"Answer","text":"No. This page has no built-in timer. If you want a time limit, use any phone timer or a kitchen timer and agree on the time before each round, for example one minute per word."}},{"@type":"Question","name":"Are the words suitable for kids?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every word is family-friendly, with no rude, scary, or grown-up content. For younger children, choose the easy difficulty and the animals or food categories."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Charades Word Generator</h1>
+<p class="answer">Pick a category and a difficulty, and the generator shows one word or phrase to act out without speaking. Press Skip for a different word, or Reveal hint for a one-line clue. There are 150 words to choose from, so every round feels fresh.</p>
+<div class="calc">
+<label for="category">Category</label>
+<select id="category">
+<option value="movies">Movies</option>
+<option value="animals" selected>Animals</option>
+<option value="actions">Actions</option>
+<option value="food">Food</option>
+<option value="objects">Everyday objects</option>
+</select>
+<label for="difficulty">Difficulty</label>
+<select id="difficulty">
+<option value="easy" selected>Easy</option>
+<option value="medium">Medium</option>
+<option value="hard">Hard</option>
+</select>
+<p class="word" id="word"></p>
+<p class="hint" id="hint" hidden></p>
+<div class="btnrow">
+<button type="button" id="skipBtn">Skip</button>
+<button type="button" id="hintBtn">Reveal hint</button>
+</div>
+<p class="note" id="count"></p>
+</div>
+<div class="warn">This page has no timer. If you want a time limit, use any phone timer and agree on the time before each round. Words are picked to be acted out without speaking, so no talking, spelling, or pointing at objects in the room.</div>
+<h2>How to play</h2>
+<ol>
+<li>Split into two teams and take turns acting.</li>
+<li>The actor picks a category and difficulty, then acts out the word without speaking, spelling, or pointing at things in the room.</li>
+<li>The actor's team guesses out loud. A correct guess scores a point.</li>
+<li>If a word is too hard, press Skip for a new one — but agree beforehand whether a skip costs a point.</li>
+<li>Play to a set number of rounds, or set a target score, such as 10 points.</li>
+</ol>
+<h2>Acting tips</h2>
+<ul>
+<li>Start with the category: show the number of words with your fingers, then act each word in turn.</li>
+<li>Use big, clear movements — small gestures are hard to read from across the room.</li>
+<li>Act the idea, not the letters: for an elephant, show the trunk; for swimming, show the strokes.</li>
+<li>If your team is stuck, act a word that rhymes or means something similar, then point back to the real word.</li>
+<li>Keep it fair: no sounds, no mouthing words, and no pointing at objects in the room.</li>
+</ul>
+<h2>How the generator works</h2>
+<p>There are five categories: movies, animals, actions, food, and everyday objects. Each one has three difficulties: easy for kids and first-time players, medium for most groups, and hard for a real challenge.</p>
+<p>Every word comes with a one-line hint, shown only when you press Reveal hint. The hint is a clue about what the word means, not a way to act it — the acting is still up to you.</p>
+<p>The Skip button always shows a different word from the same category and difficulty. It never repeats the word on screen, so a skip always moves the game forward.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How do you play charades?</h3><p>Split into two teams. One player acts out a word without speaking while their team guesses. If the team guesses the word before time runs out, they score a point. Take turns acting, and the team with the most points at the end wins.</p></div>
+<div class="faq"><h3>What if the word is too hard?</h3><p>Press Skip to get a different word from the same category and difficulty. You can also switch to an easier difficulty, or press Reveal hint to see a one-line clue for the current word.</p></div>
+<div class="faq"><h3>Is there a timer on this page?</h3><p>No. This page has no built-in timer. If you want a time limit, use any phone timer or a kitchen timer and agree on the time before each round, for example one minute per word.</p></div>
+<div class="faq"><h3>Are the words suitable for kids?</h3><p>Yes. Every word is family-friendly, with no rude, scary, or grown-up content. For younger children, choose the easy difficulty and the animals or food categories.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../secret-santa-generator/">Secret Santa Generator</a> · <a href="../online-piano/">Free Online Piano</a> · <a href="../wedding-budget-planner/">Wedding Budget Planner</a> · <a href="../sleep-calculator/">Sleep Calculator</a></p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var POOL={
+movies:{
+easy:[
+{w:"The Lion King",h:"A young lion becomes king of the animals."},
+{w:"Toy Story",h:"Toys come to life when their owner is away."},
+{w:"Finding Nemo",h:"A father fish searches the ocean for his son."},
+{w:"Frozen",h:"Two sisters, snow, and a song about letting go."},
+{w:"Titanic",h:"A great ship hits ice in the cold sea."},
+{w:"Harry Potter",h:"A boy wizard goes to a school of magic."},
+{w:"Jurassic Park",h:"Dinosaurs return in a park that goes wrong."},
+{w:"Cinderella",h:"A kind girl loses a glass shoe at a ball."},
+{w:"Shrek",h:"A green ogre and a talking donkey go on a quest."},
+{w:"Avatar",h:"Blue people live on a faraway forest world."}
+],
+medium:[
+{w:"The Wizard of Oz",h:"A girl follows a yellow road with three friends."},
+{w:"Back to the Future",h:"A car that travels through time."},
+{w:"The Sound of Music",h:"A singing nanny brings music to a family."},
+{w:"Home Alone",h:"A boy left at home outsmarts two burglars."},
+{w:"Jaws",h:"A giant shark frightens a beach town."},
+{w:"King Kong",h:"A giant ape climbs a tall building."},
+{w:"Snow White",h:"Seven small friends and a poisoned apple."},
+{w:"Mary Poppins",h:"A magical nanny flies in with an umbrella."},
+{w:"Planet of the Apes",h:"Apes rule a strange world."},
+{w:"The Jungle Book",h:"A boy grows up among wild animals."}
+],
+hard:[
+{w:"Inception",h:"Thieves steal secrets from inside dreams."},
+{w:"Interstellar",h:"Travelers cross space to save humanity."},
+{w:"The Shawshank Redemption",h:"A man escapes from prison after many years."},
+{w:"Spirited Away",h:"A girl works in a bathhouse for spirits."},
+{w:"The Godfather",h:"A powerful family runs a secret empire."},
+{w:"Blade Runner",h:"A hunter tracks human-like machines in a future city."},
+{w:"Amelie",h:"A shy girl in Paris makes strangers happy."},
+{w:"Life Is Beautiful",h:"A father turns hard times into a game for his son."},
+{w:"The Matrix",h:"A man learns his world is a computer dream."},
+{w:"Gone with the Wind",h:"A love story in the old American South."}
+]
+},
+animals:{
+easy:[
+{w:"Dog",h:"A loyal pet that barks and wags its tail."},
+{w:"Cat",h:"A pet that purrs and chases mice."},
+{w:"Elephant",h:"The biggest land animal, with a long trunk."},
+{w:"Lion",h:"The king of the animals, with a big mane."},
+{w:"Monkey",h:"A clever animal that swings from trees."},
+{w:"Rabbit",h:"A small animal with long ears that hops."},
+{w:"Penguin",h:"A black and white bird that cannot fly but swims."},
+{w:"Snake",h:"A long animal with no legs that slides on the ground."},
+{w:"Frog",h:"A green animal that jumps and says ribbit."},
+{w:"Horse",h:"A strong animal people ride."}
+],
+medium:[
+{w:"Giraffe",h:"The tallest animal, with a very long neck."},
+{w:"Kangaroo",h:"An animal from Australia that hops and carries babies in a pouch."},
+{w:"Octopus",h:"A sea animal with eight arms."},
+{w:"Hedgehog",h:"A small animal covered in sharp spines."},
+{w:"Owl",h:"A night bird with big eyes that says hoo."},
+{w:"Dolphin",h:"A clever sea animal that jumps out of the water."},
+{w:"Panda",h:"A black and white bear that eats bamboo."},
+{w:"Crocodile",h:"A large reptile with a long snout and sharp teeth."},
+{w:"Butterfly",h:"A flying insect with bright colored wings."},
+{w:"Koala",h:"A sleepy animal that lives in eucalyptus trees."}
+],
+hard:[
+{w:"Chameleon",h:"A lizard that changes color to hide."},
+{w:"Platypus",h:"A mammal with a duck bill that lays eggs."},
+{w:"Sloth",h:"A very slow animal that hangs from trees upside down."},
+{w:"Narwhal",h:"A sea whale with a long spiral tusk."},
+{w:"Praying mantis",h:"A green insect that folds its front legs like hands in prayer."},
+{w:"Armadillo",h:"An animal that wears a hard shell like armor."},
+{w:"Flamingo",h:"A pink bird that often stands on one leg."},
+{w:"Meerkat",h:"A small desert animal that stands up to watch for danger."},
+{w:"Porcupine",h:"An animal covered in long sharp quills."},
+{w:"Seahorse",h:"A tiny sea animal shaped like a chess piece."}
+]
+},
+actions:{
+easy:[
+{w:"Swimming",h:"Moving through water with arms and legs."},
+{w:"Dancing",h:"Moving to music."},
+{w:"Eating",h:"Chewing food."},
+{w:"Sleeping",h:"Resting with eyes closed."},
+{w:"Running",h:"Moving fast on foot."},
+{w:"Singing",h:"Making music with your voice."},
+{w:"Clapping",h:"Hitting your hands together to make a sound."},
+{w:"Waving",h:"Moving your hand side to side to say hello."},
+{w:"Jumping",h:"Pushing off the ground into the air."},
+{w:"Reading",h:"Looking at words in a book."}
+],
+medium:[
+{w:"Fishing",h:"Waiting with a rod to catch a fish."},
+{w:"Baking a cake",h:"Mixing and heating food in an oven."},
+{w:"Brushing teeth",h:"Cleaning your teeth with a small brush."},
+{w:"Taking a photo",h:"Pointing a camera and pressing the button."},
+{w:"Riding a bicycle",h:"Pedaling on two wheels."},
+{w:"Painting a picture",h:"Using a brush and colors on paper."},
+{w:"Building a snowman",h:"Rolling snow into a figure with a carrot nose."},
+{w:"Blowing out candles",h:"Making a wish and puffing out flames."},
+{w:"Washing dishes",h:"Cleaning plates with soap and water."},
+{w:"Flying a kite",h:"Holding a string as the wind lifts a paper shape."}
+],
+hard:[
+{w:"Juggling",h:"Keeping several balls in the air at once."},
+{w:"Ice skating",h:"Gliding on frozen water with blades on your feet."},
+{w:"Playing the violin",h:"Moving a bow across strings held under the chin."},
+{w:"Tightrope walking",h:"Balancing on a thin rope high above the ground."},
+{w:"Rock climbing",h:"Using hands and feet to climb a steep wall of rock."},
+{w:"Knitting a sweater",h:"Making clothes with two needles and yarn."},
+{w:"Milking a cow",h:"Squeezing milk from a cow by hand."},
+{w:"Doing a magic trick",h:"Pulling a rabbit out of a hat."},
+{w:"Surfing",h:"Standing on a board riding ocean waves."},
+{w:"Sailing",h:"Using wind in a big cloth to move a boat."}
+]
+},
+food:{
+easy:[
+{w:"Pizza",h:"A round flat food with cheese and tomato."},
+{w:"Banana",h:"A yellow fruit you peel before eating."},
+{w:"Ice cream",h:"A cold sweet treat served in a cone or bowl."},
+{w:"Bread",h:"Baked food made from flour, often sliced."},
+{w:"Apple",h:"A round fruit, often red or green."},
+{w:"Egg",h:"It comes from a hen and can be boiled or fried."},
+{w:"Carrot",h:"An orange vegetable rabbits love."},
+{w:"Cake",h:"A sweet baked treat for birthdays."},
+{w:"Cheese",h:"It is made from milk and mice love it in cartoons."},
+{w:"Orange",h:"A round citrus fruit you peel in segments."}
+],
+medium:[
+{w:"Spaghetti",h:"Long thin pasta you twirl on a fork."},
+{w:"Pancakes",h:"Flat round cakes eaten with syrup for breakfast."},
+{w:"Popcorn",h:"Small white puffs you eat at the cinema."},
+{w:"Sushi",h:"Rice with raw fish, from Japan."},
+{w:"Taco",h:"A folded shell filled with meat and vegetables."},
+{w:"Pineapple",h:"A spiky tropical fruit with sweet yellow flesh."},
+{w:"Broccoli",h:"A green vegetable that looks like a tiny tree."},
+{w:"Honey",h:"A sweet sticky food made by bees."},
+{w:"Sandwich",h:"Food between two slices of bread."},
+{w:"Hamburger",h:"A round meat patty in a soft bun."}
+],
+hard:[
+{w:"Artichoke",h:"A green vegetable with many tough leaves."},
+{w:"Avocado",h:"A green fruit with a big stone inside."},
+{w:"Croissant",h:"A curved flaky pastry from France."},
+{w:"Dumpling",h:"A small parcel of dough filled with meat or vegetables."},
+{w:"Fig",h:"A soft sweet fruit with many tiny seeds."},
+{w:"Ginger",h:"A spicy root used in cooking and tea."},
+{w:"Mushroom",h:"It grows in forests and is neither plant nor animal."},
+{w:"Pretzel",h:"A salty twisted bread shaped like a knot."},
+{w:"Tofu",h:"A soft white food made from soybeans."},
+{w:"Wasabi",h:"A very hot green paste served with sushi."}
+]
+},
+objects:{
+easy:[
+{w:"Chair",h:"You sit on it."},
+{w:"Umbrella",h:"It keeps you dry in the rain."},
+{w:"Key",h:"You use it to unlock a door."},
+{w:"Book",h:"It has pages you read."},
+{w:"Clock",h:"It tells the time."},
+{w:"Toothbrush",h:"You clean your teeth with it."},
+{w:"Bicycle",h:"A two-wheeled ride you pedal."},
+{w:"Telephone",h:"You use it to call someone."},
+{w:"Mirror",h:"You look in it to see yourself."},
+{w:"Scissors",h:"Two blades that cut paper."}
+],
+medium:[
+{w:"Backpack",h:"A bag you carry on your shoulders."},
+{w:"Flashlight",h:"A small light you hold in your hand."},
+{w:"Candle",h:"It burns with a small flame and gives light."},
+{w:"Camera",h:"It takes pictures."},
+{w:"Ladder",h:"You climb it to reach high places."},
+{w:"Envelope",h:"A paper cover for a letter."},
+{w:"Sunglasses",h:"Dark glasses that protect your eyes from the sun."},
+{w:"Wallet",h:"A small case for money and cards."},
+{w:"Hammer",h:"A tool for hitting nails."},
+{w:"Pillow",h:"A soft cushion you rest your head on."}
+],
+hard:[
+{w:"Compass",h:"A small tool whose needle always points north."},
+{w:"Thermometer",h:"It measures temperature."},
+{w:"Telescope",h:"It lets you see faraway stars."},
+{w:"Magnifying glass",h:"It makes small things look bigger."},
+{w:"Typewriter",h:"An old machine for writing letters with keys."},
+{w:"Hourglass",h:"Sand runs through it to measure time."},
+{w:"Sewing needle",h:"A thin sharp tool for stitching cloth."},
+{w:"Padlock",h:"A small lock you hang on a gate or chain."},
+{w:"Stethoscope",h:"A doctor listens to a heartbeat with it."},
+{w:"Periscope",h:"It lets you see above or around things, like on a submarine."}
+]
+}
+};
+var cat=document.getElementById('category');
+var diff=document.getElementById('difficulty');
+var wordEl=document.getElementById('word');
+var hintEl=document.getElementById('hint');
+var hintBtn=document.getElementById('hintBtn');
+var countEl=document.getElementById('count');
+var currentIndex=-1;
+function bucket(){return POOL[cat.value][diff.value];}
+function pick(exclude){
+var b=bucket();
+var i;
+do{i=Math.floor(Math.random()*b.length);}while(b.length>1&&i===exclude);
+return i;
+}
+function show(i){
+var b=bucket();
+currentIndex=i;
+wordEl.textContent=b[i].w;
+hintEl.textContent='';
+hintEl.hidden=true;
+hintBtn.textContent='Reveal hint';
+countEl.textContent=b.length+' words in this category and difficulty.';
+}
+function newWord(){show(pick(currentIndex));}
+function onSelect(){show(pick(-1));}
+cat.addEventListener('input',onSelect);
+cat.addEventListener('change',onSelect);
+diff.addEventListener('input',onSelect);
+diff.addEventListener('change',onSelect);
+document.getElementById('skipBtn').addEventListener('click',newWord);
+hintBtn.addEventListener('click',function(){
+if(hintEl.hidden){
+hintEl.textContent=bucket()[currentIndex].h;
+hintEl.hidden=false;
+hintBtn.textContent='Hide hint';
+}else{
+hintEl.textContent='';
+hintEl.hidden=true;
+hintBtn.textContent='Reveal hint';
+}
+});
+newWord();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ramp Slope Calculator | Noryvello</title>
+<meta name="description" content="Work out a ramp's slope ratio, percentage and angle in degrees from its rise and length. Enter the run or the slope length and see the working.">
+<link rel="canonical" href="https://noryvello.github.io/ramp-slope-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ramp Slope Calculator">
+<meta property="og:description" content="Find a ramp's slope ratio, percentage and angle from its rise and length.">
+<meta property="og:url" content="https://noryvello.github.io/ramp-slope-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does a slope ratio of 1:12 mean?","acceptedAnswer":{"@type":"Answer","text":"It means the ramp rises 1 unit for every 12 units of horizontal run. A ramp that rises 0.5 over a run of 6 has a ratio of 1:12, because 6 divided by 0.5 is 12."}},{"@type":"Question","name":"What is a gentle slope?","acceptedAnswer":{"@type":"Answer","text":"A gentle slope is often given as 1:12, which is about 4.8 degrees. Steeper slopes are harder to use, especially for wheelchairs and heavy loads. This is general guidance, not a building rule, and local rules may differ."}},{"@type":"Question","name":"Should I enter the run or the slope length?","acceptedAnswer":{"@type":"Answer","text":"Enter whichever you measured. The run is the flat horizontal distance, while the slope length is the distance along the ramp surface itself. Pick the matching option above and the calculator works out the run for you."}},{"@type":"Question","name":"Is 1:12 a building rule?","acceptedAnswer":{"@type":"Answer","text":"No. The 1:12 figure is common general guidance for a gentle slope, not a building rule. Local rules and standards may differ, so check the rules that apply where the ramp will be built."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Ramp Slope Calculator</h1>
+<p class="answer">Enter the height your ramp must rise and the length of the ramp, and this calculator gives you the slope ratio, the slope percentage and the angle in degrees, with the working shown. It works with any unit — metres, feet or centimetres — as long as the rise and the length use the same unit.</p>
+<div class="calc">
+<label for="rise">Height to rise (vertical)</label>
+<input id="rise" type="number" step="any" inputmode="decimal" value="0.5">
+<label for="length">Ramp length</label>
+<input id="length" type="number" step="any" inputmode="decimal" value="6">
+<label for="mode">What did you measure as the length?</label>
+<select id="mode">
+<option value="run" selected>Horizontal run</option>
+<option value="slope">Slope length (along the ramp)</option>
+</select>
+<div class="out" id="out"></div>
+<div class="steps" id="steps"></div>
+<p class="note">Use the same unit for the rise and the length. The ratio, percentage and angle do not depend on which unit you choose.</p>
+</div>
+<div class="warn">This calculator gives general guidance, not a building rule. A gentle slope is often given as 1:12 (about 4.8 degrees), but local rules and standards may differ, so check the rules that apply where the ramp will be built. The results are only as good as the numbers entered, so measure the rise and length carefully.</div>
+<h2>How the maths works</h2>
+<p>A ramp slope can be described three ways, and all three come from the same two numbers: the rise (how high the ramp climbs) and the run (the flat horizontal distance it covers).</p>
+<ul>
+<li><strong>Slope ratio:</strong> run ÷ rise, written as 1:X. A ratio of 1:12 means the ramp rises 1 unit for every 12 units of run.</li>
+<li><strong>Slope percentage:</strong> rise ÷ run × 100. A 1:12 slope is about 8.33%.</li>
+<li><strong>Slope angle:</strong> arctan(rise ÷ run), in degrees. A 1:12 slope is about 4.76 degrees.</li>
+</ul>
+<p>If you measured the slope length instead of the run — the distance along the ramp surface itself — the run is worked out first with Pythagoras: run = √(slope length² − rise²). That is why the slope length must be longer than the rise: a ramp's sloping surface is always longer than the height it climbs.</p>
+<h2>Worked examples</h2>
+<p><strong>Example 1 — rise 0.5, run 6.</strong> Ratio: 6 ÷ 0.5 = 12, so 1:12. Percentage: 0.5 ÷ 6 × 100 = 8.33%. Angle: arctan(0.5 ÷ 6) = 4.76°.</p>
+<p><strong>Example 2 — rise 1, slope length 5.</strong> Run = √(5² − 1²) = √24 = 4.90. Ratio: run ÷ rise = 4.90, so 1:4.90. Percentage: rise ÷ run × 100 = 20.41%. Angle: arctan(rise ÷ run) = 11.54°. The percentage and angle use the full run value (4.898979…), not the rounded 4.90.</p>
+<p><strong>Example 3 — rise 0.3, run 3.</strong> Ratio: 3 ÷ 0.3 = 10, so 1:10. Percentage: 0.3 ÷ 3 × 100 = 10.00%. Angle: arctan(0.3 ÷ 3) = 5.71°.</p>
+<h2>Gentle or steep?</h2>
+<p>A gentle slope is often given as 1:12, which is about 4.8 degrees. Steeper slopes are harder to use — pushing a wheelchair or a heavy load up a steep ramp takes much more effort, and a very steep ramp can be unsafe. The gentler the slope, the longer the ramp needs to be for the same rise: a 1:12 ramp needs 12 units of run for every 1 unit of rise.</p>
+<p>Remember that 1:12 is common general guidance, not a building rule. Local rules and standards may differ, and they may set a different slope for ramps in public buildings, so always check the rules that apply where the ramp will be built.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What does a slope ratio of 1:12 mean?</h3><p>It means the ramp rises 1 unit for every 12 units of horizontal run. A ramp that rises 0.5 over a run of 6 has a ratio of 1:12, because 6 divided by 0.5 is 12.</p></div>
+<div class="faq"><h3>What is a gentle slope?</h3><p>A gentle slope is often given as 1:12, which is about 4.8 degrees. Steeper slopes are harder to use, especially for wheelchairs and heavy loads. This is general guidance, not a building rule, and local rules may differ.</p></div>
+<div class="faq"><h3>Should I enter the run or the slope length?</h3><p>Enter whichever you measured. The run is the flat horizontal distance, while the slope length is the distance along the ramp surface itself. Pick the matching option above and the calculator works out the run for you.</p></div>
+<div class="faq"><h3>Is 1:12 a building rule?</h3><p>No. The 1:12 figure is common general guidance for a gentle slope, not a building rule. Local rules and standards may differ, so check the rules that apply where the ramp will be built.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../paint-calculator/">Paint Calculator</a> · <a href="../running-pace-calculator/">Running Pace Calculator</a> · <a href="../overtime-pay-calculator/">Overtime Pay Calculator</a> · <a href="../sleep-calculator/">Sleep Calculator</a></p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n){return (Math.round((n+1e-9)*100)/100).toFixed(2);}
+function fmtX(n){var s=fmt(n);return s.slice(-3)==='.00'?s.slice(0,-3):s;}
+function calc(){
+var rise=parseFloat(document.getElementById('rise').value);
+var len=parseFloat(document.getElementById('length').value);
+var mode=document.getElementById('mode').value;
+var out=document.getElementById('out');
+var steps=document.getElementById('steps');
+if(isNaN(rise)||isNaN(len)||rise<=0||len<=0){
+out.textContent='Enter a rise and a length above zero to see the slope.';
+steps.textContent='';
+return;
+}
+var run,runLine;
+if(mode==='run'){
+run=len;
+runLine='Run = '+len+' (horizontal run entered)';
+}else{
+if(len<=rise){
+out.textContent='The slope length must be longer than the rise.';
+steps.textContent='A ramp\u2019s sloping surface is always longer than the height it climbs, so check the numbers and try again.';
+return;
+}
+run=Math.sqrt(len*len-rise*rise);
+runLine='Run = \u221A('+len+'\u00B2 \u2212 '+rise+'\u00B2) = '+fmt(run);
+}
+var x=run/rise,pct=rise/run*100,ang=Math.atan(rise/run)*180/Math.PI;
+out.textContent='Slope ratio 1:'+fmtX(x)+' \u00B7 '+fmt(pct)+'% \u00B7 '+fmt(ang)+' degrees';
+var lines=[runLine];
+if(mode==='run'){
+lines.push('Ratio: run \u00F7 rise = '+len+' \u00F7 '+rise+' = '+fmtX(x)+', so 1:'+fmtX(x));
+lines.push('Percentage: rise \u00F7 run \u00D7 100 = '+rise+' \u00F7 '+len+' \u00D7 100 = '+fmt(pct)+'%');
+lines.push('Angle: arctan(rise \u00F7 run) = arctan('+rise+' \u00F7 '+len+') = '+fmt(ang)+'\u00B0');
+}else{
+lines.push('Ratio: run \u00F7 rise = '+fmtX(x)+', so 1:'+fmtX(x));
+lines.push('Percentage: rise \u00F7 run \u00D7 100 = '+fmt(pct)+'%');
+lines.push('Angle: arctan(rise \u00F7 run) = '+fmt(ang)+'\u00B0');
+lines.push('The percentage and angle use the full run value, not the rounded '+fmt(run)+'.');
+}
+steps.textContent=lines.join('\n');
+}
+document.getElementById('rise').addEventListener('input',calc);
+document.getElementById('rise').addEventListener('change',calc);
+document.getElementById('length').addEventListener('input',calc);
+document.getElementById('length').addEventListener('change',calc);
+document.getElementById('mode').addEventListener('input',calc);
+document.getElementById('mode').addEventListener('change',calc);
+calc();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

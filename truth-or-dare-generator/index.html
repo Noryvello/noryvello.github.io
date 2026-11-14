@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Truth or Dare Generator | Noryvello</title>
+<meta name="description" content="Play truth or dare with a free generator: pick truth or dare, choose easy, medium or spicy-but-clean, and get a clean, original prompt every time. No sign-up, works on any phone.">
+<link rel="canonical" href="https://noryvello.github.io/truth-or-dare-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Truth or Dare Generator">
+<meta property="og:description" content="Pick truth or dare, choose an intensity, and get a clean, original prompt for your game.">
+<meta property="og:url" content="https://noryvello.github.io/truth-or-dare-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{width:100%;padding:12px;margin-top:14px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.calc button:active{background:#3730a3}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this game safe for kids?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every truth and dare on this page is clean and safe: there is no danger, pain, embarrassment, money or alcohol involved, and the truths are light and fun. Younger children may enjoy the easy level most, and an adult can look over the choices before play."}},{"@type":"Question","name":"What does spicy-but-clean mean?","acceptedAnswer":{"@type":"Answer","text":"Spicy-but-clean means playful and cheeky, but still fully clean. A spicy dare might ask you to talk like a pirate until your next turn, and a spicy truth might ask about the silliest thing you ever said to a stranger. Nothing rude, risky or embarrassing is included."}},{"@type":"Question","name":"How do you play truth or dare?","acceptedAnswer":{"@type":"Answer","text":"Take turns. On your turn, choose truth or dare and pick an intensity, then read out the prompt the generator gives you. If you chose truth, answer the question honestly; if you chose dare, do the dare. Then pass to the next player."}},{"@type":"Question","name":"What if someone does not want to answer or do a dare?","acceptedAnswer":{"@type":"Answer","text":"They can skip it, no questions asked. Press Next for a different prompt, or let them switch from truth to dare, or the other way round. The game is only fun when everyone is comfortable, so never pressure anyone to answer or do something they do not want to."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Truth or Dare Generator</h1>
+<p class="answer">Pick truth or dare, choose an intensity, and this generator gives you one clean, original prompt for your game. Press Next for a different prompt from the same type and intensity, as many times as you like.</p>
+<div class="calc">
+<label for="typeSel">Truth or dare?</label>
+<select id="typeSel">
+<option value="truth">Truth</option>
+<option value="dare">Dare</option>
+</select>
+<label for="levelSel">Intensity</label>
+<select id="levelSel">
+<option value="easy">Easy</option>
+<option value="medium">Medium</option>
+<option value="spicy">Spicy but clean</option>
+</select>
+<p class="out" id="itemOut"></p>
+<p class="note" id="itemMeta"></p>
+<button type="button" id="nextBtn">Next</button>
+</div>
+<div class="warn">The safety rule: everything on this page is clean and safe. There are no dares involving danger, pain, public embarrassment, money or alcohol, and no truths that are personal or shaming. Anyone can skip any truth or dare at any time, no questions asked. This generator is for fun only; if a prompt ever feels wrong for your group, just press Next.</div>
+<h2>How to play</h2>
+<p>Truth or dare is a simple party game that works with any number of players, from two friends to a whole room. Sit together, decide who goes first, and take turns around the group.</p>
+<ol>
+<li>On your turn, choose truth or dare, then pick an intensity: easy, medium or spicy-but-clean.</li>
+<li>Read the prompt out loud. If you chose truth, answer the question honestly. If you chose dare, do the dare.</li>
+<li>If the prompt does not suit you, press Next for a different one, or switch between truth and dare.</li>
+<li>When your turn is done, pass to the next player and keep going for as long as everyone is having fun.</li>
+</ol>
+<h2>The safety rule</h2>
+<p>Every prompt on this page was written to be clean and safe for a mixed group, including families. No dare asks you to do anything dangerous, painful or embarrassing, and nothing here involves money, alcohol or anything a parent would object to. The truths are light and fun: they ask about favourite things, funny memories and silly what-ifs, never about private matters or anything that could shame someone.</p>
+<p>Spicy-but-clean is the cheekiest level, but it is still fully clean. It means playful prompts such as talking in a robot voice until your next turn, or telling the group the silliest thing you ever said to a stranger. If a prompt ever feels too much for someone, the rule is simple: skip it, with no questions asked and no penalty.</p>
+<h2>Tips for a good game</h2>
+<ul>
+<li>Start on easy while everyone warms up, then move to medium or spicy-but-clean when the group is ready.</li>
+<li>Let each player pick their own intensity on their turn, so nobody feels pushed.</li>
+<li>Keep turns short. If a dare is taking too long, agree on a quick finish and move on.</li>
+<li>Take breaks. A few rounds, a snack and a chat, then a few more rounds keeps the game fun.</li>
+<li>Agree before you start that anyone can skip any prompt. A game is only fun when everyone is comfortable.</li>
+</ul>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Is this game safe for kids?</h3><p>Yes. Every truth and dare on this page is clean and safe: there is no danger, pain, embarrassment, money or alcohol involved, and the truths are light and fun. Younger children may enjoy the easy level most, and an adult can look over the choices before play.</p></div>
+<div class="faq"><h3>What does spicy-but-clean mean?</h3><p>Spicy-but-clean means playful and cheeky, but still fully clean. A spicy dare might ask you to talk like a pirate until your next turn, and a spicy truth might ask about the silliest thing you ever said to a stranger. Nothing rude, risky or embarrassing is included.</p></div>
+<div class="faq"><h3>How do you play truth or dare?</h3><p>Take turns. On your turn, choose truth or dare and pick an intensity, then read out the prompt the generator gives you. If you chose truth, answer the question honestly; if you chose dare, do the dare. Then pass to the next player.</p></div>
+<div class="faq"><h3>What if someone does not want to answer or do a dare?</h3><p>They can skip it, no questions asked. Press Next for a different prompt, or let them switch from truth to dare, or the other way round. The game is only fun when everyone is comfortable, so never pressure anyone to answer or do something they do not want to.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../secret-santa-generator/">Secret Santa Generator</a> · <a href="../online-piano/">Free Online Piano</a> · <a href="../wedding-budget-planner/">Wedding Budget Planner</a> · <a href="../sleep-calculator/">Sleep Calculator</a></p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var POOL = {
+  truth: {
+    easy: [
+      "What is your favourite food, and why do you like it so much?",
+      "What is the first thing you do when you wake up in the morning?",
+      "What is your favourite season of the year, and what do you like about it?",
+      "What animal would you most like to have as a pet?",
+      "What is the funniest dream you can remember?",
+      "What is your favourite book, film or song, and why?",
+      "If you could visit any place in the world, where would you go?",
+      "What is the best gift you have ever received?",
+      "What subject did you enjoy most at school?",
+      "What is your favourite way to spend a free afternoon?",
+      "What is the silliest thing you have ever laughed at?",
+      "What is one thing you are really good at?"
+    ],
+    medium: [
+      "What is the funniest thing that ever happened to you in class or at work?",
+      "What is the strangest food combination you have ever tried?",
+      "What is a small habit of yours that makes your friends smile?",
+      "What is the silliest thing you have ever done to impress someone?",
+      "What is the worst haircut you have ever had?",
+      "What is a song you secretly love even though it is not cool?",
+      "What is the funniest nickname anyone has ever given you?",
+      "What is the most childish thing you still enjoy doing?",
+      "Have you ever laughed at the wrong moment? What happened?",
+      "What is the strangest dream you have ever had?",
+      "What is the most unusual thing in your room right now?",
+      "What is the silliest argument you have ever had with a friend?"
+    ],
+    spicy: [
+      "What is the silliest thing you have ever said to a stranger?",
+      "What is the cheesiest song on your playlist?",
+      "What is the weirdest thing you have ever done when you thought nobody was watching?",
+      "If you could swap lives with anyone in this room for a day, who would it be and why?",
+      "What is the funniest excuse you have ever made up to get out of something?",
+      "What is the most dramatic thing you have ever done to get someone's attention?",
+      "What is a secret talent you have never shown anyone?",
+      "What is the silliest thing you have ever done because of a dare?",
+      "Who in this room would you call first if you needed help hiding a surprise party?",
+      "What is the strangest compliment you have ever received?",
+      "What is the most ridiculous thing you have ever believed as a child?",
+      "If your life had a theme song, what would it be and why?"
+    ]
+  },
+  dare: {
+    easy: [
+      "Say your name backwards three times.",
+      "Do your best impression of a cat for ten seconds.",
+      "Clap your hands and hop on one foot five times.",
+      "Speak in a squeaky voice until your next turn.",
+      "Draw a smiley face in the air with your finger.",
+      "Pretend to be a statue for twenty seconds.",
+      "Sing the first line of any song you like.",
+      "Do five jumping jacks.",
+      "Balance a book on your head and walk to the door and back.",
+      "Make up a short rhyme about the person next to you.",
+      "Wave at everyone in the room like a royal.",
+      "Count from one to ten in your silliest voice."
+    ],
+    medium: [
+      "Talk in a robot voice until your next turn.",
+      "Do your best impression of a famous cartoon character.",
+      "Act out your favourite animal without saying its name and let everyone guess.",
+      "Sing a song of the group's choice in an opera voice.",
+      "Do a silly dance for fifteen seconds.",
+      "Pretend you are a news reporter and describe the room for twenty seconds.",
+      "Speak only in questions until your next turn.",
+      "Do your best impression of someone in the room, and keep it kind and funny.",
+      "Walk across the room like a penguin.",
+      "Invent a handshake with the person next to you.",
+      "Pretend to be a waiter and take everyone's pretend dinner order.",
+      "Say the alphabet backwards as far as you can."
+    ],
+    spicy: [
+      "Talk like a pirate until your next turn.",
+      "Give the person next to you a compliment in a dramatic movie voice.",
+      "Do a dramatic slow-motion walk across the room.",
+      "Pretend you are a superhero introducing yourself to the group.",
+      "Let the group pick a funny accent for you to use until your next turn.",
+      "Do your best runway walk around the room.",
+      "Act out a scene from your favourite film without words.",
+      "Pretend to be a weather presenter and forecast tomorrow's weather for the room.",
+      "Sing 'Happy Birthday' to the nearest object like it is a beloved friend.",
+      "Give a one-minute speech about why socks are the greatest invention ever.",
+      "Pretend you are a chef on TV and describe how to make a sandwich.",
+      "Do a dramatic reading of the nearest book or box label."
+    ]
+  }
+};
+var LEVEL_NAMES = { easy: "Easy", medium: "Medium", spicy: "Spicy but clean" };
+var TYPE_NAMES = { truth: "Truth", dare: "Dare" };
+var currentIndex = -1;
+function currentList() {
+  var t = document.getElementById("typeSel").value;
+  var l = document.getElementById("levelSel").value;
+  return POOL[t][l];
+}
+function show() {
+  var list = currentList();
+  var i;
+  do {
+    i = Math.floor(Math.random() * list.length);
+  } while (list.length > 1 && i === currentIndex);
+  currentIndex = i;
+  document.getElementById("itemOut").textContent = list[i];
+  document.getElementById("itemMeta").textContent = TYPE_NAMES[document.getElementById("typeSel").value] + " · " + LEVEL_NAMES[document.getElementById("levelSel").value];
+}
+function changeBucket() {
+  currentIndex = -1;
+  show();
+}
+document.getElementById("typeSel").addEventListener("input", changeBucket);
+document.getElementById("typeSel").addEventListener("change", changeBucket);
+document.getElementById("levelSel").addEventListener("input", changeBucket);
+document.getElementById("levelSel").addEventListener("change", changeBucket);
+document.getElementById("nextBtn").addEventListener("click", show);
+show();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

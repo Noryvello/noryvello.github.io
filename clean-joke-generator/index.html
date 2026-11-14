@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clean Joke Generator | Noryvello</title>
+<meta name="description" content="Generate a clean, original joke in one click. Pick a category — animals, school, food, science or everyday life — and enjoy a family-friendly joke, with a fresh one every time.">
+<link rel="canonical" href="https://noryvello.github.io/clean-joke-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Clean Joke Generator">
+<meta property="og:description" content="Pick a category and get a clean, original joke — family-friendly and ready to share.">
+<meta property="og:url" content="https://noryvello.github.io/clean-joke-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;padding:11px;margin-top:14px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.calc button:hover{background:#3730a3}
+.calc .out{min-height:96px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Are the jokes on this page original?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every joke was written for this page and is not copied from a book, a website, or anywhere else. You will not find these exact jokes anywhere else."}},
+{"@type":"Question","name":"Are the jokes suitable for kids?","acceptedAnswer":{"@type":"Answer","text":"Yes. All jokes are clean and family-friendly, with no rude words, no teasing, and nothing scary. They are safe to share at home, in class, or at a family gathering."}},
+{"@type":"Question","name":"How does the Next joke button work?","acceptedAnswer":{"@type":"Answer","text":"Each press picks a different joke at random from the category you chose. The button never shows the same joke twice in a row, so every press gives you something new."}},
+{"@type":"Question","name":"Can I use these jokes anywhere?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can tell them to friends and family, use them in a classroom, or share them at a party. They are free to enjoy and retell."}}
+]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Clean Joke Generator</h1>
+<p class="answer">Pick a category and get a clean, original joke — free, family-friendly, and ready to share. Every joke on this page was written for Noryvello, and the Next joke button always brings a fresh one from the same category.</p>
+<div class="calc">
+<label for="category">Choose a category</label>
+<select id="category">
+<option value="animals" selected>Animals</option>
+<option value="school">School</option>
+<option value="food">Food</option>
+<option value="science">Science</option>
+<option value="everyday">Everyday life</option>
+</select>
+<p class="out" id="joke"></p>
+<button type="button" id="nextBtn">Next joke</button>
+<p class="note" id="count"></p>
+</div>
+<div class="warn">These jokes are original and written to be light-hearted and family-friendly. Humour is personal — a joke that makes one person laugh may only make another smile. This generator is for fun; it is not professional comedy material.</div>
+<h2>How to use the generator</h2>
+<ol>
+<li>Choose a category from the list — animals, school, food, science, or everyday life.</li>
+<li>A joke from that category appears right away. Read it, share it, or laugh at it.</li>
+<li>Press <strong>Next joke</strong> for a different joke from the same category. The button never repeats the joke you are looking at.</li>
+<li>Switch categories any time to try a different kind of humour.</li>
+</ol>
+<p>Each category holds 12 original jokes, so there are 60 jokes in total to discover. Press Next as many times as you like — the generator picks at random, so you never know which joke is coming next.</p>
+<h2>What makes a joke clean</h2>
+<p>A clean joke is funny without being unkind. Every joke on this page follows three simple rules:</p>
+<ul>
+<li><strong>No rude words.</strong> The humour comes from the situation, not from language anyone would need to apologise for.</li>
+<li><strong>No teasing.</strong> Nobody is the butt of the joke — no group of people, no job, and no way of life is made fun of.</li>
+<li><strong>Easy to understand anywhere.</strong> The jokes use everyday words and situations, with no local slang and no references that only make sense in one place.</li>
+</ul>
+<p>That is why these jokes work at home, in a classroom, at a party, or anywhere people of different ages are together. A good clean joke is one you can tell your grandmother and your youngest cousin in the same breath.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Are the jokes on this page original?</h3><p>Yes. Every joke was written for this page and is not copied from a book, a website, or anywhere else. You will not find these exact jokes anywhere else.</p></div>
+<div class="faq"><h3>Are the jokes suitable for kids?</h3><p>Yes. All jokes are clean and family-friendly, with no rude words, no teasing, and nothing scary. They are safe to share at home, in class, or at a family gathering.</p></div>
+<div class="faq"><h3>How does the Next joke button work?</h3><p>Each press picks a different joke at random from the category you chose. The button never shows the same joke twice in a row, so every press gives you something new.</p></div>
+<div class="faq"><h3>Can I use these jokes anywhere?</h3><p>Yes. You can tell them to friends and family, use them in a classroom, or share them at a party. They are free to enjoy and retell.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../secret-santa-generator/">Secret Santa Generator</a> · <a href="../online-piano/">Free Online Piano</a> · <a href="../sleep-calculator/">Sleep Calculator</a> · <a href="../wedding-budget-planner/">Wedding Budget Planner</a></p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var JOKES = {
+animals: [
+"The cat opened a small shop. It sold nothing, but every customer left happy — because the cat let them watch it sleep in the sunny window.",
+"A penguin walked into a bakery and asked, \"Do you have anything cold?\" The baker said, \"Everything here is fresh from the oven.\" The penguin smiled and said, \"Then I will wait for winter.\"",
+"My dog learned to open the fridge. Now he cooks nothing, but he checks the milk every hour, just in case it has changed its mind.",
+"The elephant joined the school band. It was very good at the trumpet, but the teacher asked it to play a little more quietly — the whole town could hear practice.",
+"A turtle started a race with a snail. The snail won. The turtle said, \"I was not slow. I was enjoying the view.\"",
+"Why does the owl do its homework at night? Because in the daytime, it is busy being wise in its sleep.",
+"The duck bought a new umbrella. It never used it, because rain is just a swimming pool that falls from the sky.",
+"A horse went to the dentist and said, \"My teeth feel long.\" The dentist said, \"That is normal. You are a horse.\"",
+"The bee was late for work. It said, \"Sorry, I got stuck in traffic — a whole field of flowers, and I stopped at every one.\"",
+"A monkey tried to learn the piano. After one week, it could play one song — very loudly, and only at breakfast time.",
+"The rabbit opened a garden. It grew carrots, and then it ate the whole garden. The rabbit called it a success.",
+"A goat joined the football team. It was excellent at heading the ball, but it kept eating the corner flags."
+],
+school: [
+"My pencil broke during the test. I told the teacher, \"It could not take the pressure.\" The teacher gave me a pen and said, \"This one is stronger.\"",
+"The school bell rings at the same time every day. It is the only thing in the school that is never late for class.",
+"I asked my maths book for help. It said, \"I have many problems.\" I said, \"So do I. Let us solve them together.\"",
+"The history teacher said, \"Today we travel back in time.\" A student asked, \"Do we need to pack a lunch?\" The teacher said, \"Yes. Time travel makes you hungry.\"",
+"My school bag is very heavy. It carries five books, two lunch boxes, and one very big dream of a lighter day.",
+"The science class planted seeds in small pots. One student watered the pot every day and said, \"Grow, little plant, grow.\" The plant grew, and the student said, \"See? Plants like encouragement.\"",
+"I wrote my homework in my best handwriting. The teacher said, \"Beautiful! Now I can read every mistake clearly.\"",
+"The library is the quietest room in school. Even the books whisper when you open them.",
+"Our class has a pet goldfish. It never does homework, never answers questions, and still gets the best seat by the window.",
+"The geography teacher pointed at the map and said, \"This is a mountain.\" A student said, \"It looks flat.\" The teacher said, \"That is why we use maps, not mountains.\"",
+"I told my teacher I finished my reading. She asked, \"What was the book about?\" I said, \"About two hundred pages.\"",
+"The art teacher said, \"Paint what you feel.\" I painted a sandwich. She said, \"Are you hungry?\" I said, \"Yes. That is what I feel.\""
+],
+food: [
+"The tomato went to the gym. It wanted to become a strong sauce.",
+"I told my sandwich a secret. Now it is a little bit cheesy, and a little bit crumby.",
+"The bread loaf asked the butter, \"Why do you always spread yourself so thin?\" The butter said, \"Because I want to cover everyone.\"",
+"My soup is very shy. It only speaks when it is hot, and then it just bubbles.",
+"The banana said to the apple, \"You look shiny today.\" The apple said, \"Thank you. I polished myself for breakfast.\"",
+"A plate of rice met a plate of noodles. The rice said, \"You are very long.\" The noodles said, \"You are very small. Together, we make a great lunch.\"",
+"The egg tried to tell a joke. It cracked up before the end.",
+"My breakfast cereal is very musical. Every morning, it sings in the milk.",
+"The cheese stood on the table and said, \"I am the star of this sandwich.\" The bread said, \"Without me, you would be alone on a plate.\"",
+"A carrot went to school. It wanted to be a little sharper.",
+"The potato sat in the sun and said, \"One day, I will be chips.\" The sun said, \"Take your time. Good things need warmth.\"",
+"I asked the salt and pepper to stop arguing. The salt said, \"He is always spicy.\" The pepper said, \"She is always salty.\" I said, \"That is why you are a perfect pair.\""
+],
+science: [
+"The sun went to school and said, \"I am very bright.\" The teacher said, \"Yes, but please stop shining during the test.\"",
+"A magnet walked into the classroom. Every paperclip stood up to say hello.",
+"The Moon said to the Earth, \"You spin too fast.\" The Earth said, \"That is how I make the days go by.\"",
+"My plant learned about photosynthesis. Now it sits by the window all day and says, \"I am working. Please do not move me.\"",
+"The cloud went to the doctor and said, \"I feel heavy.\" The doctor said, \"You are full of rain. Let it out, and you will feel light again.\"",
+"A drop of water travelled around the world. It visited the sea, the sky, and a river, and then it came home and said, \"There is no place like a glass.\"",
+"The thermometer said, \"I am feeling hot today.\" The ice cube said, \"Come and sit next to me. I will cool you down.\"",
+"Gravity is very fair. It pulls everyone down equally, and it never takes a day off.",
+"The stars had a meeting. They decided to shine a little brighter, just to make the night sky smile.",
+"A seed said to the soil, \"It is dark in here.\" The soil said, \"Be patient. The dark is where growing begins.\"",
+"The wind asked the kite, \"Why do you follow me?\" The kite said, \"Because you make me fly.\"",
+"My shadow follows me everywhere. It never asks for lunch, never complains, and it is always the same shape as me — only flatter."
+],
+everyday: [
+"My umbrella is very loyal. It waits by the door all summer, just for one rainy day.",
+"The alarm clock said, \"Wake up!\" I said, \"Five more minutes.\" The clock said, \"I have heard that before.\"",
+"My socks go into the washing machine in pairs and come out as singles. I think the machine is collecting them.",
+"I cleaned my room yesterday. Today, my room is messy again. I think the mess grows while I sleep.",
+"The lift in my building is very polite. It always opens its doors and says nothing, but it takes you exactly where you want to go.",
+"My phone battery dies at the same time every day. I think it gets tired of my questions.",
+"I bought a new notebook. It is empty, clean, and full of possibilities — and I am afraid to write the first word in it.",
+"The queue at the shop moves slowly. The person in front of me has one item. The person behind me has a whole trolley. I am in the middle, learning patience.",
+"My shoes squeak when I walk. They are not broken — they are just singing their own song.",
+"I watered my plants this morning. They said nothing, but their leaves looked a little greener, and that was enough.",
+"The bus was late, so I walked. I arrived before the bus. The bus driver waved and said, \"You win this time.\"",
+"My toothbrush works twice a day, every day, and never asks for a holiday. It is the hardest worker in my bathroom."
+]
+};
+var lastJoke = "";
+function showJoke() {
+  var cat = document.getElementById("category").value;
+  var list = JOKES[cat];
+  var pick = list[Math.floor(Math.random() * list.length)];
+  while (pick === lastJoke && list.length > 1) {
+    pick = list[Math.floor(Math.random() * list.length)];
+  }
+  lastJoke = pick;
+  document.getElementById("joke").textContent = pick;
+  document.getElementById("count").textContent = list.length + " original jokes in this category. Press Next joke for another one.";
+}
+document.getElementById("category").addEventListener("input", showJoke);
+document.getElementById("category").addEventListener("change", showJoke);
+document.getElementById("nextBtn").addEventListener("click", showJoke);
+showJoke();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

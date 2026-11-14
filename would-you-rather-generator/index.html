@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Would You Rather Generator | Noryvello</title>
+<meta name="description" content="Generate a fun Would You Rather question in one tap. Pick a category — funny, tricky, food, adventure or everyday life — then tap your choice and see a playful reaction.">
+<link rel="canonical" href="https://noryvello.github.io/would-you-rather-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Would You Rather Generator">
+<meta property="og:description" content="Pick a category and get a fun Would You Rather question to answer and share.">
+<meta property="og:url" content="https://noryvello.github.io/would-you-rather-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.choice{display:block;width:100%;text-align:left;background:#fff;border:2px solid #c7d2fe;border-radius:10px;padding:12px 14px;font-size:16px;font-weight:600;color:#1e293b;margin:8px 0;cursor:pointer}
+.choice:hover{border-color:#4338ca}
+.or{text-align:center;color:#64748b;font-weight:700;margin:2px 0}
+.nextbtn{width:100%;padding:12px;border:none;border-radius:10px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;margin-top:10px;cursor:pointer}
+.reaction{font-size:16px;margin-top:12px;min-height:24px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is \"Would you rather\"?","acceptedAnswer":{"@type":"Answer","text":"It is a simple party game. Each question gives you two fun choices, and you pick the one you would rather do. There is no right or wrong answer — the fun is in explaining your pick and hearing what others choose."}},{"@type":"Question","name":"Are the questions original?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every question pair on this page was written for Noryvello. They are clean, family-friendly and written to be understood anywhere in the world."}},{"@type":"Question","name":"How do the choice buttons work?","acceptedAnswer":{"@type":"Answer","text":"Each question shows two buttons, one for each option. Tap the one you prefer and a fun one-line reaction appears. Press Next question to get a new pair and clear the reaction."}},{"@type":"Question","name":"Is it suitable for kids and parties?","acceptedAnswer":{"@type":"Answer","text":"Yes. All questions are clean and family-friendly, with no rude, scary or grown-up content. It works well for family nights, classrooms, parties and long journeys."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Would You Rather Generator</h1>
+<p class="answer">Pick a category and get a fresh "Would you rather" question with two fun choices. Tap the option you prefer to see a playful reaction, then press Next question to keep the game going.</p>
+<div class="calc">
+<label for="catSel">Pick a category</label>
+<select id="catSel">
+<option value="funny" selected>Funny</option>
+<option value="tricky">Tricky</option>
+<option value="food">Food</option>
+<option value="adventure">Adventure</option>
+<option value="everyday">Everyday life</option>
+</select>
+<p class="out">Would you rather...</p>
+<button type="button" class="choice" id="btnA"></button>
+<p class="or">or</p>
+<button type="button" class="choice" id="btnB"></button>
+<p class="reaction" id="reaction" aria-live="polite"></p>
+<button type="button" class="nextbtn" id="nextBtn">Next question</button>
+<p class="note">Tap an option to see a fun reaction. Every question here was written for this page.</p>
+</div>
+<div class="warn">This generator is just for fun. There is no right or wrong answer, and nothing here is advice of any kind — pick what makes you laugh and enjoy the debate.</div>
+<h2>How to play</h2>
+<p>Would you rather is one of the simplest games there is, and it works with two people or twenty. Here is how to play it with this generator:</p>
+<ol>
+<li><strong>Pick a category.</strong> Start with Funny for a light mood, or Tricky when you want a real debate.</li>
+<li><strong>Read the question out loud.</strong> Everyone picks one of the two options — no skipping, no "both", no "neither".</li>
+<li><strong>Tap your choice.</strong> A fun one-line reaction appears for the option you picked.</li>
+<li><strong>Explain your pick.</strong> The best part of the game is the reason. Ask the group why they chose what they chose.</li>
+<li><strong>Press Next question</strong> for a new pair from the same category, or switch categories any time.</li>
+</ol>
+<p>For a party, take turns reading the question and let the reader go last, so everyone else has to commit first. For a quiet evening, just play a few rounds with one other person and see where the conversation goes.</p>
+<h2>Questions for any group</h2>
+<p>Every question pair on this page was written to be clean, family-friendly and easy to understand anywhere in the world. There is no slang, no politics and nothing that teases any group, so the same questions work for kids, grandparents and everyone in between.</p>
+<ul>
+<li><strong>Funny</strong> — silly situations, odd pets and everyday nonsense.</li>
+<li><strong>Tricky</strong> — close calls where both options have a real upside.</li>
+<li><strong>Food</strong> — meals, snacks and eating habits worth arguing about.</li>
+<li><strong>Adventure</strong> — journeys, wild places and brave choices.</li>
+<li><strong>Everyday life</strong> — small comforts and daily routines, with a twist.</li>
+</ul>
+<p>With at least ten question pairs in each category, you can play many rounds before a question repeats — and the Next question button never shows the same pair twice in a row.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is "Would you rather"?</h3><p>It is a simple party game. Each question gives you two fun choices, and you pick the one you would rather do. There is no right or wrong answer — the fun is in explaining your pick and hearing what others choose.</p></div>
+<div class="faq"><h3>Are the questions original?</h3><p>Yes. Every question pair on this page was written for Noryvello. They are clean, family-friendly and written to be understood anywhere in the world.</p></div>
+<div class="faq"><h3>How do the choice buttons work?</h3><p>Each question shows two buttons, one for each option. Tap the one you prefer and a fun one-line reaction appears. Press Next question to get a new pair and clear the reaction.</p></div>
+<div class="faq"><h3>Is it suitable for kids and parties?</h3><p>Yes. All questions are clean and family-friendly, with no rude, scary or grown-up content. It works well for family nights, classrooms, parties and long journeys.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../secret-santa-generator/">Secret Santa Generator</a> · <a href="../online-piano/">Free Online Piano</a> · <a href="../wedding-budget-planner/">Wedding Budget Planner</a> · <a href="../sleep-calculator/">Sleep Calculator</a></p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var POOL = {
+funny: [
+{a:"have a pet duck that follows you everywhere",b:"have a pet parrot that repeats everything you say",ra:"Quack luck — you now have a feathered shadow.",rb:"Careful what you say — it will say it back."},
+{a:"wear socks on your hands for a whole day",b:"wear gloves on your feet for a whole day",ra:"Warm hands, zero grip. Good luck opening doors.",rb:"Your feet are warm, but your shoelaces give up."},
+{a:"speak only in rhymes for a day",b:"sing everything you say for a day",ra:"A poet is born — every sentence must chime.",rb:"Your life just became a musical."},
+{a:"have a nose that honks like a bicycle horn",b:"have ears that wiggle whenever you are happy",ra:"Every sneeze is now a traffic jam.",rb:"Your ears just told everyone you are happy."},
+{a:"laugh every time someone says the word banana",b:"sneeze every time someone says the word potato",ra:"Fruit salad will never be the same.",rb:"Dinner conversations just got risky."},
+{a:"ride a giant tortoise to work or school",b:"ride a very bouncy kangaroo to work or school",ra:"Slow and steady — you will arrive eventually.",rb:"Hold on tight — every trip is a trampoline."},
+{a:"have hair that changes colour with your mood",b:"have shoes that squeak a different tune with every step",ra:"Your feelings are now on public display.",rb:"Every step has its own soundtrack."},
+{a:"eat dinner with chopsticks made of spaghetti",b:"eat soup with a fork for a whole week",ra:"Your dinner just became a puzzle.",rb:"Soup night will take a very long time."},
+{a:"have a personal cloud that rains only on you",b:"have a personal sunbeam that follows you everywhere",ra:"You will never need a shower again.",rb:"You are the brightest person in every room."},
+{a:"talk like a robot for a day",b:"walk like a penguin for a day",ra:"Beep boop — message received.",rb:"Waddle on — style is everything."}
+],
+tricky: [
+{a:"always know the time exactly",b:"always know the weather tomorrow exactly",ra:"You will never be late again.",rb:"Picnics are safe forever."},
+{a:"never wait in a line again",b:"never sit in traffic again",ra:"Straight to the front, every single time.",rb:"Every road is suddenly clear."},
+{a:"remember everything you read",b:"remember every face you have ever seen",ra:"Every book is now yours forever.",rb:"You will never forget a face again."},
+{a:"have unlimited free travel but no phone",b:"have the best phone in the world but never travel",ra:"The world is yours — just no photos.",rb:"A great phone, and a very small world."},
+{a:"be able to fly, but only one metre above the ground",b:"be able to run as fast as a car, but only backwards",ra:"Flying, but with speed bumps.",rb:"Fast, but mind what is behind you."},
+{a:"always tell the truth, even when it is awkward",b:"always know when someone is lying to you",ra:"Honest and brave — every single time.",rb:"Nobody can fool you now."},
+{a:"live without the internet for a year",b:"live without music for a year",ra:"A quiet year of real books and real walks.",rb:"A very quiet year indeed."},
+{a:"have a job you love that pays little",b:"have a job you dislike that pays a lot",ra:"Happy at work — rich in Mondays.",rb:"Rich on payday, bored every other day."},
+{a:"never need sleep again",b:"never need to eat again",ra:"Eight extra hours, every single day.",rb:"No meals, no washing up — but no cake either."},
+{a:"know how every story ends before you start it",b:"never know how any story ends, even after finishing it",ra:"No surprises, ever again.",rb:"Every story ends in a mystery."}
+],
+food: [
+{a:"eat only sweet food for a week",b:"eat only salty food for a week",ra:"A very sugary week ahead.",rb:"Pass the water, please."},
+{a:"have breakfast for every meal",b:"have dessert for every meal",ra:"Pancakes for dinner — no complaints here.",rb:"Cake for breakfast is now a lifestyle."},
+{a:"never eat your favourite food again",b:"eat your favourite food every single day",ra:"A sad goodbye to your top dish.",rb:"Your favourite food just became your only food."},
+{a:"drink only water for a month",b:"eat only fruit for a month",ra:"Simple, healthy and very plain.",rb:"An apple a day — and nothing else."},
+{a:"cook every meal yourself for a year",b:"have someone else cook every meal, but you cannot choose the menu",ra:"Chef mode: on, every single day.",rb:"Surprise dinner, every single night."},
+{a:"eat a meal that is too spicy every day",b:"eat a meal with no flavour at all every day",ra:"Your mouth is on fire, but the flavour is real.",rb:"Safe, but so very boring."},
+{a:"have a fridge that is always full of snacks",b:"have a garden that grows any vegetable you want",ra:"Snacks forever — midnight raids included.",rb:"Fresh vegetables, grown by you."},
+{a:"eat with your hands for a week",b:"eat with a spoon for every meal, even salad",ra:"No cutlery, no problem.",rb:"Salad with a spoon — good luck."},
+{a:"taste only one flavour for the rest of your life",b:"eat food that is always the wrong temperature",ra:"One flavour, for the rest of your life.",rb:"Hot ice cream and cold soup, forever."},
+{a:"have pancakes every morning",b:"have noodles every evening",ra:"Every morning starts with pancakes.",rb:"Every evening ends with noodles."}
+],
+adventure: [
+{a:"explore a deep cave",b:"climb a tall mountain",ra:"Deep, dark and full of secrets.",rb:"High, windy and worth every step."},
+{a:"sail across the ocean alone",b:"cross a desert with a small team",ra:"Just you and the open sea.",rb:"Sand, sun and good company."},
+{a:"spend a night in a treehouse in the forest",b:"spend a night in a tent on a snowy hill",ra:"Sleeping among the leaves.",rb:"Cold outside, cosy inside."},
+{a:"ride a hot air balloon over a valley",b:"ride a boat down a wild river",ra:"Floating gently over the valley.",rb:"Hold on — the river is wild."},
+{a:"discover a hidden waterfall",b:"discover an old shipwreck",ra:"A hidden wonder, found by you.",rb:"A sunken story, waiting underwater."},
+{a:"travel to the North Pole",b:"travel to the middle of the jungle",ra:"Ice, snow and endless white.",rb:"Green, loud and full of life."},
+{a:"go camping for a week with no phone",b:"go on a road trip with no map",ra:"A week of stars and silence.",rb:"Every turn is a surprise."},
+{a:"swim in the sea at sunrise",b:"walk on the beach at midnight",ra:"A swim as the sun comes up.",rb:"A walk under the stars."},
+{a:"live on a small island for a month",b:"live in a mountain cabin for a month",ra:"A month of sand and sea.",rb:"A month of trees and quiet."},
+{a:"see the northern lights",b:"see a volcano erupt from a safe distance",ra:"The sky dances just for you.",rb:"Fire and smoke, from a safe distance."}
+],
+everyday: [
+{a:"have a robot that cleans your home",b:"have a robot that cooks your meals",ra:"A spotless home, with no effort.",rb:"Dinner is ready — and it is perfect."},
+{a:"always find a free seat on the bus",b:"always find the shortest line at the shop",ra:"A seat is always waiting for you.",rb:"Straight to the front, every time."},
+{a:"never do laundry again",b:"never wash dishes again",ra:"Clean clothes, magically, forever.",rb:"No washing up, ever again."},
+{a:"have a wardrobe that picks your outfit every morning",b:"have a fridge that plans your meals every week",ra:"Dressed and ready in seconds.",rb:"Dinner decided before you ask."},
+{a:"wake up early without an alarm",b:"fall asleep in seconds every night",ra:"Bright-eyed, no alarm needed.",rb:"Asleep before your head hits the pillow."},
+{a:"have a perfect memory for birthdays",b:"have a perfect memory for names",ra:"You never miss a birthday again.",rb:"Every name, remembered forever."},
+{a:"live in a house with a big garden",b:"live in a flat with a big balcony",ra:"Room to grow, inside and out.",rb:"Coffee with a view, every morning."},
+{a:"work from home every day",b:"work in a busy office with friendly people",ra:"No commute, just comfort.",rb:"Friendly faces, every single day."},
+{a:"always have a parking space waiting",b:"always have good weather on your day off",ra:"A space is always waiting.",rb:"Sunshine, right on schedule."},
+{a:"have a quiet morning every day",b:"have a fun evening every day",ra:"Slow starts, every single day.",rb:"Every evening ends with a smile."}
+]
+};
+var curCat = "funny";
+var curIdx = -1;
+function showQuestion() {
+  var list = POOL[curCat];
+  var i;
+  do { i = Math.floor(Math.random() * list.length); } while (i === curIdx && list.length > 1);
+  curIdx = i;
+  var q = list[i];
+  document.getElementById("btnA").textContent = q.a;
+  document.getElementById("btnB").textContent = q.b;
+  document.getElementById("reaction").textContent = "";
+}
+function choose(which) {
+  var q = POOL[curCat][curIdx];
+  document.getElementById("reaction").textContent = (which === "a") ? q.ra : q.rb;
+}
+function onCategory() {
+  curCat = document.getElementById("catSel").value;
+  curIdx = -1;
+  showQuestion();
+}
+document.getElementById("catSel").addEventListener("input", onCategory);
+document.getElementById("catSel").addEventListener("change", onCategory);
+document.getElementById("nextBtn").addEventListener("click", showQuestion);
+document.getElementById("btnA").addEventListener("click", function () { choose("a"); });
+document.getElementById("btnB").addEventListener("click", function () { choose("b"); });
+showQuestion();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>
