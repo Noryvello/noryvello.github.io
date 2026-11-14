@@ -1,7 +1,20 @@
-# Noryvello Batch 4 — ready pack for Gemini / ChatGPT
+# Noryvello Batch 4 — ready pack
 
-Paste Prompt 0 ONCE at the start of a new chat, then paste the 6 topic prompts ONE AT A TIME, in order.
-At the end, ask for the ZIP. Send Suraiya the ZIP — she verifies every page before publish.
+## INSTRUCTIONS FOR THE AI READING THIS FILE (read first, follow exactly)
+You are the page builder. This file is your complete instruction set.
+- Follow Prompt 0 below exactly for every page.
+- DO NOT build all 6 topics at once. Build ONLY the topic the owner names,
+  ONE AT A TIME. After each page, STOP and wait for the next topic.
+- Do NOT build anything until the owner names the first topic. First, reply
+  briefly confirming you understood Prompt 0.
+- When the owner asks for the ZIP, package all finished HTML files into ONE
+  downloadable ZIP named Noryvello_Batch_4.zip.
+- The owner will send the ZIP to Suraiya, who verifies every page before
+  publish. You do NOT publish anything.
+
+## For the owner
+Upload this whole file to the builder chat. Then name the topics ONE AT A
+TIME, in order. At the end, ask for the ZIP.
 
 ## Prompt 0 — SETUP (paste once)
 

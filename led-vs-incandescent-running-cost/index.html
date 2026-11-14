@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LED vs Incandescent Running Cost Calculator | Noryvello</title>
+<meta name="description" content="Compare the yearly running cost of an LED bulb and an incandescent bulb. Enter both wattages, hours per day and days per year to see energy use, cost and savings.">
+<link rel="canonical" href="https://noryvello.github.io/led-vs-incandescent-running-cost/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LED vs Incandescent Running Cost Calculator">
+<meta property="og:description" content="See how much less energy and money an LED bulb uses than an incandescent bulb for the same hours of light.">
+<meta property="og:url" content="https://noryvello.github.io/led-vs-incandescent-running-cost/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>table{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px;background:rgba(255,255,255,.78)}
+th,td{text-align:left;padding:8px;border:1px solid #cbd5e1}
+th{background:#eef2ff}
+.calc button{width:100%;padding:11px;margin-top:12px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much less energy does an LED use than an incandescent bulb?","acceptedAnswer":{"@type":"Answer","text":"It depends on the wattages, but a common swap is a 9 watt LED replacing a 60 watt incandescent bulb, which uses 85% less energy for the same hours of light. The saving in percent is simply the wattage difference divided by the old bulb's wattage, so enter your own bulbs above to see your exact figure."}},{"@type":"Question","name":"Why does an LED cost less to run?","acceptedAnswer":{"@type":"Answer","text":"An LED turns more of its electricity into light, while an incandescent bulb turns most of its electricity into heat. Because the LED needs far fewer watts to give light for the same hours, it uses fewer kilowatt-hours over the year, so the running cost is lower."}},{"@type":"Question","name":"What cost per kWh should I enter?","acceptedAnswer":{"@type":"Answer","text":"Enter the rate from your own electricity bill, in your own currency, without a currency symbol. The maths works with any currency, and the calculator uses your rate only to turn kilowatt-hours into a running cost."}},{"@type":"Question","name":"Does this calculator include the price of the bulbs?","acceptedAnswer":{"@type":"Answer","text":"No. It compares running cost only, based on wattage, hours per day and days per year. It does not include buying the bulbs, fitting, or any other costs."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>LED vs Incandescent Running Cost Calculator</h1>
+<p class="answer">An LED bulb usually costs much less to run than an incandescent bulb, because it uses far fewer watts for the same hours of light. Enter both wattages, your hours per day and days per year below, and the calculator shows each bulb's yearly energy use and running cost side by side, with the saving worked out step by step.</p>
+<div class="calc">
+<label for="ledW">LED bulb wattage (W)</label>
+<input type="number" id="ledW" value="9" min="0" step="any" inputmode="decimal">
+<label for="oldW">Incandescent bulb wattage (W)</label>
+<input type="number" id="oldW" value="60" min="0" step="any" inputmode="decimal">
+<label for="hours">Hours used per day</label>
+<input type="number" id="hours" value="5" min="0" max="24" step="any" inputmode="decimal">
+<label for="days">Days used per year</label>
+<input type="number" id="days" value="365" min="0" max="365" step="any" inputmode="decimal">
+<label for="rate">Your electricity cost per kWh (in your currency, no symbol)</label>
+<input type="number" id="rate" value="1" min="0" step="any" inputmode="decimal">
+<p class="note">Enter the rate from your own bill. 1 is used as a neutral starting point, so the cost numbers match the kWh numbers until you change it. The maths works with any currency. Results are rounded to 2 decimal places.</p>
+<button type="button" id="resetBtn">Reset to the starting example</button>
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">This page compares running cost only. It does not include the price of buying the bulbs, and it assumes both bulbs are on for the same hours. Your real bill also depends on other appliances and how your supplier charges you, so enter your own cost per kWh from your bill for the closest result.</div>
+<h2>How much less energy does an LED use, and why?</h2>
+<p>In plain words: an LED uses less energy because it needs fewer watts to produce light for the same hours. Energy use is wattage multiplied by time, so if the LED's wattage is lower and the hours are the same, the energy use is lower by the same proportion.</p>
+<p>With the starting example above, a 9 watt LED uses 85% less energy than a 60 watt incandescent bulb, because (60 − 9) ÷ 60 = 0.85. That is 16.43 kWh a year for the LED, against 109.50 kWh a year for the incandescent bulb, at 5 hours a day for 365 days.</p>
+<p>Why? An incandescent bulb makes light by heating a wire until it glows, so most of its electricity becomes heat. An LED makes light directly, with far less heat, so far fewer watts are needed for light. The calculator does not need to know how the light is made — it only needs the wattage and the hours — but that difference in how the bulbs work is why the wattages are so far apart.</p>
+<h2>How the maths works</h2>
+<p>Energy use in kilowatt-hours (kWh) is: watts × hours per day × days per year ÷ 1000. The ÷ 1000 turns watts into kilowatts.</p>
+<p>Running cost is: energy (kWh) × your cost per kWh. Enter your own cost per kWh from your bill. The calculator uses no currency symbol, so the result is in whatever currency your rate is in.</p>
+<p>Saving is: incandescent energy minus LED energy. Percentage less is: saving ÷ incandescent energy × 100.</p>
+<p>Change any input and the results update at once. Use the reset button to go back to the starting example.</p>
+<h2>LED vs incandescent: side-by-side comparison</h2>
+<p>The table below uses the calculator's starting values: a 9 watt LED and a 60 watt incandescent bulb, 5 hours a day, 365 days a year, at a cost of 1 per kWh.</p>
+<table>
+<tr><th></th><th>LED</th><th>Incandescent</th></tr>
+<tr><td>Wattage</td><td>9 W</td><td>60 W</td></tr>
+<tr><td>Hours per day</td><td>5</td><td>5</td></tr>
+<tr><td>Days per year</td><td>365</td><td>365</td></tr>
+<tr><td>Energy used per year</td><td>16.43 kWh</td><td>109.50 kWh</td></tr>
+<tr><td>Running cost per year (at 1 per kWh)</td><td>16.43</td><td>109.50</td></tr>
+</table>
+<p>Difference: the LED uses 93.08 kWh less per year, which is 85% less energy, and costs 93.08 less per year at 1 per kWh.</p>
+<p class="note">The cost numbers use no currency symbol, because the maths works with any currency. Change the cost per kWh in the calculator to your own rate to see your own cost.</p>
+<h2>Worked examples</h2>
+<p>Each example below uses the same formula as the calculator. Results are rounded to 2 decimal places.</p>
+<p><strong>Example 1 — 9 watt LED vs 60 watt incandescent, 5 hours a day, 365 days a year, cost 1 per kWh.</strong><br>LED: 9 × 5 × 365 ÷ 1000 = 16.425 kWh, shown as 16.43 kWh. Cost: 16.425 × 1 = 16.425, shown as 16.43.<br>Incandescent: 60 × 5 × 365 ÷ 1000 = 109.50 kWh. Cost: 109.50 × 1 = 109.50.<br>Saving: 109.50 − 16.425 = 93.075 kWh, shown as 93.08 kWh, which is 85% less energy. Cost saving: 93.075 × 1 = 93.075, shown as 93.08.</p>
+<p><strong>Example 2 — 12 watt LED vs 75 watt incandescent, 4 hours a day, 300 days a year, cost 2 per kWh.</strong><br>LED: 12 × 4 × 300 ÷ 1000 = 14.40 kWh. Cost: 14.40 × 2 = 28.80.<br>Incandescent: 75 × 4 × 300 ÷ 1000 = 90.00 kWh. Cost: 90.00 × 2 = 180.00.<br>Saving: 90.00 − 14.40 = 75.60 kWh, which is 84% less energy. Cost saving: 180.00 − 28.80 = 151.20.</p>
+<p><strong>Example 3 — 7 watt LED vs 40 watt incandescent, 3 hours a day, 365 days a year, cost 1.5 per kWh.</strong><br>LED: 7 × 3 × 365 ÷ 1000 = 7.665 kWh, shown as 7.67 kWh. Cost: 7.665 × 1.5 = 11.4975, shown as 11.50.<br>Incandescent: 40 × 3 × 365 ÷ 1000 = 43.80 kWh. Cost: 43.80 × 1.5 = 65.70.<br>Saving: 43.80 − 7.665 = 36.135 kWh, shown as 36.14 kWh, which is 82.5% less energy. Cost saving: 65.70 − 11.4975 = 54.2025, shown as 54.20.</p>
+<h2>Which is better, and when?</h2>
+<p>For running cost, the lower-wattage bulb is better whenever both bulbs are used for the same hours — and in this comparison that is the LED, because its wattage is lower. The saving grows with more hours per day and more days per year: a bulb left on for 5 hours a day saves more in a year than the same bulb used for 1 hour a day, because the wattage gap is multiplied by more hours.</p>
+<p>The LED is the clear choice for a bulb that is on for several hours a day, every day. For a bulb that is rarely on — for example, a cupboard light used for a few minutes a week — the yearly saving is small in absolute terms, even though the percentage saving is the same, so the running-cost advantage matters less. The calculator shows both the percentage and the actual yearly saving, so you can judge the size of the saving for your own use.</p>
+<p>This verdict is about running cost only. It does not say which bulb to buy, because buying cost, brightness, fitting and how long a bulb lasts are not part of this calculation. If the two wattages you enter are equal, the calculator will show no saving, which is correct: equal watts for equal hours means equal energy use.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How much less energy does an LED use than an incandescent bulb?</h3><p>It depends on the wattages, but a common swap is a 9 watt LED replacing a 60 watt incandescent bulb, which uses 85% less energy for the same hours of light. The saving in percent is simply the wattage difference divided by the old bulb's wattage, so enter your own bulbs above to see your exact figure.</p></div>
+<div class="faq"><h3>Why does an LED cost less to run?</h3><p>An LED turns more of its electricity into light, while an incandescent bulb turns most of its electricity into heat. Because the LED needs far fewer watts to give light for the same hours, it uses fewer kilowatt-hours over the year, so the running cost is lower.</p></div>
+<div class="faq"><h3>What cost per kWh should I enter?</h3><p>Enter the rate from your own electricity bill, in your own currency, without a currency symbol. The maths works with any currency, and the calculator uses your rate only to turn kilowatt-hours into a running cost.</p></div>
+<div class="faq"><h3>Does this calculator include the price of the bulbs?</h3><p>No. It compares running cost only, based on wattage, hours per day and days per year. It does not include buying the bulbs, fitting, or any other costs.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../rent-vs-buy-calculator/">Rent vs Buy Calculator</a> · <a href="../flat-rate-vs-reducing-balance/">Flat Rate vs Reducing Balance</a> · <a href="../debt-payoff-calculator/">Debt Payoff Calculator</a> · <a href="../paint-calculator/">Paint Calculator</a></p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n){return (Math.round((n+1e-9)*100)/100).toFixed(2);}
+function fmtPct(p){var r=Math.round((p+1e-9)*10)/10;return Number.isInteger(r)?String(r):r.toFixed(1);}
+function calc(){
+var ledW=parseFloat(document.getElementById('ledW').value);
+var oldW=parseFloat(document.getElementById('oldW').value);
+var hours=parseFloat(document.getElementById('hours').value);
+var days=parseFloat(document.getElementById('days').value);
+var rate=parseFloat(document.getElementById('rate').value);
+var out=document.getElementById('out');
+var steps=document.getElementById('steps');
+if(isNaN(ledW)||isNaN(oldW)||isNaN(hours)||isNaN(days)||isNaN(rate)){
+out.textContent='Enter a number in every box above to see the result.';
+steps.textContent='';
+return;
+}
+if(ledW<=0||oldW<=0){
+out.textContent='Wattages must be above 0. Enter the wattage printed on each bulb.';
+steps.textContent='';
+return;
+}
+if(hours<=0||hours>24){
+out.textContent='Hours per day must be above 0 and no more than 24.';
+steps.textContent='';
+return;
+}
+if(days<=0||days>365){
+out.textContent='Days per year must be above 0 and no more than 365.';
+steps.textContent='';
+return;
+}
+if(rate<0){
+out.textContent='Cost per kWh cannot be below 0. Enter your rate from your bill.';
+steps.textContent='';
+return;
+}
+var ledKwh=ledW*hours*days/1000;
+var oldKwh=oldW*hours*days/1000;
+var saveKwh=oldKwh-ledKwh;
+var ledCost=ledKwh*rate;
+var oldCost=oldKwh*rate;
+var saveCost=saveKwh*rate;
+var pct=oldKwh>0?saveKwh/oldKwh*100:0;
+var energyLine='LED: '+fmt(ledKwh)+' kWh per year. Incandescent: '+fmt(oldKwh)+' kWh per year.';
+var stepLines='LED energy: '+ledW+' x '+hours+' x '+days+' / 1000 = '+fmt(ledKwh)+' kWh per year.\nIncandescent energy: '+oldW+' x '+hours+' x '+days+' / 1000 = '+fmt(oldKwh)+' kWh per year.';
+if(rate===0){
+out.textContent=energyLine+' Enter a cost per kWh above 0 to see the cost difference.';
+steps.textContent=stepLines;
+return;
+}
+stepLines+='\nLED cost: ('+ledW+' x '+hours+' x '+days+' / 1000) x '+rate+' = '+fmt(ledCost)+'.\nIncandescent cost: ('+oldW+' x '+hours+' x '+days+' / 1000) x '+rate+' = '+fmt(oldCost)+'.';
+if(saveKwh>0){
+out.textContent=energyLine+' LED cost: '+fmt(ledCost)+' per year. Incandescent cost: '+fmt(oldCost)+' per year. Saving with the LED: '+fmt(saveKwh)+' kWh and '+fmt(saveCost)+' per year, which is '+fmtPct(pct)+'% less energy.';
+steps.textContent=stepLines+'\nSaving: ('+oldW+' - '+ledW+') x '+hours+' x '+days+' / 1000 = '+fmt(saveKwh)+' kWh per year ('+fmtPct(pct)+'% less). Cost saving: (('+oldW+' - '+ledW+') x '+hours+' x '+days+' / 1000) x '+rate+' = '+fmt(saveCost)+' per year.';
+}else if(saveKwh===0){
+out.textContent=energyLine+' LED cost: '+fmt(ledCost)+' per year. Incandescent cost: '+fmt(oldCost)+' per year. Both bulbs use the same energy, so there is no saving.';
+steps.textContent=stepLines+'\nSaving: ('+oldW+' - '+ledW+') x '+hours+' x '+days+' / 1000 = 0.00 kWh per year.';
+}else{
+var moreKwh=-saveKwh;
+var morePct=-pct;
+out.textContent=energyLine+' LED cost: '+fmt(ledCost)+' per year. Incandescent cost: '+fmt(oldCost)+' per year. The LED uses '+fmt(moreKwh)+' kWh more per year here, because its wattage is higher. Check the wattages you entered.';
+steps.textContent=stepLines+'\nDifference: ('+ledW+' - '+oldW+') x '+hours+' x '+days+' / 1000 = '+fmt(moreKwh)+' kWh per year more for the LED ('+fmtPct(morePct)+'% more).';
+}
+}
+var ids=['ledW','oldW','hours','days','rate'];
+ids.forEach(function(id){
+var el=document.getElementById(id);
+el.addEventListener('input',calc);
+el.addEventListener('change',calc);
+});
+document.getElementById('resetBtn').addEventListener('click',function(){
+document.getElementById('ledW').value='9';
+document.getElementById('oldW').value='60';
+document.getElementById('hours').value='5';
+document.getElementById('days').value='365';
+document.getElementById('rate').value='1';
+calc();
+});
+calc();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

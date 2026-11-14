@@ -297,3 +297,4 @@ F5. `youtube-revenue-calculator` | calculator | HIGH | Views + CPM inputs → ea
 
 ### Seasonal reminder (already listed above, most urgent)
 - `turkey-roasting-time-calculator` (#1 HIGH) — Thanksgiving Thu 26 Nov 2026, 12 days out. Build before anything else seasonal.
+- **CORRECTION 2026-11-14:** turkey page PRE-EXISTED live (built 2026-11-13, already in sitemap) — re-verified good 2026-11-14, not rebuilt. Do not list it as unbuilt again.
