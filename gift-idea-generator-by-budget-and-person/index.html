@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gift Idea Generator by Budget and Person | Noryvello</title>
+<meta name="description" content="Get gift ideas matched to the person and your budget. Pick who the gift is for and a budget band, and the generator suggests five practical ideas — shuffle for five more.">
+<link rel="canonical" href="https://noryvello.github.io/gift-idea-generator-by-budget-and-person/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gift Idea Generator by Budget and Person">
+<meta property="og:description" content="Find five practical gift ideas for a friend, partner, parent, child, colleague or teacher, matched to a small, medium or generous budget.">
+<meta property="og:url" content="https://noryvello.github.io/gift-idea-generator-by-budget-and-person/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:11px;margin-top:12px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.ideas{margin:12px 0 4px 22px}
+.ideas li{margin:10px 0;font-size:15.5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the generator work?","acceptedAnswer":{"@type":"Answer","text":"Pick who the gift is for and a budget band, and it shows 5 ideas from its pool for that person and band, each with one line on why it fits. Shuffle for 5 more from the same pool."}},{"@type":"Question","name":"What do the budget bands mean?","acceptedAnswer":{"@type":"Answer","text":"Small, medium and generous are relative bands, not prices. Small means a modest everyday gift, medium a main gift, generous a bigger treat. Pick the band that fits what you want to spend, in any currency."}},{"@type":"Question","name":"Why are there no prices or links?","acceptedAnswer":{"@type":"Answer","text":"The generator suggests idea categories, not products, so it works anywhere and never goes out of date. You choose the exact item yourself, at a price that suits you."}},{"@type":"Question","name":"Can I use these ideas for any occasion?","acceptedAnswer":{"@type":"Answer","text":"Yes, the ideas are for birthdays, holidays and every occasion all year round. Pick the person and the band that fit the occasion."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Gift Idea Generator by Budget and Person</h1>
+<p class="answer">Pick who the gift is for and a budget band, and the generator shows 5 practical gift ideas, each with one line on why it fits. Shuffle for 5 more ideas from the same pool. The ideas are categories, not products — there are no prices, no brands and no links, so you choose the exact item yourself.</p>
+<div class="calc">
+<label for="person">Who is the gift for?</label>
+<select id="person">
+<option value="friend" selected>Friend</option>
+<option value="partner">Partner</option>
+<option value="parent">Parent</option>
+<option value="child">Child</option>
+<option value="colleague">Colleague</option>
+<option value="teacher">Teacher</option>
+</select>
+<label for="band">Budget band</label>
+<select id="band">
+<option value="small">Small</option>
+<option value="medium" selected>Medium</option>
+<option value="generous">Generous</option>
+</select>
+<p class="note">Budget bands are relative, not prices — small is a modest everyday gift, medium a main gift, generous a bigger treat. The ideas work in any currency.</p>
+<button type="button" id="shuffleBtn">Shuffle for 5 more ideas</button>
+<p class="out" id="out"></p>
+<ol class="ideas" id="ideas"></ol>
+</div>
+<div class="warn">These are gift idea categories, not products, and the generator does not know the person you are buying for. Check their tastes, allergies, dietary needs and local customs before you buy, and remember the budget bands are relative — small, medium and generous are not prices, so pick the band that fits what you want to spend.</div>
+<h2>How to use the generator</h2>
+<p>Pick who the gift is for from the first list, then pick a budget band from the second. The generator shows 5 ideas straight away, each with one line on why it fits that person and band.</p>
+<p>If none of the 5 feels right, press Shuffle for 5 more ideas from the same pool — you can shuffle as many times as you like. When an idea catches your eye, choose the exact item yourself, in a style and price that suit you.</p>
+<h2>What the budget bands mean</h2>
+<p>Small means a modest everyday gift — the kind of thing you would give as a small thank-you or a little extra. Medium means a main gift, the sort you would give for a birthday or a holiday. Generous means a bigger treat, for a milestone or someone very close.</p>
+<p>The bands are relative, not prices, so they work in any currency: pick the band that matches what you want to spend, not a fixed amount.</p>
+<h2>Tips for choosing</h2>
+<p>Think about what they use every day — the best gifts are often the ones that fit into a routine. A shared memory can turn an ordinary idea into a personal one, so pick something that reminds you of a moment together.</p>
+<p>Consider things they would enjoy but would not buy for themselves, as those often make the most welcome gifts. And avoid anything they are allergic to, cannot eat, or cannot use — when in doubt, ask someone who knows them well.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How does the generator work?</h3><p>Pick who the gift is for and a budget band, and it shows 5 ideas from its pool for that person and band, each with one line on why it fits. Shuffle for 5 more from the same pool.</p></div>
+<div class="faq"><h3>What do the budget bands mean?</h3><p>Small, medium and generous are relative bands, not prices. Small means a modest everyday gift, medium a main gift, generous a bigger treat. Pick the band that fits what you want to spend, in any currency.</p></div>
+<div class="faq"><h3>Why are there no prices or links?</h3><p>The generator suggests idea categories, not products, so it works anywhere and never goes out of date. You choose the exact item yourself, at a price that suits you.</p></div>
+<div class="faq"><h3>Can I use these ideas for any occasion?</h3><p>Yes, the ideas are for birthdays, holidays and every occasion all year round. Pick the person and the band that fit the occasion.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../secret-santa-generator/">Secret Santa Generator</a> · <a href="../wedding-budget-planner/">Wedding Budget Planner</a> · <a href="../online-piano/">Free Online Piano</a> · <a href="../sleep-calculator/">Sleep Calculator</a></p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var POOL={
+friend:{
+small:[
+{t:"A pocket notebook and pen set",w:"A friend can use it for lists, sketches and sudden ideas, and it fits in any bag."},
+{t:"A box of mixed tea",w:"Easy to share over a chat, and a safe choice when you are unsure of their taste."},
+{t:"A scented candle",w:"A small comfort for their home that feels thoughtful without being over the top."},
+{t:"A pack of fun socks",w:"Practical, cheerful, and hard to get wrong whatever their style."},
+{t:"A reusable water bottle",w:"Useful every day, and it shows you thought about their routine, not just the occasion."},
+{t:"A small potted plant",w:"A bit of green for a desk or windowsill that keeps reminding them of you as it grows."},
+{t:"A set of coasters",w:"A small upgrade for their home that gets used every day without taking up space."},
+{t:"A box of assorted biscuits",w:"Something to enjoy right away, and easy to share with whoever is around."}
+],
+medium:[
+{t:"A quality tote bag",w:"Roomy enough for daily errands and outings, and it gets used far more than a decorative gift."},
+{t:"A board game for two or more players",w:"A ready-made reason to spend an evening together, which is the real gift."},
+{t:"A cookbook of everyday meals",w:"A friend who cooks gets new ideas for weeks, and it suits any skill level."},
+{t:"A soft throw blanket",w:"Cosy on cold evenings, and it works in any home whatever the decor."},
+{t:"A set of bath and body treats",w:"A gentle nudge to slow down and relax, without guessing their clothing size."},
+{t:"A photo frame",w:"It turns a shared memory into something they see every day."},
+{t:"A portable speaker",w:"Music on the go, for picnics, workouts and quiet evenings at home."},
+{t:"A picnic set for two",w:"Made for shared days out, and it turns an ordinary afternoon into a small occasion."}
+],
+generous:[
+{t:"A weekend bag",w:"A proper travel bag is something most people put off buying for themselves."},
+{t:"A quality backpack",w:"Built for daily use and travel, and a good one lasts for years."},
+{t:"A set of quality bedding",w:"Better sleep every night, and the kind of upgrade people rarely buy for themselves."},
+{t:"A slow cooker",w:"It makes home cooking easier on busy days, and it suits a friend who likes good food."},
+{t:"A framed print of a favourite place",w:"A personal piece for their wall that suits their taste and your shared memories."},
+{t:"A hamper of treats",w:"A generous mix of snacks and drinks to enjoy over days, not just one evening."},
+{t:"A warm scarf and gloves set",w:"Useful in cold weather and easy to choose without knowing their exact size."},
+{t:"A gardening starter kit",w:"Everything they need to start growing herbs or flowers, with a hobby that keeps giving."}
+]
+},
+partner:{
+small:[
+{t:"A keepsake box with a handwritten note",w:"Words chosen just for them beat anything bought in a hurry."},
+{t:"A pair of matching mugs",w:"A small daily reminder of each other, first thing every morning."},
+{t:"A massage oil set",w:"A small invitation to unwind together at the end of the day."},
+{t:"A box of chocolates",w:"A classic for a reason, and easy to enjoy together on the evening itself."},
+{t:"A photo magnet set",w:"Small prints of your favourite moments, ready for the fridge or a board."},
+{t:"A keyring with an engraved message",w:"A tiny personal touch they carry with them every day."},
+{t:"A small bunch of dried flowers",w:"Lasts far longer than fresh flowers and needs no care at all."},
+{t:"A favourite snack box",w:"A box of the snacks they always reach for, chosen because you noticed."}
+],
+medium:[
+{t:"A cosy dressing gown",w:"Soft and warm for slow mornings, and a treat most people do not buy for themselves."},
+{t:"A couples cookbook",w:"Recipes made for two, with the excuse to cook a meal together built in."},
+{t:"A quality wallet",w:"Used every day, and a good one only gets better with time."},
+{t:"A set of matching pyjamas",w:"Comfortable and a little bit playful, made for evenings at home together."},
+{t:"A framed photo of the two of you",w:"A favourite moment, printed properly and ready for the wall."},
+{t:"A board game for two players",w:"An evening in, planned for you, with no screens needed."},
+{t:"A picnic hamper",w:"Everything for a meal outdoors, ready for the next sunny day you get."},
+{t:"A weighted blanket",w:"A heavy, calming blanket for better rest, and a treat they would not buy for themselves."}
+],
+generous:[
+{t:"A quality luggage set",w:"Built for trips together, and it replaces the battered bags everyone keeps meaning to upgrade."},
+{t:"A premium bedding set",w:"The best sleep upgrade there is, and one they will thank you for every night."},
+{t:"A coffee machine",w:"Cafe-style coffee at home every morning, without the queue."},
+{t:"A set of quality cookware",w:"Pans that last for years and make everyday cooking feel easier."},
+{t:"A large framed canvas print",w:"A big piece for a shared wall, chosen to suit the home you share."},
+{t:"A jewellery box",w:"A proper home for the pieces they already love, with room for more to come."},
+{t:"A high-quality watch",w:"A classic keepsake, worn daily and kept for years."},
+{t:"A home spa set",w:"A full set of bath, body and relaxation treats for proper evenings in."}
+]
+},
+parent:{
+small:[
+{t:"A jar of honey",w:"A natural sweetener for tea and toast, and a small taste of thoughtfulness."},
+{t:"A pair of warm socks",w:"Soft, warm and always useful, whatever the season."},
+{t:"A pocket calendar",w:"Handy for appointments and plans, and easy to carry everywhere."},
+{t:"A small vase with dried flowers",w:"Cheerful on a table or shelf, with no watering or care needed."},
+{t:"A magnetic shopping list pad",w:"A practical little helper for the kitchen that gets used every week."},
+{t:"A box of shortbread",w:"A classic treat with a cup of tea, and easy to share with visitors."},
+{t:"A hand cream set",w:"A small daily comfort, especially in cold or dry weather."},
+{t:"A leather bookmark",w:"A small, thoughtful gift for a parent who reads, showing you noticed."}
+],
+medium:[
+{t:"A heated throw",w:"Warmth at the press of a button, perfect for quiet evenings at home."},
+{t:"A photo album",w:"A place to keep family photos together, ready to look through whenever they like."},
+{t:"A gardening gloves and tools set",w:"For a parent who loves the garden, with tools that make the work easier."},
+{t:"A cookbook of family-style meals",w:"New ideas for family dinners, with recipes that feed a crowd."},
+{t:"A quality umbrella",w:"A sturdy umbrella that will not turn inside out in the first strong wind."},
+{t:"A set of quality towels",w:"Soft, thick towels are a small luxury most parents never buy for themselves."},
+{t:"A bird feeder",w:"A quiet pleasure for the garden or balcony, bringing visitors to watch every day."},
+{t:"A puzzle set",w:"A relaxing way to pass an evening, with puzzles to suit any level."}
+],
+generous:[
+{t:"A quality mattress topper",w:"A noticeable sleep upgrade without replacing the whole bed."},
+{t:"A bread maker",w:"Fresh bread at home with little effort, and a smell that fills the house."},
+{t:"A framed family portrait",w:"A proper portrait of the family, printed large and ready for the wall."},
+{t:"A comfortable reading chair cushion set",w:"Extra comfort for their favourite chair, where they read and rest."},
+{t:"A food processor",w:"It takes the hard work out of chopping and mixing, and suits a parent who cooks often."},
+{t:"A personalised family calendar",w:"A calendar filled with family photos, one for every month of the year."},
+{t:"A luxury bathrobe",w:"A thick, soft robe for slow mornings and relaxed evenings."},
+{t:"A set of garden planters",w:"Sturdy planters for herbs, flowers or vegetables, ready for the next growing season."}
+]
+},
+child:{
+small:[
+{t:"A colouring book and pencils",w:"Hours of creative fun, and easy to carry on trips and outings."},
+{t:"A set of stickers",w:"Small, cheerful and endlessly popular with children of all ages."},
+{t:"A bubble wand set",w:"Simple outdoor fun that works in any garden or park."},
+{t:"A small cuddly toy",w:"A soft friend for bedtime and play, and one they will remember for years."},
+{t:"A box of crayons",w:"The starting point for a hundred drawings, and they never go out of fashion."},
+{t:"A skipping rope",w:"Active fun that fits in a pocket and needs no batteries."},
+{t:"A small torch",w:"A torch for adventures, reading under the covers and night-time exploring."},
+{t:"A tub of modelling dough",w:"Moulding, shaping and imagining, with a toy that never needs charging."}
+],
+medium:[
+{t:"A building block set",w:"Open-ended building fun that grows with them and never gets boring."},
+{t:"A children's book set",w:"Stories to read together now and alone later, chosen for their age."},
+{t:"A kite",w:"A reason to get outside on a windy day, and a toy that costs little to enjoy."},
+{t:"A craft kit",w:"Painting, sticking and making, with everything they need in one box."},
+{t:"A puzzle for their age",w:"A satisfying challenge that builds patience and focus."},
+{t:"A scooter",w:"A scooter for the pavement and the park, and a great way to build balance."},
+{t:"A water bottle with a fun design",w:"A bottle they will actually want to carry, for school and sports."},
+{t:"A board game for the family",w:"A game the whole family can play together on a rainy afternoon."}
+],
+generous:[
+{t:"A bicycle",w:"A bike is a childhood landmark, and one they will use almost every day."},
+{t:"A train set",w:"A proper train set with tracks and carriages, ready to grow with more pieces over time."},
+{t:"A junior science kit",w:"Safe experiments that make learning feel like play."},
+{t:"A beginner musical instrument",w:"A first instrument, chosen for small hands and big enthusiasm."},
+{t:"A large art easel",w:"A proper easel for painting and drawing, with room to store paper and paints."},
+{t:"A tent for indoor play",w:"A cosy den for reading, hiding and imaginary adventures."},
+{t:"A remote control car",w:"A classic toy that never loses its appeal, for indoors and out."},
+{t:"A full craft station",w:"A stocked craft table with paints, paper and tools for endless making."}
+]
+},
+colleague:{
+small:[
+{t:"A desk plant",w:"A small plant for the desk that needs little care and brightens the working day."},
+{t:"A quality pen",w:"A pen that writes well is a small daily pleasure at work."},
+{t:"A tin of coffee beans",w:"Good coffee for the office kitchen, and a safe choice for a coffee drinker."},
+{t:"A notebook",w:"A smart notebook for meetings, lists and ideas, useful in any job."},
+{t:"A pack of sticky notes",w:"Small, useful and always welcome on any desk."},
+{t:"A mug",w:"A sturdy mug for the desk, chosen in a colour or pattern that suits them."},
+{t:"A box of dried fruit and nuts",w:"A healthy desk snack to share with the team, with no mess."},
+{t:"A cable organiser",w:"A tidy desk starts with tidy cables, and this is a small fix anyone can use."}
+],
+medium:[
+{t:"An insulated flask",w:"Hot drinks stay hot through long meetings, and it replaces single-use cups."},
+{t:"A desk lamp",w:"Better light for the desk, especially on dark winter afternoons."},
+{t:"A laptop stand",w:"A stand that lifts the screen to a comfortable height and tidies the desk underneath."},
+{t:"A document organiser",w:"A smart folder or organiser for papers, cables and daily essentials."},
+{t:"A desk calendar",w:"A good-looking calendar for the desk, useful every working day of the year."},
+{t:"A wireless mouse",w:"A comfortable mouse makes long days at the computer that bit easier."},
+{t:"A lunch bag",w:"A smart insulated lunch bag for taking food to work, whatever the job."},
+{t:"A small fan for the desk",w:"A quiet fan for warm offices, small enough for any desk."}
+],
+generous:[
+{t:"A leather work bag",w:"A smart bag for work that looks good in any office and lasts for years."},
+{t:"A set of noise-cancelling headphones",w:"Headphones that block out office noise and make calls and music sound better."},
+{t:"A standing desk converter",w:"A converter that turns any desk into a standing desk, for a healthier working day."},
+{t:"A quality office chair cushion",w:"A cushion that makes a long day in the office chair far more comfortable."},
+{t:"A tea and coffee gift set",w:"A generous set of teas and coffees to keep the whole office going."},
+{t:"A desk organiser set",w:"A full set of trays and holders that turns a messy desk into a tidy one."},
+{t:"A portable charger",w:"A charger that keeps a phone going through long days and travel."},
+{t:"A travel mug set",w:"A set of travel mugs for the commute, in colours to suit any taste."}
+]
+},
+teacher:{
+small:[
+{t:"A jar of jam",w:"A jar of good jam for breakfast, and a small thank-you that feels personal."},
+{t:"A packet of flower seeds",w:"Seeds for the garden or a pot on the sill, and a gift that grows."},
+{t:"A thank-you card set",w:"A set of cards for writing thank-you notes of their own, always useful."},
+{t:"A set of coloured pens",w:"Coloured pens for marking, planning and making lessons a little brighter."},
+{t:"A book light",w:"A small light for reading in the evenings, useful at home and away."},
+{t:"A box of fudge",w:"A sweet treat for the staff room, easy to share with colleagues."},
+{t:"A travel mug",w:"A mug that keeps drinks warm on the way to school and between lessons."},
+{t:"A small cactus",w:"A hardy little plant for the classroom windowsill that needs almost no care."}
+],
+medium:[
+{t:"A book bag",w:"A sturdy bag for carrying books and papers between home and school."},
+{t:"A teacher planner",w:"A planner made for the school year, with space for lessons, dates and notes."},
+{t:"A set of herbal teas",w:"A calming set of herbal teas for the end of a long school day."},
+{t:"A classroom poster set",w:"Bright posters for the classroom wall, chosen to suit the subject they teach."},
+{t:"A lunch box set",w:"A smart set of boxes for taking lunch to school, with separate spaces for everything."},
+{t:"A novel by a favourite author",w:"A novel by an author they love, for the holidays when they finally get time to read."},
+{t:"A stationery set",w:"A full set of pens, pencils, rulers and clips, ready for the new term."},
+{t:"A picnic blanket",w:"A blanket for lunch in the park or reading in the garden, on days off."}
+],
+generous:[
+{t:"A leather satchel",w:"A smart satchel for books and papers, built to last for years of school days."},
+{t:"A tablet stand",w:"A stand for a tablet or books, useful for reading, planning and presenting."},
+{t:"A tea, coffee and treats basket",w:"A generous basket of drinks and snacks for the staff room or home."},
+{t:"A large wall map",w:"A beautiful map for the classroom or study wall, and a talking point for years."},
+{t:"A desk clock",w:"A handsome clock for the desk or classroom, and a daily reminder of your thanks."},
+{t:"A window bird feeder",w:"A feeder that sticks to the window, bringing birds close enough to watch from the classroom."},
+{t:"An electric kettle",w:"A fast, quiet kettle for the staff room or home, used every single day."},
+{t:"A scrapbook kit",w:"A kit for keeping memories, photos and notes from the school year in one place."}
+]
+}
+};
+var LABELS={friend:"a friend",partner:"a partner",parent:"a parent",child:"a child",colleague:"a colleague",teacher:"a teacher"};
+var current=[];
+function getPool(){
+var person=document.getElementById("person").value;
+var band=document.getElementById("band").value;
+return POOL[person][band];
+}
+function pickFive(pool){
+var idx=[];
+for(var i=0;i<pool.length;i++){idx.push(i);}
+for(var i=idx.length-1;i>0;i--){
+var j=Math.floor(Math.random()*(i+1));
+var t=idx[i];idx[i]=idx[j];idx[j]=t;
+}
+var out=[];
+for(var k=0;k<5;k++){out.push(pool[idx[k]]);}
+return out;
+}
+function sameSet(a,b){
+if(a.length!==b.length){return false;}
+for(var i=0;i<a.length;i++){
+var found=false;
+for(var j=0;j<b.length;j++){if(a[i].t===b[j].t){found=true;break;}}
+if(!found){return false;}
+}
+return true;
+}
+function showIdeas(){
+var person=document.getElementById("person").value;
+var band=document.getElementById("band").value;
+document.getElementById("out").textContent="5 gift ideas for "+LABELS[person]+" ("+band+" budget):";
+var html="";
+for(var i=0;i<current.length;i++){
+html+="<li><strong>"+current[i].t+"</strong> — "+current[i].w+"</li>";
+}
+document.getElementById("ideas").innerHTML=html;
+}
+function render(){
+current=pickFive(getPool());
+showIdeas();
+}
+function shuffle(){
+var pool=getPool();
+var next=pickFive(pool);
+var guard=0;
+while(sameSet(next,current)&&guard<50){
+next=pickFive(pool);
+guard++;
+}
+current=next;
+showIdeas();
+}
+var ids=["person","band"];
+ids.forEach(function(id){
+var el=document.getElementById(id);
+el.addEventListener("input",render);
+el.addEventListener("change",render);
+});
+document.getElementById("shuffleBtn").addEventListener("click",shuffle);
+render();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

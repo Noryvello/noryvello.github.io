@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rent a Car vs Taxis Calculator | Noryvello</title>
+<meta name="description" content="Compare renting a car with taking taxis for a trip. Enter the distance, days, daily rental rate and taxi rate to see which costs less, with the working shown.">
+<link rel="canonical" href="https://noryvello.github.io/rent-a-car-vs-taxis/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rent a Car vs Taxis Calculator">
+<meta property="og:description" content="See whether renting a car or taking taxis costs less for your trip, with both totals worked out side by side.">
+<meta property="og:url" content="https://noryvello.github.io/rent-a-car-vs-taxis/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>table{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px;background:rgba(255,255,255,.78)}
+th,td{text-align:left;padding:8px;border:1px solid #cbd5e1}
+th{background:#eef2ff}
+.calc button{width:100%;padding:11px;margin-top:12px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"When is renting a car cheaper than taxis?","acceptedAnswer":{"@type":"Answer","text":"Renting is cheaper when the total rental charge is lower than the total taxi fare — that is, when days multiplied by the daily rental rate is less than distance multiplied by the taxi cost per unit. Long distances over a few days usually favour renting, while short distances spread over many days usually favour taxis. Enter your own numbers above to see which wins for your trip."}},{"@type":"Question","name":"What is the break-even distance?","acceptedAnswer":{"@type":"Answer","text":"The break-even distance is the distance at which both options cost the same. It is days multiplied by the daily rental rate, divided by the taxi cost per unit. With the starting example — 3 days at 40 per day and a taxi rate of 0.5 per unit — the break-even distance is 240, so a longer trip favours renting and a shorter trip favours taxis."}},{"@type":"Question","name":"Does the calculator include fuel, tolls and parking?","acceptedAnswer":{"@type":"Answer","text":"No. It compares the rental charge with taxi fares only, using the four numbers you enter. Fuel, tolls, parking, insurance and any extra charges are not included, so add them to the rental side yourself if they apply to your trip."}},{"@type":"Question","name":"Which distance unit should I use?","acceptedAnswer":{"@type":"Answer","text":"Use kilometres or miles — either works, as long as you use the same unit for the trip distance and the taxi cost per unit. The calculator does not convert between units, so mixing them will give a wrong answer."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Rent a Car vs Taxis Calculator</h1>
+<p class="answer">Renting a car is cheaper when the total rental charge is lower than the total taxi fare, and taxis are cheaper when the opposite is true — it depends on distance, days and the two rates. Enter your trip distance, number of days, daily rental rate and taxi cost per distance unit below, and the calculator shows both totals side by side and tells you which is cheaper, with the working shown.</p>
+<div class="calc">
+<label for="dist">Total trip distance (km or miles)</label>
+<input type="number" id="dist" value="300" min="0" step="any" inputmode="decimal">
+<label for="days">Number of days</label>
+<input type="number" id="days" value="3" min="0" max="365" step="any" inputmode="decimal">
+<label for="rental">Car rental cost per day</label>
+<input type="number" id="rental" value="40" min="0" step="any" inputmode="decimal">
+<label for="taxi">Taxi cost per distance unit</label>
+<input type="number" id="taxi" value="0.5" min="0" step="any" inputmode="decimal">
+<p class="note">Use the same distance unit (km or miles) for the trip distance and the taxi rate, and the same currency for both rates. The maths works with any currency and any distance unit. Results are rounded to 2 decimal places.</p>
+<button type="button" id="resetBtn">Reset to the starting example</button>
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">This page compares the rental charge with taxi fares only. It does not include fuel, tolls, parking, insurance, deposits, or extra taxi charges such as waiting time. If any of those apply to your trip, add them to the relevant side before you decide — the cheaper option here could change once they are included.</div>
+<h2>Which is cheaper, and when?</h2>
+<p>Renting wins when you travel a long distance over a few days, because the rental charge is fixed per day while the taxi fare grows with every unit of distance. Taxis win when you travel a short distance over many days, because you pay for the rental every day even on days you barely drive.</p>
+<p>With the starting example, renting costs 120.00 and taxis cost 150.00, so renting wins by 30.00. The break-even distance is 240: at 3 days, 40 per day and 0.5 per unit, any trip longer than 240 units makes renting cheaper, and any trip shorter than 240 units makes taxis cheaper.</p>
+<p>The same logic works the other way round: for a fixed distance, more days make renting more expensive while the taxi fare stays the same, so taxis win on long, slow trips. Change the numbers above to find the break-even point for your own trip.</p>
+<h2>How the maths works</h2>
+<p>Rental total = number of days × rental cost per day.</p>
+<p>Taxi total = trip distance × taxi cost per distance unit.</p>
+<p>The cheaper option is the one with the lower total. The saving is the higher total minus the lower total.</p>
+<p>Break-even distance = (days × rental per day) ÷ taxi cost per unit. At that distance both options cost the same.</p>
+<p>Use the same distance unit for the trip distance and the taxi rate, and the same currency for both rates. The calculator uses no currency symbol, so the results are in whatever currency your rates are in.</p>
+<p>Change any input and the results update at once. Use the reset button to go back to the starting example.</p>
+<h2>Rent a car vs taxis: side-by-side comparison</h2>
+<p>The table below uses the calculator's starting values: a 300 unit trip over 3 days, renting at 40 per day, taxis at 0.5 per unit.</p>
+<table>
+<tr><th></th><th>Rent a car</th><th>Taxis</th></tr>
+<tr><td>Trip length</td><td>3 days</td><td>3 days</td></tr>
+<tr><td>Total distance</td><td>300 units</td><td>300 units</td></tr>
+<tr><td>Rate used</td><td>40 per day</td><td>0.5 per unit</td></tr>
+<tr><td>Total cost</td><td>120.00</td><td>150.00</td></tr>
+</table>
+<p>Difference: renting is cheaper by 30.00, which is 20% less than taxis.</p>
+<p class="note">The cost numbers use no currency symbol, because the maths works with any currency. Change the rates in the calculator to your own rates to see your own cost.</p>
+<h2>Worked examples</h2>
+<p>Each example below uses the same formula as the calculator. Results are rounded to 2 decimal places.</p>
+<p><strong>Example 1 — 300 unit trip, 3 days, renting at 40 per day, taxis at 0.5 per unit.</strong><br>Rental: 3 × 40 = 120.00.<br>Taxi: 300 × 0.5 = 150.00.<br>Difference: 150.00 − 120.00 = 30.00. Renting is cheaper by 30.00, which is 20% less than taxis (30 ÷ 150 = 0.20).</p>
+<p><strong>Example 2 — 120 unit trip, 5 days, renting at 50 per day, taxis at 1 per unit.</strong><br>Rental: 5 × 50 = 250.00.<br>Taxi: 120 × 1 = 120.00.<br>Difference: 250.00 − 120.00 = 130.00. Taxis are cheaper by 130.00, which is 52% less than renting (130 ÷ 250 = 0.52).</p>
+<p><strong>Example 3 — 400 unit trip, 4 days, renting at 50 per day, taxis at 0.5 per unit.</strong><br>Rental: 4 × 50 = 200.00.<br>Taxi: 400 × 0.5 = 200.00.<br>Difference: 200.00 − 200.00 = 0. Both options cost exactly the same — this is the break-even point. Check: (4 × 50) ÷ 0.5 = 400, which matches the trip distance.</p>
+<h2>What to check before you decide</h2>
+<p>Check what the daily rental rate includes. Some rentals limit the distance you can drive, and some charge extra above that limit — ask before you book, and if a limit applies, this calculator's rental total will be too low.</p>
+<p>Check taxi availability where you are going, especially late at night or in quiet areas. A cheaper option on paper is no help if no taxi is available when you need one.</p>
+<p>Think about who drives. If no one wants to drive, taxis win on comfort even when they cost more — but that is a comfort choice, not a cost one, and this calculator only compares cost.</p>
+<p>Remember fuel, tolls and parking are not in the calculator. If they apply to your trip, add them to the rental side before you decide.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>When is renting a car cheaper than taxis?</h3><p>Renting is cheaper when the total rental charge is lower than the total taxi fare — that is, when days multiplied by the daily rental rate is less than distance multiplied by the taxi cost per unit. Long distances over a few days usually favour renting, while short distances spread over many days usually favour taxis. Enter your own numbers above to see which wins for your trip.</p></div>
+<div class="faq"><h3>What is the break-even distance?</h3><p>The break-even distance is the distance at which both options cost the same. It is days multiplied by the daily rental rate, divided by the taxi cost per unit. With the starting example — 3 days at 40 per day and a taxi rate of 0.5 per unit — the break-even distance is 240, so a longer trip favours renting and a shorter trip favours taxis.</p></div>
+<div class="faq"><h3>Does the calculator include fuel, tolls and parking?</h3><p>No. It compares the rental charge with taxi fares only, using the four numbers you enter. Fuel, tolls, parking, insurance and any extra charges are not included, so add them to the rental side yourself if they apply to your trip.</p></div>
+<div class="faq"><h3>Which distance unit should I use?</h3><p>Use kilometres or miles — either works, as long as you use the same unit for the trip distance and the taxi cost per unit. The calculator does not convert between units, so mixing them will give a wrong answer.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../rent-vs-buy-calculator/">Rent vs Buy Calculator</a> · <a href="../flat-rate-vs-reducing-balance/">Flat Rate vs Reducing Balance</a> · <a href="../debt-payoff-calculator/">Debt Payoff Calculator</a> · <a href="../overtime-pay-calculator/">Overtime Pay Calculator</a></p>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n){return (Math.round((n+1e-9)*100)/100).toFixed(2);}
+function fmtPct(p){var r=Math.round((p+1e-9)*10)/10;return Number.isInteger(r)?String(r):r.toFixed(1);}
+function calc(){
+var dist=parseFloat(document.getElementById('dist').value);
+var days=parseFloat(document.getElementById('days').value);
+var rental=parseFloat(document.getElementById('rental').value);
+var taxi=parseFloat(document.getElementById('taxi').value);
+var out=document.getElementById('out');
+var steps=document.getElementById('steps');
+if(isNaN(dist)||isNaN(days)||isNaN(rental)||isNaN(taxi)){
+out.textContent='Enter a number in every box above to see the result.';
+steps.textContent='';
+return;
+}
+if(dist<=0){
+out.textContent='Trip distance must be above 0.';
+steps.textContent='';
+return;
+}
+if(days<=0||days>365){
+out.textContent='Number of days must be above 0 and no more than 365.';
+steps.textContent='';
+return;
+}
+if(rental<=0){
+out.textContent='Rental cost per day must be above 0.';
+steps.textContent='';
+return;
+}
+if(taxi<=0){
+out.textContent='Taxi cost per distance unit must be above 0.';
+steps.textContent='';
+return;
+}
+var rentTotal=days*rental;
+var taxiTotal=dist*taxi;
+var diff=Math.abs(rentTotal-taxiTotal);
+var higher=Math.max(rentTotal,taxiTotal);
+var pct=higher>0?diff/higher*100:0;
+var totals='Renting a car: '+fmt(rentTotal)+'. Taxis: '+fmt(taxiTotal)+'.';
+var stepLines='Rental total: '+days+' x '+rental+' = '+fmt(rentTotal)+'.\nTaxi total: '+dist+' x '+taxi+' = '+fmt(taxiTotal)+'.';
+if(rentTotal<taxiTotal){
+out.textContent=totals+' Renting is cheaper by '+fmt(diff)+' ('+fmtPct(pct)+'% less than taxis).';
+steps.textContent=stepLines+'\nDifference: ('+dist+' x '+taxi+') - ('+days+' x '+rental+') = '+fmt(diff)+'. Renting is cheaper.';
+}else if(taxiTotal<rentTotal){
+out.textContent=totals+' Taxis are cheaper by '+fmt(diff)+' ('+fmtPct(pct)+'% less than renting).';
+steps.textContent=stepLines+'\nDifference: ('+days+' x '+rental+') - ('+dist+' x '+taxi+') = '+fmt(diff)+'. Taxis are cheaper.';
+}else{
+out.textContent=totals+' Both options cost the same.';
+steps.textContent=stepLines+'\nDifference: ('+days+' x '+rental+') - ('+dist+' x '+taxi+') = 0.00. Both options cost the same.';
+}
+}
+var ids=['dist','days','rental','taxi'];
+ids.forEach(function(id){
+var el=document.getElementById(id);
+el.addEventListener('input',calc);
+el.addEventListener('change',calc);
+});
+document.getElementById('resetBtn').addEventListener('click',function(){
+document.getElementById('dist').value='300';
+document.getElementById('days').value='3';
+document.getElementById('rental').value='40';
+document.getElementById('taxi').value='0.5';
+calc();
+});
+calc();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>
