@@ -276,3 +276,24 @@ R12. `expiry-date-tracker` | UNVERIFIED | List + days-left warnings, localStorag
 10. **Security-sensitive:** 2FA tools, password vaults, clipboard history.
 11. **Unreliable-device:** compass, altimeter (sensor-dependent).
 12. **One-per-intent pruning:** inverter-size (near battery-backup), tabata (near interval-timer), storage-needs (near data-usage), aquarium volume (near generic volume), guitar tuner (prompt-path build risk), gold/silver rate tools (need live feeds).
+
+---
+
+## Fresh angles — added 2026-11-14 (demand hunt, owner order "মাথা মারো ধান্দা খুঁজো")
+
+Method: web search 2026-11-14 (Google Trends/Ahrefs roundups, popular-calculator lists, India AI-search trends) + duplicate check against the ToolBari live tree (`~/workspace/birthday-frames/push/`, sitemap + dirs) and `~/workspace/noryvello/`. All 5 below: ZERO collisions, none in the lists above.
+
+### AI cluster — hottest current demand
+F1. `free-ai-video-generators` | guide | HIGH | Which free AI video tools are genuinely free: verified free limits, watermarks, what each free tier actually gives. Evidence: "ai video" +20%, Google Flow queries +1,650% breakout (India Trends, Oct 2026); our own Flow/vidogrid experience. Must be honest about caps/watermarks.
+F2. `free-ai-image-generators` | guide | HIGH | Same verified-limits playbook for image tools (Ideogram text-in-image etc.). Evidence: "AI image generator" searches risen sharply vs 2025 (adshout.ai, Oct 2026).
+F3. `chatgpt-vs-claude-vs-gemini-free` | comparison | HIGH | Free-plan limits of the big three, verified + dated. Evidence: Claude queries +400%/+350% (fastest-growing assistant), Gemini dominates India AI search, all three top global searches (Ahrefs/Trends, Nov 2026).
+F4. `free-photoshop-alternatives` | guide | HIGH | Free/alternative photo editors incl. the viral GitHub wave (ArtCraft: 7 Adobe alternatives, 86,265 stars in ~10 days, Oct 2026) — with honest alpha/readiness warnings. Evergreen "free photoshop alternative" demand.
+
+### Creator/money cluster
+F5. `youtube-revenue-calculator` | calculator | HIGH | Views + CPM inputs → earnings estimate; platform picker (YouTube/TikTok). Evidence: "YouTube & TikTok Revenue Calculator" among the most-popular calculator lists (2026). Duplicate check: ToolBari has title/description/downloader YouTube tools only — NO revenue calculator. Currency-agnostic, user-entered CPM.
+
+### Dropped by the duplicate check
+- `freelance-hourly-rate-calculator` — DROPPED: ToolBari already has `freelance-rate-fees-calculator` (same intent). Do not build.
+
+### Seasonal reminder (already listed above, most urgent)
+- `turkey-roasting-time-calculator` (#1 HIGH) — Thanksgiving Thu 26 Nov 2026, 12 days out. Build before anything else seasonal.
