@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tongue Twister Generator: Say It 3 Times Fast | Noryvello</title>
+<meta name="description" content="Pick a difficulty and try a tongue twister — easy, medium or hard. Say it 3 times fast, start slow and speed up, then press the button for a new one.">
+<link rel="canonical" href="https://noryvello.github.io/tongue-twister-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tongue Twister Generator: Say It 3 Times Fast">
+<meta property="og:description" content="Pick a difficulty and try a tongue twister — say it 3 times fast.">
+<meta property="og:url" content="https://noryvello.github.io/tongue-twister-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.twister{font-size:22px;text-align:center}.calc button{padding:10px 16px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer;margin-top:12px}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a tongue twister?","acceptedAnswer":{"@type":"Answer","text":"A tongue twister is a phrase that is hard to say quickly because it repeats similar sounds, such as 'She sells seashells by the seashore'. The repeated sounds trip up the mouth, which is what makes them fun to try."}},{"@type":"Question","name":"Why are tongue twisters hard to say?","acceptedAnswer":{"@type":"Answer","text":"They pack similar sounds close together, so the mouth has to switch between them very fast. The brain plans the next sound while the mouth is still saying the last one, and the two get mixed up."}},{"@type":"Question","name":"Can tongue twisters help with speaking?","acceptedAnswer":{"@type":"Answer","text":"They can be a fun way to practise clear speech, because they make you slow down and shape each sound carefully. Start slowly, say each word clearly, and only speed up when the words come out right."}},{"@type":"Question","name":"What is the hardest tongue twister?","acceptedAnswer":{"@type":"Answer","text":"Many people say 'The sixth sick sheikh's sixth sheep's sick' is the hardest, because it repeats the 's' and 'sh' sounds so closely. Other favourites are 'Pad kid poured curd pulled cod' and 'How much wood would a woodchuck chuck' — try them slowly first."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Tongue Twister Generator</h1>
+<p class="answer">Pick a difficulty and try the tongue twister below. Say it out loud three times fast — start slowly, then speed up. Press the button for a new twister whenever you are ready.</p>
+<div class="calc">
+<label for="level">Difficulty</label>
+<select id="level">
+<option value="easy" selected>Easy</option>
+<option value="medium">Medium</option>
+<option value="hard">Hard</option>
+</select>
+<p class="out twister" id="out"></p>
+<p class="steps" id="steps"></p>
+<button type="button" id="newBtn">New twister</button>
+</div>
+<div class="warn">These tongue twisters are for fun and practice. Take your time, start slowly, and do not strain your voice — if your throat feels tired, take a break.</div>
+<h2>How to say a tongue twister</h2>
+<p>Read the twister once in your head, then say it out loud slowly, shaping every word clearly. Say it a second time a little faster, and a third time as fast as you can without tripping. If you stumble, slow down again — speed only counts when the words come out right.</p>
+<h2>Why tongue twisters are tricky</h2>
+<p>Tongue twisters repeat sounds that are close but not the same, such as "s" and "sh" or "p" and "b". The mouth has to switch between them quickly, and the brain plans the next sound while the mouth is still finishing the last one. That is why even a short line can tie your tongue in knots.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is a tongue twister?</h3><p>A tongue twister is a phrase that is hard to say quickly because it repeats similar sounds, such as 'She sells seashells by the seashore'. The repeated sounds trip up the mouth, which is what makes them fun to try.</p></div>
+<div class="faq"><h3>Why are tongue twisters hard to say?</h3><p>They pack similar sounds close together, so the mouth has to switch between them very fast. The brain plans the next sound while the mouth is still saying the last one, and the two get mixed up.</p></div>
+<div class="faq"><h3>Can tongue twisters help with speaking?</h3><p>They can be a fun way to practise clear speech, because they make you slow down and shape each sound carefully. Start slowly, say each word clearly, and only speed up when the words come out right.</p></div>
+<div class="faq"><h3>What is the hardest tongue twister?</h3><p>Many people say 'The sixth sick sheikh's sixth sheep's sick' is the hardest, because it repeats the 's' and 'sh' sounds so closely. Other favourites are 'Pad kid poured curd pulled cod' and 'How much wood would a woodchuck chuck' — try them slowly first.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="../clean-joke-generator/">Clean Joke Generator</a> · <a href="../would-you-rather-generator/">Would You Rather Generator</a> · <a href="../charades-word-generator/">Charades Word Generator</a> · <a href="../speaking-time-calculator/">Speaking Time Calculator</a></div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var BANK = {
+  easy: [
+    'Red lorry, yellow lorry.',
+    'She sells seashells by the seashore.',
+    'Peter Piper picked a peck of pickled peppers.',
+    'How much wood would a woodchuck chuck if a woodchuck could chuck wood?',
+    'Fuzzy Wuzzy was a bear. Fuzzy Wuzzy had no hair. Fuzzy Wuzzy wasn\'t fuzzy, was he?',
+    'I scream, you scream, we all scream for ice cream.',
+    'Six silly sheep slowly shuffled south.',
+    'Big brown bears bake big blueberry buns.',
+    'A big black bug bit a big black bear.',
+    'Betty Botter bought some butter, but she said the butter\'s bitter.',
+    'Toy boat, toy boat, toy boat.',
+    'Round and round the rugged rock the ragged rascal ran.'
+  ],
+  medium: [
+    'How can a clam cram in a clean cream can?',
+    'I slit the sheet, the sheet I slit, and on the slitted sheet I sit.',
+    'Six slippery snails slid slowly seaward.',
+    'A proper copper coffee pot.',
+    'Nine nimble noblemen nibbled nuts.',
+    'Three grey geese in a green field grazing.',
+    'Four furious friends fought for the phone.',
+    'Black background, brown background.',
+    'Double bubble gum, bubbles double.',
+    'A happy hippo hopped and hiccupped happily.',
+    'Five frantic frogs fled from fifty fierce fishes.',
+    'Crisp crusts crackle and crunch.'
+  ],
+  hard: [
+    'The sixth sick sheikh\'s sixth sheep\'s sick.',
+    'Pad kid poured curd pulled cod.',
+    'A skunk sat on a stump and thunk the stump stunk, but the stump thunk the skunk stunk.',
+    'Brisk brave brigadiers brandished broad bright blades, blunderbusses, and bludgeons.',
+    'Rory the warrior and Roger the worrier were reared wrongly in a rural brewery.',
+    'Can you can a can as a canner can can a can?',
+    'The seething sea ceaseth and thus the seething sea sufficeth us.',
+    'Lesser leather never weathered wetter weather better.',
+    'If two witches would watch two watches, which witch would watch which watch?',
+    'Amidst the mists and coldest frosts, with stoutest wrists and loudest boasts, he thrusts his fists against the posts and still insists he sees the ghosts.',
+    'Six sick hicks nick six slick bricks with picks and sticks.',
+    'Specific Pacific, specific Pacific, specific Pacific.'
+  ]
+};
+var current = -1;
+function pick(level) {
+  var list = BANK[level];
+  var i;
+  do { i = Math.floor(Math.random() * list.length); } while (list.length > 1 && i === current);
+  current = i;
+  document.getElementById('out').textContent = list[i];
+  document.getElementById('steps').textContent = 'Challenge: say it 3 times fast.\nTip: start slow, then speed up.';
+}
+function update() {
+  current = -1;
+  pick(document.getElementById('level').value);
+}
+document.getElementById('level').addEventListener('input', update);
+document.getElementById('level').addEventListener('change', update);
+document.getElementById('newBtn').addEventListener('click', function () { pick(document.getElementById('level').value); });
+update();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

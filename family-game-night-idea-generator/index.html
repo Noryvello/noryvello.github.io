@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Family Game Night Idea Generator: Fun for Every Age | Noryvello</title>
+<meta name="description" content="Pick your group and the time you have, and get a family game night idea with a simple three-line how-to. Every game uses household items or nothing at all.">
+<link rel="canonical" href="https://noryvello.github.io/family-game-night-idea-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Family Game Night Idea Generator: Fun for Every Age">
+<meta property="og:description" content="Pick your group and the time you have, and get a family game night idea with a simple three-line how-to.">
+<meta property="og:url" content="https://noryvello.github.io/family-game-night-idea-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{padding:10px 18px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:600;cursor:pointer;margin-top:12px}.need{font-size:15px;margin-top:10px}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are good family game night ideas?","acceptedAnswer":{"@type":"Answer","text":"Good family game night ideas are simple games everyone can join in, like acting games, quizzes, treasure hunts and drawing games. The best ones need little or nothing from around the house, take as long as you have, and let every age play a part. This generator picks one for your group and your time."}},{"@type":"Question","name":"What games can kids and adults play together?","acceptedAnswer":{"@type":"Answer","text":"Games with simple rules and no reading or counting advantage work best across ages, like hide and seek, acting games, drawing games and building challenges. Pick games where younger players can help and older players cannot win just by being older. The mixed ages group in this generator is built for exactly that."}},{"@type":"Question","name":"What do I need for family game night?","acceptedAnswer":{"@type":"Answer","text":"Nothing more than what is already in your home. Every idea in this generator uses household items like paper, pens, socks and cushions, or nothing at all, so you can start tonight with what you already have."}},{"@type":"Question","name":"How long should family game night last?","acceptedAnswer":{"@type":"Answer","text":"As long as your family enjoys it. Fifteen minutes is enough for a quick game before bed, thirty minutes suits a school night, and an hour gives you time for a bigger challenge or several short games. Stop while everyone is still having fun, and save the next idea for another night."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Family Game Night Idea Generator</h1>
+<p class="answer">Pick who is playing and how much time you have, and this generator will suggest a family game night idea with a simple three-line how-to. Every idea uses household items or nothing at all, so you can start straight away. Use the button to try another idea until you find one your family likes.</p>
+<div class="calc">
+<label for="group">Who is playing?</label>
+<select id="group">
+<option value="kids">Kids</option>
+<option value="teens">Teens</option>
+<option value="adults">Adults</option>
+<option value="mixed" selected>Mixed ages</option>
+</select>
+<label for="time">How much time do you have?</label>
+<select id="time">
+<option value="15">15 minutes</option>
+<option value="30" selected>30 minutes</option>
+<option value="60">1 hour</option>
+</select>
+<button type="button" id="anotherBtn">Another idea</button>
+<p class="out" id="ideaTitle"></p>
+<p class="steps" id="ideaSteps"></p>
+<p class="need" id="ideaNeed"></p>
+</div>
+<div class="warn">The times on each idea are rough guides. A game may run shorter or longer depending on your family, how many people are playing, and how much everyone is enjoying it.</div>
+<h2>How to use the generator</h2>
+<p>Pick the group that matches who is playing, then pick how much time you have. The generator shows a game idea with a three-line how-to and a list of what you need. If the idea does not suit your family, press Another idea for a different one from the same group.</p>
+<h2>Tips for a good game night</h2>
+<p>Start with a short game so everyone warms up, and let a different person choose the next game each time. Keep the rules simple, and let younger players team up with an older player when a game is tricky. The best game nights end while everyone still wants one more round.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What are good family game night ideas?</h3><p>Good family game night ideas are simple games everyone can join in, like acting games, quizzes, treasure hunts and drawing games. The best ones need little or nothing from around the house, take as long as you have, and let every age play a part. This generator picks one for your group and your time.</p></div>
+<div class="faq"><h3>What games can kids and adults play together?</h3><p>Games with simple rules and no reading or counting advantage work best across ages, like hide and seek, acting games, drawing games and building challenges. Pick games where younger players can help and older players cannot win just by being older. The mixed ages group in this generator is built for exactly that.</p></div>
+<div class="faq"><h3>What do I need for family game night?</h3><p>Nothing more than what is already in your home. Every idea in this generator uses household items like paper, pens, socks and cushions, or nothing at all, so you can start tonight with what you already have.</p></div>
+<div class="faq"><h3>How long should family game night last?</h3><p>As long as your family enjoys it. Fifteen minutes is enough for a quick game before bed, thirty minutes suits a school night, and an hour gives you time for a bigger challenge or several short games. Stop while everyone is still having fun, and save the next idea for another night.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="../charades-word-generator/">Charades Word Generator</a> · <a href="../clean-joke-generator/">Clean Joke Generator</a> · <a href="../would-you-rather-generator/">Would You Rather Generator</a> · <a href="../truth-or-dare-generator/">Truth or Dare Generator</a></div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var IDEAS = {
+  kids: [
+    {t:'Balloon Keep-Up', m:15, h:['Blow up a balloon and stand in a circle.','Tap the balloon into the air and keep it from touching the floor.','Count how many taps your family can manage before it lands.'], n:'a balloon'},
+    {t:'Freeze Dance', m:15, h:['One person sings or hums a tune while everyone dances.','When the singer stops, everyone must freeze like a statue.','Anyone caught moving sits out until the next round.'], n:'nothing'},
+    {t:'Story Chain', m:15, h:['One person starts a story with a single sentence.','The next person adds the next sentence, and so on around the circle.','Keep going until the story reaches a silly ending.'], n:'nothing'},
+    {t:'Sock Puppet Theatre', m:30, h:['Each person makes a puppet from an old sock, with buttons or paper for eyes.','Take turns putting on a short puppet show behind the back of a chair.','The audience guesses what each puppet is pretending to be.'], n:'old socks, buttons or paper scraps, pens'},
+    {t:'Treasure Hunt', m:30, h:['One person hides ten small household objects around one room.','Write or draw a list of the hidden objects for the hunters.','Everyone searches together, and the first to find all ten wins.'], n:'ten small objects, paper, a pen'},
+    {t:'Indoor Bowling', m:30, h:['Line up six empty plastic bottles at the end of a hallway.','Roll a soft ball along the floor to knock them down.','Each player gets two rolls, and the highest score wins.'], n:'six empty plastic bottles, a soft ball'},
+    {t:'Dress-Up Relay', m:60, h:['Put a pile of old clothes, hats and scarves at one end of the room.','Players race to the pile, put on one item, and race back.','The first player wearing five items wins, then everyone shows off their outfits.'], n:'old clothes, hats and scarves'},
+    {t:'Paper Plane Contest', m:60, h:['Everyone folds a paper plane from a sheet of paper.','Take turns flying the planes from the same starting line.','Measure whose plane flies the furthest, then redesign and try again.'], n:'paper'}
+  ],
+  teens: [
+    {t:'Two Truths and a Lie', m:15, h:['Each player says two true things and one made-up thing about themselves.','The others ask questions, then vote on which statement is the lie.','Score a point for every lie you spot and every lie nobody spots.'], n:'nothing'},
+    {t:'Memory Tray', m:15, h:['Put fifteen small objects on a tray and cover it with a towel.','Uncover the tray for thirty seconds, then cover it again.','Everyone writes down as many objects as they can remember.'], n:'a tray, fifteen small objects, a towel, paper, pens'},
+    {t:'Song Quiz', m:15, h:['One player hums the tune of a song everyone knows.','The first person to name the song scores a point.','Play through ten songs, and the highest score wins.'], n:'nothing'},
+    {t:'Reverse Charades', m:30, h:['One player watches while the rest of the team acts out a word together.','The watcher has one minute to guess the word.','Take turns watching, and the fastest guesser wins.'], n:'slips of paper, a pen'},
+    {t:'Debate Night', m:30, h:['Pick a silly question, like whether breakfast should be eaten at night.','Split into two sides and take turns arguing your case.','Everyone votes for the most convincing side at the end.'], n:'nothing'},
+    {t:'Build the Tallest Tower', m:30, h:['Each team gets the same number of sheets of newspaper.','Build the tallest free-standing tower you can in ten minutes.','Measure the towers, and the tallest one wins.'], n:'newspaper, tape'},
+    {t:'Snack Inventors', m:60, h:['Each team picks three ingredients already in the kitchen.','Teams have twenty minutes to make a snack from their three ingredients.','Everyone tastes the snacks and votes for the best one.'], n:'ingredients already in the kitchen'},
+    {t:'Home Scavenger Hunt', m:60, h:['Write a list of twenty things to find around the house.','Teams race to find each item and tick it off the list.','The first team to tick off the whole list wins.'], n:'paper, a pen'}
+  ],
+  adults: [
+    {t:'Storytelling Circle', m:15, h:['Each person tells a true story from their life in two minutes.','The others ask one question each about the story.','Vote for the story that surprised you the most.'], n:'nothing'},
+    {t:'Speed Word Chain', m:15, h:['One player says a word, and the next player must say a word starting with its last letter.','Anyone who hesitates for more than five seconds is out.','The last player left in wins.'], n:'nothing'},
+    {t:'Tough Choices', m:15, h:['Take turns asking a would you rather question to the group.','Everyone answers and explains their choice in one sentence.','Vote for the hardest question of the night.'], n:'nothing'},
+    {t:'Kitchen Quiz Night', m:30, h:['One person writes twenty questions about general knowledge.','Players answer on paper while the quizmaster reads the questions aloud.','Swap papers to mark, and the highest score wins.'], n:'paper, pens'},
+    {t:'Blindfold Taste Test', m:30, h:['Put five foods from the kitchen into small bowls.','Blindfolded players taste each one and guess what it is.','Score a point for every correct guess.'], n:'five foods, small bowls, a blindfold'},
+    {t:'Draw and Guess', m:30, h:['Write words on slips of paper and put them in a bowl.','One player draws a word while the others guess.','The fastest guesser draws next.'], n:'paper, pens, a bowl'},
+    {t:'Mystery at Home', m:60, h:['One player invents a mystery: something has gone missing in the house.','The others ask yes-or-no questions to work out what happened.','The first person to solve the mystery wins.'], n:'nothing'},
+    {t:'Living Room Olympics', m:60, h:['Set up five challenges: paper toss, spoon balance, sock throw and two of your own.','Everyone scores points in each challenge.','Add up the scores at the end to crown the champion.'], n:'paper, spoons, socks'}
+  ],
+  mixed: [
+    {t:'Card Tower Challenge', m:15, h:['Give each team a pack of playing cards.','Build the tallest tower of cards you can in five minutes.','Measure the towers, and the tallest one wins.'], n:'a pack of playing cards'},
+    {t:'Twenty Questions', m:15, h:['One player thinks of a person, place or thing.','The others ask up to twenty yes-or-no questions.','Guess the answer before the questions run out.'], n:'nothing'},
+    {t:'Human Bingo', m:15, h:['Draw a grid on paper and fill each square with a fun fact, like has a pet.','Players ask each other questions to find someone who matches each square.','The first player to fill a full row wins.'], n:'paper, pens'},
+    {t:'Act It Out', m:30, h:['Write easy words on slips of paper, like animals and everyday jobs.','One player acts out a word without speaking.','The first person to guess it acts next.'], n:'slips of paper, a pen'},
+    {t:'Hide and Seek', m:30, h:['One person counts to fifty while everyone else hides.','The seeker searches the agreed rooms one by one.','The last person found picks the next seeker.'], n:'nothing'},
+    {t:'Build a Fort', m:30, h:['Use chairs, blankets and cushions to build a fort in the living room.','Everyone adds a room or a secret entrance.','Finish by eating a snack together inside the fort.'], n:'chairs, blankets, cushions'},
+    {t:'Family Talent Show', m:60, h:['Everyone gets ten minutes to prepare a short act.','Take turns performing: sing, juggle, tell jokes or show a skill.','Everyone votes for their favourite act at the end.'], n:'props from around the house'},
+    {t:'Pancake Cook-Off', m:60, h:['Everyone makes pancakes from the same basic batter.','Add your own twist with toppings already in the kitchen.','Taste them all and vote for the best pancake.'], n:'pancake ingredients, toppings from the kitchen'}
+  ]
+};
+var current = null;
+function pool() {
+  var g = document.getElementById('group').value;
+  var t = parseInt(document.getElementById('time').value, 10);
+  return IDEAS[g].filter(function(i) { return i.m <= t; });
+}
+function show(idea) {
+  document.getElementById('ideaTitle').textContent = idea.t;
+  document.getElementById('ideaSteps').textContent = idea.h.join('\n');
+  document.getElementById('ideaNeed').textContent = 'You need: ' + idea.n + '.';
+}
+function pick() {
+  var p = pool();
+  var idx = Math.floor(Math.random() * p.length);
+  if (p.length > 1 && p[idx] === current) { idx = (idx + 1) % p.length; }
+  current = p[idx];
+  show(current);
+}
+document.getElementById('group').addEventListener('input', pick);
+document.getElementById('group').addEventListener('change', pick);
+document.getElementById('time').addEventListener('input', pick);
+document.getElementById('time').addEventListener('change', pick);
+document.getElementById('anotherBtn').addEventListener('click', pick);
+pick();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

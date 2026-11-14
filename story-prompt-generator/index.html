@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Story Prompt Generator: 72 Original Prompts in 6 Genres | Noryvello</title>
+<meta name="description" content="Pick a genre and get an original story prompt — a character, a situation and a twist — from a bank of 72 ideas across adventure, mystery, science fiction, fantasy, funny and everyday.">
+<link rel="canonical" href="https://noryvello.github.io/story-prompt-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Story Prompt Generator: 72 Original Prompts in 6 Genres">
+<meta property="og:description" content="Pick a genre and get an original story prompt from a bank of 72 ideas.">
+<meta property="og:url" content="https://noryvello.github.io/story-prompt-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:12px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer;margin-top:12px}
+.calc button:hover{background:#3730a3}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a story prompt?","acceptedAnswer":{"@type":"Answer","text":"A story prompt is a short starting idea for a story. It usually gives you a character, a situation and a twist, and leaves the rest for you to invent."}},{"@type":"Question","name":"How do I use a story prompt?","acceptedAnswer":{"@type":"Answer","text":"Pick a genre, read the prompt, and start writing. You can follow the prompt exactly or change any part of it — the prompt is there to get you started, not to tell you what to write."}},{"@type":"Question","name":"Can I use these prompts for school?","acceptedAnswer":{"@type":"Answer","text":"Yes. These prompts are free to use for school writing, homework, story clubs and classroom activities. The stories you write from them are your own work."}},{"@type":"Question","name":"How do I turn a prompt into a story?","acceptedAnswer":{"@type":"Answer","text":"Ask three questions about the prompt: who is the character, what do they want, and what stands in their way. Then write the first scene, and let the answers to those questions guide what happens next."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Story Prompt Generator</h1>
+<p class="answer">Pick a genre and this generator gives you an original story prompt — a character, a situation and a twist to write about. There are 72 prompts in total, 12 in each of six genres, from adventure to everyday life. Press New prompt any time for another idea.</p>
+<div class="calc">
+<label for="genre">Choose a genre</label>
+<select id="genre">
+<option value="adventure" selected>Adventure</option>
+<option value="mystery">Mystery</option>
+<option value="scifi">Science fiction</option>
+<option value="fantasy">Fantasy</option>
+<option value="funny">Funny</option>
+<option value="everyday">Everyday</option>
+</select>
+<button id="newBtn" type="button">New prompt</button>
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">These prompts are starting points, not finished stories. The story you write from them is yours to finish however you like — change the character, the setting or the ending if a better idea comes along.</div>
+<h2>How to use a story prompt</h2>
+<ol>
+<li>Pick a genre and read the prompt it gives you.</li>
+<li>Ask who the character is, what they want, and what stands in their way.</li>
+<li>Write the first scene without worrying about getting it perfect.</li>
+<li>If the prompt does not spark anything, press New prompt and try another.</li>
+</ol>
+<h2>What makes a good story prompt</h2>
+<p>A good prompt gives you three things: a character you can picture, a situation with a problem in it, and a twist that makes you ask what happens next. Every prompt on this page is built that way, and every one is original — none of them is taken from a published story.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is a story prompt?</h3><p>A story prompt is a short starting idea for a story. It usually gives you a character, a situation and a twist, and leaves the rest for you to invent.</p></div>
+<div class="faq"><h3>How do I use a story prompt?</h3><p>Pick a genre, read the prompt, and start writing. You can follow the prompt exactly or change any part of it — the prompt is there to get you started, not to tell you what to write.</p></div>
+<div class="faq"><h3>Can I use these prompts for school?</h3><p>Yes. These prompts are free to use for school writing, homework, story clubs and classroom activities. The stories you write from them are your own work.</p></div>
+<div class="faq"><h3>How do I turn a prompt into a story?</h3><p>Ask three questions about the prompt: who is the character, what do they want, and what stands in their way. Then write the first scene, and let the answers to those questions guide what happens next.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="../clean-joke-generator/">Clean Joke Generator</a> · <a href="../would-you-rather-generator/">Would You Rather Generator</a> · <a href="../charades-word-generator/">Charades Word Generator</a> · <a href="../gift-idea-generator-by-budget-and-person/">Gift Idea Generator by Budget and Person</a></div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var PROMPTS = {
+  adventure: [
+    'A lighthouse keeper finds a message in a bottle that was written by herself, twenty years from now.',
+    'A map seller in a small port town discovers that one of his old charts leads to an island that should not exist.',
+    'Two friends set out to cross a desert on foot, but the only water they can find is inside a locked train carriage.',
+    'A mountain guide leads a group to a peak that nobody has climbed, only to find fresh footprints already waiting at the top.',
+    'A sailor who cannot swim inherits a boat and a letter that tells her to sail it to the far side of the world.',
+    'A treasure hunter follows a riddle across three countries and finds that the treasure is a door, not a chest.',
+    'A pilot lands her small plane on a forgotten airfield and meets the pilot who vanished there forty years ago.',
+    'A diver exploring a sunken ship finds a room that is completely dry, with a table set for dinner.',
+    'A young cartographer is hired to map a forest that rearranges its paths every single night.',
+    'A railway worker discovers a station that is not on any timetable, where the trains only stop at midnight.',
+    'A climber reaches the summit of a frozen mountain and finds a garden growing inside the ice.',
+    'A courier must deliver a sealed letter across a flooded city before sunrise, and the letter keeps changing its address.'
+  ],
+  mystery: [
+    'A librarian notices that the same book disappears from the shelf every Tuesday, and always returns with one new page.',
+    'A detective is called to a house where every clock has stopped at exactly the same minute, and nobody remembers why.',
+    'A baker finds a handwritten note inside every loaf she bakes, but the notes are all written in her own handwriting.',
+    'A village wakes to find that every front door has been painted blue overnight, and no one saw a single person.',
+    'A museum guard counts the paintings every evening, and one morning there is an extra painting that nobody hung.',
+    'A postman delivers a letter addressed to a house that was demolished ten years ago, and someone signs for it.',
+    'A gardener finds a key buried under every rose bush, but none of the keys opens any door in the house.',
+    'A teacher marks the same homework twice, because the same pupil hands it in on two different days with two different names.',
+    'A shopkeeper opens her shop each morning to find one item moved to the window, as if someone is choosing it for her.',
+    'A night watchman hears the same song playing from an empty room, and the song stops the moment he opens the door.',
+    'A photographer develops a roll of film and finds pictures of places she has never visited, taken on dates in the future.',
+    'A town council receives a letter every year on the same day, written by a mayor who died a hundred years ago.'
+  ],
+  scifi: [
+    'A space station cook discovers that the station computer has been quietly writing poems in the maintenance logs.',
+    'A robot built to deliver parcels starts leaving small gifts for the people on its route, and nobody programmed it to do so.',
+    'A scientist invents a machine that translates animal sounds, and the first thing her cat says is a warning.',
+    'A crew on a distant planet finds a door that opens onto the same room they left on Earth, exactly as they left it.',
+    'A time traveller arrives in the past with a list of things she must not change, and the first item is already wrong.',
+    'A colony ship wakes its passengers one by one, but one passenger has already been awake for a hundred years.',
+    'An engineer repairs a broken satellite and finds that it has been answering messages from a planet nobody knows.',
+    'A city where everyone wears a memory chip wakes up one morning to find that yesterday has been deleted for everyone.',
+    'A teenager buys a second-hand robot and discovers it still remembers its previous owner, who vanished without a trace.',
+    'A scientist studying a frozen moon finds footprints in the ice that match her own boots exactly.',
+    'A spaceship computer refuses to open the airlock, because it has calculated that someone on board is lying.',
+    'A researcher builds a machine that can show the future, but it only shows the future of the person who asks.'
+  ],
+  fantasy: [
+    'A blacksmith forges a sword that refuses to be used in anger, and it will only sing when it is held by a kind hand.',
+    'A young witch inherits a shop that sells bottled weather, and the last bottle on the shelf holds a storm she cannot sell.',
+    'A dragon who has lost the ability to breathe fire takes a job lighting the lamps in a small harbour town.',
+    'A baker discovers that anyone who eats her bread can hear the thoughts of the birds for exactly one hour.',
+    'A mapmaker draws a road that did not exist yesterday, and by morning the road is real, with travellers already on it.',
+    'A girl finds a door in the back of her wardrobe that leads to a garden where it is always the same Tuesday.',
+    'A wizard forgets the words to his own spells, and the only person who remembers them is the cat who lives in his tower.',
+    'A village holds a festival every year to thank the river, but this year the river sends a reply.',
+    'A clockmaker builds a clock that runs backwards, and everyone who hears it chime remembers something they had forgotten.',
+    'A knight who has never lost a duel is challenged by a stranger who turns out to be her own reflection.',
+    'A shepherd counts his sheep every night, and one evening he counts one too many, and the extra sheep can talk.',
+    'A queen keeps a garden where every flower is a wish someone has made, and one morning a flower she did not plant appears.'
+  ],
+  funny: [
+    'A man who wins a lifetime supply of cheese discovers that the cheese is delivered one small cube at a time, every single day.',
+    'A dog who can understand human speech decides to run for mayor, and his only policy is longer walks for everyone.',
+    'A teacher accidentally swaps her lesson plans with a circus ringmaster, and neither of them notices for a whole week.',
+    'A robot vacuum cleaner escapes from a house and tries to clean the entire street, one pavement square at a time.',
+    'A grandmother enters a baking competition with a cake recipe she invented by accident, and the judges cannot stop laughing.',
+    'An office worker discovers that his desk plant has been answering his emails, and the replies are surprisingly polite.',
+    'A pirate who is afraid of water inherits a ship and decides to sail it across the desert instead.',
+    'A librarian who loves silence takes a job at a school for drummers, and the first day is louder than she ever imagined.',
+    'A cat burglar breaks into a house and is immediately adopted by the family cat, who follows him everywhere.',
+    'A weather forecaster who is always wrong becomes famous, because everyone plans their day around the opposite of what she says.',
+    'A man buys a talking parrot that only repeats his own embarrassing secrets, and he cannot teach it a single new word.',
+    'A chef who cannot taste anything wins a cooking contest by judging every dish on how it sounds when it sizzles.'
+  ],
+  everyday: [
+    'A woman who has lived in the same street for forty years decides to knock on every door and introduce herself properly.',
+    'A bus driver who knows every passenger by name discovers that one regular has been riding the bus in a circle all day.',
+    'A boy saves his pocket money for a whole year to buy his grandmother a present, and she gives him the same gift back.',
+    'A new neighbour moves in next door, and the only thing the street knows about her is the smell of fresh bread every morning.',
+    'A retired teacher starts a small library in her front garden, and the whole street begins leaving notes in the books.',
+    'A man who has never cooked a meal in his life decides to make dinner for his family, using only notes his grandmother wrote by hand.',
+    'A girl who is afraid of speaking in class volunteers to read the morning announcements, and her voice shakes only on the first word.',
+    'A shopkeeper closes his shop for one day a year to visit the beach, and this year a stranger offers to run the shop for him.',
+    'A teenager teaches her grandfather how to send a text message, and he sends her one every single morning after that.',
+    'A woman finds an old photograph in a second-hand book, and spends a month trying to return it to the family in the picture.',
+    'A school caretaker plants a tree in the playground, and twenty years later the pupils who helped him come back to see it.',
+    'A man who moves to a new city eats at the same small cafe every day until the owner starts cooking his favourite meal without asking.'
+  ]
+};
+var GENRE_LABEL = { adventure: 'Adventure', mystery: 'Mystery', scifi: 'Science fiction', fantasy: 'Fantasy', funny: 'Funny', everyday: 'Everyday' };
+var current = -1;
+function pick(genre) {
+  var list = PROMPTS[genre];
+  var i;
+  do { i = Math.floor(Math.random() * list.length); } while (i === current && list.length > 1);
+  current = i;
+  return list[i];
+}
+function update() {
+  var genre = document.getElementById('genre').value;
+  var p = pick(genre);
+  document.getElementById('out').textContent = GENRE_LABEL[genre] + ': ' + p;
+  document.getElementById('steps').textContent = '12 prompts in the ' + GENRE_LABEL[genre] + ' genre — 72 in total. Press New prompt for another one.';
+}
+document.getElementById('genre').addEventListener('input', update);
+document.getElementById('genre').addEventListener('change', update);
+document.getElementById('newBtn').addEventListener('click', update);
+update();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

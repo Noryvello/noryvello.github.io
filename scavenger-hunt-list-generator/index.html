@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scavenger Hunt List Generator: Printable Hunts for Every Setting | Noryvello</title>
+<meta name="description" content="Pick a setting and an age group to get a 15-item scavenger hunt checklist you can print. Hunts for indoors, the garden, the park and the beach — for kids, teens and adults.">
+<link rel="canonical" href="https://noryvello.github.io/scavenger-hunt-list-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scavenger Hunt List Generator: Printable Hunts for Every Setting">
+<meta property="og:description" content="Pick a setting and an age group to get a printable 15-item scavenger hunt checklist.">
+<meta property="og:url" content="https://noryvello.github.io/scavenger-hunt-list-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.hunt-item{display:block;font-weight:400 !important;margin:8px 0;font-size:16px}.hunt-item input{width:auto !important;margin-right:8px}.calc button{padding:10px 18px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:600;cursor:pointer;margin-top:12px}@media print{.controls,.calc button,.warn,.links,footer,.brand{display:none}}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run a scavenger hunt?","acceptedAnswer":{"@type":"Answer","text":"Pick a setting and an age group, print the list, and split into teams or play on your own. Set a time limit, then head out and tick off each item as you find it. The first team to find all 15 items — or the team with the most when time runs out — wins."}},{"@type":"Question","name":"What makes a good scavenger hunt item?","acceptedAnswer":{"@type":"Answer","text":"A good item is easy to recognise, possible to find where you are playing, and just hard enough to make you look properly. The best hunts mix easy finds with a few tricky ones, and use things you can spot without picking them up or buying anything."}},{"@type":"Question","name":"How long should a scavenger hunt last?","acceptedAnswer":{"@type":"Answer","text":"Around half an hour works well for most groups, and younger children do best with a shorter hunt. Set the time before you start, and agree what happens when time runs out — the most items found usually wins."}},{"@type":"Question","name":"Can adults play scavenger hunts?","acceptedAnswer":{"@type":"Answer","text":"Yes. Scavenger hunts work for any age — the adult lists on this page ask for things to identify and notice, not just to spot. They work well for team days, parties and family outings, and you can make them harder by shortening the time limit."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Scavenger Hunt List Generator</h1>
+<p class="answer">Pick a setting and an age group, and this generator gives you a 15-item scavenger hunt checklist to print and play. Every item is something you can find where you are — nothing needs to be bought. Tick items off as you find them and see how many of the 15 you can spot.</p>
+<div class="calc">
+<div class="controls">
+<label for="setting">Setting</label>
+<select id="setting">
+<option value="indoors">Indoors</option>
+<option value="garden">Garden</option>
+<option value="park">Park</option>
+<option value="beach">Beach</option>
+</select>
+<label for="age">Age group</label>
+<select id="age">
+<option value="kids">Kids</option>
+<option value="teens">Teens</option>
+<option value="adults">Adults</option>
+</select>
+</div>
+<p class="out" id="count">0 of 15 found</p>
+<div id="list"></div>
+<p class="note">Tick off each item as you find it. Print the list to take it with you.</p>
+<button type="button" id="printBtn">Print this list</button>
+</div>
+<div class="warn">These hunts use things you can find, not buy — please leave nature where it is and take a photo instead of picking things up. Stay safe, stay together, and follow the rules of the place you are in.</div>
+<h2>How to run a scavenger hunt</h2>
+<p>Print the list for your setting and age group, then split into teams or play on your own. Set a time limit before you start — around half an hour works well for most groups — and agree how the winner is decided: first to find all 15 items, or the most items when time runs out. Tick off each item as you find it, and take a photo of anything you cannot pick up.</p>
+<h2>Tips for a fair hunt</h2>
+<p>Keep everyone in the same area so nobody has an unfair head start. Agree before you start whether a photo counts as a find — it should, for anything alive, fragile or fixed in place. For younger children, read the list out loud first and pair each child with an adult. If two teams disagree about an item, the hunt leader has the final say.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How do I run a scavenger hunt?</h3><p>Pick a setting and an age group, print the list, and split into teams or play on your own. Set a time limit, then head out and tick off each item as you find it. The first team to find all 15 items — or the team with the most when time runs out — wins.</p></div>
+<div class="faq"><h3>What makes a good scavenger hunt item?</h3><p>A good item is easy to recognise, possible to find where you are playing, and just hard enough to make you look properly. The best hunts mix easy finds with a few tricky ones, and use things you can spot without picking them up or buying anything.</p></div>
+<div class="faq"><h3>How long should a scavenger hunt last?</h3><p>Around half an hour works well for most groups, and younger children do best with a shorter hunt. Set the time before you start, and agree what happens when time runs out — the most items found usually wins.</p></div>
+<div class="faq"><h3>Can adults play scavenger hunts?</h3><p>Yes. Scavenger hunts work for any age — the adult lists on this page ask for things to identify and notice, not just to spot. They work well for team days, parties and family outings, and you can make them harder by shortening the time limit.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="../charades-word-generator/">Charades Word Generator</a> · <a href="../truth-or-dare-generator/">Truth or Dare Generator</a> · <a href="../would-you-rather-generator/">Would You Rather Generator</a> · <a href="../secret-santa-generator/">Secret Santa Generator — Fair Draws, No One Picks Themselves</a></div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var HUNT = {
+  indoors: {
+    kids: [
+      'A red sock',
+      'A spoon from the kitchen',
+      'A book with a picture of an animal on the cover',
+      'Something soft you can hug',
+      'A cup with a handle',
+      'A key that opens a door in your home',
+      'A photo of someone smiling',
+      'A toy that makes a noise',
+      'A pillow that is not on a bed',
+      'Something round and yellow',
+      'A shoe with laces',
+      'A drawing or painting on a wall',
+      'Something you can write with',
+      'A towel with stripes',
+      'A box smaller than your hand'
+    ],
+    teens: [
+      'A book you have never read',
+      'Something that runs on batteries',
+      'The oldest photo in the house',
+      'A recipe written by hand',
+      'Something with a plug that you never use',
+      'A board game with a missing piece',
+      'A mug with a funny picture or words on it',
+      'Something that smells nice',
+      'A receipt from this month',
+      'A key you do not know what it opens',
+      'Something made in another country',
+      'A photo taken before you were born',
+      'Something you can play music on',
+      'A plant that needs watering',
+      'Something with your name on it'
+    ],
+    adults: [
+      'A book you finished and loved',
+      'The manual for an appliance you own',
+      'Something you have kept for more than ten years',
+      'A photo of a place you have visited',
+      'Something that needs a new battery',
+      'A recipe you have never tried',
+      'The oldest thing in your kitchen',
+      'Something with a warranty that has run out',
+      'A letter or card someone sent you',
+      'Something you found at the back of a drawer',
+      'A tool you only use once a year',
+      'A mug from a place you visited',
+      'Something that belonged to a relative',
+      'A book with notes written in the margins',
+      'Something you keep meaning to fix'
+    ]
+  },
+  garden: {
+    kids: [
+      'A leaf bigger than your hand',
+      'A stone you can hold in one hand',
+      'A flower with five petals',
+      'Something a bird might eat',
+      'A stick shaped like the letter Y',
+      'A feather',
+      'A worm or a snail',
+      'Something prickly',
+      'A seed or a nut on the ground',
+      'A flower that smells sweet',
+      'A bug with six legs',
+      'Something green you can eat',
+      'A leaf with a hole in it',
+      'A pebble with a stripe',
+      'Something soft, like moss or a petal'
+    ],
+    teens: [
+      'A plant with flowers in two colours',
+      'Something growing where it was not planted',
+      'A leaf with jagged edges',
+      'A spider\'s web',
+      'A fruit or vegetable growing in the garden',
+      'A footprint in the soil',
+      'Something that buzzes',
+      'A plant taller than you are',
+      'A leaf that has changed colour',
+      'A stone with a flat side',
+      'Something that smells like herbs',
+      'A seed you can plant',
+      'A bird you can hear but cannot see',
+      'A twig with buds on it',
+      'A patch of shade under a tree'
+    ],
+    adults: [
+      'A plant you can name',
+      'Something in the garden that needs pruning',
+      'A herb you can pick for cooking',
+      'A flower that attracts bees',
+      'A weed you can pull out by the root',
+      'A plant that has outgrown its pot',
+      'A spot where the soil is dry',
+      'Something you planted yourself',
+      'A fruit tree or a berry bush',
+      'A leaf with spots or marks on it',
+      'A place where a bird could nest',
+      'A stone you could use as a doorstop',
+      'A plant with leaves of two different shapes',
+      'A tool left out in the garden',
+      'A quiet corner to sit in'
+    ]
+  },
+  park: {
+    kids: [
+      'A leaf from three different trees',
+      'A pine cone',
+      'A duck or a pigeon',
+      'A bench you can sit on',
+      'A path made of stones',
+      'A flower growing through a crack',
+      'A stick longer than your arm',
+      'Something a squirrel might eat',
+      'A puddle you can see the sky in',
+      'A tree with rough bark',
+      'A feather on the grass',
+      'A sign with a picture on it',
+      'Something round you can roll',
+      'A flower the colour of the sun',
+      'A place where you can hear birds singing'
+    ],
+    teens: [
+      'A tree you can identify by its leaves',
+      'A statue or a monument',
+      'A sign that tells you a rule of the park',
+      'A bench with a view',
+      'A path that curves out of sight',
+      'A bird with a song you can recognise',
+      'A tree with smooth bark',
+      'Something that shows the park\'s age',
+      'A flower growing wild',
+      'A spot where two paths meet',
+      'A tree with a hollow in it',
+      'Something made of stone',
+      'A place where people play games',
+      'A leaf with an unusual shape',
+      'A view you would photograph'
+    ],
+    adults: [
+      'A tree with bark you can rub',
+      'A bird you can name',
+      'A bench facing the best view',
+      'A plaque or a memorial',
+      'A tree planted in a row with others',
+      'A wildflower you can identify',
+      'A path you have never walked before',
+      'A spot where the grass is worn away',
+      'A tree older than the benches around it',
+      'A sign about the park\'s history',
+      'A place where children play',
+      'A shrub with berries on it',
+      'A view framed by trees',
+      'A place where the ground is uneven',
+      'A quiet spot away from the main path'
+    ]
+  },
+  beach: {
+    kids: [
+      'A smooth pebble',
+      'A shell with stripes',
+      'A piece of seaweed',
+      'A shell you can hear the sea in',
+      'A footprint in the sand',
+      'A stone with a hole in it',
+      'A feather dropped by a seabird',
+      'Something the sea has washed up',
+      'A crab or a tiny fish in a rock pool',
+      'A shell with a spiral shape',
+      'A pebble the colour of the sky',
+      'A stick of driftwood',
+      'A shell smaller than your fingernail',
+      'Something soft in the sand',
+      'A seagull standing on one leg'
+    ],
+    teens: [
+      'A shell with a perfect spiral',
+      'A piece of driftwood shaped like an animal',
+      'A rock pool with three different creatures in it',
+      'A pebble with two colours',
+      'A feather from a seabird',
+      'Something the tide has left behind',
+      'A footprint that is not a human\'s',
+      'A shell with a hole worn through it',
+      'A flat stone you could skim on the water',
+      'A patch of sand with tiny holes in it',
+      'A piece of seaweed longer than your arm',
+      'A shell that is not white',
+      'A crab shell with no crab inside',
+      'A rock with barnacles on it',
+      'A view of the horizon with no boats in it'
+    ],
+    adults: [
+      'A shell you can identify by name',
+      'A piece of sea glass with smooth edges',
+      'A rock pool you can sit beside',
+      'A pebble worn smooth by the sea',
+      'A feather caught in the sand',
+      'Driftwood you could use as a walking stick',
+      'A shell with a pattern you have never seen before',
+      'A spot where the sand meets the grass',
+      'A stone with layers in it',
+      'A seabird you can name',
+      'A place where the waves leave a line of shells',
+      'A rock shaped by the wind and the sea',
+      'A quiet stretch of beach with no footprints',
+      'A shell in a colour you did not expect',
+      'A view you would come back for'
+    ]
+  }
+};
+var boxes = [];
+function countFound() {
+  var n = 0;
+  for (var i = 0; i < boxes.length; i++) if (boxes[i].checked) n++;
+  document.getElementById('count').textContent = n + ' of 15 found';
+}
+function build() {
+  var setting = document.getElementById('setting').value;
+  var age = document.getElementById('age').value;
+  var items = HUNT[setting][age];
+  var list = document.getElementById('list');
+  list.innerHTML = '';
+  boxes = [];
+  for (var i = 0; i < items.length; i++) {
+    var label = document.createElement('label');
+    label.className = 'hunt-item';
+    var box = document.createElement('input');
+    box.type = 'checkbox';
+    box.addEventListener('input', countFound);
+    box.addEventListener('change', countFound);
+    var text = document.createElement('span');
+    text.textContent = ' ' + items[i];
+    label.appendChild(box);
+    label.appendChild(text);
+    list.appendChild(label);
+    boxes.push(box);
+  }
+  countFound();
+}
+document.getElementById('setting').addEventListener('input', build);
+document.getElementById('setting').addEventListener('change', build);
+document.getElementById('age').addEventListener('input', build);
+document.getElementById('age').addEventListener('change', build);
+document.getElementById('printBtn').addEventListener('click', function () { window.print(); });
+build();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

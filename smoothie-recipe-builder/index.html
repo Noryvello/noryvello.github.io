@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smoothie Recipe Builder: Pick a Base, Two Fruits and an Extra | Noryvello</title>
+<meta name="description" content="Build your own smoothie recipe: pick a base, two fruits and an extra, and get a simple recipe with parts and steps using the 1 to 1.5 ratio.">
+<link rel="canonical" href="https://noryvello.github.io/smoothie-recipe-builder/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Smoothie Recipe Builder: Pick a Base, Two Fruits and an Extra">
+<meta property="og:description" content="Build your own smoothie recipe from a base, two fruits and an extra.">
+<meta property="og:url" content="https://noryvello.github.io/smoothie-recipe-builder/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best liquid to fruit ratio for a smoothie?","acceptedAnswer":{"@type":"Answer","text":"A good starting point is 1 part liquid to 1.5 parts fruit — for example, 1 cup of milk with 1.5 cups of fruit. If the drink is too thick, add a little more liquid; if it is too thin, add more fruit."}},{"@type":"Question","name":"Can I make a smoothie without a blender?","acceptedAnswer":{"@type":"Answer","text":"It is hard to get a smooth drink without a blender, because the fruit needs to be broken down fully. A food processor works for soft fruit, and a fork can mash a very ripe banana into milk or yogurt, but the result will be lumpier than a blended smoothie."}},{"@type":"Question","name":"What can I add to a smoothie to make it filling?","acceptedAnswer":{"@type":"Answer","text":"Oats, peanut butter, yogurt and chia seeds all make a smoothie thicker and more filling. Add one spoonful at a time and blend again, so the drink stays smooth and does not get too thick."}},{"@type":"Question","name":"How do I make a smoothie less sweet?","acceptedAnswer":{"@type":"Answer","text":"Use less of the sweetest fruit and more of a plainer one, such as apple or kiwi, and skip the honey. Water or plain yogurt as the base also keeps the sweetness down."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Smoothie Recipe Builder</h1>
+<p class="answer">Pick a base, two fruits and one extra, and this builder turns them into a simple smoothie recipe with parts and steps. It uses a ratio of 1 part liquid to 1.5 parts fruit, so the drink comes out thick enough to sip and smooth enough to blend. Change any pick and the recipe updates straight away.</p>
+<div class="calc">
+<label for="base">Base (liquid)</label>
+<select id="base">
+<option value="milk" selected>Milk</option>
+<option value="yogurt">Yogurt</option>
+<option value="water">Water</option>
+<option value="juice">Juice</option>
+</select>
+<label for="fruit1">First fruit</label>
+<select id="fruit1">
+<option value="banana" selected>Banana</option>
+<option value="strawberry">Strawberry</option>
+<option value="blueberry">Blueberry</option>
+<option value="mango">Mango</option>
+<option value="pineapple">Pineapple</option>
+<option value="apple">Apple</option>
+<option value="peach">Peach</option>
+<option value="kiwi">Kiwi</option>
+</select>
+<label for="fruit2">Second fruit</label>
+<select id="fruit2">
+<option value="banana">Banana</option>
+<option value="strawberry" selected>Strawberry</option>
+<option value="blueberry">Blueberry</option>
+<option value="mango">Mango</option>
+<option value="pineapple">Pineapple</option>
+<option value="apple">Apple</option>
+<option value="peach">Peach</option>
+<option value="kiwi">Kiwi</option>
+</select>
+<label for="extra">One extra</label>
+<select id="extra">
+<option value="oats" selected>Oats</option>
+<option value="peanut">Peanut butter</option>
+<option value="spinach">Spinach</option>
+<option value="honey">Honey</option>
+<option value="chia">Chia seeds</option>
+<option value="cocoa">Cocoa powder</option>
+</select>
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+<p class="note">Ratio rule: 1 part liquid to 1.5 parts fruit. If the drink is too thick, add a little more liquid; if it is too thin, add more fruit.</p>
+</div>
+<div class="warn">This is a simple recipe builder, not nutrition advice. It gives you a starting recipe to try — adjust the sweetness and thickness to your own taste, and check the labels on anything you are unsure about.</div>
+<h2>The ratio rule</h2>
+<p>Every recipe on this page follows one rule: 1 part liquid to 1.5 parts fruit. So 1 cup of milk goes with 1.5 cups of fruit, and 2 cups of juice go with 3 cups of fruit. The rule works with any cup or glass as the measure, as long as you use the same one for the liquid and the fruit.</p>
+<h2>How to blend a smoothie</h2>
+<p>Pour the liquid in first, so the blades can move freely, then add the fruit and the extra. Blend until the drink looks smooth, stopping once to push down any fruit that sticks to the sides. If the drink is too thick to blend, add a splash more liquid and blend again.</p>
+<h2>Making it your own</h2>
+<p>Swap the fruits to change the flavour — banana and mango make a thick, sweet drink, while apple and kiwi make a lighter, sharper one. Frozen fruit blends into a thicker drink than fresh fruit, and water as the base lets the fruit flavour come through most. Try one change at a time until the recipe tastes the way you like it.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is the best liquid to fruit ratio for a smoothie?</h3><p>A good starting point is 1 part liquid to 1.5 parts fruit — for example, 1 cup of milk with 1.5 cups of fruit. If the drink is too thick, add a little more liquid; if it is too thin, add more fruit.</p></div>
+<div class="faq"><h3>Can I make a smoothie without a blender?</h3><p>It is hard to get a smooth drink without a blender, because the fruit needs to be broken down fully. A food processor works for soft fruit, and a fork can mash a very ripe banana into milk or yogurt, but the result will be lumpier than a blended smoothie.</p></div>
+<div class="faq"><h3>What can I add to a smoothie to make it filling?</h3><p>Oats, peanut butter, yogurt and chia seeds all make a smoothie thicker and more filling. Add one spoonful at a time and blend again, so the drink stays smooth and does not get too thick.</p></div>
+<div class="faq"><h3>How do I make a smoothie less sweet?</h3><p>Use less of the sweetest fruit and more of a plainer one, such as apple or kiwi, and skip the honey. Water or plain yogurt as the base also keeps the sweetness down.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="../ramadan-countdown/">Ramadan Countdown 2027</a> · <a href="../sleep-calculator/">Sleep Calculator — Bedtime and Wake-Up Time Calculator</a> · <a href="../paint-calculator/">Paint Calculator — How Much Paint Do I Need for a Room?</a> · <a href="../gift-idea-generator-by-budget-and-person/">Gift Idea Generator by Budget and Person</a></div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var BASES = { milk: 'milk', yogurt: 'yogurt', water: 'water', juice: 'juice' };
+var FRUITS = { banana: 'banana', strawberry: 'strawberry', blueberry: 'blueberry', mango: 'mango', pineapple: 'pineapple', apple: 'apple', peach: 'peach', kiwi: 'kiwi' };
+var EXTRAS = { oats: '1 spoonful of oats', peanut: '1 spoonful of peanut butter', spinach: '1 handful of spinach', honey: '1 spoonful of honey', chia: '1 spoonful of chia seeds', cocoa: '1 spoonful of cocoa powder' };
+function update() {
+  var base = document.getElementById('base').value;
+  var f1 = document.getElementById('fruit1').value;
+  var f2 = document.getElementById('fruit2').value;
+  var extra = document.getElementById('extra').value;
+  var out = document.getElementById('out');
+  var steps = document.getElementById('steps');
+  if (f1 === f2) {
+    out.textContent = 'Pick two different fruits for your smoothie.';
+    steps.textContent = '';
+    return;
+  }
+  out.textContent = '1 part ' + BASES[base] + ', 1.5 parts ' + FRUITS[f1] + ' and ' + FRUITS[f2] + ', ' + EXTRAS[extra] + '.';
+  steps.textContent = '1. Pour the ' + BASES[base] + ' into the blender first.\n2. Add the ' + FRUITS[f1] + ' and ' + FRUITS[f2] + '.\n3. Add ' + EXTRAS[extra] + '.\n4. Blend until smooth, then pour and serve.';
+}
+document.getElementById('base').addEventListener('input', update);
+document.getElementById('base').addEventListener('change', update);
+document.getElementById('fruit1').addEventListener('input', update);
+document.getElementById('fruit1').addEventListener('change', update);
+document.getElementById('fruit2').addEventListener('input', update);
+document.getElementById('fruit2').addEventListener('change', update);
+document.getElementById('extra').addEventListener('input', update);
+document.getElementById('extra').addEventListener('change', update);
+update();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

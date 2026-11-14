@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Storage Unit Size Finder | Noryvello</title>
+<meta name="description" content="Find the right storage unit size. Tick the furniture and boxes you plan to store and see your total volume in cubic metres and the unit size that fits.">
+<link rel="canonical" href="https://noryvello.github.io/storage-unit-size-finder/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Storage Unit Size Finder">
+<meta property="og:description" content="Tick what you plan to store and find the storage unit size that fits.">
+<meta property="og:url" content="https://noryvello.github.io/storage-unit-size-finder/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc .item{display:flex;align-items:center;gap:10px;margin:8px 0}
+.calc .item input{width:auto;padding:0;margin:0}
+.calc .item label{display:inline;font-weight:600;margin:0;font-size:15px;cursor:pointer}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much space do I need for a one-bedroom flat?","acceptedAnswer":{"@type":"Answer","text":"It depends on what you own. Tick everything you plan to store and the finder adds up the volumes for you. As a rough guide, a sofa, a double bed and four boxes come to 5.3 cubic metres, which points to a medium unit of around 50 sq ft."}},{"@type":"Question","name":"What if my items are bigger than average?","acceptedAnswer":{"@type":"Answer","text":"Measure them. The volume of any item is its length times its width times its height, all in metres. If your total is much higher than the typical volumes used here, move up to the next size band."}},{"@type":"Question","name":"Do I need extra space inside the unit?","acceptedAnswer":{"@type":"Answer","text":"Yes, leave room to walk in and reach the things at the back. If you plan to visit the unit often, or your total sits close to the top of a size band, consider going one size up."}},{"@type":"Question","name":"Are storage unit sizes the same everywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Unit sizes vary by facility, and the same label can mean a different size at different sites. Always check the facility's own sizes and, if you can, look at the unit before you book."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Storage Unit Size Finder</h1>
+<p class="answer">Not sure what size storage unit to book? Tick the furniture you plan to store, say how many boxes you have, and this finder adds up the typical volumes and suggests a unit size that fits — in cubic metres, so you can compare it with any facility's sizes.</p>
+<div class="calc">
+<p class="note">Tick the items you plan to store. Each volume is a typical estimate for that item.</p>
+<p class="item"><input type="checkbox" id="itSofa" checked><label for="itSofa">Sofa — 2.0 m³</label></p>
+<p class="item"><input type="checkbox" id="itDoubleBed" checked><label for="itDoubleBed">Double bed — 2.5 m³</label></p>
+<p class="item"><input type="checkbox" id="itSingleBed"><label for="itSingleBed">Single bed — 1.5 m³</label></p>
+<p class="item"><input type="checkbox" id="itWardrobe"><label for="itWardrobe">Wardrobe — 1.5 m³</label></p>
+<p class="item"><input type="checkbox" id="itTable"><label for="itTable">Dining table — 1.0 m³</label></p>
+<p class="item"><input type="checkbox" id="itChair"><label for="itChair">Chair — 0.3 m³</label></p>
+<p class="item"><input type="checkbox" id="itDrawers"><label for="itDrawers">Chest of drawers — 0.8 m³</label></p>
+<p class="item"><input type="checkbox" id="itWasher"><label for="itWasher">Washing machine — 0.5 m³</label></p>
+<p class="item"><input type="checkbox" id="itFridge"><label for="itFridge">Fridge — 0.8 m³</label></p>
+<p class="item"><input type="checkbox" id="itBookshelf"><label for="itBookshelf">Bookshelf — 0.6 m³</label></p>
+<p class="item"><input type="checkbox" id="itBike"><label for="itBike">Bicycle — 0.5 m³</label></p>
+<label for="boxes">Moving boxes (0.2 m³ each)</label>
+<input type="number" id="boxes" value="4" min="0" max="50" step="1" inputmode="numeric">
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">The volumes here are typical estimates, not measurements of your own furniture, and unit sizes vary by facility — check their sizes before booking. This finder is a planning guide only, not a guarantee that everything will fit.</div>
+<h2>How the suggestion is worked out</h2>
+<p>The finder adds up the typical volume of every item you tick, plus 0.2 m³ for each moving box, and matches the total to a size band:</p>
+<ul>
+<li>Up to 3 m³ — small unit (around 25 sq ft)</li>
+<li>Over 3 m³ up to 7 m³ — medium unit (around 50 sq ft)</li>
+<li>Over 7 m³ up to 15 m³ — large unit (around 100 sq ft)</li>
+<li>Over 15 m³ — extra-large unit (150 sq ft or larger)</li>
+</ul>
+<p>Worked examples:</p>
+<ul>
+<li><strong>Example 1.</strong> Sofa (2.0 m³) + double bed (2.5 m³) + 4 boxes (0.8 m³) = 5.3 m³ — medium unit (around 50 sq ft).</li>
+<li><strong>Example 2.</strong> Sofa (2.0 m³) + double bed (2.5 m³) + wardrobe (1.5 m³) + dining table (1.0 m³) + 6 boxes (1.2 m³) = 8.2 m³ — large unit (around 100 sq ft).</li>
+<li><strong>Example 3.</strong> 10 boxes only: 10 × 0.2 m³ = 2.0 m³ — small unit (around 25 sq ft).</li>
+</ul>
+<h2>Before you book</h2>
+<ul>
+<li><strong>Measure your biggest items.</strong> If your sofa or bed is much larger than average, your total will be higher than the estimate — measure length × width × height in metres to get its volume.</li>
+<li><strong>Leave space to walk in.</strong> A unit packed to the ceiling is hard to use. Leave a path to the back so you can reach things without unpacking everything.</li>
+<li><strong>Stack boxes, but not too high.</strong> Heavy boxes go at the bottom, light ones on top, and nothing you need soon should end up buried at the back.</li>
+<li><strong>Check the facility's own sizes.</strong> The same label can mean a different size at different sites, so compare your total volume in cubic metres with the unit you are looking at.</li>
+</ul>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How much space do I need for a one-bedroom flat?</h3><p>It depends on what you own. Tick everything you plan to store and the finder adds up the volumes for you. As a rough guide, a sofa, a double bed and four boxes come to 5.3 cubic metres, which points to a medium unit of around 50 sq ft.</p></div>
+<div class="faq"><h3>What if my items are bigger than average?</h3><p>Measure them. The volume of any item is its length times its width times its height, all in metres. If your total is much higher than the typical volumes used here, move up to the next size band.</p></div>
+<div class="faq"><h3>Do I need extra space inside the unit?</h3><p>Yes, leave room to walk in and reach the things at the back. If you plan to visit the unit often, or your total sits close to the top of a size band, consider going one size up.</p></div>
+<div class="faq"><h3>Are storage unit sizes the same everywhere?</h3><p>No. Unit sizes vary by facility, and the same label can mean a different size at different sites. Always check the facility's own sizes and, if you can, look at the unit before you book.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../paint-calculator/">Paint Calculator</a> · <a href="../rent-vs-buy-calculator/">Rent vs Buy Calculator</a> · <a href="../wedding-budget-planner/">Wedding Budget Planner</a> · <a href="../sleep-calculator/">Sleep Calculator</a></p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var ITEMS = [
+  {id: "itSofa", name: "Sofa", vol: 2.0},
+  {id: "itDoubleBed", name: "Double bed", vol: 2.5},
+  {id: "itSingleBed", name: "Single bed", vol: 1.5},
+  {id: "itWardrobe", name: "Wardrobe", vol: 1.5},
+  {id: "itTable", name: "Dining table", vol: 1.0},
+  {id: "itChair", name: "Chair", vol: 0.3},
+  {id: "itDrawers", name: "Chest of drawers", vol: 0.8},
+  {id: "itWasher", name: "Washing machine", vol: 0.5},
+  {id: "itFridge", name: "Fridge", vol: 0.8},
+  {id: "itBookshelf", name: "Bookshelf", vol: 0.6},
+  {id: "itBike", name: "Bicycle", vol: 0.5}
+];
+var BOX_VOL = 0.2;
+function fmt1(n) { return (Math.round((n + 1e-9) * 10) / 10).toFixed(1); }
+function band(total) {
+  if (total <= 3) return "small unit (around 25 sq ft)";
+  if (total <= 7) return "medium unit (around 50 sq ft)";
+  if (total <= 15) return "large unit (around 100 sq ft)";
+  return "extra-large unit (150 sq ft or larger)";
+}
+function calc() {
+  var out = document.getElementById("out");
+  var steps = document.getElementById("steps");
+  var boxRaw = String(document.getElementById("boxes").value).trim();
+  var boxes = parseFloat(boxRaw);
+  if (boxRaw === "" || isNaN(boxes) || boxes < 0) {
+    out.textContent = "Enter a box count of 0 or more to see your total volume.";
+    steps.textContent = "";
+    return;
+  }
+  if (boxes > 50) {
+    boxes = 50;
+    document.getElementById("boxes").value = "50";
+  }
+  if (boxes !== Math.floor(boxes)) {
+    boxes = Math.floor(boxes);
+    document.getElementById("boxes").value = String(boxes);
+  }
+  var total = 0, picked = 0, lines = [];
+  for (var i = 0; i < ITEMS.length; i++) {
+    if (document.getElementById(ITEMS[i].id).checked) {
+      total += ITEMS[i].vol;
+      picked++;
+      lines.push(ITEMS[i].name + ": " + fmt1(ITEMS[i].vol) + " m³");
+    }
+  }
+  if (boxes > 0) {
+    total += boxes * BOX_VOL;
+    lines.push("Moving boxes: " + boxes + " × 0.2 m³ = " + fmt1(boxes * BOX_VOL) + " m³");
+  }
+  if (picked === 0 && boxes === 0) {
+    out.textContent = "Pick at least one item, or enter a box count above 0, to see your total volume.";
+    steps.textContent = "";
+    return;
+  }
+  // All volumes are multiples of 0.1, so round the total to 1 decimal before
+  // banding: otherwise float error (e.g. 15 x 0.2 = 3.0000000000000004) can
+  // push a total like 15.0 over its band boundary.
+  total = Math.round((total + 1e-9) * 10) / 10;
+  lines.push("Total volume: " + fmt1(total) + " m³");
+  out.textContent = "Total volume: " + fmt1(total) + " m³ — suggested size: " + band(total) + ".";
+  steps.textContent = lines.join("\n");
+}
+for (var j = 0; j < ITEMS.length; j++) {
+  document.getElementById(ITEMS[j].id).addEventListener("input", calc);
+  document.getElementById(ITEMS[j].id).addEventListener("change", calc);
+}
+document.getElementById("boxes").addEventListener("input", calc);
+document.getElementById("boxes").addEventListener("change", calc);
+calc();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

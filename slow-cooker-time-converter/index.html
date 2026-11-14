@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slow Cooker Time Converter: Oven and Hob Times to Low and High | Noryvello</title>
+<meta name="description" content="Convert an oven or hob cook time to slow cooker times. Enter the normal time in minutes to see the LOW and HIGH equivalents from the standard table.">
+<link rel="canonical" href="https://noryvello.github.io/slow-cooker-time-converter/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Slow Cooker Time Converter: Oven and Hob Times to Low and High">
+<meta property="og:description" content="Convert an oven or hob cook time to slow cooker LOW and HIGH times.">
+<meta property="og:url" content="https://noryvello.github.io/slow-cooker-time-converter/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>table{width:100%;border-collapse:collapse;margin:10px 0}th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;font-size:15px}th{background:#eef2ff}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I convert a recipe to a slow cooker?","acceptedAnswer":{"@type":"Answer","text":"Take the normal oven or hob cook time from the recipe, enter it in minutes above, and use the LOW or HIGH time the converter shows. Use less liquid than the original recipe, because a slow cooker loses very little liquid as steam."}},{"@type":"Question","name":"How long is low on a slow cooker?","acceptedAnswer":{"@type":"Answer","text":"It depends on the recipe. On the standard table, low ranges from 4 to 6 hours for a recipe that normally takes 15 to 30 minutes, up to 8 to 12 hours for one that normally takes 50 minutes to 3 hours."}},{"@type":"Question","name":"Can I cook on high instead of low?","acceptedAnswer":{"@type":"Answer","text":"Yes, in most cases. High cooks the same dish in roughly half the time of low, so a dish that takes 8 to 12 hours on low usually takes 4 to 6 hours on high. Check the food is cooked through before serving."}},{"@type":"Question","name":"Should I use less liquid in a slow cooker?","acceptedAnswer":{"@type":"Answer","text":"Yes. A slow cooker loses very little liquid, because the lid traps the steam, so use less liquid than the original recipe calls for. Start with about a third less and add more only if the dish looks dry."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Slow Cooker Time Converter</h1>
+<p class="answer">Turn an oven or hob cook time into slow cooker times. Enter the normal cook time in minutes and the converter shows the LOW and HIGH equivalents from the standard table. The table is a guide, so always check the food is cooked through before serving.</p>
+<div class="calc">
+<label for="mins">Normal cook time (minutes)</label>
+<input type="number" id="mins" value="30" min="1" step="1">
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+<p class="note">Slow cookers lose very little liquid, so use less liquid than the original recipe.</p>
+</div>
+<div class="warn">The table is a guide, not a rule. Check the food is cooked through before serving, and remember that your own slow cooker may run hotter or cooler than the one the table was written for.</div>
+<h2>How to use this converter</h2>
+<p>Find the cook time in your recipe — the time it would take in an oven or on the hob — and enter it in minutes above. The converter looks the time up in the standard table and shows the slow cooker equivalents on LOW and on HIGH. For example, a recipe that normally takes 30 minutes converts to 1.5–2.5 hours on HIGH or 4–6 hours on LOW.</p>
+<h2>The conversion table</h2>
+<p>The table below is the standard slow cooker conversion table. It is a guide — use it as a starting point and check the food before serving.</p>
+<table>
+<tr><th>Normal cook time</th><th>On HIGH</th><th>On LOW</th></tr>
+<tr><td>15–30 minutes</td><td>1.5–2.5 hours</td><td>4–6 hours</td></tr>
+<tr><td>35–45 minutes</td><td>2–3 hours</td><td>6–8 hours</td></tr>
+<tr><td>50 minutes–3 hours</td><td>4–6 hours</td><td>8–12 hours</td></tr>
+</table>
+<p>Times under 15 minutes or over 3 hours fall outside the standard table, so the converter shows a message instead of a result for those.</p>
+<h2>Use less liquid</h2>
+<p>Slow cookers lose very little liquid, because the lid stays on and traps the steam. Use less liquid than the original recipe calls for — a good starting point is about a third less. You can always add more liquid near the end if the dish looks dry, but you cannot easily take it out again.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How do I convert a recipe to a slow cooker?</h3><p>Take the normal oven or hob cook time from the recipe, enter it in minutes above, and use the LOW or HIGH time the converter shows. Use less liquid than the original recipe, because a slow cooker loses very little liquid as steam.</p></div>
+<div class="faq"><h3>How long is low on a slow cooker?</h3><p>It depends on the recipe. On the standard table, low ranges from 4 to 6 hours for a recipe that normally takes 15 to 30 minutes, up to 8 to 12 hours for one that normally takes 50 minutes to 3 hours.</p></div>
+<div class="faq"><h3>Can I cook on high instead of low?</h3><p>Yes, in most cases. High cooks the same dish in roughly half the time of low, so a dish that takes 8 to 12 hours on low usually takes 4 to 6 hours on high. Check the food is cooked through before serving.</p></div>
+<div class="faq"><h3>Should I use less liquid in a slow cooker?</h3><p>Yes. A slow cooker loses very little liquid, because the lid traps the steam, so use less liquid than the original recipe calls for. Start with about a third less and add more only if the dish looks dry.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="../ramadan-countdown/">Ramadan Countdown 2027</a> · <a href="../sleep-calculator/">Sleep Calculator — Bedtime and Wake-Up Time Calculator</a> · <a href="../running-pace-calculator/">Running Pace Calculator — Pace, Finish Time and Race Predictor</a> · <a href="../gift-idea-generator-by-budget-and-person/">Gift Idea Generator by Budget and Person</a></div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var input = document.getElementById('mins');
+var out = document.getElementById('out');
+var steps = document.getElementById('steps');
+function update() {
+  var mins = parseFloat(input.value);
+  if (isNaN(mins) || mins <= 0) {
+    out.textContent = 'Enter a cook time in minutes, above zero.';
+    steps.textContent = '';
+    return;
+  }
+  var high, low, band;
+  if (mins >= 15 && mins <= 30) {
+    high = '1.5–2.5 hours'; low = '4–6 hours'; band = '15–30 minutes';
+  } else if (mins >= 35 && mins <= 45) {
+    high = '2–3 hours'; low = '6–8 hours'; band = '35–45 minutes';
+  } else if (mins >= 50 && mins <= 180) {
+    high = '4–6 hours'; low = '8–12 hours'; band = '50 minutes–3 hours';
+  } else {
+    out.textContent = 'This time falls outside the standard table.';
+    steps.textContent = 'The table covers normal cook times from 15 minutes to 3 hours.';
+    return;
+  }
+  out.textContent = 'HIGH: ' + high + '. LOW: ' + low + '.';
+  steps.textContent = 'A normal cook time of ' + mins + ' minutes falls in the ' + band + ' band of the standard table.';
+}
+input.addEventListener('input', update);
+input.addEventListener('change', update);
+update();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trivia Question Generator: Quiz Questions for Your Next Game Night | Noryvello</title>
+<meta name="description" content="Host a trivia night with 72 quiz questions across science, geography, history, sport, food and animals. Pick a category and difficulty, reveal the answer when ready, and keep score.">
+<link rel="canonical" href="https://noryvello.github.io/trivia-question-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Trivia Question Generator: Quiz Questions for Your Next Game Night">
+<meta property="og:description" content="Host a trivia night with 72 quiz questions across six categories, with answers hidden until you reveal them.">
+<meta property="og:url" content="https://noryvello.github.io/trivia-question-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.btn{padding:10px 16px;border:1px solid #4338ca;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;cursor:pointer;margin:6px 6px 0 0}.btn.alt{background:#fff;color:#4338ca}.score{font-size:16px;font-weight:700;margin-top:14px}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run a trivia night?","acceptedAnswer":{"@type":"Answer","text":"Pick a category and a difficulty, read the question out loud, and let the players answer before you press Reveal. Keep the rounds short, read each question once, and let the host's answer be final."}},{"@type":"Question","name":"How many questions should a trivia round have?","acceptedAnswer":{"@type":"Answer","text":"Ten questions make a good round — enough to feel like a proper quiz without dragging on. For a full evening, run three or four rounds with a short break between them."}},{"@type":"Question","name":"Can I use these questions for a classroom quiz?","acceptedAnswer":{"@type":"Answer","text":"Yes. The questions are general knowledge and clean, so they work for a classroom quiz, a family game night, or a team event. The host can skip any question that does not suit the group."}},{"@type":"Question","name":"How do I keep score in trivia?","acceptedAnswer":{"@type":"Answer","text":"Give one point for each correct answer and none for a wrong one. Use the Correct and Wrong buttons on this page to track the score, and press Reset score when a new round begins."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Trivia Question Generator</h1>
+<p class="answer">Pick a category and a difficulty, and this page gives you a trivia question with the answer hidden until you reveal it. It is made for the quiz host, with a simple score sheet to track correct and wrong answers. The bank holds 72 questions across six categories — science, geography, history, sport, food and animals.</p>
+<div class="calc">
+<label for="category">Category</label>
+<select id="category">
+<option value="science">Science</option>
+<option value="geography">Geography</option>
+<option value="history">History</option>
+<option value="sport">Sport</option>
+<option value="food">Food</option>
+<option value="animals">Animals</option>
+</select>
+<label for="difficulty">Difficulty</label>
+<select id="difficulty">
+<option value="easy">Easy</option>
+<option value="medium">Medium</option>
+<option value="hard">Hard</option>
+</select>
+<p class="out" id="question"></p>
+<p class="steps" id="answer"></p>
+<p><button class="btn" id="revealBtn" type="button">Reveal the answer</button> <button class="btn alt" id="newBtn" type="button">New question</button></p>
+<p class="score" id="score">Score: 0 correct, 0 wrong</p>
+<p><button class="btn alt" id="correctBtn" type="button">Correct</button> <button class="btn alt" id="wrongBtn" type="button">Wrong</button> <button class="btn alt" id="resetBtn" type="button">Reset score</button></p>
+<p class="note">The score is only for this visit — it is not saved anywhere. Press Reset score when a new round begins.</p>
+</div>
+<div class="warn">This page is for the quiz host. The questions are general knowledge, and the host's answer is final. If players disagree about an answer, the host decides — that keeps the game moving.</div>
+<h2>How to run your trivia night</h2>
+<p>Read the question out loud, give the players time to answer, then press Reveal to show the answer. One point for each correct answer keeps the scoring simple, and the host's answer is final if anyone disagrees.</p>
+<h2>Tips for the host</h2>
+<ul>
+<li>Mix the categories and difficulties so every player gets a question they can answer.</li>
+<li>Read each question once, clearly, and give the players a moment to think before you reveal the answer.</li>
+<li>Keep the rounds short — ten questions make a good round.</li>
+<li>Use the Correct and Wrong buttons to keep the score as you go, and reset it at the start of each round.</li>
+</ul>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How do I run a trivia night?</h3><p>Pick a category and a difficulty, read the question out loud, and let the players answer before you press Reveal. Keep the rounds short, read each question once, and let the host's answer be final.</p></div>
+<div class="faq"><h3>How many questions should a trivia round have?</h3><p>Ten questions make a good round — enough to feel like a proper quiz without dragging on. For a full evening, run three or four rounds with a short break between them.</p></div>
+<div class="faq"><h3>Can I use these questions for a classroom quiz?</h3><p>Yes. The questions are general knowledge and clean, so they work for a classroom quiz, a family game night, or a team event. The host can skip any question that does not suit the group.</p></div>
+<div class="faq"><h3>How do I keep score in trivia?</h3><p>Give one point for each correct answer and none for a wrong one. Use the Correct and Wrong buttons on this page to track the score, and press Reset score when a new round begins.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="../clean-joke-generator/">Clean Joke Generator</a> · <a href="../would-you-rather-generator/">Would You Rather Generator</a> · <a href="../truth-or-dare-generator/">Truth or Dare Generator</a> · <a href="../charades-word-generator/">Charades Word Generator</a></div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var BANK = {
+  science: {
+    easy: [
+      { q: 'What planet is known as the Red Planet?', a: 'Mars' },
+      { q: 'What gas do plants take in from the air to make food?', a: 'Carbon dioxide' },
+      { q: 'What force pulls objects toward the Earth?', a: 'Gravity' },
+      { q: 'What is the chemical symbol for water?', a: 'H2O' }
+    ],
+    medium: [
+      { q: 'What is the hardest naturally occurring substance on Earth?', a: 'Diamond' },
+      { q: 'What organ in the human body produces insulin?', a: 'The pancreas' },
+      { q: 'What is the main gas in the air we breathe?', a: 'Nitrogen' },
+      { q: 'What part of the cell is known as its powerhouse?', a: 'The mitochondria' }
+    ],
+    hard: [
+      { q: 'What is the chemical symbol for gold?', a: 'Au' },
+      { q: 'At what temperature in degrees Celsius does water boil at sea level?', a: '100 degrees Celsius' },
+      { q: 'Which scientist developed the theory of general relativity?', a: 'Albert Einstein' },
+      { q: 'What is the largest organ of the human body?', a: 'The skin' }
+    ]
+  },
+  geography: {
+    easy: [
+      { q: 'What is the capital of France?', a: 'Paris' },
+      { q: 'What is the largest ocean on Earth?', a: 'The Pacific Ocean' },
+      { q: 'What is the capital of Japan?', a: 'Tokyo' },
+      { q: 'Which continent is the Sahara Desert on?', a: 'Africa' }
+    ],
+    medium: [
+      { q: 'What is the longest river in the world?', a: 'The Nile' },
+      { q: 'What is the capital of Canada?', a: 'Ottawa' },
+      { q: 'Which desert covers much of northern Africa?', a: 'The Sahara Desert' },
+      { q: 'What is the largest island in the world?', a: 'Greenland' }
+    ],
+    hard: [
+      { q: 'What is the capital of Mongolia?', a: 'Ulaanbaatar' },
+      { q: 'What is the deepest ocean trench in the world?', a: 'The Mariana Trench' },
+      { q: 'Which mountain is the highest in Africa?', a: 'Mount Kilimanjaro' },
+      { q: 'What is the only country that is also a continent?', a: 'Australia' }
+    ]
+  },
+  history: {
+    easy: [
+      { q: 'Who was the first President of the United States?', a: 'George Washington' },
+      { q: 'In which year did World War II end?', a: '1945' },
+      { q: 'Which ancient civilisation built the pyramids of Giza?', a: 'The Egyptians' },
+      { q: 'Who painted the Mona Lisa?', a: 'Leonardo da Vinci' }
+    ],
+    medium: [
+      { q: 'Which wall fell in 1989, marking the end of the Cold War in Europe?', a: 'The Berlin Wall' },
+      { q: 'Who was the first man to walk on the Moon?', a: 'Neil Armstrong' },
+      { q: 'Which ship famously sank on its first voyage in 1912?', a: 'The Titanic' },
+      { q: 'In which country did the Olympic Games begin in ancient times?', a: 'Greece' }
+    ],
+    hard: [
+      { q: 'Who was the first woman to win a Nobel Prize?', a: 'Marie Curie' },
+      { q: 'Which empire built the Colosseum in Rome?', a: 'The Roman Empire' },
+      { q: 'In which year did the French Revolution begin?', a: '1789' },
+      { q: 'Which ancient city was buried by the eruption of Mount Vesuvius in 79 AD?', a: 'Pompeii' }
+    ]
+  },
+  sport: {
+    easy: [
+      { q: 'In football, how many players does each team have on the field?', a: 'Eleven' },
+      { q: 'In which sport would you perform a slam dunk?', a: 'Basketball' },
+      { q: 'How often are the Olympic Games held?', a: 'Every four years' },
+      { q: 'In tennis, what is a score of zero called?', a: 'Love' }
+    ],
+    medium: [
+      { q: 'In which sport is the Davis Cup contested?', a: 'Tennis' },
+      { q: 'How many rings are on the Olympic flag?', a: 'Five' },
+      { q: 'In which country was the sport of cricket first played?', a: 'England' },
+      { q: 'What is the maximum score possible with a single dart in darts?', a: '60' }
+    ],
+    hard: [
+      { q: 'In which year were the first modern Olympic Games held?', a: '1896' },
+      { q: 'Which country has won the most FIFA World Cups?', a: 'Brazil' },
+      { q: 'In golf, what is one stroke under par called?', a: 'A birdie' },
+      { q: 'How long is a marathon in kilometres?', a: '42.195 kilometres' }
+    ]
+  },
+  food: {
+    easy: [
+      { q: 'Which fruit keeps the doctor away, according to the saying?', a: 'An apple' },
+      { q: 'What is the main ingredient in guacamole?', a: 'Avocado' },
+      { q: 'Which vegetable makes you cry when you chop it?', a: 'An onion' },
+      { q: 'What colour is a ripe banana?', a: 'Yellow' }
+    ],
+    medium: [
+      { q: 'Which country is sushi from?', a: 'Japan' },
+      { q: 'What is tofu made from?', a: 'Soybeans' },
+      { q: 'Which spice comes from the pods of an orchid?', a: 'Vanilla' },
+      { q: 'What is the main ingredient in hummus?', a: 'Chickpeas' }
+    ],
+    hard: [
+      { q: 'Which fruit is known as the king of fruits in Southeast Asia?', a: 'Durian' },
+      { q: 'Which nut is used to make marzipan?', a: 'Almonds' },
+      { q: 'Saffron comes from which flower?', a: 'The crocus' },
+      { q: 'Which herb is the main flavour in pesto?', a: 'Basil' }
+    ]
+  },
+  animals: {
+    easy: [
+      { q: 'What is a baby dog called?', a: 'A puppy' },
+      { q: "Which animal is known as man's best friend?", a: 'The dog' },
+      { q: 'What do caterpillars turn into?', a: 'Butterflies' },
+      { q: 'Which bird cannot fly but swims well in cold southern seas?', a: 'The penguin' }
+    ],
+    medium: [
+      { q: 'What is the largest land animal in the world?', a: 'The African elephant' },
+      { q: 'Which animal is the fastest land animal?', a: 'The cheetah' },
+      { q: 'What do you call a group of wolves?', a: 'A pack' },
+      { q: 'Which mammal can fly?', a: 'The bat' }
+    ],
+    hard: [
+      { q: 'Which egg-laying mammal has a duck-like bill?', a: 'The platypus' },
+      { q: 'How many hearts does an octopus have?', a: 'Three' },
+      { q: 'What is a baby frog called?', a: 'A tadpole' },
+      { q: 'Which animal has the longest neck of any land animal?', a: 'The giraffe' }
+    ]
+  }
+};
+var current = null;
+var correct = 0;
+var wrong = 0;
+function pool() {
+  return BANK[document.getElementById('category').value][document.getElementById('difficulty').value];
+}
+function hideAnswer() {
+  document.getElementById('answer').textContent = 'Answer hidden — press Reveal to see it.';
+}
+function pick() {
+  var p = pool();
+  var next = p[Math.floor(Math.random() * p.length)];
+  var tries = 0;
+  while (p.length > 1 && current && next.q === current.q && tries < 20) {
+    next = p[Math.floor(Math.random() * p.length)];
+    tries++;
+  }
+  current = next;
+  document.getElementById('question').textContent = current.q;
+  hideAnswer();
+}
+function reveal() {
+  document.getElementById('answer').textContent = 'Answer: ' + current.a;
+}
+function updateScore() {
+  document.getElementById('score').textContent = 'Score: ' + correct + ' correct, ' + wrong + ' wrong';
+}
+document.getElementById('category').addEventListener('input', pick);
+document.getElementById('category').addEventListener('change', pick);
+document.getElementById('difficulty').addEventListener('input', pick);
+document.getElementById('difficulty').addEventListener('change', pick);
+document.getElementById('revealBtn').addEventListener('click', reveal);
+document.getElementById('newBtn').addEventListener('click', pick);
+document.getElementById('correctBtn').addEventListener('click', function () { correct++; updateScore(); });
+document.getElementById('wrongBtn').addEventListener('click', function () { wrong++; updateScore(); });
+document.getElementById('resetBtn').addEventListener('click', function () { correct = 0; wrong = 0; updateScore(); });
+pick();
+updateScore();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

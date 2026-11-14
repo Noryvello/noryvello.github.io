@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riddle Generator: Easy, Medium and Tricky Riddles With Answers | Noryvello</title>
+<meta name="description" content="Pick a difficulty and get a fresh riddle, easy, medium or tricky, with the answer hidden until you are ready. 45 original riddles, no repeats until you have seen them all.">
+<link rel="canonical" href="https://noryvello.github.io/riddle-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Riddle Generator: Easy, Medium and Tricky Riddles With Answers">
+<meta property="og:description" content="Pick a difficulty and get a fresh riddle, with the answer hidden until you are ready.">
+<meta property="og:url" content="https://noryvello.github.io/riddle-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{padding:10px 16px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#4338ca;color:#fff;cursor:pointer;margin:12px 8px 0 0}.calc button.secondary{background:#fff;color:#4338ca}.calc button:disabled{opacity:.5;cursor:default}.answerline{font-size:16.5px;color:#334155;margin-top:10px;min-height:26px}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a riddle?","acceptedAnswer":{"@type":"Answer","text":"A riddle is a question or a short puzzle that describes something in a roundabout way, so you have to think sideways to work out the answer. Most riddles play with words, double meanings, or the way you expect an answer to sound."}},{"@type":"Question","name":"How do I solve a riddle?","acceptedAnswer":{"@type":"Answer","text":"Read the riddle slowly and look for words that could mean more than one thing. Ask yourself what the clues have in common, try the simplest answer first, and give yourself time — stepping away and coming back often helps."}},{"@type":"Question","name":"Are these riddles suitable for children?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every riddle on this page is clean and family-friendly, and the easy set is written for younger solvers. Some of the tricky ones will still give adults something to think about."}},{"@type":"Question","name":"What makes a riddle tricky?","acceptedAnswer":{"@type":"Answer","text":"A tricky riddle usually hides its answer behind a word with two meanings, or leads you to picture the wrong thing. The answer feels obvious once you hear it, which is what makes the puzzle satisfying."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Riddle Generator</h1>
+<p class="answer">Pick a difficulty — easy, medium or tricky — and get a riddle to solve. The answer stays hidden until you tap Reveal, and you will not see the same riddle twice until you have worked through the whole set of 45.</p>
+<div class="calc">
+<label for="level">Difficulty</label>
+<select id="level">
+<option value="easy" selected>Easy</option>
+<option value="medium">Medium</option>
+<option value="tricky">Tricky</option>
+</select>
+<p class="out" id="riddle"></p>
+<p class="answerline" id="answer"></p>
+<p class="note" id="note"></p>
+<button id="revealBtn" type="button">Reveal the answer</button>
+<button id="newBtn" class="secondary" type="button">New riddle</button>
+</div>
+<div class="warn">These riddles are for fun. There is no single right way to solve one — a guess that fits the clues is a good answer, even if it is not the one we had in mind.</div>
+<h2>How to use the riddle generator</h2>
+<p>Choose a difficulty, then read the riddle and think it over before you reveal the answer. Tap New riddle for another one. Each difficulty has 15 riddles, and the generator works through the whole set before it starts again, so you will not see a repeat until you have had all 15.</p>
+<h2>Tips for solving riddles</h2>
+<p>Most riddles play on words that can mean two things, so read each clue slowly and ask what else it could describe. Try the simplest answer first, and say the riddle out loud — hearing it sometimes helps. If you are stuck, walk away and come back: the answer often feels obvious once you stop staring at the question.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is a riddle?</h3><p>A riddle is a question or a short puzzle that describes something in a roundabout way, so you have to think sideways to work out the answer. Most riddles play with words, double meanings, or the way you expect an answer to sound.</p></div>
+<div class="faq"><h3>How do I solve a riddle?</h3><p>Read the riddle slowly and look for words that could mean more than one thing. Ask yourself what the clues have in common, try the simplest answer first, and give yourself time — stepping away and coming back often helps.</p></div>
+<div class="faq"><h3>Are these riddles suitable for children?</h3><p>Yes. Every riddle on this page is clean and family-friendly, and the easy set is written for younger solvers. Some of the tricky ones will still give adults something to think about.</p></div>
+<div class="faq"><h3>What makes a riddle tricky?</h3><p>A tricky riddle usually hides its answer behind a word with two meanings, or leads you to picture the wrong thing. The answer feels obvious once you hear it, which is what makes the puzzle satisfying.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="../clean-joke-generator/">Clean Joke Generator</a> · <a href="../would-you-rather-generator/">Would You Rather Generator</a> · <a href="../truth-or-dare-generator/">Truth or Dare Generator</a> · <a href="../charades-word-generator/">Charades Word Generator</a></div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var RIDDLES = {
+  easy: [
+    { q: 'I have a face and two hands, but no arms and no legs. I tell you the time all day long. What am I?', a: 'A clock.' },
+    { q: 'The more of me you take, the more you leave behind. What am I?', a: 'Footsteps.' },
+    { q: 'I am full of holes, but I can still hold water. What am I?', a: 'A sponge.' },
+    { q: 'What has a neck but no head?', a: 'A bottle.' },
+    { q: 'What gets wetter the more it dries?', a: 'A towel.' },
+    { q: 'I go up and down all day, but I never move an inch. What am I?', a: 'A flight of stairs.' },
+    { q: 'What has many keys but cannot open a single door?', a: 'A piano.' },
+    { q: 'What has a thumb and four fingers, but is not alive?', a: 'A glove.' },
+    { q: 'What can you catch, but never throw?', a: 'A cold.' },
+    { q: 'I have cities but no houses, forests but no trees, and rivers but no water. What am I?', a: 'A map.' },
+    { q: 'What runs but never walks, has a mouth but never talks, and has a bed but never sleeps?', a: 'A river.' },
+    { q: 'What can fill a whole room without taking up any space?', a: 'Light.' },
+    { q: 'What has one eye but cannot see?', a: 'A needle.' },
+    { q: 'What has a head and a tail, but no body?', a: 'A coin.' },
+    { q: 'What gets bigger the more you take away from it?', a: 'A hole.' }
+  ],
+  medium: [
+    { q: 'I speak without a mouth and hear without ears. I have no body, but I come alive with sound. What am I?', a: 'An echo.' },
+    { q: 'I follow you all day but vanish at night. I am always beside you, but you can never touch me. What am I?', a: 'Your shadow.' },
+    { q: 'I go up but never come down. What am I?', a: 'Your age.' },
+    { q: 'I am not alive, but I can grow. I need air to live, but water kills me. What am I?', a: 'Fire.' },
+    { q: 'I am always coming, but I never arrive. What am I?', a: 'Tomorrow.' },
+    { q: 'If you say my name, I disappear. What am I?', a: 'Silence.' },
+    { q: 'I have keys but no locks, space but no room. You can enter, but you can never leave. What am I?', a: 'A computer keyboard.' },
+    { q: 'If you break me, you cannot fix me with glue. What am I?', a: 'A promise.' },
+    { q: 'The more there is of me, the less you can see. What am I?', a: 'Darkness.' },
+    { q: 'I am light as a feather, yet the strongest person cannot hold me for long. What am I?', a: 'Your breath.' },
+    { q: 'I move forward but never back, and everyone spends me but no one can keep me. What am I?', a: 'Time.' },
+    { q: 'I have teeth but I cannot bite. I help you look neat every morning. What am I?', a: 'A comb.' },
+    { q: 'I am always changing shape, but I am never broken. I shine at night but make no light of my own. What am I?', a: 'The moon.' },
+    { q: 'You open me and read my words, but I never speak. What am I?', a: 'A book.' },
+    { q: 'I show you your face, but I have none of my own. What am I?', a: 'A mirror.' }
+  ],
+  tricky: [
+    { q: 'A man shaves every day, yet his beard stays the same. How?', a: 'He is a barber.' },
+    { q: 'What comes once in a minute, twice in a moment, but never in a thousand years?', a: 'The letter M.' },
+    { q: 'What has many needles but never sews?', a: 'A pine tree.' },
+    { q: 'I can be cracked, made, told, and played. What am I?', a: 'A joke.' },
+    { q: 'What word is spelled incorrectly in every dictionary?', a: 'Incorrectly.' },
+    { q: 'What has a bottom at the top?', a: 'Your legs.' },
+    { q: 'I am a word of three letters. Add two letters and I become shorter. What am I?', a: 'Short. Add two letters and it becomes shorter.' },
+    { q: 'What has 13 hearts but no other organs?', a: 'A deck of cards.' },
+    { q: 'What belongs to you, but everyone else uses it more than you do?', a: 'Your name.' },
+    { q: 'What starts with T, ends with T, and is full of T?', a: 'A teapot.' },
+    { q: 'What has a ring but no finger?', a: 'A telephone.' },
+    { q: 'A cowboy rode into town on Friday, stayed three days, and rode out on Friday. How?', a: 'His horse is named Friday.' },
+    { q: 'What gets sharper the more you use it?', a: 'Your brain.' },
+    { q: 'What has six faces but never smiles?', a: 'A dice.' },
+    { q: 'What question can you never answer yes to?', a: 'Are you asleep?' }
+  ]
+};
+var shown = { easy: [], medium: [], tricky: [] };
+var current = null;
+function pick() {
+  var level = document.getElementById('level').value;
+  var bank = RIDDLES[level];
+  var seen = shown[level];
+  var note = document.getElementById('note');
+  if (seen.length >= bank.length) {
+    shown[level] = [];
+    seen = shown[level];
+    note.textContent = 'You have seen all the ' + level + ' riddles — starting again.';
+  } else {
+    note.textContent = '';
+  }
+  var idx;
+  do {
+    idx = Math.floor(Math.random() * bank.length);
+  } while (seen.indexOf(idx) !== -1);
+  seen.push(idx);
+  current = bank[idx];
+  document.getElementById('riddle').textContent = current.q;
+  document.getElementById('answer').textContent = '';
+  document.getElementById('revealBtn').disabled = false;
+}
+function reveal() {
+  if (current) {
+    document.getElementById('answer').textContent = 'Answer: ' + current.a;
+    document.getElementById('revealBtn').disabled = true;
+  }
+}
+document.getElementById('level').addEventListener('input', pick);
+document.getElementById('level').addEventListener('change', pick);
+document.getElementById('revealBtn').addEventListener('click', reveal);
+document.getElementById('newBtn').addEventListener('click', pick);
+pick();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

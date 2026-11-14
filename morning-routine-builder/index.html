@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Routine Builder: Plan Your Morning in Minutes | Noryvello</title>
+<meta name="description" content="Build a morning routine that fits your morning: pick your wake-up time, tick the steps you want, and see your total time and finish time, step by step.">
+<link rel="canonical" href="https://noryvello.github.io/morning-routine-builder/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Morning Routine Builder: Plan Your Morning in Minutes">
+<meta property="og:description" content="Plan your morning step by step and see when you will finish.">
+<meta property="og:url" content="https://noryvello.github.io/morning-routine-builder/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.step{display:flex;align-items:center;gap:8px;margin:8px 0;flex-wrap:wrap}.step label{margin:0;font-weight:400}.step input[type="checkbox"]{width:auto}.step input[type="number"]{width:72px;flex:none;margin-left:auto}.minlab{font-size:13px;color:#64748b}.printbtn{padding:10px 18px;border:1px solid #4338ca;background:#4338ca;color:#fff;border-radius:8px;font-size:16px;cursor:pointer;margin-top:12px}@media print{#printBtn{display:none}}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I build a morning routine?","acceptedAnswer":{"@type":"Answer","text":"Pick your wake-up time, then tick the steps you want to do each morning and set the minutes for each one. The builder adds up the time, shows a start time for every step, and works out when you will finish."}},{"@type":"Question","name":"How long should a morning routine take?","acceptedAnswer":{"@type":"Answer","text":"There is no single right length — it depends on how many steps you choose and how long each one takes you. This page adds up whatever you pick, so you can see the total and adjust it until it fits the morning you actually have."}},{"@type":"Question","name":"What should I include in a morning routine?","acceptedAnswer":{"@type":"Answer","text":"Include the steps that matter to you: getting up, washing, eating breakfast, and getting ready to leave are the usual ones. Add exercise, planning or reading if they fit, and leave out anything that does not belong in your morning."}},{"@type":"Question","name":"Can I print my morning routine?","acceptedAnswer":{"@type":"Answer","text":"Yes. Press the Print button below your routine and the ordered list, with start times, total time and finish time, will print from your browser."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Morning Routine Builder</h1>
+<p class="answer">Pick your wake-up time and tick the morning steps you want to do. The builder adds up the minutes, shows a start time for each step, and works out when your morning will finish. Print the list and keep it where you will see it.</p>
+<div class="calc">
+<label for="wake">Wake-up time</label>
+<input type="time" id="wake" value="07:00">
+<p class="note">Tick the steps you want in your morning, and set the minutes for each one.</p>
+<div class="step"><label for="c0"><input type="checkbox" id="c0" checked> Get out of bed and stretch</label><label for="m0" class="minlab">Minutes</label><input type="number" id="m0" value="5" min="1"></div>
+<div class="step"><label for="c1"><input type="checkbox" id="c1" checked> Wash your face and brush your teeth</label><label for="m1" class="minlab">Minutes</label><input type="number" id="m1" value="10" min="1"></div>
+<div class="step"><label for="c2"><input type="checkbox" id="c2" checked> Drink a glass of water</label><label for="m2" class="minlab">Minutes</label><input type="number" id="m2" value="2" min="1"></div>
+<div class="step"><label for="c3"><input type="checkbox" id="c3" checked> Exercise or stretch</label><label for="m3" class="minlab">Minutes</label><input type="number" id="m3" value="20" min="1"></div>
+<div class="step"><label for="c4"><input type="checkbox" id="c4" checked> Shower and get dressed</label><label for="m4" class="minlab">Minutes</label><input type="number" id="m4" value="20" min="1"></div>
+<div class="step"><label for="c5"><input type="checkbox" id="c5" checked> Eat breakfast</label><label for="m5" class="minlab">Minutes</label><input type="number" id="m5" value="15" min="1"></div>
+<div class="step"><label for="c6"><input type="checkbox" id="c6"> Pack your bag</label><label for="m6" class="minlab">Minutes</label><input type="number" id="m6" value="5" min="1"></div>
+<div class="step"><label for="c7"><input type="checkbox" id="c7"> Plan your day</label><label for="m7" class="minlab">Minutes</label><input type="number" id="m7" value="5" min="1"></div>
+<div class="step"><label for="c8"><input type="checkbox" id="c8"> Read or listen to something</label><label for="m8" class="minlab">Minutes</label><input type="number" id="m8" value="10" min="1"></div>
+<div class="step"><label for="c9"><input type="checkbox" id="c9"> Leave the house</label><label for="m9" class="minlab">Minutes</label><input type="number" id="m9" value="5" min="1"></div>
+<p class="out" id="out"></p>
+<div class="steps" id="list"></div>
+<p class="steps" id="working"></p>
+<button type="button" class="printbtn" id="printBtn">Print my routine</button>
+</div>
+<div class="warn">The times on this page are a starting plan. Your own morning may take longer or shorter, so adjust the minutes to fit your real morning. The builder only adds up the steps you tick — it does not know your commute, your family, or your appointments.</div>
+<h2>How to build a morning routine</h2>
+<p>Start with your wake-up time, then tick the steps you actually do each morning. Change the minutes to match your real morning — the total and finish time update as you type. When the plan looks right, print it and follow it for a week before changing anything.</p>
+<h2>Keep it realistic</h2>
+<p>A routine only works if it fits the morning you actually have. Start with a few steps and add more once the habit sticks, and leave a little spare time for the mornings that do not go to plan. If the finish time is later than you need, shorten a step or drop one, rather than rushing.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How do I build a morning routine?</h3><p>Pick your wake-up time, then tick the steps you want to do each morning and set the minutes for each one. The builder adds up the time, shows a start time for every step, and works out when you will finish.</p></div>
+<div class="faq"><h3>How long should a morning routine take?</h3><p>There is no single right length — it depends on how many steps you choose and how long each one takes you. This page adds up whatever you pick, so you can see the total and adjust it until it fits the morning you actually have.</p></div>
+<div class="faq"><h3>What should I include in a morning routine?</h3><p>Include the steps that matter to you: getting up, washing, eating breakfast, and getting ready to leave are the usual ones. Add exercise, planning or reading if they fit, and leave out anything that does not belong in your morning.</p></div>
+<div class="faq"><h3>Can I print my morning routine?</h3><p>Yes. Press the Print button below your routine and the ordered list, with start times, total time and finish time, will print from your browser.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="../sleep-calculator/">Sleep Calculator — Bedtime and Wake-Up Time Calculator</a> · <a href="../running-pace-calculator/">Running Pace Calculator — Pace, Finish Time and Race Predictor</a> · <a href="../ramadan-countdown/">Ramadan Countdown 2027</a> · <a href="../gift-idea-generator-by-budget-and-person/">Gift Idea Generator by Budget and Person</a></div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var STEPS = ['Get out of bed and stretch', 'Wash your face and brush your teeth', 'Drink a glass of water', 'Exercise or stretch', 'Shower and get dressed', 'Eat breakfast', 'Pack your bag', 'Plan your day', 'Read or listen to something', 'Leave the house'];
+function pad(n) { return (n < 10 ? '0' : '') + n; }
+function fmtTime(totalMin) {
+  var m = ((Math.round(totalMin) % 1440) + 1440) % 1440;
+  return pad(Math.floor(m / 60)) + ':' + pad(m % 60);
+}
+function update() {
+  var out = document.getElementById('out');
+  var list = document.getElementById('list');
+  var working = document.getElementById('working');
+  var wake = document.getElementById('wake').value;
+  if (!wake) {
+    out.textContent = 'Pick a wake-up time first.';
+    list.textContent = '';
+    working.textContent = '';
+    return;
+  }
+  var parts = wake.split(':');
+  var start = parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
+  var chosen = [];
+  var bad = false;
+  for (var i = 0; i < 10; i++) {
+    var cb = document.getElementById('c' + i);
+    if (!cb.checked) continue;
+    var mins = document.getElementById('m' + i).value;
+    var n = Number(mins);
+    if (mins === '' || mins === null || !isFinite(n) || n <= 0) { bad = true; break; }
+    chosen.push({name: STEPS[i], mins: n});
+  }
+  if (bad) {
+    out.textContent = 'Each ticked step needs a number of minutes above zero. Check the minutes for your ticked steps.';
+    list.textContent = '';
+    working.textContent = '';
+    return;
+  }
+  if (chosen.length === 0) {
+    out.textContent = 'Pick at least one step to build your morning routine.';
+    list.textContent = '';
+    working.textContent = '';
+    return;
+  }
+  var total = 0;
+  var lines = [];
+  var t = start;
+  for (var j = 0; j < chosen.length; j++) {
+    lines.push((j + 1) + '. ' + fmtTime(t) + ' — ' + chosen[j].name + ' — ' + chosen[j].mins + ' minutes');
+    t += chosen[j].mins;
+    total += chosen[j].mins;
+  }
+  var totalText = (total === Math.floor(total)) ? String(total) : total.toFixed(1);
+  out.textContent = 'Total: ' + totalText + ' minutes. Finish time: ' + fmtTime(start + total) + '.';
+  list.textContent = lines.join('\n');
+  var nums = chosen.map(function(s) { return s.mins; }).join(' + ');
+  working.textContent = 'Working: ' + nums + ' = ' + totalText + ' minutes. Wake up ' + fmtTime(start) + ' + ' + totalText + ' minutes = finish ' + fmtTime(start + total) + '.';
+}
+var ids = ['wake'];
+for (var k = 0; k < 10; k++) { ids.push('c' + k); ids.push('m' + k); }
+ids.forEach(function(id) {
+  var el = document.getElementById(id);
+  el.addEventListener('input', update);
+  el.addEventListener('change', update);
+});
+document.getElementById('printBtn').addEventListener('click', function() { window.print(); });
+update();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

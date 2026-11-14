@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cleaning Schedule Generator: A Weekly Plan for Your Home | Noryvello</title>
+<meta name="description" content="Build a weekly cleaning schedule for your home: daily, weekly and monthly tasks, a room rotation for every day of the week, and pet tasks if you have pets.">
+<link rel="canonical" href="https://noryvello.github.io/cleaning-schedule-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cleaning Schedule Generator: A Weekly Plan for Your Home">
+<meta property="og:description" content="Build a weekly cleaning schedule for your home, with daily, weekly and monthly tasks and a room rotation.">
+<meta property="og:url" content="https://noryvello.github.io/cleaning-schedule-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.subhead{font-weight:700;margin:16px 0 4px}.tasks{margin:4px 0 4px 22px}.calc button{margin-top:16px;padding:10px 18px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}.calc button:hover{background:#3730a3}@media print{.brand,.calc label,.calc select,.calc input,.calc button,.warn,.links,footer{display:none!important}}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How often should I clean my house?","acceptedAnswer":{"@type":"Answer","text":"Most homes need a little cleaning every day and a deeper clean once a week. Daily jobs like wiping the kitchen worktops and washing the dishes keep things tidy, while weekly jobs like vacuuming and changing the bed sheets handle the deeper dirt. Monthly jobs, such as wiping the inside of the fridge, cover the things that do not need doing every week."}},{"@type":"Question","name":"What should I clean every day?","acceptedAnswer":{"@type":"Answer","text":"The daily jobs that matter most are wiping the kitchen worktops after cooking, washing the dishes or loading the dishwasher, sweeping the kitchen floor, and taking out the rubbish when the bin is full. Making the beds each morning also makes the whole home look tidier. In a home with four or more people, one load of laundry a day helps keep it under control."}},{"@type":"Question","name":"How do I make a cleaning schedule?","acceptedAnswer":{"@type":"Answer","text":"Start with the jobs that must happen every day, then add the weekly jobs and spread them across the week so no single day is too heavy. Give each day one room to focus on, and add a short list of monthly jobs for the things that can wait. This generator builds that schedule for you from your home size, the number of people and whether you have pets."}},{"@type":"Question","name":"How do I clean with pets at home?","acceptedAnswer":{"@type":"Answer","text":"Pet hair and muddy paws add two jobs to the weekly list: vacuum pet hair from sofas and soft furnishings, and wash pet bedding. A weekly vacuum of the rooms your pet uses most keeps hair under control. If your pet sheds a lot, vacuum the living room twice a week instead of once."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Cleaning Schedule Generator</h1>
+<p class="answer">Pick your home size, the number of people and whether you have pets, and this generator builds a weekly cleaning schedule for your home. It gives you daily tasks, weekly tasks with a room rotation for every day of the week, and monthly tasks. Print it out and stick it on the fridge.</p>
+<div class="calc">
+<label for="size">Home size</label>
+<select id="size">
+<option value="small">Small — one or two bedrooms</option>
+<option value="medium" selected>Medium — three bedrooms</option>
+<option value="large">Large — four or more bedrooms</option>
+</select>
+<label for="people">Number of people</label>
+<input type="number" id="people" value="2" min="1">
+<label for="pets">Pets at home?</label>
+<select id="pets">
+<option value="no" selected>No pets</option>
+<option value="yes">Yes, we have pets</option>
+</select>
+<p class="out" id="out"></p>
+<div id="dailyOut"></div>
+<div id="weeklyOut"></div>
+<div id="petOut"></div>
+<div id="rotationOut"></div>
+<div id="monthlyOut"></div>
+<button id="printBtn" type="button">Print this schedule</button>
+</div>
+<div class="warn">This is a general starting plan for a typical home. Adjust it to your own home, your own rooms and your own routine, and always follow your cleaning products' own instructions.</div>
+<h2>How the schedule works</h2>
+<p>The schedule has three parts. Daily tasks are the small jobs that keep your home tidy day to day, and homes with four or more people get two extra daily jobs. Weekly tasks depend on your home size: a small home gets four, a medium home six and a large home eight. Each day of the week also has one room to focus on, so the deeper cleaning is spread out instead of piling up on one day. Monthly tasks cover the jobs that only need doing once in a while, such as wiping the inside of the fridge. If you have pets, two pet tasks are added to the weekly list.</p>
+<h2>Sticking to the plan</h2>
+<p>Do the daily tasks at the same time each day, so they become a habit rather than a chore. If a day gets busy, skip that day's room focus and do it the next day — the schedule is a guide, not a rule. Keep your cleaning things in one place so you are not hunting for them when you start.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How often should I clean my house?</h3><p>Most homes need a little cleaning every day and a deeper clean once a week. Daily jobs like wiping the kitchen worktops and washing the dishes keep things tidy, while weekly jobs like vacuuming and changing the bed sheets handle the deeper dirt. Monthly jobs, such as wiping the inside of the fridge, cover the things that do not need doing every week.</p></div>
+<div class="faq"><h3>What should I clean every day?</h3><p>The daily jobs that matter most are wiping the kitchen worktops after cooking, washing the dishes or loading the dishwasher, sweeping the kitchen floor, and taking out the rubbish when the bin is full. Making the beds each morning also makes the whole home look tidier. In a home with four or more people, one load of laundry a day helps keep it under control.</p></div>
+<div class="faq"><h3>How do I make a cleaning schedule?</h3><p>Start with the jobs that must happen every day, then add the weekly jobs and spread them across the week so no single day is too heavy. Give each day one room to focus on, and add a short list of monthly jobs for the things that can wait. This generator builds that schedule for you from your home size, the number of people and whether you have pets.</p></div>
+<div class="faq"><h3>How do I clean with pets at home?</h3><p>Pet hair and muddy paws add two jobs to the weekly list: vacuum pet hair from sofas and soft furnishings, and wash pet bedding. A weekly vacuum of the rooms your pet uses most keeps hair under control. If your pet sheds a lot, vacuum the living room twice a week instead of once.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="../hand-wash-vs-dishwasher-water-use/">Hand Wash vs Dishwasher Water Use Calculator</a> · <a href="../moving-boxes-calculator/">Moving Boxes Calculator</a> · <a href="../storage-unit-size-finder/">Storage Unit Size Finder</a> · <a href="../sleep-calculator/">Sleep Calculator — Bedtime and Wake-Up Time Calculator</a></div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var DAILY = [
+  'Wipe the kitchen worktops after cooking',
+  'Wash the dishes or load the dishwasher',
+  'Sweep the kitchen floor',
+  'Take out the rubbish if the bin is full',
+  'Make the beds'
+];
+var DAILY_EXTRA = [
+  'Do one load of laundry',
+  'Wipe the dining table after meals'
+];
+var WEEKLY = [
+  'Vacuum the living room',
+  'Mop the hallway floor',
+  'Clean the bathroom mirror and sink',
+  'Change the bed sheets',
+  'Wipe the inside of the microwave',
+  'Dust the shelves and window sills',
+  'Clean the toilet and shower',
+  'Vacuum the bedrooms'
+];
+var PET_TASKS = [
+  'Vacuum pet hair from sofas',
+  'Wash pet bedding'
+];
+var ROTATION = [
+  ['Monday', 'Kitchen', 'wipe the cupboard fronts and clean the hob'],
+  ['Tuesday', 'Living room', 'dust the shelves and vacuum under the sofa'],
+  ['Wednesday', 'Bathroom', 'scrub the shower and clean the mirror'],
+  ['Thursday', 'Bedrooms', 'change the bed sheets and dust the bedside tables'],
+  ['Friday', 'Hallway and entrance', 'mop the floor and wipe the light switches'],
+  ['Saturday', 'Dining room', 'wipe the table and chairs and vacuum the rug'],
+  ['Sunday', 'Home office or spare room', 'dust the desk and tidy the shelves']
+];
+var MONTHLY = [
+  'Wipe the inside of the fridge',
+  'Clean the oven and hob in depth',
+  'Wash the windows inside',
+  'Vacuum behind the sofa and under the beds',
+  'Descale the kettle'
+];
+var WEEKLY_COUNT = { small: 4, medium: 6, large: 8 };
+var SIZE_LABEL = { small: 'small home', medium: 'medium home', large: 'large home' };
+function listHtml(items) {
+  var html = '<ul class="tasks">';
+  for (var i = 0; i < items.length; i++) html += '<li>' + items[i] + '</li>';
+  return html + '</ul>';
+}
+function sectionHtml(title, items) {
+  return '<p class="subhead">' + title + '</p>' + listHtml(items);
+}
+function update() {
+  var size = document.getElementById('size').value;
+  var people = parseInt(document.getElementById('people').value, 10);
+  var pets = document.getElementById('pets').value === 'yes';
+  var out = document.getElementById('out');
+  var dailyOut = document.getElementById('dailyOut');
+  var weeklyOut = document.getElementById('weeklyOut');
+  var petOut = document.getElementById('petOut');
+  var rotationOut = document.getElementById('rotationOut');
+  var monthlyOut = document.getElementById('monthlyOut');
+  if (isNaN(people) || people < 1) {
+    out.textContent = 'Enter how many people live in your home — at least one.';
+    dailyOut.innerHTML = '';
+    weeklyOut.innerHTML = '';
+    petOut.innerHTML = '';
+    rotationOut.innerHTML = '';
+    monthlyOut.innerHTML = '';
+    return;
+  }
+  var daily = DAILY.slice();
+  if (people >= 4) {
+    daily.push(DAILY_EXTRA[0]);
+    daily.push(DAILY_EXTRA[1]);
+  }
+  var weekly = WEEKLY.slice(0, WEEKLY_COUNT[size]);
+  var rotation = [];
+  for (var i = 0; i < ROTATION.length; i++) {
+    rotation.push('<strong>' + ROTATION[i][0] + ' — ' + ROTATION[i][1] + ':</strong> ' + ROTATION[i][2]);
+  }
+  out.textContent = 'Your cleaning schedule — ' + SIZE_LABEL[size] + ', ' + people + (people === 1 ? ' person' : ' people') + ', ' + (pets ? 'pets at home' : 'no pets') + '.';
+  dailyOut.innerHTML = sectionHtml('Daily tasks', daily);
+  weeklyOut.innerHTML = sectionHtml('Weekly tasks', weekly);
+  petOut.innerHTML = pets ? sectionHtml('Pet tasks', PET_TASKS) : '';
+  rotationOut.innerHTML = sectionHtml('Room rotation', rotation);
+  monthlyOut.innerHTML = sectionHtml('Monthly tasks', MONTHLY);
+}
+document.getElementById('size').addEventListener('input', update);
+document.getElementById('size').addEventListener('change', update);
+document.getElementById('people').addEventListener('input', update);
+document.getElementById('people').addEventListener('change', update);
+document.getElementById('pets').addEventListener('input', update);
+document.getElementById('pets').addEventListener('change', update);
+document.getElementById('printBtn').addEventListener('click', function () { window.print(); });
+update();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

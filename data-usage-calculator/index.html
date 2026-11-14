@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Usage Calculator | Noryvello</title>
+<meta name="description" content="Estimate your monthly data use. Enter daily hours for streaming, gaming, browsing and video calls — with editable per-hour rates — to get a monthly total in GB.">
+<link rel="canonical" href="https://noryvello.github.io/data-usage-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Data Usage Calculator">
+<meta property="og:description" content="Work out your monthly data use from daily streaming, gaming, browsing and video calls.">
+<meta property="og:url" content="https://noryvello.github.io/data-usage-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.act{font-weight:700;margin-top:16px;font-size:15.5px}.row{display:flex;gap:12px}.row>div{flex:1;min-width:0}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much data does streaming use?","acceptedAnswer":{"@type":"Answer","text":"It depends on the quality. A typical hour of streaming uses about 0.7 GB in SD, 3 GB in HD and 7 GB in 4K. Those are typical rates, not fixed figures: the same service can use more or less depending on the device, the title and the quality settings, so edit the rates on this page to match your own habits."}},{"@type":"Question","name":"Why can I edit the rates?","acceptedAnswer":{"@type":"Answer","text":"Because the same activity uses different amounts of data for different people. Streaming services compress video differently, quality settings change the rate, and a video call with the camera off uses less than one with video on. The defaults are typical rates to get you started; editing them to match your reality makes the estimate much more useful."}},{"@type":"Question","name":"Does this include uploads?","acceptedAnswer":{"@type":"Answer","text":"No. The calculator estimates the data your activities use as a whole, using the per-hour rates shown, and it does not split uploads from downloads. It also leaves out one-off downloads such as game downloads, system updates and cloud backups. If those matter to you, add them separately on top of the monthly total."}},{"@type":"Question","name":"How do I check my real usage?","acceptedAnswer":{"@type":"Answer","text":"Most phones show mobile data usage in their settings, and many routers or broadband accounts show how much data your home connection has used. Your provider's app or account page usually shows the same. Compare the real number with this estimate, then adjust the rates here until the two roughly agree."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Data Usage Calculator</h1>
+<p class="answer">Enter how many hours a day you spend streaming in SD, HD and 4K, gaming, browsing and social media, and on video calls, and this calculator estimates your monthly data use in GB. Each activity has a typical per-hour rate that you can edit, so the estimate matches your own habits.</p>
+<div class="calc">
+<p class="note">Leave the hours at 0 for any activity you do not do. The rates are typical values — edit them to match your reality.</p>
+<p class="act">Streaming — SD</p>
+<div class="row">
+<div><label for="sdH">SD streaming — hours per day</label>
+<input id="sdH" type="number" step="any" min="0" inputmode="decimal" value="1"></div>
+<div><label for="sdR">SD streaming — GB per hour</label>
+<input id="sdR" type="number" step="any" min="0" inputmode="decimal" value="0.7"></div>
+</div>
+<p class="act">Streaming — HD</p>
+<div class="row">
+<div><label for="hdH">HD streaming — hours per day</label>
+<input id="hdH" type="number" step="any" min="0" inputmode="decimal" value="2"></div>
+<div><label for="hdR">HD streaming — GB per hour</label>
+<input id="hdR" type="number" step="any" min="0" inputmode="decimal" value="3"></div>
+</div>
+<p class="act">Streaming — 4K</p>
+<div class="row">
+<div><label for="k4H">4K streaming — hours per day</label>
+<input id="k4H" type="number" step="any" min="0" inputmode="decimal" value="0"></div>
+<div><label for="k4R">4K streaming — GB per hour</label>
+<input id="k4R" type="number" step="any" min="0" inputmode="decimal" value="7"></div>
+</div>
+<p class="act">Gaming</p>
+<div class="row">
+<div><label for="gH">Gaming — hours per day</label>
+<input id="gH" type="number" step="any" min="0" inputmode="decimal" value="1"></div>
+<div><label for="gR">Gaming — GB per hour</label>
+<input id="gR" type="number" step="any" min="0" inputmode="decimal" value="0.1"></div>
+</div>
+<p class="act">Browsing and social</p>
+<div class="row">
+<div><label for="bH">Browsing and social — hours per day</label>
+<input id="bH" type="number" step="any" min="0" inputmode="decimal" value="2"></div>
+<div><label for="bR">Browsing and social — GB per hour</label>
+<input id="bR" type="number" step="any" min="0" inputmode="decimal" value="0.15"></div>
+</div>
+<p class="act">Video calls</p>
+<div class="row">
+<div><label for="vH">Video calls — hours per day</label>
+<input id="vH" type="number" step="any" min="0" inputmode="decimal" value="0.5"></div>
+<div><label for="vR">Video calls — GB per hour</label>
+<input id="vR" type="number" step="any" min="0" inputmode="decimal" value="1"></div>
+</div>
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">This is an estimate based on typical per-hour rates, which you can edit. Real usage varies by service, quality settings and device, and game downloads, system updates and cloud backups are not included. Check your plan's own allowance before relying on the number.</div>
+<h2>How the maths works</h2>
+<p>Each activity's daily data use is its hours multiplied by its per-hour rate, and the month is counted as 30 days:</p>
+<p><code>daily GB = hours × GB per hour (for each activity)</code><br><code>monthly GB = daily GB of all activities added together × 30</code></p>
+<p>The per-hour rates below are typical values to start from. Rates vary by service, quality setting and device, so edit them on the calculator to match your reality:</p>
+<ul>
+<li><strong>SD streaming:</strong> 0.7 GB per hour</li>
+<li><strong>HD streaming:</strong> 3 GB per hour</li>
+<li><strong>4K streaming:</strong> 7 GB per hour</li>
+<li><strong>Gaming (online play):</strong> 0.1 GB per hour</li>
+<li><strong>Browsing and social:</strong> 0.15 GB per hour</li>
+<li><strong>Video calls:</strong> 1 GB per hour</li>
+</ul>
+<h2>Worked examples</h2>
+<p><strong>Example 1 — a typical day.</strong> SD 1 hour, HD 2 hours, 4K 0 hours, gaming 1 hour, browsing and social 2 hours, video calls 0.5 hours. SD: 1 × 0.7 = 0.70 GB. HD: 2 × 3 = 6 GB. 4K: 0 × 7 = 0 GB. Gaming: 1 × 0.1 = 0.10 GB. Browsing and social: 2 × 0.15 = 0.30 GB. Video calls: 0.5 × 1 = 0.50 GB. Daily total: 7.60 GB. Monthly: 7.60 × 30 = 228 GB per month.</p>
+<p><strong>Example 2 — one hour of HD streaming a day, nothing else.</strong> HD: 1 × 3 = 3 GB per day. Monthly: 3 × 30 = 90 GB per month.</p>
+<p><strong>Example 3 — 2 hours of 4K streaming and 1 hour of video calls a day, nothing else.</strong> 4K: 2 × 7 = 14 GB. Video calls: 1 × 1 = 1 GB. Daily total: 15 GB. Monthly: 15 × 30 = 450 GB per month.</p>
+<h2>What uses the most data</h2>
+<p>Streaming quality makes the biggest difference by far. One hour of 4K streaming uses about ten times as much data as one hour of SD streaming, and more than twice as much as HD. If your data use looks high, the streaming quality setting is the first place to look.</p>
+<p>Gaming and browsing are light by comparison. An hour of online play typically uses only about 0.1 GB, and browsing and social media about 0.15 GB per hour — though video that auto-plays in your feed pushes the browsing number up. Video calls sit in the middle at around 1 GB per hour with video on.</p>
+<p>Remember that the gaming rate covers online play only. Downloading a game, or a large update, is a one-off download that can be many GB on its own — those are not counted here, so add them separately if they apply to you.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How much data does streaming use?</h3><p>It depends on the quality. A typical hour of streaming uses about 0.7 GB in SD, 3 GB in HD and 7 GB in 4K. Those are typical rates, not fixed figures: the same service can use more or less depending on the device, the title and the quality settings, so edit the rates on this page to match your own habits.</p></div>
+<div class="faq"><h3>Why can I edit the rates?</h3><p>Because the same activity uses different amounts of data for different people. Streaming services compress video differently, quality settings change the rate, and a video call with the camera off uses less than one with video on. The defaults are typical rates to get you started; editing them to match your reality makes the estimate much more useful.</p></div>
+<div class="faq"><h3>Does this include uploads?</h3><p>No. The calculator estimates the data your activities use as a whole, using the per-hour rates shown, and it does not split uploads from downloads. It also leaves out one-off downloads such as game downloads, system updates and cloud backups. If those matter to you, add them separately on top of the monthly total.</p></div>
+<div class="faq"><h3>How do I check my real usage?</h3><p>Most phones show mobile data usage in their settings, and many routers or broadband accounts show how much data your home connection has used. Your provider's app or account page usually shows the same. Compare the real number with this estimate, then adjust the rates here until the two roughly agree.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../running-pace-calculator/">Running Pace Calculator</a> · <a href="../sleep-calculator/">Sleep Calculator</a> · <a href="../paint-calculator/">Paint Calculator</a> · <a href="../wedding-budget-planner/">Wedding Budget Planner</a></p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n){return (Math.round((n+1e-9)*100)/100).toFixed(2);}
+function disp(n){var s=fmt(n);return s.slice(-3)==='.00'?s.slice(0,-3):s;}
+var ACTS=[
+{name:'SD streaming',h:'sdH',r:'sdR'},
+{name:'HD streaming',h:'hdH',r:'hdR'},
+{name:'4K streaming',h:'k4H',r:'k4R'},
+{name:'Gaming',h:'gH',r:'gR'},
+{name:'Browsing and social',h:'bH',r:'bR'},
+{name:'Video calls',h:'vH',r:'vR'}
+];
+function calc(){
+var out=document.getElementById('out');
+var steps=document.getElementById('steps');
+var lines=[];
+var daily=0;
+for(var i=0;i<ACTS.length;i++){
+var a=ACTS[i];
+var hRaw=String(document.getElementById(a.h).value).trim();
+var rRaw=String(document.getElementById(a.r).value).trim();
+var h;
+if(hRaw===''){h=0;}else{
+h=parseFloat(hRaw);
+if(isNaN(h)||h<0){
+out.textContent='Enter 0 or more hours per day for '+a.name+'.';
+steps.textContent='';
+return;
+}
+}
+if(rRaw===''){
+out.textContent='Enter a rate in GB per hour for '+a.name+'.';
+steps.textContent='';
+return;
+}
+var r=parseFloat(rRaw);
+if(isNaN(r)||r<0){
+out.textContent='Enter a rate of 0 or more GB per hour for '+a.name+'.';
+steps.textContent='';
+return;
+}
+var day=h*r;
+daily+=day;
+lines.push(a.name+': '+(hRaw===''?'0':hRaw)+' h × '+rRaw+' GB/h = '+disp(day)+' GB per day');
+}
+var monthly=daily*30;
+out.textContent='Estimated monthly data use: '+disp(monthly)+' GB ('+fmt(daily)+' GB per day).';
+lines.push('Daily total: '+fmt(daily)+' GB');
+lines.push('Monthly estimate (30 days): '+disp(monthly)+' GB');
+steps.textContent=lines.join('\n');
+}
+for(var j=0;j<ACTS.length;j++){
+document.getElementById(ACTS[j].h).addEventListener('input',calc);
+document.getElementById(ACTS[j].h).addEventListener('change',calc);
+document.getElementById(ACTS[j].r).addEventListener('input',calc);
+document.getElementById(ACTS[j].r).addEventListener('change',calc);
+}
+calc();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

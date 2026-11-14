@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decision Helper | Noryvello</title>
+<meta name="description" content="Compare up to 3 options across 4 weighted criteria. Score each option, and the decision helper ranks them by weighted total, with the working shown.">
+<link rel="canonical" href="https://noryvello.github.io/decision-helper-weighted/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Decision Helper">
+<meta property="og:description" content="Score up to three options against weighted criteria and see the ranked winner.">
+<meta property="og:url" content="https://noryvello.github.io/decision-helper-weighted/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.row{display:flex;gap:10px;align-items:flex-end}
+.row .grow{flex:1}
+.row .w{width:96px;flex:none}
+table.score{width:100%;border-collapse:collapse;margin-top:12px}
+table.score th,table.score td{padding:6px 4px;text-align:left;font-size:14.5px;vertical-align:middle}
+table.score th{font-weight:700}
+table.score input{padding:8px;text-align:center}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does weighted scoring work?","acceptedAnswer":{"@type":"Answer","text":"You score each option on each criterion, and each criterion has a weight for how much it matters. The tool multiplies every score by its criterion's weight and adds the results up, so the option with the highest weighted total ranks first. The working is shown for every option, so you can see exactly where each total came from."}},{"@type":"Question","name":"How do I choose weights?","acceptedAnswer":{"@type":"Answer","text":"Give a higher weight to the things that matter most to you. A weight of 5 means the criterion counts five times as much as a weight of 1. Start by ranking your criteria in order of importance, then spread the weights out — if everything gets the same weight, the weighting is doing nothing."}},{"@type":"Question","name":"What if two options tie?","acceptedAnswer":{"@type":"Answer","text":"The tool says so plainly and lists both options at the same rank. A tie means the options are genuinely close on the criteria you chose. You can break it by adding a criterion that separates them, adjusting a weight, or simply picking the one that feels right."}},{"@type":"Question","name":"Should I always follow the top result?","acceptedAnswer":{"@type":"Answer","text":"No. The ranking is only as good as the scores you put in, and scores are your own judgement. Use the result as a clear picture of what your numbers say, then check it against your gut feeling. If the winner surprises you, your weights or scores may not reflect what you really care about."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Decision Helper</h1>
+<p class="answer">Name up to 3 options and up to 4 criteria, set a weight for how much each criterion matters, and score every option on every criterion. This tool adds up the weighted totals, ranks the options, and shows the working for every number.</p>
+<div class="calc">
+<p><strong>1. Name your options</strong></p>
+<label for="opt0">Option 1</label>
+<input type="text" id="opt0" value="Option A">
+<label for="opt1">Option 2</label>
+<input type="text" id="opt1" value="Option B">
+<label for="opt2">Option 3</label>
+<input type="text" id="opt2" value="Option C">
+<p><strong>2. Name your criteria and set a weight for each (1 to 5)</strong></p>
+<div class="row"><div class="grow"><label for="crit0">Criterion 1</label><input type="text" id="crit0" value="Cost"></div><div class="w"><label for="w0">Weight</label><input type="number" id="w0" value="4" min="1" max="5" step="1" inputmode="numeric"></div></div>
+<div class="row"><div class="grow"><label for="crit1">Criterion 2</label><input type="text" id="crit1" value="Quality"></div><div class="w"><label for="w1">Weight</label><input type="number" id="w1" value="5" min="1" max="5" step="1" inputmode="numeric"></div></div>
+<div class="row"><div class="grow"><label for="crit2">Criterion 3</label><input type="text" id="crit2" value="Time"></div><div class="w"><label for="w2">Weight</label><input type="number" id="w2" value="3" min="1" max="5" step="1" inputmode="numeric"></div></div>
+<div class="row"><div class="grow"><label for="crit3">Criterion 4</label><input type="text" id="crit3" value="Enjoyment"></div><div class="w"><label for="w3">Weight</label><input type="number" id="w3" value="2" min="1" max="5" step="1" inputmode="numeric"></div></div>
+<p><strong>3. Score each option on each criterion (1 to 10)</strong></p>
+<table class="score">
+<thead><tr><th>Criterion</th><th id="optHead0">Option A</th><th id="optHead1">Option B</th><th id="optHead2">Option C</th></tr></thead>
+<tbody>
+<tr><td id="critCell0">Cost</td><td><span class="vh"><label for="s0_0">Score for Option A on Cost</label></span><input type="number" id="s0_0" value="8" min="1" max="10" step="1" inputmode="numeric"></td><td><span class="vh"><label for="s1_0">Score for Option B on Cost</label></span><input type="number" id="s1_0" value="6" min="1" max="10" step="1" inputmode="numeric"></td><td><span class="vh"><label for="s2_0">Score for Option C on Cost</label></span><input type="number" id="s2_0" value="7" min="1" max="10" step="1" inputmode="numeric"></td></tr>
+<tr><td id="critCell1">Quality</td><td><span class="vh"><label for="s0_1">Score for Option A on Quality</label></span><input type="number" id="s0_1" value="6" min="1" max="10" step="1" inputmode="numeric"></td><td><span class="vh"><label for="s1_1">Score for Option B on Quality</label></span><input type="number" id="s1_1" value="8" min="1" max="10" step="1" inputmode="numeric"></td><td><span class="vh"><label for="s2_1">Score for Option C on Quality</label></span><input type="number" id="s2_1" value="7" min="1" max="10" step="1" inputmode="numeric"></td></tr>
+<tr><td id="critCell2">Time</td><td><span class="vh"><label for="s0_2">Score for Option A on Time</label></span><input type="number" id="s0_2" value="7" min="1" max="10" step="1" inputmode="numeric"></td><td><span class="vh"><label for="s1_2">Score for Option B on Time</label></span><input type="number" id="s1_2" value="5" min="1" max="10" step="1" inputmode="numeric"></td><td><span class="vh"><label for="s2_2">Score for Option C on Time</label></span><input type="number" id="s2_2" value="8" min="1" max="10" step="1" inputmode="numeric"></td></tr>
+<tr><td id="critCell3">Enjoyment</td><td><span class="vh"><label for="s0_3">Score for Option A on Enjoyment</label></span><input type="number" id="s0_3" value="9" min="1" max="10" step="1" inputmode="numeric"></td><td><span class="vh"><label for="s1_3">Score for Option B on Enjoyment</label></span><input type="number" id="s1_3" value="6" min="1" max="10" step="1" inputmode="numeric"></td><td><span class="vh"><label for="s2_3">Score for Option C on Enjoyment</label></span><input type="number" id="s2_3" value="5" min="1" max="10" step="1" inputmode="numeric"></td></tr>
+</tbody>
+</table>
+<p class="note">Weights run from 1 (matters least) to 5 (matters most). Scores run from 1 (poor) to 10 (excellent). A weight or score outside its range is adjusted to the nearest allowed value.</p>
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">This tool ranks your options by the numbers you enter — it cannot decide for you. Scores are your own judgement, so a close result means the options are genuinely close on what you measured. If the winner surprises you, check your weights and scores before acting on it.</div>
+<h2>How the maths works</h2>
+<p>Each option gets one weighted total: for every criterion, multiply the weight by the score, then add the four results together. The option with the highest total ranks first.</p>
+<p><strong>Worked example — the starting numbers.</strong> Weights: Cost 4, Quality 5, Time 3, Enjoyment 2.</p>
+<p>Option A: (4×8) + (5×6) + (3×7) + (2×9) = 32 + 30 + 21 + 18 = 101.<br>Option B: (4×6) + (5×8) + (3×5) + (2×6) = 24 + 40 + 15 + 12 = 91.<br>Option C: (4×7) + (5×7) + (3×8) + (2×5) = 28 + 35 + 24 + 10 = 97.</p>
+<p>Ranked: Option A (101), Option C (97), Option B (91). Option A wins because it scores well on the criteria with the highest weights, even though Option B scores best on Quality alone.</p>
+<h2>How to pick good criteria</h2>
+<p>The tool is only as useful as the criteria you feed it. A few rules of thumb:</p>
+<ul>
+<li><strong>Keep it to four or fewer.</strong> More criteria make every option look average and the ranking harder to trust.</li>
+<li><strong>Pick things that actually differ.</strong> If all three options score the same on a criterion, it adds nothing to the ranking — drop it.</li>
+<li><strong>Let weights show what matters most.</strong> If cost matters twice as much as speed, give cost double the weight.</li>
+<li><strong>Score honestly, not hopefully.</strong> A score of 10 should mean genuinely excellent, not "I want this to win".</li>
+<li><strong>Try changing one weight.</strong> If the winner flips when you nudge a weight by one, the decision is genuinely close — and that is useful to know.</li>
+</ul>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How does weighted scoring work?</h3><p>You score each option on each criterion, and each criterion has a weight for how much it matters. The tool multiplies every score by its criterion's weight and adds the results up, so the option with the highest weighted total ranks first. The working is shown for every option, so you can see exactly where each total came from.</p></div>
+<div class="faq"><h3>How do I choose weights?</h3><p>Give a higher weight to the things that matter most to you. A weight of 5 means the criterion counts five times as much as a weight of 1. Start by ranking your criteria in order of importance, then spread the weights out — if everything gets the same weight, the weighting is doing nothing.</p></div>
+<div class="faq"><h3>What if two options tie?</h3><p>The tool says so plainly and lists both options at the same rank. A tie means the options are genuinely close on the criteria you chose. You can break it by adding a criterion that separates them, adjusting a weight, or simply picking the one that feels right.</p></div>
+<div class="faq"><h3>Should I always follow the top result?</h3><p>No. The ranking is only as good as the scores you put in, and scores are your own judgement. Use the result as a clear picture of what your numbers say, then check it against your gut feeling. If the winner surprises you, your weights or scores may not reflect what you really care about.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../rent-vs-buy-calculator/">Rent vs Buy Calculator</a> · <a href="../debt-payoff-calculator/">Debt Payoff Calculator</a> · <a href="../wedding-budget-planner/">Wedding Budget Planner</a> · <a href="../sleep-calculator/">Sleep Calculator</a></p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function el(id){return document.getElementById(id);}
+function clamp(v,lo,hi){return Math.min(hi,Math.max(lo,v));}
+function fmt(n){return String(Math.round(n*100)/100);}
+function nameOr(el,fallback){var v=el.value.trim();return v?v:fallback;}
+function calc(){
+var opts=[el('opt0'),el('opt1'),el('opt2')].map(function(e,i){return nameOr(e,'Option '+(i+1));});
+var crits=[],weights=[],scores=[];
+var err='';
+for(var c=0;c<4;c++){
+crits.push(nameOr(el('crit'+c),'Criterion '+(c+1)));
+var w=el('w'+c).value.trim();
+if(w===''){if(!err)err='Enter a weight from 1 to 5 for every criterion.';}
+else{
+var wn=parseFloat(w);
+if(isNaN(wn)){if(!err)err='Weights must be numbers from 1 to 5.';}
+else{wn=clamp(wn,1,5);el('w'+c).value=fmt(wn);weights.push(wn);}
+}
+}
+for(var o=0;o<3;o++){
+scores.push([]);
+for(var c=0;c<4;c++){
+var sv=el('s'+o+'_'+c).value.trim();
+if(sv===''){if(!err)err='Enter a score from 1 to 10 for every option and criterion.';}
+else{
+var sn=parseFloat(sv);
+if(isNaN(sn)){if(!err)err='Scores must be numbers from 1 to 10.';}
+else{sn=clamp(sn,1,10);el('s'+o+'_'+c).value=fmt(sn);scores[o].push(sn);}
+}
+}
+}
+for(var i=0;i<3;i++){el('optHead'+i).textContent=opts[i];}
+for(var j=0;j<4;j++){el('critCell'+j).textContent=crits[j];}
+var out=el('out'),steps=el('steps');
+if(err){out.textContent=err;steps.textContent='';return;}
+var totals=[];
+for(var o=0;o<3;o++){
+var t=0,parts=[],prods=[];
+for(var c=0;c<4;c++){var p=weights[c]*scores[o][c];t+=p;parts.push('('+fmt(weights[c])+'×'+fmt(scores[o][c])+')');prods.push(fmt(p));}
+totals.push({name:opts[o],total:t,line:opts[o]+': '+parts.join(' + ')+' = '+prods.join(' + ')+' = '+fmt(t)});
+}
+var sorted=totals.slice().sort(function(a,b){return b.total-a.total;});
+var groups=[],cur=[sorted[0]];
+for(var k=1;k<sorted.length;k++){if(sorted[k].total===cur[0].total){cur.push(sorted[k]);}else{groups.push(cur);cur=[sorted[k]];}}
+groups.push(cur);
+var rankLines=[],rank=1;
+groups.forEach(function(g){
+rankLines.push(rank+'. '+g.map(function(x){return x.name+' ('+fmt(x.total)+')';}).join(' and ')+(g.length>1?' — tie':''));
+rank+=g.length;
+});
+var top=groups[0];
+if(top.length>1){out.textContent='It is a tie between '+top.map(function(x){return x.name;}).join(' and ')+' ('+fmt(top[0].total)+' each).';}
+else{out.textContent='Top choice: '+top[0].name+' ('+fmt(top[0].total)+').';}
+steps.textContent=totals.map(function(x){return x.line;}).join('\n')+'\nRanking: '+rankLines.join(', ');
+}
+var ids=['opt0','opt1','opt2','crit0','crit1','crit2','crit3','w0','w1','w2','w3'];
+for(var o=0;o<3;o++){for(var c=0;c<4;c++){ids.push('s'+o+'_'+c);}}
+ids.forEach(function(id){
+el(id).addEventListener('input',calc);
+el(id).addEventListener('change',calc);
+});
+calc();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

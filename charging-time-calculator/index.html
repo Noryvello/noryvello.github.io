@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Charging Time Calculator | Noryvello</title>
+<meta name="description" content="Estimate how long a battery takes to charge. Enter the capacity in mAh or Wh, the charger power in watts and the efficiency to get the charging time in hours and minutes.">
+<link rel="canonical" href="https://noryvello.github.io/charging-time-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Charging Time Calculator">
+<meta property="og:description" content="Work out how long a battery takes to charge from its capacity and charger power.">
+<meta property="og:url" content="https://noryvello.github.io/charging-time-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why do I need the voltage for mAh?","acceptedAnswer":{"@type":"Answer","text":"mAh measures charge, not energy, so it cannot be compared with watts on its own. To get watt-hours you multiply by the voltage. This calculator uses 3.7 V, the nominal voltage of a typical lithium-ion cell, so a 5000 mAh battery holds 5000 x 3.7 / 1000 = 18.5 Wh."}},{"@type":"Question","name":"What is the efficiency factor?","acceptedAnswer":{"@type":"Answer","text":"Not all the power from the charger ends up in the battery. Some is lost as heat in the charger, the cable and the battery itself. An efficiency of 85% means 85% of the charger's power actually charges the battery, so the time is divided by 0.85. You can change the factor to match your own setup."}},{"@type":"Question","name":"Why does charging slow near full?","acceptedAnswer":{"@type":"Answer","text":"Chargers slow down as the battery fills up to protect it from heat and overcharging. Most of the charge goes in quickly, and the last part takes the longest. This calculator gives a steady average, so a real full charge often takes a little longer than the estimate."}},{"@type":"Question","name":"Can I use this for any battery?","acceptedAnswer":{"@type":"Answer","text":"Yes, for any rechargeable battery if you know its capacity and the charger power: phones, tablets, laptops, power banks and more. The 3.7 V conversion applies to lithium-ion cells. If your battery's capacity is already given in Wh, choose Wh and no conversion is needed."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Charging Time Calculator</h1>
+<p class="answer">Enter your battery's capacity and your charger's power, and this calculator estimates how long a full charge takes. It converts mAh to watt-hours, applies an efficiency factor you can change, and shows the result in hours and minutes with the working shown.</p>
+<div class="calc">
+<label for="capacity">Battery capacity</label>
+<input id="capacity" type="number" step="any" inputmode="decimal" value="5000">
+<label for="unit">Capacity unit</label>
+<select id="unit">
+<option value="mah" selected>mAh</option>
+<option value="wh">Wh</option>
+</select>
+<label for="watts">Charger power (watts)</label>
+<input id="watts" type="number" step="any" inputmode="decimal" value="25">
+<label for="efficiency">Charging efficiency (%)</label>
+<input id="efficiency" type="number" step="any" inputmode="decimal" min="1" max="100" value="85">
+<p class="note">mAh is converted to watt-hours using 3.7 V, the nominal voltage of a typical lithium-ion cell. Efficiency is the share of the charger's power that actually reaches the battery; the rest is lost as heat.</p>
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">This is an estimate. Real charging slows near full and varies with temperature, cable, charger and battery age, and fast charging may not sustain full power for the whole charge. The result is a planning figure, not a promise.</div>
+<h2>How the maths works</h2>
+<p>Charging time comes from two numbers: how much energy the battery holds, and how fast the charger can deliver it.</p>
+<p><code>time (hours) = watt-hours ÷ charger watts ÷ efficiency</code></p>
+<p>If the capacity is given in mAh, it is converted to watt-hours first, using 3.7 V as the nominal voltage of a typical lithium-ion cell:</p>
+<p><code>watt-hours = mAh × 3.7 ÷ 1000</code></p>
+<p>So a 5000 mAh battery holds 5000 × 3.7 ÷ 1000 = 18.50 Wh. The efficiency factor accounts for the power lost as heat: at 85% efficiency only 85% of the charger's power charges the battery, so the time is divided by 0.85. The result is converted to hours and minutes, with minutes rounded to the nearest whole minute.</p>
+<h2>Worked examples</h2>
+<p><strong>Example 1 — 5000 mAh battery, 25 W charger, 85% efficiency.</strong> Energy: 5000 × 3.7 ÷ 1000 = 18.50 Wh. Time: 18.50 ÷ 25 ÷ 0.85 = 0.871 hours = 52 minutes.</p>
+<p><strong>Example 2 — 100 Wh battery, 65 W charger, 85% efficiency.</strong> Time: 100 ÷ 65 ÷ 0.85 = 1.810 hours = 1 hour 49 minutes.</p>
+<p><strong>Example 3 — 3000 mAh battery, 10 W charger, 85% efficiency.</strong> Energy: 3000 × 3.7 ÷ 1000 = 11.10 Wh. Time: 11.10 ÷ 10 ÷ 0.85 = 1.306 hours = 1 hour 18 minutes.</p>
+<h2>Why charging slows near full</h2>
+<ul>
+<li><strong>The charger tapers the power.</strong> Charging is fastest while the battery is low. As it fills up, the charger deliberately reduces the power to protect the battery from heat and overcharging, so the last part takes the longest.</li>
+<li><strong>Heat slows things down.</strong> A warm battery or a warm charger charges more slowly. Charging in a hot place, or using the device heavily while it charges, can make a full charge take noticeably longer.</li>
+<li><strong>Fast charging does not stay fast.</strong> A charger rated at 65 W rarely delivers 65 W for the whole charge. It may hold full power only for the first part, then taper off, so the estimate assumes a steady average.</li>
+<li><strong>Batteries age.</strong> An older battery holds less charge than its label says, which can make charging seem faster, while a worn cable or charger can make it slower. If your real times are very different from the estimate, try a different cable or charger.</li>
+</ul>
+<p>Use the estimate as a starting point. If you need the device by a certain time, allow extra margin — the last 10% of a charge often takes longer than the maths suggests.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Why do I need the voltage for mAh?</h3><p>mAh measures charge, not energy, so it cannot be compared with watts on its own. To get watt-hours you multiply by the voltage. This calculator uses 3.7 V, the nominal voltage of a typical lithium-ion cell, so a 5000 mAh battery holds 5000 x 3.7 / 1000 = 18.5 Wh.</p></div>
+<div class="faq"><h3>What is the efficiency factor?</h3><p>Not all the power from the charger ends up in the battery. Some is lost as heat in the charger, the cable and the battery itself. An efficiency of 85% means 85% of the charger's power actually charges the battery, so the time is divided by 0.85. You can change the factor to match your own setup.</p></div>
+<div class="faq"><h3>Why does charging slow near full?</h3><p>Chargers slow down as the battery fills up to protect it from heat and overcharging. Most of the charge goes in quickly, and the last part takes the longest. This calculator gives a steady average, so a real full charge often takes a little longer than the estimate.</p></div>
+<div class="faq"><h3>Can I use this for any battery?</h3><p>Yes, for any rechargeable battery if you know its capacity and the charger power: phones, tablets, laptops, power banks and more. The 3.7 V conversion applies to lithium-ion cells. If your battery's capacity is already given in Wh, choose Wh and no conversion is needed.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../running-pace-calculator/">Running Pace Calculator</a> · <a href="../sleep-calculator/">Sleep Calculator</a> · <a href="../paint-calculator/">Paint Calculator</a> · <a href="../debt-payoff-calculator/">Debt Payoff Calculator</a></p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n){return (Math.round((n+1e-9)*100)/100).toFixed(2);}
+function fmt3(n){return (Math.round((n+1e-9)*1000)/1000).toFixed(3);}
+function plural(n,word){return n+' '+word+(n===1?'':'s');}
+function calc(){
+var out=document.getElementById('out');
+var steps=document.getElementById('steps');
+var capRaw=String(document.getElementById('capacity').value).trim();
+var wattsRaw=String(document.getElementById('watts').value).trim();
+var effRaw=String(document.getElementById('efficiency').value).trim();
+var unit=document.getElementById('unit').value;
+var cap=parseFloat(capRaw);
+if(capRaw===''||isNaN(cap)||cap<=0){
+out.textContent='Enter a battery capacity above 0 to see the charging time.';
+steps.textContent='';
+return;
+}
+var watts=parseFloat(wattsRaw);
+if(wattsRaw===''||isNaN(watts)||watts<=0){
+out.textContent='Enter a charger power above 0 watts to see the charging time.';
+steps.textContent='';
+return;
+}
+var eff=parseFloat(effRaw);
+if(effRaw===''||isNaN(eff)||eff<=0){
+out.textContent='Enter an efficiency between 1 and 100 percent.';
+steps.textContent='';
+return;
+}
+if(eff>100){
+eff=100;
+document.getElementById('efficiency').value='100';
+}
+if(eff<1){
+eff=1;
+document.getElementById('efficiency').value='1';
+}
+var wh,conv='';
+if(unit==='mah'){
+wh=cap*3.7/1000;
+conv='Energy: '+cap+' mAh × 3.7 V ÷ 1000 = '+fmt(wh)+' Wh\n';
+}else{
+wh=cap;
+}
+var hours=wh/watts/(eff/100);
+var totalMin=Math.round(hours*60);
+var h=Math.floor(totalMin/60);
+var m=totalMin%60;
+var timeText=h>0?plural(h,'hour')+' '+plural(m,'minute'):plural(m,'minute');
+out.textContent='Estimated charging time: '+timeText+'.';
+steps.textContent=conv+'Time: '+fmt(wh)+' Wh ÷ '+watts+' W ÷ '+fmt(eff/100)+' = '+fmt3(hours)+' hours\nRounded to the nearest minute: '+timeText+'.';
+}
+document.getElementById('capacity').addEventListener('input',calc);
+document.getElementById('capacity').addEventListener('change',calc);
+document.getElementById('unit').addEventListener('input',calc);
+document.getElementById('unit').addEventListener('change',calc);
+document.getElementById('watts').addEventListener('input',calc);
+document.getElementById('watts').addEventListener('change',calc);
+document.getElementById('efficiency').addEventListener('input',calc);
+document.getElementById('efficiency').addEventListener('change',calc);
+calc();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guitar Chord Finder | Noryvello</title>
+<meta name="description" content="Find the fingering for any guitar chord. Pick a root and a type — major, minor or 7th — and see a clear diagram with finger numbers and plain instructions.">
+<link rel="canonical" href="https://noryvello.github.io/guitar-chord-finder/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Guitar Chord Finder">
+<meta property="og:description" content="Find the fingering for any guitar chord, with a clear diagram and finger numbers.">
+<meta property="og:url" content="https://noryvello.github.io/guitar-chord-finder/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.diagram{max-width:320px;margin:16px auto 6px}
+.drow{display:grid;grid-template-columns:26px repeat(6,1fr)}
+.dnum{font-size:13px;color:#64748b;text-align:right;padding-right:6px;align-self:center}
+.dmark{text-align:center;font-weight:700;font-size:15px;height:20px;line-height:20px}
+.dcell{height:44px;border-left:2px solid #94a3b8;border-bottom:2px solid #94a3b8;display:flex;align-items:center;justify-content:center}
+.dcell:last-child{border-right:2px solid #94a3b8}
+.drow.nut .dcell{border-top:4px solid #334155}
+.drow.top .dcell{border-top:2px solid #94a3b8}
+.dot{width:26px;height:26px;border-radius:50%;background:#4338ca;color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.bar{height:26px;background:#4338ca;color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.bar-first{width:50%;margin-left:50%;border-top-left-radius:13px;border-bottom-left-radius:13px}
+.bar-mid{width:100%}
+.bar-last{width:50%;margin-right:50%;border-top-right-radius:13px;border-bottom-right-radius:13px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I read the diagram?","acceptedAnswer":{"@type":"Answer","text":"The diagram shows the guitar neck as if the guitar is standing in front of you. The six vertical lines are the strings, with the thick low E string on the left and the thin high e string on the right. The horizontal lines are the frets, numbered on the left. A dot shows where to press a string, and the number on the dot tells you which finger to use."}},{"@type":"Question","name":"What do the numbers on the dots mean?","acceptedAnswer":{"@type":"Answer","text":"They are finger numbers: 1 is the index finger, 2 the middle finger, 3 the ring finger and 4 the pinky. A solid bar across several strings means one finger presses all of them at once — that is a barre, and the number on the bar tells you which finger bars."}},{"@type":"Question","name":"Why do some chords have an x?","acceptedAnswer":{"@type":"Answer","text":"An x above a string means do not play it. That string would add a note that does not belong in the chord, so mute it with a spare finger or leave it out of your strum. An o above a string means the opposite: play that string open, without pressing it."}},{"@type":"Question","name":"Are these the only ways to play the chord?","acceptedAnswer":{"@type":"Answer","text":"No. Every chord can be played in many positions all over the neck. The fingerings here are the standard beginner shapes — the ones most players learn first. Once they feel comfortable, you can explore other voicings further up the neck."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Guitar Chord Finder</h1>
+<p class="answer">Pick a root note and a chord type — major, minor or 7th — and this finder draws the fingering diagram for that chord, with finger numbers on every dot and plain instructions for where each finger goes. All 36 chords use standard beginner fingerings, and barre chords are marked clearly.</p>
+<div class="calc">
+<label for="root">Root note</label>
+<select id="root">
+<option value="C" selected>C</option>
+<option value="C#">C#</option>
+<option value="D">D</option>
+<option value="Eb">Eb</option>
+<option value="E">E</option>
+<option value="F">F</option>
+<option value="F#">F#</option>
+<option value="G">G</option>
+<option value="Ab">Ab</option>
+<option value="A">A</option>
+<option value="Bb">Bb</option>
+<option value="B">B</option>
+</select>
+<label for="type">Chord type</label>
+<select id="type">
+<option value="major" selected>Major</option>
+<option value="minor">Minor</option>
+<option value="7">7th (dominant 7th)</option>
+</select>
+<p class="out" id="chordName"></p>
+<p class="note" id="chordKind"></p>
+<div class="diagram" id="diagram"></div>
+<p class="note">The 6th string (low E) is on the left, the 1st string (high E) on the right. Numbers on the left are fret numbers.</p>
+<p class="steps" id="fingers"></p>
+</div>
+<div class="warn">These are standard beginner fingerings — the common starting shapes for each chord. Every chord can also be played in other positions up the neck. If a chord sounds muted, check that each finger is pressing close to its fret and not touching a neighbouring string. Barre chords take time: be patient and keep the barring finger firm and straight.</div>
+<h2>How to read the diagram</h2>
+<ul>
+<li><strong>The strings.</strong> The six vertical lines are the strings, as if the guitar is standing in front of you. The thick low E string (6th string) is on the left, and the thin high e string (1st string) is on the right.</li>
+<li><strong>The frets.</strong> The horizontal lines are the frets, numbered on the left. The thick line at the top of an open chord is the nut, the bar at the top of the neck.</li>
+<li><strong>The dots.</strong> A dot shows where to press a string down. The number on the dot is the finger: 1 is the index finger, 2 the middle finger, 3 the ring finger and 4 the pinky.</li>
+<li><strong>Open and muted strings.</strong> An "o" above a string means play it open, without pressing it. An "x" means do not play that string at all.</li>
+<li><strong>The bars.</strong> A solid bar across several strings means one finger presses all of them at once — a barre. The number on the bar tells you which finger bars, usually the index finger (1).</li>
+</ul>
+<h2>Open chords and barre chords</h2>
+<p>Open chords sit near the nut and use open strings. Most beginners start with C, G, D, A, E, A minor, E minor and D minor — all open chords on this page. Barre chords press several strings with one finger, usually the index, laid flat across the neck. The sharp and flat chords (F#, Bb, Eb and the rest) are barre chords here, and so is F. Every chord on this page is labelled open or barre under its name, so you know what to expect before you try it.</p>
+<h2>Tips for clean chords</h2>
+<ul>
+<li><strong>Press close to the fret.</strong> Put each fingertip just behind the fret wire, not in the middle of the fret. You need less pressure there, and the note rings more clearly.</li>
+<li><strong>Arch your fingers.</strong> Curl your fingers so the tips press the strings and the rest of the finger stays clear of the neighbouring strings.</li>
+<li><strong>Strum slowly and listen.</strong> Pick each string one at a time. If one buzzes or sounds dead, look at the finger nearest it and adjust.</li>
+<li><strong>Keep your thumb behind the neck.</strong> It should sit roughly opposite your middle finger, giving your fingers something to press against.</li>
+<li><strong>Change chords slowly.</strong> Practice moving between two chords at a slow, steady pace before you try to speed up. Clean changes matter more than fast ones.</li>
+</ul>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How do I read the diagram?</h3><p>The diagram shows the guitar neck as if the guitar is standing in front of you. The six vertical lines are the strings, with the thick low E string on the left and the thin high e string on the right. The horizontal lines are the frets, numbered on the left. A dot shows where to press a string, and the number on the dot tells you which finger to use.</p></div>
+<div class="faq"><h3>What do the numbers on the dots mean?</h3><p>They are finger numbers: 1 is the index finger, 2 the middle finger, 3 the ring finger and 4 the pinky. A solid bar across several strings means one finger presses all of them at once — that is a barre, and the number on the bar tells you which finger bars.</p></div>
+<div class="faq"><h3>Why do some chords have an x?</h3><p>An x above a string means do not play it. That string would add a note that does not belong in the chord, so mute it with a spare finger or leave it out of your strum. An o above a string means the opposite: play that string open, without pressing it.</p></div>
+<div class="faq"><h3>Are these the only ways to play the chord?</h3><p>No. Every chord can be played in many positions all over the neck. The fingerings here are the standard beginner shapes — the ones most players learn first. Once they feel comfortable, you can explore other voicings further up the neck.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../online-piano/">Free Online Piano</a> · <a href="../running-pace-calculator/">Running Pace Calculator</a> · <a href="../sleep-calculator/">Sleep Calculator</a> · <a href="../secret-santa-generator/">Secret Santa Generator</a></p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+// Chord data: strings listed low E to high e.
+// frets: -1 = muted (x), 0 = open (o), n = fret number.
+// fingers: 0 = no finger (open or muted), 1 = index, 2 = middle, 3 = ring, 4 = pinky.
+// start: first fret shown in the diagram. bars: [{fret, from, to, finger}] string indexes 0 = low E.
+var CHORDS = {
+"C": {
+  major: {frets:[-1,3,2,0,1,0], fingers:[0,3,2,0,1,0], start:1, bars:[]},
+  minor: {frets:[-1,3,5,5,4,3], fingers:[0,1,3,4,2,1], start:3, bars:[{fret:3,from:1,to:5,finger:1}]},
+  "7": {frets:[-1,3,2,3,1,0], fingers:[0,3,2,4,1,0], start:1, bars:[]}
+},
+"C#": {
+  major: {frets:[-1,4,6,6,6,4], fingers:[0,1,3,3,3,1], start:4, bars:[{fret:4,from:1,to:5,finger:1},{fret:6,from:2,to:4,finger:3}]},
+  minor: {frets:[-1,4,6,6,5,4], fingers:[0,1,3,4,2,1], start:4, bars:[{fret:4,from:1,to:5,finger:1}]},
+  "7": {frets:[-1,4,6,4,6,4], fingers:[0,1,3,1,4,1], start:4, bars:[{fret:4,from:1,to:5,finger:1}]}
+},
+"D": {
+  major: {frets:[-1,-1,0,2,3,2], fingers:[0,0,0,1,3,2], start:1, bars:[]},
+  minor: {frets:[-1,-1,0,2,3,1], fingers:[0,0,0,2,3,1], start:1, bars:[]},
+  "7": {frets:[-1,-1,0,2,1,2], fingers:[0,0,0,2,1,3], start:1, bars:[]}
+},
+"Eb": {
+  major: {frets:[-1,6,8,8,8,6], fingers:[0,1,3,3,3,1], start:6, bars:[{fret:6,from:1,to:5,finger:1},{fret:8,from:2,to:4,finger:3}]},
+  minor: {frets:[-1,6,8,8,7,6], fingers:[0,1,3,4,2,1], start:6, bars:[{fret:6,from:1,to:5,finger:1}]},
+  "7": {frets:[-1,6,8,6,8,6], fingers:[0,1,3,1,4,1], start:6, bars:[{fret:6,from:1,to:5,finger:1}]}
+},
+"E": {
+  major: {frets:[0,2,2,1,0,0], fingers:[0,2,3,1,0,0], start:1, bars:[]},
+  minor: {frets:[0,2,2,0,0,0], fingers:[0,2,3,0,0,0], start:1, bars:[]},
+  "7": {frets:[0,2,0,1,0,0], fingers:[0,2,0,1,0,0], start:1, bars:[]}
+},
+"F": {
+  major: {frets:[1,3,3,2,1,1], fingers:[1,3,4,2,1,1], start:1, bars:[{fret:1,from:0,to:5,finger:1}]},
+  minor: {frets:[1,3,3,1,1,1], fingers:[1,3,4,1,1,1], start:1, bars:[{fret:1,from:0,to:5,finger:1}]},
+  "7": {frets:[1,3,1,2,1,1], fingers:[1,3,1,2,1,1], start:1, bars:[{fret:1,from:0,to:5,finger:1}]}
+},
+"F#": {
+  major: {frets:[2,4,4,3,2,2], fingers:[1,3,4,2,1,1], start:2, bars:[{fret:2,from:0,to:5,finger:1}]},
+  minor: {frets:[2,4,4,2,2,2], fingers:[1,3,4,1,1,1], start:2, bars:[{fret:2,from:0,to:5,finger:1}]},
+  "7": {frets:[2,4,2,3,2,2], fingers:[1,3,1,2,1,1], start:2, bars:[{fret:2,from:0,to:5,finger:1}]}
+},
+"G": {
+  major: {frets:[3,2,0,0,0,3], fingers:[2,1,0,0,0,3], start:1, bars:[]},
+  minor: {frets:[3,5,5,3,3,3], fingers:[1,3,4,1,1,1], start:3, bars:[{fret:3,from:0,to:5,finger:1}]},
+  "7": {frets:[3,2,0,0,0,1], fingers:[2,1,0,0,0,3], start:1, bars:[]}
+},
+"Ab": {
+  major: {frets:[4,6,6,5,4,4], fingers:[1,3,4,2,1,1], start:4, bars:[{fret:4,from:0,to:5,finger:1}]},
+  minor: {frets:[4,6,6,4,4,4], fingers:[1,3,4,1,1,1], start:4, bars:[{fret:4,from:0,to:5,finger:1}]},
+  "7": {frets:[4,6,4,5,4,4], fingers:[1,3,1,2,1,1], start:4, bars:[{fret:4,from:0,to:5,finger:1}]}
+},
+"A": {
+  major: {frets:[-1,0,2,2,2,0], fingers:[0,0,1,2,3,0], start:1, bars:[]},
+  minor: {frets:[-1,0,2,2,1,0], fingers:[0,0,2,3,1,0], start:1, bars:[]},
+  "7": {frets:[-1,0,2,0,2,0], fingers:[0,0,2,0,3,0], start:1, bars:[]}
+},
+"Bb": {
+  major: {frets:[-1,1,3,3,3,1], fingers:[0,1,3,3,3,1], start:1, bars:[{fret:1,from:1,to:5,finger:1},{fret:3,from:2,to:4,finger:3}]},
+  minor: {frets:[-1,1,3,3,2,1], fingers:[0,1,3,4,2,1], start:1, bars:[{fret:1,from:1,to:5,finger:1}]},
+  "7": {frets:[-1,1,3,1,3,1], fingers:[0,1,3,1,4,1], start:1, bars:[{fret:1,from:1,to:5,finger:1}]}
+},
+"B": {
+  major: {frets:[-1,2,4,4,4,2], fingers:[0,1,3,3,3,1], start:2, bars:[{fret:2,from:1,to:5,finger:1},{fret:4,from:2,to:4,finger:3}]},
+  minor: {frets:[-1,2,4,4,3,2], fingers:[0,1,3,4,2,1], start:2, bars:[{fret:2,from:1,to:5,finger:1}]},
+  "7": {frets:[-1,2,1,2,0,2], fingers:[0,2,1,3,0,4], start:1, bars:[]}
+}
+};
+var FINGERS=['','index','middle','ring','pinky'];
+var STRINGS=['6th string (low E)','5th string (A)','4th string (D)','3rd string (G)','2nd string (B)','1st string (high E)'];
+var SHORT=['6th','5th','4th','3rd','2nd','1st'];
+function ord(n){if(n===1)return '1st';if(n===2)return '2nd';if(n===3)return '3rd';return n+'th';}
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
+function joinList(a){if(a.length===1)return a[0];return a.slice(0,-1).join(', ')+' and '+a[a.length-1];}
+function barAt(c,fret,i){
+  for(var k=0;k<c.bars.length;k++){
+    var b=c.bars[k];
+    if(b.fret===fret&&i>=b.from&&i<=b.to)return b;
+  }
+  return null;
+}
+function chordName(root,type){
+  if(type==='7')return root+'7';
+  return root+' '+type;
+}
+function fingerText(c){
+  var sentences=[];
+  for(var k=0;k<c.bars.length;k++){
+    var b=c.bars[k];
+    var names=[];
+    for(var i=b.from;i<=b.to;i++)names.push(SHORT[i]);
+    sentences.push(cap(FINGERS[b.finger])+' finger ('+b.finger+') bars the '+ord(b.fret)+' fret across the '+joinList(names)+' strings');
+  }
+  var dots=[];
+  for(var i=0;i<6;i++){
+    if(c.frets[i]>0&&!barAt(c,c.frets[i],i)){
+      dots.push(cap(FINGERS[c.fingers[i]])+' finger ('+c.fingers[i]+'), '+ord(c.frets[i])+' fret, '+STRINGS[i]);
+    }
+  }
+  if(dots.length)sentences.push(dots.join('; '));
+  var open=[],muted=[];
+  for(var i=0;i<6;i++){
+    if(c.frets[i]===0)open.push(STRINGS[i]);
+    if(c.frets[i]===-1)muted.push(STRINGS[i]);
+  }
+  if(open.length)sentences.push('Open strings: '+joinList(open));
+  if(muted.length)sentences.push('Muted strings (do not play): '+joinList(muted));
+  return sentences.join('. ')+'.';
+}
+function render(){
+  var root=document.getElementById('root').value;
+  var type=document.getElementById('type').value;
+  var c=CHORDS[root][type];
+  document.getElementById('chordName').textContent=chordName(root,type);
+  document.getElementById('chordKind').textContent=c.bars.length?'Barre chord — standard beginner barre fingering.':'Open chord — standard beginner open fingering.';
+  var html='<div class="drow dmarks"><span class="dnum"></span>';
+  for(var i=0;i<6;i++){
+    var mk=c.frets[i]===-1?'x':(c.frets[i]===0?'o':'');
+    html+='<span class="dmark">'+mk+'</span>';
+  }
+  html+='</div>';
+  for(var r=0;r<4;r++){
+    var fret=c.start+r;
+    var cls='drow';
+    if(r===0)cls+=c.start===1?' nut':' top';
+    html+='<div class="'+cls+'"><span class="dnum">'+fret+'</span>';
+    for(var i=0;i<6;i++){
+      var cell='';
+      var bar=barAt(c,fret,i);
+      if(bar&&bar.from===bar.to){
+        cell='<span class="dot" data-fret="'+fret+'" data-string="'+i+'" data-finger="'+bar.finger+'">'+bar.finger+'</span>';
+      }else if(bar){
+        var pos=i===bar.from?'bar-first':(i===bar.to?'bar-last':'bar-mid');
+        var num=i===bar.from?bar.finger:'';
+        cell='<span class="bar '+pos+'" data-fret="'+fret+'" data-string="'+i+'" data-finger="'+bar.finger+'">'+num+'</span>';
+      }else if(c.frets[i]===fret){
+        cell='<span class="dot" data-fret="'+fret+'" data-string="'+i+'" data-finger="'+c.fingers[i]+'">'+c.fingers[i]+'</span>';
+      }
+      html+='<span class="dcell">'+cell+'</span>';
+    }
+    html+='</div>';
+  }
+  document.getElementById('diagram').innerHTML=html;
+  document.getElementById('fingers').textContent=fingerText(c);
+}
+document.getElementById('root').addEventListener('input',render);
+document.getElementById('root').addEventListener('change',render);
+document.getElementById('type').addEventListener('input',render);
+document.getElementById('type').addEventListener('change',render);
+render();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

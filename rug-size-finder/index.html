@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rug Size Finder | Noryvello</title>
+<meta name="description" content="Find the right rug size for your room. Enter the room size and how your furniture sits, and get a suggested rug size with the working shown.">
+<link rel="canonical" href="https://noryvello.github.io/rug-size-finder/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rug Size Finder">
+<meta property="og:description" content="Find the right rug size for any room, with the working shown.">
+<meta property="og:url" content="https://noryvello.github.io/rug-size-finder/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much bare floor should show around a rug?","acceptedAnswer":{"@type":"Answer","text":"It depends on the layout. This finder leaves the rug 20 to 60 cm smaller than the room in each direction, so a strip of bare floor shows around it. The floating layout leaves the most bare floor, and the all-legs layout leaves the least."}},{"@type":"Question","name":"What does front legs only mean?","acceptedAnswer":{"@type":"Answer","text":"It means the front legs of the sofa and chairs sit on the rug, and the back legs sit on the bare floor. It is the most common living-room layout, and it makes the seating area feel connected without needing a rug as big as the room."}},{"@type":"Question","name":"What if my room is not a rectangle?","acceptedAnswer":{"@type":"Answer","text":"Measure the longest length and the widest width of the area where the rug will sit, and use those numbers. For L-shaped rooms or rooms with alcoves, measure the main seating area only, not the whole room."}},{"@type":"Question","name":"What if shops do not sell the exact size?","acceptedAnswer":{"@type":"Answer","text":"Pick the nearest standard size, and go slightly bigger rather than smaller when you are between sizes. A rug that is a little too small looks lost in the room, while one that is slightly bigger still looks right."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Rug Size Finder</h1>
+<p class="answer">A rug that is too small makes a room look unfinished, and one that is too big crowds it. Enter your room size and how your furniture sits, and this finder suggests a rug size with the working shown.</p>
+<div class="calc">
+<label for="roomLength">Room length (metres)</label>
+<input type="number" id="roomLength" step="any" min="0" inputmode="decimal" value="5">
+<label for="roomWidth">Room width (metres)</label>
+<input type="number" id="roomWidth" step="any" min="0" inputmode="decimal" value="4">
+<label for="layout">Furniture layout</label>
+<select id="layout">
+<option value="front" selected>Front legs only — front legs of the sofa and chairs sit on the rug</option>
+<option value="all">All legs — all furniture legs sit on the rug</option>
+<option value="floating">Floating — the rug sits in the middle with no furniture on it</option>
+</select>
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">This is general guidance — personal taste matters, and odd-shaped rooms need measuring by hand. The sizes below are a starting point, not a rule.</div>
+<h2>How the size is worked out</h2>
+<p>The rug is always smaller than the room, so a strip of bare floor shows around it. How much smaller depends on the layout:</p>
+<ul>
+<li><strong>Front legs only:</strong> the rug is 30 cm shorter than the room in each direction — the front legs of the sofa and chairs sit on the rug.</li>
+<li><strong>All legs:</strong> the rug is 20 cm shorter than the room in each direction — all the furniture legs sit on the rug.</li>
+<li><strong>Floating:</strong> the rug is 60 cm shorter than the room in each direction — the rug sits in the middle with no furniture on it.</li>
+</ul>
+<p>Each side of the rug is rounded to the nearest 10 cm.</p>
+<h2>Worked examples</h2>
+<ul>
+<li><strong>Example 1:</strong> a 5 × 4 m room, front legs only — 5 m − 0.30 m = 4.70 m and 4 m − 0.30 m = 3.70 m, so the suggested rug is 4.70 m × 3.70 m.</li>
+<li><strong>Example 2:</strong> a 6 × 5 m room, all legs — 6 m − 0.20 m = 5.80 m and 5 m − 0.20 m = 4.80 m, so the suggested rug is 5.80 m × 4.80 m.</li>
+<li><strong>Example 3:</strong> a 4 × 3 m room, floating — 4 m − 0.60 m = 3.40 m and 3 m − 0.60 m = 2.40 m, so the suggested rug is 3.40 m × 2.40 m.</li>
+</ul>
+<h2>Before you buy</h2>
+<ul>
+<li><strong>Measure your furniture, not just the room.</strong> The rug has to fit under the legs you want on it, so check the distance between the sofa and the chairs as well as the room size.</li>
+<li><strong>Tape the outline on the floor.</strong> Mark the suggested size with masking tape and live with it for a day. It is much easier to move tape than to return a rug.</li>
+<li><strong>Go slightly bigger between sizes.</strong> If the suggested size falls between two standard sizes, the bigger one usually looks better.</li>
+<li><strong>Leave room for doors.</strong> Check that doors can open over the rug, and that the rug does not block a walkway.</li>
+</ul>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How much bare floor should show around a rug?</h3><p>It depends on the layout. This finder leaves the rug 20 to 60 cm smaller than the room in each direction, so a strip of bare floor shows around it. The floating layout leaves the most bare floor, and the all-legs layout leaves the least.</p></div>
+<div class="faq"><h3>What does front legs only mean?</h3><p>It means the front legs of the sofa and chairs sit on the rug, and the back legs sit on the bare floor. It is the most common living-room layout, and it makes the seating area feel connected without needing a rug as big as the room.</p></div>
+<div class="faq"><h3>What if my room is not a rectangle?</h3><p>Measure the longest length and the widest width of the area where the rug will sit, and use those numbers. For L-shaped rooms or rooms with alcoves, measure the main seating area only, not the whole room.</p></div>
+<div class="faq"><h3>What if shops do not sell the exact size?</h3><p>Pick the nearest standard size, and go slightly bigger rather than smaller when you are between sizes. A rug that is a little too small looks lost in the room, while one that is slightly bigger still looks right.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../paint-calculator/">Paint Calculator</a> · <a href="../rent-vs-buy-calculator/">Rent vs Buy Calculator</a> · <a href="../sleep-calculator/">Sleep Calculator</a> · <a href="../wedding-budget-planner/">Wedding Budget Planner</a></p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n){return (Math.round((n+1e-9)*100)/100).toFixed(2);}
+function disp(n){return String(Math.round((n+1e-9)*100)/100);}
+var BORDERS={front:{cm:30,name:'front legs only',label:'front legs only — the rug is 30 cm shorter than the room in each direction'},all:{cm:20,name:'all legs',label:'all legs — the rug is 20 cm shorter than the room in each direction'},floating:{cm:60,name:'floating',label:'floating — the rug is 60 cm shorter than the room in each direction'}};
+function calc(){
+var out=document.getElementById('out');
+var steps=document.getElementById('steps');
+var lRaw=String(document.getElementById('roomLength').value).trim();
+var wRaw=String(document.getElementById('roomWidth').value).trim();
+var l=parseFloat(lRaw);
+if(lRaw===''||isNaN(l)||l<=0){
+out.textContent='Enter a room length above 0 metres to see the suggested rug size.';
+steps.textContent='';
+return;
+}
+var w=parseFloat(wRaw);
+if(wRaw===''||isNaN(w)||w<=0){
+out.textContent='Enter a room width above 0 metres to see the suggested rug size.';
+steps.textContent='';
+return;
+}
+var layout=document.getElementById('layout').value;
+var b=BORDERS[layout];
+var lenCm=Math.round(l*100);
+var widCm=Math.round(w*100);
+var rugLenCm=Math.round((lenCm-b.cm)/10)*10;
+var rugWidCm=Math.round((widCm-b.cm)/10)*10;
+if(rugLenCm<=0||rugWidCm<=0){
+out.textContent='This room is too small for the '+b.name+' layout. Try a different layout.';
+steps.textContent='';
+return;
+}
+var unroundedLen=(lenCm-b.cm)/100;
+var unroundedWid=(widCm-b.cm)/100;
+var rugLen=rugLenCm/100;
+var rugWid=rugWidCm/100;
+out.textContent='Suggested rug size: '+fmt(rugLen)+' m × '+fmt(rugWid)+' m.';
+var lines=[];
+lines.push('Room: '+disp(l)+' m × '+disp(w)+' m');
+lines.push('Layout: '+b.label);
+lines.push('Rug length: '+disp(l)+' m − '+fmt(b.cm/100)+' m = '+fmt(unroundedLen)+' m');
+lines.push('Rug width: '+disp(w)+' m − '+fmt(b.cm/100)+' m = '+fmt(unroundedWid)+' m');
+if(rugLen!==unroundedLen||rugWid!==unroundedWid){
+lines.push('Rounded to the nearest 10 cm: '+fmt(rugLen)+' m × '+fmt(rugWid)+' m');
+}
+lines.push('Suggested rug size: '+fmt(rugLen)+' m × '+fmt(rugWid)+' m.');
+steps.textContent=lines.join('\n');
+}
+document.getElementById('roomLength').addEventListener('input',calc);
+document.getElementById('roomLength').addEventListener('change',calc);
+document.getElementById('roomWidth').addEventListener('input',calc);
+document.getElementById('roomWidth').addEventListener('change',calc);
+document.getElementById('layout').addEventListener('input',calc);
+document.getElementById('layout').addEventListener('change',calc);
+calc();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

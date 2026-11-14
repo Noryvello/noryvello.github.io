@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drill Bit Chooser | Noryvello</title>
+<meta name="description" content="Pick the right drill bit for the job. Choose your material and hole size to get the bit type and plain tips for a clean hole.">
+<link rel="canonical" href="https://noryvello.github.io/drill-bit-chooser/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Drill Bit Chooser">
+<meta property="og:description" content="Pick the right drill bit for your material and hole size, with plain tips for a clean hole.">
+<meta property="og:url" content="https://noryvello.github.io/drill-bit-chooser/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I use a wood bit on metal?","acceptedAnswer":{"@type":"Answer","text":"No. A wood bit is not hard enough for metal and will blunt quickly, or snap. Use an HSS twist bit for metal, and go slowly with steady pressure."}},{"@type":"Question","name":"Do I always need a pilot hole?","acceptedAnswer":{"@type":"Answer","text":"No. Small holes under 6 mm can usually be drilled in one go. For holes over 10 mm, a smaller pilot hole first makes the job easier and the hole cleaner."}},{"@type":"Question","name":"Why does my drill bit get hot?","acceptedAnswer":{"@type":"Answer","text":"Friction heats the bit, especially in metal, masonry or tile. Ease off the pressure, drill in short bursts, and let the bit cool. A hot bit goes blunt faster and can damage the material."}},{"@type":"Question","name":"Can one bit drill everything?","acceptedAnswer":{"@type":"Answer","text":"No. Each material needs a different bit shape and hardness. A masonry bit will not cut wood cleanly, and a wood bit will not cut brick. Match the bit to the material before you start."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Drill Bit Chooser</h1>
+<p class="answer">The wrong drill bit blunts fast, wanders off the mark, or cracks the material. Pick your material and the hole size below, and this chooser tells you which bit type to use, with plain tips for a clean hole.</p>
+<div class="calc">
+<label for="material">Material you are drilling</label>
+<select id="material">
+<option value="wood" selected>Wood</option>
+<option value="metal">Metal</option>
+<option value="masonry">Masonry (brick, block or concrete)</option>
+<option value="tile">Tile</option>
+<option value="plastic">Plastic</option>
+</select>
+<label for="size">Hole size (mm)</label>
+<input type="number" id="size" step="any" inputmode="decimal" value="6">
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">Wear eye protection and check for pipes and cables before drilling. Let the bit cool if it gets hot, and never force a drill that is struggling — stop and check the bit and the material.</div>
+<h2>How the choice is made</h2>
+<p>The material decides the bit, and the hole size decides the approach. Each material needs a different bit shape and hardness:</p>
+<ul>
+<li><strong>Wood — brad-point bit.</strong> Gives clean, accurate holes. A standard twist bit also works.</li>
+<li><strong>Metal — HSS twist bit.</strong> High-speed steel cuts metal. Use cutting oil on thick metal.</li>
+<li><strong>Masonry — masonry bit.</strong> Carbide-tipped for brick, block and concrete. Use the hammer setting if your drill has one.</li>
+<li><strong>Tile — diamond-tipped or carbide-tipped tile bit.</strong> Drill slowly and keep the bit cool so the tile does not crack.</li>
+<li><strong>Plastic — HSS twist bit at slow speed.</strong> Fast speeds melt the plastic, so keep the drill slow.</li>
+</ul>
+<p>The hole size changes how you drill, not which bit you pick:</p>
+<ul>
+<li><strong>Under 6 mm</strong> — drill it in one go.</li>
+<li><strong>6 to 10 mm</strong> — use steady pressure and clear the dust as you go.</li>
+<li><strong>Over 10 mm</strong> — drill a smaller pilot hole first, then drill the full size.</li>
+</ul>
+<h2>Before you drill</h2>
+<ul>
+<li><strong>Check for pipes and cables.</strong> Look for anything hidden behind the surface before you drill into it.</li>
+<li><strong>Mark the spot.</strong> A small pencil mark stops the bit wandering when you start.</li>
+<li><strong>Start slow.</strong> Begin at a low speed until the bit has bitten, then speed up.</li>
+<li><strong>Hold the workpiece steady.</strong> Clamp it if you can, so it cannot slip or spin.</li>
+<li><strong>Clear the dust.</strong> Pull the bit out now and then to clear dust and let it cool.</li>
+</ul>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Can I use a wood bit on metal?</h3><p>No. A wood bit is not hard enough for metal and will blunt quickly, or snap. Use an HSS twist bit for metal, and go slowly with steady pressure.</p></div>
+<div class="faq"><h3>Do I always need a pilot hole?</h3><p>No. Small holes under 6 mm can usually be drilled in one go. For holes over 10 mm, a smaller pilot hole first makes the job easier and the hole cleaner.</p></div>
+<div class="faq"><h3>Why does my drill bit get hot?</h3><p>Friction heats the bit, especially in metal, masonry or tile. Ease off the pressure, drill in short bursts, and let the bit cool. A hot bit goes blunt faster and can damage the material.</p></div>
+<div class="faq"><h3>Can one bit drill everything?</h3><p>No. Each material needs a different bit shape and hardness. A masonry bit will not cut wood cleanly, and a wood bit will not cut brick. Match the bit to the material before you start.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../paint-calculator/">Paint Calculator</a> · <a href="../sleep-calculator/">Sleep Calculator</a> · <a href="../running-pace-calculator/">Running Pace Calculator</a> · <a href="../debt-payoff-calculator/">Debt Payoff Calculator</a></p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var BITS = {
+  wood: {name: "Brad-point bit", note: "Clean, accurate holes in wood. A standard twist bit also works."},
+  metal: {name: "HSS twist bit", note: "High-speed steel cuts metal. Use cutting oil on thick metal."},
+  masonry: {name: "Masonry bit", note: "Carbide-tipped for brick, block and concrete. Use the hammer setting if your drill has one."},
+  tile: {name: "Diamond-tipped or carbide-tipped tile bit", note: "Drill slowly and keep the bit cool so the tile does not crack."},
+  plastic: {name: "HSS twist bit at slow speed", note: "Fast speeds melt the plastic, so keep the drill slow."}
+};
+function sizeTip(s) {
+  if (s < 6) { return "Small hole — drill it in one go."; }
+  if (s <= 10) { return "Medium hole — use steady pressure and clear the dust as you go."; }
+  return "Large hole — drill a smaller pilot hole first, then drill the full size.";
+}
+function calc() {
+  var out = document.getElementById("out");
+  var steps = document.getElementById("steps");
+  var sizeRaw = String(document.getElementById("size").value).trim();
+  var size = parseFloat(sizeRaw);
+  if (sizeRaw === "" || isNaN(size) || size <= 0) {
+    out.textContent = "Enter a hole size above 0 mm to see the right drill bit.";
+    steps.textContent = "";
+    return;
+  }
+  var mat = document.getElementById("material").value;
+  var bit = BITS[mat];
+  out.textContent = "Use a " + bit.name + ".";
+  steps.textContent = bit.note + "\n" + sizeTip(size);
+}
+document.getElementById("material").addEventListener("input", calc);
+document.getElementById("material").addEventListener("change", calc);
+document.getElementById("size").addEventListener("input", calc);
+document.getElementById("size").addEventListener("change", calc);
+calc();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

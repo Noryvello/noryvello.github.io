@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grocery Budget Planner: Split Your Weekly Shop by Category | Noryvello</title>
+<meta name="description" content="Plan your weekly grocery budget: enter your household size, meals per week and budget, and split it across produce, protein, dairy, pantry and household — with the cost per meal worked out.">
+<link rel="canonical" href="https://noryvello.github.io/grocery-budget-planner/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Grocery Budget Planner: Split Your Weekly Shop by Category">
+<meta property="og:description" content="Split your weekly grocery budget across five categories and see the cost per meal.">
+<meta property="og:url" content="https://noryvello.github.io/grocery-budget-planner/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.split{width:100%;border-collapse:collapse;margin-top:14px;font-size:15.5px}
+.split th,.split td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left}
+.split th{background:#eef2ff}
+.split td:nth-child(2),.split td:nth-child(3){text-align:right}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much should I spend on groceries each week?","acceptedAnswer":{"@type":"Answer","text":"There is no single right amount — it depends on your household size, where you live, and how often you cook at home. A good starting point is to look at what you actually spent over the last few weeks, then set a weekly figure you can live with and adjust it as you go. This planner splits whatever budget you enter, so start with a number that fits your own household."}},{"@type":"Question","name":"What percentage of my budget should go to groceries?","acceptedAnswer":{"@type":"Answer","text":"There is no fixed rule, because incomes and household sizes vary so much. Some households spend a small share of their income on food and others a much larger share, and both can be sensible. What matters is that the amount covers the meals your household needs without crowding out your other essentials."}},{"@type":"Question","name":"How can I cut my grocery bill?","acceptedAnswer":{"@type":"Answer","text":"Plan your meals before you shop, make a list and stick to it, and buy the basics you use every week in larger packs when that saves money. Cooking at home more often, using up what is already in the cupboard, and wasting less food all lower the weekly shop without changing what you eat."}},{"@type":"Question","name":"How do I plan meals on a budget?","acceptedAnswer":{"@type":"Answer","text":"Start with the meals you already cook well, then build a week of meals around them and shop for the ingredients on one list. Repeating a few reliable meals keeps the list short, and leftovers from one meal can become lunch the next day. This planner then shows how your weekly budget splits across food categories."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Grocery Budget Planner</h1>
+<p class="answer">Enter your household size, how many meals you cook each week and your weekly grocery budget, and this planner splits the budget across five categories — produce, protein, dairy, pantry and household. The percentages are adjustable, and the cost per meal is worked out for you. The budget can be in any currency; amounts are shown without a currency symbol.</p>
+<div class="calc">
+<label for="people">Household size (people)</label>
+<input type="number" id="people" min="1" step="1" value="2">
+<label for="meals">Meals per week</label>
+<input type="number" id="meals" min="1" step="1" value="14">
+<label for="budget">Weekly grocery budget (any currency)</label>
+<input type="number" id="budget" min="0" step="any" value="120">
+<label for="pctProduce">Produce (%)</label>
+<input type="number" id="pctProduce" min="0" step="1" value="25">
+<label for="pctProtein">Protein (%)</label>
+<input type="number" id="pctProtein" min="0" step="1" value="25">
+<label for="pctDairy">Dairy (%)</label>
+<input type="number" id="pctDairy" min="0" step="1" value="15">
+<label for="pctPantry">Pantry (%)</label>
+<input type="number" id="pctPantry" min="0" step="1" value="20">
+<label for="pctHousehold">Household (%)</label>
+<input type="number" id="pctHousehold" min="0" step="1" value="15">
+<p class="note" id="pctNote"></p>
+<table class="split">
+<tr><th>Category</th><th>Share</th><th>Amount</th></tr>
+<tr><td>Produce</td><td id="shareProduce">25%</td><td id="amtProduce">30.00</td></tr>
+<tr><td>Protein</td><td id="shareProtein">25%</td><td id="amtProtein">30.00</td></tr>
+<tr><td>Dairy</td><td id="shareDairy">15%</td><td id="amtDairy">18.00</td></tr>
+<tr><td>Pantry</td><td id="sharePantry">20%</td><td id="amtPantry">24.00</td></tr>
+<tr><td>Household</td><td id="shareHousehold">15%</td><td id="amtHousehold">18.00</td></tr>
+</table>
+<p class="out" id="out">Cost per meal: 8.57</p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">This planner splits the budget you enter — it does not set a budget for you, and it does not know your local prices. The split is a starting point: adjust the percentages to match how your own household actually shops.</div>
+<h2>How the split works</h2>
+<p>The default split is produce 25%, protein 25%, dairy 15%, pantry 20% and household 15%, which adds up to 100%. Each category amount is its percentage of your weekly budget — for example, with a budget of 120, produce at 25% gives 30.00. The cost per meal is your weekly budget divided by the number of meals you cook each week.</p>
+<p>You can change any percentage to match your own household. If your percentages do not add up to 100%, the planner tells you the total and still shows the amounts for the percentages you entered, so you can see the effect before you adjust them.</p>
+<h2>Making the most of your weekly shop</h2>
+<p>A budget works best when it follows a plan. Decide the week's meals first, then shop from a list built around those meals — it keeps the basket focused and cuts down on food that goes to waste. Leftovers from one meal can become the next day's lunch, which stretches the same budget further.</p>
+<p>Check the split against your real shopping every few weeks. If one category keeps running over, move a few percent from a category that has room — the planner updates the amounts as soon as you change a number.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How much should I spend on groceries each week?</h3><p>There is no single right amount — it depends on your household size, where you live, and how often you cook at home. A good starting point is to look at what you actually spent over the last few weeks, then set a weekly figure you can live with and adjust it as you go. This planner splits whatever budget you enter, so start with a number that fits your own household.</p></div>
+<div class="faq"><h3>What percentage of my budget should go to groceries?</h3><p>There is no fixed rule, because incomes and household sizes vary so much. Some households spend a small share of their income on food and others a much larger share, and both can be sensible. What matters is that the amount covers the meals your household needs without crowding out your other essentials.</p></div>
+<div class="faq"><h3>How can I cut my grocery bill?</h3><p>Plan your meals before you shop, make a list and stick to it, and buy the basics you use every week in larger packs when that saves money. Cooking at home more often, using up what is already in the cupboard, and wasting less food all lower the weekly shop without changing what you eat.</p></div>
+<div class="faq"><h3>How do I plan meals on a budget?</h3><p>Start with the meals you already cook well, then build a week of meals around them and shop for the ingredients on one list. Repeating a few reliable meals keeps the list short, and leftovers from one meal can become lunch the next day. This planner then shows how your weekly budget splits across food categories.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="../wedding-budget-planner/">Wedding Budget Planner — Split Your Budget Before You Spend It</a> · <a href="../debt-payoff-calculator/">Debt Payoff Calculator — When Will You Be Debt-Free?</a> · <a href="../gift-idea-generator-by-budget-and-person/">Gift Idea Generator by Budget and Person</a> · <a href="../hand-wash-vs-dishwasher-water-use/">Hand Wash vs Dishwasher Water Use Calculator</a></div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var CATS = [
+  { name: 'Produce', input: 'pctProduce', share: 'shareProduce', amt: 'amtProduce' },
+  { name: 'Protein', input: 'pctProtein', share: 'shareProtein', amt: 'amtProtein' },
+  { name: 'Dairy', input: 'pctDairy', share: 'shareDairy', amt: 'amtDairy' },
+  { name: 'Pantry', input: 'pctPantry', share: 'sharePantry', amt: 'amtPantry' },
+  { name: 'Household', input: 'pctHousehold', share: 'shareHousehold', amt: 'amtHousehold' }
+];
+function money(n) { return (Math.round((n + 1e-9) * 100) / 100).toFixed(2); }
+function num(n) { return String(Math.round((n + 1e-9) * 100) / 100); }
+function pctOf(id) {
+  var v = parseFloat(document.getElementById(id).value);
+  if (isNaN(v) || v < 0) return 0;
+  return v;
+}
+function update() {
+  var people = parseFloat(document.getElementById('people').value);
+  var meals = parseFloat(document.getElementById('meals').value);
+  var budget = parseFloat(document.getElementById('budget').value);
+  var out = document.getElementById('out');
+  var steps = document.getElementById('steps');
+  var note = document.getElementById('pctNote');
+  var sum = 0;
+  for (var i = 0; i < CATS.length; i++) sum += pctOf(CATS[i].input);
+  sum = Math.round((sum + 1e-9) * 100) / 100;
+  if (sum !== 100) {
+    note.textContent = 'Your percentages add up to ' + num(sum) + '%, not 100%. The amounts below still follow the percentages you entered.';
+  } else {
+    note.textContent = '';
+  }
+  if (isNaN(people) || people <= 0 || isNaN(meals) || meals <= 0 || isNaN(budget) || budget <= 0) {
+    out.textContent = 'Enter your household size, meals per week and weekly budget — all above zero — to see your split.';
+    steps.textContent = '';
+    for (var j = 0; j < CATS.length; j++) {
+      document.getElementById(CATS[j].share).textContent = num(pctOf(CATS[j].input)) + '%';
+      document.getElementById(CATS[j].amt).textContent = '—';
+    }
+    return;
+  }
+  var lines = [];
+  for (var k = 0; k < CATS.length; k++) {
+    var p = pctOf(CATS[k].input);
+    var amount = budget * p / 100;
+    document.getElementById(CATS[k].share).textContent = num(p) + '%';
+    document.getElementById(CATS[k].amt).textContent = money(amount);
+    lines.push(CATS[k].name + ': ' + num(p) + '% of ' + num(budget) + ' = ' + money(amount));
+  }
+  var perMeal = budget / meals;
+  var perPerson = budget / people;
+  out.textContent = 'Cost per meal: ' + money(perMeal);
+  lines.push('Cost per meal: ' + num(budget) + ' ÷ ' + num(meals) + ' meals = ' + money(perMeal));
+  lines.push('Per person per week: ' + num(budget) + ' ÷ ' + num(people) + ' people = ' + money(perPerson));
+  steps.textContent = lines.join('\n');
+}
+document.getElementById('people').addEventListener('input', update);
+document.getElementById('people').addEventListener('change', update);
+document.getElementById('meals').addEventListener('input', update);
+document.getElementById('meals').addEventListener('change', update);
+document.getElementById('budget').addEventListener('input', update);
+document.getElementById('budget').addEventListener('change', update);
+for (var m = 0; m < CATS.length; m++) {
+  document.getElementById(CATS[m].input).addEventListener('input', update);
+  document.getElementById(CATS[m].input).addEventListener('change', update);
+}
+update();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visa Document Checklist | Noryvello</title>
+<meta name="description" content="Pick your trip type — tourist, family, study, work, medical or pilgrimage — and tick off the documents most visa applications ask for, with a live progress counter.">
+<link rel="canonical" href="https://noryvello.github.io/visa-document-checklist/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Visa Document Checklist">
+<meta property="og:description" content="Pick a trip type and tick off the documents most visa applications ask for.">
+<meta property="og:url" content="https://noryvello.github.io/visa-document-checklist/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+#list label{display:flex;align-items:flex-start;gap:10px;font-weight:400;margin:10px 0;cursor:pointer}
+#list input{width:auto;margin-top:4px;flex:none}
+#list input:checked + span{text-decoration:line-through;color:#64748b}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a visa for every country?","acceptedAnswer":{"@type":"Answer","text":"No. It depends on your passport and where you are going. Some countries let you enter without a visa, some give one on arrival, and some need an application in advance. Check the embassy or official government site of the country you plan to visit."}},{"@type":"Question","name":"What documents do most visa applications ask for?","acceptedAnswer":{"@type":"Answer","text":"Most ask for a valid passport, a completed application form, passport-size photographs, proof of funds, and details of your travel plans. Depending on the trip, they may also ask for an invitation letter, an admission letter, a job offer, or medical papers."}},{"@type":"Question","name":"Why do requirements differ by country?","acceptedAnswer":{"@type":"Answer","text":"Each country sets its own entry rules, and embassies apply them for the country they represent. The documents asked for can also depend on the purpose of your trip and how long you plan to stay."}},{"@type":"Question","name":"Is this checklist official?","acceptedAnswer":{"@type":"Answer","text":"No. This checklist is a general starting point based on the document types most applications ask for. The only official list is the one published by the embassy or consulate you are applying to, so always check it before you apply."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Visa Document Checklist</h1>
+<p class="answer">Pick your trip type and this page shows a tick-off checklist of the documents most visa applications ask for, with a live progress counter as you check items off. The list is a general starting point — always check the embassy's own official list before you apply.</p>
+<div class="calc">
+<label for="tripType">Trip type</label>
+<select id="tripType">
+<option value="tourist" selected>Tourist visit</option>
+<option value="family">Family visit</option>
+<option value="study">Study</option>
+<option value="work">Work</option>
+<option value="medical">Medical</option>
+<option value="pilgrimage">Pilgrimage</option>
+</select>
+<p class="out" id="counter"></p>
+<div id="list"></div>
+<p class="note">Tick each document as you gather it. Your ticks are kept for each trip type, so you can switch types and come back without losing them.</p>
+</div>
+<div class="warn">Requirements differ by country and embassy — this checklist is a general starting point, not an official list. Check the embassy's own official list before you apply. This page is general information only, no legal or visa advice.</div>
+<h2>How to use the checklist</h2>
+<ol>
+<li>Choose your trip type from the list — tourist visit, family visit, study, work, medical, or pilgrimage.</li>
+<li>A checklist of the documents most applications of that type ask for appears right away.</li>
+<li>Tick each document as you gather it. The counter shows how many you have checked off.</li>
+<li>Switch trip types any time. Your ticks are kept for each type, so nothing is lost when you switch back.</li>
+</ol>
+<p>Use the checklist as a planning aid: gather the documents first, then go through the embassy's own official list and add anything this page does not mention.</p>
+<h2>What most applications ask for</h2>
+<p>Almost every visa application asks for the same core documents, whatever the trip type:</p>
+<ul>
+<li><strong>A valid passport.</strong> Check that it has blank pages and enough validity left for your trip.</li>
+<li><strong>A completed application form.</strong> Fill it in carefully and sign it where required.</li>
+<li><strong>Passport-size photographs.</strong> Taken recently, against a plain background.</li>
+<li><strong>Proof of funds.</strong> Something that shows you can pay for the trip, such as bank statements.</li>
+<li><strong>Travel plans.</strong> Flight bookings and proof of where you will stay.</li>
+<li><strong>Travel insurance.</strong> Cover for the trip, where the destination asks for it.</li>
+</ul>
+<p>On top of these, each trip type has its own extras: an invitation letter for a family visit, an admission letter for study, a job offer for work, medical papers for treatment, and a booking for a pilgrimage.</p>
+<h2>Before you apply</h2>
+<ul>
+<li><strong>Check the embassy's list early.</strong> The official list is the only one that counts — start there, and use this page to organise yourself.</li>
+<li><strong>Allow plenty of time.</strong> Some documents, such as certificates and medical checks, take time to arrange.</li>
+<li><strong>Keep copies.</strong> Photocopy or photograph every document you submit, and keep the copies separate from the originals.</li>
+<li><strong>Check names and dates.</strong> Names, dates and passport numbers should match across every document.</li>
+</ul>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Do I need a visa for every country?</h3><p>No. It depends on your passport and where you are going. Some countries let you enter without a visa, some give one on arrival, and some need an application in advance. Check the embassy or official government site of the country you plan to visit.</p></div>
+<div class="faq"><h3>What documents do most visa applications ask for?</h3><p>Most ask for a valid passport, a completed application form, passport-size photographs, proof of funds, and details of your travel plans. Depending on the trip, they may also ask for an invitation letter, an admission letter, a job offer, or medical papers.</p></div>
+<div class="faq"><h3>Why do requirements differ by country?</h3><p>Each country sets its own entry rules, and embassies apply them for the country they represent. The documents asked for can also depend on the purpose of your trip and how long you plan to stay.</p></div>
+<div class="faq"><h3>Is this checklist official?</h3><p>No. This checklist is a general starting point based on the document types most applications ask for. The only official list is the one published by the embassy or consulate you are applying to, so always check it before you apply.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../wedding-budget-planner/">Wedding Budget Planner</a> · <a href="../running-pace-calculator/">Running Pace Calculator</a> · <a href="../sleep-calculator/">Sleep Calculator</a> · <a href="../online-piano/">Free Online Piano</a></p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var LISTS = {
+tourist: [
+"Valid passport",
+"Completed visa application form",
+"Passport-size photographs",
+"Proof of funds (bank statements)",
+"Travel itinerary (flight bookings)",
+"Proof of accommodation (hotel booking)",
+"Travel insurance",
+"Proof of ties to home country (employment letter or property documents)",
+"Previous visas or travel history (if any)",
+"Cover letter explaining the trip"
+],
+family: [
+"Valid passport",
+"Completed visa application form",
+"Passport-size photographs",
+"Invitation letter from your host",
+"Proof of your host's status in the destination country",
+"Proof of relationship to your host",
+"Proof of funds",
+"Travel insurance",
+"Travel itinerary and accommodation details"
+],
+study: [
+"Valid passport",
+"Completed visa application form",
+"Passport-size photographs",
+"Admission letter from the school or university",
+"Proof of tuition payment or scholarship",
+"Proof of funds for living costs",
+"Academic records and certificates",
+"Language test results (if required)",
+"Medical check results (if required)",
+"Travel insurance",
+"Proof of accommodation"
+],
+work: [
+"Valid passport",
+"Completed visa application form",
+"Passport-size photographs",
+"Employment contract or job offer letter",
+"Work permit approval (if required)",
+"Proof of qualifications and work experience",
+"Proof of funds",
+"Medical check results (if required)",
+"Police clearance certificate (if required)",
+"Travel insurance"
+],
+medical: [
+"Valid passport",
+"Completed visa application form",
+"Passport-size photographs",
+"Medical reports and diagnosis from your doctor",
+"Appointment or admission letter from the hospital",
+"Proof of funds for treatment and stay",
+"Travel insurance",
+"Proof of accommodation",
+"Travel itinerary"
+],
+pilgrimage: [
+"Valid passport",
+"Completed visa application form",
+"Passport-size photographs",
+"Proof of pilgrimage booking or package",
+"Vaccination certificate (if required)",
+"Proof of funds",
+"Travel insurance",
+"Proof of accommodation",
+"Travel itinerary"
+]
+};
+var checked = {};
+for (var t in LISTS) checked[t] = {};
+var current = "tourist";
+function countChecked(type) {
+  var n = 0;
+  var set = checked[type];
+  for (var i in set) if (set[i]) n++;
+  return n;
+}
+function updateCounter() {
+  var total = LISTS[current].length;
+  var done = countChecked(current);
+  document.getElementById("counter").textContent = done + " of " + total + " checked";
+}
+function toggle(idx) {
+  checked[current][idx] = !checked[current][idx];
+  updateCounter();
+}
+function render() {
+  current = document.getElementById("tripType").value;
+  var listEl = document.getElementById("list");
+  while (listEl.firstChild) listEl.removeChild(listEl.firstChild);
+  var items = LISTS[current];
+  for (var i = 0; i < items.length; i++) {
+    (function (idx) {
+      var label = document.createElement("label");
+      var box = document.createElement("input");
+      box.type = "checkbox";
+      box.checked = !!checked[current][idx];
+      box.addEventListener("change", function () { toggle(idx); });
+      var text = document.createElement("span");
+      text.textContent = items[idx];
+      label.appendChild(box);
+      label.appendChild(text);
+      listEl.appendChild(label);
+    })(i);
+  }
+  updateCounter();
+}
+document.getElementById("tripType").addEventListener("input", render);
+document.getElementById("tripType").addEventListener("change", render);
+render();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

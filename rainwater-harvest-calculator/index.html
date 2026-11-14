@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rainwater Harvest Calculator | Noryvello</title>
+<meta name="description" content="Work out how many litres of rainwater your roof could collect each month and year. Enter your roof area, monthly rainfall and collection efficiency for an instant estimate.">
+<link rel="canonical" href="https://noryvello.github.io/rainwater-harvest-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rainwater Harvest Calculator">
+<meta property="og:description" content="Estimate how many litres of rainwater your roof could collect each month and year.">
+<meta property="og:url" content="https://noryvello.github.io/rainwater-harvest-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much rainwater can I collect from my roof?","acceptedAnswer":{"@type":"Answer","text":"It depends on three things: your roof area, how much rain falls, and your collection efficiency. Multiply roof area in square metres by monthly rainfall in millimetres and by your efficiency as a decimal. A 100 square metre roof with 50 millimetres of rain a month at 80 percent efficiency collects about 4,000 litres a month."}},{"@type":"Question","name":"Why is the collection efficiency below 100%?","acceptedAnswer":{"@type":"Answer","text":"Not every drop that lands on your roof reaches the tank. Gutters overflow in heavy rain, a first-flush diverter throws away the first dirty water, and some water is lost to splashing and evaporation. This page uses 80 percent as its starting value, and you can change it to match your own setup."}},{"@type":"Question","name":"Can I drink the rainwater I collect?","acceptedAnswer":{"@type":"Answer","text":"Not without proper treatment. Rainwater picks up dust, bird droppings and other dirt from the roof and gutters as it runs down, so stored rainwater is not drinking water on its own. Use it for the garden, flushing and washing, and get proper treatment and local advice before drinking it."}},{"@type":"Question","name":"Does roof size or rainfall matter more?","acceptedAnswer":{"@type":"Answer","text":"They matter equally, because the two are multiplied together. Doubling your roof area doubles what you collect, and doubling the rainfall doubles it too. That is why a small roof in a wet place can collect as much as a big roof in a dry one."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Rainwater Harvest Calculator</h1>
+<p class="answer">Your roof catches every drop of rain that falls on it, and this calculator turns that into litres. Enter your roof area, your average monthly rainfall and a collection efficiency, and you will see how many litres you could collect each month and over a year, with the working shown. The result is an estimate, not a promise: real collection depends on your gutters and how much rain actually falls.</p>
+<div class="calc">
+<label for="area">Roof area (square metres)</label>
+<input id="area" type="number" step="any" inputmode="decimal" value="100">
+<label for="rain">Average monthly rainfall (millimetres)</label>
+<input id="rain" type="number" step="any" inputmode="decimal" value="50">
+<label for="efficiency">Collection efficiency (%)</label>
+<input id="efficiency" type="number" step="any" inputmode="decimal" min="1" max="100" value="80">
+<p class="note">Rule: 1 mm of rain over 1 m² gives 1 litre of water.</p>
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">This is an estimate. How much water you actually collect depends on your gutters, first-flush loss, splashing and evaporation, and how much rain really falls — a dry month collects nothing. Stored rainwater is not drinking water without proper treatment, so use it for the garden, flushing and washing unless you treat it properly.</div>
+<h2>How the estimate is worked out</h2>
+<p>The maths is simple. One millimetre of rain falling on one square metre of roof is one litre of water, so a roof of 100 square metres catches 100 litres for every millimetre of rain. Multiply your roof area by your monthly rainfall and you get the most you could collect in a perfect world. In the real world some water is lost, so the calculator multiplies by a collection efficiency — 80% is the starting value here, and you can change it to match your own setup. The yearly figure is just the monthly figure times 12.</p>
+<p>Worked examples:</p>
+<ul>
+<li>A 100 m² roof with 50 mm of rain a month at 80% efficiency: 100 × 50 × 0.80 = 4,000 litres a month, or 48,000 litres a year.</li>
+<li>A 60 m² roof with 120 mm of rain a month at 80% efficiency: 60 × 120 × 0.80 = 5,760 litres a month, or 69,120 litres a year.</li>
+<li>A 150 m² roof with 25 mm of rain a month at 90% efficiency: 150 × 25 × 0.90 = 3,375 litres a month, or 40,500 litres a year.</li>
+</ul>
+<h2>Getting the most from your roof</h2>
+<ul>
+<li><strong>Keep the gutters clean.</strong> Leaves and dirt block the flow and send water over the edge instead of into the tank. Clear them before the rainy season and check them after storms.</li>
+<li><strong>Use a first-flush diverter.</strong> The first rain after a dry spell washes dust and bird droppings off the roof. A diverter throws that first dirty water away so the tank stays cleaner.</li>
+<li><strong>Get a tank big enough.</strong> A tank that fills up in the first week of a wet month wastes the rest of the month's rain. Size it from your monthly collection figure so it can hold a good share of a wet month.</li>
+<li><strong>Check for leaks and overflows.</strong> A dripping downpipe or a tank that overflows in every storm is water you counted on but never kept.</li>
+</ul>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How much rainwater can I collect from my roof?</h3><p>It depends on three things: your roof area, how much rain falls, and your collection efficiency. Multiply roof area in square metres by monthly rainfall in millimetres and by your efficiency as a decimal. A 100 square metre roof with 50 millimetres of rain a month at 80 percent efficiency collects about 4,000 litres a month.</p></div>
+<div class="faq"><h3>Why is the collection efficiency below 100%?</h3><p>Not every drop that lands on your roof reaches the tank. Gutters overflow in heavy rain, a first-flush diverter throws away the first dirty water, and some water is lost to splashing and evaporation. This page uses 80 percent as its starting value, and you can change it to match your own setup.</p></div>
+<div class="faq"><h3>Can I drink the rainwater I collect?</h3><p>Not without proper treatment. Rainwater picks up dust, bird droppings and other dirt from the roof and gutters as it runs down, so stored rainwater is not drinking water on its own. Use it for the garden, flushing and washing, and get proper treatment and local advice before drinking it.</p></div>
+<div class="faq"><h3>Does roof size or rainfall matter more?</h3><p>They matter equally, because the two are multiplied together. Doubling your roof area doubles what you collect, and doubling the rainfall doubles it too. That is why a small roof in a wet place can collect as much as a big roof in a dry one.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../paint-calculator/">Paint Calculator</a> · <a href="../sleep-calculator/">Sleep Calculator</a> · <a href="../running-pace-calculator/">Running Pace Calculator</a> · <a href="../debt-payoff-calculator/">Debt Payoff Calculator</a></p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n){return (Math.round((n+1e-9)*100)/100).toFixed(2);}
+function withCommas(s){return s.replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+function disp(n){var s=fmt(n);if(s.slice(-3)==='.00'){s=s.slice(0,-3);}return withCommas(s);}
+function fmtInt(n){return withCommas(String(Math.round(n)));}
+function calc(){
+var out=document.getElementById('out');
+var steps=document.getElementById('steps');
+var aRaw=String(document.getElementById('area').value).trim();
+var rRaw=String(document.getElementById('rain').value).trim();
+var eRaw=String(document.getElementById('efficiency').value).trim();
+var area=parseFloat(aRaw);
+if(aRaw===''||isNaN(area)||area<=0){
+out.textContent='Enter a roof area above 0 square metres to see how much you could collect.';
+steps.textContent='';
+return;
+}
+var rain=parseFloat(rRaw);
+if(rRaw===''||isNaN(rain)||rain<=0){
+out.textContent='Enter an average monthly rainfall above 0 millimetres to see how much you could collect.';
+steps.textContent='';
+return;
+}
+var eff=parseFloat(eRaw);
+if(eRaw===''||isNaN(eff)||eff<=0){
+out.textContent='Enter a collection efficiency between 1 and 100 percent.';
+steps.textContent='';
+return;
+}
+if(eff<1){eff=1;document.getElementById('efficiency').value='1';}
+if(eff>100){eff=100;document.getElementById('efficiency').value='100';}
+var monthly=area*rain*(eff/100);
+var yearly=monthly*12;
+out.textContent='You could collect about '+fmtInt(monthly)+' litres per month — '+fmtInt(yearly)+' litres per year.';
+steps.textContent=area+' m² × '+rain+' mm × '+fmt(eff/100)+' = '+disp(monthly)+' litres per month\n'+disp(monthly)+' litres × 12 months = '+fmtInt(yearly)+' litres per year.';
+}
+document.getElementById('area').addEventListener('input',calc);
+document.getElementById('area').addEventListener('change',calc);
+document.getElementById('rain').addEventListener('input',calc);
+document.getElementById('rain').addEventListener('change',calc);
+document.getElementById('efficiency').addEventListener('input',calc);
+document.getElementById('efficiency').addEventListener('change',calc);
+calc();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

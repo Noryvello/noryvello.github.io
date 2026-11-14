@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank You Note Generator: Short, Warm Notes for Any Occasion | Noryvello</title>
+<meta name="description" content="Write a thank you note in seconds: pick an occasion, add a few details, and get three ready-to-send drafts — short, medium and warm — each with a copy button.">
+<link rel="canonical" href="https://noryvello.github.io/thank-you-note-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Thank You Note Generator: Short, Warm Notes for Any Occasion">
+<meta property="og:description" content="Pick an occasion and a few details, and get three thank you note drafts — short, medium and warm.">
+<meta property="og:url" content="https://noryvello.github.io/thank-you-note-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.draft{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:12px 14px;font-size:15.5px;margin:6px 0 4px}
+.draft-label{font-size:15px;margin:14px 0 2px}
+.calc button{padding:9px 14px;border:1px solid #4338ca;background:#4338ca;color:#fff;border-radius:8px;font-size:15px;cursor:pointer;margin:6px 6px 6px 0}
+.calc button:hover{background:#3730a3}
+#newDrafts{margin-top:14px}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do you write a thank you note?","acceptedAnswer":{"@type":"Answer","text":"Start with a warm greeting, say thank you clearly and name what you are thanking them for, add one personal detail that shows you noticed, and close with a kind line. Keep it short and sincere — a few honest sentences are better than a long formal letter."}},{"@type":"Question","name":"How long should a thank you note be?","acceptedAnswer":{"@type":"Answer","text":"A thank you note only needs a few sentences: two or three are plenty for most occasions. If the kindness was a big one, four or five sentences give you room to say why it mattered. The best notes are short enough to read in one breath and personal enough to be remembered."}},{"@type":"Question","name":"When should I send a thank you note?","acceptedAnswer":{"@type":"Answer","text":"Send it as soon as you can, ideally within a few days of the gift, the help or the visit. A late note is still worth sending — it is always better to thank someone late than never. For a job interview, send it the same day or the next morning."}},{"@type":"Question","name":"What should I say in a thank you note after a job interview?","acceptedAnswer":{"@type":"Answer","text":"Thank the interviewer for their time, mention something specific from the conversation that interested you, and say you would welcome the chance to join the team. Keep it short and professional, and send it the same day or the next morning."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Thank You Note Generator</h1>
+<p class="answer">Pick an occasion, add a few details, and this generator writes three thank you notes for you — short, medium and warm. Each draft uses your own words, so it reads like a real note, not a template. Copy the one you like best, or press "New drafts" for fresh wording.</p>
+<div class="calc">
+<label for="occasion">Occasion</label>
+<select id="occasion">
+<option value="gift" selected>A gift</option>
+<option value="help">Help someone gave you</option>
+<option value="interview">A job interview</option>
+<option value="hospitality">Hospitality — a meal or a stay</option>
+</select>
+<label for="name">Recipient's name</label>
+<input id="name" type="text" value="Sarah">
+<label for="thing">What did they give or do?</label>
+<input id="thing" type="text" value="a beautiful handmade scarf">
+<label for="detail">One personal detail to mention</label>
+<input id="detail" type="text" value="wearing it on cold mornings">
+<p class="note">Write the personal detail as a short phrase, such as "the roast potatoes" or "hearing about the reading programme".</p>
+<p class="note" id="draftMsg"></p>
+<div id="drafts">
+<p class="draft-label"><strong>Short</strong></p>
+<p class="draft" id="draftShort"></p>
+<button type="button" id="copyShort">Copy short draft</button>
+<p class="draft-label"><strong>Medium</strong></p>
+<p class="draft" id="draftMedium"></p>
+<button type="button" id="copyMedium">Copy medium draft</button>
+<p class="draft-label"><strong>Warm</strong></p>
+<p class="draft" id="draftWarm"></p>
+<button type="button" id="copyWarm">Copy warm draft</button>
+</div>
+<button type="button" id="newDrafts">New drafts</button>
+<p class="note" id="copyMsg"></p>
+</div>
+<div class="warn">These drafts are a starting point, not a finished note. Read your draft through, add your own words, and change anything that does not sound like you — the best thank you notes sound like the person who wrote them.</div>
+<h2>How to use this generator</h2>
+<p>Choose the occasion that fits, then fill in the three details: who the note is for, what they gave or did, and one personal detail you want to mention. The generator writes three drafts at once — a short one for a quick message, a medium one for a card, and a warm one when you have more to say. Each draft has its own Copy button, and the "New drafts" button gives you fresh wording for all three lengths.</p>
+<h2>What makes a thank you note good</h2>
+<p>A good thank you note names the gift or the kindness, so the reader knows exactly what you are grateful for. One personal detail — something you noticed, enjoyed or will remember — is what turns a polite note into a warm one. Keep it short, write it in your own voice, and send it soon: a few honest sentences, sent quickly, are worth more than a long letter that never gets written.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How do you write a thank you note?</h3><p>Start with a warm greeting, say thank you clearly and name what you are thanking them for, add one personal detail that shows you noticed, and close with a kind line. Keep it short and sincere — a few honest sentences are better than a long formal letter.</p></div>
+<div class="faq"><h3>How long should a thank you note be?</h3><p>A thank you note only needs a few sentences: two or three are plenty for most occasions. If the kindness was a big one, four or five sentences give you room to say why it mattered. The best notes are short enough to read in one breath and personal enough to be remembered.</p></div>
+<div class="faq"><h3>When should I send a thank you note?</h3><p>Send it as soon as you can, ideally within a few days of the gift, the help or the visit. A late note is still worth sending — it is always better to thank someone late than never. For a job interview, send it the same day or the next morning.</p></div>
+<div class="faq"><h3>What should I say in a thank you note after a job interview?</h3><p>Thank the interviewer for their time, mention something specific from the conversation that interested you, and say you would welcome the chance to join the team. Keep it short and professional, and send it the same day or the next morning.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="../gift-idea-generator-by-budget-and-person/">Gift Idea Generator by Budget and Person</a> · <a href="../secret-santa-generator/">Secret Santa Generator — Fair Draws, No One Picks Themselves</a> · <a href="../wedding-budget-planner/">Wedding Budget Planner — Split Your Budget Before You Spend It</a> · <a href="../speaking-time-calculator/">Speaking Time Calculator</a></div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var DRAFTS = {
+  gift: {
+    short: [
+      'Dear {n}, thank you so much for {t}. It was such a thoughtful gift, and I have already enjoyed {d}. Thank you again.',
+      'Dear {n}, what a lovely surprise {t} was. Thank you for thinking of me — I really enjoyed {d}.'
+    ],
+    medium: [
+      'Dear {n}, thank you for {t}. It was so kind of you to choose something so perfect for me. I have been enjoying {d} ever since it arrived, and it always reminds me of you. Thank you again for your thoughtfulness.',
+      'Dear {n}, I was delighted to receive {t} — thank you. You always know exactly what to pick, and I loved {d}. It means a lot that you thought of me, and I am very grateful.'
+    ],
+    warm: [
+      'Dear {n}, thank you so much for {t}. I cannot tell you how much it meant to me to open it and find something chosen with such care. I have already spent happy time enjoying {d}, and every time I use it I think of you. You have a real gift for making people feel special, and I am lucky to know you. Thank you again, from the bottom of my heart.',
+      'Dear {n}, what a wonderful gift {t} is — thank you. From the moment I saw it I knew you had put real thought into choosing it, and I have loved {d} ever since. Gifts like this are about so much more than the thing itself; they are a reminder of how well you know me and how much you care. I am truly grateful, and I hope I can return the kindness one day.'
+    ]
+  },
+  help: {
+    short: [
+      'Dear {n}, thank you so much for {t}. I could not have managed without you, and I really appreciated {d}. Thank you again.',
+      'Dear {n}, thank you for {t}. Your help made all the difference, and I will always remember {d}.'
+    ],
+    medium: [
+      'Dear {n}, thank you for {t}. When things felt overwhelming, you stepped in without being asked, and that meant the world to me. I especially appreciated {d}, and I will not forget it. Please let me know if I can ever return the favour.',
+      'Dear {n}, I want to thank you properly for {t}. You gave your time so generously, and your help turned a difficult day into a manageable one. I loved {d}, and I am so grateful for everything you did. Thank you again — I owe you one.'
+    ],
+    warm: [
+      'Dear {n}, thank you for {t}. I keep thinking about how you dropped everything to help, and how much lighter the whole thing felt because you were there. I especially appreciated {d}, and it is one of those kindnesses I will remember for a long time. People like you make hard days bearable, and I am lucky to have you in my life. Thank you again, truly — and please let me return the favour one day.',
+      'Dear {n}, I cannot thank you enough for {t}. You did not hesitate, you did not complain, and you stayed until the job was done. I will always remember {d}, and the calm way you handled everything. It is easy to say thank you, but I want you to know how much it really meant. I am deeply grateful, and I hope I can be there for you the way you were there for me.'
+    ]
+  },
+  interview: {
+    short: [
+      'Dear {n}, thank you for {t}. I enjoyed meeting you and learning more about the role, and I appreciated {d}. I would love the chance to join the team.',
+      'Dear {n}, thank you for taking the time for {t}. Our conversation left me even more enthusiastic about the role, and I especially enjoyed {d}.'
+    ],
+    medium: [
+      'Dear {n}, thank you for {t}. I really enjoyed our conversation and learning more about the team and the work you do. I was particularly interested in {d}, and it confirmed that this is a role I would love. Thank you again for your time and consideration — I hope to hear from you soon.',
+      'Dear {n}, thank you for {t}. Meeting you gave me a clear picture of the role, and I left feeling excited about the possibility of joining the team. I especially enjoyed {d}, and it showed me what a thoughtful place this is to work. I would be delighted to contribute, and I look forward to hearing from you.'
+    ],
+    warm: [
+      'Dear {n}, thank you for {t}. I wanted to write and say how much I enjoyed meeting you and the team, and how much our conversation meant to me. I was fascinated by {d}, and it left me more convinced than ever that my experience and your team\'s work would be a wonderful fit. Thank you for the time you gave me and for the thoughtful questions — I would be thrilled to join you, and I hope we speak again soon.',
+      'Dear {n}, thank you for {t}. From the moment we started talking, I felt at ease, and I left the interview genuinely excited about the role. I particularly enjoyed {d}, and it gave me a real sense of the team I would be joining. I believe I could bring a great deal to the role, and I would love the opportunity to do so. Thank you again for your time and consideration.'
+    ]
+  },
+  hospitality: {
+    short: [
+      'Dear {n}, thank you so much for {t}. We had a wonderful time, and I especially enjoyed {d}. Thank you for being such a generous host.',
+      'Dear {n}, thank you for {t}. It was a lovely evening, and I loved {d}. We are so grateful for your hospitality.'
+    ],
+    medium: [
+      'Dear {n}, thank you for {t}. From the moment we arrived, you made us feel so welcome, and the whole evening was a delight. I especially enjoyed {d}, and I have been telling everyone about it since. Thank you for your wonderful hospitality — we must do it again soon.',
+      'Dear {n}, what a wonderful time we had — thank you for {t}. You thought of everything, and it was clear how much care went into the evening. I loved {d}, and I left feeling happy and well looked after. Thank you again for having us.'
+    ],
+    warm: [
+      'Dear {n}, thank you for {t}. We had the most wonderful time, and I have been thinking about the evening ever since. I especially enjoyed {d}, but what I will remember most is how welcome you made us feel from the first minute. You have a real gift for bringing people together and making a house feel like a home. Thank you again for your generous hospitality — we would love to return the invitation soon.',
+      'Dear {n}, thank you so much for {t}. It was one of those evenings that stays with you: good company, a warm welcome, and not a detail out of place. I loved {d}, and I could tell how much thought you had put into everything. Thank you for opening your home to us so generously — we are already looking forward to seeing you again.'
+    ]
+  }
+};
+var DEFAULTS = {
+  gift: { name: 'Sarah', thing: 'a beautiful handmade scarf', detail: 'wearing it on cold mornings' },
+  help: { name: 'James', thing: 'helping me move house last weekend', detail: 'how you carried the heaviest boxes without a word of complaint' },
+  interview: { name: 'Ms Patel', thing: 'interviewing me for the teaching assistant role', detail: 'hearing about the school\'s reading programme' },
+  hospitality: { name: 'Maria', thing: 'having us for dinner on Saturday', detail: 'the roast potatoes' }
+};
+var edited = { name: false, thing: false, detail: false };
+var picks = { short: 0, medium: 0, warm: 0 };
+function fill(template, n, t, d) {
+  return template.split('{n}').join(n).split('{t}').join(t).split('{d}').join(d);
+}
+function render() {
+  var occ = document.getElementById('occasion').value;
+  var n = document.getElementById('name').value.trim();
+  var t = document.getElementById('thing').value.trim();
+  var d = document.getElementById('detail').value.trim();
+  var msg = document.getElementById('draftMsg');
+  var box = document.getElementById('drafts');
+  var s = document.getElementById('draftShort');
+  var m = document.getElementById('draftMedium');
+  var w = document.getElementById('draftWarm');
+  if (!n || !t || !d) {
+    msg.textContent = 'Fill in all three details above to see your drafts.';
+    box.style.display = 'none';
+    s.textContent = '';
+    m.textContent = '';
+    w.textContent = '';
+    return;
+  }
+  msg.textContent = '';
+  box.style.display = 'block';
+  s.textContent = fill(DRAFTS[occ].short[picks.short], n, t, d);
+  m.textContent = fill(DRAFTS[occ].medium[picks.medium], n, t, d);
+  w.textContent = fill(DRAFTS[occ].warm[picks.warm], n, t, d);
+}
+function onOccasion() {
+  var occ = document.getElementById('occasion').value;
+  var def = DEFAULTS[occ];
+  if (!edited.name) document.getElementById('name').value = def.name;
+  if (!edited.thing) document.getElementById('thing').value = def.thing;
+  if (!edited.detail) document.getElementById('detail').value = def.detail;
+  render();
+}
+function markEdited(id) {
+  return function () { edited[id] = true; render(); };
+}
+function copyDraft(id) {
+  var text = document.getElementById(id).textContent;
+  var msg = document.getElementById('copyMsg');
+  if (!text) {
+    msg.textContent = 'Nothing to copy yet — fill in the details above first.';
+    return;
+  }
+  if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function () {
+      msg.textContent = 'Copied to the clipboard.';
+    }, function () {
+      msg.textContent = 'Copying did not work in this browser — please select the text and copy it by hand.';
+    });
+  } else {
+    msg.textContent = 'Copying is not available in this browser — please select the text and copy it by hand.';
+  }
+}
+document.getElementById('occasion').addEventListener('input', onOccasion);
+document.getElementById('occasion').addEventListener('change', onOccasion);
+document.getElementById('name').addEventListener('input', markEdited('name'));
+document.getElementById('name').addEventListener('change', markEdited('name'));
+document.getElementById('thing').addEventListener('input', markEdited('thing'));
+document.getElementById('thing').addEventListener('change', markEdited('thing'));
+document.getElementById('detail').addEventListener('input', markEdited('detail'));
+document.getElementById('detail').addEventListener('change', markEdited('detail'));
+document.getElementById('newDrafts').addEventListener('click', function () {
+  picks.short = 1 - picks.short;
+  picks.medium = 1 - picks.medium;
+  picks.warm = 1 - picks.warm;
+  render();
+});
+document.getElementById('copyShort').addEventListener('click', function () { copyDraft('draftShort'); });
+document.getElementById('copyMedium').addEventListener('click', function () { copyDraft('draftMedium'); });
+document.getElementById('copyWarm').addEventListener('click', function () { copyDraft('draftWarm'); });
+render();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

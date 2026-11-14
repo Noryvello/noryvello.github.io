@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dice Probability Calculator | Noryvello</title>
+<meta name="description" content="Work out the exact probability of any dice roll. Pick the number of dice, the sides per die and a target total — counted combinations, never simulation.">
+<link rel="canonical" href="https://noryvello.github.io/dice-probability-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dice Probability Calculator">
+<meta property="og:description" content="Find the exact probability of rolling any total with up to six dice.">
+<meta property="og:url" content="https://noryvello.github.io/dice-probability-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is the probability calculated?","acceptedAnswer":{"@type":"Answer","text":"The calculator counts combinations. It works out how many ways the dice can reach each total, one die at a time, then divides the ways to reach your target by the total number of outcomes. With 2 six-sided dice there are 36 outcomes, and 6 of them add up to 7, so the chance of exactly 7 is 6 out of 36, or 16.67%."}},{"@type":"Question","name":"Why is 7 the most likely total with 2 dice?","acceptedAnswer":{"@type":"Answer","text":"Because 7 has the most ways to happen. With 2 six-sided dice, 7 can be made 6 ways: 1+6, 2+5, 3+4, 4+3, 5+2 and 6+1. A total of 2 can only be made one way (1+1), and so can 12 (6+6). Middle totals have more combinations, so they come up more often."}},{"@type":"Question","name":"What does \"at least\" mean?","acceptedAnswer":{"@type":"Answer","text":"At least means the target total or higher. With 2 six-sided dice and a target of 7, at least 7 means rolling 7, 8, 9, 10, 11 or 12. That is 21 of the 36 outcomes, or 58.33%. It is useful when you need to reach a number rather than hit it exactly."}},{"@type":"Question","name":"Is this a simulation?","acceptedAnswer":{"@type":"Answer","text":"No. Nothing here is rolled at random or estimated by sampling. The calculator counts every possible combination exactly, so the percentages are exact for fair dice. The only rounding is showing the percentage to 2 decimal places."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Dice Probability Calculator</h1>
+<p class="answer">Pick the number of dice, the sides per die and a target total, and this calculator gives you the exact probability of rolling exactly that total, plus the probability of rolling at least that total. The maths counts every combination — no simulation, no guessing.</p>
+<div class="calc">
+<label for="dice">Number of dice</label>
+<select id="dice">
+<option value="1">1 die</option>
+<option value="2" selected>2 dice</option>
+<option value="3">3 dice</option>
+<option value="4">4 dice</option>
+<option value="5">5 dice</option>
+<option value="6">6 dice</option>
+</select>
+<label for="sides">Sides per die</label>
+<select id="sides">
+<option value="4">4 sides</option>
+<option value="6" selected>6 sides</option>
+<option value="8">8 sides</option>
+<option value="10">10 sides</option>
+<option value="12">12 sides</option>
+<option value="20">20 sides</option>
+</select>
+<label for="target">Target total</label>
+<input id="target" type="number" step="1" inputmode="numeric" value="7">
+<p class="out" id="outExact"></p>
+<p class="out" id="outAtLeast"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">These are exact probabilities for fair dice. Real dice can be slightly uneven, and probability is not a prediction: every roll is independent, so a total being likely does not mean it will happen next. A 16.67% chance means about 1 in 6 rolls over a long run, not a win every sixth roll.</div>
+<h2>How the maths works</h2>
+<p>The calculator counts combinations, one die at a time. It starts with 1 way to score 0 with no dice, then adds each die by spreading every existing total across all its faces. When all the dice are counted, it knows exactly how many ways there are to reach every possible total.</p>
+<ul>
+<li><strong>Total outcomes:</strong> sides to the power of the number of dice. With 2 six-sided dice that is 6^2 = 36 outcomes. With 6 twenty-sided dice it is 20^6 = 64,000,000 outcomes.</li>
+<li><strong>Exactly the target:</strong> ways to reach the target, divided by the total outcomes.</li>
+<li><strong>At least the target:</strong> ways to reach the target or higher, divided by the total outcomes.</li>
+</ul>
+<p>Nothing is rolled at random and nothing is estimated by sampling, so the answers are exact. The only rounding is in the display: percentages are shown to 2 decimal places, and the fraction beside each one (for example, 6 out of 36) is the exact count.</p>
+<h2>Why some totals are more likely</h2>
+<p>Not every total has the same chance. With 2 six-sided dice, 7 is the most likely total because it has the most ways to happen: 1+6, 2+5, 3+4, 4+3, 5+2 and 6+1 — 6 ways out of 36, or 16.67%.</p>
+<p>Totals at the ends have very few ways. A total of 2 can only be made one way (1+1), and so can 12 (6+6), so each has a 1 in 36 chance, or 2.78%. Middle totals sit in the middle of the range of combinations, so they collect the most ways. The same shape appears with any number of dice: the most likely total is always near the middle of the possible range.</p>
+<h2>Worked examples</h2>
+<p><strong>Example 1 — 2 six-sided dice, target 7.</strong> Total outcomes: 6^2 = 36. Ways to roll exactly 7: 6. Ways to roll 7 or more: 21. Exactly 7: 16.67% (6 out of 36). At least 7: 58.33% (21 out of 36).</p>
+<p><strong>Example 2 — 1 twenty-sided die, target 20.</strong> Total outcomes: 20^1 = 20. Ways to roll exactly 20: 1. Ways to roll 20 or more: 1. Exactly 20: 5.00% (1 out of 20). At least 20: 5.00% (1 out of 20).</p>
+<p><strong>Example 3 — 3 six-sided dice, target 10.</strong> Total outcomes: 6^3 = 216. Ways to roll exactly 10: 27. Ways to roll 10 or more: 135. Exactly 10: 12.50% (27 out of 216). At least 10: 62.50% (135 out of 216).</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How is the probability calculated?</h3><p>The calculator counts combinations. It works out how many ways the dice can reach each total, one die at a time, then divides the ways to reach your target by the total number of outcomes. With 2 six-sided dice there are 36 outcomes, and 6 of them add up to 7, so the chance of exactly 7 is 6 out of 36, or 16.67%.</p></div>
+<div class="faq"><h3>Why is 7 the most likely total with 2 dice?</h3><p>Because 7 has the most ways to happen. With 2 six-sided dice, 7 can be made 6 ways: 1+6, 2+5, 3+4, 4+3, 5+2 and 6+1. A total of 2 can only be made one way (1+1), and so can 12 (6+6). Middle totals have more combinations, so they come up more often.</p></div>
+<div class="faq"><h3>What does "at least" mean?</h3><p>At least means the target total or higher. With 2 six-sided dice and a target of 7, at least 7 means rolling 7, 8, 9, 10, 11 or 12. That is 21 of the 36 outcomes, or 58.33%. It is useful when you need to reach a number rather than hit it exactly.</p></div>
+<div class="faq"><h3>Is this a simulation?</h3><p>No. Nothing here is rolled at random or estimated by sampling. The calculator counts every possible combination exactly, so the percentages are exact for fair dice. The only rounding is showing the percentage to 2 decimal places.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../running-pace-calculator/">Running Pace Calculator</a> · <a href="../debt-payoff-calculator/">Debt Payoff Calculator</a> · <a href="../secret-santa-generator/">Secret Santa Generator</a> · <a href="../sleep-calculator/">Sleep Calculator</a></p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmtPct(n){return (Math.round((n+1e-9)*100)/100).toFixed(2);}
+function fmtInt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+function distribution(dice,sides){
+var counts=[1];
+for(var d=0;d<dice;d++){
+var next=new Array(counts.length+sides).fill(0);
+for(var t=0;t<counts.length;t++){
+if(counts[t]===0)continue;
+for(var f=1;f<=sides;f++){
+next[t+f]+=counts[t];
+}
+}
+counts=next;
+}
+return counts;
+}
+function calc(){
+var dice=parseInt(document.getElementById('dice').value,10);
+var sides=parseInt(document.getElementById('sides').value,10);
+var raw=document.getElementById('target').value;
+var outExact=document.getElementById('outExact');
+var outAtLeast=document.getElementById('outAtLeast');
+var steps=document.getElementById('steps');
+if(raw===null||raw===undefined){raw='';}
+raw=String(raw).trim();
+if(raw===''){
+outExact.textContent='Enter a target total to see the probability.';
+outAtLeast.textContent='';
+steps.textContent='';
+return;
+}
+var target=parseFloat(raw);
+if(isNaN(target)||target!==Math.floor(target)){
+outExact.textContent='Enter a whole number as the target total.';
+outAtLeast.textContent='';
+steps.textContent='';
+return;
+}
+var min=dice;
+var max=dice*sides;
+var dieWord=dice===1?'die':'dice';
+if(target<min||target>max){
+outExact.textContent='With '+dice+' '+sides+'-sided '+dieWord+' the total is always between '+min+' and '+max+'.';
+outAtLeast.textContent='';
+steps.textContent='';
+return;
+}
+var counts=distribution(dice,sides);
+var total=Math.pow(sides,dice);
+var exact=counts[target]||0;
+var atLeast=0;
+for(var t=target;t<counts.length;t++){atLeast+=counts[t];}
+outExact.textContent='Exactly '+target+': '+fmtPct(exact/total*100)+'% ('+fmtInt(exact)+' out of '+fmtInt(total)+')';
+outAtLeast.textContent='At least '+target+': '+fmtPct(atLeast/total*100)+'% ('+fmtInt(atLeast)+' out of '+fmtInt(total)+')';
+steps.textContent='Total outcomes: '+sides+'^'+dice+' = '+fmtInt(total)+'\nWays to roll exactly '+target+': '+fmtInt(exact)+'\nWays to roll '+target+' or more: '+fmtInt(atLeast);
+}
+document.getElementById('dice').addEventListener('input',calc);
+document.getElementById('dice').addEventListener('change',calc);
+document.getElementById('sides').addEventListener('input',calc);
+document.getElementById('sides').addEventListener('change',calc);
+document.getElementById('target').addEventListener('input',calc);
+document.getElementById('target').addEventListener('change',calc);
+calc();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

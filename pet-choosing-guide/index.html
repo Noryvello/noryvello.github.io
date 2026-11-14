@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pet Choosing Guide | Noryvello</title>
+<meta name="description" content="Answer five quick questions about your time, space, budget, allergies and experience, and find out which pet fits your life — with honest trade-offs for each match.">
+<link rel="canonical" href="https://noryvello.github.io/pet-choosing-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pet Choosing Guide">
+<meta property="og:description" content="Find the pet that fits your time, space and budget.">
+<meta property="og:url" content="https://noryvello.github.io/pet-choosing-guide/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef2ff}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which pet is easiest for a first-time owner?","acceptedAnswer":{"@type":"Answer","text":"Hamsters, fish and guinea pigs are often suggested for first-time owners because they need less time and space than a dog. But easy does not mean no work — every pet needs daily care, a clean home and attention. Start with the pet that fits the time and space you actually have."}},{"@type":"Question","name":"I have allergies — which pets can I consider?","acceptedAnswer":{"@type":"Answer","text":"Fish are the only pet in this guide with no fur or feathers, so they are the usual choice for people with allergies. For any other pet, spend time around the animal first if you can, and ask a vet before deciding."}},{"@type":"Question","name":"How much time does a dog really need?","acceptedAnswer":{"@type":"Answer","text":"A dog needs over an hour a day for walks, play, feeding and training, plus company through the day. Dogs are social animals and do not do well left alone for long stretches. If you cannot give that time every day, a cat or a smaller pet may be a better fit."}},{"@type":"Question","name":"Can I keep a pet in a small flat?","acceptedAnswer":{"@type":"Answer","text":"Yes — cats, rabbits, hamsters, fish, birds and guinea pigs can all live happily in a small flat with the right setup. A dog needs a garden or easy access to outdoor space for walks and exercise. Always check your tenancy rules before bringing a pet home."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Pet Choosing Guide</h1>
+<p class="answer">The right pet depends on your life, not just on what looks cute. Answer five quick questions about your time, space, budget, allergies and experience, and this guide shows which pets fit — with one good point and one hard point for each, so you can decide with your eyes open.</p>
+<div class="calc">
+<label for="time">Time you can give each day</label>
+<select id="time">
+<option value="0">Under 30 minutes</option>
+<option value="1" selected>30–60 minutes</option>
+<option value="2">Over 1 hour</option>
+</select>
+<label for="space">Space at home</label>
+<select id="space">
+<option value="0" selected>Small flat</option>
+<option value="1">House with a garden</option>
+<option value="2">Large outdoor space</option>
+</select>
+<label for="budget">Budget</label>
+<select id="budget">
+<option value="0">Low</option>
+<option value="1" selected>Medium</option>
+<option value="2">High</option>
+</select>
+<label for="allergies">Allergies to fur or feathers</label>
+<select id="allergies">
+<option value="no" selected>No</option>
+<option value="yes">Yes</option>
+</select>
+<label for="experience">Experience with pets</label>
+<select id="experience">
+<option value="0" selected>First pet</option>
+<option value="1">Some experience</option>
+<option value="2">Experienced</option>
+</select>
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">This page is general guidance only, not vet or medical advice. Research any pet properly, and ask a vet before you decide — a pet is a long commitment, and the right choice depends on details this guide cannot cover.</div>
+<h2>Before you choose</h2>
+<p>A pet is a commitment that lasts years, not weeks. Before you fall for a cute face, think through the practical side of living with an animal.</p>
+<ul>
+<li><strong>Think about holidays.</strong> Who will feed and care for your pet when you are away?</li>
+<li><strong>Plan for vet visits.</strong> Every pet needs regular check-ups, and a sick pet needs prompt care.</li>
+<li><strong>Check your home rules.</strong> Some landlords and flats do not allow pets — check before you decide.</li>
+<li><strong>Count the years.</strong> Make sure your life can hold a pet for its whole lifetime, not just for now.</li>
+<li><strong>Talk to everyone at home.</strong> A pet affects the whole household, so everyone should agree.</li>
+</ul>
+<h2>What each pet needs</h2>
+<p>The table below shows what each pet in this guide needs. A pet only matches your answers when your time, space, budget and experience are all at or above what it needs — and, if you have allergies, when it has no fur or feathers.</p>
+<table>
+<tr><th>Pet</th><th>Time per day</th><th>Space</th><th>Budget</th><th>Fur or feathers</th><th>Experience</th></tr>
+<tr><td>Dog</td><td>Over 1 hour</td><td>House with a garden</td><td>Medium</td><td>Yes</td><td>Some experience</td></tr>
+<tr><td>Cat</td><td>30–60 minutes</td><td>Small flat</td><td>Medium</td><td>Yes</td><td>First pet</td></tr>
+<tr><td>Rabbit</td><td>30–60 minutes</td><td>Small flat</td><td>Low</td><td>Yes</td><td>First pet</td></tr>
+<tr><td>Hamster</td><td>Under 30 minutes</td><td>Small flat</td><td>Low</td><td>Yes</td><td>First pet</td></tr>
+<tr><td>Fish</td><td>Under 30 minutes</td><td>Small flat</td><td>Medium</td><td>No</td><td>First pet</td></tr>
+<tr><td>Bird</td><td>30–60 minutes</td><td>Small flat</td><td>Low</td><td>Yes (feathers)</td><td>First pet</td></tr>
+<tr><td>Guinea pig</td><td>30–60 minutes</td><td>Small flat</td><td>Low</td><td>Yes</td><td>First pet</td></tr>
+</table>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Which pet is easiest for a first-time owner?</h3><p>Hamsters, fish and guinea pigs are often suggested for first-time owners because they need less time and space than a dog. But easy does not mean no work — every pet needs daily care, a clean home and attention. Start with the pet that fits the time and space you actually have.</p></div>
+<div class="faq"><h3>I have allergies — which pets can I consider?</h3><p>Fish are the only pet in this guide with no fur or feathers, so they are the usual choice for people with allergies. For any other pet, spend time around the animal first if you can, and ask a vet before deciding.</p></div>
+<div class="faq"><h3>How much time does a dog really need?</h3><p>A dog needs over an hour a day for walks, play, feeding and training, plus company through the day. Dogs are social animals and do not do well left alone for long stretches. If you cannot give that time every day, a cat or a smaller pet may be a better fit.</p></div>
+<div class="faq"><h3>Can I keep a pet in a small flat?</h3><p>Yes — cats, rabbits, hamsters, fish, birds and guinea pigs can all live happily in a small flat with the right setup. A dog needs a garden or easy access to outdoor space for walks and exercise. Always check your tenancy rules before bringing a pet home.</p></div>
+<h2>More free tools on Noryvello</h2>
+<p class="links"><a href="../paint-calculator/">Paint Calculator</a> · <a href="../sleep-calculator/">Sleep Calculator</a> · <a href="../running-pace-calculator/">Running Pace Calculator</a> · <a href="../debt-payoff-calculator/">Debt Payoff Calculator</a></p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var PETS = [
+  {name: "Dog", time: 2, space: 1, budget: 1, furry: true, exp: 1, good: "loyal companion and great exercise partner", hard: "needs daily walks, training and company"},
+  {name: "Cat", time: 1, space: 0, budget: 1, furry: true, exp: 0, good: "independent and low-maintenance", hard: "sheds fur and needs a litter tray"},
+  {name: "Rabbit", time: 1, space: 0, budget: 0, furry: true, exp: 0, good: "gentle and quiet", hard: "needs space to hop and chews cables and furniture"},
+  {name: "Hamster", time: 0, space: 0, budget: 0, furry: true, exp: 0, good: "cheap and small", hard: "mostly active at night and lives only a few years"},
+  {name: "Fish", time: 0, space: 0, budget: 1, furry: false, exp: 0, good: "calming and allergy-friendly", hard: "the tank needs regular cleaning and care"},
+  {name: "Bird", time: 1, space: 0, budget: 0, furry: true, exp: 0, good: "chatty and bright", hard: "can be noisy and messy"},
+  {name: "Guinea pig", time: 1, space: 0, budget: 0, furry: true, exp: 0, good: "social and gentle", hard: "needs a companion and fresh food every day"}
+];
+function calc() {
+  var out = document.getElementById("out");
+  var steps = document.getElementById("steps");
+  var time = parseInt(document.getElementById("time").value, 10);
+  var space = parseInt(document.getElementById("space").value, 10);
+  var budget = parseInt(document.getElementById("budget").value, 10);
+  var allergies = document.getElementById("allergies").value === "yes";
+  var exp = parseInt(document.getElementById("experience").value, 10);
+  var matches = [];
+  for (var i = 0; i < PETS.length; i++) {
+    var p = PETS[i];
+    if (time < p.time || space < p.space || budget < p.budget || exp < p.exp) continue;
+    if (allergies && p.furry) continue;
+    matches.push(p);
+  }
+  if (matches.length === 0) {
+    out.textContent = "No pet in our list fits those answers.";
+    steps.textContent = "Try allowing more time each day or a bigger space, then check again.";
+    return;
+  }
+  out.textContent = matches.length === 1 ? "1 pet matches your answers:" : matches.length + " pets match your answers:";
+  var lines = [];
+  for (var j = 0; j < matches.length; j++) {
+    lines.push(matches[j].name + " — Good: " + matches[j].good + ". Hard part: " + matches[j].hard + ".");
+  }
+  steps.textContent = lines.join("\n");
+}
+var IDS = ["time", "space", "budget", "allergies", "experience"];
+for (var k = 0; k < IDS.length; k++) {
+  document.getElementById(IDS[k]).addEventListener("input", calc);
+  document.getElementById(IDS[k]).addEventListener("change", calc);
+}
+calc();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>
