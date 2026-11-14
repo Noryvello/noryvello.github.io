@@ -117,7 +117,21 @@
       <a href="../running-pace-calculator/">Running Pace Calculator</a> ·
       <a href="../website-safety-checks/">Website Safety Checks</a>
     </p>
-    <footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+    <div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
   </div>
   <script>
     (function(){var $=function(id){return document.getElementById(id)};var unit=$('unit'),area=$('area'),width=$('width'),length=$('length'),spacing=$('spacing'),result=$('result'),steps=$('steps');function calc(){var a=+area.value,w=+width.value,l=+length.value,s=+spacing.value;if(!(a>0&&w>0&&l>0&&s>0)){result.textContent='Enter positive values in every field.';steps.textContent='';return;}var metric=unit.value==='m',boardArea=metric?(w/100)*l:(w/12)*l,boardCount=Math.ceil(a/boardArea),joists=Math.ceil((metric?l*39.3701:l*12)/s)+1,fasteners=boardCount*joists*2;result.textContent='Boards needed: '+boardCount+' | Fasteners estimate: '+fasteners;steps.textContent='Board coverage: '+boardArea.toFixed(2)+' '+(metric?'sq m':'sq ft')+'\nBoard count: '+a+' ÷ '+boardArea.toFixed(2)+' = '+boardCount+' (rounded up)\nEstimated joist crossings per board: '+joists+'\nFasteners: '+boardCount+' × '+joists+' × 2 = '+fasteners+' (estimate)';}[unit,area,width,length,spacing].forEach(function(x){x.addEventListener('input',calc);x.addEventListener('change',calc)});unit.addEventListener('change',function(){$('areaUnit').textContent=unit.value==='m'?'sq m':'sq ft';$('widthUnit').textContent=unit.value==='m'?'cm':'inches';$('boardLengthUnit').textContent=unit.value==='m'?'meters':'feet';calc()});calc();})();

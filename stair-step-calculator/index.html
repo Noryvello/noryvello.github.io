@@ -116,7 +116,21 @@
       <a href="../flooring-area-calculator/">Flooring Area Calculator</a> ·
       <a href="../website-safety-checks/">Website Safety Checks</a>
     </p>
-    <footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+    <div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
   </div>
   <script>
     (function(){var $=function(x){return document.getElementById(x)},u=$('unit'),rise=$('rise'),going=$('going'),target=$('target'),r=$('result'),s=$('steps');function calc(){var R=+rise.value,G=+going.value,T=+target.value;if(!(R>0&&G>0&&T>0)){r.textContent='Enter positive values for total rise, total going, and target riser height.';s.textContent='';return;}var n=Math.max(1,Math.round(R/T)),rh=R/n,intervals=n-1,td=intervals>0?G/intervals:null;r.textContent='Risers: '+n+' | Riser height: '+rh.toFixed(2)+' '+u.value+' | Tread depth: '+(td===null?'not available for one riser':td.toFixed(2)+' '+u.value);s.textContent='Riser count: '+R+' ÷ '+T+' target = '+n+' risers (rounded to nearest whole number)\nEqual riser height: '+R+' ÷ '+n+' = '+rh.toFixed(2)+' '+u.value+'\nTread intervals assumed: '+intervals+'\nAverage tread depth: '+(td===null?'not calculated':G+' ÷ '+intervals+' = '+td.toFixed(2)+' '+u.value);} [u,rise,going,target].forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc)});u.addEventListener('change',function(){var v=u.value==='cm'?'cm':'inches';['u1','u2','u3'].forEach(function(id){$(id).textContent=v});calc()});calc()})();

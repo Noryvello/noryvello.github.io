@@ -116,7 +116,21 @@
       <a href="../paint-calculator/">Paint Calculator</a> ·
       <a href="../sleep-calculator/">Sleep Calculator</a>
     </p>
-    <footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+    <div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
   </div>
   <script>
     (function(){var $=function(x){return document.getElementById(x)},ids=['fanW','fanH','acW','acH','rate','currency'],els=ids.map($),r=$('result'),s=$('steps');function calc(){var fw=+$('fanW').value,fh=+$('fanH').value,aw=+$('acW').value,ah=+$('acH').value,rate=+$('rate').value,cur=$('currency').value.trim();if(!(fw>=0&&aw>=0&&fh>=0&&fh<=24&&ah>=0&&ah<=24&&rate>=0)){r.textContent='Enter non-negative watts and rates, with daily hours from 0 to 24.';s.textContent='';return;}var fd=fw*fh/1000,ad=aw*ah/1000,fc=fd*rate,ac=ad*rate,fmt=function(v){return (cur?cur+' ':'')+v.toFixed(2)};r.textContent='Daily cost — Fan: '+fmt(fc)+' | AC: '+fmt(ac);s.textContent='Fan: '+fd.toFixed(3)+' kWh/day; '+fmt(fc)+' per day; '+fmt(fc*30)+' per 30 days\nAir conditioner: '+ad.toFixed(3)+' kWh/day; '+fmt(ac)+' per day; '+fmt(ac*30)+' per 30 days\nMonthly energy: fan '+(fd*30).toFixed(2)+' kWh; AC '+(ad*30).toFixed(2)+' kWh\nThese are estimates based on the values you entered.';}els.forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc)});calc()})();

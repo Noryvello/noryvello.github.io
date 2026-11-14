@@ -116,7 +116,21 @@
       <a href="../first-time-renter-checklist/">First-Time Renter Checklist</a> ·
       <a href="../sleep-calculator/">Sleep Calculator</a>
     </p>
-    <footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+    <div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
   </div>
   <script>
     (function(){var $=function(x){return document.getElementById(x)},u=$('unit'),l=$('length'),w=$('width'),d=$('spacing'),r=$('result'),s=$('steps');function calc(){var a=+l.value,b=+w.value,z=+d.value;if(!(a>0&&b>0&&z>0)){r.textContent='Enter positive bed dimensions and plant spacing.';s.textContent='';return;}var factor=u.value==='m'?100:12,L=u.value==='m'?a*100:a*12,W=u.value==='m'?b*100:b*12,per=Math.floor(L/z)+1,rows=Math.floor(W/z)+1,total=per*rows;r.textContent='Plants per row: '+per+' | Rows: '+rows+' | Total plant positions: '+total;s.textContent='Bed length in spacing units: '+L.toFixed(2)+' ÷ '+z+'\nPlants per row: floor('+ (L/z).toFixed(2)+') + 1 = '+per+'\nBed width in spacing units: '+W.toFixed(2)+' ÷ '+z+'\nRows: floor('+ (W/z).toFixed(2)+') + 1 = '+rows+'\nTotal positions: '+per+' × '+rows+' = '+total+' (theoretical grid estimate)';}[u,l,w,d].forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc)});u.addEventListener('change',function(){var metric=u.value==='m';$('u1').textContent=metric?'meters':'feet';$('u2').textContent=metric?'meters':'feet';$('u3').textContent=metric?'centimeters':'inches';calc()});calc()})();
