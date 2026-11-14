@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>এসএসসি জিপিএ ক্যালকুলেটর: বাংলাদেশ বোর্ডের গ্রেডিং অনুযায়ী | Noryvello</title>
+<meta name="description" content="এসএসসির প্রতিটি বিষয়ের নম্বর থেকে জিপিএ হিসাব করুন — বাংলাদেশ বোর্ডের গ্রেডিং টেবিল অনুযায়ী, ঐচ্ছিক (৪র্থ) বিষয়সহ।">
+<link rel="canonical" href="https://noryvello.github.io/bn/ssc-gpa-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="এসএসসি জিপিএ ক্যালকুলেটর: বাংলাদেশ বোর্ডের গ্রেডিং অনুযায়ী">
+<meta property="og:description" content="এসএসসির নম্বর থেকে বাংলাদেশ বোর্ডের গ্রেডিং অনুযায়ী জিপিএ হিসাব করুন।">
+<meta property="og:url" content="https://noryvello.github.io/bn/ssc-gpa-calculator/">
+<meta property="og:locale" content="bn_BD">
+<link rel="alternate" hreflang="bn" href="https://noryvello.github.io/bn/ssc-gpa-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.marks{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:15px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left}
+th{background:#eef2ff}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"bn","mainEntity":[{"@type":"Question","name":"এসএসসিতে জিপিএ কীভাবে হিসাব করে?","acceptedAnswer":{"@type":"Answer","text":"প্রতিটি বিষয়ের নম্বর থেকে গ্রেড ও গ্রেড পয়েন্ট বের করা হয় — যেমন 80 বা তার বেশি নম্বরে A+ (5.00)। সব বিষয়ের গ্রেড পয়েন্ট যোগ করে বিষয়ের সংখ্যা দিয়ে ভাগ করলেই জিপিএ পাওয়া যায়।"}},{"@type":"Question","name":"ঐচ্ছিক বিষয় (৪র্থ বিষয়) কীভাবে ধরা হয়?","acceptedAnswer":{"@type":"Answer","text":"ঐচ্ছিক বিষয়ের গ্রেড পয়েন্টের শুধু 2.00-এর উপরের অংশটুকু মোটের সঙ্গে যোগ হয় — যেমন A+ (5.00) হলে যোগ হয় 3.00, আর C (2.00) হলে কিছুই যোগ হয় না। ভাজকে ঐচ্ছিক বিষয়টি ধরা হয় না।"}},{"@type":"Question","name":"কোনো বিষয়ে ফেল করলে কী হয়?","acceptedAnswer":{"@type":"Answer","text":"কোনো একটি বিষয়েও F (33-এর কম নম্বর) এলে সামগ্রিক ফলাফল ফেল হয়, জিপিএ যতই হোক না কেন। এই ক্যালকুলেটরও তখন জিপিএ না দেখিয়ে ফেল দেখায়।"}},{"@type":"Question","name":"A+ পেতে কত নম্বর লাগে?","acceptedAnswer":{"@type":"Answer","text":"বাংলাদেশ বোর্ডের গ্রেডিং অনুযায়ী 80 বা তার বেশি নম্বর পেলে A+ গ্রেড হয়, যার গ্রেড পয়েন্ট 5.00।"}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>এসএসসি জিপিএ ক্যালকুলেটর</h1>
+<p class="answer">এই ক্যালকুলেটর দিয়ে এসএসসির প্রতিটি বিষয়ের নম্বর থেকে জিপিএ হিসাব করতে পারবেন। নিচে 10টি বিষয়ের নম্বর দিন, চাইলে একটি বিষয়কে ঐচ্ছিক (৪র্থ) বিষয় হিসেবে বাছুন — প্রতিটি বিষয়ের গ্রেড, গ্রেড পয়েন্ট ও মোট জিপিএ সঙ্গে সঙ্গে দেখা যাবে।</p>
+<div class="calc">
+<div class="marks">
+<div><label for="m1">বিষয় 1 (নম্বর)</label><input type="number" id="m1" min="0" max="100" step="any" value="85"></div>
+<div><label for="m2">বিষয় 2 (নম্বর)</label><input type="number" id="m2" min="0" max="100" step="any" value="78"></div>
+<div><label for="m3">বিষয় 3 (নম্বর)</label><input type="number" id="m3" min="0" max="100" step="any" value="72"></div>
+<div><label for="m4">বিষয় 4 (নম্বর)</label><input type="number" id="m4" min="0" max="100" step="any" value="65"></div>
+<div><label for="m5">বিষয় 5 (নম্বর)</label><input type="number" id="m5" min="0" max="100" step="any" value="58"></div>
+<div><label for="m6">বিষয় 6 (নম্বর)</label><input type="number" id="m6" min="0" max="100" step="any" value=""></div>
+<div><label for="m7">বিষয় 7 (নম্বর)</label><input type="number" id="m7" min="0" max="100" step="any" value=""></div>
+<div><label for="m8">বিষয় 8 (নম্বর)</label><input type="number" id="m8" min="0" max="100" step="any" value=""></div>
+<div><label for="m9">বিষয় 9 (নম্বর)</label><input type="number" id="m9" min="0" max="100" step="any" value=""></div>
+<div><label for="m10">বিষয় 10 (নম্বর)</label><input type="number" id="m10" min="0" max="100" step="any" value=""></div>
+</div>
+<label for="optional">ঐচ্ছিক বিষয় (৪র্থ বিষয়)</label>
+<select id="optional">
+<option value="none">কোনোটিই নয়</option>
+<option value="1">বিষয় 1</option>
+<option value="2">বিষয় 2</option>
+<option value="3">বিষয় 3</option>
+<option value="4">বিষয় 4</option>
+<option value="5">বিষয় 5</option>
+<option value="6">বিষয় 6</option>
+<option value="7">বিষয় 7</option>
+<option value="8">বিষয় 8</option>
+<option value="9">বিষয় 9</option>
+<option value="10">বিষয় 10</option>
+</select>
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+<p class="note">খালি ঘর হিসাবের বাইরে থাকে — শুধু নম্বর দেওয়া বিষয়গুলোই ধরা হয়। নম্বর 0 থেকে 100-এর মধ্যে হতে হবে।</p>
+</div>
+<div class="warn">গ্রেডিং নিয়ম বোর্ডভেদে বদলাতে পারে — নিজের বোর্ডের প্রকাশিত নিয়মের সঙ্গে মিলিয়ে নিন। এই পেজের হিসাব একটি সাধারণ নির্দেশিকা; আপনার বোর্ডের নিজস্ব নিয়মই চূড়ান্ত।</div>
+<h2>বাংলাদেশ বোর্ডের গ্রেডিং টেবিল</h2>
+<table>
+<tr><th>নম্বর</th><th>গ্রেড</th><th>গ্রেড পয়েন্ট</th></tr>
+<tr><td>80–100</td><td>A+</td><td>5.00</td></tr>
+<tr><td>70–79</td><td>A</td><td>4.00</td></tr>
+<tr><td>60–69</td><td>A−</td><td>3.50</td></tr>
+<tr><td>50–59</td><td>B</td><td>3.00</td></tr>
+<tr><td>40–49</td><td>C</td><td>2.00</td></tr>
+<tr><td>33–39</td><td>D</td><td>1.00</td></tr>
+<tr><td>0–32</td><td>F</td><td>0.00</td></tr>
+</table>
+<h2>জিপিএ কীভাবে হিসাব হয়</h2>
+<p>প্রতিটি বিষয়ের নম্বর থেকে উপরের টেবিল অনুযায়ী গ্রেড ও গ্রেড পয়েন্ট বের করা হয়। তারপর সব বিষয়ের গ্রেড পয়েন্ট যোগ করে বিষয়ের সংখ্যা দিয়ে ভাগ করলেই জিপিএ পাওয়া যায়।</p>
+<p>ঐচ্ছিক (৪র্থ) বিষয়ের ক্ষেত্রে নিয়মটি আলাদা: ঐচ্ছিক বিষয়ের গ্রেড পয়েন্টের শুধু 2.00-এর উপরের অংশটুকু মোটের সঙ্গে যোগ হয় — যেমন A+ (5.00) হলে যোগ হয় 3.00, আর C (2.00) হলে কিছুই যোগ হয় না। আর ভাজকে ঐচ্ছিক বিষয়টি ধরা হয় না।</p>
+<p>কোনো একটি বিষয়েও F এলে (33-এর কম নম্বর) সামগ্রিক ফলাফল ফেল হয় — তখন আর জিপিএ দেখানো হয় না।</p>
+<h2>প্রশ্নোত্তর</h2>
+<div class="faq"><h3>এসএসসিতে জিপিএ কীভাবে হিসাব করে?</h3><p>প্রতিটি বিষয়ের নম্বর থেকে গ্রেড ও গ্রেড পয়েন্ট বের করা হয় — যেমন 80 বা তার বেশি নম্বরে A+ (5.00)। সব বিষয়ের গ্রেড পয়েন্ট যোগ করে বিষয়ের সংখ্যা দিয়ে ভাগ করলেই জিপিএ পাওয়া যায়।</p></div>
+<div class="faq"><h3>ঐচ্ছিক বিষয় (৪র্থ বিষয়) কীভাবে ধরা হয়?</h3><p>ঐচ্ছিক বিষয়ের গ্রেড পয়েন্টের শুধু 2.00-এর উপরের অংশটুকু মোটের সঙ্গে যোগ হয় — যেমন A+ (5.00) হলে যোগ হয় 3.00, আর C (2.00) হলে কিছুই যোগ হয় না। ভাজকে ঐচ্ছিক বিষয়টি ধরা হয় না।</p></div>
+<div class="faq"><h3>কোনো বিষয়ে ফেল করলে কী হয়?</h3><p>কোনো একটি বিষয়েও F (33-এর কম নম্বর) এলে সামগ্রিক ফলাফল ফেল হয়, জিপিএ যতই হোক না কেন। এই ক্যালকুলেটরও তখন জিপিএ না দেখিয়ে ফেল দেখায়।</p></div>
+<div class="faq"><h3>A+ পেতে কত নম্বর লাগে?</h3><p>বাংলাদেশ বোর্ডের গ্রেডিং অনুযায়ী 80 বা তার বেশি নম্বর পেলে A+ গ্রেড হয়, যার গ্রেড পয়েন্ট 5.00।</p></div>
+<h2>Noryvello-তে আরও ফ্রি টুল</h2>
+<div class="links"><a href="../ramadan-countdown/">রমজান কাউন্টডাউন ২০২৭: প্রথম রোজা পর্যন্ত আর কত দিন</a> · <a href="../sleep-calculator/">ঘুমের হিসাব: কখন ঘুমাতে যাবেন, কখন উঠবেন</a> · <a href="../../gift-idea-generator-by-budget-and-person/">Gift Idea Generator by Budget and Person</a> · <a href="../../clean-joke-generator/">Clean Joke Generator</a></div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function gradeOf(m) {
+  if (m >= 80) return ['A+', 5.00];
+  if (m >= 70) return ['A', 4.00];
+  if (m >= 60) return ['A−', 3.50];
+  if (m >= 50) return ['B', 3.00];
+  if (m >= 40) return ['C', 2.00];
+  if (m >= 33) return ['D', 1.00];
+  return ['F', 0.00];
+}
+function fmt(n) { return (Math.round((n + 1e-9) * 100) / 100).toFixed(2); }
+function update() {
+  var out = document.getElementById('out');
+  var steps = document.getElementById('steps');
+  var opt = document.getElementById('optional').value;
+  var subs = [];
+  var bad = false;
+  for (var i = 1; i <= 10; i++) {
+    var raw = document.getElementById('m' + i).value;
+    if (raw.trim() === '') continue;
+    var v = parseFloat(raw);
+    if (isNaN(v) || v < 0 || v > 100) { bad = true; break; }
+    subs.push({ n: i, marks: v });
+  }
+  if (bad) {
+    out.textContent = 'নম্বর 0 থেকে 100-এর মধ্যে হতে হবে।';
+    steps.textContent = '';
+    return;
+  }
+  if (subs.length === 0) {
+    out.textContent = 'জিপিএ দেখতে অন্তত একটি বিষয়ের নম্বর দিন।';
+    steps.textContent = '';
+    return;
+  }
+  var lines = [];
+  var total = 0;
+  var count = 0;
+  var failed = [];
+  var parts = [];
+  for (var j = 0; j < subs.length; j++) {
+    var g = gradeOf(subs[j].marks);
+    var isOpt = String(subs[j].n) === opt;
+    if (g[0] === 'F') failed.push(subs[j].n);
+    if (isOpt) {
+      var add = Math.max(0, g[1] - 2.00);
+      lines.push('বিষয় ' + subs[j].n + ': ' + subs[j].marks + ' — ' + g[0] + ' (' + fmt(g[1]) + ') — ঐচ্ছিক বিষয়: ' + fmt(g[1]) + ' − 2.00 = ' + fmt(add) + ' যোগ হবে');
+      total += add;
+      parts.push(fmt(add));
+    } else {
+      lines.push('বিষয় ' + subs[j].n + ': ' + subs[j].marks + ' — ' + g[0] + ' (' + fmt(g[1]) + ')');
+      total += g[1];
+      parts.push(fmt(g[1]));
+      count++;
+    }
+  }
+  if (failed.length > 0) {
+    out.textContent = 'ফলাফল: ফেল';
+    lines.push('বিষয় ' + failed.join(', ') + '-এ F এসেছে, তাই সামগ্রিক ফলাফল ফেল।');
+    steps.textContent = lines.join('\n');
+    return;
+  }
+  if (count === 0) {
+    out.textContent = 'জিপিএ হিসাব করতে ঐচ্ছিক বিষয় ছাড়া অন্তত একটি বিষয়ের নম্বর দিন।';
+    steps.textContent = '';
+    return;
+  }
+  var gpa = total / count;
+  lines.push('মোট গ্রেড পয়েন্ট: ' + parts.join(' + ') + ' = ' + fmt(total));
+  lines.push('জিপিএ: ' + fmt(total) + ' ÷ ' + count + ' = ' + fmt(gpa));
+  out.textContent = 'জিপিএ: ' + fmt(gpa);
+  steps.textContent = lines.join('\n');
+}
+for (var k = 1; k <= 10; k++) {
+  document.getElementById('m' + k).addEventListener('input', update);
+  document.getElementById('m' + k).addEventListener('change', update);
+}
+document.getElementById('optional').addEventListener('input', update);
+document.getElementById('optional').addEventListener('change', update);
+update();
+</script>
+<script src="../../ads-config.js"></script>
+</body>
+</html>

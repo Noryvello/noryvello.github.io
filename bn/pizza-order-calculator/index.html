@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>পিৎজার হিসাব: কয়জনের জন্য কয়টা পিৎজা লাগবে | Noryvello</title>
+<meta name="description" content="কয়জন অতিথির জন্য কয়টা পিৎজা লাগবে তা হিসাব করুন — ক্ষুধা ও পিৎজার সাইজ বেছে নিলেই স্লাইসের হিসাবসহ উত্তর পাবেন।">
+<link rel="canonical" href="https://noryvello.github.io/bn/pizza-order-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="পিৎজার হিসাব: কয়জনের জন্য কয়টা পিৎজা লাগবে">
+<meta property="og:description" content="অতিথির সংখ্যা, ক্ষুধা আর পিৎজার সাইজ দিলেই কয়টা পিৎজা লাগবে তা হিসাব করে দেয়।">
+<meta property="og:url" content="https://noryvello.github.io/bn/pizza-order-calculator/">
+<meta property="og:locale" content="bn_BD">
+<link rel="alternate" hreflang="bn" href="https://noryvello.github.io/bn/pizza-order-calculator/">
+<link rel="alternate" hreflang="en" href="https://noryvello.github.io/pizza-order-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://noryvello.github.io/pizza-order-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>table{border-collapse:collapse;width:100%;margin:10px 0}th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;font-size:15px}th{background:#eef2ff}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"bn","mainEntity":[{"@type":"Question","name":"একজন মানুষ কয় স্লাইস পিৎজা খায়?","acceptedAnswer":{"@type":"Answer","text":"সাধারণত একজন প্রাপ্তবয়স্ক 3 স্লাইস খায়। হালকা খিদে হলে জনপ্রতি 2 স্লাইস, বেশি খিদে হলে জনপ্রতি 4 স্লাইস ধরুন।"}},{"@type":"Question","name":"একটা বড় পিৎজায় কয় স্লাইস থাকে?","acceptedAnswer":{"@type":"Answer","text":"এই হিসাব অনুযায়ী বড় পিৎজায় 10 স্লাইস থাকে, মাঝারি পিৎজায় 8 স্লাইস আর ছোট পিৎজায় 6 স্লাইস। তবে দোকানভেদে স্লাইসের সংখ্যা আলাদা হতে পারে, তাই অর্ডার দেওয়ার আগে দোকানকে জিজ্ঞেস করে নিন।"}},{"@type":"Question","name":"কয়জনের জন্য কয়টা পিৎজা লাগবে?","acceptedAnswer":{"@type":"Answer","text":"অতিথির সংখ্যা, ক্ষুধা আর পিৎজার সাইজ দিলেই এই পেজটি হিসাব করে দেয়। উদাহরণ: 8 জন অতিথি সাধারণ ক্ষুধায় মাঝারি পিৎজা খেলে 3টি পিৎজা লাগে।"}},{"@type":"Question","name":"বাচ্চাদের জন্য কত পিৎজা লাগে?","acceptedAnswer":{"@type":"Answer","text":"বাচ্চারা সাধারণত বড়দের চেয়ে কম খায়, তাই বাচ্চাদের জন্য হালকা ক্ষুধা বেছে নিন — জনপ্রতি 2 স্লাইস। বাচ্চা ও বড় মিলিয়ে হিসাব করলে আলাদা করে হিসাব করে যোগ করুন।"}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>পিৎজার হিসাব</h1>
+<p class="answer">কয়জন অতিথির জন্য কয়টা পিৎজা অর্ডার করবেন তা এই পেজটি হিসাব করে দেয়। অতিথির সংখ্যা, ক্ষুধা আর পিৎজার সাইজ বেছে নিলেই মোট স্লাইসের হিসাবসহ পিৎজার সংখ্যা দেখতে পাবেন।</p>
+<div class="calc">
+<label for="guests">অতিথির সংখ্যা</label>
+<input type="number" id="guests" value="8" min="1">
+<label for="appetite">ক্ষুধা</label>
+<select id="appetite">
+<option value="2">হালকা — জনপ্রতি 2 স্লাইস</option>
+<option value="3" selected>সাধারণ — জনপ্রতি 3 স্লাইস</option>
+<option value="4">বেশি — জনপ্রতি 4 স্লাইস</option>
+</select>
+<label for="size">পিৎজার সাইজ</label>
+<select id="size">
+<option value="6">ছোট — 6 স্লাইস</option>
+<option value="8" selected>মাঝারি — 8 স্লাইস</option>
+<option value="10">বড় — 10 স্লাইস</option>
+</select>
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">সবার ক্ষুধা এক রকম নয় — এই স্লাইসের সংখ্যা পরিকল্পনার জন্য একটি ধারণা মাত্র। একটা পিৎজায় কয় স্লাইস থাকে তা দোকানভেদে আলাদা হতে পারে।</div>
+<h2>হিসাবের নিয়ম</h2>
+<p>হিসাবটি সহজ: প্রথমে মোট স্লাইস বের করা হয় — অতিথির সংখ্যা গুণ জনপ্রতি স্লাইস। তারপর মোট স্লাইসকে একটা পিৎজার স্লাইস দিয়ে ভাগ করা হয়, আর ভাগফল সবসময় উপরে গোল করা হয়, যাতে স্লাইস কম না পড়ে।</p>
+<table>
+<tr><th>ক্ষুধা</th><th>জনপ্রতি স্লাইস</th></tr>
+<tr><td>হালকা</td><td>2</td></tr>
+<tr><td>সাধারণ</td><td>3</td></tr>
+<tr><td>বেশি</td><td>4</td></tr>
+</table>
+<table>
+<tr><th>পিৎজার সাইজ</th><th>প্রতি পিৎজায় স্লাইস</th></tr>
+<tr><td>ছোট</td><td>6</td></tr>
+<tr><td>মাঝারি</td><td>8</td></tr>
+<tr><td>বড়</td><td>10</td></tr>
+</table>
+<h2>অর্ডার দেওয়ার আগে</h2>
+<p>অর্ডার দেওয়ার আগে দোকানকে জিজ্ঞেস করে নিন একটা পিৎজায় কয় স্লাইস থাকে — দোকানভেদে সংখ্যা আলাদা হতে পারে। হিসাব সবসময় উপরে গোল করা হয়, তাই একটা স্লাইস বেশি থাকলেও কম পড়বে না।</p>
+<h2>প্রশ্নোত্তর</h2>
+<div class="faq"><h3>একজন মানুষ কয় স্লাইস পিৎজা খায়?</h3><p>সাধারণত একজন প্রাপ্তবয়স্ক 3 স্লাইস খায়। হালকা খিদে হলে জনপ্রতি 2 স্লাইস, বেশি খিদে হলে জনপ্রতি 4 স্লাইস ধরুন।</p></div>
+<div class="faq"><h3>একটা বড় পিৎজায় কয় স্লাইস থাকে?</h3><p>এই হিসাব অনুযায়ী বড় পিৎজায় 10 স্লাইস থাকে, মাঝারি পিৎজায় 8 স্লাইস আর ছোট পিৎজায় 6 স্লাইস। তবে দোকানভেদে স্লাইসের সংখ্যা আলাদা হতে পারে, তাই অর্ডার দেওয়ার আগে দোকানকে জিজ্ঞেস করে নিন।</p></div>
+<div class="faq"><h3>কয়জনের জন্য কয়টা পিৎজা লাগবে?</h3><p>অতিথির সংখ্যা, ক্ষুধা আর পিৎজার সাইজ দিলেই এই পেজটি হিসাব করে দেয়। উদাহরণ: 8 জন অতিথি সাধারণ ক্ষুধায় মাঝারি পিৎজা খেলে 3টি পিৎজা লাগে।</p></div>
+<div class="faq"><h3>বাচ্চাদের জন্য কত পিৎজা লাগে?</h3><p>বাচ্চারা সাধারণত বড়দের চেয়ে কম খায়, তাই বাচ্চাদের জন্য হালকা ক্ষুধা বেছে নিন — জনপ্রতি 2 স্লাইস। বাচ্চা ও বড় মিলিয়ে হিসাব করলে আলাদা করে হিসাব করে যোগ করুন।</p></div>
+<h2>Noryvello-তে আরও ফ্রি টুল</h2>
+<div class="links"><a href="../ramadan-countdown/">রমজান কাউন্টডাউন ২০২৭: প্রথম রোজা পর্যন্ত আর কত দিন</a> · <a href="../sleep-calculator/">ঘুমের হিসাব: কখন ঘুমাতে যাবেন, কখন উঠবেন</a> · <a href="../../gift-idea-generator-by-budget-and-person/">Gift Idea Generator by Budget and Person</a> · <a href="../../clean-joke-generator/">Clean Joke Generator</a></div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n) {
+  return String(Math.round((n + 1e-9) * 100) / 100);
+}
+function update() {
+  var guests = parseFloat(document.getElementById('guests').value);
+  var perPerson = parseInt(document.getElementById('appetite').value, 10);
+  var perPizza = parseInt(document.getElementById('size').value, 10);
+  var out = document.getElementById('out');
+  var steps = document.getElementById('steps');
+  if (isNaN(guests) || guests <= 0) {
+    out.textContent = 'অতিথির সংখ্যা লিখুন — শূন্যের বেশি হতে হবে।';
+    steps.textContent = '';
+    return;
+  }
+  var total = guests * perPerson;
+  var exact = total / perPizza;
+  var pizzas = Math.ceil(exact);
+  out.textContent = pizzas + 'টি পিৎজা অর্ডার করুন।';
+  var lines = [];
+  lines.push('মোট স্লাইস: ' + fmt(guests) + ' জন × ' + perPerson + ' স্লাইস = ' + fmt(total) + ' স্লাইস');
+  if (exact === pizzas) {
+    lines.push(fmt(total) + ' স্লাইস ÷ ' + perPizza + ' স্লাইস প্রতি পিৎজা = ' + pizzas + 'টি পিৎজা');
+  } else {
+    lines.push(fmt(total) + ' স্লাইস ÷ ' + perPizza + ' স্লাইস প্রতি পিৎজা = ' + fmt(exact) + ' → উপরে গোল করে ' + pizzas + 'টি পিৎজা');
+  }
+  steps.textContent = lines.join('\n');
+}
+document.getElementById('guests').addEventListener('input', update);
+document.getElementById('guests').addEventListener('change', update);
+document.getElementById('appetite').addEventListener('input', update);
+document.getElementById('appetite').addEventListener('change', update);
+document.getElementById('size').addEventListener('input', update);
+document.getElementById('size').addEventListener('change', update);
+update();
+</script>
+<script src="../../ads-config.js"></script>
+</body>
+</html>

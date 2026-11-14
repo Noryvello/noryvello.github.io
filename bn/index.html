@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noryvello — বিনামূল্যে বাংলা টুল: হিসাব, গাইড ও মজার টুল</title>
+<meta name="description" content="Noryvello-র বাংলা টুল: কাজের ক্যালকুলেটর, সৎ গাইড আর মজার জেনারেটর — সব বাংলায়। সাইন-আপ ছাড়া, ফ্রি, ব্রাউজারেই চলে।">
+<link rel="canonical" href="https://noryvello.github.io/bn/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Noryvello — বিনামূল্যে বাংলা টুল">
+<meta property="og:description" content="কাজের ক্যালকুলেটর, সৎ গাইড আর মজার জেনারেটর — সব বাংলায়। ফ্রি, সাইন-আপ ছাড়া।">
+<meta property="og:url" content="https://noryvello.github.io/bn/">
+<meta property="og:locale" content="bn_BD">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"bn","mainEntity":[{"@type":"Question","name":"Noryvello-র বাংলা টুলগুলো কি ফ্রি?","acceptedAnswer":{"@type":"Answer","text":"হ্যাঁ, সবগুলো সম্পূর্ণ ফ্রি। কোনো সাইন-আপ লাগে না, আর সব হিসাব আপনার ব্রাউজারেই হয়।"}},{"@type":"Question","name":"বাংলা পেজে কি ইংরেজি পেজের মতোই টুল আছে?","acceptedAnswer":{"@type":"Answer","text":"কিছু টুল ইংরেজি পেজের বাংলা সংস্করণ, আর কিছু শুধু বাংলাতেই আছে — যেমন এসএসসি জিপিএ ক্যালকুলেটর আর পহেলা বৈশাখ কাউন্টডাউন।"}},{"@type":"Question","name":"নতুন বাংলা টুল কি আসবে?","acceptedAnswer":{"@type":"Answer","text":"হ্যাঁ, বাংলা টুলের সংখ্যা ধীরে ধীরে বাড়বে। নতুন টুল এলে এই পেজেই যোগ হবে।"}},{"@type":"Question","name":"ইংরেজি টুলগুলো কোথায় পাবো?","acceptedAnswer":{"@type":"Answer","text":"সব ইংরেজি টুল Noryvello হোমপেজে আছে — উপরের Noryvello লেখায় ক্লিক করুন।"}}]}</script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:20px 16px 48px}
+.hero{background:linear-gradient(135deg,#4338ca,#7c3aed 55%,#0d9488);border-radius:20px;padding:30px 26px 26px;color:#fff;box-shadow:0 18px 40px rgba(67,56,202,.35);margin-bottom:18px}
+.brand{font-weight:800;font-size:22px;letter-spacing:.4px}
+.brand a{color:#fff;text-decoration:none}
+.hero h1{font-size:30px;line-height:1.25;margin:12px 0 8px}
+.hero .tag{font-size:16.5px;color:rgba(255,255,255,.93);max-width:640px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:999px;padding:5px 13px;font-size:13.5px;font-weight:600}
+.search{margin-top:18px}
+.search label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.search input{width:100%;padding:13px 18px;border:0;border-radius:999px;font-size:16px;box-shadow:0 6px 18px rgba(0,0,0,.18);outline:0}
+.search input:focus{box-shadow:0 0 0 3px rgba(255,255,255,.55),0 6px 18px rgba(0,0,0,.18)}
+#resultCount{font-size:13.5px;color:rgba(255,255,255,.9);margin-top:8px;min-height:18px}
+.cats{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:10px 2px;margin-bottom:6px;scrollbar-width:none;background:rgba(240,242,255,.85);backdrop-filter:blur(10px);border-radius:12px}
+.cats::-webkit-scrollbar{display:none}
+.cats a{white-space:nowrap;text-decoration:none;font-size:14px;font-weight:600;color:#4338ca;background:rgba(255,255,255,.9);border:1px solid #ddd6fe;border-radius:999px;padding:7px 14px}
+.cats a:hover{background:#4338ca;color:#fff}
+section.toolsec{margin-top:26px;scroll-margin-top:70px}
+#faqsec{scroll-margin-top:70px}
+section.toolsec h2{font-size:21px;margin-bottom:4px}
+section.toolsec h2 .cnt{display:inline-block;vertical-align:middle;background:#e0e7ff;color:#4338ca;border-radius:999px;font-size:12.5px;font-weight:700;padding:2px 9px;margin-left:8px}
+.secdesc{font-size:14px;color:#64748b;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.card{background:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.9);border-top:3px solid #c7d2fe;border-radius:16px;padding:16px;box-shadow:0 10px 22px rgba(30,41,59,.10);transition:transform .15s,box-shadow .15s,border-top-color .15s}
+.card:hover{transform:translateY(-2px);box-shadow:0 16px 30px rgba(30,41,59,.16);border-top-color:#0d9488}
+.card h3{font-size:17px;line-height:1.35}
+.card h3 a{color:#4338ca;text-decoration:none}
+.card h3 a:hover{text-decoration:underline}
+.card p{font-size:14.5px;color:#334155;margin-top:5px}
+.faq{background:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.9);border-radius:16px;padding:16px;margin:10px 0;box-shadow:0 10px 22px rgba(30,41,59,.10)}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+#faqsec h2{font-size:21px;margin:30px 0 8px}
+.note{font-size:14px;color:#64748b;margin-top:22px}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.hide{display:none!important}
+#noResults{background:rgba(255,255,255,.9);border:1px solid #ddd6fe;border-radius:16px;padding:20px;text-align:center;margin-top:22px;font-size:16px}
+@media(max-width:560px){.hero{padding:24px 20px}.hero h1{font-size:25px}.wrap{padding:14px 12px 40px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero">
+<div class="brand"><a href="https://noryvello.github.io/"><span style="color:#c7d2fe">Nory</span><span style="color:#99f6e4">vello</span></a></div>
+<h1>বিনামূল্যে বাংলা টুল</h1>
+<p class="tag">কাজের ক্যালকুলেটর, সৎ গাইড আর মজার জেনারেটর — সব বাংলায়, আপনার ব্রাউজারেই চলে।</p>
+<div class="chips"><span class="chip">10টি ফ্রি টুল</span><span class="chip">সাইন-আপ লাগে না</span></div>
+<div class="search"><label for="toolSearch">টুল খুঁজুন</label><input id="toolSearch" type="search" placeholder="10টি টুলের মধ্যে খুঁজুন" autocomplete="off"><p id="resultCount"></p></div>
+</div>
+<section class="toolsec">
+<h2>সব বাংলা টুল <span class="cnt">10</span></h2>
+<p class="secdesc">এক ক্লিকে খুলুন — কোনো সাইন-আপ লাগে না।</p>
+<div class="grid">
+<div class="card"><h3><a href="ramadan-countdown/">রমজান কাউন্টডাউন ২০২৭</a></h3><p>২০২৭ সালের রমজান কাউন্টডাউন: প্রথম রোজা পর্যন্ত আর কত দিন, ঘণ্টা, মিনিট আর সেকেন্ড বাকি, তা সরাসরি দেখুন। আশা করা তারিখ সোমবার, 8 ফেব্রুয়ারি 2027।</p></div>
+<div class="card"><h3><a href="sleep-calculator/">ঘুমের হিসাব</a></h3><p>ঘুমের চক্রের হিসাব করুন — কখন উঠতে চান তা দিলে ঘুমাতে যাওয়ার সময় পাবেন, আর ঘুমাতে যাওয়ার সময় দিলে উঠার সময় পাবেন। 90 মিনিটের চক্র আর ঘুমাতে যেতে 15 মিনিট ধরে হিসাব করা হয়।</p></div>
+<div class="card"><h3><a href="paint-calculator/">রংয়ের হিসাব</a></h3><p>ঘরের দৈর্ঘ্য, প্রস্থ আর উচ্চতা দিলেই এই হিসাব দেয়ালের ক্ষেত্রফল বের করে দরজা-জানালা বাদ দিয়ে কত লিটার রং লাগবে তা জানিয়ে দেয়।</p></div>
+<div class="card"><h3><a href="pizza-order-calculator/">পিৎজার হিসাব</a></h3><p>কয়জন অতিথির জন্য কয়টা পিৎজা লাগবে তা হিসাব করুন — ক্ষুধা ও পিৎজার সাইজ বেছে নিলেই স্লাইসের হিসাবসহ উত্তর পাবেন।</p></div>
+<div class="card"><h3><a href="gift-idea-generator-by-budget-and-person/">উপহারের আইডিয়া</a></h3><p>মা, বাবা, বন্ধু, সঙ্গী, শিশু বা সহকর্মীর জন্য উপহারের আইডিয়া খুঁজুন। বাজেট বাছুন — কম, মাঝারি বা বেশি — আর 8টি করে আইডিয়া পান, প্রতিটির সঙ্গে কেন ভালো, তা সহ।</p></div>
+<div class="card"><h3><a href="ssc-gpa-calculator/">এসএসসি জিপিএ ক্যালকুলেটর</a></h3><p>এসএসসির প্রতিটি বিষয়ের নম্বর থেকে জিপিএ হিসাব করুন — বাংলাদেশ বোর্ডের গ্রেডিং টেবিল অনুযায়ী, ঐচ্ছিক (৪র্থ) বিষয়সহ।</p></div>
+<div class="card"><h3><a href="baby-name-generator/">বাংলা শিশুর নাম</a></h3><p>ছেলে বা মেয়ের জন্য অর্থসহ সুন্দর বাংলা নামের আইডিয়া পান। প্রথম অক্ষর বেছে নিন — প্রতিটি নামের সঙ্গে তার আসল অর্থ দেওয়া আছে।</p></div>
+<div class="card"><h3><a href="pohela-boishakh-countdown/">পহেলা বৈশাখ কাউন্টডাউন ২০২৭</a></h3><p>পহেলা বৈশাখ 2027-এর লাইভ কাউন্টডাউন দেখুন — বুধবার, 14 এপ্রিল 2027 পর্যন্ত আর কত দিন, ঘণ্টা, মিনিট আর সেকেন্ড বাকি আছে, তা এখানে জানুন।</p></div>
+<div class="card"><h3><a href="bangladesh-electricity-bill-guide/">বিদ্যুৎ বিল পড়ার গাইড</a></h3><p>বাংলাদেশের বিদ্যুৎ বিলের প্রতিটি লাইন সহজ বাংলায় বুঝুন — গ্রাহক নম্বর, মিটার রিডিং, ইউনিট, ডিমান্ড চার্জ, ভ্যাট ও মোট বিল। কোনো লাইন বেছে নিলেই তার ব্যাখ্যা দেখা যাবে।</p></div>
+<div class="card"><h3><a href="riddle-generator/">বাংলা ধাঁধা জেনারেটর</a></h3><p>বাংলা ধাঁধা জেনারেটর — সহজ, মাঝারি আর কঠিন স্তরে 45টি মজার ধাঁধা। ধাঁধা দেখুন, নিজে ভাবুন, তারপর উত্তর দেখুন। বাচ্চা থেকে বড় — সবার জন্য মজার খেলা।</p></div>
+</div>
+</section>
+<div id="noResults" class="hide">কোনো টুল পাওয়া যায়নি — অন্য শব্দ দিয়ে খুঁজুন।</div>
+<section id="faqsec">
+<h2>প্রশ্নোত্তর</h2>
+<div class="faq"><h3>Noryvello-র বাংলা টুলগুলো কি ফ্রি?</h3><p>হ্যাঁ, সবগুলো সম্পূর্ণ ফ্রি। কোনো সাইন-আপ লাগে না, আর সব হিসাব আপনার ব্রাউজারেই হয়।</p></div>
+<div class="faq"><h3>বাংলা পেজে কি ইংরেজি পেজের মতোই টুল আছে?</h3><p>কিছু টুল ইংরেজি পেজের বাংলা সংস্করণ, আর কিছু শুধু বাংলাতেই আছে — যেমন এসএসসি জিপিএ ক্যালকুলেটর আর পহেলা বৈশাখ কাউন্টডাউন।</p></div>
+<div class="faq"><h3>নতুন বাংলা টুল কি আসবে?</h3><p>হ্যাঁ, বাংলা টুলের সংখ্যা ধীরে ধীরে বাড়বে। নতুন টুল এলে এই পেজেই যোগ হবে।</p></div>
+<div class="faq"><h3>ইংরেজি টুলগুলো কোথায় পাবো?</h3><p>সব ইংরেজি টুল Noryvello হোমপেজে আছে — উপরের Noryvello লেখায় ক্লিক করুন।</p></div>
+</section>
+<p class="note" id="hubNote">সব ইংরেজি টুল দেখতে <a href="../">Noryvello হোমপেজে</a> যান।</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<script async="async" data-cfasync="false" src="https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab"></script>
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<script>
+atOptions = {
+  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',
+  'format' : 'iframe',
+  'height' : 250,
+  'width' : 300,
+  'params' : {}
+};
+</script>
+<script src="https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9"></script>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+<script>
+(function(){var q=document.getElementById('toolSearch'),n=document.getElementById('noResults'),c=document.getElementById('resultCount'),f=document.getElementById('faqsec'),nt=document.getElementById('hubNote');q.addEventListener('input',function(){var s=q.value.trim().toLowerCase(),vis=0;var cards=document.querySelectorAll('.grid .card');for(var i=0;i<cards.length;i++){var show=!s||cards[i].textContent.toLowerCase().indexOf(s)>-1;cards[i].classList.toggle('hide',!show);if(show)vis++;}var secs=document.querySelectorAll('section.toolsec');for(var j=0;j<secs.length;j++){secs[j].classList.toggle('hide',!secs[j].querySelector('.grid .card:not(.hide)'));}f.classList.toggle('hide',!!s);nt.classList.toggle('hide',!!s);n.classList.toggle('hide',!(s&&vis===0));c.textContent=s?(vis+'টি টুল পাওয়া গেছে'):'';});})();
+</script>
+</body>
+</html>
