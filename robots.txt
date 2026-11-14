@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://noryvello.github.io/sitemap.xml

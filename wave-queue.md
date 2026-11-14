@@ -2,7 +2,7 @@
 **Updated: 2026-11-14. Owner order: everything here gets built, then more — thinking is unlimited. Build in queue order; Puchu builds, Suraiya verifies + publishes.**
 
 ## Queue (in order)
-1. **Batch 5** (6 topics) — pack delivered 2026-11-14, Puchu building. Topics: clean-joke-generator, would-you-rather-generator, truth-or-dare-generator, charades-word-generator, ramp-slope-calculator, carry-on-liquids-guide. Pack: `batch-5-prompts.md`.
+1. **Batch 5** (6 topics) — ✅ LIVE 2026-11-14. Sitemap 141. Pack: `batch-5-prompts.md`.
 2. **Remaining 26** — pack delivered 2026-11-14. All remaining surveyed topics (97–100 + R14–R35). Pack: `batch-6-remaining-26-prompts.md`. ZIP name: Noryvello_Remaining_26.zip.
 3. **2027 wave** (14 topics) — list ready, duplicate-checked, dates verified. File: `topic-list-2027-wave.md`. Pack to be written when Batch 5 + 26 are done. Feb–Mar items URGENT (build first inside the wave).
 4. **Feeling clusters wave** (owner idea 2026-11-14: work on every human feeling, psychologically) — TO SPEC. Clusters: faith/belief (running already), calm mind (breathing, gratitude, sleep — general info only), motivation (new starts, habits), family (gifts, forgiveness, relationship guides). HARD LIMITS: no medical/mental-health advice, no love calculators, no horoscopes/fortune.
