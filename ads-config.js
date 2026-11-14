@@ -10,12 +10,14 @@
  * separate In-Page Push code; a different presentation needs Adsterra support.
  *
  * The loader runs after the DOM is ready and only touches slots that are
- * both enabled AND non-empty. POPUNDER GATED 2026-11-15 (owner order):
- * it hijacked clicks and opened ad tabs on every visit, making the site
- * unusable on phones, while earning 0 impressions in 2 days. It now loads
- * at most ONCE per visitor per 24 hours (localStorage gate in run() below)
- * so the site stays clean and usable while the format still earns.
- * Do NOT remove the gate without the owner's word.
+ * both enabled AND non-empty. POPUNDER RULES 2026-11-15 (owner order +
+ * owner's 5-point presentation guide): (1) FREQUENCY CAP — at most ONCE
+ * per visitor per 24 hours (localStorage gate below); (2) TIME DELAY —
+ * the script loads only 20s after page load, so only engaged readers
+ * ever trigger it; (3) NEVER on hub pages (/ and /bn/) — inner tool
+ * pages only. Mobile keeps the same careful rules (visitors are
+ * overwhelmingly mobile; desktop-only would kill the format).
+ * Do NOT loosen these rules without the owner's word.
  * Social Bar + Banner + Native stay live, ungated.
  */
 window.NORYVELLO_ADS = {
@@ -50,13 +52,27 @@ window.NORYVELLO_ADS = {
     if (!slot || !slot.enabled || !slot.code || !String(slot.code).trim()) return;
     injectHTML(String(slot.code), holderId);
   }
-  /* Popunder gate: at most once per visitor per 24 hours. The timestamp is
-   * written when the script is allowed to load; later loads inside the
-   * window skip the slot entirely, so repeat visits stay popunder-free.
+  /* Popunder rules (owner's presentation guide, 2026-11-15):
+   * - Frequency cap: at most once per visitor per 24 hours. The
+   *   timestamp is written only when the script actually loads; loads
+   *   inside the window skip the slot entirely.
+   * - Time delay: the script is requested only 20s after page load,
+   *   so a visitor who bounces early never triggers it, and leaving
+   *   before the delay does not burn the day's one allowance.
+   * - Hub pages (/ and /bn/) never load the popunder at all.
    * If storage is unavailable (private mode), fall back to loading. */
   var POPUNDER_GATE_KEY = "noryvello_popunder_last";
   var POPUNDER_GATE_MS = 24 * 60 * 60 * 1000;
-  function popunderAllowed() {
+  var POPUNDER_DELAY_MS = 20 * 1000;
+  function popunderGateOpen() {
+    try {
+      var last = parseInt(localStorage.getItem(POPUNDER_GATE_KEY) || "0", 10);
+      return (Date.now() - last >= POPUNDER_GATE_MS);
+    } catch (e) {
+      return true;
+    }
+  }
+  function popunderClaim() {
     try {
       var last = parseInt(localStorage.getItem(POPUNDER_GATE_KEY) || "0", 10);
       if (Date.now() - last < POPUNDER_GATE_MS) return false;
@@ -66,8 +82,16 @@ window.NORYVELLO_ADS = {
       return true;
     }
   }
+  function isHubPage() {
+    var path = window.location.pathname;
+    return path === "/" || path === "/index.html" || path === "/bn/" || path === "/bn/index.html";
+  }
   function run() {
-    if (popunderAllowed()) inject(slots.popunder, "noryvello-ad-popunder");
+    if (!isHubPage() && popunderGateOpen()) {
+      setTimeout(function () {
+        if (popunderClaim()) inject(slots.popunder, "noryvello-ad-popunder");
+      }, POPUNDER_DELAY_MS);
+    }
     inject(slots.socialBar, "noryvello-ad-socialbar");
     inject(slots.inPagePush, "noryvello-ad-inpagepush");
   }
