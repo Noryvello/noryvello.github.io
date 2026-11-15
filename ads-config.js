@@ -21,12 +21,21 @@
  * the same careful rules (visitors are overwhelmingly mobile;
  * desktop-only would kill the format).
  * Do NOT loosen these rules without the owner's word.
- * Banner + Native stay live, ungated.
+ * DISPLAY-SLOT RULE 2026-11-15 (owner order: the visitor must see the page
+ * first — Adsterra's banner code was redirecting mobile visitors off the
+ * page the moment they entered): Banner + Native tags load 8s after DOM
+ * ready, into placeholders in the ad-zone block. NO frequency cap on
+ * display slots (they are per-impression inventory), all pages including
+ * hubs. The tag code itself is byte-identical to what Adsterra issued;
+ * only WHEN it loads changed. Tags are never sandboxed, iframed, or
+ * altered without Adsterra's prior written consent (ToS 4.7).
  */
 window.NORYVELLO_ADS = {
   popunder:   { enabled: true, code: "<script data-cfasync=\"false\" src=\"https://abscloud.org/1/ed75688592e9e156b7406d2363b76c44\"></script>" }, /* Adsterra Popunder_1, ID 32242761, issued 2026-11-13 */
   socialBar:  { enabled: true, code: "<script data-cfasync=\"false\" src=\"https://bauval.org/14/421055aafe4956dd5c498c37c06637ed\"></script>" }, /* Adsterra SocialBar_1, ID 32242762, issued 2026-11-13 */
-  inPagePush: { enabled: false, code: "" }  /* No In-Page Push unit for this site yet */
+  inPagePush: { enabled: false, code: "" },  /* No In-Page Push unit for this site yet */
+  native:     { enabled: true, code: "<script async=\"async\" data-cfasync=\"false\" src=\"https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab\"></script>" }, /* Adsterra Native Banner, ID 32275408, issued 2026-11-13 — renders into #container-d3643148ad0d192d49387f5ff33bfbab */
+  banner:     { enabled: true, code: "<script>\natOptions = {\n  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',\n  'format' : 'iframe',\n  'height' : 250,\n  'width' : 300,\n  'params' : {}\n};\n</script>\n<script src=\"https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9\"></script>" } /* Adsterra Banner 300x250, ID 32275368, issued 2026-11-13 — atOptions + invoke tag, exact */
 };
 
 (function () {
@@ -55,6 +64,24 @@ window.NORYVELLO_ADS = {
     if (!slot || !slot.enabled || !slot.code || !String(slot.code).trim()) return;
     injectHTML(String(slot.code), holderId);
   }
+  /* Inject tag code as real executable scripts, preserving order, with no
+   * wrapper element: each fresh script lands exactly where the static tag
+   * used to sit, so position-sensitive ad code behaves identically. */
+  function injectScripts(code, parentEl, beforeNode) {
+    if (!parentEl) return;
+    var holder = document.createElement("div");
+    holder.innerHTML = code;
+    var scripts = holder.querySelectorAll("script");
+    for (var i = 0; i < scripts.length; i++) {
+      var old = scripts[i], s = document.createElement("script");
+      for (var j = 0; j < old.attributes.length; j++) {
+        s.setAttribute(old.attributes[j].name, old.attributes[j].value);
+      }
+      s.text = old.text || "";
+      if (beforeNode) parentEl.insertBefore(s, beforeNode);
+      else parentEl.appendChild(s);
+    }
+  }
   /* Gated slots (owner's presentation guide, 2026-11-15; Social Bar
    * gate added 2026-11-15 on the owner's word after its offer opened
    * on EVERY visit, without a tap):
@@ -69,6 +96,8 @@ window.NORYVELLO_ADS = {
    * If storage is unavailable (private mode), fall back to loading. */
   var GATE_MS = 24 * 60 * 60 * 1000;
   var GATE_DELAY_MS = 20 * 1000;
+  var DISPLAY_DELAY_MS = 8 * 1000;
+  var displayLoaded = false;
   function gateOpen(key) {
     try {
       var last = parseInt(localStorage.getItem(key) || "0", 10);
@@ -93,6 +122,21 @@ window.NORYVELLO_ADS = {
     var path = window.location.pathname;
     return path === "/" || path === "/index.html" || path === "/bn/" || path === "/bn/index.html";
   }
+  /* Display slots (Banner + Native): delayed 8s so the visitor sees and
+   * can use the page first. No frequency cap. Tags byte-identical; only
+   * the load timing changed. Runs once per page view. */
+  function loadDisplaySlots() {
+    if (displayLoaded) return;
+    displayLoaded = true;
+    var container = document.getElementById("container-d3643148ad0d192d49387f5ff33bfbab");
+    if (container && slots.native && slots.native.enabled && String(slots.native.code || "").trim()) {
+      injectScripts(String(slots.native.code), container.parentNode, container);
+    }
+    var bannerHolder = document.getElementById("noryvello-ad-banner-slot");
+    if (bannerHolder && slots.banner && slots.banner.enabled && String(slots.banner.code || "").trim()) {
+      injectScripts(String(slots.banner.code), bannerHolder, null);
+    }
+  }
   function run() {
     if (!isHubPage() && gateOpen(POPUNDER_GATE_KEY)) {
       setTimeout(function () {
@@ -105,6 +149,7 @@ window.NORYVELLO_ADS = {
       }, GATE_DELAY_MS);
     }
     inject(slots.inPagePush, "noryvello-ad-inpagepush");
+    setTimeout(loadDisplaySlots, DISPLAY_DELAY_MS);
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", run);
