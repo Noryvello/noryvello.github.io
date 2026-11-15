@@ -39,12 +39,16 @@
  * AdSense condition #1 (owner order 2026-11-15): the popunder must be off
  * before any AdSense application. Code kept byte-identical for the record;
  * do NOT re-enable without the owner's word.
+ * UPDATE 2026-11-15: ALL slots are now DISABLED — Native + Social Bar
+ * switched off with the owner's AdSense decision (apply clean; no other
+ * ad scripts during review). Every unit's code is kept byte-identical;
+ * re-enable only on the owner's word, after the AdSense verdict.
  */
 window.NORYVELLO_ADS = {
   popunder:   { enabled: false, code: "<script data-cfasync=\"false\" src=\"https://abscloud.org/1/ed75688592e9e156b7406d2363b76c44\"></script>" }, /* Adsterra Popunder_1, ID 32242761, issued 2026-11-13 — DISABLED 2026-11-15 (AdSense condition #1; code kept byte-identical, re-enable only on owner's word) */
-  socialBar:  { enabled: true, code: "<script data-cfasync=\"false\" src=\"https://bauval.org/14/421055aafe4956dd5c498c37c06637ed\"></script>" }, /* Adsterra SocialBar_1, ID 32242762, issued 2026-11-13 */
+  socialBar:  { enabled: false, code: "<script data-cfasync=\"false\" src=\"https://bauval.org/14/421055aafe4956dd5c498c37c06637ed\"></script>" }, /* Adsterra SocialBar_1, ID 32242762, issued 2026-11-13 — DISABLED 2026-11-15 (AdSense clean-site decision; code kept byte-identical, re-enable only on owner's word) */
   inPagePush: { enabled: false, code: "" },  /* No In-Page Push unit for this site yet */
-  native:     { enabled: true, code: "<script async=\"async\" data-cfasync=\"false\" src=\"https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab\"></script>" }, /* Adsterra Native Banner, ID 32275408, issued 2026-11-13 — renders into #container-d3643148ad0d192d49387f5ff33bfbab */
+  native:     { enabled: false, code: "<script async=\"async\" data-cfasync=\"false\" src=\"https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab\"></script>" }, /* Adsterra Native Banner, ID 32275408, issued 2026-11-13 — renders into #container-d3643148ad0d192d49387f5ff33bfbab — DISABLED 2026-11-15 (AdSense clean-site decision; code kept byte-identical, re-enable only on owner's word) */
   banner:     { enabled: false, code: "<script>\natOptions = {\n  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',\n  'format' : 'iframe',\n  'height' : 250,\n  'width' : 300,\n  'params' : {}\n};\n</script>\n<script src=\"https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9\"></script>" } /* Adsterra Banner 300x250, ID 32275368 — TEMPORARILY DISABLED 2026-11-15 (prime forced-redirect suspect; code kept byte-identical, re-enable with enabled:true when Adsterra replies or on owner's word) */
 };
 
