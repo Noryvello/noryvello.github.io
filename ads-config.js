@@ -29,13 +29,19 @@
  * hubs. The tag code itself is byte-identical to what Adsterra issued;
  * only WHEN it loads changed. Tags are never sandboxed, iframed, or
  * altered without Adsterra's prior written consent (ToS 4.7).
+ * UPDATE 2026-11-15: the Banner slot is temporarily DISABLED
+ * (enabled:false below) — the forced redirect survived the 8s delay on the
+ * owner's mobile Chrome (cdn.aucey.com, 14:38); the Banner is the prime
+ * suspect. Native + gates unchanged. Restore on Adsterra's reply or the
+ * owner's word; if the redirect persists with the banner off, the Native
+ * unit is next.
  */
 window.NORYVELLO_ADS = {
   popunder:   { enabled: true, code: "<script data-cfasync=\"false\" src=\"https://abscloud.org/1/ed75688592e9e156b7406d2363b76c44\"></script>" }, /* Adsterra Popunder_1, ID 32242761, issued 2026-11-13 */
   socialBar:  { enabled: true, code: "<script data-cfasync=\"false\" src=\"https://bauval.org/14/421055aafe4956dd5c498c37c06637ed\"></script>" }, /* Adsterra SocialBar_1, ID 32242762, issued 2026-11-13 */
   inPagePush: { enabled: false, code: "" },  /* No In-Page Push unit for this site yet */
   native:     { enabled: true, code: "<script async=\"async\" data-cfasync=\"false\" src=\"https://bauval.org/21/d3643148ad0d192d49387f5ff33bfbab\"></script>" }, /* Adsterra Native Banner, ID 32275408, issued 2026-11-13 — renders into #container-d3643148ad0d192d49387f5ff33bfbab */
-  banner:     { enabled: true, code: "<script>\natOptions = {\n  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',\n  'format' : 'iframe',\n  'height' : 250,\n  'width' : 300,\n  'params' : {}\n};\n</script>\n<script src=\"https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9\"></script>" } /* Adsterra Banner 300x250, ID 32275368, issued 2026-11-13 — atOptions + invoke tag, exact */
+  banner:     { enabled: false, code: "<script>\natOptions = {\n  'key' : 'bc6c23f29ce8054c16144e7f48ae8ef9',\n  'format' : 'iframe',\n  'height' : 250,\n  'width' : 300,\n  'params' : {}\n};\n</script>\n<script src=\"https://bauval.org/22/bc6c23f29ce8054c16144e7f48ae8ef9\"></script>" } /* Adsterra Banner 300x250, ID 32275368 — TEMPORARILY DISABLED 2026-11-15 (prime forced-redirect suspect; code kept byte-identical, re-enable with enabled:true when Adsterra replies or on owner's word) */
 };
 
 (function () {
