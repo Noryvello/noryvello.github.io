@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EMI Explained: How Loan Repayments Work | Noryvello</title>
+<meta name="description" content="Learn what an EMI is, how each monthly payment splits between interest and principal, and how flat and reducing-balance interest differ — with a worked example.">
+<link rel="canonical" href="https://noryvello.github.io/emi-explained-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EMI Explained: How Loan Repayments Work">
+<meta property="og:description" content="An EMI is a fixed monthly loan payment that covers both interest and principal.">
+<meta property="og:url" content="https://noryvello.github.io/emi-explained-guide/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does EMI stand for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EMI stands for Equated Monthly Instalment. It is the fixed amount a borrower pays each month until a loan is fully repaid, and every payment covers both interest and part of the principal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is the interest part higher at the start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Interest is charged on the amount you still owe. At the start of a loan the balance is at its highest, so the interest portion of each payment is at its highest too. As you repay the principal, the balance falls, so less of each payment goes to interest and more goes to reducing what you owe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between flat and reducing-balance interest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With flat interest, the interest is calculated on the full original loan amount for the whole term, even as you repay it. With reducing-balance interest, it is calculated on the remaining balance, which falls with every payment. That is why the same rate can cost much less on a reducing-balance loan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does prepayment save money?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prepayment usually saves money, because paying off part of the loan early reduces the balance on which future interest is charged. The saving is biggest when you prepay early in the loan, while the balance is still high. Check the loan terms first, since some lenders charge a fee for early repayment."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>EMI Explained: How Loan Repayments Work</h1>
+<p class="answer">An EMI, or Equated Monthly Instalment, is the fixed amount you pay every month to repay a loan. Each payment is split into two parts: interest on what you still owe, and principal, which reduces the loan itself. Understanding that split — and how it changes over time — is the key to knowing what a loan really costs.</p>
+<p>A loan is rarely just the amount you borrow. The monthly payment you agree to covers the loan itself plus the lender's charge for letting you use the money, and the way those two parts are divided changes over the life of the loan. This guide explains what an EMI is, how each payment is split, and what to check before you borrow.</p>
+<p>The example uses a loan of 100,000 at 10% per year, repaid over 12 months. No currency is named, because the arithmetic works the same in any currency. All figures are rounded to two decimal places.</p>
+<div class="warn">This page explains how loan repayments work in general terms. It is educational content only, not financial advice. Loan terms differ between lenders, so read your own loan agreement before borrowing.</div>
+<h2>What an EMI is</h2>
+<p>EMI stands for Equated Monthly Instalment. It is a fixed amount paid every month for an agreed number of months, and it is designed so that the loan is fully repaid — principal plus interest — by the final payment. The word equated means the monthly amount stays the same throughout the loan, which makes budgeting simple: you know exactly what leaves your account each month.</p>
+<p>The fixed payment is possible because the lender works out the total cost of the loan in advance. Given the amount borrowed, the interest rate, and the number of months, there is one monthly figure that repays everything by the end. If any of those three changes — a larger loan, a higher rate, or a shorter term — the monthly figure changes with it.</p>
+<h2>How each payment is split</h2>
+<p>Every EMI is made of two parts. One part is interest, the lender's charge for the money you still owe. The other part is principal, which reduces the amount you borrowed. The two parts always add up to the EMI, but their sizes change every month.</p>
+<p>Interest is charged on the outstanding balance, not on the original loan amount. At the start, the balance is at its highest, so the interest part is at its largest and the principal part is at its smallest. Each payment reduces the balance, so the next month's interest is slightly smaller and slightly more of the payment goes to principal. Over time the balance shrinks faster and faster, because more and more of each payment is principal.</p>
+<h2>A worked example</h2>
+<p>Take a loan of 100,000 at 10% per year, repaid over 12 months. The monthly interest rate is 10% divided by 12, which is 0.8333%. The same loan can be charged in two ways, and the difference is large.</p>
+<p>On a flat-rate basis, interest is charged on the full 100,000 for the whole year. The interest is 100,000 × 10% = 10,000, so the total to repay is 100,000 + 10,000 = 110,000, and the monthly EMI is 110,000 ÷ 12 = 9,166.67.</p>
+<p>On a reducing-balance basis, interest is charged only on the amount still owed, which falls every month. The EMI works out at 8,791.59 a month. The total repaid is 8,791.59 × 12 = 105,499.06, of which 5,499.06 is interest. That is 4,500.94 less in total than the flat-rate loan, for the same amount borrowed at the same headline rate.</p>
+<p>The first reducing-balance payment shows the split clearly. The interest is 100,000 × 0.8333% = 833.33, so the principal part is 8,791.59 - 833.33 = 7,958.26, and the balance after the payment is 100,000 - 7,958.26 = 92,041.74. In the second payment, the interest falls to 767.01 because it is charged on the smaller balance of 92,041.74, while the principal part rises to 8,024.57, leaving a balance of 84,017.17. The payment stays the same, but the interest shrinks and the principal grows, month after month.</p>
+<h2>Flat interest vs reducing-balance interest</h2>
+<p>Flat interest is simple to calculate, which is why it is often used for short loans. The interest is fixed at the start and never changes, because it is always charged on the original amount. The drawback is that you keep paying interest on money you have already repaid.</p>
+<p>Reducing-balance interest is charged on the outstanding balance, so it falls as you repay. The monthly payment is worked out with a formula that takes the balance, the monthly rate, and the number of months left, and it produces a fixed payment that clears the loan exactly. Most home loans and long-term loans use this method. For a side-by-side comparison, see our <a href="https://noryvello.github.io/flat-rate-vs-reducing-balance/">Flat Rate vs Reducing Balance</a> page.</p>
+<p>The two methods can share the same headline rate and still cost very different amounts, as the worked example shows. A flat rate of 10% on a 12-month loan cost 10,000 in interest, while a reducing-balance rate of 10% cost 5,499.06. When comparing loans, ask which method the lender uses before comparing the rates.</p>
+<h2>What prepayment means</h2>
+<p>Prepayment means paying off part of a loan before the scheduled date, either as a lump sum or as extra payments on top of the regular EMI. The extra money goes straight to the principal, which reduces the balance and therefore the interest charged in every following month.</p>
+<p>Prepayment saves the most money early in a loan, when the balance is high and the interest part of each payment is large. A lump sum paid in the first year cuts more future interest than the same amount paid in the final year, when most of the interest has already been charged. Some borrowers prepay whenever they have spare money, while others set a fixed extra amount each month.</p>
+<p>There are two things to check before prepaying. First, some lenders charge a fee for early repayment, which eats into the saving. Second, ask whether a prepayment shortens the loan term or reduces the monthly payment — shortening the term usually saves more interest, while reducing the payment eases the monthly budget.</p>
+<h2>What to check before borrowing</h2>
+<p>The monthly figure is the easiest number to compare, but it is not the most important one. A low monthly payment can hide a long term, which means more months of interest and a higher total cost. Always compare the total amount you will repay, not just the monthly figure.</p>
+<p>Check whether the interest is flat or reducing-balance, and ask for the total interest over the full term. Check whether the rate is fixed or can change, and check for fees: processing charges, late-payment charges, and any fee for repaying early. Fees are part of the cost even though they never appear in the EMI.</p>
+<p>Finally, check that the monthly payment fits your budget with room to spare. A payment that is comfortable in a good month can become a burden if your income drops or another expense appears. Borrow only what you need, keep the term as short as you can afford, and read the agreement before signing.</p>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>What does EMI stand for?</h3>
+<p>EMI stands for Equated Monthly Instalment. It is the fixed amount a borrower pays each month until a loan is fully repaid, and every payment covers both interest and part of the principal.</p>
+</div>
+<div class="faq">
+<h3>Why is the interest part higher at the start?</h3>
+<p>Interest is charged on the amount you still owe. At the start of a loan the balance is at its highest, so the interest portion of each payment is at its highest too. As you repay the principal, the balance falls, so less of each payment goes to interest and more goes to reducing what you owe.</p>
+</div>
+<div class="faq">
+<h3>What is the difference between flat and reducing-balance interest?</h3>
+<p>With flat interest, the interest is calculated on the full original loan amount for the whole term, even as you repay it. With reducing-balance interest, it is calculated on the remaining balance, which falls with every payment. That is why the same rate can cost much less on a reducing-balance loan.</p>
+</div>
+<div class="faq">
+<h3>Does prepayment save money?</h3>
+<p>Prepayment usually saves money, because paying off part of the loan early reduces the balance on which future interest is charged. The saving is biggest when you prepay early in the loan, while the balance is still high. Check the loan terms first, since some lenders charge a fee for early repayment.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/flat-rate-vs-reducing-balance/">Flat Rate vs Reducing Balance</a> · <a href="https://noryvello.github.io/debt-payoff-calculator/">Debt Payoff Calculator</a> · <a href="https://noryvello.github.io/credit-card-mistakes/">Credit Card Mistakes</a> · <a href="https://noryvello.github.io/paycheck-budget-splitter/">Paycheck Budget Splitter</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

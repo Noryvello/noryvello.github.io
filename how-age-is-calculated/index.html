@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Age Is Calculated: Years, Months and Leap Years | Noryvello</title>
+<meta name="description" content="Learn how exact age is calculated in years, months and days, how leap years and 29 February birthdays work, and how to find an age at any date.">
+<link rel="canonical" href="https://noryvello.github.io/how-age-is-calculated/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Age Is Calculated: Years, Months and Leap Years">
+<meta property="og:description" content="Exact age is counted in years, then months, then days — this guide shows the method, the leap-year edge cases and worked examples you can check by hand.">
+<meta property="og:url" content="https://noryvello.github.io/how-age-is-calculated/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you calculate exact age?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Count whole years from the birth date to the most recent birthday, then whole months from that birthday, then the days that remain. For example, someone born on 15 March 1990 is 36 years, 8 months and 0 days old on 15 November 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a leap year affect age?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A leap year adds one extra day, 29 February, so anyone counting age in days must include it. It does not change anyone's age in years, because birthdays still fall once a year, except for people born on 29 February itself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does someone born on 29 February have a birthday?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In leap years, on 29 February. In other years there is no single rule: most people celebrate on 28 February or 1 March, and different organisations handle it differently."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between age in years and age in days?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Age in years counts whole birthdays, while age in days counts every single day lived, including leap days. For example, someone born on 1 January 2000 is 27 years old on 1 January 2027, which is 9,862 days."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How Age Is Calculated</h1>
+<p class="answer">Exact age is counted in years first, then months, then days, starting from the birth date and anchoring on the most recent birthday. This guide shows the method step by step, with worked examples, and explains the leap-year edge cases that catch people out.</p>
+<p>Most people know their age in years, but the exact figure — years, months and days — takes a little more care. The method is simple once you see it: count whole years first, then whole months, then the days that remain. This page walks through that method step by step, with worked examples you can check by hand, and explains the two things that catch people out: leap years and birthdays on 29 February.</p>
+<p>You will also see how to work out an age at a future date or a past date, how age in days is counted, and where exact age actually matters in everyday life, from school starting ages to age limits on forms and licences.</p>
+<div class="warn">Age rules for school cutoffs and eligibility vary by country and organisation. This page explains the arithmetic of age, not any official rule — always check the rule that applies to your own situation.</div>
+<h2>The exact-age method</h2>
+<p>Your exact age is the time between your birth date and the date you are measuring to, expressed in years, then months, then days. The order matters: years first, months second, days last. Working in that order keeps the answer tidy, because each step starts from a whole unit already counted.</p>
+<p>Step one is whole years. Count from the birth date to the most recent birthday. If the birthday in the current year has not happened yet, the most recent birthday was last year, so subtract one year from the simple year difference. This is the step most people get wrong: subtracting the birth year from the current year gives the age only if the birthday has already passed this year.</p>
+<p>Step two is whole months. Starting from that most recent birthday, count full months forward to the current date. A full month ends on the same day number as the birthday, so from 15 March the next whole month ends on 15 April. If the birth day is the 31st and a month has only 30 days, the month completes on that month's last day.</p>
+<p>Step three is the days that remain. Count the days from the last whole month to the current date. If the current date is exactly on the month mark, the days are zero. Put the three parts together and you have the exact age: years, months and days.</p>
+<h2>Worked examples</h2>
+<p>Born 15 March 1990, measured on 15 November 2026. First, whole years: 15 March 1990 to 15 March 2026 is 36 years. Next, whole months: 15 March 2026 to 15 November 2026 is 8 months. The days are zero, because 15 November falls exactly on the month mark. The exact age is 36 years, 8 months, 0 days.</p>
+<p>Born 20 June 2000, measured on 10 February 2027. First, whole years: 20 June 2000 to 20 June 2026 is 26 years. Next, whole months: 20 June 2026 to 20 January 2027 is 7 months. Then the days: 20 January 2027 to 10 February 2027 is 21 days — 11 days left in January plus 10 days in February. The exact age is 26 years, 7 months, 21 days.</p>
+<p>Notice how the second example needs all three steps. A quick subtraction of the years alone would give 27, which is wrong, because the birthday in 2027 has not happened yet on 10 February. The years-months-days method never makes that mistake, because it always anchors on the most recent birthday.</p>
+<h2>Age in days</h2>
+<p>Age in days counts every single day lived, including leap days. To work it out, count the days year by year, adding 366 for each leap year and 365 for every other year. The leap days are the only part that needs care, because they are easy to miss over a long span.</p>
+<p>Born 1 January 2000, measured on 1 January 2027. That is 27 years, and 27 times 365 is 9,855 days. But 7 of those years were leap years — 2000, 2004, 2008, 2012, 2016, 2020 and 2024 — so 7 leap days must be added. The age in days is 9,855 plus 7, which is 9,862 days.</p>
+<p>The leap-year rule itself is simple, with one exception. A year is a leap year if it divides exactly by 4 — except century years, which must divide exactly by 400. That is why 2000 was a leap year but 1900 was not, and why 2100 will not be one either. Over a span that crosses a century boundary, this exception changes the day count, so it is worth remembering.</p>
+<h2>Leap years and 29 February birthdays</h2>
+<p>Someone born on 29 February only finds that date on the calendar in leap years. A person born on 29 February 2000 has had a birthday on 29 February in 2000, 2004, 2008, 2012, 2016, 2020 and 2024 — 7 leap-day birthdays by 2024. In the years between, the birthday has no date of its own.</p>
+<p>In non-leap years, most people born on 29 February celebrate on 28 February or 1 March. There is no single rule, and different organisations handle it differently, so the honest answer is that it depends on who is asking. What never changes is the age in years: it still goes up by one each year, on whichever day is chosen.</p>
+<h2>Age at a future or past date</h2>
+<p>The same method works for any date, not just today. To find an age at a future date, use that date as the measuring date and run the same three steps: whole years to the most recent birthday before it, then whole months, then days. To find an age at a past date, do exactly the same thing with the earlier date.</p>
+<p>For example, someone born on 15 March 1990 turns 37 on 15 March 2027 — a future date is just a birthday that has not happened yet. Looking backwards, that same person was 19 years, 9 months and 17 days old on 1 January 2010: 15 March 1990 to 15 March 2009 is 19 years, 15 March 2009 to 15 December 2009 is 9 months, and 15 December 2009 to 1 January 2010 is 17 days.</p>
+<h2>Everyday uses of age</h2>
+<p>Exact age matters most where a cutoff date decides something. Schools often set a starting age by a cutoff date, so two children born days apart can start a year apart. Many forms ask for age in years and months, and licences, memberships and services set minimum ages that are checked against a birth date, not a rough guess.</p>
+<p>The other common use is simply keeping records straight. Medical notes, school files and official forms all record a birth date, and the age is worked out from it each time. Knowing the method means you can check any age you are given, and spot the usual mistake — a year counted before the birthday has happened.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How do you calculate exact age?</h3><p>Count whole years from the birth date to the most recent birthday, then whole months from that birthday, then the days that remain. For example, someone born on 15 March 1990 is 36 years, 8 months and 0 days old on 15 November 2026.</p></div>
+<div class="faq"><h3>How does a leap year affect age?</h3><p>A leap year adds one extra day, 29 February, so anyone counting age in days must include it. It does not change anyone's age in years, because birthdays still fall once a year, except for people born on 29 February itself.</p></div>
+<div class="faq"><h3>When does someone born on 29 February have a birthday?</h3><p>In leap years, on 29 February. In other years there is no single rule: most people celebrate on 28 February or 1 March, and different organisations handle it differently.</p></div>
+<div class="faq"><h3>What is the difference between age in years and age in days?</h3><p>Age in years counts whole birthdays, while age in days counts every single day lived, including leap days. For example, someone born on 1 January 2000 is 27 years old on 1 January 2027, which is 9,862 days.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/daylight-saving-dates-guide/">Daylight Saving Dates Guide</a> · <a href="https://noryvello.github.io/easter-date-finder/">Easter Date Finder</a> · <a href="https://noryvello.github.io/goal-setting-worksheet/">Goal Setting Worksheet</a> · <a href="https://noryvello.github.io/ramadan-countdown/">Ramadan Countdown</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>
