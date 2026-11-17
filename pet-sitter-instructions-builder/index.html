@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pet Sitter Instructions Builder | Noryvello</title>
+<meta name="description" content="Build a clear instruction sheet for your pet sitter. Add feeding, walks, medication notes and vet contact details, then print the sheet.">
+<link rel="canonical" href="https://noryvello.github.io/pet-sitter-instructions-builder/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pet Sitter Instructions Builder">
+<meta property="og:description" content="Build a printable instruction sheet for your pet sitter.">
+<meta property="og:url" content="https://noryvello.github.io/pet-sitter-instructions-builder/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:11px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer;margin-top:12px}
+.calc button.secondary{background:#0d9488}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+.ckrow{display:flex;align-items:flex-start;gap:10px;margin:8px 0}
+.ckrow input[type="checkbox"]{width:20px;height:20px;flex:0 0 20px;margin-top:3px}
+.ckrow span{font-size:15.5px}
+.sheet{background:#fff;border:1px solid #cbd5e1;border-radius:8px;padding:14px 16px;margin-top:12px;font-size:15.5px}
+.sheet p{margin:6px 0}
+.msglist li{margin:8px 0}
+@media print{body{background:#fff}.brand,.links,.note,footer,.calc button{display:none!important}.wrap{max-width:100%}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What should I put in the feeding section?", "acceptedAnswer": {"@type": "Answer", "text": "Write the food name, the amount and the feeding times, plus any treats and where the water bowl is. Use the words you use at home, so the sitter measures the food the way you do."}}, {"@type": "Question", "name": "Can I include medication instructions?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but only the instructions you already have from your vet. Write them exactly as your vet explained them, and tell the sitter to call you or the vet if anything seems wrong."}}, {"@type": "Question", "name": "What if my sitter has never looked after my pet before?", "acceptedAnswer": {"@type": "Answer", "text": "Arrange a trial visit before the real sit. Walk through the sheet together, show the sitter where everything is, and let your pet get used to them."}}, {"@type": "Question", "name": "Should I leave an emergency contact?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Leave your own number and the vet's number on the sheet, plus a neighbour or friend the sitter can call if they cannot reach you."}}, {"@type": "Question", "name": "Can I print the sheet?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Press the print button under the builder to print the instruction sheet. Leave it somewhere obvious, such as the kitchen table."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Pet Sitter Instructions Builder</h1>
+<p class="answer">Fill in your pet's feeding times, walks, medication notes and vet contact, and this builder turns them into a neat instruction sheet you can print and leave for your sitter. A clear sheet means your pet's routine stays the same while you are away, and your sitter never has to guess.</p>
+<p>A pet sitter does their best work when they know exactly what your pet needs. Written instructions remove the guesswork: the sitter can see the feeding times, the walk route and the vet's number at a glance, instead of trying to remember everything from a hurried chat at the door.</p>
+<p>This builder puts the sheet together for you. Fill in as much as you can, then build the sheet and print it. Leave it somewhere obvious, such as on the kitchen table, and go through it with your sitter once before you leave.</p>
+<div class="calc">
+<label for="pet-name">Pet's name</label>
+<input id="pet-name" type="text" placeholder="For example, Biscuit">
+<label for="pet-type">Pet type</label>
+<select id="pet-type">
+<option value="">Choose a pet type</option>
+<option value="dog">Dog</option>
+<option value="cat">Cat</option>
+<option value="other">Other pet</option>
+</select>
+<label for="feeding">Feeding (food, amount, times)</label>
+<textarea id="feeding" rows="3" placeholder="For example: half a cup of kibble at 7 in the morning and 6 in the evening"></textarea>
+<label for="walks">Walks and exercise</label>
+<textarea id="walks" rows="3" placeholder="For example: a short walk after breakfast, a longer walk in the evening"></textarea>
+<label for="meds">Medication notes (your own instructions only)</label>
+<textarea id="meds" rows="3" placeholder="Write down exactly what your vet told you, or leave blank if there is no medication"></textarea>
+<label for="vet">Vet contact</label>
+<input id="vet" type="text" placeholder="Vet name and phone number">
+<label for="house">House notes</label>
+<textarea id="house" rows="3" placeholder="For example: spare key under the blue pot, food in the kitchen cupboard"></textarea>
+<p class="out" id="msg"></p>
+<button id="build-btn" type="button">Build my instruction sheet</button>
+<button id="again-btn" class="secondary" type="button">Start again</button>
+<button id="print-btn" type="button">Print the sheet</button>
+<div id="sheet"></div>
+</div>
+<script>
+function esc(s) {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+function val(id) { var e = document.getElementById(id); return e ? e.value.trim() : ""; }
+document.getElementById("build-btn").addEventListener("click", function () {
+  var out = document.getElementById("sheet");
+  var msg = document.getElementById("msg");
+  var name = val("pet-name");
+  if (!name) {
+    msg.textContent = "Please add your pet's name so the sheet has a heading.";
+    out.innerHTML = "";
+    return;
+  }
+  msg.textContent = "";
+  var rows = [];
+  rows.push("<p><strong>Pet:</strong> " + esc(name) + "</p>");
+  var type = val("pet-type");
+  if (type) rows.push("<p><strong>Pet type:</strong> " + esc(type) + "</p>");
+  var feeding = val("feeding");
+  if (feeding) rows.push("<p><strong>Feeding:</strong> " + esc(feeding) + "</p>");
+  var walks = val("walks");
+  if (walks) rows.push("<p><strong>Walks and exercise:</strong> " + esc(walks) + "</p>");
+  var meds = val("meds");
+  if (meds) rows.push("<p><strong>Medication (owner's instructions):</strong> " + esc(meds) + "</p>");
+  var vet = val("vet");
+  if (vet) rows.push("<p><strong>Vet contact:</strong> " + esc(vet) + "</p>");
+  var house = val("house");
+  if (house) rows.push("<p><strong>House notes:</strong> " + esc(house) + "</p>");
+  rows.push("<p>Thank you for looking after " + esc(name) + ". If anything is unclear, please call the owner before guessing.</p>");
+  out.innerHTML = "<div class=\"sheet\">" + rows.join("") + "</div>";
+});
+document.getElementById("again-btn").addEventListener("click", function () {
+  var ids = ["pet-name", "pet-type", "feeding", "walks", "meds", "vet", "house"];
+  for (var i = 0; i < ids.length; i++) { document.getElementById(ids[i]).value = ""; }
+  document.getElementById("sheet").innerHTML = "";
+  document.getElementById("msg").textContent = "";
+});
+document.getElementById("print-btn").addEventListener("click", function () { window.print(); });
+</script>
+<div class="warn">This builder does not give veterinary advice. Medication notes here are only the instructions you have already been given for your own pet — write them exactly as your vet explained them, and never add a medicine or a dose from another source.</div>
+<h2>What to include in the sheet</h2>
+<p>Start with the daily routine: what your pet eats, how much, and when. Write the amounts in the words you use at home, so there is no confusion about scoop sizes or tin sizes. Add the walk times and the usual route, plus anything your pet is nervous about, such as fireworks or busy roads.</p>
+<p>Add the vet's name and phone number, even if your pet is healthy. If your pet takes medicine, write down exactly what your vet told you — the medicine, the amount and the time — and nothing else. The sitter should follow your written instructions and call you or the vet if anything seems wrong.</p>
+<p>Finish with house notes: where the food is kept, where the lead and bowls live, and anything about the house the sitter should know. Keep the sheet to one page if you can, so it is easy to follow at a glance.</p>
+<h2>Before you hand the sheet over</h2>
+<p>Walk your sitter through the sheet in person, ideally during a trial visit. Show them where everything is, introduce them to your pet, and watch how they get on together. A short trial visit answers more questions than any sheet can.</p>
+<p>Leave your own phone number on the sheet and agree how often you would like updates. Most sitters are happy to send a short message each day. That way you can relax, knowing your pet is in good hands and your sitter can reach you if anything comes up.</p>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>What should I put in the feeding section?</h3>
+<p>Write the food name, the amount and the feeding times, plus any treats and where the water bowl is. Use the words you use at home, so the sitter measures the food the way you do.</p>
+</div>
+<div class="faq">
+<h3>Can I include medication instructions?</h3>
+<p>Yes, but only the instructions you already have from your vet. Write them exactly as your vet explained them, and tell the sitter to call you or the vet if anything seems wrong.</p>
+</div>
+<div class="faq">
+<h3>What if my sitter has never looked after my pet before?</h3>
+<p>Arrange a trial visit before the real sit. Walk through the sheet together, show the sitter where everything is, and let your pet get used to them.</p>
+</div>
+<div class="faq">
+<h3>Should I leave an emergency contact?</h3>
+<p>Yes. Leave your own number and the vet's number on the sheet, plus a neighbour or friend the sitter can call if they cannot reach you.</p>
+</div>
+<div class="faq">
+<h3>Can I print the sheet?</h3>
+<p>Yes. Press the print button under the builder to print the instruction sheet. Leave it somewhere obvious, such as the kitchen table.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/travelling-with-pets-checklist/">Travelling With Pets Checklist</a> · <a href="https://noryvello.github.io/aquarium-setup-checklist/">Aquarium Setup Checklist for Beginners</a> · <a href="https://noryvello.github.io/house-sitter-instructions-checklist/">House Sitter Instructions Checklist</a> · <a href="https://noryvello.github.io/babysitter-instructions-builder/">Babysitter Instructions Builder</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div><footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<script src="../ads-config.js"></script>
+</div>
+</body>
+</html>

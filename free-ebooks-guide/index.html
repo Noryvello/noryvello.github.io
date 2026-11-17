@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free eBooks Guide | Noryvello</title>
+<meta name="description" content="Find free eBooks legally: public-domain libraries, how to check a book is really free, and a format picker so the book you download opens on your device.">
+<link rel="canonical" href="https://noryvello.github.io/free-ebooks-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Free eBooks Guide">
+<meta property="og:description" content="Free eBooks from public-domain libraries, with a legality checker and a format picker for your device.">
+<meta property="og:url" content="https://noryvello.github.io/free-ebooks-guide/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{margin-top:12px;padding:10px 18px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:600;cursor:pointer}.calc button:hover{background:#3730a3}</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it legal to download free eBooks?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, when the book is in the public domain or the author has chosen to share it. Public-domain libraries such as Project Gutenberg and Open Library only host books you may legally download."}}, {"@type": "Question", "name": "What is a public-domain book?", "acceptedAnswer": {"@type": "Answer", "text": "A book whose copyright has expired, usually a set number of years after the author's death. Once a book is in the public domain, anyone may copy, share and read it freely."}}, {"@type": "Question", "name": "Which eBook format should I choose?", "acceptedAnswer": {"@type": "Answer", "text": "EPUB suits most readers and devices, because its text reflows to fit the screen. PDF suits books with pictures or fixed layouts, and plain text works everywhere as a fallback."}}, {"@type": "Question", "name": "Can I read eBooks on my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Most phones can read eBooks with a free reading app, and EPUB files reflow to fit a phone screen. An e-reader is more comfortable for long reading, but a phone is enough to start."}}, {"@type": "Question", "name": "Why is a famous book free on one site and paid on another?", "acceptedAnswer": {"@type": "Answer", "text": "The text of a public-domain book is free, but a publisher may charge for a new edition with fresh editing, notes or design. The free copy and the paid copy contain the same book."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Free eBooks Guide</h1>
+<p class="answer">Thousands of books are free to read legally, because their copyright has expired or their authors chose to share them. This guide shows you the public-domain libraries to use, how to check that a book is genuinely free, and which format to download for your device.</p>
+<p>Reading need not cost much. The world's great books of the past — novels, plays, poetry, history, science — are mostly free to read, because their copyright has expired. Libraries exist to collect them, check them and give them away in formats any device can open.</p>
+<p>This guide covers legitimate sources only. It names the public-domain libraries worth using, explains how to check that a book is genuinely free, and gives you a format picker and a legality checker.</p>
+<div class="calc">
+<p><strong>Format picker</strong> — pick a format to see what it works with.</p>
+<label for="eb-format">eBook format</label>
+<select id="eb-format">
+<option value="">Choose a format</option>
+<option value="epub">EPUB</option>
+<option value="mobi">MOBI</option>
+<option value="pdf">PDF</option>
+<option value="txt">Plain text</option>
+</select>
+<button id="eb-fbtn" type="button">Show format details</button>
+<div class="out" id="eb-fout"></div>
+<div class="steps" id="eb-fsteps"></div>
+<p><strong>Legality checker</strong> — say where you found the book to check whether it is safe to download.</p>
+<label for="eb-source">Where did you find the book?</label>
+<select id="eb-source">
+<option value="">Choose a source</option>
+<option value="library">A public-domain library</option>
+<option value="author">The author's own site</option>
+<option value="unknown-site">An unknown free-download site</option>
+<option value="file-share">A file-sharing link</option>
+</select>
+<button id="eb-sbtn" type="button">Check this source</button>
+<div class="out" id="eb-sout"></div>
+<div class="steps" id="eb-ssteps"></div>
+</div>
+<script>
+(function(){
+  var FORMATS = {
+    "epub": {
+      name: "EPUB",
+      works: "Works on most e-readers, phones and tablets with a reading app, and the text reflows to fit the screen.",
+      note: "EPUB is the best first choice for most readers. If your device is a Kindle, it may need converting first."
+    },
+    "mobi": {
+      name: "MOBI",
+      works: "Works on older Kindle devices and apps, with reflowable text like EPUB.",
+      note: "MOBI is an older format. Newer Kindles prefer other formats, so check your device before downloading MOBI."
+    },
+    "pdf": {
+      name: "PDF",
+      works: "Opens on almost every device, and keeps the page layout exactly as the publisher made it.",
+      note: "PDF does not reflow, so on a small phone screen you may need to zoom and scroll. It suits books with pictures and fixed layouts."
+    },
+    "txt": {
+      name: "Plain text",
+      works: "Opens on every device, in any text app, with no special software at all.",
+      note: "Plain text has no formatting, pictures or chapters list. It is the most compatible format and the least comfortable to read."
+    }
+  };
+  document.getElementById("eb-fbtn").addEventListener("click", function(){
+    var pick = document.getElementById("eb-format").value;
+    var out = document.getElementById("eb-fout");
+    var steps = document.getElementById("eb-fsteps");
+    if (!pick || !FORMATS[pick]) {
+      out.textContent = "";
+      steps.textContent = "Choose a format first.";
+      return;
+    }
+    var f = FORMATS[pick];
+    out.textContent = f.name + ": " + f.works;
+    steps.textContent = f.note;
+  });
+  var SOURCES = {
+    "library": {
+      name: "A public-domain library",
+      verdict: "Safe to download. Public-domain libraries only host books whose copyright has expired or that were shared freely.",
+      note: "Well-known libraries include Project Gutenberg, Open Library, the Internet Archive and Standard Ebooks."
+    },
+    "author": {
+      name: "The author's own site",
+      verdict: "Safe to download. An author may share their own book freely, and their own site is the place to trust.",
+      note: "Check that the site really belongs to the author, and read any note about how the book may be shared."
+    },
+    "unknown-site": {
+      name: "An unknown free-download site",
+      verdict: "Be careful. A site you cannot identify may host books without permission, and may bundle unwanted software with the download.",
+      note: "Search for the same book on a public-domain library instead, where the legality is clear."
+    },
+    "file-share": {
+      name: "A file-sharing link",
+      verdict: "Do not download. A shared file link gives you no way to know whether the book is legal, and the file itself may not be what it claims.",
+      note: "If the book is genuinely in the public domain, a public-domain library will have a clean copy."
+    }
+  };
+  document.getElementById("eb-sbtn").addEventListener("click", function(){
+    var pick = document.getElementById("eb-source").value;
+    var out = document.getElementById("eb-sout");
+    var steps = document.getElementById("eb-ssteps");
+    if (!pick || !SOURCES[pick]) {
+      out.textContent = "";
+      steps.textContent = "Choose a source first.";
+      return;
+    }
+    var s = SOURCES[pick];
+    out.textContent = s.name + ": " + s.verdict;
+    steps.textContent = s.note;
+  });
+})();
+</script>
+
+<h2>Public-domain libraries</h2>
+<p>The best-known public-domain library is Project Gutenberg, which has been giving away free eBooks since the early days of the internet. Its collection runs to tens of thousands of books, mostly older works whose copyright has expired, offered in several formats. Open Library, run by the Internet Archive, lends books digitally as well as offering public-domain titles to download outright.</p>
+<p>The Internet Archive itself is a vast digital library that includes books, and Standard Ebooks takes public-domain books and produces carefully edited, nicely formatted editions of them. All four are well-established, non-profit or community projects, and all four state clearly what you may do with the books you download.</p>
+<p>These libraries work because copyright expires. In most countries, a book enters the public domain a set number of years after the author's death, and after that anyone may copy, share and read it freely. That is why the classics are free and new books are not: the classics have outlived their copyright, and the new books have not.</p>
+<h2>How to check a book is legal</h2>
+<p>Start with the source. If you found the book on a public-domain library or on the author's own site, it is safe to download. If you found it on a site you cannot identify, or through a file-sharing link, treat it with suspicion. Use the legality checker above to test any source before you download.</p>
+<p>Next, check the book itself. A genuinely free book usually has a note saying why it is free: that it is in the public domain, or that the author has shared it. A site that offers a new bestselling book for free with no explanation of why it is free is a warning sign, not a bargain.</p>
+<p>Finally, check what the download asks of you. A legitimate library lets you download a book file directly. A site that asks you to create an account, enter payment details, or install software to get a supposedly free book is not a library, and you should leave it alone.</p>
+<h2>Formats explained</h2>
+<p>EPUB is the most common eBook format, and the best first choice for most readers. Its text reflows to fit the screen, so it reads well on a phone, a tablet or an e-reader, and most reading apps open it. If your device is a Kindle, it may need the file converting first, which many reading apps and free tools can do.</p>
+<p>MOBI is an older format made for Kindle devices. It also reflows, but newer Kindles prefer other formats, so check your device before downloading MOBI. PDF keeps the page layout exactly as the publisher made it, which suits books with pictures, diagrams or fixed layouts — but PDF does not reflow, so on a small phone screen you may need to zoom and scroll.</p>
+<p>Plain text is the simplest format of all: it opens on every device, in any text app, with no special software. It has no formatting, no pictures and no chapter list, so it is the most compatible format and the least comfortable to read. It is useful as a fallback when nothing else works. Use the format picker above to compare the formats for your device.</p>
+<h2>Reading on your device</h2>
+<p>Most phones and tablets can read eBooks with a free reading app. E-readers are built for the job and are the most comfortable for long reading, but a phone with a reading app is enough to start. Whichever device you use, download the book in the format that suits it, and keep your books in one place — a single folder or a single app — so you can find them again.</p>
+<p>Adjust the text to suit your eyes. A larger font, more space between lines and a warm background make long reading easier, and most reading apps offer all three. Reading in short sessions is fine: an eBook remembers your place, so you can read for ten minutes and stop without losing anything.</p>
+<p>Finally, keep a small list of what you have read and what you want to read next. Public-domain libraries hold so many books that choosing can be the hard part; a short list, built from recommendations and your own curiosity, turns a huge library into a personal one.</p>
+<div class="warn">If a site offers a new bestselling book for free with no clear explanation of why it is free, treat it as a warning sign. Stick to well-known public-domain libraries, and never enter payment details to download a supposedly free book.</div>
+
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>Is it legal to download free eBooks?</h3>
+<p>Yes, when the book is in the public domain or the author has chosen to share it. Public-domain libraries such as Project Gutenberg and Open Library only host books you may legally download.</p>
+</div>
+<div class="faq">
+<h3>What is a public-domain book?</h3>
+<p>A book whose copyright has expired, usually a set number of years after the author's death. Once a book is in the public domain, anyone may copy, share and read it freely.</p>
+</div>
+<div class="faq">
+<h3>Which eBook format should I choose?</h3>
+<p>EPUB suits most readers and devices, because its text reflows to fit the screen. PDF suits books with pictures or fixed layouts, and plain text works everywhere as a fallback.</p>
+</div>
+<div class="faq">
+<h3>Can I read eBooks on my phone?</h3>
+<p>Yes. Most phones can read eBooks with a free reading app, and EPUB files reflow to fit a phone screen. An e-reader is more comfortable for long reading, but a phone is enough to start.</p>
+</div>
+<div class="faq">
+<h3>Why is a famous book free on one site and paid on another?</h3>
+<p>The text of a public-domain book is free, but a publisher may charge for a new edition with fresh editing, notes or design. The free copy and the paid copy contain the same book.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/effective-study-techniques-guide/">Effective Study Techniques Guide</a> · <a href="https://noryvello.github.io/note-taking-methods-guide/">Note-Taking Methods Guide</a> · <a href="https://noryvello.github.io/free-fonts-guide/">Free Fonts Guide</a> · <a href="https://noryvello.github.io/free-stock-photo-and-video-guide/">Free Stock Photos and Videos Guide</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WordPress Theme Chooser Guide | Noryvello</title>
+<meta name="description" content="How to choose a WordPress theme: a needs picker by site type, plus a checklist of features and speed checks before you commit.">
+<link rel="canonical" href="https://noryvello.github.io/wordpress-theme-chooser-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WordPress Theme Chooser Guide">
+<meta property="og:description" content="Choose a WordPress theme by what your site must do, with a needs picker and a checklist of features and speed checks.">
+<meta property="og:url" content="https://noryvello.github.io/wordpress-theme-chooser-guide/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+button{display:inline-block;margin-top:12px;padding:10px 18px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:600;cursor:pointer}
+button:hover{background:#3730a3}
+.chk{display:block;margin:6px 0;font-size:15.5px;cursor:pointer}
+.chk input{width:auto;margin-right:8px;accent-color:#4338ca}
+.count{font-weight:700;margin:12px 0}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Should I use a free or paid theme?", "acceptedAnswer": {"@type": "Answer", "text": "Either can work well. Free themes from the official directory are reviewed before listing, while paid themes often come with support and more settings. Judge a theme by its updates, reviews and fit for your site, not by whether it costs anything."}}, {"@type": "Question", "name": "How do I know a theme is kept up to date?", "acceptedAnswer": {"@type": "Answer", "text": "The theme's own page shows the date of its last update and which WordPress version it supports. Regular updates and recent replies from the author to user questions are good signs; a long silence is a warning."}}, {"@type": "Question", "name": "Can I change themes later?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Your posts, pages and images stay in place when you change themes, but layouts, menus and widgets may need adjusting. Try a new theme on a copy of your site first and check every page type before going live."}}, {"@type": "Question", "name": "What makes a theme slow?", "acceptedAnswer": {"@type": "Answer", "text": "The usual causes are large images loaded at full size, heavy sliders and video backgrounds, many font files, and scripts loaded on every page even when they are only needed on one. A theme that keeps these light will stay fast."}}, {"@type": "Question", "name": "Do I need a theme with a page builder?", "acceptedAnswer": {"@type": "Answer", "text": "Not necessarily. A page builder gives you more layout control, but it also adds weight and can make switching themes harder later. If your pages are mostly text and images, a simple theme is often the faster and easier choice."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>WordPress Theme Chooser Guide</h1>
+<p class="answer">Choosing a WordPress theme is easier when you start from what your site must do, not from how themes look in a demo. This guide helps you match a theme to your site type, check the features that matter, and test speed before you commit.</p>
+<p>A WordPress theme decides how your site looks and, to a large extent, how it behaves. The demo for a theme is designed to impress, so it is a poor guide to how the theme will handle your own words and pictures. The better way to choose is to work out what your site must do first, and then judge themes against that list.</p>
+<p>Start with the picker below. Choose your site type and you will see the features worth prioritising and the speed checks that matter most for that kind of site. Then work through the checklist before you settle on a theme.</p>
+<div class="warn">This guide names no themes and ranks none. Theme quality changes over time, so check the theme's own page for its latest update, support and compatibility notes before you decide.</div>
+<h2>Start with your site type</h2>
+<p>Different sites need different things from a theme. A blog needs readable pages above all else, while a shop needs product pages that work on a phone. Pick your site type to see what to prioritise.</p>
+<div class="calc">
+<label for="site-pick">What kind of site are you building?</label>
+<select id="site-pick">
+<option value="">Choose a site type…</option>
+<option value="blog">Blog or personal site</option>
+<option value="shop">Online shop</option>
+<option value="portfolio">Portfolio or photography site</option>
+<option value="business">Business or service site</option>
+<option value="community">Community or membership site</option>
+</select>
+<button id="site-btn" type="button">Show what to prioritise</button>
+<div class="steps" id="site-out"></div>
+</div>
+<h2>Features worth checking</h2>
+<p>A theme's feature list can be long, but only a few features matter for most sites. First, the theme must work well on a phone, because that is where many visitors will arrive. Test the demo on a real phone rather than trusting the description. Second, the theme should support the things you plan to do without forcing you to add many plugins: if you need a shop, galleries or a booking form, check that the theme handles them cleanly.</p>
+<p>Third, look at how the theme is maintained. A theme that is updated regularly is more likely to keep working with new versions of WordPress and to fix problems when they appear. The theme's own page shows when it was last updated and how the author responds to questions. A theme with no updates for a long time is a risk, however good it looks.</p>
+<p>Finally, check what you can change without editing code. Most people want to adjust colours, fonts and the layout of the front page. A good theme lets you do that from the settings screen. If every change needs code, the theme will slow you down.</p>
+<p>Support is the last feature worth checking. A theme with an active support forum or a responsive author is worth more than one with extra features but no help when something breaks. Before you commit, look at how the author answers questions: clear, patient answers suggest a theme you can rely on, while silence suggests you will be on your own.</p>
+<h2>Speed checks before you commit</h2>
+<p>Speed matters because visitors leave slow pages. A theme affects speed in two ways: how much it loads, and how it handles your content. Themes that load large sliders, video backgrounds or many font files will be slow before you add a single word. Themes that resize images and keep scripts light will stay fast as your site grows.</p>
+<p>The most honest test is to try the theme with your own content. Import a few of your real pages and images, then load the site on a phone using a slow connection. If it feels sluggish with a handful of pages, it will only get slower as the site grows.</p>
+<div class="calc">
+<p class="count" id="count">0 of 10 done</p>
+<p><strong>Before you choose</strong></p>
+<label class="chk"><input type="checkbox" id="c1"> Check when the theme was last updated and whether it supports the current WordPress version.</label>
+<label class="chk"><input type="checkbox" id="c2"> Read recent reviews, paying attention to complaints about support and updates.</label>
+<label class="chk"><input type="checkbox" id="c3"> Check that the theme works well on a phone, not only on a desktop demo.</label>
+<label class="chk"><input type="checkbox" id="c4"> Confirm the theme supports the features you need without extra plugins.</label>
+<label class="chk"><input type="checkbox" id="c5"> Look at the demo on a slow connection to see how it really loads.</label>
+<p><strong>Speed and quality checks</strong></p>
+<label class="chk"><input type="checkbox" id="c6"> Check that the theme does not load large sliders or video backgrounds by default.</label>
+<label class="chk"><input type="checkbox" id="c7"> Look for clean, readable code in the theme files if you can read code.</label>
+<label class="chk"><input type="checkbox" id="c8"> Check that the theme follows accessibility basics, such as readable text sizes.</label>
+<label class="chk"><input type="checkbox" id="c9"> Test the theme with your own content, not only the polished demo content.</label>
+<label class="chk"><input type="checkbox" id="c10"> Confirm you can change colours and fonts without editing code.</label>
+<button id="clear-btn" type="button">Clear all ticks</button>
+</div>
+<h2>What to do after you choose</h2>
+<p>Once you have chosen a theme, set it up on a copy of your site first if you can, and check every page type: the home page, a single post, a category page, and the contact page. Fix anything that looks wrong before you make the theme live.</p>
+<p>Keep your theme updated after launch, and keep a note of any settings you change. If you ever switch themes, your content stays in place, but layouts and widgets may need adjusting, so treat a theme change as a small project rather than a single click.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Should I use a free or paid theme?</h3><p>Either can work well. Free themes from the official directory are reviewed before listing, while paid themes often come with support and more settings. Judge a theme by its updates, reviews and fit for your site, not by whether it costs anything.</p></div>
+<div class="faq"><h3>How do I know a theme is kept up to date?</h3><p>The theme's own page shows the date of its last update and which WordPress version it supports. Regular updates and recent replies from the author to user questions are good signs; a long silence is a warning.</p></div>
+<div class="faq"><h3>Can I change themes later?</h3><p>Yes. Your posts, pages and images stay in place when you change themes, but layouts, menus and widgets may need adjusting. Try a new theme on a copy of your site first and check every page type before going live.</p></div>
+<div class="faq"><h3>What makes a theme slow?</h3><p>The usual causes are large images loaded at full size, heavy sliders and video backgrounds, many font files, and scripts loaded on every page even when they are only needed on one. A theme that keeps these light will stay fast.</p></div>
+<div class="faq"><h3>Do I need a theme with a page builder?</h3><p>Not necessarily. A page builder gives you more layout control, but it also adds weight and can make switching themes harder later. If your pages are mostly text and images, a simple theme is often the faster and easier choice.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/website-launch-checklist/">Website Launch Checklist</a> · <a href="https://noryvello.github.io/start-a-blog-checklist/">Start a Blog Checklist</a> · <a href="https://noryvello.github.io/laptop-specifications-explained-guide/">Laptop Specifications Explained</a> · <a href="https://noryvello.github.io/how-to-read-phone-specifications-guide/">How to Read Phone Specifications</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var PICKDATA = {"blog": "Blog or personal site\nFeatures to prioritise: clear reading layout, good typography, easy categories and tags, a simple search box, and space for an author note. Speed notes: blogs are usually light, so check that the theme does not load heavy sliders or video backgrounds you will never use.", "shop": "Online shop\nFeatures to prioritise: product pages that work on a phone, clear category and filter options, a cart that is easy to find, and checkout pages that stay simple. Speed notes: shop pages carry many images, so check how the theme handles image sizes and whether it loads extra scripts on every page.", "portfolio": "Portfolio or photography site\nFeatures to prioritise: image galleries that load fast, a layout that keeps attention on the work, and simple project pages with room for a short description. Speed notes: large images are the main risk, so check whether the theme resizes images or loads the full file every time.", "business": "Business or service site\nFeatures to prioritise: clear service pages, a contact section that is easy to find, room for testimonials, and a layout that looks steady rather than flashy. Speed notes: business visitors often arrive on a phone, so test the theme on a small screen before anything else.", "community": "Community or membership site\nFeatures to prioritise: member pages, discussion or forum areas, event listings, and clear sign-up steps. Speed notes: these sites grow busy pages, so check how the theme behaves with many items on one page and whether it supports caching well."};
+document.getElementById("site-btn").addEventListener("click", function () {
+  var v = document.getElementById("site-pick").value;
+  var out = document.getElementById("site-out");
+  if (!v || !PICKDATA[v]) {
+    out.textContent = "Please choose a site type first.";
+    return;
+  }
+  out.textContent = PICKDATA[v];
+});
+var boxIds = ["c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10"];
+var totalBoxes = boxIds.length;
+function updateCount() {
+  var done = 0;
+  for (var i = 0; i < totalBoxes; i++) {
+    if (document.getElementById(boxIds[i]).checked) done++;
+  }
+  document.getElementById("count").textContent = done + " of " + totalBoxes + " done";
+}
+for (var i = 0; i < totalBoxes; i++) {
+  document.getElementById(boxIds[i]).addEventListener("change", updateCount);
+}
+document.getElementById("clear-btn").addEventListener("click", function () {
+  for (var i = 0; i < totalBoxes; i++) {
+    document.getElementById(boxIds[i]).checked = false;
+  }
+  updateCount();
+});
+updateCount();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

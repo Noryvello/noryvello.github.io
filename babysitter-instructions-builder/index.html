@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Babysitter Instructions Builder | Noryvello</title>
+<meta name="description" content="Build a printable instruction sheet for your babysitter with routines, meals, bedtime, emergency contacts and house rules, all in one place.">
+<link rel="canonical" href="https://noryvello.github.io/babysitter-instructions-builder/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Babysitter Instructions Builder">
+<meta property="og:description" content="Build a printable instruction sheet for your babysitter.">
+<meta property="og:url" content="https://noryvello.github.io/babysitter-instructions-builder/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:11px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer;margin-top:12px}
+.calc button.secondary{background:#0d9488}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+.ckrow{display:flex;align-items:flex-start;gap:10px;margin:8px 0}
+.ckrow input[type="checkbox"]{width:20px;height:20px;flex:0 0 20px;margin-top:3px}
+.ckrow span{font-size:15.5px}
+.sheet{background:#fff;border:1px solid #cbd5e1;border-radius:8px;padding:14px 16px;margin-top:12px;font-size:15.5px}
+.sheet p{margin:6px 0}
+.msglist li{margin:8px 0}
+@media print{body{background:#fff}.brand,.links,.note,footer,.calc button{display:none!important}.wrap{max-width:100%}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What routines should I include on the sheet?", "acceptedAnswer": {"@type": "Answer", "text": "Include meal times, snack times, playtime, quiet time and the bedtime steps in order. Short notes are enough — the sitter needs the rhythm of the evening, not a long essay."}}, {"@type": "Question", "name": "What about allergies?", "acceptedAnswer": {"@type": "Answer", "text": "Write allergies in plain words on the sheet, and say which foods to avoid. Show the sitter where safe food is kept, and talk through what to do if a child eats something they should not."}}, {"@type": "Question", "name": "How much detail is too much?", "acceptedAnswer": {"@type": "Answer", "text": "Aim for one page. Cover routines, meals, bedtime, contacts and house rules, and leave out anything the sitter does not need. If the sheet is too long, the important parts get lost."}}, {"@type": "Question", "name": "Should I leave my phone number?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, always. Leave your number, a second contact, and the doctor's number. Tell the sitter to call you first if anything is unclear."}}, {"@type": "Question", "name": "Can I print the sheet?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Press the print button under the builder to print the instruction sheet. Leave it on the kitchen table or pin it to the fridge."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Babysitter Instructions Builder</h1>
+<p class="answer">Fill in your child's routines, meals, bedtime and emergency contacts, and this builder turns them into a clear instruction sheet you can print for your babysitter. A written sheet keeps the evening calm and means nothing important is forgotten.</p>
+<p>Even the best babysitter cannot read your mind. Children have their own routines, their own likes and dislikes, and their own way of winding down at night. Writing it all down once means the sitter can follow your family's rhythm instead of improvising.</p>
+<p>This builder puts the sheet together for you. Fill in the routines, the meals, the bedtime steps and the contacts, then build the sheet and print it. Go through it with your sitter when they arrive, and leave it where they can find it.</p>
+<div class="calc">
+<label for="child-name">Child's name (or names)</label>
+<input id="child-name" type="text" placeholder="For example, Maya and Noah">
+<label for="child-ages">Ages</label>
+<input id="child-ages" type="text" placeholder="For example, 4 and 7">
+<label for="routines">Daily routines</label>
+<textarea id="routines" rows="3" placeholder="For example: lunch at noon, quiet time after lunch, outdoor play in the afternoon"></textarea>
+<label for="meals">Meals and snacks</label>
+<textarea id="meals" rows="3" placeholder="For example: pasta for dinner, fruit for a snack, no nuts in the house"></textarea>
+<label for="bedtime">Bedtime routine</label>
+<textarea id="bedtime" rows="3" placeholder="For example: bath at 7, pyjamas, two stories, lights out at 7:30"></textarea>
+<label for="contacts">Emergency contacts</label>
+<textarea id="contacts" rows="3" placeholder="Your phone number, a second contact, and the doctor's number"></textarea>
+<label for="rules">House rules</label>
+<textarea id="rules" rows="3" placeholder="For example: no screens after dinner, stay in the garden, shoes off at the door"></textarea>
+<p class="out" id="msg"></p>
+<button id="build-btn" type="button">Build my instruction sheet</button>
+<button id="again-btn" class="secondary" type="button">Start again</button>
+<button id="print-btn" type="button">Print the sheet</button>
+<div id="sheet"></div>
+</div>
+<script>
+function esc(s) {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+function val(id) { var e = document.getElementById(id); return e ? e.value.trim() : ""; }
+document.getElementById("build-btn").addEventListener("click", function () {
+  var out = document.getElementById("sheet");
+  var msg = document.getElementById("msg");
+  var name = val("child-name");
+  if (!name) {
+    msg.textContent = "Please add your child's name so the sheet has a heading.";
+    out.innerHTML = "";
+    return;
+  }
+  msg.textContent = "";
+  var rows = [];
+  rows.push("<p><strong>Child:</strong> " + esc(name) + "</p>");
+  var ages = val("child-ages");
+  if (ages) rows.push("<p><strong>Ages:</strong> " + esc(ages) + "</p>");
+  var routines = val("routines");
+  if (routines) rows.push("<p><strong>Routines:</strong> " + esc(routines) + "</p>");
+  var meals = val("meals");
+  if (meals) rows.push("<p><strong>Meals and snacks:</strong> " + esc(meals) + "</p>");
+  var bedtime = val("bedtime");
+  if (bedtime) rows.push("<p><strong>Bedtime:</strong> " + esc(bedtime) + "</p>");
+  var contacts = val("contacts");
+  if (contacts) rows.push("<p><strong>Emergency contacts:</strong> " + esc(contacts) + "</p>");
+  var rules = val("rules");
+  if (rules) rows.push("<p><strong>House rules:</strong> " + esc(rules) + "</p>");
+  rows.push("<p>Thank you for looking after " + esc(name) + ". If anything is unclear, please call the parents before guessing.</p>");
+  out.innerHTML = "<div class=\"sheet\">" + rows.join("") + "</div>";
+});
+document.getElementById("again-btn").addEventListener("click", function () {
+  var ids = ["child-name", "child-ages", "routines", "meals", "bedtime", "contacts", "rules"];
+  for (var i = 0; i < ids.length; i++) { document.getElementById(ids[i]).value = ""; }
+  document.getElementById("sheet").innerHTML = "";
+  document.getElementById("msg").textContent = "";
+});
+document.getElementById("print-btn").addEventListener("click", function () { window.print(); });
+</script>
+<div class="warn">This page is general information only. It does not give medical or childcare advice. If your child has a health condition or takes medicine, write down exactly what your doctor has told you and talk it through with the sitter in person.</div>
+<h2>What to include in the sheet</h2>
+<p>Start with the routines: meal times, snack times, quiet time and outdoor play. Then add the bedtime steps in order — bath, pyjamas, stories, lights out — because bedtime is the part of the evening where a clear order matters most.</p>
+<p>Write down any allergies or foods to avoid in plain words, and say where the food is kept. If your child takes medicine, write down exactly what your doctor told you and talk it through with the sitter in person. Never leave medicine instructions to memory.</p>
+<p>Finish with the house rules and the emergency contacts: your number, a second contact, and the doctor's number. Keep the sheet to one page so the sitter can read it at a glance.</p>
+<h2>Before the babysitter arrives</h2>
+<p>Show the sitter around the house when they arrive: the kitchen, the bathroom, the children's rooms, and where the first aid kit lives. Point out anything unusual, such as a stair gate or a window that sticks.</p>
+<p>Agree how you will stay in touch — a short message when the children are in bed is usually enough — and tell the sitter what time you expect to be home. A calm handover at the start makes for a calm evening all round.</p>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>What routines should I include on the sheet?</h3>
+<p>Include meal times, snack times, playtime, quiet time and the bedtime steps in order. Short notes are enough — the sitter needs the rhythm of the evening, not a long essay.</p>
+</div>
+<div class="faq">
+<h3>What about allergies?</h3>
+<p>Write allergies in plain words on the sheet, and say which foods to avoid. Show the sitter where safe food is kept, and talk through what to do if a child eats something they should not.</p>
+</div>
+<div class="faq">
+<h3>How much detail is too much?</h3>
+<p>Aim for one page. Cover routines, meals, bedtime, contacts and house rules, and leave out anything the sitter does not need. If the sheet is too long, the important parts get lost.</p>
+</div>
+<div class="faq">
+<h3>Should I leave my phone number?</h3>
+<p>Yes, always. Leave your number, a second contact, and the doctor's number. Tell the sitter to call you first if anything is unclear.</p>
+</div>
+<div class="faq">
+<h3>Can I print the sheet?</h3>
+<p>Yes. Press the print button under the builder to print the instruction sheet. Leave it on the kitchen table or pin it to the fridge.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/pet-sitter-instructions-builder/">Pet Sitter Instructions Builder</a> · <a href="https://noryvello.github.io/house-sitter-instructions-checklist/">House Sitter Instructions Checklist</a> · <a href="https://noryvello.github.io/bedtime-routine-builder/">Bedtime Routine Builder for Kids</a> · <a href="https://noryvello.github.io/exam-day-checklist/">Exam Day Checklist</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div><footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<script src="../ads-config.js"></script>
+</div>
+</body>
+</html>

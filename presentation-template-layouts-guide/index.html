@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentation Template Layouts Guide | Noryvello</title>
+<meta name="description" content="Six slide layouts that cover any talk: title, agenda, comparison, timeline, quote and closing slides, with content rules for each and a chooser to pick the right layout.">
+<link rel="canonical" href="https://noryvello.github.io/presentation-template-layouts-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Presentation Template Layouts Guide">
+<meta property="og:description" content="Six slide-layout structures with content rules, plus a chooser to find the layout each slide needs.">
+<meta property="og:url" content="https://noryvello.github.io/presentation-template-layouts-guide/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{margin-top:12px;padding:10px 18px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:600;cursor:pointer}.calc button:hover{background:#3730a3}</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many layouts does a presentation need?", "acceptedAnswer": {"@type": "Answer", "text": "Six layouts cover most talks: title, agenda, comparison, timeline, quote and closing. Reusing the same layouts throughout a deck helps the audience follow the argument."}}, {"@type": "Question", "name": "What goes on a title slide?", "acceptedAnswer": {"@type": "Answer", "text": "One short title, one supporting line that says what the talk gives the audience, and the speaker name and date. Nothing else belongs on a title slide."}}, {"@type": "Question", "name": "When should I use a comparison slide?", "acceptedAnswer": {"@type": "Answer", "text": "When you need the audience to weigh two options side by side. Use two columns with the same rows down each side, and end with one line saying which option you recommend and why."}}, {"@type": "Question", "name": "How much text belongs on one slide?", "acceptedAnswer": {"@type": "Answer", "text": "A few short lines at most, in text large enough to read from the back of the room. If you are shrinking the text to fit, split the slide into two."}}, {"@type": "Question", "name": "Do I need special software for these layouts?", "acceptedAnswer": {"@type": "Answer", "text": "No. These layouts are structures, not files, and they work in any presentation app. This guide offers no software downloads."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Presentation Template Layouts Guide</h1>
+<p class="answer">Most presentations need only six slide layouts: a title slide, an agenda, a comparison, a timeline, a quote and a closing slide. This guide gives you the structure and content rules for each one, plus a layout chooser that tells you which layout fits the slide you are building.</p>
+<p>Good slides are not about decoration. They are about structure: each slide has one job, and the layout tells the audience what that job is before they read a word. A title slide opens, an agenda maps, a comparison weighs, a timeline orders, a quote supports, and a closing slide lands the message.</p>
+<p>This guide covers those six layouts. Use the chooser below to see the structure and content rules for any one of them, then build your slides in any presentation app you already use.</p>
+<div class="calc">
+<p><strong>Layout chooser</strong> — pick the slide you are building to see its structure and rules.</p>
+<label for="lay-pick">Slide type</label>
+<select id="lay-pick">
+<option value="">Choose a slide type</option>
+<option value="title">Title slide</option>
+<option value="agenda">Agenda slide</option>
+<option value="comparison">Comparison slide</option>
+<option value="timeline">Timeline slide</option>
+<option value="quote">Quote slide</option>
+<option value="closing">Closing slide</option>
+</select>
+<button id="lay-btn" type="button">Show this layout</button>
+<div class="out" id="lay-out"></div>
+<div class="steps" id="lay-steps"></div>
+</div>
+<script>
+(function(){
+  var LAYOUTS = {
+    "title": {
+      name: "Title slide",
+      structure: "One short title, one supporting line, and the speaker name and date. Nothing else.",
+      rules: "Keep the title under ten words. The supporting line says what the talk will give the audience, not what it is about. Leave generous empty space around the words."
+    },
+    "agenda": {
+      name: "Agenda slide",
+      structure: "Three to five numbered items, each one short line, in the order you will cover them.",
+      rules: "Use three to five items only. Write each item as a plain phrase, not a sentence. If you have more than five parts, group them under fewer headings."
+    },
+    "comparison": {
+      name: "Comparison slide",
+      structure: "Two columns, one per option, with the same rows down each side so the audience can compare line by line.",
+      rules: "Compare on the same points in the same order on both sides. Keep each cell to a few words. End with one line that says which option you recommend and why."
+    },
+    "timeline": {
+      name: "Timeline slide",
+      structure: "A horizontal line with three to six points on it, each point labelled with a date or a phase and one short line.",
+      rules: "Show three to six points only. Space them evenly, even if the real gaps are uneven, and say so if the spacing is not to scale. Highlight the point you are talking about now."
+    },
+    "quote": {
+      name: "Quote slide",
+      structure: "One short quotation in large text, with the speaker's name and role underneath.",
+      rules: "Use a quote under twenty words. Check the wording and the source before you present it. A quote slide works best after a point it supports, not as an opening."
+    },
+    "closing": {
+      name: "Closing slide",
+      structure: "One line that restates the main message, one line that says what happens next, and a thank-you.",
+      rules: "Repeat the main message in different words from the title slide. Give the audience one clear next step. End on the message, not on a list of contact details."
+    }
+  };
+  document.getElementById("lay-btn").addEventListener("click", function(){
+    var pick = document.getElementById("lay-pick").value;
+    var out = document.getElementById("lay-out");
+    var steps = document.getElementById("lay-steps");
+    if (!pick || !LAYOUTS[pick]) {
+      out.textContent = "";
+      steps.textContent = "Choose a slide type first.";
+      return;
+    }
+    var l = LAYOUTS[pick];
+    out.textContent = l.name + ": " + l.structure;
+    steps.textContent = "Content rules: " + l.rules;
+  });
+})();
+</script>
+
+<h2>The six layouts</h2>
+<p>The title slide is the simplest layout and the easiest to overload. It needs one short title, one supporting line and the speaker's name and date — nothing else. The title should say what the talk gives the audience, and the supporting line should say why it matters to them.</p>
+<p>The agenda slide is a map, not a table of contents. Three to five items, each one short line, in the order you will cover them. If your talk has more than five parts, group them under fewer headings; an agenda with eight items tells the audience the talk will be long, and they stop listening.</p>
+<p>The comparison slide weighs two options side by side. Two columns, the same rows down each side, so the audience can compare line by line. The rows must match: if the left column has cost, speed and effort, the right column must have the same three rows in the same order, or the comparison falls apart.</p>
+<p>The timeline slide orders events along a horizontal line, with three to six points. It suits project plans, histories and roadmaps. Space the points evenly even when the real gaps are uneven, and say so if the spacing is not to scale — a timeline that looks to scale but is not will mislead.</p>
+<p>The quote slide carries one short quotation in large text, with the speaker's name and role underneath. It works best after a point it supports, as evidence, rather than as an opening. Check the wording and the source before you present a quote; a misattributed quote undermines the whole talk.</p>
+<p>The closing slide restates the main message and says what happens next. Repeat the message in different words from the title slide, give the audience one clear next step, and end on the message itself rather than on a list of contact details.</p>
+<h2>Content rules that apply to every slide</h2>
+<p>One idea per slide. If a slide needs two headings, it is two slides. The audience can only hold one point at a time, and a slide that tries to carry two points delivers neither. Splitting slides feels like making the deck longer, but a deck of twenty clear slides is shorter in feeling than a deck of ten crowded ones.</p>
+<p>Few words, large text. Aim for no more than a few short lines per slide, in text large enough to read from the back of the room. If you find yourself shrinking the text to fit, the slide has too much on it. Move the detail to your spoken words, where it belongs.</p>
+<p>The same structure every time. Use the same layout for the same kind of slide throughout the deck, so the audience learns the pattern. If every comparison slide looks different, the audience spends its attention working out the layout instead of following the argument.</p>
+<p>Numbers need context. A number on its own means nothing; a number next to the number it should be compared with means something. Show the before and after, the target and the result, or the share of the whole — never a lone figure floating on a slide.</p>
+<h2>Putting a deck together</h2>
+<p>Start with the closing slide, not the title slide. Decide what you want the audience to think or do at the end, and write that first. Everything else in the deck exists to earn that ending, and slides that do not serve it can be cut.</p>
+<p>Then write the agenda from the closing slide backwards: what must the audience understand, in what order, for the ending to land? Three to five parts is the right shape for most talks. Each part gets its own run of slides, and each run ends with a slide that sums up the part in one line.</p>
+<p>Build the slides in order, one layout at a time. Do all the title and agenda slides first, then the body slides in the order of the agenda, then the closing slide. Working in order keeps the argument straight; jumping around the deck is how talks end up with the same point made twice and another point missing entirely.</p>
+<p>Finally, rehearse with the slides, not just the notes. A deck that reads well can still fail when spoken, because the words on the slide and the words you say compete. If you find yourself reading the slide aloud, the slide has too many words on it. Cut them until the slide supports what you say instead of repeating it.</p>
+<div class="warn">No layout can save a slide that tries to say too much. If a slide needs more than a few short lines, split it into two slides instead of shrinking the text.</div>
+
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>How many layouts does a presentation need?</h3>
+<p>Six layouts cover most talks: title, agenda, comparison, timeline, quote and closing. Reusing the same layouts throughout a deck helps the audience follow the argument.</p>
+</div>
+<div class="faq">
+<h3>What goes on a title slide?</h3>
+<p>One short title, one supporting line that says what the talk gives the audience, and the speaker name and date. Nothing else belongs on a title slide.</p>
+</div>
+<div class="faq">
+<h3>When should I use a comparison slide?</h3>
+<p>When you need the audience to weigh two options side by side. Use two columns with the same rows down each side, and end with one line saying which option you recommend and why.</p>
+</div>
+<div class="faq">
+<h3>How much text belongs on one slide?</h3>
+<p>A few short lines at most, in text large enough to read from the back of the room. If you are shrinking the text to fit, split the slide into two.</p>
+</div>
+<div class="faq">
+<h3>Do I need special software for these layouts?</h3>
+<p>No. These layouts are structures, not files, and they work in any presentation app. This guide offers no software downloads.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/presentation-preparation-checklist/">Presentation Preparation Checklist</a> · <a href="https://noryvello.github.io/freelance-proposal-guide/">Freelance Proposal Writing Guide</a> · <a href="https://noryvello.github.io/linkedin-profile-writing-guide/">LinkedIn Profile Writing Guide</a> · <a href="https://noryvello.github.io/free-fonts-guide/">Free Fonts Guide</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Electric Cars Work, Explained | Noryvello</title>
+<meta name="description" content="How do electric cars work? A plain-words explainer on the battery, the motor, charging levels and regenerative braking.">
+<link rel="canonical" href="https://noryvello.github.io/how-electric-cars-work-explained/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Electric Cars Work, Explained">
+<meta property="og:description" content="A plain-words explainer on the battery, motor, charging and braking.">
+<meta property="og:url" content="https://noryvello.github.io/how-electric-cars-work-explained/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:11px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer;margin-top:12px}
+.calc button.secondary{background:#0d9488}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+.ckrow{display:flex;align-items:flex-start;gap:10px;margin:8px 0}
+.ckrow input[type="checkbox"]{width:20px;height:20px;flex:0 0 20px;margin-top:3px}
+.ckrow span{font-size:15.5px}
+.sheet{background:#fff;border:1px solid #cbd5e1;border-radius:8px;padding:14px 16px;margin-top:12px;font-size:15.5px}
+.sheet p{margin:6px 0}
+.msglist li{margin:8px 0}
+@media print{body{background:#fff}.brand,.links,.note,footer,.calc button{display:none!important}.wrap{max-width:100%}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is an electric car different from a petrol car?", "acceptedAnswer": {"@type": "Answer", "text": "An electric car has a battery and a motor instead of an engine, a fuel tank and an exhaust. It is quieter, responds instantly, and needs no petrol — it charges from electricity instead."}}, {"@type": "Question", "name": "How long does charging take?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the charging level. A home socket is the slowest, a home or workplace charger is much faster, and a public rapid charger is the fastest by a wide margin. Use the picker on this page to compare the levels."}}, {"@type": "Question", "name": "What is regenerative braking?", "acceptedAnswer": {"@type": "Answer", "text": "When an electric car slows down, the motor runs in reverse and acts as a generator, turning the car's motion back into electricity and sending it to the battery. It recovers energy that would otherwise be lost as heat."}}, {"@type": "Question", "name": "Do electric cars have gears?", "acceptedAnswer": {"@type": "Answer", "text": "Most have no multi-gear gearbox. A single fixed gear ratio is enough, because an electric motor works well across a wide range of speeds."}}, {"@type": "Question", "name": "What happens when the battery runs out?", "acceptedAnswer": {"@type": "Answer", "text": "The car stops, just as a petrol car stops when it runs out of fuel. The car needs a charge or a tow to a charger, so it is worth planning charging stops on longer journeys."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How Electric Cars Work, Explained</h1>
+<p class="answer">An electric car stores energy in a battery, and an electric motor turns that energy into motion with no engine and no exhaust pipe. Charging fills the battery again, and regenerative braking recovers some energy every time the car slows down.</p>
+<p>An electric car looks like any other car from the outside, but underneath it works in a very different way. There is no engine burning fuel, no gearbox full of gears, and no exhaust pipe. Instead there is a battery, a motor and a system that turns electricity into motion — and some of it back again.</p>
+<p>This page explains the parts in plain words: the battery, the motor, the charging levels and regenerative braking. It is a general explainer, not buying advice, and it does not compare models or running costs.</p>
+<div class="calc">
+<p class="steps">Choose a charging level to see what it means in general terms.</p>
+<label for="level">Charging level</label>
+<select id="level">
+<option value="">Choose a charging level</option>
+<option value="l1">Level 1 — an ordinary home socket</option>
+<option value="l2">Level 2 — a home or workplace charger</option>
+<option value="dc">DC fast charging — a public rapid charger</option>
+</select>
+<button id="pick-btn" type="button">Show me</button>
+<p class="out" id="pick-out"></p>
+</div>
+<script>
+
+var info = {
+  "l1": "Level 1 charging uses an ordinary home socket and the cable that comes with the car. It is the slowest way to charge, adding only a small amount of range each hour, so it suits drivers who travel short distances and can leave the car plugged in overnight.",
+  "l2": "Level 2 charging uses a dedicated charger fitted at home or at a workplace. It is much faster than a home socket, so an overnight charge can fill most of the battery. Many owners treat Level 2 as their everyday charging, topping up while the car is parked.",
+  "dc": "DC fast charging uses a public rapid charger, usually on a longer journey. It is the fastest way to charge by a wide margin, adding a large amount of range in a short stop. Drivers typically use it for top-ups on the road rather than as their everyday charging."
+};
+document.getElementById("pick-btn").addEventListener("click", function () {
+  var out = document.getElementById("pick-out");
+  var v = document.getElementById("level").value;
+  if (!v || !info[v]) {
+    out.textContent = "Please choose a charging level to see what it means.";
+    return;
+  }
+  out.textContent = info[v];
+});
+</script>
+<div class="warn">This page explains the idea in general terms and is not buying advice. It does not compare models or running costs — it simply explains how the parts work together.</div>
+<h2>The battery</h2>
+<p>The battery is the car's fuel tank. It stores electrical energy and releases it to the motor when the car moves. Most electric cars use a large battery pack built into the floor of the car, which keeps the weight low and the car steady on the road.</p>
+<p>A battery stores energy as chemical energy and gives it back as electricity. Charging reverses the process: electricity from a charger flows into the battery and is stored again. Like any battery, it slowly loses capacity over years of use, but the process is gradual.</p>
+<p>The battery also powers everything else in the car, from the lights to the heater. Heating and cooling draw extra energy, which is one reason the car's range can vary with the weather. The battery is the heaviest and most expensive part of the car, and the part that most shapes how far it can go.</p>
+<h2>The motor</h2>
+<p>The electric motor turns electricity into motion. When current flows through it, magnetic forces spin a shaft, and that shaft turns the wheels. There is no burning, no explosion and no exhaust — just a quiet, smooth spin.</p>
+<p>An electric motor responds instantly. A petrol or diesel engine needs to build up speed before it gives its best pull, but an electric motor gives its full pull from the moment it starts turning. That is why electric cars feel quick away from a standstill.</p>
+<p>The motor has far fewer moving parts than an engine, which means less to wear out and less to maintain. There is no oil to change, no spark plugs and no exhaust system. Most electric cars also have no multi-gear gearbox: a single fixed gear ratio is enough, because the motor works well across a wide range of speeds.</p>
+<p>Some electric cars have one motor, usually driving the front or rear wheels, while others have two — one for each axle. Two motors can share the work and give the car grip at all four wheels. Either way, the idea is the same: electricity in, motion out, with no burning in between.</p>
+<h2>Charging</h2>
+<p>Charging fills the battery again, and there are three levels in general terms. Level 1 is an ordinary home socket: the slowest way to charge, adding only a small amount of range each hour, but enough for drivers who travel short distances and charge overnight.</p>
+<p>Level 2 is a dedicated charger fitted at home or at a workplace. It is much faster than a home socket, so an overnight charge can fill most of the battery. Many owners treat Level 2 as their everyday charging, topping up while the car is parked.</p>
+<p>DC fast charging is the rapid charger found at public charging points, usually on longer journeys. It is the fastest way to charge by a wide margin, adding a large amount of range in a short stop. Use the picker above to explore each level in turn.</p>
+<p>Charging habits differ from refuelling habits. A petrol car is usually filled when the tank runs low, but an electric car is often topped up whenever it is parked — at home overnight, at work during the day, or at a rapid charger on a longer trip. The car spends most of its life parked, and that parked time is when most charging happens.</p>
+<h2>Regenerative braking</h2>
+<p>When a petrol car brakes, the energy of its motion turns into heat in the brakes and is lost. An electric car does something cleverer: when the driver lifts off the accelerator or presses the brake, the motor runs in reverse and acts as a generator, turning the car's motion back into electricity and sending it to the battery.</p>
+<p>This is regenerative braking. It recovers some of the energy that would otherwise be wasted, which is one reason electric cars are efficient in stop-start traffic. The effect is strongest at low speeds, where the car slows down often, and weaker on a steady motorway run.</p>
+<p>Regenerative braking also changes how the car feels. Many electric cars slow down noticeably as soon as the driver lifts off the accelerator, so the driver uses the brake pedal less. The ordinary brakes are still there for hard stops, but for gentle slowing the motor does most of the work.</p>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>How is an electric car different from a petrol car?</h3>
+<p>An electric car has a battery and a motor instead of an engine, a fuel tank and an exhaust. It is quieter, responds instantly, and needs no petrol — it charges from electricity instead.</p>
+</div>
+<div class="faq">
+<h3>How long does charging take?</h3>
+<p>It depends on the charging level. A home socket is the slowest, a home or workplace charger is much faster, and a public rapid charger is the fastest by a wide margin. Use the picker on this page to compare the levels.</p>
+</div>
+<div class="faq">
+<h3>What is regenerative braking?</h3>
+<p>When an electric car slows down, the motor runs in reverse and acts as a generator, turning the car's motion back into electricity and sending it to the battery. It recovers energy that would otherwise be lost as heat.</p>
+</div>
+<div class="faq">
+<h3>Do electric cars have gears?</h3>
+<p>Most have no multi-gear gearbox. A single fixed gear ratio is enough, because an electric motor works well across a wide range of speeds.</p>
+</div>
+<div class="faq">
+<h3>What happens when the battery runs out?</h3>
+<p>The car stops, just as a petrol car stops when it runs out of fuel. The car needs a charge or a tow to a charger, so it is worth planning charging stops on longer journeys.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/how-ai-chatbots-work-explained/">How AI Chatbots Work, Explained</a> · <a href="https://noryvello.github.io/how-solar-panels-work-explained/">How Solar Panels Work, Explained</a> · <a href="https://noryvello.github.io/electric-bike-vs-petrol-bike-cost/">Electric Bike vs Petrol Bike Running Cost</a> · <a href="https://noryvello.github.io/train-vs-car-trip-cost/">Train vs Car Trip Cost</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div><footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<script src="../ads-config.js"></script>
+</div>
+</body>
+</html>

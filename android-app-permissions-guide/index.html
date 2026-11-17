@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Android App Permissions Guide | Noryvello</title>
+<meta name="description" content="What does each Android permission actually allow? Pick any of 12 permissions to see what it gives an app, when it is reasonable, and what to check before you grant it.">
+<link rel="canonical" href="https://noryvello.github.io/android-app-permissions-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android App Permissions Guide">
+<meta property="og:description" content="Twelve Android permissions explained: what each one allows, when it is reasonable, and what to check first.">
+<meta property="og:url" content="https://noryvello.github.io/android-app-permissions-guide/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{margin-top:12px;padding:10px 18px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:600;cursor:pointer}.calc button:hover{background:#3730a3}</style><style>table{width:100%;border-collapse:collapse;margin:10px 0;font-size:15px}th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}th{background:#eef2ff}</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What happens if I deny a permission?", "acceptedAnswer": {"@type": "Answer", "text": "The app works without that feature, and it may ask again later. Denying a permission does not break the app, and an app that refuses to work over an unrelated permission deserves a second look."}}, {"@type": "Question", "name": "Can I change a permission after granting it?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Open Settings, then Apps, then Permissions, where you can see every permission and change any app's access at any time."}}, {"@type": "Question", "name": "Why does an app ask for a permission it does not seem to need?", "acceptedAnswer": {"@type": "Answer", "text": "Sometimes the app has a feature you have not used yet, and sometimes the request is simply unnecessary. Deny it and see whether anything you use stops working."}}, {"@type": "Question", "name": "What does allow only while using the app mean?", "acceptedAnswer": {"@type": "Answer", "text": "The app can use the permission while it is on screen, and loses access when you switch away. It is the right choice for most permissions, including location."}}, {"@type": "Question", "name": "Should I worry about permissions on apps I rarely use?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, a little. Android resets permissions automatically for apps you have not used for a long time, but it is still worth reviewing them yourself every few months."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Android App Permissions Guide</h1>
+<p class="answer">Android asks before an app can use your location, camera, microphone or files, but the permission names alone do not say much. This guide explains 12 common permissions in plain words: what each one allows, when it is reasonable to grant, and what to check first.</p>
+<p>Permissions are Android's way of asking before an app touches something personal. An app that wants your location, your camera or your contacts must ask, and you can say yes, say no, or say yes only while you are using the app. The system works well — but only if you know what each permission actually allows.</p>
+<p>This guide explains 12 common permissions in plain words. Use the picker below to look up any one of them, then read the sections that follow for the habits that keep permissions under control.</p>
+<div class="calc">
+<p><strong>Permission picker</strong> — pick a permission to see what it allows and what to check.</p>
+<label for="perm-pick">Permission</label>
+<select id="perm-pick">
+<option value="">Choose a permission</option>
+<option value="location">Location</option>
+<option value="camera">Camera</option>
+<option value="microphone">Microphone</option>
+<option value="contacts">Contacts</option>
+<option value="photos">Photos and videos</option>
+<option value="files">Files and media</option>
+<option value="phone">Phone</option>
+<option value="sms">SMS</option>
+<option value="calendar">Calendar</option>
+<option value="notifications">Notifications</option>
+<option value="nearby">Nearby devices</option>
+<option value="sensors">Body sensors</option>
+</select>
+<button id="perm-btn" type="button">Explain this permission</button>
+<div class="out" id="perm-out"></div>
+<div class="steps" id="perm-steps"></div>
+</div>
+<script>
+(function(){
+  var PERMS = {
+    "location": {
+      name: "Location",
+      allows: "Lets the app see where the phone is, either roughly or precisely.",
+      ok: "Reasonable for maps, weather, ride-hailing and delivery apps.",
+      check: "Prefer allow only while using the app. An app that wants your location all the time should explain why."
+    },
+    "camera": {
+      name: "Camera",
+      allows: "Lets the app take photos and video.",
+      ok: "Reasonable for camera, video-call, scanning and social apps.",
+      check: "A calculator or a torch app has no need of your camera. Deny it there."
+    },
+    "microphone": {
+      name: "Microphone",
+      allows: "Lets the app record sound.",
+      ok: "Reasonable for calls, voice notes, voice search and recording apps.",
+      check: "If an app you rarely speak to asks for the microphone, ask yourself what it would record and why."
+    },
+    "contacts": {
+      name: "Contacts",
+      allows: "Lets the app read your address book: names, numbers and addresses.",
+      ok: "Reasonable for messaging, calling and invitation features you actually use.",
+      check: "Your contacts did not agree to share their details with the app. Grant this only when the feature needs it."
+    },
+    "photos": {
+      name: "Photos and videos",
+      allows: "Lets the app see some or all of your photos and videos.",
+      ok: "Reasonable for photo editors, backup apps and social apps you post from.",
+      check: "Where the phone offers it, share only selected photos instead of the whole library."
+    },
+    "files": {
+      name: "Files and media",
+      allows: "Lets the app read and write files stored on the phone.",
+      ok: "Reasonable for file managers, document editors and download managers.",
+      check: "An app that only shows you content has little need of your files. Deny it there."
+    },
+    "phone": {
+      name: "Phone",
+      allows: "Lets the app make calls, see call state and, on some phones, read call history.",
+      ok: "Reasonable for diallers, call recorders you chose, and apps that pause sensibly during calls.",
+      check: "Call history is sensitive. Grant this only to apps where calling is part of what they do."
+    },
+    "sms": {
+      name: "SMS",
+      allows: "Lets the app read and send text messages.",
+      ok: "Reasonable for your chosen messaging app and for apps that verify you by text code.",
+      check: "Text messages can carry login codes and private conversations. Grant this rarely, and only to apps you trust."
+    },
+    "calendar": {
+      name: "Calendar",
+      allows: "Lets the app read and add events on your calendar.",
+      ok: "Reasonable for planners, booking apps and meeting tools.",
+      check: "Your calendar reveals where you will be and when. Grant it only to apps that manage your time."
+    },
+    "notifications": {
+      name: "Notifications",
+      allows: "Lets the app show alerts and banners on your phone.",
+      ok: "Reasonable for messaging, email, banking alerts and anything time-sensitive.",
+      check: "Notifications are also a way to pull you back into an app. Turn them off for apps that only want your attention."
+    },
+    "nearby": {
+      name: "Nearby devices",
+      allows: "Lets the app find and connect to nearby Bluetooth and Wi-Fi devices.",
+      ok: "Reasonable for headphones, watches, smart-home apps and file sharing.",
+      check: "Nearby-device scanning can also reveal where you are. Grant it only to apps that connect to your devices."
+    },
+    "sensors": {
+      name: "Body sensors",
+      allows: "Lets the app read health data such as heart rate and step counts.",
+      ok: "Reasonable for fitness, health and sleep apps you chose for that purpose.",
+      check: "Health data is among the most personal data a phone holds. Grant it only to health apps you trust."
+    }
+  };
+  document.getElementById("perm-btn").addEventListener("click", function(){
+    var pick = document.getElementById("perm-pick").value;
+    var out = document.getElementById("perm-out");
+    var steps = document.getElementById("perm-steps");
+    if (!pick || !PERMS[pick]) {
+      out.textContent = "";
+      steps.textContent = "Choose a permission first.";
+      return;
+    }
+    var p = PERMS[pick];
+    out.textContent = p.name + ": " + p.allows;
+    steps.textContent = "When it is reasonable: " + p.ok + " What to check: " + p.check;
+  });
+})();
+</script>
+
+<h2>How Android permissions work</h2>
+<p>When an app first needs something sensitive, Android shows a prompt with the permission name and a choice: allow, deny, or — for some permissions — allow only while using the app. The prompt appears when the app needs the permission, not when you install it, so you can judge the request in context: a maps app asking for location while you search for directions is easy to understand.</p>
+<p>Allow only while using the app is the middle choice, and it is the right choice for most permissions. The app gets what it needs while it is on screen, and loses it when you switch away. Allowing all the time is rarely needed — a navigation app guiding you in the background is one of the few cases — and it should make you pause.</p>
+<p>Denying a permission does not break the app. The app simply works without that feature, and it may ask again later. If an app refuses to work at all because you denied an unrelated permission, that is a reason to question the app, not your decision.</p>
+<p>Permissions can also be granted once. A one-time permission lets the app use something a single time, and Android asks again next time. It is a good choice when you are not sure: you get the feature now, and you decide again later with more information.</p>
+<h2>The 12 permissions at a glance</h2>
+<p>The table below sums up the 12 permissions covered by the picker above. Use it as a quick reference, and use the picker when you want the full explanation of any one permission.</p>
+<table>
+<tr><th>Permission</th><th>What it allows</th></tr>
+<tr><td>Location</td><td>See where the phone is</td></tr>
+<tr><td>Camera</td><td>Take photos and video</td></tr>
+<tr><td>Microphone</td><td>Record sound</td></tr>
+<tr><td>Contacts</td><td>Read your address book</td></tr>
+<tr><td>Photos and videos</td><td>See some or all of your pictures</td></tr>
+<tr><td>Files and media</td><td>Read and write files on the phone</td></tr>
+<tr><td>Phone</td><td>Make calls and see call state</td></tr>
+<tr><td>SMS</td><td>Read and send text messages</td></tr>
+<tr><td>Calendar</td><td>Read and add calendar events</td></tr>
+<tr><td>Notifications</td><td>Show alerts and banners</td></tr>
+<tr><td>Nearby devices</td><td>Find nearby Bluetooth and Wi-Fi devices</td></tr>
+<tr><td>Body sensors</td><td>Read health data such as heart rate</td></tr>
+</table>
+<h2>Permissions that deserve a second look</h2>
+<p>Some permissions deserve more thought than others. Location all the time is the first: an app that tracks you in the background builds a record of where you go, every day. Unless the app's whole purpose needs it — navigation while you drive is the usual case — choose while using the app instead.</p>
+<p>SMS is the second. Text messages can carry login codes, bank alerts and private conversations, and an app that can read them can see all of that. Only your chosen messaging app and apps that verify you by text code have a real need for SMS access.</p>
+<p>Contacts is the third, for a reason people forget: your contacts did not agree to share their details with the app. When you grant contacts access, you share other people's names and numbers. Grant it only when a feature you actually use needs it, such as inviting friends from inside a messaging app.</p>
+<p>Body sensors deserve the same care. Heart rate, sleep and step data are among the most personal data a phone holds, and they belong only in health and fitness apps you chose for that purpose. A game or a shopping app has no business reading them.</p>
+<h2>Reviewing permissions later</h2>
+<p>Permissions are not a one-time decision. Android lets you review them all in one place: open Settings, then Apps, then Permissions, where you can see every permission and which apps hold it. It is worth a look every few months, because apps you installed long ago may hold permissions you would not grant today.</p>
+<p>When you review, start with the permissions that matter most: location, microphone, SMS and contacts. For each app on the list, ask whether it still needs the permission. If you have not used the app in months, consider removing the permission — or removing the app.</p>
+<p>Android also helps on its own: on recent versions, permissions are reset automatically for apps you have not used for a long time. That is a safety net, not a replacement for reviewing, because it only covers apps you have forgotten, not apps you use every day with permissions they no longer need.</p>
+<p>Finally, remember that permissions are only one part of staying safe. A permission prompt tells you what an app wants; it does not tell you what the app does with it afterwards. Stick to apps from the official store, read the permissions at install time, and trust your judgement when a request feels wrong.</p>
+<div class="warn">This guide is general safety information, not security advice for a specific device. Permission names and menus vary between Android versions and phone makers, so the wording on your phone may differ slightly from the wording used here.</div>
+
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>What happens if I deny a permission?</h3>
+<p>The app works without that feature, and it may ask again later. Denying a permission does not break the app, and an app that refuses to work over an unrelated permission deserves a second look.</p>
+</div>
+<div class="faq">
+<h3>Can I change a permission after granting it?</h3>
+<p>Yes. Open Settings, then Apps, then Permissions, where you can see every permission and change any app's access at any time.</p>
+</div>
+<div class="faq">
+<h3>Why does an app ask for a permission it does not seem to need?</h3>
+<p>Sometimes the app has a feature you have not used yet, and sometimes the request is simply unnecessary. Deny it and see whether anything you use stops working.</p>
+</div>
+<div class="faq">
+<h3>What does allow only while using the app mean?</h3>
+<p>The app can use the permission while it is on screen, and loses access when you switch away. It is the right choice for most permissions, including location.</p>
+</div>
+<div class="faq">
+<h3>Should I worry about permissions on apps I rarely use?</h3>
+<p>Yes, a little. Android resets permissions automatically for apps you have not used for a long time, but it is still worth reviewing them yourself every few months.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/two-factor-authentication-setup-guide/">Two-Factor Authentication Setup Guide</a> · <a href="https://noryvello.github.io/report-online-scam-guide/">How to Report an Online Scam</a> · <a href="https://noryvello.github.io/bluetooth-pairing-guide/">How to Pair Bluetooth Headphones</a> · <a href="https://noryvello.github.io/ai-tool-evaluation-checklist/">AI Tool Evaluation Checklist</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

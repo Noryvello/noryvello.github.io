@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How AI Chatbots Work, Explained | Noryvello</title>
+<meta name="description" content="How do AI chatbots work? A plain-words explainer on prediction, training data, why chatbots make mistakes, and a fact-check checklist.">
+<link rel="canonical" href="https://noryvello.github.io/how-ai-chatbots-work-explained/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How AI Chatbots Work, Explained">
+<meta property="og:description" content="A plain-words explainer on prediction, training data and chatbot mistakes.">
+<meta property="og:url" content="https://noryvello.github.io/how-ai-chatbots-work-explained/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:11px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer;margin-top:12px}
+.calc button.secondary{background:#0d9488}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+.ckrow{display:flex;align-items:flex-start;gap:10px;margin:8px 0}
+.ckrow input[type="checkbox"]{width:20px;height:20px;flex:0 0 20px;margin-top:3px}
+.ckrow span{font-size:15.5px}
+.sheet{background:#fff;border:1px solid #cbd5e1;border-radius:8px;padding:14px 16px;margin-top:12px;font-size:15.5px}
+.sheet p{margin:6px 0}
+.msglist li{margin:8px 0}
+@media print{body{background:#fff}.brand,.links,.note,footer,.calc button{display:none!important}.wrap{max-width:100%}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do chatbots understand what they say?", "acceptedAnswer": {"@type": "Answer", "text": "No. A chatbot predicts likely words based on patterns in its training data. It has no understanding, no beliefs and no experience of the world, even though its answers read as if it does."}}, {"@type": "Question", "name": "Why do chatbots sound so confident?", "acceptedAnswer": {"@type": "Answer", "text": "A chatbot is built to produce fluent, plausible text. It answers in the same assured tone whether it is sure or guessing, which is why confident-sounding answers still need checking."}}, {"@type": "Question", "name": "Can a chatbot be wrong about facts?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, often. A chatbot can give wrong dates, wrong numbers and sources that do not exist. Always check important facts against a second source before you rely on them."}}, {"@type": "Question", "name": "Are chatbots safe to ask anything?", "acceptedAnswer": {"@type": "Answer", "text": "Do not share personal details, passwords or private information with a chatbot. Treat it like a public tool: useful for general questions, not for anything private."}}, {"@type": "Question", "name": "How can I check a chatbot's answer?", "acceptedAnswer": {"@type": "Answer", "text": "Check the facts against a second source, verify any numbers or dates elsewhere, and open any source the chatbot mentions. Use the fact-check checklist on this page as a reminder."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How AI Chatbots Work, Explained</h1>
+<p class="answer">An AI chatbot answers by predicting the most likely next words, based on patterns it learned from large amounts of text. It does not understand the world the way a person does, which is why its answers can sound confident and still be wrong.</p>
+<p>Chatbots can write essays, answer questions and hold a conversation, which makes them feel intelligent. Underneath, the trick is simpler than it looks: the chatbot is a prediction machine. It has learned which words tend to follow which other words, and it uses that knowledge to build answers one word at a time.</p>
+<p>Understanding that trick changes how you use a chatbot. You stop treating it as an expert and start treating it as a useful but unreliable helper — good for drafts and ideas, risky for facts you have not checked. This page explains how chatbots work, why they make mistakes, and how to check what they tell you.</p>
+<div class="calc">
+<p class="out" id="count">0 of 6 done</p>
+<p class="steps"><strong>Before you trust a chatbot's answer</strong></p>
+<div class="ckrow"><input type="checkbox" id="c1"><span>The fact is checked against a second source</span></div>
+<div class="ckrow"><input type="checkbox" id="c2"><span>The date of the information is known</span></div>
+<div class="ckrow"><input type="checkbox" id="c3"><span>Any number or statistic is checked elsewhere</span></div>
+<div class="ckrow"><input type="checkbox" id="c4"><span>The answer does not ask for personal details</span></div>
+<div class="ckrow"><input type="checkbox" id="c5"><span>Health, money or legal answers are checked with a qualified person</span></div>
+<div class="ckrow"><input type="checkbox" id="c6"><span>The answer is treated as a starting point, not a final answer</span></div>
+<button id="reset-btn" class="secondary" type="button">Start again</button>
+<button id="print-btn" type="button">Print this checklist</button>
+</div>
+<script>
+function setupChecklist(ids, countId, resetId) {
+  function update() {
+    var done = 0;
+    for (var i = 0; i < ids.length; i++) {
+      var b = document.getElementById(ids[i]);
+      if (b && b.checked) done++;
+    }
+    document.getElementById(countId).textContent = done + " of " + ids.length + " done";
+  }
+  for (var i = 0; i < ids.length; i++) {
+    var b = document.getElementById(ids[i]);
+    if (b) b.addEventListener("change", update);
+  }
+  var r = document.getElementById(resetId);
+  if (r) r.addEventListener("click", function () {
+    for (var i = 0; i < ids.length; i++) {
+      var b = document.getElementById(ids[i]);
+      if (b) b.checked = false;
+    }
+    update();
+  });
+  update();
+}
+document.getElementById("print-btn").addEventListener("click", function () { window.print(); });
+setupChecklist(["c1", "c2", "c3", "c4", "c5", "c6"], "count", "reset-btn");
+</script>
+<div class="warn">This page explains the idea in general terms and does not recommend any chatbot tool. Treat chatbot answers as a starting point, not as a verified source — especially for health, money or legal questions.</div>
+<h2>How a chatbot answers</h2>
+<p>When you send a message, the chatbot looks at your words and predicts the most likely next word. Then it predicts the word after that, and the word after that, until it has built a full reply. It does this using patterns it learned during training, when it was shown enormous amounts of written text.</p>
+<p>The chatbot does not look up facts in a book or a database. It has no memory of the world outside its training, and it cannot check whether what it says is true. It is, in effect, finishing your sentence in the most plausible way it knows how. That is why its answers read so smoothly — and why smooth does not mean right.</p>
+<p>The same question can get a different answer each time you ask it. Small changes in wording push the predictions in a different direction, so the chatbot may give a different example, a different emphasis, or a different answer altogether. If an answer matters, ask twice and compare.</p>
+<h2>Where the words come from</h2>
+<p>A chatbot learns from large amounts of text: books, articles, websites and conversations, gathered together and used to train the model. The training teaches it grammar, style, facts and opinions — all mixed together, with no label saying which parts are reliable and which are not.</p>
+<p>Because the training text comes from many sources, the chatbot absorbs their habits too. It learns the confident tone of a textbook, the casual tone of a forum, and the persuasive tone of an advertisement. It can switch between these styles on request, which is part of what makes it feel so capable.</p>
+<p>The training also has a cut-off: the chatbot only knows what was in its training data. It cannot tell you about events after that point unless it is connected to a live source. Even then, it may blend old and new information without telling you which is which.</p>
+<h2>Why chatbots get things wrong</h2>
+<p>A chatbot's mistakes follow from how it works. It predicts plausible words, not true ones. If a question is outside its training, it will still produce a confident-sounding answer, because that is what it is built to do. The result can be a made-up fact, a wrong date, or a source that does not exist.</p>
+<p>Chatbots also struggle with questions that need real-world knowledge. They cannot see, touch or experience anything, so they can be wrong about everyday things in ways a person would not be. They can also repeat mistakes from their training data, including outdated advice and common misconceptions.</p>
+<p>The confident tone makes the mistakes harder to spot. A chatbot rarely says it does not know. It answers in the same assured voice whether it is sure or guessing, so the reader has to do the checking. That is the most important habit to build: treat every chatbot answer as a draft until you have verified it.</p>
+<h2>What chatbots cannot do</h2>
+<p>A chatbot cannot understand what it says. It has no beliefs, no intentions and no experience of the world. It cannot tell whether a statement is true, only whether it sounds like something that would follow from the words before it.</p>
+<p>A chatbot cannot keep a secret, keep a promise or take responsibility. It cannot verify a fact, check a source, or know when it is out of its depth. And it cannot replace a qualified person for health, money or legal questions — it can only repeat what its training data says about them, with no judgement about whether that applies to you.</p>
+<p>Knowing these limits makes a chatbot more useful, not less. It is a good tool for brainstorming, drafting, explaining ideas and practising a skill. It is a poor tool for anything where being wrong has real consequences.</p>
+<h2>Check before you trust it</h2>
+<p>Use the fact-check checklist above whenever a chatbot's answer matters. Check important facts against a second source, and check any number or date elsewhere. If the chatbot gives you a source, open it and read it — the source may not say what the chatbot claims it says.</p>
+<p>For health, money or legal questions, ask a qualified person. A chatbot can help you prepare questions for a doctor, an adviser or a lawyer, but it cannot give you the answer. The checklist is a reminder to pause, verify, and only then decide.</p>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>Do chatbots understand what they say?</h3>
+<p>No. A chatbot predicts likely words based on patterns in its training data. It has no understanding, no beliefs and no experience of the world, even though its answers read as if it does.</p>
+</div>
+<div class="faq">
+<h3>Why do chatbots sound so confident?</h3>
+<p>A chatbot is built to produce fluent, plausible text. It answers in the same assured tone whether it is sure or guessing, which is why confident-sounding answers still need checking.</p>
+</div>
+<div class="faq">
+<h3>Can a chatbot be wrong about facts?</h3>
+<p>Yes, often. A chatbot can give wrong dates, wrong numbers and sources that do not exist. Always check important facts against a second source before you rely on them.</p>
+</div>
+<div class="faq">
+<h3>Are chatbots safe to ask anything?</h3>
+<p>Do not share personal details, passwords or private information with a chatbot. Treat it like a public tool: useful for general questions, not for anything private.</p>
+</div>
+<div class="faq">
+<h3>How can I check a chatbot's answer?</h3>
+<p>Check the facts against a second source, verify any numbers or dates elsewhere, and open any source the chatbot mentions. Use the fact-check checklist on this page as a reminder.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/how-solar-panels-work-explained/">How Solar Panels Work, Explained</a> · <a href="https://noryvello.github.io/how-electric-cars-work-explained/">How Electric Cars Work, Explained</a> · <a href="https://noryvello.github.io/time-zones-explained-guide/">Time Zones Explained</a> · <a href="https://noryvello.github.io/leap-seconds-explained-guide/">Leap Seconds Explained</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div><footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<script src="../ads-config.js"></script>
+</div>
+</body>
+</html>

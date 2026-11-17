@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compare Loan Offers Worksheet | Noryvello</title>
+<meta name="description" content="Compare up to three loan offers side by side: enter amount, rate, term and fees for each and see total cost with working shown.">
+<link rel="canonical" href="https://noryvello.github.io/compare-loan-offers-worksheet/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Compare Loan Offers Worksheet">
+<meta property="og:description" content="Compare loan offers by total cost, with the working shown for every offer you enter.">
+<meta property="og:url" content="https://noryvello.github.io/compare-loan-offers-worksheet/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+button{display:inline-block;margin-top:12px;padding:10px 18px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:600;cursor:pointer}
+button:hover{background:#3730a3}
+.chk{display:block;margin:6px 0;font-size:15.5px;cursor:pointer}
+.chk input{width:auto;margin-right:8px;accent-color:#4338ca}
+.count{font-weight:700;margin:12px 0}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between a fixed and variable rate?", "acceptedAnswer": {"@type": "Answer", "text": "A fixed rate stays the same for the period stated in the offer, so the monthly payment does not change. A variable rate can move up or down over the term, so the monthly payment can change too. This worksheet treats the rate you enter as staying put, so for a variable-rate offer it shows the cost if the rate never moved."}}, {"@type": "Question", "name": "Why do fees matter when comparing loans?", "acceptedAnswer": {"@type": "Answer", "text": "Fees are part of what you pay, so they belong in the total cost. An offer with a lower rate but high fees can cost more overall than an offer with a higher rate and no fees. Comparing total cost, including fees, keeps the comparison honest."}}, {"@type": "Question", "name": "Is the lowest monthly payment the cheapest loan?", "acceptedAnswer": {"@type": "Answer", "text": "Not necessarily. A longer term lowers the monthly payment but raises the total interest, because you borrow the money for longer. The total cost is the fairer comparison; the monthly payment tells you whether the loan is affordable month to month."}}, {"@type": "Question", "name": "What does the term change?", "acceptedAnswer": {"@type": "Answer", "text": "A longer term means smaller monthly payments and more total interest. A shorter term means larger monthly payments and less total interest. Changing the term in this worksheet shows you the trade-off in plain numbers."}}, {"@type": "Question", "name": "Should I trust this worksheet's result?", "acceptedAnswer": {"@type": "Answer", "text": "Trust it as arithmetic, not as advice. It works out the total cost of the numbers you enter, using the standard repayment formula. It cannot see the full terms of an offer, so read those before deciding."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Compare Loan Offers Worksheet</h1>
+<p class="answer">Loan offers are hard to compare because the headline rate is only part of the cost. This worksheet works out the total cost of up to three offers from the terms you enter, so you can compare them side by side.</p>
+<p>Two loan offers can look similar and cost very different amounts. The rate matters, but so do the term and the fees, and a low monthly payment can hide a high total cost. The only fair way to compare offers is to work out the total cost of each one on the same basis.</p>
+<p>This worksheet does that arithmetic for you. Enter the terms of each offer as given to you: the amount, the rate type, the annual rate, the term in months, and any fees. The worksheet works out the monthly payment, the total interest and the total cost of each offer, with the working shown.</p>
+<div class="warn">General education only. This worksheet compares the numbers you enter; it does not recommend any offer and is not financial advice. Always read the full terms of any offer before deciding.</div>
+<h2>What counts as the cost of a loan</h2>
+<p>The cost of a loan is everything you pay back above what you borrowed, plus any fees. That means the interest over the whole term, not just the first year, and every fee the offer includes, whether it is charged at the start or spread across the payments. An offer with a lower rate but higher fees can end up costing more than an offer with a higher rate and no fees.</p>
+<p>The term matters just as much. A longer term lowers the monthly payment but raises the total interest, because you are borrowing the money for longer. That is why the monthly payment alone is a poor way to compare offers: it rewards the longest term, not the cheapest loan.</p>
+<p>Rate type matters too. A fixed rate stays the same for the period stated in the offer, so the monthly payment is predictable. A variable rate can move up or down, so the monthly payment can change. This worksheet treats the rate you enter as fixed for the whole term, so for a variable-rate offer the result is only a picture of the cost if the rate stayed where it is.</p>
+<h2>Compare up to three offers</h2>
+<p>Fill in one block per offer. Leave a block empty to skip it. Enter amounts and fees in your own currency, with no currency symbol, and the rate as the annual percentage from the offer. The rate type is your own note for each offer.</p>
+<div class="calc">
+<p><strong>Offer 1</strong></p>
+<label for="o1-amount">Amount</label>
+<input id="o1-amount" type="text" inputmode="decimal" placeholder="For example 10000">
+<label for="o1-type">Rate type</label>
+<select id="o1-type"><option value="fixed">Fixed</option><option value="variable">Variable</option></select>
+<label for="o1-rate">Annual rate (%)</label>
+<input id="o1-rate" type="text" inputmode="decimal" placeholder="For example 6">
+<label for="o1-term">Term (months)</label>
+<input id="o1-term" type="text" inputmode="numeric" placeholder="For example 12">
+<label for="o1-fees">Fees</label>
+<input id="o1-fees" type="text" inputmode="decimal" placeholder="For example 100">
+<p><strong>Offer 2</strong></p>
+<label for="o2-amount">Amount</label>
+<input id="o2-amount" type="text" inputmode="decimal" placeholder="For example 10000">
+<label for="o2-type">Rate type</label>
+<select id="o2-type"><option value="fixed">Fixed</option><option value="variable">Variable</option></select>
+<label for="o2-rate">Annual rate (%)</label>
+<input id="o2-rate" type="text" inputmode="decimal" placeholder="For example 5">
+<label for="o2-term">Term (months)</label>
+<input id="o2-term" type="text" inputmode="numeric" placeholder="For example 24">
+<label for="o2-fees">Fees</label>
+<input id="o2-fees" type="text" inputmode="decimal" placeholder="For example 0">
+<p><strong>Offer 3</strong></p>
+<label for="o3-amount">Amount</label>
+<input id="o3-amount" type="text" inputmode="decimal" placeholder="For example 10000">
+<label for="o3-type">Rate type</label>
+<select id="o3-type"><option value="fixed">Fixed</option><option value="variable">Variable</option></select>
+<label for="o3-rate">Annual rate (%)</label>
+<input id="o3-rate" type="text" inputmode="decimal" placeholder="For example 7">
+<label for="o3-term">Term (months)</label>
+<input id="o3-term" type="text" inputmode="numeric" placeholder="For example 12">
+<label for="o3-fees">Fees</label>
+<input id="o3-fees" type="text" inputmode="decimal" placeholder="For example 50">
+<button id="compare-btn" type="button">Compare these offers</button>
+<div class="out" id="out"></div>
+<div class="steps" id="steps"></div>
+</div>
+<h2>How to read the comparison</h2>
+<p>Start with the total cost of each offer: the amount paid back plus fees. The lowest total cost is the cheapest of the offers you entered, on the numbers alone. Then look at the monthly payment and ask whether it fits comfortably each month, because the cheapest offer is no good if its payments strain you.</p>
+<p>Finally, remember what the worksheet cannot see. It does not know about early-repayment charges, payment holidays, or what happens if a variable rate moves. Read the full terms of any offer before deciding, and ask the lender to explain anything you do not understand.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is the difference between a fixed and variable rate?</h3><p>A fixed rate stays the same for the period stated in the offer, so the monthly payment does not change. A variable rate can move up or down over the term, so the monthly payment can change too. This worksheet treats the rate you enter as staying put, so for a variable-rate offer it shows the cost if the rate never moved.</p></div>
+<div class="faq"><h3>Why do fees matter when comparing loans?</h3><p>Fees are part of what you pay, so they belong in the total cost. An offer with a lower rate but high fees can cost more overall than an offer with a higher rate and no fees. Comparing total cost, including fees, keeps the comparison honest.</p></div>
+<div class="faq"><h3>Is the lowest monthly payment the cheapest loan?</h3><p>Not necessarily. A longer term lowers the monthly payment but raises the total interest, because you borrow the money for longer. The total cost is the fairer comparison; the monthly payment tells you whether the loan is affordable month to month.</p></div>
+<div class="faq"><h3>What does the term change?</h3><p>A longer term means smaller monthly payments and more total interest. A shorter term means larger monthly payments and less total interest. Changing the term in this worksheet shows you the trade-off in plain numbers.</p></div>
+<div class="faq"><h3>Should I trust this worksheet's result?</h3><p>Trust it as arithmetic, not as advice. It works out the total cost of the numbers you enter, using the standard repayment formula. It cannot see the full terms of an offer, so read those before deciding.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/envelope-budgeting-explained-guide/">Envelope Budgeting Explained</a> · <a href="https://noryvello.github.io/work-from-home-vs-office-cost/">Work From Home vs Office Cost</a> · <a href="https://noryvello.github.io/buy-vs-rent-camping-gear/">Buy vs Rent Camping Gear</a> · <a href="https://noryvello.github.io/budget-trip-cost-comparison/">Budget Trip Cost Comparison</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n) {
+  var s = n.toFixed(2);
+  if (s.slice(-3) === ".00") s = s.slice(0, -3);
+  return s;
+}
+function monthlyPayment(amount, annualRate, months) {
+  if (annualRate === 0) return amount / months;
+  var r = annualRate / 12 / 100;
+  var f = Math.pow(1 + r, months);
+  return amount * r * f / (f - 1);
+}
+document.getElementById("compare-btn").addEventListener("click", function () {
+  var out = document.getElementById("out");
+  var steps = document.getElementById("steps");
+  var results = [];
+  var lines = [];
+  for (var i = 1; i <= 3; i++) {
+    var aRaw = document.getElementById("o" + i + "-amount").value.trim();
+    var rRaw = document.getElementById("o" + i + "-rate").value.trim();
+    var tRaw = document.getElementById("o" + i + "-term").value.trim();
+    var fRaw = document.getElementById("o" + i + "-fees").value.trim();
+    if (aRaw === "" && rRaw === "" && tRaw === "" && fRaw === "") continue;
+    var amount = parseFloat(aRaw);
+    var rate = parseFloat(rRaw);
+    var term = parseFloat(tRaw);
+    var fees = fRaw === "" ? 0 : parseFloat(fRaw);
+    if (!(amount > 0)) {
+      out.textContent = "Offer " + i + ": enter a loan amount above zero.";
+      steps.textContent = "";
+      return;
+    }
+    if (isNaN(rate) || rate < 0) {
+      out.textContent = "Offer " + i + ": enter an annual rate of 0 or more.";
+      steps.textContent = "";
+      return;
+    }
+    if (isNaN(term) || term <= 0 || Math.floor(term) !== term) {
+      out.textContent = "Offer " + i + ": enter a term in whole months above zero.";
+      steps.textContent = "";
+      return;
+    }
+    if (isNaN(fees) || fees < 0) {
+      out.textContent = "Offer " + i + ": enter fees of 0 or more.";
+      steps.textContent = "";
+      return;
+    }
+    var m = monthlyPayment(amount, rate, term);
+    var totalPaid = m * term;
+    var interest = totalPaid - amount;
+    var totalCost = totalPaid + fees;
+    results.push({n: i, monthly: m, totalPaid: totalPaid, interest: interest, totalCost: totalCost});
+    var type = document.getElementById("o" + i + "-type").value;
+    lines.push("Offer " + i + " (" + type + " rate): monthly payment " + fmt(m) + "; total paid " + fmt(totalPaid) + "; interest " + fmt(interest) + "; fees " + fmt(fees) + "; total cost " + fmt(totalCost) + ".");
+    if (rate === 0) {
+      lines.push("  Working: no interest, so monthly payment = " + fmt(amount) + " / " + term + " = " + fmt(m) + ".");
+    } else {
+      lines.push("  Working: monthly rate = " + fmt(rate) + " / 12 / 100 = " + (rate / 12 / 100).toFixed(6) + "; monthly payment from the standard repayment formula over " + term + " months.");
+    }
+  }
+  if (results.length === 0) {
+    out.textContent = "Enter at least one offer to compare.";
+    steps.textContent = "";
+    return;
+  }
+  var cheapest = results[0];
+  for (var j = 1; j < results.length; j++) {
+    if (results[j].totalCost < cheapest.totalCost) cheapest = results[j];
+  }
+  if (results.length === 1) {
+    out.textContent = "Offer " + cheapest.n + " total cost: " + fmt(cheapest.totalCost) + ". Add another offer to compare.";
+  } else {
+    out.textContent = "Lowest total cost of the offers you entered: Offer " + cheapest.n + " at " + fmt(cheapest.totalCost) + ". This is only about the numbers you entered, not a recommendation.";
+  }
+  steps.textContent = lines.join("\n");
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

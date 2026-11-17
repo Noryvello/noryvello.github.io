@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Excel Invoice Template Guide | Noryvello</title>
+<meta name="description" content="Build your own invoice spreadsheet: the column layout, every required field, and the formulas in plain words, so you can recreate the template in any spreadsheet app.">
+<link rel="canonical" href="https://noryvello.github.io/excel-invoice-template-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Excel Invoice Template Guide">
+<meta property="og:description" content="An invoice spreadsheet structure with column layouts, required fields and formulas in plain words.">
+<meta property="og:url" content="https://noryvello.github.io/excel-invoice-template-guide/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{margin-top:12px;padding:10px 18px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:600;cursor:pointer}.calc button:hover{background:#3730a3}</style><style>table{width:100%;border-collapse:collapse;margin:10px 0;font-size:15px}th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}th{background:#eef2ff}</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What columns does an invoice spreadsheet need?", "acceptedAnswer": {"@type": "Answer", "text": "Four columns for the items table: description, quantity, unit amount and line total. The line total is a formula: quantity times unit amount."}}, {"@type": "Question", "name": "What fields must every invoice include?", "acceptedAnswer": {"@type": "Answer", "text": "Your business name and contact details, the client name and details, a unique invoice number, the invoice date, the payment due date, the item list, and the total due with payment details."}}, {"@type": "Question", "name": "How do I work out the total on an invoice?", "acceptedAnswer": {"@type": "Answer", "text": "Add the line totals to get the subtotal, subtract any discount, then add the tax amount. The result is the total due."}}, {"@type": "Question", "name": "Should invoice numbers run in order?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Give every invoice a unique number in order, and never reuse a number. If you cancel an invoice, keep its number and mark it cancelled so the sequence stays complete."}}, {"@type": "Question", "name": "Can I use this structure in other spreadsheet apps?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The layout, fields and formulas in this guide work in any spreadsheet app, because they use only plain columns and simple arithmetic."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Excel Invoice Template Guide</h1>
+<p class="answer">An invoice spreadsheet needs only a clear set of columns, a short list of required fields and a few simple formulas. This guide shows you the structure to recreate in your own spreadsheet, with a checklist of the fields every invoice should carry and each formula explained in plain words.</p>
+<p>An invoice is a request for payment, and its job is to make paying easy. The client should be able to see, in seconds, who is asking, what the money is for, how much is due and when. A spreadsheet is a good way to build invoices, because the formulas do the arithmetic and the layout stays the same every time.</p>
+<p>This guide gives you the structure to recreate in your own spreadsheet. It is a guide to building a template, not an invoice generator: you build the sheet once, then copy it for each new invoice.</p>
+<div class="calc">
+<p><strong>Required fields checklist</strong> — tick off each field as you add it to your invoice template.</p>
+<div id="inv-list">
+<label><input type="checkbox" id="inv-b1"> Your business name</label>
+<label><input type="checkbox" id="inv-b2"> Your contact details</label>
+<label><input type="checkbox" id="inv-b3"> Client name and details</label>
+<label><input type="checkbox" id="inv-b4"> Invoice number</label>
+<label><input type="checkbox" id="inv-b5"> Invoice date</label>
+<label><input type="checkbox" id="inv-b6"> Payment due date</label>
+<label><input type="checkbox" id="inv-b7"> Item or service list</label>
+<label><input type="checkbox" id="inv-b8"> Quantity and unit amount columns</label>
+<label><input type="checkbox" id="inv-b9"> Tax line, if it applies</label>
+<label><input type="checkbox" id="inv-b10"> Total due and payment details</label>
+</div>
+<div class="out" id="inv-count">0 of 10 fields ticked.</div>
+<button id="inv-reset" type="button">Clear all ticks</button>
+<p><strong>Formula picker</strong> — pick a calculation to see the formula in plain words.</p>
+<label for="inv-formula">Calculation</label>
+<select id="inv-formula">
+<option value="">Choose a calculation</option>
+<option value="line">Line total</option>
+<option value="subtotal">Subtotal</option>
+<option value="discount">Discount</option>
+<option value="tax">Tax amount</option>
+<option value="total">Total due</option>
+</select>
+<button id="inv-fbtn" type="button">Show the formula</button>
+<div class="out" id="inv-fout"></div>
+<div class="steps" id="inv-fsteps"></div>
+</div>
+<script>
+(function(){
+  var ids = ["inv-b1","inv-b2","inv-b3","inv-b4","inv-b5","inv-b6","inv-b7","inv-b8","inv-b9","inv-b10"];
+  var countEl = document.getElementById("inv-count");
+  function update(){
+    var n = 0;
+    for (var i = 0; i < ids.length; i++) {
+      if (document.getElementById(ids[i]).checked) n++;
+    }
+    countEl.textContent = n + " of " + ids.length + " fields ticked.";
+  }
+  for (var j = 0; j < ids.length; j++) {
+    document.getElementById(ids[j]).addEventListener("change", update);
+  }
+  document.getElementById("inv-reset").addEventListener("click", function(){
+    for (var k = 0; k < ids.length; k++) {
+      document.getElementById(ids[k]).checked = false;
+    }
+    update();
+  });
+  update();
+  var FORMULAS = {
+    "line": {name: "Line total", formula: "quantity times unit amount", example: "4 items at 25 each gives a line total of 100."},
+    "subtotal": {name: "Subtotal", formula: "add up all the line totals", example: "Line totals of 100, 60 and 40 give a subtotal of 200."},
+    "discount": {name: "Discount", formula: "subtotal times the discount rate", example: "A 10 percent discount on a subtotal of 200 gives a discount of 20."},
+    "tax": {name: "Tax amount", formula: "taxable amount times the tax rate", example: "A 20 percent rate on a taxable amount of 180 gives a tax amount of 36."},
+    "total": {name: "Total due", formula: "subtotal minus discount plus tax amount", example: "A subtotal of 200 minus a discount of 20 plus tax of 36 gives a total due of 216."}
+  };
+  document.getElementById("inv-fbtn").addEventListener("click", function(){
+    var pick = document.getElementById("inv-formula").value;
+    var out = document.getElementById("inv-fout");
+    var steps = document.getElementById("inv-fsteps");
+    if (!pick || !FORMULAS[pick]) {
+      out.textContent = "";
+      steps.textContent = "Choose a calculation first.";
+      return;
+    }
+    var f = FORMULAS[pick];
+    out.textContent = f.name + ": " + f.formula + ".";
+    steps.textContent = "Worked example: " + f.example;
+  });
+})();
+</script>
+
+<h2>The column layout</h2>
+<p>An invoice sheet has three parts: a header, a table of items, and a totals block. The header holds the facts about the invoice itself: your business name and contact details, the client name and details, the invoice number, the invoice date and the payment due date. Keep the header at the top of the sheet, where it is the first thing the client sees.</p>
+<p>The items table is the heart of the invoice. Use one row per item or service, with a column for the description, a column for the quantity, a column for the unit amount and a column for the line total. The line total is the quantity times the unit amount, and it should be a formula, not a typed number, so it updates itself if you change a quantity.</p>
+<table>
+<tr><th>Column</th><th>What goes in it</th></tr>
+<tr><td>Description</td><td>What was supplied, in plain words</td></tr>
+<tr><td>Quantity</td><td>How many, or how many hours</td></tr>
+<tr><td>Unit amount</td><td>The amount for one item or one hour</td></tr>
+<tr><td>Line total</td><td>Quantity times unit amount, as a formula</td></tr>
+</table>
+<p>The totals block sits below the items table. It has one row for the subtotal, one row for any discount, one row for the tax amount if it applies, and a final row for the total due. Below the totals, add your payment details and a short thank-you line. Keep the totals block short: a client who has to hunt for the total is a client who pays late.</p>
+<h2>Required fields checklist</h2>
+<p>Every invoice should carry the same set of fields, whether it is the first invoice you have ever sent or the hundredth. The checklist above covers the ten fields that matter: your business name and contact details, the client name and details, the invoice number, the invoice date, the payment due date, the item or service list, the quantity and unit amount columns, a tax line if it applies, and the total due with payment details.</p>
+<p>The invoice number deserves a note of its own. Give every invoice a unique number, in order, and never reuse a number. A simple sequence works — 001, 002, 003 — and it makes finding an invoice later much easier. If you ever need to cancel an invoice, keep its number and mark it cancelled rather than deleting it, so the sequence stays complete.</p>
+<p>The payment due date matters as much as the total. State it as a date, not as a number of days, so there is no argument about when the count started. If you offer a payment method, say how to use it in plain words: the account details, or where to send the payment, with nothing left for the client to guess.</p>
+<h2>Formulas in plain words</h2>
+<p>The formulas on an invoice are simple, and that is the point. The line total is the quantity times the unit amount. The subtotal is the sum of all the line totals. A discount is the subtotal times the discount rate. The tax amount is the taxable amount times the tax rate. The total due is the subtotal minus the discount plus the tax amount. Use the formula picker above to see each one with a worked example.</p>
+<p>Write each formula once, in the first row, and copy it down the column. That way every row uses the same rule, and a change to a quantity or a unit amount flows through to the total by itself. Never type a total by hand: a typed total looks the same as a calculated one until the day a quantity changes and the total does not.</p>
+<p>Check the arithmetic on the first few invoices by hand, even though the formulas do it for you. A formula that points at the wrong cell gives a confident wrong answer, and the only way to catch it is to check. Once the template is proven, you can trust it — but check again any time you change the layout.</p>
+<h2>Keeping invoices tidy</h2>
+<p>Save each finished invoice as its own file, named with the invoice number and the client name, and keep the blank template untouched. If you edit the template by accident, you will find the next invoice starts from the wrong place. Many people keep the template in a folder of its own, separate from the sent invoices.</p>
+<p>Keep a simple list of invoices sent: number, client, date, total and whether it is paid. A single sheet with one row per invoice is enough, and it answers the two questions you will ask most often — who owes me, and what did I earn this month — without opening every invoice.</p>
+<p>Finally, send the invoice in a form the client can open and keep. A spreadsheet file works if the client uses spreadsheets, but a printed or PDF copy is the safer choice for most clients, because it looks the same on every device and cannot be edited by accident.</p>
+<div class="warn">This guide covers the structure of an invoice, not tax or legal rules. Tax rates, required wording and record-keeping rules differ by country, so check your local rules or ask a qualified adviser before sending invoices.</div>
+
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>What columns does an invoice spreadsheet need?</h3>
+<p>Four columns for the items table: description, quantity, unit amount and line total. The line total is a formula: quantity times unit amount.</p>
+</div>
+<div class="faq">
+<h3>What fields must every invoice include?</h3>
+<p>Your business name and contact details, the client name and details, a unique invoice number, the invoice date, the payment due date, the item list, and the total due with payment details.</p>
+</div>
+<div class="faq">
+<h3>How do I work out the total on an invoice?</h3>
+<p>Add the line totals to get the subtotal, subtract any discount, then add the tax amount. The result is the total due.</p>
+</div>
+<div class="faq">
+<h3>Should invoice numbers run in order?</h3>
+<p>Yes. Give every invoice a unique number in order, and never reuse a number. If you cancel an invoice, keep its number and mark it cancelled so the sequence stays complete.</p>
+</div>
+<div class="faq">
+<h3>Can I use this structure in other spreadsheet apps?</h3>
+<p>Yes. The layout, fields and formulas in this guide work in any spreadsheet app, because they use only plain columns and simple arithmetic.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/freelance-proposal-guide/">Freelance Proposal Writing Guide</a> · <a href="https://noryvello.github.io/printable-weekly-planner-guide/">Printable Weekly Planner Guide</a> · <a href="https://noryvello.github.io/presentation-template-layouts-guide/">Presentation Template Layouts Guide</a> · <a href="https://noryvello.github.io/linkedin-profile-writing-guide/">LinkedIn Profile Writing Guide</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>
