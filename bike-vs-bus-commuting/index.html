@@ -74,7 +74,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 const ci=['days','weeks','busfare','bikeannual','busminutes','bikeminutes'];function commute(){const v=ci.map(x=>Number(document.getElementById(x).value));const [d,w,f,b,bm,km]=v;const o=document.getElementById('commuteResult'),t=document.getElementById('commuteDetails');if(v.some(x=>!Number.isFinite(x)||x<0)||d>7||w>52){o.textContent='Enter valid values (0–7 days and 0–52 weeks).';t.textContent='';return}const trips=d*w*2,bc=trips*f,bt=trips*bm/60,kt=trips*km/60;o.textContent='Annual bus cost: '+bc.toFixed(2)+' | Annual bike cost: '+b.toFixed(2);t.textContent='Estimated bus travel time: '+bt.toFixed(1)+' hours/year. Estimated bike travel time: '+kt.toFixed(1)+' hours/year. '+(bc<b?'Bus is lower-cost in this estimate.':bc>b?'Bike is lower-cost in this estimate.':'The entered annual costs are equal.')+' Time estimates exclude waiting and delays. Currency is whatever you entered.';}ci.forEach(x=>document.getElementById(x).addEventListener('input',commute));commute();

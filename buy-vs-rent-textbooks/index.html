@@ -65,7 +65,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 var bids=['buyPrice','buyCount','resale','rentPrice','fees'];function bookCalc(){var v=bids.map(function(id){return Number(document.getElementById(id).value)}),o=document.getElementById('bookOut'),d=document.getElementById('bookSteps');if(v.some(function(x){return !Number.isFinite(x)||x<0})||!Number.isInteger(v[1])||v[1]<1){o.textContent='Enter valid non-negative values and a whole book count above zero.';d.textContent='';return}var buy=Math.max(0,v[0]-v[2]),rent=v[3]+v[4],buyTotal=buy*v[1],rentTotal=rent*v[1],delta=Math.abs(buyTotal-rentTotal);o.textContent='Buy then resell: '+buyTotal.toFixed(2)+' | Rent: '+rentTotal.toFixed(2);d.textContent=(buyTotal<rentTotal?'Buying is lower by ':'Renting is lower by ')+delta.toFixed(2)+' for '+v[1]+' book(s), using your estimated resale value and entered fees. A zero floor is used if estimated resale exceeds the purchase price.'}bids.forEach(function(id){document.getElementById(id).addEventListener('input',bookCalc)});bookCalc();

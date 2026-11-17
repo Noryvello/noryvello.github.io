@@ -75,7 +75,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 const ri=['spend','cashrate','pointsrate','pointvalue','cashfee','pointsfee'];function rewards(){const v=ri.map(x=>Number(document.getElementById(x).value));const [s,c,p,pv,cf,pf]=v;const o=document.getElementById('rewardResult'),d=document.getElementById('rewardDetails');if(v.some(x=>!Number.isFinite(x)||x<0)){o.textContent='Enter valid non-negative values.';d.textContent='';return}const cash=s*12*c/100-cf;const pts=s*12*p/1000*pv-pf;o.textContent='Estimated cashback net: '+cash.toFixed(2)+' | Estimated points net: '+pts.toFixed(2);d.textContent=(cash>pts?'Cashback is higher under these assumptions.':pts>cash?'Points are higher under these assumptions.':'Both estimates are equal.')+' This is a comparison of entered assumptions, not a card recommendation. Values use your chosen currency.';}ri.forEach(x=>document.getElementById(x).addEventListener('input',rewards));rewards();

@@ -76,7 +76,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 const coffeeIds=['cups','days','dg','dp','ig','ip','machine','life','dt','it'];function coffeeCalc(){const v=coffeeIds.map(id=>Number(document.getElementById(id).value));const [cups,days,dg,dp,ig,ip,machine,life,dt,it]=v;const out=document.getElementById('coffeeOut'),detail=document.getElementById('coffeeDetails');if(v.some(x=>!Number.isFinite(x)||x<0)||!Number.isInteger(cups)||!Number.isInteger(days)||days>366||life<1){out.textContent='Enter valid non-negative values; equipment life must be at least one year.';detail.textContent='';return}const count=cups*days,drip=count*dg*dp+machine/life,instant=count*ig*ip,dripMin=count*dt,instantMin=count*it;out.textContent='Estimated yearly cost — drip: '+drip.toFixed(2)+' | instant: '+instant.toFixed(2);detail.textContent='Estimated yearly preparation time — drip: '+(dripMin/60).toFixed(1)+' hours | instant: '+(instantMin/60).toFixed(1)+' hours. Cost difference: '+Math.abs(drip-instant).toFixed(2)+' in your chosen currency. Estimates exclude extras you did not enter.'}coffeeIds.forEach(id=>document.getElementById(id).addEventListener('input',coffeeCalc));coffeeCalc();

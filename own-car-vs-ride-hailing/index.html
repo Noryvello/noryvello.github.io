@@ -67,7 +67,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 var ids=['carMonthly','insurance','maintenance','parking','fuel','rides','fare'];function carCalc(){var v=ids.map(function(id){return Number(document.getElementById(id).value)});var out=document.getElementById('carOut'),steps=document.getElementById('carSteps');if(v.some(function(x){return !Number.isFinite(x)||x<0})){out.textContent='Enter valid non-negative numbers in every field.';steps.textContent='';return}var own=v[0]+v[1]+v[2]+v[3]+v[4],ride=v[5]*v[6],diff=Math.abs(own-ride);out.textContent='Own car: '+own.toFixed(2)+' per month | Ride-hailing: '+ride.toFixed(2);steps.textContent=(own<ride?'Based on these inputs, owning the car is lower by ':'Based on these inputs, ride-hailing is lower by ')+diff.toFixed(2)+' per month. These totals use only the costs you entered.'}ids.forEach(function(id){document.getElementById(id).addEventListener('input',carCalc)});carCalc();

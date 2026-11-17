@@ -69,7 +69,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 const ids=['adults','children','adultPortion','childPortion','beefShare','chickenShare','otherShare'];function bbqCalc(){const v=ids.map(id=>Number(document.getElementById(id).value));const [a,c,ap,cp,b,ch,o]=v;const out=document.getElementById('bbqOut'),d=document.getElementById('bbqDetails');if(v.some(x=>!Number.isFinite(x)||x<0)||![a,c].every(Number.isInteger)||b+ch+o!==100){out.textContent='Enter non-negative values; meat shares must total exactly 100%.';d.textContent='';return}const total=a*ap+c*cp;out.textContent='Estimated raw meat total: '+(total/1000).toFixed(2)+' kg';d.textContent='Beef: '+(total*b/100/1000).toFixed(2)+' kg\\nChicken: '+(total*ch/100/1000).toFixed(2)+' kg\\nOther meat: '+(total*o/100/1000).toFixed(2)+' kg'}ids.forEach(id=>document.getElementById(id).addEventListener('input',bbqCalc));bbqCalc();

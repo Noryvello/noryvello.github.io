@@ -65,7 +65,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 var tvIds=['cableBase','cableFees','streamSubs','streamEach','streamAddons'];function tvCalc(){var v=tvIds.map(function(id){return Number(document.getElementById(id).value)}),o=document.getElementById('tvOut'),d=document.getElementById('tvSteps');if(v.some(function(x){return !Number.isFinite(x)||x<0})||!Number.isInteger(v[2])||v[2]>30){o.textContent='Enter valid amounts and a whole subscription count from 0 to 30.';d.textContent='';return}var cable=v[0]+v[1],stream=v[2]*v[3]+v[4],delta=Math.abs(cable-stream);o.textContent='Cable bundle: '+cable.toFixed(2)+' per month | Streaming bundle: '+stream.toFixed(2);d.textContent=(cable<stream?'Cable is lower by ':'Streaming is lower by ')+delta.toFixed(2)+' per month based on your inputs. Include every subscription and recurring fee.'}tvIds.forEach(function(id){document.getElementById(id).addEventListener('input',tvCalc)});tvCalc();

@@ -118,7 +118,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
   </div>
   <script>
     (function(){var $=function(x){return document.getElementById(x)},u=$('unit'),a=$('area'),c=$('coverage'),w=$('weight'),r=$('result'),s=$('steps');function calc(){var A=+a.value,C=+c.value,W=+w.value;if(!(A>0&&C>0&&W>0)){r.textContent='Enter positive values for area, coverage, and seed weight.';s.textContent='';return;}var need=A/C*W;r.textContent='Estimated seed needed: '+need.toFixed(2)+' '+(u.value==='m'?'kg':'lb');s.textContent='Calculation: ('+A+' ÷ '+C+') × '+W+' = '+need.toFixed(2)+' '+(u.value==='m'?'kg':'lb')+'\nThis is an estimate based on the package rate you entered.';}[u,a,c,w].forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc)});u.addEventListener('change',function(){var m=u.value==='m';$('areaUnit').textContent=m?'sq m':'sq ft';$('covUnit').textContent=m?'sq m':'sq ft';$('weightUnit').textContent=m?'kg':'lb';calc()});calc()})();

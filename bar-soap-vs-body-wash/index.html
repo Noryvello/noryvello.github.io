@@ -72,7 +72,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 const soapIds=['barPrice','barSize','barUse','washPrice','washSize','washUse'];function soapCalc(){const v=soapIds.map(id=>Number(document.getElementById(id).value));const [bp,bs,bu,wp,ws,wu]=v;const out=document.getElementById('soapOut'),detail=document.getElementById('soapDetails');if(v.some(x=>!Number.isFinite(x)||x<0)||bs<=0||bu<=0||ws<=0||wu<=0){out.textContent='Enter valid prices and positive package sizes and amounts per wash.';detail.textContent='';return}const bc=bp/(bs/bu),wc=wp/(ws/wu);out.textContent='Estimated cost per wash — bar soap: '+bc.toFixed(4)+' | body wash: '+wc.toFixed(4);detail.textContent='Estimated washes per package — bar: '+(bs/bu).toFixed(1)+' | body wash: '+(ws/wu).toFixed(1)+'. Difference per wash: '+Math.abs(bc-wc).toFixed(4)+' in your chosen currency. Units are separate for grams and milliliters.'}soapIds.forEach(id=>document.getElementById(id).addEventListener('input',soapCalc));soapCalc();

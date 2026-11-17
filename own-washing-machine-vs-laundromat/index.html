@@ -68,7 +68,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 var wids=['machine','life','repair','utilities','loads','laundry','travel','loadsVisit'];function washCalc(){var v=wids.map(function(id){return Number(document.getElementById(id).value)}),o=document.getElementById('washOut'),d=document.getElementById('washSteps');if(v.some(function(x){return !Number.isFinite(x)||x<0})||v[1]<1||v[7]<1){o.textContent='Enter valid non-negative values; lifespan and loads per visit must be above zero.';d.textContent='';return}var yearly=v[4]*52,lifeLoads=yearly*v[1],home=(v[0]+v[1]*v[2])/Math.max(1,lifeLoads)+v[3],laundry=v[5]+v[6]/v[7],homeYear=home*yearly,laundryYear=laundry*yearly;o.textContent='Home washer: '+home.toFixed(2)+' per load | Laundromat: '+laundry.toFixed(2)+' per load';d.textContent='At '+yearly+' loads per year: home estimate '+homeYear.toFixed(2)+' per year; laundromat estimate '+laundryYear.toFixed(2)+' per year. Figures are estimates based on your inputs.'}wids.forEach(function(id){document.getElementById(id).addEventListener('input',washCalc)});washCalc();

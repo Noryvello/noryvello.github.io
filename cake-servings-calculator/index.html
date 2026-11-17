@@ -57,7 +57,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 var sh=document.getElementById('shape'),sz=document.getElementById('size'),sv=document.getElementById('serving');function cakeCalc(){var shape=sh.value,size=sz.value,party=sv.value==='party',area=0;if(size.indexOf('x')>-1){var p=size.split('x').map(Number);area=p[0]*p[1]}else{var d=Number(size);area=shape==='round'?Math.PI*d*d/4:d*d}var per=party?2.5:3.5;var count;if(size.indexOf('x')>-1){count=Math.floor(area/(party?2.25:3.5))}else count=Math.floor(area/per);count=Math.max(1,count);document.getElementById('cakeOut').textContent='Estimated servings: about '+count;document.getElementById('cakeSteps').textContent='Shape: '+shape+'. Size: '+size+' inch'+(size.indexOf('x')>-1?' sheet':'')+'. Serving style: '+(party?'party':'dessert')+'.\nThis is an area-based planning estimate, not a bakery guarantee. Ask the baker for the serving chart for the actual cake.'} [sh,sz,sv].forEach(function(x){x.addEventListener('change',cakeCalc)});cakeCalc();

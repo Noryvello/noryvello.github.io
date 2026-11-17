@@ -77,7 +77,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 const vegIds=['freshCost','freshWaste','frozenCost','frozenWaste'];function vegCalc(){const v=vegIds.map(id=>Number(document.getElementById(id).value));const [fc,fw,zc,zw]=v;const out=document.getElementById('vegOut'),detail=document.getElementById('vegDetails');if(v.some(x=>!Number.isFinite(x)||x<0)||fw>100||zw>100){out.textContent='Enter non-negative costs and waste percentages from 0 to 100.';detail.textContent='';return}const fl=fc*fw/100,zl=zc*zw/100,fe=fc-fl,ze=zc-zl;out.textContent='Estimated purchase value lost to waste — fresh: '+fl.toFixed(2)+' | frozen: '+zl.toFixed(2);detail.textContent='Estimated value retained for food used — fresh: '+fe.toFixed(2)+' | frozen: '+ze.toFixed(2)+'. These calculations use your entered costs and waste rates; they do not measure nutrients or environmental impact.'}vegIds.forEach(id=>document.getElementById(id).addEventListener('input',vegCalc));vegCalc();

@@ -57,7 +57,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 var g=document.getElementById('partyGuests'),m=document.getElementById('mealStyle'),t=document.getElementById('duration');function partyCalc(){var n=Math.floor(Number(g.value)),style=m.value,h=Number(t.value),o=document.getElementById('partyOut'),d=document.getElementById('partySteps');if(!Number.isFinite(n)||n<1||n>500){o.textContent='Enter 1 to 500 guests.';d.textContent='';return}var food=style==='light'?3:style==='buffet'?5:7;var drink=Math.ceil(h/2);var portions=n*food,drinks=n*drink;o.textContent='Estimated food: '+portions+' portions';d.textContent='Food planning estimate: '+food+' portions per guest.\nDrink planning estimate: '+drinks+' servings ('+drink+' per guest for this event length).\nThese are broad planning units, not grams or guaranteed consumption.'} [g,m,t].forEach(function(x){x.addEventListener('input',partyCalc);x.addEventListener('change',partyCalc)});partyCalc();

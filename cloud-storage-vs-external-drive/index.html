@@ -72,7 +72,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 const storageIds=['needed','cloudMonthly','driveCapacity','driveCost','driveLife','cloudSetup'];function storageCalc(){const v=storageIds.map(id=>Number(document.getElementById(id).value));const [need,monthly,capacity,cost,life,extra]=v;const out=document.getElementById('storageOut'),detail=document.getElementById('storageDetails');if(v.some(x=>!Number.isFinite(x)||x<0)||need<=0||capacity<=0||life<1){out.textContent='Enter positive storage and lifespan values and non-negative costs.';detail.textContent='';return}const cloud=monthly*12+extra,drive=cost/life;out.textContent='Estimated yearly cost — cloud: '+cloud.toFixed(2)+' | external drive: '+drive.toFixed(2);detail.textContent='Drive capacity '+(capacity>=need?'covers':'does not cover')+' your stated need of '+need.toFixed(0)+' GB. The drive estimate annualizes one purchase; it excludes a second backup drive, replacement surprises, electricity and any accessories.'}storageIds.forEach(id=>document.getElementById(id).addEventListener('input',storageCalc));storageCalc();

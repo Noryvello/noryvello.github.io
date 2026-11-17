@@ -118,7 +118,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
   </div>
   <script>
     (function(){var $=function(x){return document.getElementById(x)},u=$('unit'),l=$('length'),w=$('width'),p=$('purpose'),r=$('result'),s=$('steps');function calc(){var a=+l.value,b=+w.value;if(!(a>0&&b>0)){r.textContent='Enter positive room dimensions.';s.textContent='';return;}var area=a*b*(u.value==='m'?10.7639:1),mid=area*(+p.value),lo=mid*.8,hi=mid*1.2;r.textContent='Estimated brightness: '+Math.round(lo/10)*10+'–'+Math.round(hi/10)*10+' lumens (total room output)';s.textContent='Room area: '+area.toFixed(1)+' sq ft\nSelected planning target: '+p.value+' lumens per sq ft\nMidpoint estimate: '+Math.round(mid)+' lumens\nDisplayed range: approximately ±20% (guide only).';}[u,l,w,p].forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc)});u.addEventListener('change',function(){var t=u.value==='m'?'meters':'feet';$('u1').textContent=$('u2').textContent=t;calc()});calc()})();

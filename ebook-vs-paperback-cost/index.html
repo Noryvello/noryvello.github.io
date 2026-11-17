@@ -73,7 +73,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 const ids=['books','ebook','paper','device','life'];function calcBooks(){const v=ids.map(x=>Number(document.getElementById(x).value));const [n,e,p,d,l]=v;const out=document.getElementById('bookResult'),det=document.getElementById('bookDetails');if(v.some(x=>!Number.isFinite(x)||x<0)||!Number.isInteger(n)||l<1){out.textContent='Enter valid non-negative values and at least 1 device-use year.';det.textContent='';return}const ec=n*e+d/l,pc=n*p;out.textContent='Estimated ebook total: '+ec.toFixed(2)+' | Paperback total: '+pc.toFixed(2);det.textContent=(ec<pc?'Ebooks are lower in this estimate by ':'Paperbacks are lower in this estimate by ')+Math.abs(ec-pc).toFixed(2)+'. Device allocation per year: '+(d/l).toFixed(2)+'. Values use your chosen currency.';}ids.forEach(x=>document.getElementById(x).addEventListener('input',calcBooks));calcBooks();

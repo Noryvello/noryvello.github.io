@@ -119,7 +119,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
   </div>
   <script>
     (function(){var $=function(x){return document.getElementById(x)},u=$('unit'),a=$('area'),z=$('size'),r=$('result'),s=$('steps');function calc(){var area=+a.value,metric=u.value==='m',sheet=+z.value/(metric?10.7639:1);if(!(area>0)){r.textContent='Enter a positive combined wall and ceiling area.';s.textContent='';return;}var count=Math.ceil(area/sheet);r.textContent='Drywall sheets needed: '+count+' (area-only estimate)';s.textContent='Selected sheet coverage: '+sheet.toFixed(2)+' '+(metric?'sq m':'sq ft')+'\nCalculation: '+area+' ÷ '+sheet.toFixed(2)+' = '+(area/sheet).toFixed(2)+'\nRounded up: '+count+' whole sheets';} [u,a,z].forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc)});u.addEventListener('change',function(){$('areaUnit').textContent=u.value==='m'?'sq m':'sq ft';calc()});calc()})();

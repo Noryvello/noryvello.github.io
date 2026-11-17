@@ -54,7 +54,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 var method=document.getElementById('method'),water=document.getElementById('water'),out=document.getElementById('coffeeOut'),steps=document.getElementById('coffeeSteps');function calcCoffee(){var w=Number(water.value),r=Number(method.value);if(!Number.isFinite(w)||w<=0){out.textContent='Enter a positive amount.';steps.textContent='';return}var g=w/r;out.textContent='Coffee needed: '+g.toFixed(1)+' g';steps.textContent='Ratio: 1:'+r+'\nWater / yield: '+w+' g or ml\nCoffee: '+g.toFixed(1)+' g\nWater in 240 ml cups: '+(w/240).toFixed(2)+' cups (approximate).'}method.addEventListener('change',calcCoffee);water.addEventListener('input',calcCoffee);calcCoffee();

@@ -60,7 +60,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 var g=document.getElementById('guests'),a=document.getElementById('appetite'),s=document.getElementById('slices');function updatePizza(){var n=Math.floor(Number(g.value)),per=Number(a.value),count=Number(s.value),o=document.getElementById('pizzaOut'),d=document.getElementById('pizzaSteps');if(!Number.isFinite(n)||n<1||n>500){o.textContent='Enter 1 to 500 guests.';d.textContent='';return}var total=n*per,p=Math.ceil(total/count);o.textContent='Estimated order: '+p+' pizza'+(p===1?'':'s');d.textContent=total+' slices needed at '+per+' slices per guest. '+p+' pizzas × '+count+' slices = '+(p*count)+' slices, leaving '+(p*count-total)+' extra slices.'} [g,a,s].forEach(function(x){x.addEventListener('input',updatePizza);x.addEventListener('change',updatePizza)});updatePizza();

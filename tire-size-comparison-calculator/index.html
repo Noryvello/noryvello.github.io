@@ -61,7 +61,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 function tireCalc(){const ids=['w1','a1','r1','w2','a2','r2','speed'];const v=ids.map(id=>Number(document.getElementById(id).value));const [w1,a1,r1,w2,a2,r2,s]=v,o=document.getElementById('tireOut'),d=document.getElementById('tireDetails');if(v.some(x=>!Number.isFinite(x)||x<0)||[w1,a1,r1,w2,a2,r2].some(x=>x<=0)||a1>100||a2>100){o.textContent='Enter positive tire dimensions and a non-negative speed.';d.textContent='';return}const dia=(w,a,r)=>2*w*a/100+r*25.4;const d1=dia(w1,a1,r1),d2=dia(w2,a2,r2),c1=Math.PI*d1,c2=Math.PI*d2,p=(d2/d1-1)*100,actual=s*d2/d1;o.textContent='Diameter change: '+(d2-d1).toFixed(1)+' mm ('+p.toFixed(2)+'%)';d.textContent='Original circumference: '+c1.toFixed(1)+' mm\\nNew circumference: '+c2.toFixed(1)+' mm\\nAt '+s.toFixed(1)+' km/h indicated, estimated actual speed: '+actual.toFixed(1)+' km/h. Estimate assumes calibration for the original size.'}ids=['w1','a1','r1','w2','a2','r2','speed'].forEach(id=>document.getElementById(id).addEventListener('input',tireCalc));tireCalc();

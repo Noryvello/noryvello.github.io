@@ -120,7 +120,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
   </div>
   <script>
     (function(){var $=function(x){return document.getElementById(x)},ids=['fanW','fanH','acW','acH','rate','currency'],els=ids.map($),r=$('result'),s=$('steps');function calc(){var fw=+$('fanW').value,fh=+$('fanH').value,aw=+$('acW').value,ah=+$('acH').value,rate=+$('rate').value,cur=$('currency').value.trim();if(!(fw>=0&&aw>=0&&fh>=0&&fh<=24&&ah>=0&&ah<=24&&rate>=0)){r.textContent='Enter non-negative watts and rates, with daily hours from 0 to 24.';s.textContent='';return;}var fd=fw*fh/1000,ad=aw*ah/1000,fc=fd*rate,ac=ad*rate,fmt=function(v){return (cur?cur+' ':'')+v.toFixed(2)};r.textContent='Daily cost — Fan: '+fmt(fc)+' | AC: '+fmt(ac);s.textContent='Fan: '+fd.toFixed(3)+' kWh/day; '+fmt(fc)+' per day; '+fmt(fc*30)+' per 30 days\nAir conditioner: '+ad.toFixed(3)+' kWh/day; '+fmt(ac)+' per day; '+fmt(ac*30)+' per 30 days\nMonthly energy: fan '+(fd*30).toFixed(2)+' kWh; AC '+(ad*30).toFixed(2)+' kWh\nThese are estimates based on the values you entered.';}els.forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc)});calc()})();

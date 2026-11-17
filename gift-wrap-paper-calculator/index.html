@@ -61,7 +61,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 const ids=['boxL','boxW','boxH','overlap'];function wrapCalc(){const [l,w,h,x]=ids.map(id=>Number(document.getElementById(id).value));const o=document.getElementById('wrapOut'),d=document.getElementById('wrapDetails');if(![l,w,h,x].every(Number.isFinite)||l<=0||w<=0||h<=0||x<0){o.textContent='Enter positive box dimensions and a non-negative overlap.';d.textContent='';return}const a=2*l+2*h+2*x,b=2*w+2*h+2*x;o.textContent='Estimated paper sheet: '+a.toFixed(1)+' × '+b.toFixed(1)+' cm';d.textContent='Cut area estimate: '+(a*b/10000).toFixed(3)+' m². This is a rectangular-box planning estimate.'}ids.forEach(id=>document.getElementById(id).addEventListener('input',wrapCalc));wrapCalc();

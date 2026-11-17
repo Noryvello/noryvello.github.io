@@ -75,7 +75,7 @@
 <div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
 <div id="noryvello-ad-banner-slot"></div>
 </div>
-<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
 </div>
 <script>
 const wi=['litres','bsize','bprice','cartridge','capacity','jug','juglife'];function water(){const v=wi.map(x=>Number(document.getElementById(x).value));const [l,s,p,c,cap,j,life]=v;const o=document.getElementById('waterResult'),d=document.getElementById('waterDetails');if(v.some(x=>!Number.isFinite(x)||x<0)||s<=0||cap<=0||life<1){o.textContent='Enter valid values; bottle size, cartridge capacity and jug life must be above zero.';d.textContent='';return}const annual=l*365,bottles=annual/s,bottleCost=bottles*p,filterCost=(annual/cap)*c+j/life;o.textContent='Bottled-water estimate: '+bottleCost.toFixed(2)+' | Filter-jug estimate: '+filterCost.toFixed(2);d.textContent='Estimated single-use bottles avoided: '+Math.round(bottles)+'. Annual water volume: '+annual.toFixed(1)+' litres. Jug cost allocation: '+(j/life).toFixed(2)+' per year. Values use your chosen currency; results are estimates.';}wi.forEach(x=>document.getElementById(x).addEventListener('input',water));water();
