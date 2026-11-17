@@ -66,10 +66,24 @@ th{background:#eef2ff;font-weight:600}
 <div class="wrap">
 <div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
 <h1>Tile Grout Calculator</h1>
+<p class="note">By Noryvello · Updated November 2026</p>
 <p class="answer"><strong>Short answer:</strong> Enter your tile dimensions, coverage area, thickness, and joint width to calculate the exact grout weight required.</p>
 
 <div class="warn"><strong>Warning:</strong> Deep joints, tile thickness, and uneven tiles use significantly more grout.</div>
 <div><div class="form-group"><label for="length">Tile Length (inches):</label><input type="number" id="length" value="12" min="0.5" step="0.25"></div><div class="form-group"><label for="width">Tile Width (inches):</label><input type="number" id="width" value="12" min="0.5" step="0.25"></div><div class="form-group"><label for="thickness">Tile Thickness (inches):</label><input type="number" id="thickness" value="0.3" min="0.1" step="0.05"></div><div class="form-group"><label for="area">Total Coverage Area (sq ft):</label><input type="number" id="area" value="100" min="1" step="1"></div><div class="form-group"><label for="joint">Joint Width (inches):</label><input type="number" id="joint" value="0.125" min="0.03125" step="0.03125"></div><button id="calc-btn">Calculate Grout</button><div class="results" id="results"><div class="result-item"><span>Estimated Grout Weight:</span><span class="result-value" id="res-grout">--</span></div></div></div>
+<h2>Choosing a joint width</h2>
+<p>The joint is the gap between tiles that the grout fills, and its width shapes both the look of the job and how much grout you need. Narrow joints, around 1/16 or 1/8 inch, suit smooth wall tiles and look almost seamless. Floor tiles usually take wider joints, around 1/8 to 1/4 inch, because floors move slightly underfoot and a wider joint lets the grout flex. Doubling the joint width roughly doubles the grout, so measure before entering it above.</p>
+<p>Tile size matters too: small tiles have more joints per square foot, so a mosaic floor uses far more grout than the same area in large tiles. Before ordering, work out how many tiles the job needs with a <a href="../tile-count-calculator/">tile count calculator</a>.</p>
+<h2>How the coverage math works</h2>
+<p>Grout fills a network of channels, so the amount depends on five things: tile length, tile width, tile thickness, joint width, and total area. Thicker tiles make deeper channels and smaller tiles make more of them, so both push the weight up. The calculator combines these into an estimate in pounds, with a 10% margin already included for grout lost in mixing and washing. For an irregular floor, split it into rectangles and add them up; a <a href="../flooring-area-calculator/">flooring area calculator</a> can help with an awkward shape.</p>
+<h2>Cement grout vs epoxy grout</h2>
+<p>Most home tiling uses cement grout, a mix of cement, filler, and pigment mixed with water, pressed into the joints, and wiped clean. It is easy to work with but porous, so it can stain and may need sealing in wet areas. Epoxy grout is a two-part resin that sets very hard, resists stains and water, and needs no sealer. The trade-off is that it sets faster, is stickier to clean off tile faces, and is less forgiving for a first-time tiler. For a shower floor, epoxy's toughness is worth considering; for a dry hallway wall, cement grout is usually the simpler choice.</p>
+<h2>Worked example</h2>
+<p>Example: a bathroom floor of 100 square feet, covered with 12-inch by 12-inch tiles 0.3 inches thick, with 1/8-inch joints. Enter those figures and the calculator estimates the grout weight, including its 10% margin. With 6-inch tiles instead, the joints would roughly double, and so would the grout, which shows tile size matters as much as area. These are example numbers; your own figures will give a different result.</p>
+<h3>Should I buy extra grout?</h3>
+<p>Yes. The calculator already adds 10% for mixing loss, but one spare bag is still wise: grout colour can vary between batches, so a bag from the same batch is worth having for touch-ups.</p>
+<h3>Why do uneven tiles use more grout?</h3>
+<p>Uneven tiles leave gaps of different depths, and the grout must fill the deepest point everywhere to sit flush. If your tiles are uneven, treat the estimate as a minimum. A <a href="../paint-calculator/">paint calculator</a> can work out how much paint the room needs once the tiling is done.</p>
 <h2>Questions people ask</h2>
 <div class="faq"><h3>How is tile grout quantity calculated?</h3><p>Grout quantity depends on tile length, width, thickness, joint width, and total area covered.</p></div>
 <div class="faq"><h3>Why do deep joints and uneven tiles use more grout?</h3><p>Thicker tiles create deeper grout channels, and uneven or textured tiles require more material to fill gaps correctly.</p></div>

@@ -66,10 +66,23 @@ th{background:#eef2ff;font-weight:600}
 <div class="wrap">
 <div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
 <h1>Gravel &amp; Mulch Calculator</h1>
+<p class="note">By Noryvello · Updated November 2026</p>
 <p class="answer"><strong>Short answer:</strong> Enter your garden or landscaping area and desired depth to calculate volume in cubic yards and estimated weight.</p>
 
 <div class="warn"><strong>Warning:</strong> Weight varies significantly by material density and moisture content.</div>
 <div><div class="form-group"><label for="area">Total Area (sq ft):</label><input type="number" id="area" value="200" min="1" step="1"></div><div class="form-group"><label for="depth">Depth (inches):</label><input type="number" id="depth" value="3" min="0.5" step="0.5"></div><div class="form-group"><label for="material">Material Type:</label><select id="material"><option value="gravel">Landscaping Gravel (~100 lbs/cu ft)</option><option value="mulch">Wood Mulch (~30 lbs/cu ft)</option><option value="soil">Topsoil (~80 lbs/cu ft)</option></select></div><button id="calc-btn">Calculate Materials</button><div class="results" id="results"><div class="result-item"><span>Volume Needed:</span><span class="result-value" id="res-vol">--</span></div><div class="result-item"><span>Estimated Weight:</span><span class="result-value" id="res-weight">--</span></div></div></div>
+<h2>How deep should it be?</h2>
+<p>Depth decides how well the material does its job. For mulch in a garden bed, 2 to 3 inches is the usual guide: deep enough to hold moisture and smother weeds, shallow enough to let rain through. Less than 2 inches thins out quickly; much more than 3 inches can stay soggy and smother the plants. Gravel takes a similar depth for paths and beds, typically 2 to 3 inches. Driveways need a deeper bed, as vehicles press the stones down.</p>
+<h2>How the coverage math works</h2>
+<p>Volume is area times depth, but the units need care. Multiply the area in square feet by the depth in inches divided by 12 to get cubic feet, then divide by 27 for cubic yards, the unit bulk material is usually sold in. The calculator does this and adds an estimated weight from a typical density: around 100 pounds per cubic foot for gravel, 30 for wood mulch, 80 for topsoil. Treat the weight as a rough guide only: wet material weighs far more than dry, so order by volume and use the weight to plan how to move it.</p>
+<h2>Gravel or mulch?</h2>
+<p>Gravel lasts for years with little upkeep, drains well, and suits paths, driveways, and beds where nothing should grow, though it does not feed the soil and can wander onto lawns. Mulch suits plants better: it breaks down slowly, feeds the soil, holds moisture, and keeps roots cool. It needs topping up as it rots. For a vegetable patch, mulch is the natural partner, and a <a href="../beginner-vegetable-garden-guide/">beginner vegetable garden guide</a> can help plan the beds it will cover. For a lawn edge, gravel's firm finish often wins, and a <a href="../lawn-seed-calculator/">lawn seed calculator</a> can help with the grass beside it.</p>
+<h2>Worked example</h2>
+<p>Example: a garden bed of 200 square feet with mulch 3 inches deep. That is 200 times 3 divided by 12, or 50 cubic feet, just under 2 cubic yards. At around 30 pounds per cubic foot for wood mulch, that is about 1,500 pounds. These are example numbers; your own figures will give a different result. If you make your own mulch from garden waste, a <a href="../compost-ratio-guide/">compost ratio guide</a> can help get the mix right.</p>
+<h3>How often should mulch be topped up?</h3>
+<p>Most wood mulch breaks down over a season, so a light yearly top-up usually keeps the depth right. Check in spring: if you can see soil through the mulch, it is time for more. Little and often beats one deep layer, which can smother plants.</p>
+<h3>Why does the weight vary so much?</h3>
+<p>Because water is heavy: a load that has sat in the rain can weigh far more than the same load dry, and different stones and woods have different densities. The calculator's weight is an estimate from a typical density: a guide for transport, not a promise.</p>
 <h2>Questions people ask</h2>
 <div class="faq"><h3>How do I calculate gravel or mulch needed?</h3><p>Multiply area by depth to find cubic volume, then convert to cubic yards or estimated weight.</p></div>
 <div class="faq"><h3>Why does weight vary by material and moisture?</h3><p>Wet gravel or mulch is significantly heavier than dry material due to absorbed water weight.</p></div>
