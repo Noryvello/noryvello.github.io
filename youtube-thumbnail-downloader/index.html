@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouTube Thumbnail Downloader | Noryvello</title>
+<meta name="description" content="Get the thumbnail image of any YouTube video in four sizes, from default to maximum resolution, with a preview and a check of which sizes exist.">
+<link rel="canonical" href="https://noryvello.github.io/youtube-thumbnail-downloader/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="YouTube Thumbnail Downloader">
+<meta property="og:description" content="Get any YouTube video thumbnail in four sizes, with a preview and a check of which sizes exist.">
+<meta property="og:url" content="https://noryvello.github.io/youtube-thumbnail-downloader/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.thumb-row{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #e2e8f0;flex-wrap:wrap}
+.thumb-prev{width:160px;min-height:90px;background:#f1f5f9;border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.calc button{background:#4338ca;color:#fff;border:none;border-radius:8px;padding:10px 16px;font-size:15px;font-weight:700;margin:6px 4px 6px 0;cursor:pointer}
+.calc button:hover{background:#3730a3}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What links work here?","acceptedAnswer":{"@type":"Answer","text":"Watch links, short youtu.be links, embed links and Shorts links all work, and so does the 11-character video ID on its own. Paste the link exactly as it appears in your browser address bar."}},{"@type":"Question","name":"Why do images open in a new tab?","acceptedAnswer":{"@type":"Answer","text":"Thumbnail images come from another site, and browsers do not allow one site to force-download an image from another. Opening the image in a new tab lets you save it with your browser instead."}},{"@type":"Question","name":"Does this need an API key?","acceptedAnswer":{"@type":"Answer","text":"No. Thumbnails are public image files with predictable addresses, so the tool builds the address for each size and checks it directly in your browser."}},{"@type":"Question","name":"Can I download the video?","acceptedAnswer":{"@type":"Answer","text":"No. This tool only finds the thumbnail image. It cannot download video or audio from YouTube."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>YouTube Thumbnail Downloader</h1>
+<p class="answer">Get the thumbnail image of any YouTube video in four sizes. Paste a video link or ID and this tool finds the thumbnail images, checks which sizes exist, and lets you open each one to save it.</p>
+<div class="calc">
+<label for="yt-input">YouTube link or video ID</label>
+<input id="yt-input" type="text" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" autocomplete="off">
+<button id="yt-get" type="button">Get thumbnails</button>
+<div class="out" id="yt-out"></div>
+<div id="yt-results"></div>
+</div>
+<div class="warn">Thumbnails belong to the video owner. Only use a thumbnail where you have the right to do so, and note that this tool does not download the video itself.</div>
+<h2>Which size should you use</h2>
+<p>Four sizes are available for most videos. The default size is small and suits tiny previews. The medium size works for lists and small cards. The high-quality size suits most everyday uses, such as a blog post or a slide. The maximum-resolution size is the sharpest and suits large displays and printed material.</p><p>Pick the smallest size that still looks sharp where you will use it. A small image stretched large looks blurry, while a very large image used tiny only wastes space.</p>
+<h2>Why a size may be missing</h2>
+<p>The maximum-resolution thumbnail only exists when the video was uploaded in high resolution, so older videos and videos uploaded at low quality often have no maximum-resolution image. When a size does not exist, the tool says so plainly instead of showing a broken image.</p><p>Every size is checked in your browser when you fetch the thumbnails, so the result reflects what is actually available for that video right now.</p>
+<h2>Saving a thumbnail</h2>
+<p>Each size has its own Open image button, which opens the picture in a new tab. From there, save it the way you save any image in your browser: right-click or long-press and choose the save option. The Copy link button copies the direct image address, which you can paste into a document or share with someone else.</p><p>The image files come straight from the video platform, so what you save is the original thumbnail at that size, with no recompression or watermark added by this tool.</p>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>What links work here?</h3>
+<p>Watch links, short youtu.be links, embed links and Shorts links all work, and so does the 11-character video ID on its own. Paste the link exactly as it appears in your browser address bar.</p>
+</div>
+<div class="faq">
+<h3>Why do images open in a new tab?</h3>
+<p>Thumbnail images come from another site, and browsers do not allow one site to force-download an image from another. Opening the image in a new tab lets you save it with your browser instead.</p>
+</div>
+<div class="faq">
+<h3>Does this need an API key?</h3>
+<p>No. Thumbnails are public image files with predictable addresses, so the tool builds the address for each size and checks it directly in your browser.</p>
+</div>
+<div class="faq">
+<h3>Can I download the video?</h3>
+<p>No. This tool only finds the thumbnail image. It cannot download video or audio from YouTube.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/youtube-thumbnail-guide/">YouTube Thumbnail Guide</a> · <a href="https://noryvello.github.io/youtube-revenue-calculator/">YouTube Revenue Calculator</a> · <a href="https://noryvello.github.io/phone-photography-guide/">Phone Photography Guide</a> · <a href="https://noryvello.github.io/product-photo-guide/">Product Photo Guide</a> · <a href="https://noryvello.github.io/free-ai-image-generators/">Free AI Image Generators</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function $(id){return document.getElementById(id);}
+var SIZES=[
+  {label:"Default",dims:"120 x 90",file:"default.jpg"},
+  {label:"Medium quality",dims:"320 x 180",file:"mqdefault.jpg"},
+  {label:"High quality",dims:"480 x 360",file:"hqdefault.jpg"},
+  {label:"Maximum resolution",dims:"1280 x 720",file:"maxresdefault.jpg"}
+];
+var currentId="";
+function extractVideoId(input){
+  var s=input.trim();
+  if(!s)return "";
+  if(/^[A-Za-z0-9_-]{11}$/.test(s))return s;
+  if(s.indexOf("youtube.com")===-1&&s.indexOf("youtu.be")===-1)return "";
+  var m=s.match(/[?&]v=([A-Za-z0-9_-]{11})/);
+  if(m)return m[1];
+  m=s.match(/youtu\.be\/([A-Za-z0-9_-]{11})/);
+  if(m)return m[1];
+  m=s.match(/\/(embed|shorts|v|live)\/([A-Za-z0-9_-]{11})/);
+  if(m)return m[2];
+  return "";
+}
+function thumbUrl(id,i){return "https://i.ytimg.com/vi/"+id+"/"+SIZES[i].file;}
+function openThumb(i){window.open(thumbUrl(currentId,i),"_blank");}
+function copyText(text,btn){
+  var done=function(){
+    var old=btn.textContent;
+    btn.textContent="Copied!";
+    setTimeout(function(){btn.textContent=old;},2000);
+  };
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    return navigator.clipboard.writeText(text).then(done,function(){fallbackCopy(text);done();});
+  }
+  fallbackCopy(text);done();
+  return Promise.resolve();
+}
+function fallbackCopy(text){
+  var ta=document.createElement("textarea");
+  ta.value=text;
+  document.body.appendChild(ta);
+  ta.select();
+  try{document.execCommand("copy");}catch(e){}
+  ta.remove();
+}
+function copyThumb(i,btn){return copyText(thumbUrl(currentId,i),btn);}
+function getThumbnails(){
+  var id=extractVideoId($("yt-input").value);
+  var out=$("yt-out"),results=$("yt-results");
+  results.innerHTML="";out.textContent="";
+  if(!id){out.textContent="That does not look like a YouTube link or video ID. Paste a full video link or the 11-character video ID.";return;}
+  currentId=id;
+  var html="";
+  SIZES.forEach(function(sz,i){
+    html+='<div class="thumb-row"><div class="thumb-prev" id="prev-'+i+'"></div><div><strong>'+sz.label+'</strong> ('+sz.dims+')<br><span id="status-'+i+'">Checking...</span><br><button type="button" onclick="openThumb('+i+')">Open image</button> <button type="button" onclick="copyThumb('+i+',this)">Copy link</button></div></div>';
+  });
+  results.innerHTML=html;
+  out.textContent="Video ID: "+id;
+  SIZES.forEach(function(sz,i){
+    var url=thumbUrl(id,i);
+    var im=new Image();
+    im.onload=function(){
+      $("status-"+i).textContent="Available";
+      var pic=document.createElement("img");
+      pic.src=url;pic.alt=sz.label+" thumbnail";pic.style.maxWidth="100%";
+      $("prev-"+i).appendChild(pic);
+    };
+    im.onerror=function(){$("status-"+i).textContent="Not available for this video";};
+    im.src=url;
+  });
+}
+$("yt-get").addEventListener("click",getThumbnails);
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>
