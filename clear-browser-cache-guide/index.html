@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Clear Your Browser Cache | Noryvello</title>
+<meta name="description" content="Clear your browser cache the right way. Pick your browser for numbered steps, learn what you lose when you clear it, and use the when-to-clear checklist.">
+<link rel="canonical" href="https://noryvello.github.io/clear-browser-cache-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Clear Your Browser Cache">
+<meta property="og:description" content="Numbered cache-clearing steps for your browser, plus what you lose and when clearing helps.">
+<meta property="og:url" content="https://noryvello.github.io/clear-browser-cache-guide/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{width:100%;padding:12px;margin-top:12px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.calc button:hover{background:#3730a3}
+.checklist{list-style:none;margin:8px 0}
+.checklist li{margin:8px 0}
+.checklist input{margin-right:8px}
+.progress{font-weight:700;margin-top:10px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will clearing my cache delete my passwords?","acceptedAnswer":{"@type":"Answer","text":"No, if you only clear cached images and files. Saved passwords are a separate option in the clear-browsing-data panel. Only tick the password box if you mean to remove saved passwords."}},{"@type":"Question","name":"Will clearing the cache log me out of websites?","acceptedAnswer":{"@type":"Answer","text":"Clearing cached images and files alone does not log you out. If you also tick cookies and site data, you will be logged out of most sites and will need to sign in again."}},{"@type":"Question","name":"How often should I clear my browser cache?","acceptedAnswer":{"@type":"Answer","text":"There is no fixed schedule. Clear it when a page looks broken, shows old content, or will not load after an update. Clearing it every day is not needed and makes pages load more slowly at first."}},{"@type":"Question","name":"Does clearing the cache make my browser faster?","acceptedAnswer":{"@type":"Answer","text":"It can help if the cache is very large or has a damaged file in it, but it usually makes the next visit to each site a little slower, because the browser has to download everything again. It is a fix for problems, not a speed boost."}},{"@type":"Question","name":"What is the difference between cache and cookies?","acceptedAnswer":{"@type":"Answer","text":"The cache stores copies of files like images so pages load faster. Cookies store small pieces of information a site sets, such as whether you are signed in or what is in your basket. They are cleared separately."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How to Clear Your Browser Cache</h1>
+<p class="answer">Your browser saves copies of images and files from sites you visit so pages load faster, and sometimes those saved copies go stale and break a page. Pick your browser below for the numbered steps, and check the list of what clearing does and does not remove.</p>
+<div class="calc">
+<p>Use the picker to get the cache-clearing steps for your browser.</p>
+<label for="browser">Which browser are you using?</label>
+<select id="browser">
+<option value="">Choose your browser…</option>
+<option value="chrome">Google Chrome</option>
+<option value="firefox">Mozilla Firefox</option>
+<option value="safari">Safari</option>
+<option value="edge">Microsoft Edge</option>
+</select>
+<button id="show-btn" type="button">Show the steps</button>
+<div id="out"><p class="steps">Choose a browser above and press the button to see the numbered steps.</p></div>
+</div>
+<h2>What the cache is</h2>
+<p>When you visit a website, your browser downloads images, style files, and scripts so it can show you the page. To save time on your next visit, it keeps copies of those files on your device. That store of copies is the cache. The next time you open the same site, the browser loads the files from the cache instead of downloading them again, which is why familiar pages open quickly.</p>
+<p>The cache is meant to be invisible, and most of the time it is. Problems start when a site changes a file but your browser keeps using the old copy. Then a page can look broken, show yesterday's content, or refuse to load a new feature. The same thing can happen if a cached file is damaged. Clearing the cache forces the browser to download fresh copies, which fixes most of these problems at once.</p>
+<h2>What clearing the cache does and does not do</h2>
+<p>Clearing the cache removes the saved copies of files. It does not remove your bookmarks, your history, or your saved passwords, unless you tick those boxes too. The clear-browsing-data panel in every browser lists several kinds of data with tick boxes, and you choose which to remove. For most problems, ticking only cached images and files is enough, and it is the safest choice.</p>
+<p>What clearing does not do is log you out of websites. Signing in is handled by cookies, which are a separate kind of data. If you tick cookies and site data as well, you will be signed out of most sites and will need to sign in again, and any shopping baskets or site preferences stored in cookies will be lost. If you only want to fix a broken page, leave cookies alone.</p>
+<h2>What you lose when you clear it</h2>
+<p>The main thing you lose is speed, and only for a short while. The first time you visit each site after clearing, the browser has to download everything again, so pages load a little more slowly. After that first visit the cache fills up again and pages are fast as before. On a slow connection this first load can be noticeable, so it is better to clear the cache when you have a little time, not in the middle of something urgent.</p>
+<p>You may also lose offline access to pages you had open. Some sites work offline from the cache, and clearing it removes those saved pages. If you tick more than the cache box, you can lose more: history, cookies, saved form entries, and site settings. That is why it is worth reading the tick boxes before you press clear, rather than ticking everything and hoping for the best.</p>
+<h2>When to clear: checklist</h2>
+<p>Clearing the cache is a fix for a problem, not a daily chore. Work through this list and clear the cache only if one of these applies to you.</p>
+<ul class="checklist">
+<li><label><input type="checkbox"> A page looks broken, with missing images or jumbled layout.</label></li>
+<li><label><input type="checkbox"> A page keeps showing old content after the site has changed.</label></li>
+<li><label><input type="checkbox"> A site will not load a new feature or keeps showing an error.</label></li>
+<li><label><input type="checkbox"> You have tried reloading the page and it still looks wrong.</label></li>
+<li><label><input type="checkbox"> Your browser feels slow and the cache has not been cleared for a long time.</label></li>
+</ul>
+<p class="progress" id="progress">0 of 5 done</p>
+<p>If none of these apply, there is no need to clear the cache. A hard reload — holding the reload button or pressing the reload shortcut — often fixes a single broken page without clearing anything.</p>
+<h2>After you clear the cache</h2>
+<p>Close the browser completely and open it again after clearing, so the change takes full effect. Then visit the page that was giving trouble and check whether it looks right. If it does, the stale cache was the cause. If the page still looks wrong, the problem is probably with the site itself or with your connection, and clearing the cache again will not help.</p>
+<p>Give the browser a little time on the first visit to each site, since it is downloading fresh files. If you cleared cookies as well, sign back in to the sites you use. If a site still misbehaves, try it in a private window: if it works there, an extension or a saved setting may be the cause rather than the cache.</p>
+<div class="warn">Clearing the cache only removes saved copies of files. It does not remove viruses, fix a slow connection, or make your computer faster in general. If your browser is slow on every site, the cause is more likely your connection, an extension, or a full device, and clearing the cache will not solve it.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Will clearing my cache delete my passwords?</h3><p>No, if you only clear cached images and files. Saved passwords are a separate option in the clear-browsing-data panel. Only tick the password box if you mean to remove saved passwords.</p></div>
+<div class="faq"><h3>Will clearing the cache log me out of websites?</h3><p>Clearing cached images and files alone does not log you out. If you also tick cookies and site data, you will be logged out of most sites and will need to sign in again.</p></div>
+<div class="faq"><h3>How often should I clear my browser cache?</h3><p>There is no fixed schedule. Clear it when a page looks broken, shows old content, or will not load after an update. Clearing it every day is not needed and makes pages load more slowly at first.</p></div>
+<div class="faq"><h3>Does clearing the cache make my browser faster?</h3><p>It can help if the cache is very large or has a damaged file in it, but it usually makes the next visit to each site a little slower, because the browser has to download everything again. It is a fix for problems, not a speed boost.</p></div>
+<div class="faq"><h3>What is the difference between cache and cookies?</h3><p>The cache stores copies of files like images so pages load faster. Cookies store small pieces of information a site sets, such as whether you are signed in or what is in your basket. They are cleared separately.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/data-usage-calculator/">Data Usage Calculator</a> · <a href="https://noryvello.github.io/digital-declutter-checklist/">Digital Declutter Checklist</a> · <a href="https://noryvello.github.io/cloud-storage-vs-external-drive/">Cloud Storage vs External Drive</a> · <a href="https://noryvello.github.io/phone-battery-saving-guide/">Phone Battery Saving Guide</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function(){
+  var data = {
+    "chrome": {title: "Clearing the cache in Google Chrome", steps: [
+      "Open Chrome and press Ctrl, Shift, and Delete together, or open the menu and choose Settings.",
+      "Go to Privacy and security, then Delete browsing data.",
+      "Choose a time range. All time clears everything.",
+      "Tick Cached images and files. Leave the other boxes unticked unless you mean to clear them too.",
+      "Press Delete data, then close and reopen Chrome."
+    ], note: "On a Mac, use Command, Shift, and Delete to open the same panel."},
+    "firefox": {title: "Clearing the cache in Mozilla Firefox", steps: [
+      "Open Firefox and press Ctrl, Shift, and Delete together, or open the menu and choose Settings.",
+      "Go to Privacy and Security, then find the Cookies and Site Data section.",
+      "Press Clear Data.",
+      "Tick Cached Web Content and press Clear.",
+      "Close and reopen Firefox."
+    ], note: "Leave the Cookies and Site Data box unticked if you do not want to be signed out of sites."},
+    "safari": {title: "Clearing the cache in Safari", steps: [
+      "Open Safari and go to Safari, then Settings, then the Advanced tab.",
+      "Tick Show Develop menu in menu bar if it is not already ticked.",
+      "Open the Develop menu and choose Empty Caches.",
+      "Close and reopen Safari."
+    ], note: "Empty Caches clears only the cache. It does not clear your history or cookies."},
+    "edge": {title: "Clearing the cache in Microsoft Edge", steps: [
+      "Open Edge and press Ctrl, Shift, and Delete together, or open the menu and choose Settings.",
+      "Go to Privacy, search, and services, then choose what to clear under Clear browsing data.",
+      "Choose a time range. All time clears everything.",
+      "Tick Cached images and files. Leave the other boxes unticked unless you mean to clear them too.",
+      "Press Clear now, then close and reopen Edge."
+    ], note: "On a Mac, use Command, Shift, and Delete to open the same panel."}
+  };
+  var sel = document.getElementById("browser");
+  var btn = document.getElementById("show-btn");
+  var out = document.getElementById("out");
+  function show(){
+    var v = sel.value;
+    if(!v || !data[v]){
+      out.innerHTML = '<p class="steps">Please choose a browser from the list first, then press the button.</p>';
+      return;
+    }
+    var d = data[v];
+    var html = '<p class="out">' + d.title + '</p><ol>';
+    for(var i = 0; i < d.steps.length; i++){ html += '<li>' + d.steps[i] + '</li>'; }
+    html += '</ol><p class="steps">' + d.note + '</p>';
+    out.innerHTML = html;
+  }
+  btn.addEventListener("click", show);
+  var boxes = document.querySelectorAll('input[type="checkbox"]');
+  var prog = document.getElementById("progress");
+  function update(){
+    var done = 0;
+    for(var i = 0; i < boxes.length; i++){ if(boxes[i].checked) done++; }
+    prog.textContent = done + " of " + boxes.length + " done";
+  }
+  for(var j = 0; j < boxes.length; j++){ boxes[j].addEventListener("change", update); }
+  update();
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cook at Home vs Takeaway Cost | Noryvello</title>
+<meta name="description" content="Compare cooking at home with takeaway over a week and a year. Enter meals per week and the average cost per meal for each — no prices assumed.">
+<link rel="canonical" href="https://noryvello.github.io/cook-at-home-vs-takeaway-cost/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cook at Home vs Takeaway Cost">
+<meta property="og:description" content="Compare cooking at home with takeaway over a week and a year using your own meals and meal costs.">
+<meta property="og:url" content="https://noryvello.github.io/cook-at-home-vs-takeaway-cost/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:12px;margin-top:14px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What counts as the cost of a home-cooked meal?","acceptedAnswer":{"@type":"Answer","text":"What you spend on ingredients for one meal, on average. Divide a typical shop by the meals it makes if that helps."}},{"@type":"Question","name":"Should delivery fees be included?","acceptedAnswer":{"@type":"Answer","text":"Yes. Include delivery fees and tips in the average takeaway meal cost so the comparison is fair."}},{"@type":"Question","name":"What if I cook some meals and order others?","acceptedAnswer":{"@type":"Answer","text":"The calculator compares the same meals done both ways. The difference shows what the whole week would cost each way."}},{"@type":"Question","name":"Why multiply by 52?","acceptedAnswer":{"@type":"Answer","text":"There are 52 weeks in a year, so the weekly total times 52 gives the yearly total."}},{"@type":"Question","name":"Does cooking at home always win?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. It depends on your numbers. If your home-cooked meals use expensive ingredients and your takeaway is cheap, the gap can be small. The calculator shows what your own figures say."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Cook at Home vs Takeaway Cost</h1>
+<p class="answer">The gap between cooking at home and ordering takeaway depends on how often you eat each way and what each meal costs you. Enter your meals per week and the average cost of a home-cooked meal and a takeaway meal, and this page shows the weekly and yearly totals for each.</p>
+<div class="calc">
+<label for="meals">Meals per week</label>
+<input id="meals" type="number" min="0" step="any" placeholder="For example 14">
+<label for="home">Average cost of one home-cooked meal</label>
+<input id="home" type="number" min="0" step="any" placeholder="For example 4">
+<label for="away">Average cost of one takeaway meal</label>
+<input id="away" type="number" min="0" step="any" placeholder="For example 12">
+<button id="go" type="button">Compare meal costs</button>
+<div class="out" id="out"></div>
+<div class="steps" id="steps"></div>
+</div>
+<div class="warn">This compares the meal costs you enter only. It leaves out delivery fees counted separately, tips counted separately, food waste, the cost of cooking equipment and energy, and the time cooking takes.</div>
+<h2>How it works</h2>
+<p>The calculator compares the same number of meals done two ways. For each side it multiplies the meals per week by the average cost of one meal to get the weekly total, then multiplies the weekly total by 52 weeks to get the yearly total. The difference between the two yearly totals is the gap for a full year of eating the way you do now.</p>
+<p>The cost of a home-cooked meal is what you spend on ingredients for one meal, on average. The cost of a takeaway meal is what you pay for one order, including delivery fees and tips if you usually pay them.</p>
+<h2>How to use the result</h2>
+<p>Start with the weekly totals — they show the gap for one ordinary week. Then look at the yearly totals, which show what that weekly gap adds up to. A small gap per meal can become a large gap over a year when you eat that way every week.</p>
+<p>If you cook some meals and order others, the calculator still helps: it shows what the whole week would cost if every meal were cooked at home, and what it would cost if every meal were ordered. Your real spending sits somewhere between the two, depending on the mix.</p>
+<h2>What this comparison leaves out</h2>
+<p>Money is only one part of the choice. The calculator does not count the time cooking takes, the cost of cooking equipment and energy, or food that gets bought and thrown away. It also does not count the convenience of a takeaway on a busy evening.</p>
+<p>It also leaves out drinks, snacks and desserts unless you include them in your average meal costs. If takeaway orders usually include extras, include them in the takeaway meal cost so the two sides are compared fairly.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What counts as the cost of a home-cooked meal?</h3><p>What you spend on ingredients for one meal, on average. Divide a typical shop by the meals it makes if that helps.</p></div>
+<div class="faq"><h3>Should delivery fees be included?</h3><p>Yes. Include delivery fees and tips in the average takeaway meal cost so the comparison is fair.</p></div>
+<div class="faq"><h3>What if I cook some meals and order others?</h3><p>The calculator compares the same meals done both ways. The difference shows what the whole week would cost each way.</p></div>
+<div class="faq"><h3>Why multiply by 52?</h3><p>There are 52 weeks in a year, so the weekly total times 52 gives the yearly total.</p></div>
+<div class="faq"><h3>Does cooking at home always win?</h3><p>Not necessarily. It depends on your numbers. If your home-cooked meals use expensive ingredients and your takeaway is cheap, the gap can be small. The calculator shows what your own figures say.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/grocery-budget-planner/">Grocery Budget Planner</a> · <a href="https://noryvello.github.io/meal-prep-planning-checklist/">Meal Prep Planning Checklist</a> · <a href="https://noryvello.github.io/lunchbox-idea-generator/">Lunchbox Idea Generator</a> · <a href="https://noryvello.github.io/dinner-idea-generator/">Dinner Idea Generator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function num(id){return parseFloat(document.getElementById(id).value);}
+function fmt(n){return n.toFixed(2);}
+document.getElementById("go").addEventListener("click",function(){
+var out=document.getElementById("out");var steps=document.getElementById("steps");
+var meals=num("meals"),home=num("home"),away=num("away");
+if([meals,home,away].some(function(x){return isNaN(x)||x<=0;})){
+out.textContent="Please fill in every box with a number above zero, then try again.";
+steps.textContent="";return;}
+var hweek=meals*home,aweek=meals*away;
+var hyear=hweek*52,ayear=aweek*52;
+var diff=Math.abs(hyear-ayear);
+var verdict=hyear<ayear?"Cooking at home costs less over the year by "+fmt(diff)+".":(ayear<hyear?"Takeaway costs less over the year by "+fmt(diff)+".":"Both cost the same over the year.");
+out.textContent="Cook at home: "+fmt(hweek)+" a week, "+fmt(hyear)+" a year. Takeaway: "+fmt(aweek)+" a week, "+fmt(ayear)+" a year. "+verdict;
+steps.textContent="Cook at home: "+meals+" meals a week x "+fmt(home)+" = "+fmt(hweek)+" a week; x 52 weeks = "+fmt(hyear)+" a year.\nTakeaway: "+meals+" meals a week x "+fmt(away)+" = "+fmt(aweek)+" a week; x 52 weeks = "+fmt(ayear)+" a year.\nYearly difference: "+fmt(diff)+".";
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

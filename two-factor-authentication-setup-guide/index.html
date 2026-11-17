@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two-Factor Authentication Setup Guide | Noryvello</title>
+<meta name="description" content="Add a second layer of protection to your accounts. Set up app codes or a security key with plain steps, keep backup codes safe, and know what to do if locked out.">
+<link rel="canonical" href="https://noryvello.github.io/two-factor-authentication-setup-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Two-Factor Authentication Setup Guide">
+<meta property="og:description" content="Plain setup steps for app codes or a security key, a backup-code checklist, and locked-out help.">
+<meta property="og:url" content="https://noryvello.github.io/two-factor-authentication-setup-guide/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{width:100%;padding:12px;margin-top:12px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.calc button:hover{background:#3730a3}
+.checklist{list-style:none;margin:8px 0}
+.checklist li{margin:8px 0}
+.checklist input{margin-right:8px}
+.progress{font-weight:700;margin-top:10px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is two-factor authentication?","acceptedAnswer":{"@type":"Answer","text":"It is a second check after your password when you sign in. As well as something you know, your password, you prove something you have, such as your phone or a security key. If someone learns your password, they still cannot sign in without that second check."}},{"@type":"Question","name":"Are app codes or security keys better?","acceptedAnswer":{"@type":"Answer","text":"Both are much better than a password alone. Security keys are the stronger of the two because they cannot be tricked by a fake website, but app codes work on almost every account and need no extra hardware."}},{"@type":"Question","name":"What happens if I lose my phone with the authenticator app?","acceptedAnswer":{"@type":"Answer","text":"Use a backup code to sign in, then set up two-factor authentication again on your new phone. This is why saving backup codes matters. Without a backup code, you will need the account's recovery process, which can take time."}},{"@type":"Question","name":"Should I turn on two-factor authentication for every account?","acceptedAnswer":{"@type":"Answer","text":"Turn it on for your most important accounts first: your email, your bank, and any account that holds money or personal details. Then add it to other accounts as you have time."}},{"@type":"Question","name":"Is two-factor authentication by text message safe?","acceptedAnswer":{"@type":"Answer","text":"It is better than no second factor at all, but app codes and security keys are stronger. Text codes can be intercepted in some attacks, so use an app or a key where the account offers them."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Two-Factor Authentication Setup Guide</h1>
+<p class="answer">Two-factor authentication adds a second check after your password, so a stolen password alone is not enough to get into your account. Pick a method below for plain setup steps, and use the backup-code checklist so you are never locked out.</p>
+<div class="calc">
+<p>Use the picker to get the setup steps for your chosen method.</p>
+<label for="method">Which second-factor method do you want to set up?</label>
+<select id="method">
+<option value="">Choose the method…</option>
+<option value="app">Authenticator app codes</option>
+<option value="key">Security key</option>
+</select>
+<button id="show-btn" type="button">Show the setup steps</button>
+<div id="out"><p class="steps">Choose a method above and press the button to see the setup steps.</p></div>
+</div>
+<h2>What two-factor authentication is</h2>
+<p>Two-factor authentication, often shortened to 2FA, asks for two things when you sign in: something you know, which is your password, and something you have, which is usually your phone or a small security key. After you type your password, the account asks for a code from your phone or for you to touch your security key. Only when both checks pass are you signed in. If someone learns your password, they still cannot get in without that second check.</p>
+<p>This matters because passwords leak. Data breaches, phishing messages, and reused passwords mean that a password alone is no longer reliable protection. A second factor closes that gap. It adds a few seconds to signing in, and in return it blocks the most common way accounts are taken over. The accounts that matter most — your email, your bank, and anything holding money or personal details — are the ones to protect first.</p>
+<h2>How app codes work</h2>
+<p>An authenticator app on your phone makes short codes that change every half minute or so. When you set it up, the account shows you a square code to scan or a key to type into the app. From then on, the app makes a new code each time you sign in, and you type the current code after your password. The codes work without an internet connection, because the app and the account both work from the same starting secret and the time.</p>
+<p>App codes work on almost every account that offers two-factor authentication, and they need no extra hardware. The main risk is losing the phone that holds the app. If you change phones, you need to move the authenticator entries to the new phone before wiping the old one, or set up two-factor authentication again on each account. Some authenticator apps offer a backup option, which makes moving phones easier. Check your app's settings for this before you need it.</p>
+<h2>How security keys work</h2>
+<p>A security key is a small device, usually the size of a thumb drive, that you plug into your computer or tap against your phone when you sign in. After your password, the account asks you to touch the key. The key proves it is really there, and the sign-in goes through. Because the key checks the website address as part of the process, it cannot be tricked by a fake website, which makes it the strongest common second factor.</p>
+<p>Security keys cost more than an app, because they are a physical device, and not every account supports them yet. If you use one, buy a second key as a spare and register both keys on each account, so losing one does not lock you out. Keep the spare somewhere safe and separate from the main key. If an account does not support keys, use app codes there instead, because any second factor is far better than none.</p>
+<h2>Backup-code checklist</h2>
+<p>When you turn on two-factor authentication, most accounts give you a set of backup codes. Each code works once, and they are your way back in if you lose your phone or key. Save them now, while everything works.</p>
+<ul class="checklist">
+<li><label><input type="checkbox"> I have saved the backup codes somewhere safe, away from my phone.</label></li>
+<li><label><input type="checkbox"> I have a paper copy of the backup codes in a safe place at home.</label></li>
+<li><label><input type="checkbox"> I have checked that the codes are for the right account.</label></li>
+<li><label><input type="checkbox"> I know where to enter a backup code on the sign-in page.</label></li>
+<li><label><input type="checkbox"> If I use a security key, I have registered a spare key too.</label></li>
+<li><label><input type="checkbox"> I have noted the account's recovery options in case all else fails.</label></li>
+</ul>
+<p class="progress" id="progress">0 of 6 done</p>
+<p>Backup codes are as powerful as a password, so treat them the same way. Do not photograph them and leave the photo in your gallery, do not send them to anyone, and never share a code with someone who asks for it by message or phone. No genuine support team will ever ask for your backup codes or your sign-in codes.</p>
+<h2>If you get locked out</h2>
+<p>Getting locked out is stressful, but it is usually fixable. First, try a backup code on the sign-in page. Most accounts offer a link such as having trouble signing in, which leads to the backup-code option. If you have no backup code, use the account's recovery process, which usually involves confirming your identity through another email address or a phone number you registered earlier. This can take time, sometimes days, which is why backup codes matter.</p>
+<p>If recovery fails, contact the account's support team through its official help pages, not through a link in a message. Be ready to prove who you are, and be patient: support teams are careful about handing back accounts, because that is exactly what an attacker would want. Once you are back in, turn two-factor authentication on again straight away, save fresh backup codes, and check the account for changes you did not make.</p>
+<div class="warn">This guide explains two-factor authentication in general terms and names no brands. Exact menu names vary by account, so look for security, sign-in, or two-step verification in the account settings. Never share your codes, passwords, or backup codes with anyone, including someone claiming to be support.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is two-factor authentication?</h3><p>It is a second check after your password when you sign in. As well as something you know, your password, you prove something you have, such as your phone or a security key. If someone learns your password, they still cannot sign in without that second check.</p></div>
+<div class="faq"><h3>Are app codes or security keys better?</h3><p>Both are much better than a password alone. Security keys are the stronger of the two because they cannot be tricked by a fake website, but app codes work on almost every account and need no extra hardware.</p></div>
+<div class="faq"><h3>What happens if I lose my phone with the authenticator app?</h3><p>Use a backup code to sign in, then set up two-factor authentication again on your new phone. This is why saving backup codes matters. Without a backup code, you will need the account's recovery process, which can take time.</p></div>
+<div class="faq"><h3>Should I turn on two-factor authentication for every account?</h3><p>Turn it on for your most important accounts first: your email, your bank, and any account that holds money or personal details. Then add it to other accounts as you have time.</p></div>
+<div class="faq"><h3>Is two-factor authentication by text message safe?</h3><p>It is better than no second factor at all, but app codes and security keys are stronger. Text codes can be intercepted in some attacks, so use an app or a key where the account offers them.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/job-scam-spotting-guide/">Job Scam Spotting Guide</a> · <a href="https://noryvello.github.io/report-online-scam-guide/">How to Report an Online Scam</a> · <a href="https://noryvello.github.io/phone-backup-guide/">Phone Backup Guide</a> · <a href="https://noryvello.github.io/digital-declutter-checklist/">Digital Declutter Checklist</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function(){
+  var data = {
+    "app": {title: "Setting up authenticator app codes", steps: [
+      "Install an authenticator app on your phone from your app store.",
+      "Sign in to the account on a computer and open its security or two-step verification settings.",
+      "Choose authenticator app as the method. The account will show a square code or a setup key.",
+      "Open the authenticator app, add a new entry, and scan the square code or type the setup key.",
+      "Type the six-digit code the app shows into the account page to confirm.",
+      "Save the backup codes the account gives you, somewhere safe and away from your phone."
+    ], note: "From now on, signing in asks for your password and then the current code from the app."},
+    "key": {title: "Setting up a security key", steps: [
+      "Sign in to the account on a computer and open its security or two-step verification settings.",
+      "Choose security key as the method.",
+      "Plug the security key into the computer, or hold it near your phone if it works wirelessly.",
+      "Touch the key when the account asks you to, and give the key a name so you can tell it apart later.",
+      "If you have a spare key, register it too, so losing one key does not lock you out.",
+      "Save the backup codes the account gives you, somewhere safe and away from your phone."
+    ], note: "From now on, signing in asks for your password and then for you to touch the key."}
+  };
+  var sel = document.getElementById("method");
+  var btn = document.getElementById("show-btn");
+  var out = document.getElementById("out");
+  function show(){
+    var v = sel.value;
+    if(!v || !data[v]){
+      out.innerHTML = '<p class="steps">Please choose a method from the list first, then press the button.</p>';
+      return;
+    }
+    var d = data[v];
+    var html = '<p class="out">' + d.title + '</p><ol>';
+    for(var i = 0; i < d.steps.length; i++){ html += '<li>' + d.steps[i] + '</li>'; }
+    html += '</ol><p class="steps">' + d.note + '</p>';
+    out.innerHTML = html;
+  }
+  btn.addEventListener("click", show);
+  var boxes = document.querySelectorAll('input[type="checkbox"]');
+  var prog = document.getElementById("progress");
+  function update(){
+    var done = 0;
+    for(var i = 0; i < boxes.length; i++){ if(boxes[i].checked) done++; }
+    prog.textContent = done + " of " + boxes.length + " done";
+  }
+  for(var j = 0; j < boxes.length; j++){ boxes[j].addEventListener("change", update); }
+  update();
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

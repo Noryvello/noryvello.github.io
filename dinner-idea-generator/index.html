@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dinner Idea Generator | Noryvello</title>
+<meta name="description" content="Stuck for dinner? Pick your time and cuisine and get three original dinner ideas with ingredients and simple steps, in seconds.">
+<link rel="canonical" href="https://noryvello.github.io/dinner-idea-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dinner Idea Generator">
+<meta property="og:description" content="Pick your time and cuisine and get three dinner ideas with ingredients and simple steps.">
+<meta property="og:url" content="https://noryvello.github.io/dinner-idea-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.card{background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}.card h4{font-size:16.5px;margin-bottom:4px}.btn{display:inline-block;padding:10px 18px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer;margin-top:10px}.btn:hover{background:#3730a3}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the dinner idea generator work?","acceptedAnswer":{"@type":"Answer","text":"Pick how much time you have and a cuisine, then press the button. The generator shows three dinner ideas from its bank of 30, each with ingredients and three simple steps. If fewer than three ideas match both of your picks, it fills the list with ideas from the same cuisine first."}},{"@type":"Question","name":"Can I use it for a quick weeknight dinner?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose Under 20 minutes and you will only see ideas that fit a short evening. Every quick idea uses everyday ingredients and three short steps."}},{"@type":"Question","name":"Do the ideas need special equipment?","acceptedAnswer":{"@type":"Answer","text":"No. Every idea uses an ordinary hob, oven or pan. Nothing needs a specialist gadget."}},{"@type":"Question","name":"Are the ideas suitable for vegetarians?","acceptedAnswer":{"@type":"Answer","text":"Several ideas are meat-free, including the chickpea curry, the vegetable chilli and the lentil soup. Check the ingredients list on each card before you cook."}},{"@type":"Question","name":"Can I change the ingredients?","acceptedAnswer":{"@type":"Answer","text":"Yes. Treat each list as a starting point. Swap a vegetable, a protein or a spice for something you already have, and keep the same method."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Dinner Idea Generator</h1>
+<p class="answer">Pick how much time you have and a cuisine you fancy, and this generator shows three dinner ideas with ingredients and three simple steps each. Every idea comes from a bank of 30 original dinners, so you can press the button again whenever you want a fresh set.</p>
+<div class="calc">
+<label for="time">How much time do you have?</label>
+<select id="time">
+<option value="quick">Under 20 minutes</option>
+<option value="medium">20 to 40 minutes</option>
+<option value="slow">Over 40 minutes (slow cooking)</option>
+</select>
+<label for="cuisine">Which cuisine?</label>
+<select id="cuisine">
+<option value="italian">Italian</option>
+<option value="mexican">Mexican</option>
+<option value="indian">Indian</option>
+<option value="east-asian">East Asian</option>
+<option value="mediterranean">Mediterranean</option>
+<option value="middle-eastern">Middle Eastern</option>
+</select>
+<button class="btn" id="go" type="button">Get 3 dinner ideas</button>
+<div id="out"></div>
+</div>
+<div class="warn">Cooking times are guides, not guarantees. Always check meat is cooked through before serving, and adjust quantities to the number of people at your table. If you have an allergy, read every ingredient list carefully.</div>
+<h2>How the generator picks your dinners</h2>
+<p>The bank holds 30 dinner ideas across six cuisines: Italian, Mexican, Indian, East Asian, Mediterranean and Middle Eastern. Each idea is tagged with a time band, so the generator can match what you pick. When you press the button, it looks for ideas that match both your time and your cuisine, shuffles them, and shows three.</p>
+<p>If fewer than three ideas match both picks exactly, the generator fills the list from the same cuisine first, then from the same time band. Each card shows its cuisine and time band, so you can see at a glance which ideas match your picks and which are close neighbours. Press the button again for a different three, or change a pick to explore another corner of the bank.</p>
+<h2>Making the most of your three ideas</h2>
+<p>Every idea lists its ingredients first, so you can check your cupboard before you commit. If one ingredient is missing, do not let that stop you: most of these dinners are forgiving. A different vegetable, a different bean or a different herb usually works fine, and the method stays the same.</p>
+<p>The three steps on each card are deliberately short. They tell you the order of work and the point to watch, and they leave the seasoning to your taste. If you are cooking for children or for someone who dislikes heat, leave the chilli out and let people add their own at the table.</p>
+<h2>Dinner ideas without the stress</h2>
+<p>The hardest part of dinner is often not the cooking but the deciding. A short list of three ideas is easier to choose from than a whole cookbook, and a time band keeps the choice honest about the evening you actually have. On a busy night, pick the quick band and let the generator do the thinking. On a slow evening, pick the long band and enjoy a pot that looks after itself.</p>
+<p>Keep a few staples on hand and the generator becomes much more useful: tinned tomatoes, beans and chickpeas, rice and pasta, onions and garlic, a few dried spices and some soy sauce. With those in the cupboard, most of the 30 ideas are only a fresh vegetable or a protein away.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How does the dinner idea generator work?</h3><p>Pick how much time you have and a cuisine, then press the button. The generator shows three dinner ideas from its bank of 30, each with ingredients and three simple steps. If fewer than three ideas match both of your picks, it fills the list with ideas from the same cuisine first.</p></div>
+<div class="faq"><h3>Can I use it for a quick weeknight dinner?</h3><p>Yes. Choose Under 20 minutes and you will only see ideas that fit a short evening. Every quick idea uses everyday ingredients and three short steps.</p></div>
+<div class="faq"><h3>Do the ideas need special equipment?</h3><p>No. Every idea uses an ordinary hob, oven or pan. Nothing needs a specialist gadget.</p></div>
+<div class="faq"><h3>Are the ideas suitable for vegetarians?</h3><p>Several ideas are meat-free, including the chickpea curry, the vegetable chilli and the lentil soup. Check the ingredients list on each card before you cook.</p></div>
+<div class="faq"><h3>Can I change the ingredients?</h3><p>Yes. Treat each list as a starting point. Swap a vegetable, a protein or a spice for something you already have, and keep the same method.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/breakfast-idea-generator/">Breakfast Idea Generator</a> · <a href="https://noryvello.github.io/lunchbox-idea-generator/">Lunchbox Idea Generator</a> · <a href="https://noryvello.github.io/marinade-builder/">Marinade Builder</a> · <a href="https://noryvello.github.io/spice-blend-builder/">Spice Blend Builder</a> · <a href="https://noryvello.github.io/meal-prep-planning-checklist/">Meal Prep Planning Checklist</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var CUISINES={italian:"Italian",mexican:"Mexican",indian:"Indian","east-asian":"East Asian",mediterranean:"Mediterranean","middle-eastern":"Middle Eastern"};
+var TIMES={quick:"Under 20 minutes",medium:"20 to 40 minutes",slow:"Over 40 minutes"};
+var IDEAS=[
+{n:"Tomato and basil spaghetti",c:"italian",t:"quick",ing:["Spaghetti","Tinned tomatoes","Garlic","Fresh basil","Olive oil","Parmesan"],s:["Boil the spaghetti in salted water until just tender.","Simmer the tomatoes with garlic and olive oil for 10 minutes.","Toss the pasta through the sauce with torn basil and grated parmesan."]},
+{n:"Lemon garlic pasta",c:"italian",t:"quick",ing:["Pasta","Lemon","Garlic","Butter","Parsley","Parmesan"],s:["Boil the pasta and save a cup of the cooking water.","Melt the butter with garlic, lemon zest and juice.","Toss the pasta through the sauce with parsley and parmesan, loosening with cooking water."]},
+{n:"Mushroom risotto",c:"italian",t:"medium",ing:["Arborio rice","Mushrooms","Onion","Stock","Parmesan","Butter"],s:["Fry the onion and mushrooms until golden.","Add the rice, then stock a ladle at a time, stirring until creamy.","Stir in butter and parmesan and rest for two minutes."]},
+{n:"Chicken cacciatore",c:"italian",t:"medium",ing:["Chicken thighs","Peppers","Tinned tomatoes","Onion","Garlic","Dried herbs"],s:["Brown the chicken thighs in a pan and set aside.","Fry the onion, peppers and garlic until soft.","Return the chicken, add tomatoes and herbs, and simmer until cooked through."]},
+{n:"Slow beef ragu",c:"italian",t:"slow",ing:["Beef mince","Tinned tomatoes","Carrot","Celery","Onion","Garlic","Stock"],s:["Brown the mince, then fry the chopped carrot, celery and onion.","Add tomatoes, garlic and stock.","Simmer gently for at least 90 minutes, stirring now and then, and serve over pasta."]},
+{n:"Bean and cheese quesadillas",c:"mexican",t:"quick",ing:["Tortillas","Black beans","Cheese","Peppers","Cumin","Lime"],s:["Mash the beans with cumin and lime juice.","Spread over tortillas with peppers and cheese, then fold.","Toast in a dry pan until golden and the cheese melts."]},
+{n:"Prawn tacos",c:"mexican",t:"quick",ing:["Prawns","Tortillas","Cabbage","Lime","Chilli","Coriander"],s:["Fry the prawns with chilli until pink.","Warm the tortillas in a dry pan.","Fill with prawns, shredded cabbage, lime juice and coriander."]},
+{n:"Chicken fajitas",c:"mexican",t:"medium",ing:["Chicken breast","Peppers","Onion","Fajita spices","Tortillas","Lime"],s:["Slice the chicken and vegetables into strips.","Fry with the spices until the chicken is cooked through.","Serve with warm tortillas and lime wedges."]},
+{n:"Vegetable chilli",c:"mexican",t:"medium",ing:["Kidney beans","Black beans","Tinned tomatoes","Peppers","Sweetcorn","Chilli powder"],s:["Fry the peppers with chilli powder.","Add the beans, tomatoes and sweetcorn.","Simmer for 25 minutes and serve with rice."]},
+{n:"Slow pork carnitas",c:"mexican",t:"slow",ing:["Pork shoulder","Orange","Onion","Garlic","Cumin","Oregano"],s:["Rub the pork with cumin, oregano and garlic.","Cook low and slow with onion and orange until it shreds easily.","Shred the meat and crisp it briefly in a hot pan before serving."]},
+{n:"Chickpea and spinach curry",c:"indian",t:"quick",ing:["Chickpeas","Spinach","Tinned tomatoes","Onion","Garlic","Garam masala"],s:["Fry the onion and garlic until soft.","Add tomatoes, garam masala and chickpeas and simmer for 10 minutes.","Stir in the spinach until wilted and serve with rice."]},
+{n:"Egg curry",c:"indian",t:"quick",ing:["Eggs","Tinned tomatoes","Onion","Ginger","Turmeric","Garam masala"],s:["Boil the eggs and peel them.","Fry onion, ginger and spices, then add tomatoes and simmer.","Halve the eggs into the sauce and warm through."]},
+{n:"Chicken tikka masala",c:"indian",t:"medium",ing:["Chicken","Yoghurt","Tinned tomatoes","Onion","Garlic","Ginger","Garam masala"],s:["Marinate the chicken in yoghurt and spices.","Grill or fry the chicken until cooked through.","Simmer in a tomato and onion sauce and serve with rice."]},
+{n:"Vegetable biryani",c:"indian",t:"medium",ing:["Basmati rice","Mixed vegetables","Onion","Yoghurt","Biryani spices","Coriander"],s:["Fry the onion and spices, then add the vegetables.","Layer with part-cooked rice and yoghurt in a lidded pot.","Cook on low heat until the rice is tender, then rest before serving."]},
+{n:"Slow lamb curry",c:"indian",t:"slow",ing:["Lamb","Onions","Tinned tomatoes","Ginger","Garlic","Garam masala"],s:["Brown the lamb in batches and set aside.","Fry the onions, ginger and garlic until deep golden.","Return the lamb with tomatoes and spices and simmer gently until tender."]},
+{n:"Soy garlic noodle stir-fry",c:"east-asian",t:"quick",ing:["Noodles","Soy sauce","Garlic","Spring onions","Sesame oil","Mixed vegetables"],s:["Cook the noodles and drain.","Stir-fry the garlic and vegetables in a hot wok.","Toss in the noodles, soy sauce and sesame oil."]},
+{n:"Egg fried rice",c:"east-asian",t:"quick",ing:["Cooked rice","Eggs","Peas","Spring onions","Soy sauce","Sesame oil"],s:["Scramble the eggs in a hot wok and set aside.","Fry the rice and peas until the grains separate.","Return the eggs with soy sauce, spring onions and sesame oil."]},
+{n:"Teriyaki chicken",c:"east-asian",t:"medium",ing:["Chicken thighs","Soy sauce","Honey","Ginger","Garlic","Rice"],s:["Mix soy sauce, honey, ginger and garlic for the sauce.","Fry the chicken until golden and cooked through.","Pour over the sauce and simmer until glossy, then serve with rice."]},
+{n:"Vegetable and tofu stir-fry",c:"east-asian",t:"medium",ing:["Tofu","Mixed vegetables","Soy sauce","Ginger","Garlic","Sesame seeds"],s:["Fry the tofu until golden and set aside.","Stir-fry the vegetables with ginger and garlic.","Return the tofu with soy sauce and sesame seeds."]},
+{n:"Slow beef noodle soup",c:"east-asian",t:"slow",ing:["Beef","Noodles","Stock","Ginger","Star anise","Spring onions"],s:["Simmer the beef with ginger and star anise until tender.","Lift out the beef and slice it.","Cook the noodles in the broth and serve with beef and spring onions."]},
+{n:"Greek salad with grilled halloumi",c:"mediterranean",t:"quick",ing:["Halloumi","Tomatoes","Cucumber","Olives","Feta","Lemon","Oregano"],s:["Chop the tomatoes, cucumber and olives and toss with lemon and oregano.","Grill the halloumi until golden on both sides.","Top the salad with halloumi and crumbled feta."]},
+{n:"Lemon herb grilled chicken",c:"mediterranean",t:"quick",ing:["Chicken breast","Lemon","Oregano","Garlic","Olive oil","Salad leaves"],s:["Marinate the chicken in lemon, garlic, oregano and oil.","Grill until cooked through with no pink meat.","Rest for five minutes and serve over salad."]},
+{n:"Stuffed peppers",c:"mediterranean",t:"medium",ing:["Peppers","Rice","Tinned tomatoes","Onion","Herbs","Feta"],s:["Cook the rice and mix with tomatoes, onion and herbs.","Halve and fill the peppers, then top with feta.","Bake until the peppers are soft."]},
+{n:"Baked fish with tomatoes and olives",c:"mediterranean",t:"medium",ing:["White fish fillets","Tomatoes","Olives","Garlic","Lemon","Herbs"],s:["Put the tomatoes, olives and garlic in a baking dish.","Lay the fish on top with lemon and herbs.","Bake until the fish flakes easily."]},
+{n:"Slow chickpea stew",c:"mediterranean",t:"slow",ing:["Chickpeas","Tinned tomatoes","Peppers","Onion","Garlic","Paprika","Spinach"],s:["Fry the onion, peppers and garlic with paprika.","Add chickpeas and tomatoes and simmer gently.","Stir in spinach at the end and serve with bread."]},
+{n:"Shakshuka",c:"middle-eastern",t:"quick",ing:["Eggs","Tinned tomatoes","Peppers","Onion","Cumin","Feta"],s:["Fry the onion and peppers with cumin.","Add tomatoes and simmer until thick.","Make wells, crack in the eggs, cover and cook until set."]},
+{n:"Falafel wraps",c:"middle-eastern",t:"quick",ing:["Ready-made falafel","Wraps","Tahini","Cucumber","Tomato","Pickles"],s:["Warm the falafel in the oven or a pan.","Mix tahini with lemon juice and a little water.","Fill wraps with falafel, salad, pickles and tahini sauce."]},
+{n:"Chicken shawarma bowls",c:"middle-eastern",t:"medium",ing:["Chicken","Yoghurt","Garlic","Cumin","Paprika","Rice","Salad"],s:["Marinate the chicken in yoghurt, garlic and spices.","Grill or fry until cooked through, then slice.","Serve over rice with salad and extra yoghurt."]},
+{n:"Lentil and spinach soup",c:"middle-eastern",t:"medium",ing:["Lentils","Spinach","Onion","Garlic","Cumin","Lemon"],s:["Fry the onion and garlic with cumin.","Add lentils and water and simmer until soft.","Stir in spinach and lemon juice before serving."]},
+{n:"Slow lamb tagine",c:"middle-eastern",t:"slow",ing:["Lamb","Apricots","Chickpeas","Onion","Ginger","Cinnamon","Cumin"],s:["Brown the lamb and set aside.","Fry the onion and ginger with the spices.","Return the lamb with apricots and chickpeas and simmer gently until tender."]}
+];
+function shuffle(a){var b=a.slice();for(var i=b.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=b[i];b[i]=b[j];b[j]=t;}return b;}
+function generate(){
+var time=document.getElementById("time").value;
+var cuisine=document.getElementById("cuisine").value;
+var out=document.getElementById("out");
+var exact=shuffle(IDEAS.filter(function(x){return x.c===cuisine&&x.t===time;}));
+var sameCuisine=shuffle(IDEAS.filter(function(x){return x.c===cuisine&&x.t!==time;}));
+var sameTime=shuffle(IDEAS.filter(function(x){return x.c!==cuisine&&x.t===time;}));
+var picked=exact.slice(0,3);
+var i=0;
+while(picked.length<3&&i<sameCuisine.length){picked.push(sameCuisine[i]);i++;}
+i=0;
+while(picked.length<3&&i<sameTime.length){picked.push(sameTime[i]);i++;}
+var html="";
+picked.forEach(function(x){
+html+='<div class="card"><h4>'+x.n+'</h4><p>'+CUISINES[x.c]+' · '+TIMES[x.t]+'</p><p><strong>Ingredients:</strong> '+x.ing.join(", ")+'</p><ol>';
+x.s.forEach(function(st){html+="<li>"+st+"</li>";});
+html+="</ol></div>";
+});
+out.innerHTML=html;
+}
+document.getElementById("go").addEventListener("click",generate);
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

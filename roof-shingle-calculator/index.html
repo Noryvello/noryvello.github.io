@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roof Shingle Calculator | Noryvello</title>
+<meta name="description" content="Work out how many roof shingles you need. Enter the roof size and pitch, pick a shingle exposure, and get the roof area, squares and bundles with waste allowance.">
+<link rel="canonical" href="https://noryvello.github.io/roof-shingle-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Roof Shingle Calculator">
+<meta property="og:description" content="Work out roof area, squares and shingle bundles from your roof size and pitch.">
+<meta property="og:url" content="https://noryvello.github.io/roof-shingle-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:12px;margin-top:14px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.calc button:hover{background:#3730a3}</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a roofing square?", "acceptedAnswer": {"@type": "Answer", "text": "A roofing square is a unit of roof area equal to 100 square feet, or 9.29 square metres. Shingles are often sold and estimated by the square, so the calculator shows it alongside the area."}}, {"@type": "Question", "name": "How many bundles are in a square?", "acceptedAnswer": {"@type": "Answer", "text": "Three bundles per square is the usual count for standard three-tab shingles, and this calculator uses that figure. Check your pack, because thicker or larger shingles may pack differently."}}, {"@type": "Question", "name": "What is shingle exposure?", "acceptedAnswer": {"@type": "Answer", "text": "Exposure is the part of each shingle that stays visible after the next row overlaps it. It is printed on the pack or in the fitting guidance, and it decides how many rows run up the slope."}}, {"@type": "Question", "name": "How do I find my roof pitch?", "acceptedAnswer": {"@type": "Answer", "text": "The pitch is the rise for every 12 units of run. If the roof rises 6 units over a 12-unit run, the pitch is 6 in 12. Pick the closest option in the picker."}}, {"@type": "Question", "name": "Why add a waste allowance?", "acceptedAnswer": {"@type": "Answer", "text": "Cutting shingles to fit edges, valleys and around chimneys uses up spare shingles. Ten percent is the default, and a complex roof may need more."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Roof Shingle Calculator</h1>
+<p class="answer">Enter your roof measurements and pitch, and this calculator works out the roof area, the number of roofing squares and the bundles of shingles to buy, including a waste allowance. The working is shown so you can check every step.</p>
+<div class="calc">
+<label for="length">Roof length along the ridge (m)</label>
+<input id="length" type="number" min="0" step="any" placeholder="e.g. 10">
+<label for="width">Roof width, eave to ridge measured flat (m)</label>
+<input id="width" type="number" min="0" step="any" placeholder="e.g. 6">
+<label for="pitch">Roof pitch (rise in 12)</label>
+<select id="pitch"><option value="3">Low - 3 in 12</option><option value="6" selected>Medium - 6 in 12</option><option value="9">Steep - 9 in 12</option><option value="12">Very steep - 12 in 12</option></select>
+<label for="exposure">Shingle exposure (mm)</label>
+<input id="exposure" type="number" min="0" step="any" placeholder="e.g. 125">
+<label for="waste">Waste allowance (%)</label>
+<input id="waste" type="number" min="0" step="any" value="10">
+<button id="calc-btn" type="button">Calculate</button>
+<p class="out" id="result"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">This calculator estimates for a simple pitched roof. Valleys, hips, dormers and skylights all add cutting and waste, and working on a roof is dangerous, so follow local building practice and get professional help for the fitting itself.</div>
+<h2>How to use this calculator</h2>
+<p>Measure the roof length along the ridge and the roof width from the eave to the ridge, measured flat, in metres. Pick the roof pitch closest to yours. The pitch is given as the rise for every 12 units of run. Enter the shingle exposure, which is the part of each shingle left showing after the next row overlaps it. Set the waste allowance, then press Calculate to see the roof area, squares and bundles.</p>
+<h2>How the calculation works</h2>
+<p>The flat area is the length multiplied by the width. The pitch factor adjusts for the slope: it is the square root of one plus the pitch squared, so a steeper roof has more surface than its flat measurements suggest. One roofing square is 100 square feet, or 9.29 square metres. Bundles are worked out at three bundles per square, which is the usual count for standard three-tab shingles, plus the waste allowance. The courses figure is the slope length divided by the exposure.</p>
+<h2>How to use the result</h2>
+<p>Use the bundle count as your ordering figure, and check the bundles-per-square count on your shingle pack, because it varies by product. The courses figure tells you how many rows of shingles run up the slope, which helps when planning the layout. Add extra waste for a roof with valleys, hips or skylights, and keep a spare bundle for later repairs.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is a roofing square?</h3><p>A roofing square is a unit of roof area equal to 100 square feet, or 9.29 square metres. Shingles are often sold and estimated by the square, so the calculator shows it alongside the area.</p></div>
+<div class="faq"><h3>How many bundles are in a square?</h3><p>Three bundles per square is the usual count for standard three-tab shingles, and this calculator uses that figure. Check your pack, because thicker or larger shingles may pack differently.</p></div>
+<div class="faq"><h3>What is shingle exposure?</h3><p>Exposure is the part of each shingle that stays visible after the next row overlaps it. It is printed on the pack or in the fitting guidance, and it decides how many rows run up the slope.</p></div>
+<div class="faq"><h3>How do I find my roof pitch?</h3><p>The pitch is the rise for every 12 units of run. If the roof rises 6 units over a 12-unit run, the pitch is 6 in 12. Pick the closest option in the picker.</p></div>
+<div class="faq"><h3>Why add a waste allowance?</h3><p>Cutting shingles to fit edges, valleys and around chimneys uses up spare shingles. Ten percent is the default, and a complex roof may need more.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/gutter-length-calculator/">Gutter Length Calculator</a> · <a href="https://noryvello.github.io/insulation-rolls-calculator/">Insulation Rolls Calculator</a> · <a href="https://noryvello.github.io/deck-board-calculator/">Deck Board Calculator</a> · <a href="https://noryvello.github.io/fence-panel-calculator/">Fence Panel Calculator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n){return (Math.round(n*10000)/10000).toString();}
+function ceil(n){return Math.ceil(n - 1e-9);}
+function num(id){var v=parseFloat(document.getElementById(id).value);return isFinite(v)?v:NaN;}
+function show(msg,steps){document.getElementById('result').textContent=msg;document.getElementById('steps').textContent=steps||'';}
+function pl(n,s){return n===1?'':s;}
+document.getElementById('calc-btn').addEventListener('click', function () {
+  var L = num('length'), W = num('width'), exp = num('exposure'), waste = num('waste');
+  var rise = parseFloat(document.getElementById('pitch').value);
+  if (!isFinite(L) || L <= 0 || !isFinite(W) || W <= 0) {
+    show('Please enter the roof length and width as numbers above zero.');
+    return;
+  }
+  if (!isFinite(exp) || exp <= 0) {
+    show('Please enter the shingle exposure as a number above zero.');
+    return;
+  }
+  if (!isFinite(waste) || waste < 0) {
+    show('Please enter a waste allowance of zero or more.');
+    return;
+  }
+  var factor = Math.sqrt(1 + Math.pow(rise / 12, 2));
+  var area = L * W * factor;
+  var squares = area / 9.29;
+  var bundles = ceil(squares * 3 * (1 + waste / 100));
+  var slope = W * factor;
+  var courses = ceil(slope / (exp / 1000));
+  show('You need ' + bundles + ' bundle' + pl(bundles, 's') + ' for ' + fmt(squares) + ' square' + (fmt(squares) === '1' ? '' : 's') + ' (' + fmt(area) + ' sq m of roof, ' + courses + ' course' + pl(courses, 's') + ').',
+    'Pitch factor: square root of (1 + (' + fmt(rise) + '/12) squared) = ' + fmt(factor) + '.\nRoof area: ' + fmt(L) + ' x ' + fmt(W) + ' x ' + fmt(factor) + ' = ' + fmt(area) + ' sq m.\nSquares: ' + fmt(area) + ' / 9.29 = ' + fmt(squares) + '.\nBundles: ' + fmt(squares) + ' x 3 x ' + fmt(1 + waste / 100) + ' = ' + fmt(squares * 3 * (1 + waste / 100)) + ', rounded up to ' + bundles + '.\nCourses: ' + fmt(slope) + ' / ' + fmt(exp / 1000) + ' = ' + fmt(slope / (exp / 1000)) + ', rounded up to ' + courses + ' rows.');
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

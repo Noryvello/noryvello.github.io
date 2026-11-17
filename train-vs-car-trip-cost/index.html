@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Train vs Car Trip Cost | Noryvello</title>
+<meta name="description" content="Compare the total cost of one trip by train and by car. Enter your distance, fare, fuel use and fuel price, plus travel time for each — no prices assumed.">
+<link rel="canonical" href="https://noryvello.github.io/train-vs-car-trip-cost/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Train vs Car Trip Cost">
+<meta property="og:description" content="Compare the total cost of one trip by train and by car using your own distance, fare and fuel figures.">
+<meta property="og:url" content="https://noryvello.github.io/train-vs-car-trip-cost/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:12px;margin-top:14px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this for a one-way trip or a return?","acceptedAnswer":{"@type":"Answer","text":"One way as entered. For a return trip, enter the return fare and the return distance, or double the one-way result."}},{"@type":"Question","name":"What if more than one person is travelling?","acceptedAnswer":{"@type":"Answer","text":"The train fare is per person and the fuel cost is per car, so enter the total fare for everyone travelling to compare fairly."}},{"@type":"Question","name":"Does the car side include parking and tolls?","acceptedAnswer":{"@type":"Answer","text":"No. The car side counts fuel only. If you pay for parking or tolls, add that amount to the car total yourself before deciding."}},{"@type":"Question","name":"Why do I enter travel time?","acceptedAnswer":{"@type":"Answer","text":"So you can weigh cost against time. The cheaper option is not always the quicker one, and the page shows both side by side."}},{"@type":"Question","name":"Does the train fare include seat reservations?","acceptedAnswer":{"@type":"Answer","text":"Only if you include them in the fare you enter. Add any reservation fee to the fare box so the comparison counts it."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Train vs Car Trip Cost</h1>
+<p class="answer">The cheaper way to make a trip depends on the distance, the fare and what your car drinks. Enter the distance, the train fare, your car's fuel use and the fuel price, and this page shows the total trip cost for each side by side, with the travel time you enter.</p>
+<div class="calc">
+<label for="dist">Distance of the trip, one way (km or miles)</label>
+<input id="dist" type="number" min="0" step="any" placeholder="For example 120">
+<label for="fare">Train fare for the trip</label>
+<input id="fare" type="number" min="0" step="any" placeholder="For example 25">
+<label for="ttime">Train travel time in hours</label>
+<input id="ttime" type="number" min="0" step="any" placeholder="For example 2">
+<label for="fuse">Car fuel use per 100 km or miles (litres)</label>
+<input id="fuse" type="number" min="0" step="any" placeholder="For example 7">
+<label for="fprice">Fuel price per litre</label>
+<input id="fprice" type="number" min="0" step="any" placeholder="What you pay at the pump">
+<label for="ctime">Car travel time in hours</label>
+<input id="ctime" type="number" min="0" step="any" placeholder="For example 1.5">
+<button id="go" type="button">Compare trip costs</button>
+<div class="out" id="out"></div>
+<div class="steps" id="steps"></div>
+</div>
+<div class="warn">This compares the train fare with the fuel cost of the car only. It leaves out parking, tolls, car servicing and wear, train food, and any ticket booking fees — add those to your own figures if they apply.</div>
+<h2>How it works</h2>
+<p>The train side is simple: the total is the fare you enter. The car side is worked out from your distance and fuel use. The calculator divides the distance by 100, multiplies by the fuel your car uses per 100 km or miles, and multiplies that by the fuel price. The travel times you enter are shown next to the costs so you can weigh time against money.</p>
+<p>You can use kilometres or miles, as long as you use the same unit for the distance and for the fuel-use figure. Your car's fuel use is in the manual or on the dashboard display, or you can work it out from your own fuelling records.</p>
+<h2>How to use the result</h2>
+<p>Compare the totals first, then the times. A cheaper trip that takes much longer is not always the better choice, and a quicker trip is not always worth the extra cost. The page shows both so the trade-off is clear.</p>
+<p>Remember that the train fare is per person while the fuel cost is per car. If more than one person is travelling, enter the total fare for everyone in the fare box — the car side stays the same, so the comparison shifts in the car's favour as more people travel together. For a return trip, enter the return fare and the return distance, or double the one-way result.</p>
+<h2>What this comparison leaves out</h2>
+<p>Fuel is only one part of driving. The calculator does not count parking, tolls, servicing, tyres or the wear on the car. On the train side it does not count food bought on the journey or any booking fee. If any of those apply to your trip, add them to the matching total yourself before deciding.</p>
+<p>The travel times are the ones you enter, so they are only as good as your own figures. Check the timetable for the train and allow for traffic on the road if the journey time matters to you.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Is this for a one-way trip or a return?</h3><p>One way as entered. For a return trip, enter the return fare and the return distance, or double the one-way result.</p></div>
+<div class="faq"><h3>What if more than one person is travelling?</h3><p>The train fare is per person and the fuel cost is per car, so enter the total fare for everyone travelling to compare fairly.</p></div>
+<div class="faq"><h3>Does the car side include parking and tolls?</h3><p>No. The car side counts fuel only. If you pay for parking or tolls, add that amount to the car total yourself before deciding.</p></div>
+<div class="faq"><h3>Why do I enter travel time?</h3><p>So you can weigh cost against time. The cheaper option is not always the quicker one, and the page shows both side by side.</p></div>
+<div class="faq"><h3>Does the train fare include seat reservations?</h3><p>Only if you include them in the fare you enter. Add any reservation fee to the fare box so the comparison counts it.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/rent-a-car-vs-taxis/">Rent a Car vs Taxis</a> · <a href="https://noryvello.github.io/own-car-vs-ride-hailing/">Own Car vs Ride Hailing</a> · <a href="https://noryvello.github.io/fuel-cost-calculator/">Fuel Cost Calculator</a> · <a href="https://noryvello.github.io/flight-vs-train-trip-cost/">Flight vs Train Trip Cost</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function num(id){return parseFloat(document.getElementById(id).value);}
+function fmt(n){return n.toFixed(2);}
+document.getElementById("go").addEventListener("click",function(){
+var out=document.getElementById("out");var steps=document.getElementById("steps");
+var dist=num("dist"),fare=num("fare"),ttime=num("ttime"),fuse=num("fuse"),fprice=num("fprice"),ctime=num("ctime");
+if([dist,fare,ttime,fuse,fprice,ctime].some(function(x){return isNaN(x)||x<=0;})){
+out.textContent="Please fill in every box with a number above zero, then try again.";
+steps.textContent="";return;}
+var litres=dist/100*fuse;
+var carcost=litres*fprice;
+var diff=Math.abs(fare-carcost);
+var verdict=fare<carcost?"The train costs less for this trip by "+fmt(diff)+".":(carcost<fare?"The car costs less for this trip by "+fmt(diff)+".":"Both cost the same for this trip.");
+out.textContent="Train: "+fmt(fare)+" total, "+fmt(ttime)+" hours. Car: "+fmt(carcost)+" total, "+fmt(ctime)+" hours. "+verdict;
+steps.textContent="Train: fare = "+fmt(fare)+".\nCar: "+dist+" / 100 x "+fuse+" litres per 100 = "+fmt(litres)+" litres; x "+fmt(fprice)+" = "+fmt(carcost)+".\nCost difference: "+fmt(diff)+". Time: train "+fmt(ttime)+" hours, car "+fmt(ctime)+" hours.";
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

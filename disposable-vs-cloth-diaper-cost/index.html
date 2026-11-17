@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disposable vs Cloth Diaper Cost | Noryvello</title>
+<meta name="description" content="Compare disposable vs cloth diaper costs over a year. Enter your own changes per day, diaper cost, cloth set cost and laundry cost to see which costs less for you.">
+<link rel="canonical" href="https://noryvello.github.io/disposable-vs-cloth-diaper-cost/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Disposable vs Cloth Diaper Cost">
+<meta property="og:description" content="Compare the yearly cost of disposable and cloth diapers using your own numbers.">
+<meta property="og:url" content="https://noryvello.github.io/disposable-vs-cloth-diaper-cost/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{width:100%;padding:12px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;margin-top:14px;cursor:pointer}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many changes per day should I enter?","acceptedAnswer":{"@type":"Answer","text":"Enter the number that matches your baby's usual day. If you are not sure, count the changes over a few normal days and use the average."}},{"@type":"Question","name":"Does the cloth total include the set cost every year?","acceptedAnswer":{"@type":"Answer","text":"No. The set cost is counted once, in year one. From year two onwards the cloth total is laundry only, and the steps below the result show that figure."}},{"@type":"Question","name":"What should I enter for laundry cost per load?","acceptedAnswer":{"@type":"Answer","text":"Enter what one wash and dry costs you, including detergent if you know it. If you do not know it, check a recent bill or use your best estimate and try a higher and lower figure to see how much it matters."}},{"@type":"Question","name":"Why is there no price in the calculator?","acceptedAnswer":{"@type":"Answer","text":"Prices vary too much by place and brand for a single figure to be useful. Entering your own prices keeps the comparison honest for your situation."}},{"@type":"Question","name":"Does this page say which diaper is better?","acceptedAnswer":{"@type":"Answer","text":"No. It only compares yearly money cost from your own numbers. Comfort, convenience and your daily routine are personal choices this page does not judge."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Disposable vs Cloth Diaper Cost</h1>
+<p class="answer">This page compares the yearly cost of disposable diapers with cloth diapers, using numbers you enter yourself. You set the changes per day, the cost of each disposable diaper, the cost of a cloth set and your laundry cost, and the calculator shows both yearly totals side by side.</p>
+<div class="calc">
+<label for="changes">Changes per day</label>
+<input id="changes" type="number" min="0" step="1" placeholder="For example 8">
+<label for="dispCost">Cost of one disposable diaper</label>
+<input id="dispCost" type="number" min="0" step="any" placeholder="Your price per diaper">
+<label for="clothCost">Cost of a cloth diaper set (one-time)</label>
+<input id="clothCost" type="number" min="0" step="any" placeholder="Your price for the full set">
+<label for="laundryCost">Laundry cost per load</label>
+<input id="laundryCost" type="number" min="0" step="any" placeholder="One wash and dry, including detergent">
+<label for="loads">Laundry loads per week</label>
+<input id="loads" type="number" min="0" step="any" placeholder="For example 3">
+<button id="calcBtn" type="button">Compare costs</button>
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+</div>
+<h2>How the comparison works</h2>
+<p>Disposable diapers cost a little at a time, every day, for as long as they are used. The calculator multiplies your changes per day by 365 to get the number of diapers in a year, then multiplies that by the cost of one diaper. Cloth diapers work the other way round: most of the money goes on the set at the start, and the ongoing cost is laundry. The calculator adds the one-time set cost to a full year of laundry, worked out from your loads per week and your cost per load. Both totals use only the numbers you enter, so the comparison reflects your own prices and habits rather than anyone else's. The steps under the result show every part of the working, so you can check the maths yourself.</p>
+<div class="warn">This page compares money only. It makes no claims about health, comfort or the environment, and it cannot tell you which option suits your family. Costs depend entirely on the numbers you enter, so use your own receipts and laundry costs for a result that means something.</div>
+<h2>How to use the result</h2>
+<p>Start with the numbers you know best, then try changing one figure at a time to see what moves the result. If the two totals are close, the laundry cost is often the deciding factor: more loads a week or a higher cost per load pushes the cloth total up, while fewer loads bring it down. Remember that the cloth set cost is paid once, so from year two onwards cloth costs only the laundry, and the steps show that figure separately. If you plan to use the same cloth set for a second child, the set cost spreads even further. Use the result as a money comparison only, and weigh it against what fits your daily routine.</p>
+<h2>What this comparison does not cover</h2>
+<p>Money is only part of the choice. This page does not cover the time spent washing and drying, the space needed to store and dry cloth diapers, or the convenience of disposables when you are out. It also leaves out extras on both sides, such as wipes, creams and storage bags, because they vary too much to compare fairly. The page makes no claims about health, comfort or the environment. Those are personal matters, and this calculator only answers the money question.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How many changes per day should I enter?</h3><p>Enter the number that matches your baby's usual day. If you are not sure, count the changes over a few normal days and use the average.</p></div>
+<div class="faq"><h3>Does the cloth total include the set cost every year?</h3><p>No. The set cost is counted once, in year one. From year two onwards the cloth total is laundry only, and the steps below the result show that figure.</p></div>
+<div class="faq"><h3>What should I enter for laundry cost per load?</h3><p>Enter what one wash and dry costs you, including detergent if you know it. If you do not know it, check a recent bill or use your best estimate and try a higher and lower figure to see how much it matters.</p></div>
+<div class="faq"><h3>Why is there no price in the calculator?</h3><p>Prices vary too much by place and brand for a single figure to be useful. Entering your own prices keeps the comparison honest for your situation.</p></div>
+<div class="faq"><h3>Does this page say which diaper is better?</h3><p>No. It only compares yearly money cost from your own numbers. Comfort, convenience and your daily routine are personal choices this page does not judge.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/paper-towels-vs-cloth-towels/">Paper Towels vs Cloth Towels</a> · <a href="https://noryvello.github.io/cold-water-vs-hot-water-wash-cost/">Cold Water vs Hot Water Wash Cost</a> · <a href="https://noryvello.github.io/dryer-vs-air-drying-cost/">Tumble Dryer vs Air Drying Cost</a> · <a href="https://noryvello.github.io/own-washing-machine-vs-laundromat/">Own Washing Machine vs Laundromat</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n){var neg=n<0;n=Math.abs(n);var s=(Math.round(n*100)/100).toString();var parts=s.split(".");parts[0]=parts[0].replace(/\B(?=(\d{3})+(?!\d))/g,",");return (neg?"-":"")+parts.join(".");}
+function num(id){return parseFloat(document.getElementById(id).value);}
+document.getElementById("calcBtn").addEventListener("click",function(){
+var changes=num("changes"),disp=num("dispCost"),cloth=num("clothCost"),laundry=num("laundryCost"),loads=num("loads");
+var out=document.getElementById("out"),steps=document.getElementById("steps");
+var vals=[changes,disp,cloth,laundry,loads];
+var bad=false;
+for(var i=0;i<vals.length;i++){if(isNaN(vals[i])||vals[i]<0){bad=true;}}
+if(bad||changes===0){out.textContent="Please fill in every box with a number of 0 or more (changes per day must be above 0).";steps.textContent="";return;}
+var diapersYear=changes*365;
+var dispYear=diapersYear*disp;
+var laundryYear=loads*52*laundry;
+var clothYear=cloth+laundryYear;
+var diff=Math.abs(dispYear-clothYear);
+if(dispYear===clothYear){
+out.textContent="Disposable: "+fmt(dispYear)+" a year. Cloth: "+fmt(clothYear)+" in year one. Both work out the same.";
+}else{
+var cheaper=dispYear<clothYear?"Disposable diapers":"Cloth diapers";
+out.textContent="Disposable: "+fmt(dispYear)+" a year. Cloth: "+fmt(clothYear)+" in year one. "+cheaper+" cost less by "+fmt(diff)+" a year.";
+}
+steps.textContent="Disposable: "+fmt(changes)+" changes a day x 365 days = "+fmt(diapersYear)+" diapers a year; "+fmt(diapersYear)+" x "+fmt(disp)+" each = "+fmt(dispYear)+" a year.\nCloth: set cost "+fmt(cloth)+" (one-time) + laundry "+fmt(loads)+" loads a week x 52 weeks x "+fmt(laundry)+" = "+fmt(laundryYear)+" a year; total in year one = "+fmt(clothYear)+".\nFrom year two, cloth costs only the laundry: "+fmt(laundryYear)+" a year.";
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

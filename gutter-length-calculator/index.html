@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gutter Length Calculator | Noryvello</title>
+<meta name="description" content="Work out how much guttering a roof needs. Enter the roof edge lengths and downspout spacing, and get the gutter length, downspout count and joiner estimate.">
+<link rel="canonical" href="https://noryvello.github.io/gutter-length-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gutter Length Calculator">
+<meta property="og:description" content="Work out gutter length, downspouts and joiners from your roof edge lengths.">
+<meta property="og:url" content="https://noryvello.github.io/gutter-length-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:12px;margin-top:14px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.calc button:hover{background:#3730a3}</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a downspout?", "acceptedAnswer": {"@type": "Answer", "text": "A downspout is the vertical pipe that carries water from the gutter down to the ground or a drain. The calculator spaces them evenly along the total gutter length."}}, {"@type": "Question", "name": "How far apart should downspouts be?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the gutter system and the roof area it drains. Check your gutter maker's guidance for a spacing figure and enter it here."}}, {"@type": "Question", "name": "What is a joiner?", "acceptedAnswer": {"@type": "Answer", "text": "A joiner connects two lengths of gutter end to end. Each side of the roof needs one joiner for every join between gutter pieces, and the calculator counts them side by side."}}, {"@type": "Question", "name": "What if my roof has more than four sides?", "acceptedAnswer": {"@type": "Answer", "text": "Add the extra sides together and enter the combined length in one of the four boxes. The total length and downspout count stay correct, though the joiner count is then approximate."}}, {"@type": "Question", "name": "Do I need anything else besides gutters and joiners?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, corners, stop ends, outlets and brackets depend on your roof shape and are not counted here. List them from your roof plan before ordering."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Gutter Length Calculator</h1>
+<p class="answer">Enter the lengths of your roof edges and the spacing between downspouts, and this calculator works out the total gutter length, how many downspouts you need and how many joiners to buy. The working is shown so you can check every step.</p>
+<div class="calc">
+<label for="side1">Roof edge, side 1 (m)</label>
+<input id="side1" type="number" min="0" step="any" placeholder="e.g. 10">
+<label for="side2">Roof edge, side 2 (m) - leave blank if not needed</label>
+<input id="side2" type="number" min="0" step="any" placeholder="e.g. 8">
+<label for="side3">Roof edge, side 3 (m) - leave blank if not needed</label>
+<input id="side3" type="number" min="0" step="any" placeholder="blank if none">
+<label for="side4">Roof edge, side 4 (m) - leave blank if not needed</label>
+<input id="side4" type="number" min="0" step="any" placeholder="blank if none">
+<label for="spacing">Downspout spacing (m)</label>
+<input id="spacing" type="number" min="0" step="any" placeholder="e.g. 6">
+<label for="piece">Length of one gutter piece as sold (m)</label>
+<input id="piece" type="number" min="0" step="any" value="3">
+<button id="calc-btn" type="button">Calculate</button>
+<p class="out" id="result"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">This calculator counts lengths and fittings from your measurements only. It does not check falls, outlets or local building practice, and every roof needs a slight fall towards the downspouts to drain. Follow the maker's fitting guidance for your gutter system.</div>
+<h2>How to use this calculator</h2>
+<p>Measure each straight roof edge that needs a gutter, in metres, and enter up to four sides. Leave any side you do not need blank. Enter the spacing between downspouts. Your gutter maker's guidance will suggest a figure. Enter the length of one gutter piece as sold, then press Calculate to see the total gutter length, the downspout count and the joiner estimate.</p>
+<h2>How the calculation works</h2>
+<p>The gutter length is the sum of the sides you entered. The downspout count is the total length divided by the spacing, rounded up, so no stretch of gutter is longer than the spacing you chose. Joiners are counted side by side: each side is split into whole gutter pieces, and each join between two pieces needs one joiner. The steps show the split for each side so you can check it.</p>
+<h2>How to use the result</h2>
+<p>Buy the gutter length shown, plus the joiners, and check that your downspout count matches where water can actually drain away. Corners, stop ends and outlets are not counted here, so list those separately from your roof shape before ordering. Check the fall of each run when fitting, so water flows towards a downspout instead of pooling.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is a downspout?</h3><p>A downspout is the vertical pipe that carries water from the gutter down to the ground or a drain. The calculator spaces them evenly along the total gutter length.</p></div>
+<div class="faq"><h3>How far apart should downspouts be?</h3><p>It depends on the gutter system and the roof area it drains. Check your gutter maker's guidance for a spacing figure and enter it here.</p></div>
+<div class="faq"><h3>What is a joiner?</h3><p>A joiner connects two lengths of gutter end to end. Each side of the roof needs one joiner for every join between gutter pieces, and the calculator counts them side by side.</p></div>
+<div class="faq"><h3>What if my roof has more than four sides?</h3><p>Add the extra sides together and enter the combined length in one of the four boxes. The total length and downspout count stay correct, though the joiner count is then approximate.</p></div>
+<div class="faq"><h3>Do I need anything else besides gutters and joiners?</h3><p>Yes, corners, stop ends, outlets and brackets depend on your roof shape and are not counted here. List them from your roof plan before ordering.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/roof-shingle-calculator/">Roof Shingle Calculator</a> · <a href="https://noryvello.github.io/rainwater-harvest-calculator/">Rainwater Harvest Calculator</a> · <a href="https://noryvello.github.io/deck-board-calculator/">Deck Board Calculator</a> · <a href="https://noryvello.github.io/fence-panel-calculator/">Fence Panel Calculator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n){return (Math.round(n*10000)/10000).toString();}
+function ceil(n){return Math.ceil(n - 1e-9);}
+function num(id){var v=parseFloat(document.getElementById(id).value);return isFinite(v)?v:NaN;}
+function show(msg,steps){document.getElementById('result').textContent=msg;document.getElementById('steps').textContent=steps||'';}
+function pl(n,s){return n===1?'':s;}
+document.getElementById('calc-btn').addEventListener('click', function () {
+  var sides = [num('side1'), num('side2'), num('side3'), num('side4')];
+  var spacing = num('spacing'), piece = num('piece');
+  var used = [];
+  for (var i = 0; i < sides.length; i++) {
+    if (isFinite(sides[i]) && sides[i] > 0) used.push({v: sides[i], n: i + 1});
+    else if (isFinite(sides[i]) && sides[i] < 0) { show('Please enter each roof edge length as zero or more.'); return; }
+  }
+  if (used.length === 0) {
+    show('Please enter at least one roof edge length above zero.');
+    return;
+  }
+  if (!isFinite(spacing) || spacing <= 0) {
+    show('Please enter the downspout spacing as a number above zero.');
+    return;
+  }
+  if (!isFinite(piece) || piece <= 0) {
+    show('Please enter the length of one gutter piece as a number above zero.');
+    return;
+  }
+  var total = 0, joiners = 0, parts = [], vals = [];
+  for (var j = 0; j < used.length; j++) {
+    total += used[j].v;
+    vals.push(used[j].v);
+    var pieces = ceil(used[j].v / piece);
+    joiners += pieces - 1;
+    parts.push('side ' + used[j].n + ' needs ' + pieces + ' pieces (' + (pieces - 1) + ' joiners)');
+  }
+  var downs = ceil(total / spacing);
+  show('You need ' + fmt(total) + ' m of gutter, ' + downs + ' downspout' + pl(downs, 's') + ' and ' + joiners + ' joiner' + pl(joiners, 's') + '.',
+    'Gutter length: ' + vals.map(fmt).join(' + ') + ' = ' + fmt(total) + ' m.\nDownspouts: ' + fmt(total) + ' / ' + fmt(spacing) + ' = ' + fmt(total / spacing) + ', rounded up to ' + downs + '.\nJoiners: ' + parts.join('; ') + '; total ' + joiners + ' joiners.');
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

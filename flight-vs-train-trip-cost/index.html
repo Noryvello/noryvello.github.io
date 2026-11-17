@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flight vs Train Trip Cost | Noryvello</title>
+<meta name="description" content="Compare the total cost and door-to-door time of a trip by flight and by train. Enter fares, transfer costs and travel times — no prices assumed.">
+<link rel="canonical" href="https://noryvello.github.io/flight-vs-train-trip-cost/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flight vs Train Trip Cost">
+<meta property="og:description" content="Compare the total cost and door-to-door time of a trip by flight and by train using your own fares and times.">
+<meta property="og:url" content="https://noryvello.github.io/flight-vs-train-trip-cost/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:12px;margin-top:14px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What counts as transfer cost?","acceptedAnswer":{"@type":"Answer","text":"Whatever you pay to get to and from the airport or station at both ends, such as a taxi, bus, parking or a lift you pay for."}},{"@type":"Question","name":"What is door-to-door time?","acceptedAnswer":{"@type":"Answer","text":"The full time from leaving home to arriving at your destination, including getting to the airport or station, waiting and the journey itself."}},{"@type":"Question","name":"Does the flight fare include baggage?","acceptedAnswer":{"@type":"Answer","text":"Only if you include it in the fare you enter. Add any baggage fee to the fare box so the comparison counts it."}},{"@type":"Question","name":"Why can a train win even when the flight is faster?","acceptedAnswer":{"@type":"Answer","text":"Because the airport is often further away and check-in and security add time. The page compares your own totals so you can see both sides."}},{"@type":"Question","name":"Should I compare one-way or return?","acceptedAnswer":{"@type":"Answer","text":"Compare the same thing on both sides. Enter one-way fares and times for a one-way comparison, or return figures for a return trip."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Flight vs Train Trip Cost</h1>
+<p class="answer">A flight can look cheaper than a train until you add the cost and time of getting to and from the airport. Enter the fare, transfer cost and travel time for each, and this page shows the total cost and the door-to-door time for both.</p>
+<div class="calc">
+<label for="ffare">Flight fare</label>
+<input id="ffare" type="number" min="0" step="any" placeholder="For example 80">
+<label for="ftrans">Flight transfer cost, both ends (enter 0 if none)</label>
+<input id="ftrans" type="number" min="0" step="any" placeholder="For example 15">
+<label for="ftime">Flight door-to-door time in hours</label>
+<input id="ftime" type="number" min="0" step="any" placeholder="For example 4">
+<label for="tfare">Train fare</label>
+<input id="tfare" type="number" min="0" step="any" placeholder="For example 55">
+<label for="ttrans">Train transfer cost, both ends (enter 0 if none)</label>
+<input id="ttrans" type="number" min="0" step="any" placeholder="For example 6">
+<label for="ttime">Train door-to-door time in hours</label>
+<input id="ttime" type="number" min="0" step="any" placeholder="For example 5">
+<button id="go" type="button">Compare trip costs</button>
+<div class="out" id="out"></div>
+<div class="steps" id="steps"></div>
+</div>
+<div class="warn">This compares the fares and transfer costs you enter only. It leaves out baggage fees, food, seat selection, overnight stays and the value of your time, and it takes your travel times as given — check timetables for the real journey.</div>
+<h2>How it works</h2>
+<p>Each side is added up the same way: the fare plus the transfer cost at both ends. The flight total is the flight fare plus what you pay to get to and from the airport. The train total is the train fare plus what you pay to get to and from the station. The door-to-door times you enter are shown next to the totals, so cost and time can be weighed together.</p>
+<p>Door-to-door time means the full journey, from leaving home to arriving at your destination. For a flight that includes getting to the airport, check-in and security, the flight itself, and getting from the airport at the other end. For a train it includes getting to the station, waiting and the journey itself.</p>
+<h2>How to use the result</h2>
+<p>Look at the totals first, then the times. A flight is often quicker in the air but slower door to door, because airports sit further from city centres and check-in adds time. A train can win on the full journey even when the flight itself is shorter.</p>
+<p>Make sure both sides cover the same trip. Compare one-way with one-way, or return with return, and count the same number of travellers on each side. If your plans change, change the figures and run the comparison again — the page follows whatever you enter.</p>
+<h2>What this comparison leaves out</h2>
+<p>Fares are only part of a trip. The calculator does not count baggage fees, food, seat selection, overnight stays, or the value of your time. If any of those apply, add them to the matching side yourself before deciding.</p>
+<p>The travel times are the ones you enter, so they are only as good as your own figures. Timetables, connections and delays all change real journey times, so check the timetable for the day you plan to travel.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What counts as transfer cost?</h3><p>Whatever you pay to get to and from the airport or station at both ends, such as a taxi, bus, parking or a lift you pay for.</p></div>
+<div class="faq"><h3>What is door-to-door time?</h3><p>The full time from leaving home to arriving at your destination, including getting to the airport or station, waiting and the journey itself.</p></div>
+<div class="faq"><h3>Does the flight fare include baggage?</h3><p>Only if you include it in the fare you enter. Add any baggage fee to the fare box so the comparison counts it.</p></div>
+<div class="faq"><h3>Why can a train win even when the flight is faster?</h3><p>Because the airport is often further away and check-in and security add time. The page compares your own totals so you can see both sides.</p></div>
+<div class="faq"><h3>Should I compare one-way or return?</h3><p>Compare the same thing on both sides. Enter one-way fares and times for a one-way comparison, or return figures for a return trip.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/train-vs-car-trip-cost/">Train vs Car Trip Cost</a> · <a href="https://noryvello.github.io/flight-booking-mistakes/">Flight Booking Mistakes</a> · <a href="https://noryvello.github.io/jet-lag-planner/">Jet Lag Planner</a> · <a href="https://noryvello.github.io/budget-trip-cost-comparison/">Budget Trip Cost Comparison</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function num(id){return parseFloat(document.getElementById(id).value);}
+function fmt(n){return n.toFixed(2);}
+document.getElementById("go").addEventListener("click",function(){
+var out=document.getElementById("out");var steps=document.getElementById("steps");
+var ffare=num("ffare"),ftrans=num("ftrans"),ftime=num("ftime"),tfare=num("tfare"),ttrans=num("ttrans"),ttime=num("ttime");
+if([ffare,ftime,tfare,ttime].some(function(x){return isNaN(x)||x<=0;})||[ftrans,ttrans].some(function(x){return isNaN(x)||x<0;})){
+out.textContent="Please fill in every box with a number above zero (transfer costs may be 0), then try again.";
+steps.textContent="";return;}
+var ftot=ffare+ftrans,ttot=tfare+ttrans;
+var diff=Math.abs(ftot-ttot);
+var verdict=ftot<ttot?"The flight costs less for this trip by "+fmt(diff)+".":(ttot<ftot?"The train costs less for this trip by "+fmt(diff)+".":"Both cost the same for this trip.");
+out.textContent="Flight: "+fmt(ftot)+" total, "+fmt(ftime)+" hours door to door. Train: "+fmt(ttot)+" total, "+fmt(ttime)+" hours door to door. "+verdict;
+steps.textContent="Flight: "+fmt(ffare)+" fare + "+fmt(ftrans)+" transfers = "+fmt(ftot)+".\nTrain: "+fmt(tfare)+" fare + "+fmt(ttrans)+" transfers = "+fmt(ttot)+".\nCost difference: "+fmt(diff)+". Time: flight "+fmt(ftime)+" hours, train "+fmt(ttime)+" hours.";
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

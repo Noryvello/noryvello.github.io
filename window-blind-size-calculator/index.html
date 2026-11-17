@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Window Blind Size Calculator | Noryvello</title>
+<meta name="description" content="Work out the blind width and drop to order for your window. Pick inside or outside recess mounting and get the size to order, with the measuring rules shown.">
+<link rel="canonical" href="https://noryvello.github.io/window-blind-size-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Window Blind Size Calculator">
+<meta property="og:description" content="Work out the blind width and drop to order for your window.">
+<meta property="og:url" content="https://noryvello.github.io/window-blind-size-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:12px;margin-top:14px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I measure in more than one place?","acceptedAnswer":{"@type":"Answer","text":"Yes. Measure the width at the top, middle and bottom of the recess and use the smallest figure. Do the same for the height. Windows are rarely perfectly square."}},{"@type":"Question","name":"What is the difference between inside and outside recess?","acceptedAnswer":{"@type":"Answer","text":"An inside recess blind fits within the window opening. An outside recess blind sits on the wall or frame around the window and overlaps the opening on every side."}},{"@type":"Question","name":"Why is a deduction taken for inside recess blinds?","acceptedAnswer":{"@type":"Answer","text":"The blind needs a small gap on each side so it can move freely inside the recess. This calculator deducts 1 centimetre from the width for that clearance."}},{"@type":"Question","name":"How much overlap does an outside recess blind need?","acceptedAnswer":{"@type":"Answer","text":"This calculator adds 10 centimetres to the width and the drop, giving 5 centimetres of overlap on each side. That covers the opening and blocks more light at the edges."}},{"@type":"Question","name":"What if my window has handles or tiles in the way?","acceptedAnswer":{"@type":"Answer","text":"Check that nothing sticks out into the path of the blind, such as handles or tiles. If something does, an outside recess mount usually works better."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Window Blind Size Calculator</h1>
+<p class="answer">This calculator works out the blind width and drop to order for a window. Choose inside or outside recess mounting, enter the window width and height, and it shows the size to order. The deduction and overlap rules are shown beside the result.</p>
+<div class="calc">
+<label for="blind-width">Window width (centimetres)</label>
+<input id="blind-width" type="number" min="0" step="any" placeholder="e.g. 120">
+<label for="blind-height">Window height (centimetres)</label>
+<input id="blind-height" type="number" min="0" step="any" placeholder="e.g. 150">
+<label for="blind-mount">Mounting</label>
+<select id="blind-mount">
+<option value="inside">Inside recess</option>
+<option value="outside">Outside recess</option>
+</select>
+<button id="blind-btn" type="button">Work out my blind size</button>
+<p class="out" id="blind-out"></p>
+<p class="steps" id="blind-steps"></p>
+</div>
+<div class="warn">This calculator uses simple measuring rules: a 1 centimetre deduction for inside recess blinds and a 10 centimetre overlap for outside recess blinds. Blind makers use their own measuring guides, so always check the maker's guide for the blind you are buying before you order.</div>
+<h2>How the size is worked out</h2>
+<p>For an inside recess blind, the blind must fit within the window opening with a small gap on each side so it can move freely. This calculator takes 1 centimetre off the window width for that clearance and keeps the drop the same as the window height. A window 120 centimetres wide and 150 centimetres high gives an inside recess blind 119 centimetres wide with a 150 centimetre drop.</p>
+<p>For an outside recess blind, the blind sits on the wall or frame around the window and overlaps the opening on every side. This calculator adds 10 centimetres to the width and 10 centimetres to the drop, giving 5 centimetres of overlap on each side. The same window gives an outside recess blind 130 centimetres wide with a 160 centimetre drop. The overlap covers the opening fully and blocks more light at the edges.</p>
+<h2>How to measure your window</h2>
+<p>Use a metal tape measure and measure in centimetres. For the width, measure the recess at the top, in the middle and at the bottom, because windows are rarely perfectly square. Use the smallest of the three figures so the blind fits at the narrowest point. For the height, measure on the left, in the middle and on the right, and again use the smallest figure.</p>
+<p>Write the measurements down as you go and measure twice before you order. If you are fitting an outside recess blind, measure the full opening and let the calculator add the overlap. Do not add the overlap yourself first, or the blind will end up larger than you meant it to be.</p>
+<h2>Inside or outside recess: which to choose</h2>
+<p>An inside recess blind sits neatly inside the window opening and shows off the window frame and sill. It suits deep recesses and windows where the frame is part of the look of the room. The blind needs a clear recess to move in, so check that handles, tiles or vents do not stick out into its path.</p>
+<p>An outside recess blind covers the whole opening and a little of the wall around it. It suits shallow recesses, windows with handles or tiles in the way, and rooms where you want to block as much light as possible. It also hides a window that is not quite square, since the blind hangs on the flat wall rather than inside the opening.</p>
+<h2>Before you order</h2>
+<p>Check how the blind is fixed before you order. Inside recess blinds fix to the top or the sides of the recess, while outside recess blinds fix to the wall or the window frame. Make sure the fixing surface is solid and that you have the right fixings for the wall material.</p>
+<p>Think about which side the cord or chain should hang on, and keep cords out of reach of children and pets. If the window opens inwards, check that the blind will not block the handle or the opening window. A quick check now saves a return later.</p>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>Should I measure in more than one place?</h3>
+<p>Yes. Measure the width at the top, middle and bottom of the recess and use the smallest figure. Do the same for the height. Windows are rarely perfectly square.</p>
+</div>
+<div class="faq">
+<h3>What is the difference between inside and outside recess?</h3>
+<p>An inside recess blind fits within the window opening. An outside recess blind sits on the wall or frame around the window and overlaps the opening on every side.</p>
+</div>
+<div class="faq">
+<h3>Why is a deduction taken for inside recess blinds?</h3>
+<p>The blind needs a small gap on each side so it can move freely inside the recess. This calculator deducts 1 centimetre from the width for that clearance.</p>
+</div>
+<div class="faq">
+<h3>How much overlap does an outside recess blind need?</h3>
+<p>This calculator adds 10 centimetres to the width and the drop, giving 5 centimetres of overlap on each side. That covers the opening and blocks more light at the edges.</p>
+</div>
+<div class="faq">
+<h3>What if my window has handles or tiles in the way?</h3>
+<p>Check that nothing sticks out into the path of the blind, such as handles or tiles. If something does, an outside recess mount usually works better.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/curtain-length-calculator/">Curtain Length Calculator</a> · <a href="https://noryvello.github.io/rug-size-finder/">Rug Size Finder</a> · <a href="https://noryvello.github.io/paint-calculator/">Paint Calculator</a> · <a href="https://noryvello.github.io/wallpaper-rolls-calculator/">Wallpaper Rolls Calculator</a> · <a href="https://noryvello.github.io/ceiling-fan-size-finder/">Ceiling Fan Size Finder</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function(){
+  function val(id){var n=parseFloat(document.getElementById(id).value);return isNaN(n)?null:n;}
+  function fmt(n){return (Math.round(n*100)/100).toString();}
+  document.getElementById("blind-btn").addEventListener("click",function(){
+    var w=val("blind-width"), h=val("blind-height");
+    var mount=document.getElementById("blind-mount").value;
+    var out=document.getElementById("blind-out"), steps=document.getElementById("blind-steps");
+    if(w===null||w<=0){out.textContent="Please enter the window width in centimetres, as a number above zero.";steps.textContent="";return;}
+    if(h===null||h<=0){out.textContent="Please enter the window height in centimetres, as a number above zero.";steps.textContent="";return;}
+    var bw, bd, rule;
+    if(mount==="inside"){
+      bw=w-1; bd=h;
+      rule="Inside recess rule: take 1 centimetre off the width for clearance, and keep the drop the same as the window height.\nBlind width: "+fmt(w)+" - 1 = "+fmt(bw)+" centimetres.\nBlind drop: "+fmt(h)+" centimetres.";
+    }else{
+      bw=w+10; bd=h+10;
+      rule="Outside recess rule: add 10 centimetres to the width and the drop, giving 5 centimetres of overlap on each side.\nBlind width: "+fmt(w)+" + 10 = "+fmt(bw)+" centimetres.\nBlind drop: "+fmt(h)+" + 10 = "+fmt(bd)+" centimetres.";
+    }
+    out.textContent="Order a blind "+fmt(bw)+" cm wide with a "+fmt(bd)+" cm drop.";
+    steps.textContent=rule;
+  });
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marinade Builder | Noryvello</title>
+<meta name="description" content="Pick a protein and a flavour profile to build a marinade recipe with oil, acid and seasoning ratios and marinating time ranges, ready for about 500 g of food.">
+<link rel="canonical" href="https://noryvello.github.io/marinade-builder/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Marinade Builder">
+<meta property="og:description" content="Build a marinade for your protein and flavour, with ratios and times.">
+<meta property="og:url" content="https://noryvello.github.io/marinade-builder/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the basic ratio for a marinade?","acceptedAnswer":{"@type":"Answer","text":"A good starting point is 3 parts oil to 1 part acid, plus salt and flavourings. For about 500 g of protein that works out to roughly 60 ml oil and 20 ml acid, with garlic, herbs or spices to taste."}},{"@type":"Question","name":"Can you marinate for too long?","acceptedAnswer":{"@type":"Answer","text":"Yes. Acid in a marinade keeps working on the surface of the food, so fish goes mushy after about 30 minutes and chicken can turn chalky after several hours. Follow the time range for your protein and do not leave food marinating for days."}},{"@type":"Question","name":"Can I reuse a marinade?","acceptedAnswer":{"@type":"Answer","text":"Never reuse a marinade that has touched raw meat, poultry or fish unless you boil it hard first. The safe choice is to throw it away. If you want a sauce, set some marinade aside before the raw food goes in."}},{"@type":"Question","name":"Should marinating happen in the fridge?","acceptedAnswer":{"@type":"Answer","text":"Yes, always marinate in the fridge, never on the counter. Food left at room temperature for a long time is not safe, and the fridge keeps the marinade working slowly and safely."}},{"@type":"Question","name":"Does marinating make meat more tender?","acceptedAnswer":{"@type":"Answer","text":"A marinade mainly flavours the surface, and it softens the outer layer a little. It does not tenderise deep inside a thick piece of meat, so it is best thought of as a flavour boost rather than a way to fix tough meat."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Marinade Builder</h1>
+<p class="answer">Pick a protein and a flavour profile and this builder gives you a marinade recipe with oil, acid and seasoning ratios and a marinating time range. Each recipe covers about 500 g of food, and the ratios scale up or down easily.</p>
+<div class="calc">
+<label for="protein">What are you marinating?</label>
+<select id="protein">
+<option value="">Choose a protein</option>
+<option value="chicken">Chicken</option>
+<option value="beef">Beef</option>
+<option value="lamb">Lamb</option>
+<option value="pork">Pork</option>
+<option value="fish">Fish or seafood</option>
+<option value="tofu">Tofu</option>
+<option value="vegetables">Vegetables</option>
+</select>
+<label for="flavour">Which flavour profile?</label>
+<select id="flavour">
+<option value="">Choose a flavour profile</option>
+<option value="mediterranean">Mediterranean (lemon, garlic, herbs)</option>
+<option value="asian">Asian-inspired (soy, ginger, sesame)</option>
+<option value="smoky">Smoky barbecue-style</option>
+<option value="citrus">Citrus and herb</option>
+<option value="spicy">Spicy (chilli, cumin, paprika)</option>
+</select>
+<button id="build-btn" type="button" style="margin-top:14px;padding:11px 18px;font-size:16px;font-weight:700;color:#fff;background:#4338ca;border:none;border-radius:8px;cursor:pointer">Build my marinade</button>
+<div id="result" class="steps" role="status"></div>
+</div>
+<h2>How to use this builder</h2>
+<p>Choose what you are marinating and the flavour you want, then press the button. You will get a recipe for about 500 g of food, with the oil, acid and seasoning amounts, plus the marinating time range for your protein. To scale the recipe, keep the 3 to 1 ratio of oil to acid and multiply everything by the same amount: double it for about 1 kg, halve it for about 250 g.</p>
+<p>Mix the marinade in a bowl, taste it before the raw food goes in, and adjust the salt or acid to your liking. Then add the food, turn it so every piece is coated, cover the bowl and put it in the fridge. Turn the food once halfway through if you remember, so both sides get equal time in the marinade.</p>
+<h2>How a marinade works</h2>
+<p>A marinade has three jobs: oil, acid and flavour. Oil carries flavour onto the food and helps it brown in the pan or on the grill. Acid, such as lemon juice, vinegar or yoghurt, brightens the flavour and softens the surface. Salt, herbs, spices and aromatics such as garlic and ginger do the flavouring. The classic balance is 3 parts oil to 1 part acid, and that ratio works for most combinations.</p>
+<p>It is worth knowing what a marinade does not do. It flavours the surface and the outer few millimetres, but it does not soak deep into a thick piece of meat. That is why thin pieces and small chunks take on flavour much faster than a whole joint. It also does not make tough meat tender in any deep sense, so it is best thought of as a flavour boost rather than a fix for a tough cut.</p>
+<h2>Marinating times that work</h2>
+<p>Fish and seafood need the shortest time, about 15 to 30 minutes, because acid works on them very quickly and longer marinating turns the flesh mushy. Chicken does well with 30 minutes to 2 hours, and can go up to 4 hours without harm. Tofu and vegetables take 30 minutes to 2 hours, and tofu benefits from being pressed first so it can absorb more flavour.</p>
+<p>Beef, lamb and pork can take longer: 2 to 12 hours for pork, and up to 24 hours for beef and lamb. Even so, there is a limit. After about a day, the surface can turn soft and chalky from the acid, and the flavour does not improve further. When in doubt, use the shorter end of the range; a short marinade is almost always better than an over-long one.</p>
+<div class="warn">Food safety matters with marinades. Always marinate in the fridge, never on the counter. Never reuse a marinade that has touched raw meat, poultry or fish unless you boil it hard first; the safe choice is to throw it away. If you want a sauce, set some marinade aside before the raw food goes in.</div>
+<h2>Tips for better results</h2>
+<p>Pat the food dry before cooking, because a wet surface steams instead of browning. A marinade left dripping wet will cool the pan and stop the food from getting a good sear. Shake off the excess, leave a thin coating, and cook on a good heat. If you are grilling, watch for flare-ups from the oil, and keep the food moving.</p>
+<p>Use a non-reactive container for marinating, such as glass, ceramic or food-safe plastic. Acid can react with bare metal and give an off flavour, so avoid unlined metal bowls for long marinades. A sealed bag works well too, because it uses less marinade and coats the food evenly, but make sure the bag sits in a bowl in the fridge in case it leaks.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is the basic ratio for a marinade?</h3><p>A good starting point is 3 parts oil to 1 part acid, plus salt and flavourings. For about 500 g of protein that works out to roughly 60 ml oil and 20 ml acid, with garlic, herbs or spices to taste.</p></div>
+<div class="faq"><h3>Can you marinate for too long?</h3><p>Yes. Acid in a marinade keeps working on the surface of the food, so fish goes mushy after about 30 minutes and chicken can turn chalky after several hours. Follow the time range for your protein and do not leave food marinating for days.</p></div>
+<div class="faq"><h3>Can I reuse a marinade?</h3><p>Never reuse a marinade that has touched raw meat, poultry or fish unless you boil it hard first. The safe choice is to throw it away. If you want a sauce, set some marinade aside before the raw food goes in.</p></div>
+<div class="faq"><h3>Should marinating happen in the fridge?</h3><p>Yes, always marinate in the fridge, never on the counter. Food left at room temperature for a long time is not safe, and the fridge keeps the marinade working slowly and safely.</p></div>
+<div class="faq"><h3>Does marinating make meat more tender?</h3><p>A marinade mainly flavours the surface, and it softens the outer layer a little. It does not tenderise deep inside a thick piece of meat, so it is best thought of as a flavour boost rather than a way to fix tough meat.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/bbq-meat-quantity-calculator/">BBQ Meat Quantity Calculator</a> · <a href="https://noryvello.github.io/meat-temperature-guide/">Meat Temperature Guide</a> · <a href="https://noryvello.github.io/spice-blend-builder/">Spice Blend Builder</a> · <a href="https://noryvello.github.io/salad-dressing-ratio-guide/">Salad Dressing Ratio Guide</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function () {
+  var TIMES = {
+    chicken: "30 minutes to 2 hours (up to 4 hours at most).",
+    beef: "2 hours to 24 hours.",
+    lamb: "2 hours to 24 hours.",
+    pork: "2 to 12 hours.",
+    fish: "15 to 30 minutes only; longer will make the flesh mushy.",
+    tofu: "30 minutes to 2 hours. Press the tofu first so it absorbs more flavour.",
+    vegetables: "30 minutes to 2 hours."
+  };
+  var FLAVOURS = {
+    mediterranean: {name: "Mediterranean marinade", oil: "60 ml olive oil", acid: "20 ml lemon juice", season: "2 cloves garlic, crushed; 1 teaspoon dried oregano; half a teaspoon salt; a pinch of black pepper"},
+    asian: {name: "Asian-inspired marinade", oil: "45 ml neutral oil plus 15 ml sesame oil", acid: "20 ml rice vinegar", season: "2 tablespoons soy sauce; 1 teaspoon grated ginger; 1 clove garlic, crushed; 1 teaspoon honey"},
+    smoky: {name: "Smoky barbecue-style marinade", oil: "60 ml neutral oil", acid: "20 ml apple cider vinegar", season: "1 tablespoon tomato paste; 1 teaspoon smoked paprika; half a teaspoon garlic powder; half a teaspoon salt; 1 teaspoon brown sugar"},
+    citrus: {name: "Citrus and herb marinade", oil: "60 ml olive oil", acid: "20 ml mixed lemon and lime juice", season: "1 tablespoon chopped fresh herbs; 1 clove garlic, crushed; half a teaspoon salt; zest of half a lemon"},
+    spicy: {name: "Spicy marinade", oil: "60 ml neutral oil", acid: "20 ml lime juice", season: "1 teaspoon chilli flakes or 1 chopped fresh chilli; 1 teaspoon ground cumin; 1 teaspoon paprika; half a teaspoon salt"}
+  };
+  var PROTEINS = {chicken: "Chicken", beef: "Beef", lamb: "Lamb", pork: "Pork", fish: "Fish or seafood", tofu: "Tofu", vegetables: "Vegetables"};
+  var proteinSel = document.getElementById("protein");
+  var flavourSel = document.getElementById("flavour");
+  var button = document.getElementById("build-btn");
+  var result = document.getElementById("result");
+  function show() {
+    var p = proteinSel.value;
+    var f = flavourSel.value;
+    if (!p || !f) {
+      result.innerHTML = "<p>Please choose both a protein and a flavour profile first.</p>";
+      return;
+    }
+    var fl = FLAVOURS[f];
+    result.innerHTML = "<p><strong>" + fl.name + "</strong> for " + PROTEINS[p].toLowerCase() + " (about 500 g).</p>" +
+      "<p><strong>Oil:</strong> " + fl.oil + "</p>" +
+      "<p><strong>Acid:</strong> " + fl.acid + "</p>" +
+      "<p><strong>Seasoning:</strong> " + fl.season + "</p>" +
+      "<p><strong>Ratio:</strong> 3 parts oil to 1 part acid.</p>" +
+      "<p><strong>Marinating time:</strong> " + TIMES[p] + "</p>" +
+      "<p>Mix everything, coat the food, cover and marinate in the fridge. Pat the food dry before cooking.</p>";
+  }
+  button.addEventListener("click", show);
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

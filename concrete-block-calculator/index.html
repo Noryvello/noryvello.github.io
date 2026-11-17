@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concrete Block Calculator | Noryvello</title>
+<meta name="description" content="Work out how many concrete blocks a wall needs. Enter the wall size, pick a block size, and get the block count with waste allowance and a mortar estimate.">
+<link rel="canonical" href="https://noryvello.github.io/concrete-block-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Concrete Block Calculator">
+<meta property="og:description" content="Count concrete blocks for a wall, with waste allowance and a mortar estimate.">
+<meta property="og:url" content="https://noryvello.github.io/concrete-block-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:12px;margin-top:14px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.calc button:hover{background:#3730a3}</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many blocks cover one square metre?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the block size. A standard 440 by 215 mm block with 10 mm joints covers about a tenth of a square metre, so about ten blocks cover one square metre. The calculator works this out for the size you pick."}}, {"@type": "Question", "name": "Why is a waste allowance needed?", "acceptedAnswer": {"@type": "Answer", "text": "Cutting blocks to fit around corners and openings, plus the odd broken block, uses up spares. The default allowance is 10 percent, and you can change it."}}, {"@type": "Question", "name": "What does single-skin mean?", "acceptedAnswer": {"@type": "Answer", "text": "A single-skin wall is one block thick. A double-skin wall has two layers and needs about twice as many blocks, so this calculator does not cover it."}}, {"@type": "Question", "name": "Can I use this for a garden wall?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, for a simple freestanding garden wall the maths is the same. A wall that holds back soil is a retaining wall, which needs different design, so see the retaining wall block calculator and get professional advice for tall walls."}}, {"@type": "Question", "name": "Why check the block size?", "acceptedAnswer": {"@type": "Answer", "text": "Block sizes vary by maker and by country. The picker lists common sizes, so check the size printed on the pack and pick the closest option."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Concrete Block Calculator</h1>
+<p class="answer">Enter your wall measurements and pick a block size, and this calculator works out how many concrete blocks you need, including a waste allowance, plus an estimate of the mortar volume. The working is shown so you can check every step.</p>
+<div class="calc">
+<label for="length">Wall length (m)</label>
+<input id="length" type="number" min="0" step="any" placeholder="e.g. 6">
+<label for="height">Wall height (m)</label>
+<input id="height" type="number" min="0" step="any" placeholder="e.g. 2.4">
+<label for="block">Block size</label>
+<select id="block"><option value="440|215|100">Standard block - 440 x 215 x 100 mm</option><option value="440|215|140">Wide block - 440 x 215 x 140 mm</option><option value="440|215|215">Thick block - 440 x 215 x 215 mm</option></select>
+<label for="waste">Waste allowance (%)</label>
+<input id="waste" type="number" min="0" step="any" value="10">
+<button id="calc-btn" type="button">Calculate</button>
+<p class="out" id="result"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">This calculator estimates for a single-skin wall with 10 mm mortar joints. Load-bearing walls, walls with piers and walls that hold back soil need proper design, so follow local building practice and get professional advice where the wall carries weight.</div>
+<h2>How to use this calculator</h2>
+<p>Measure the wall length and height in metres and enter both. Pick the block size closest to the blocks you plan to buy. The picker lists common sizes with their length, height and width in millimetres. Set the waste allowance. Ten percent is the default, and you may want more if the wall has many cuts. Press Calculate to see the block count and the mortar estimate, with the working shown underneath.</p>
+<h2>How the calculation works</h2>
+<p>The wall area is the length multiplied by the height. Each block covers its face area plus a 10 mm mortar joint on each side, so the blocks per square metre are one divided by that face area. The total is the wall area multiplied by the blocks per square metre, plus the waste allowance. The mortar volume is the wall volume minus the volume of the blocks themselves, which leaves the volume taken up by the joints.</p>
+<h2>How to use the result</h2>
+<p>Order the full block count shown, including the waste allowance, because cutting blocks to fit uses up spares. Check the block size on the pack before ordering, because sizes vary by maker. Use the mortar figure as a rough guide and check it against your supplier's advice for the mix you plan to use. If the wall has openings for doors or windows, subtract their area from the wall area before entering it, or the count will be too high.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How many blocks cover one square metre?</h3><p>It depends on the block size. A standard 440 by 215 mm block with 10 mm joints covers about a tenth of a square metre, so about ten blocks cover one square metre. The calculator works this out for the size you pick.</p></div>
+<div class="faq"><h3>Why is a waste allowance needed?</h3><p>Cutting blocks to fit around corners and openings, plus the odd broken block, uses up spares. The default allowance is 10 percent, and you can change it.</p></div>
+<div class="faq"><h3>What does single-skin mean?</h3><p>A single-skin wall is one block thick. A double-skin wall has two layers and needs about twice as many blocks, so this calculator does not cover it.</p></div>
+<div class="faq"><h3>Can I use this for a garden wall?</h3><p>Yes, for a simple freestanding garden wall the maths is the same. A wall that holds back soil is a retaining wall, which needs different design, so see the retaining wall block calculator and get professional advice for tall walls.</p></div>
+<div class="faq"><h3>Why check the block size?</h3><p>Block sizes vary by maker and by country. The picker lists common sizes, so check the size printed on the pack and pick the closest option.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/brick-calculator/">Brick Calculator</a> · <a href="https://noryvello.github.io/retaining-wall-block-calculator/">Retaining Wall Block Calculator</a> · <a href="https://noryvello.github.io/plaster-mortar-calculator/">Plaster and Mortar Calculator</a> · <a href="https://noryvello.github.io/concrete-mix-calculator/">Concrete Mix Calculator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n){return (Math.round(n*10000)/10000).toString();}
+function ceil(n){return Math.ceil(n - 1e-9);}
+function num(id){var v=parseFloat(document.getElementById(id).value);return isFinite(v)?v:NaN;}
+function show(msg,steps){document.getElementById('result').textContent=msg;document.getElementById('steps').textContent=steps||'';}
+function pl(n,s){return n===1?'':s;}
+document.getElementById('calc-btn').addEventListener('click', function () {
+  var L = num('length'), H = num('height'), waste = num('waste');
+  if (!isFinite(L) || L <= 0 || !isFinite(H) || H <= 0) {
+    show('Please enter the wall length and height as numbers above zero.');
+    return;
+  }
+  if (!isFinite(waste) || waste < 0) {
+    show('Please enter a waste allowance of zero or more.');
+    return;
+  }
+  var parts = document.getElementById('block').value.split('|');
+  var bl = parseFloat(parts[0]) / 1000, bh = parseFloat(parts[1]) / 1000, bw = parseFloat(parts[2]) / 1000;
+  var wallArea = L * H;
+  var face = (bl + 0.01) * (bh + 0.01);
+  var perSqM = 1 / face;
+  var exact = wallArea * perSqM;
+  var blocks = ceil(exact * (1 + waste / 100));
+  var blockVol = bl * bh * bw;
+  var mortarVol = wallArea * bw - exact * blockVol;
+  var litres = Math.round(mortarVol * 1000);
+  show('You need ' + blocks + ' block' + pl(blocks, 's') + ', and about ' + fmt(mortarVol) + ' cubic metres (' + litres + ' litres) of mortar.',
+    'Wall area: ' + fmt(L) + ' x ' + fmt(H) + ' = ' + fmt(wallArea) + ' sq m.\nBlocks per sq m: 1 / (' + fmt(bl + 0.01) + ' x ' + fmt(bh + 0.01) + ') = ' + fmt(perSqM) + '.\nBlocks: ' + fmt(wallArea) + ' x ' + fmt(perSqM) + ' x ' + fmt(1 + waste / 100) + ' = ' + fmt(exact * (1 + waste / 100)) + ', rounded up to ' + blocks + '.\nMortar: ' + fmt(wallArea) + ' x ' + fmt(bw) + ' - ' + fmt(exact) + ' x ' + fmt(blockVol) + ' = ' + fmt(mortarVol) + ' cubic metres.');
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

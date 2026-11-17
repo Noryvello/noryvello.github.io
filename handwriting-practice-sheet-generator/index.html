@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Handwriting Practice Sheet Generator | Noryvello</title>
+<meta name="description" content="Make a printable handwriting practice sheet in seconds. Enter your own words or pick a letter set, choose a line style, and print trace lines and blank lines.">
+<link rel="canonical" href="https://noryvello.github.io/handwriting-practice-sheet-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Handwriting Practice Sheet Generator">
+<meta property="og:description" content="Make a printable handwriting practice sheet in seconds.">
+<meta property="og:url" content="https://noryvello.github.io/handwriting-practice-sheet-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:12px;margin-top:14px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.sheet{background:#fff;border:1px solid #cbd5e1;border-radius:8px;padding:20px 18px;margin:14px 0}
+.sheet .line{position:relative;height:56px;border-bottom:2px solid #64748b;margin:6px 0}
+.sheet .line.mid::after{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px dashed #cbd5e1}
+.sheet .trace{position:absolute;left:0;right:0;bottom:4px;font-size:34px;line-height:1;color:#94a3b8;letter-spacing:6px;white-space:nowrap;overflow:hidden}
+.sheet.wide .line{height:76px}
+.sheet.wide .trace{font-size:44px}
+@media print{body{background:#fff}.wrap>*{display:none}.wrap>.sheet-wrap{display:block}.no-print{display:none}}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What words should I practise?","acceptedAnswer":{"@type":"Answer","text":"Short everyday words work well, such as names, colours and simple nouns. Keep the list short so each word gets a full row of practice."}},{"@type":"Question","name":"Which line style should I choose?","acceptedAnswer":{"@type":"Answer","text":"Ruled lines with a midline help with letter height. Plain lines suit confident writers. Wide lines suit younger children or anyone who writes large."}},{"@type":"Question","name":"How do I print the sheet?","acceptedAnswer":{"@type":"Answer","text":"Press the Print button on the sheet. The sheet prints on its own, without the rest of the page."}},{"@type":"Question","name":"Can I use my own words?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose My own words, type up to 40 characters, and press Make my sheet. Use letters, numbers and spaces only."}},{"@type":"Question","name":"How often should I practise?","acceptedAnswer":{"@type":"Answer","text":"Short regular sessions work better than one long session. A few minutes of focused practice each day is a good habit to build."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Handwriting Practice Sheet Generator</h1>
+<p class="answer">This generator makes a printable handwriting practice sheet for you. Enter your own words or pick a letter set, choose a line style, and it builds a sheet with trace lines and blank lines. Print it and practise with a pencil or pen.</p>
+<div class="calc">
+<label for="hw-set">Letter set</label>
+<select id="hw-set">
+<option value="lower">Lowercase letters (a to z)</option>
+<option value="upper">Uppercase letters (A to Z)</option>
+<option value="numbers">Numbers (0 to 9)</option>
+<option value="words">My own words</option>
+</select>
+<label for="hw-words">Your words (only used with My own words, up to 40 characters)</label>
+<input id="hw-words" type="text" maxlength="40" placeholder="e.g. cat dog sun">
+<label for="hw-lines">Line style</label>
+<select id="hw-lines">
+<option value="ruled">Ruled lines with midline</option>
+<option value="plain">Plain lines</option>
+<option value="wide">Wide lines</option>
+</select>
+<button id="hw-btn" type="button">Make my sheet</button>
+<p class="out" id="hw-out"></p>
+</div>
+<div class="sheet-wrap">
+<div class="sheet" id="hw-sheet"></div>
+<button class="no-print" id="hw-print" type="button" style="width:100%;padding:12px;border:0;border-radius:8px;background:#0d9488;color:#fff;font-size:16px;font-weight:700;cursor:pointer">Print this sheet</button>
+</div>
+<div class="warn">This page makes practice sheets for general handwriting practice. It does not replace teaching or assessment. If a child finds writing painful or very difficult, speak to their teacher for advice.</div>
+<h2>Letter-formation notes</h2>
+<p>Most letters start at the top and are formed with smooth strokes in one direction. Lowercase letters sit between the baseline and the midline, except for tall letters such as b, d, f, h, k, l and t, which reach up to the top line, and letters with tails such as g, j, p, q and y, which drop below the baseline. The dashed midline on the ruled sheet shows where the main body of each letter should sit.</p>
+<p>Trace the grey letters slowly before writing on the blank lines. Follow the shape of each letter rather than rushing to finish the row. Keep the pencil grip relaxed and the wrist resting on the page. If a letter feels awkward, slow down and trace it again rather than pressing harder.</p>
+<h2>How to use the sheet</h2>
+<p>Start with the trace lines. Go over each grey letter or word with a pencil, following the shape carefully. When the trace lines feel comfortable, move to the blank lines and write the same letters or words without the guide. Compare your free writing with the traced rows to see which letters need more work.</p>
+<p>For letter sets, each row practises one letter repeated across the line. For your own words, each word gets its own row. Print a fresh sheet whenever you want a clean start, and keep finished sheets to see how the writing improves over time.</p>
+<h2>Tips for regular practice</h2>
+<p>Short regular sessions work better than one long session. A few minutes of focused practice each day builds steadier handwriting than an hour once a week. Sit up straight with both feet on the floor and the paper slightly angled, and take a short break if the hand gets tired.</p>
+<p>Mix letter practice with word practice. Letters build the shapes, but words build the flow between letters. Once a letter feels easy on its own, practise it inside short words. Praise steady progress rather than speed, and keep the practice relaxed so it stays enjoyable.</p>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>What words should I practise?</h3>
+<p>Short everyday words work well, such as names, colours and simple nouns. Keep the list short so each word gets a full row of practice.</p>
+</div>
+<div class="faq">
+<h3>Which line style should I choose?</h3>
+<p>Ruled lines with a midline help with letter height. Plain lines suit confident writers. Wide lines suit younger children or anyone who writes large.</p>
+</div>
+<div class="faq">
+<h3>How do I print the sheet?</h3>
+<p>Press the Print button on the sheet. The sheet prints on its own, without the rest of the page.</p>
+</div>
+<div class="faq">
+<h3>Can I use my own words?</h3>
+<p>Yes. Choose My own words, type up to 40 characters, and press Make my sheet. Use letters, numbers and spaces only.</p>
+</div>
+<div class="faq">
+<h3>How often should I practise?</h3>
+<p>Short regular sessions work better than one long session. A few minutes of focused practice each day is a good habit to build.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/kids-chore-chart-generator/">Kids Chore Chart Generator</a> · <a href="https://noryvello.github.io/back-to-school-2027-checklist/">Back to School 2027 Checklist</a> · <a href="https://noryvello.github.io/goal-setting-worksheet/">Goal Setting Worksheet</a> · <a href="https://noryvello.github.io/reading-time-calculator/">Reading Time Calculator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function(){
+  var sets={
+    lower:"abcdefghijklmnopqrstuvwxyz".split(""),
+    upper:"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""),
+    numbers:"0123456789".split("")
+  };
+  function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+  document.getElementById("hw-btn").addEventListener("click",function(){
+    var set=document.getElementById("hw-set").value;
+    var words=document.getElementById("hw-words").value.trim();
+    var style=document.getElementById("hw-lines").value;
+    var out=document.getElementById("hw-out"), sheet=document.getElementById("hw-sheet");
+    var items=[];
+    if(set==="words"){
+      if(words===""){out.textContent="Please enter some words first, or pick a letter set.";return;}
+      if(words.length>40){out.textContent="Please keep your words to 40 characters or fewer.";return;}
+      if(!/^[A-Za-z0-9 '\-]+$/.test(words)){out.textContent="Please use letters, numbers and spaces only.";return;}
+      items=words.split(/\s+/);
+    }else{
+      items=sets[set];
+    }
+    var mid=(style==="ruled")?" mid":"";
+    var wide=(style==="wide")?" wide":"";
+    sheet.className="sheet"+wide;
+    var html="";
+    for(var i=0;i<items.length;i++){
+      var rep="";
+      for(var r=0;r<6;r++){rep+=esc(items[i])+" ";}
+      html+='<div class="line'+mid+'"><div class="trace">'+rep.trim()+'</div></div>';
+    }
+    for(var b=0;b<6;b++){html+='<div class="line'+mid+'"></div>';}
+    sheet.innerHTML=html;
+    out.textContent="Your practice sheet is ready below. Press Print this sheet to print it.";
+  });
+  document.getElementById("hw-print").addEventListener("click",function(){
+    if(document.getElementById("hw-sheet").innerHTML===""){
+      document.getElementById("hw-out").textContent="Make a sheet first, then press Print.";
+      return;
+    }
+    window.print();
+  });
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

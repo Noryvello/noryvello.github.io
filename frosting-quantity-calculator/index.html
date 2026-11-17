@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frosting Quantity Calculator | Noryvello</title>
+<meta name="description" content="Enter your cake size, layers and frosting thickness to find out how much frosting you need, in weight and volume, with the working shown step by step.">
+<link rel="canonical" href="https://noryvello.github.io/frosting-quantity-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Frosting Quantity Calculator">
+<meta property="og:description" content="Work out how much frosting your cake needs, with the working shown.">
+<meta property="og:url" content="https://noryvello.github.io/frosting-quantity-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the calculator work out the amount?","acceptedAnswer":{"@type":"Answer","text":"It works out the area to be frosted, the top, the sides and the layers in between, then multiplies that area by the thickness you pick. The result is a volume, and the weight follows by treating buttercream as about 1 gram per millilitre."}},{"@type":"Question","name":"Why does the calculator assume each layer is 5 cm tall?","acceptedAnswer":{"@type":"Answer","text":"A standard baked cake layer is about 5 cm tall, so the calculator uses that to work out the side area. If your layers are much taller or shorter, the result will be a little off, so make a small extra batch to be safe."}},{"@type":"Question","name":"Should I make extra frosting?","acceptedAnswer":{"@type":"Answer","text":"Yes, a little extra is wise. Piping, swirls and a crumb coat all use more frosting than a flat spread, and it is much easier to have a little left over than to run out halfway through decorating."}},{"@type":"Question","name":"Does this work for ganache or cream cheese frosting?","acceptedAnswer":{"@type":"Answer","text":"The volume is about the same for any spreadable frosting, because the amount depends on the cake area and the thickness. The weight is an estimate based on buttercream, so very light frostings may weigh a little less."}},{"@type":"Question","name":"What is a crumb coat?","acceptedAnswer":{"@type":"Answer","text":"A crumb coat is a very thin first layer of frosting that traps loose crumbs so they do not show in the final coat. Chill the cake after the crumb coat, then spread the final layer over it."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Frosting Quantity Calculator</h1>
+<p class="answer">Enter your cake size, the number of layers and how thick you want the frosting, and this calculator tells you how much frosting you need, in grams and in millilitres. It shows every step of the working, so you can see exactly how the answer was reached.</p>
+<div class="calc">
+<label for="shape">Cake shape</label>
+<select id="shape">
+<option value="round">Round cake</option>
+<option value="square">Square or rectangular cake</option>
+</select>
+<label for="size1">Diameter (round) or length (square) in cm</label>
+<input id="size1" type="number" min="1" step="0.5" placeholder="For example 20">
+<label for="size2">Width in cm (square or rectangular cakes only)</label>
+<input id="size2" type="number" min="1" step="0.5" placeholder="Leave blank for a round cake">
+<label for="layers">Number of layers</label>
+<input id="layers" type="number" min="1" max="10" step="1" placeholder="For example 2">
+<label for="thickness">Frosting thickness</label>
+<select id="thickness">
+<option value="2">Thin coat, about 2 mm</option>
+<option value="4" selected>Medium coat, about 4 mm</option>
+<option value="6">Thick coat, about 6 mm</option>
+</select>
+<button id="calc-btn" type="button" style="margin-top:14px;padding:11px 18px;font-size:16px;font-weight:700;color:#fff;background:#4338ca;border:none;border-radius:8px;cursor:pointer">Calculate frosting</button>
+<div id="result" class="out" role="status"></div>
+<div id="steps" class="steps"></div>
+</div>
+<h2>How the calculator works</h2>
+<p>The calculator works out the total area of cake that needs frosting, then multiplies that area by the thickness you choose. The frosted area has three parts: the top of the cake, the sides all the way around, and the filling between the layers. A two-layer cake has one layer of filling; a three-layer cake has two. Each part is worked out from the size you enter, and the steps below the result show each number so you can check the maths.</p>
+<p>Two assumptions are built into the working, and both are shown in the steps. First, each baked layer is taken as about 5 cm tall, which is the usual height of a standard cake layer, and that height is used to work out the side area. Second, buttercream is treated as weighing about 1 gram per millilitre, which is close enough for planning. If your layers are much taller or shorter than 5 cm, or you are using a very light frosting, treat the result as a guide and make a little extra.</p>
+<h2>How to use the result</h2>
+<p>Make the frosting to the weight shown, or a little more if you plan to pipe swirls, roses or a thick border, because piping uses noticeably more frosting than a flat spread. If your recipe makes frosting by weight, use the gram figure directly. If it makes frosting by volume, use the millilitre figure. Either way, weigh or measure the finished frosting before you start, so you know whether you have enough before the cake is half covered.</p>
+<p>Work in two coats for the neatest finish. Spread a thin crumb coat first, just enough to trap the loose crumbs, then chill the cake for about 20 to 30 minutes until the coat is firm. Then spread the final coat over it. The crumb coat uses only a small amount of the total, and it is already included in the calculator result, because the thickness you pick covers the whole finish.</p>
+<h2>Choosing a thickness</h2>
+<p>A thin coat of about 2 mm suits a cake where the sponge is the star and the frosting is a light finish, such as a simple sponge or a cake with fresh fruit on top. A medium coat of about 4 mm is the usual choice for a celebration cake: thick enough to look smooth and generous, thin enough that the frosting does not overpower the cake. A thick coat of about 6 mm suits a rich cake that is meant to be very frosted, or a cake that will be piped with deep swirls.</p>
+<p>Thickness also affects how the cake eats. A very thick coat on a light sponge can feel heavy, while a thin coat on a dense fruit cake can look patchy. If you are unsure, choose the medium coat and adjust next time based on how this cake turns out. The calculator makes it easy to compare: run it once for each thickness and see how much the amount changes.</p>
+<div class="warn">This calculator gives an estimate for planning, not an exact amount. Layer height, frosting density and decorating style all change how much you actually use, so make a little extra and keep the cake chilled if the frosting contains cream cheese or fresh cream.</div>
+<h2>Honest limits</h2>
+<p>The calculator covers the top, sides and layers of a plain round or square cake. It does not allow for drip decoration down the sides, piped borders, flowers, or a thick layer of filling that is much thicker than the outside coat. If you plan heavy decoration, add roughly a quarter more frosting than the calculator suggests. It also assumes the cake is a regular shape with straight sides; a shaped or sculpted cake needs to be judged by eye.</p>
+<p>Different frostings also behave differently. Buttercream, ganache and cream cheese frosting all spread at about the same thickness, so the volume figure works for all of them. Whipped cream is much lighter and softer, so it needs a thicker layer to cover a cake well, and it is best added close to serving time. Whatever frosting you use, the working shown by the calculator gives you a solid starting point and a number you can adjust from experience.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How does the calculator work out the amount?</h3><p>It works out the area to be frosted, the top, the sides and the layers in between, then multiplies that area by the thickness you pick. The result is a volume, and the weight follows by treating buttercream as about 1 gram per millilitre.</p></div>
+<div class="faq"><h3>Why does the calculator assume each layer is 5 cm tall?</h3><p>A standard baked cake layer is about 5 cm tall, so the calculator uses that to work out the side area. If your layers are much taller or shorter, the result will be a little off, so make a small extra batch to be safe.</p></div>
+<div class="faq"><h3>Should I make extra frosting?</h3><p>Yes, a little extra is wise. Piping, swirls and a crumb coat all use more frosting than a flat spread, and it is much easier to have a little left over than to run out halfway through decorating.</p></div>
+<div class="faq"><h3>Does this work for ganache or cream cheese frosting?</h3><p>The volume is about the same for any spreadable frosting, because the amount depends on the cake area and the thickness. The weight is an estimate based on buttercream, so very light frostings may weigh a little less.</p></div>
+<div class="faq"><h3>What is a crumb coat?</h3><p>A crumb coat is a very thin first layer of frosting that traps loose crumbs so they do not show in the final coat. Chill the cake after the crumb coat, then spread the final layer over it.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/cake-servings-calculator/">Cake Servings Calculator</a> · <a href="https://noryvello.github.io/baking-pan-substitution-guide/">Baking Pan Substitution Guide</a> · <a href="https://noryvello.github.io/pie-crust-guide/">Pie Crust Guide</a> · <a href="https://noryvello.github.io/cake-baking-troubleshooting-finder/">Cake Baking Troubleshooting Finder</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function () {
+  var shapeSel = document.getElementById("shape");
+  var size1 = document.getElementById("size1");
+  var size2 = document.getElementById("size2");
+  var layersInput = document.getElementById("layers");
+  var thicknessSel = document.getElementById("thickness");
+  var button = document.getElementById("calc-btn");
+  var result = document.getElementById("result");
+  var steps = document.getElementById("steps");
+  var LAYER_HEIGHT = 5;
+  function round1(n) { return Math.round(n * 10) / 10; }
+  function calc() {
+    var shape = shapeSel.value;
+    var a = parseFloat(size1.value);
+    var b = parseFloat(size2.value);
+    var layers = parseInt(layersInput.value, 10);
+    var thickMm = parseFloat(thicknessSel.value);
+    if (!a || a <= 0) {
+      result.textContent = "Please enter the cake diameter or length in cm.";
+      steps.textContent = "";
+      return;
+    }
+    if (shape === "square" && (!b || b <= 0)) {
+      result.textContent = "Please enter the cake width in cm as well.";
+      steps.textContent = "";
+      return;
+    }
+    if (!layers || layers < 1) {
+      result.textContent = "Please enter the number of layers (at least 1).";
+      steps.textContent = "";
+      return;
+    }
+    var topArea, sideArea, height;
+    height = layers * LAYER_HEIGHT;
+    if (shape === "round") {
+      topArea = Math.PI * (a / 2) * (a / 2);
+      sideArea = Math.PI * a * height;
+    } else {
+      topArea = a * b;
+      sideArea = 2 * (a + b) * height;
+    }
+    var betweenArea = topArea * (layers - 1);
+    var totalArea = topArea + sideArea + betweenArea;
+    var volumeMl = totalArea * (thickMm / 10);
+    var weightG = volumeMl * 1;
+    result.textContent = "You need about " + Math.round(weightG) + " g of frosting (" + Math.round(volumeMl) + " ml).";
+    var lines = [];
+    lines.push("Top area: " + round1(topArea) + " square cm.");
+    lines.push("Total height: " + layers + " layers x " + LAYER_HEIGHT + " cm = " + height + " cm.");
+    lines.push("Side area: " + round1(sideArea) + " square cm.");
+    lines.push("Between layers: " + round1(betweenArea) + " square cm.");
+    lines.push("Total frosted area: " + round1(totalArea) + " square cm.");
+    lines.push("Volume: " + round1(totalArea) + " x " + (thickMm / 10) + " cm thickness = " + round1(volumeMl) + " ml.");
+    lines.push("Weight: about " + Math.round(weightG) + " g, at about 1 g per ml.");
+    steps.textContent = lines.join("\n");
+  }
+  button.addEventListener("click", calc);
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

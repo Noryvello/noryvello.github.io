@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Packed Lunch vs Cafeteria Cost | Noryvello</title>
+<meta name="description" content="Compare a packed lunch with cafeteria lunch over a term or a year. Enter your days per week, weeks and the cost per lunch for each — no prices assumed.">
+<link rel="canonical" href="https://noryvello.github.io/packed-lunch-vs-cafeteria-cost/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Packed Lunch vs Cafeteria Cost">
+<meta property="og:description" content="Compare a packed lunch with cafeteria lunch over a term or a year using your own days, weeks and lunch costs.">
+<meta property="og:url" content="https://noryvello.github.io/packed-lunch-vs-cafeteria-cost/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:12px;margin-top:14px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What counts as the cost of a packed lunch?","acceptedAnswer":{"@type":"Answer","text":"The ingredients for one lunch on average. A typical week's lunch shopping divided by the lunches it makes is a good way to work it out."}},{"@type":"Question","name":"What if the cafeteria has a meal plan or discount?","acceptedAnswer":{"@type":"Answer","text":"Enter the price you actually pay per lunch after any discount, so the comparison uses your real cost."}},{"@type":"Question","name":"Should I count school holidays or days off?","acceptedAnswer":{"@type":"Answer","text":"No. Enter only the weeks you actually need lunch, so the total matches your real term or year."}},{"@type":"Question","name":"Does a packed lunch always work out cheaper?","acceptedAnswer":{"@type":"Answer","text":"It depends on your numbers. A packed lunch made from expensive ingredients can cost more than a cheap cafeteria lunch. Enter honest averages for both."}},{"@type":"Question","name":"Can I use this for work lunches too?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter your working days per week and the weeks in your working year, and the comparison works the same way."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Packed Lunch vs Cafeteria Cost</h1>
+<p class="answer">A packed lunch and a cafeteria lunch can add up to very different totals over a term or a year. Enter how many days a week you need lunch, how many weeks are in your term or year, and the cost per lunch for each, and this page shows the total for each.</p>
+<div class="calc">
+<label for="days">Days per week you need lunch</label>
+<input id="days" type="number" min="0" step="any" placeholder="For example 5">
+<label for="weeks">Weeks in your term or year</label>
+<input id="weeks" type="number" min="0" step="any" placeholder="For example 38">
+<label for="packed">Cost of one packed lunch</label>
+<input id="packed" type="number" min="0" step="any" placeholder="For example 3">
+<label for="cafe">Cost of one cafeteria lunch</label>
+<input id="cafe" type="number" min="0" step="any" placeholder="For example 7">
+<button id="go" type="button">Compare lunch costs</button>
+<div class="out" id="out"></div>
+<div class="steps" id="steps"></div>
+</div>
+<div class="warn">This compares the lunch costs you enter only. It leaves out the time spent making a packed lunch, food waste, snacks and drinks bought separately, and any discount or meal plan at the cafeteria.</div>
+<h2>How it works</h2>
+<p>The calculator first works out how many lunches you need: the days per week times the weeks in your term or year. Then it multiplies that number of lunches by the cost of one packed lunch, and separately by the cost of one cafeteria lunch. The two totals are the cost of the whole term or year each way, and the difference is what you save or spend by choosing one over the other.</p>
+<p>Enter only the weeks you actually need lunch. School holidays, days off and weeks away should not be counted, or the total will be higher than your real spending.</p>
+<h2>How to use the result</h2>
+<p>Look at the weekly figures first — they show the gap for one ordinary week. Then look at the total for the term or year, which shows what that weekly gap adds up to. A small gap per lunch can become a large gap over a full term of lunches.</p>
+<p>If you pack lunch on some days and use the cafeteria on others, the calculator still helps: it shows what the whole term would cost if every lunch were packed, and what it would cost if every lunch came from the cafeteria. Your real spending sits somewhere between the two.</p>
+<h2>What this comparison leaves out</h2>
+<p>Money is only one part of the choice. The calculator does not count the time spent making a packed lunch, food that gets bought and thrown away, or snacks and drinks bought separately from lunch. If you usually buy a drink with your cafeteria lunch, include it in the cafeteria lunch cost.</p>
+<p>It also does not count any meal plan or discount at the cafeteria unless you include it in the price you enter. Enter the price you actually pay per lunch after any discount, so the comparison uses your real cost.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What counts as the cost of a packed lunch?</h3><p>The ingredients for one lunch on average. A typical week's lunch shopping divided by the lunches it makes is a good way to work it out.</p></div>
+<div class="faq"><h3>What if the cafeteria has a meal plan or discount?</h3><p>Enter the price you actually pay per lunch after any discount, so the comparison uses your real cost.</p></div>
+<div class="faq"><h3>Should I count school holidays or days off?</h3><p>No. Enter only the weeks you actually need lunch, so the total matches your real term or year.</p></div>
+<div class="faq"><h3>Does a packed lunch always work out cheaper?</h3><p>It depends on your numbers. A packed lunch made from expensive ingredients can cost more than a cheap cafeteria lunch. Enter honest averages for both.</p></div>
+<div class="faq"><h3>Can I use this for work lunches too?</h3><p>Yes. Enter your working days per week and the weeks in your working year, and the comparison works the same way.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/lunchbox-idea-generator/">Lunchbox Idea Generator</a> · <a href="https://noryvello.github.io/cook-at-home-vs-takeaway-cost/">Cook at Home vs Takeaway Cost</a> · <a href="https://noryvello.github.io/coffee-at-home-vs-cafe-cost/">Coffee at Home vs Cafe Cost</a> · <a href="https://noryvello.github.io/grocery-budget-planner/">Grocery Budget Planner</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function num(id){return parseFloat(document.getElementById(id).value);}
+function fmt(n){return n.toFixed(2);}
+document.getElementById("go").addEventListener("click",function(){
+var out=document.getElementById("out");var steps=document.getElementById("steps");
+var days=num("days"),weeks=num("weeks"),packed=num("packed"),cafe=num("cafe");
+if([days,weeks,packed,cafe].some(function(x){return isNaN(x)||x<=0;})){
+out.textContent="Please fill in every box with a number above zero, then try again.";
+steps.textContent="";return;}
+var lunches=days*weeks;
+var ptot=lunches*packed,ctot=lunches*cafe;
+var diff=Math.abs(ptot-ctot);
+var verdict=ptot<ctot?"A packed lunch costs less over the term or year by "+fmt(diff)+".":(ctot<ptot?"The cafeteria costs less over the term or year by "+fmt(diff)+".":"Both cost the same over the term or year.");
+out.textContent="Packed lunch: "+fmt(ptot)+" for "+lunches+" lunches. Cafeteria: "+fmt(ctot)+" for "+lunches+" lunches. "+verdict;
+steps.textContent="Lunches: "+days+" days a week x "+weeks+" weeks = "+lunches+" lunches.\nPacked lunch: "+lunches+" x "+fmt(packed)+" = "+fmt(ptot)+"; a week: "+days+" x "+fmt(packed)+" = "+fmt(days*packed)+".\nCafeteria: "+lunches+" x "+fmt(cafe)+" = "+fmt(ctot)+"; a week: "+days+" x "+fmt(cafe)+" = "+fmt(days*cafe)+".\nDifference: "+fmt(diff)+".";
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brick Calculator | Noryvello</title>
+<meta name="description" content="Work out how many bricks a wall needs. Enter the wall size and openings, pick a brick size, and get the brick count with 10 percent waste and a mortar estimate.">
+<link rel="canonical" href="https://noryvello.github.io/brick-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Brick Calculator">
+<meta property="og:description" content="Count the bricks for a wall, with waste allowance and a mortar volume estimate.">
+<meta property="og:url" content="https://noryvello.github.io/brick-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:12px;margin-top:14px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.calc button:hover{background:#3730a3}</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why is a 10 percent waste allowance included?", "acceptedAnswer": {"@type": "Answer", "text": "Cutting bricks to fit, breakages and the odd faulty brick all use up spares. Ten percent is the allowance this calculator uses, and it is shown in the working."}}, {"@type": "Question", "name": "What are openings?", "acceptedAnswer": {"@type": "Answer", "text": "Openings are the parts of a wall that are not brick, such as doors and windows. Enter their total area so the calculator does not count bricks for those spaces."}}, {"@type": "Question", "name": "What does single-skin mean?", "acceptedAnswer": {"@type": "Answer", "text": "A single-skin wall is one brick thick. A double-skin wall has two layers of bricks and needs about twice as many, plus wall ties, so this calculator does not cover it."}}, {"@type": "Question", "name": "How do I measure the openings area?", "acceptedAnswer": {"@type": "Answer", "text": "Measure each door or window opening in metres, multiply its width by its height, and add the areas together. Enter that total as the openings area."}}, {"@type": "Question", "name": "Why check the brick size?", "acceptedAnswer": {"@type": "Answer", "text": "Brick sizes vary by country and maker. The picker lists common sizes, so measure your bricks or check the size on the pack and pick the closest option."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Brick Calculator</h1>
+<p class="answer">Enter your wall measurements and pick a brick size, and this calculator works out how many bricks you need with a 10 percent waste allowance, plus an estimate of the mortar volume. The working is shown so you can check every step.</p>
+<div class="calc">
+<label for="length">Wall length (m)</label>
+<input id="length" type="number" min="0" step="any" placeholder="e.g. 5">
+<label for="height">Wall height (m)</label>
+<input id="height" type="number" min="0" step="any" placeholder="e.g. 2.4">
+<label for="openings">Openings area - doors and windows (sq m)</label>
+<input id="openings" type="number" min="0" step="any" placeholder="0 if none" value="0">
+<label for="brick">Brick size</label>
+<select id="brick"><option value="215|102.5|65">Standard brick - 215 x 102.5 x 65 mm</option><option value="194|92|57">Modular brick - 194 x 92 x 57 mm</option><option value="215|102.5|102.5">Large brick - 215 x 102.5 x 102.5 mm</option></select>
+<button id="calc-btn" type="button">Calculate</button>
+<p class="out" id="result"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">This calculator estimates for a single-skin wall with 10 mm mortar joints. Double-skin walls, piers and patterned brickwork need more bricks, and the mortar figure is an estimate only. Check the actual size of your bricks before ordering, and follow local building practice.</div>
+<h2>How to use this calculator</h2>
+<p>Measure the wall length and height in metres. If the wall has doors or windows, work out their total area in square metres and enter it as the openings area, so those bricks are not counted. Pick the brick size closest to the bricks you plan to buy. The picker lists common sizes with their length, width and height in millimetres. Press Calculate to see the brick count and the mortar estimate, with the working shown underneath.</p>
+<h2>How the calculation works</h2>
+<p>The wall area is the length multiplied by the height, minus the openings area. Each brick covers its face area plus a 10 mm mortar joint on each side, so the bricks per square metre are one divided by that face area. The total is the wall area multiplied by the bricks per square metre, plus 10 percent for waste. The mortar volume is the wall volume minus the volume of the bricks themselves, which leaves the volume taken up by the joints.</p>
+<h2>How to use the result</h2>
+<p>Order the full brick count shown, including the waste allowance, because cutting and breakages use up spare bricks. Buy all your bricks from one batch where you can, so the colour matches across the wall. Use the mortar figure as a rough guide for ordering, and check it against your supplier's advice for the mix you plan to use. If the wall has piers, corners or a patterned bond, allow extra bricks beyond the figure shown.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Why is a 10 percent waste allowance included?</h3><p>Cutting bricks to fit, breakages and the odd faulty brick all use up spares. Ten percent is the allowance this calculator uses, and it is shown in the working.</p></div>
+<div class="faq"><h3>What are openings?</h3><p>Openings are the parts of a wall that are not brick, such as doors and windows. Enter their total area so the calculator does not count bricks for those spaces.</p></div>
+<div class="faq"><h3>What does single-skin mean?</h3><p>A single-skin wall is one brick thick. A double-skin wall has two layers of bricks and needs about twice as many, plus wall ties, so this calculator does not cover it.</p></div>
+<div class="faq"><h3>How do I measure the openings area?</h3><p>Measure each door or window opening in metres, multiply its width by its height, and add the areas together. Enter that total as the openings area.</p></div>
+<div class="faq"><h3>Why check the brick size?</h3><p>Brick sizes vary by country and maker. The picker lists common sizes, so measure your bricks or check the size on the pack and pick the closest option.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/concrete-block-calculator/">Concrete Block Calculator</a> · <a href="https://noryvello.github.io/plaster-mortar-calculator/">Plaster and Mortar Calculator</a> · <a href="https://noryvello.github.io/concrete-mix-calculator/">Concrete Mix Calculator</a> · <a href="https://noryvello.github.io/retaining-wall-block-calculator/">Retaining Wall Block Calculator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n){return (Math.round(n*10000)/10000).toString();}
+function ceil(n){return Math.ceil(n - 1e-9);}
+function num(id){var v=parseFloat(document.getElementById(id).value);return isFinite(v)?v:NaN;}
+function show(msg,steps){document.getElementById('result').textContent=msg;document.getElementById('steps').textContent=steps||'';}
+function pl(n,s){return n===1?'':s;}
+document.getElementById('calc-btn').addEventListener('click', function () {
+  var L = num('length'), H = num('height'), op = num('openings');
+  if (!isFinite(L) || L <= 0 || !isFinite(H) || H <= 0) {
+    show('Please enter the wall length and height as numbers above zero.');
+    return;
+  }
+  if (!isFinite(op) || op < 0) {
+    show('Please enter the openings area as zero or more.');
+    return;
+  }
+  var wallArea = L * H - op;
+  if (wallArea <= 0) {
+    show('Please check your numbers: the openings area must be smaller than the wall area.');
+    return;
+  }
+  var parts = document.getElementById('brick').value.split('|');
+  var bl = parseFloat(parts[0]) / 1000, bw = parseFloat(parts[1]) / 1000, bh = parseFloat(parts[2]) / 1000;
+  var face = (bl + 0.01) * (bh + 0.01);
+  var perSqM = 1 / face;
+  var exact = wallArea * perSqM;
+  var bricks = ceil(exact * 1.1);
+  var brickVol = bl * bw * bh;
+  var mortarVol = wallArea * bw - exact * brickVol;
+  var litres = Math.round(mortarVol * 1000);
+  show('You need ' + bricks + ' brick' + pl(bricks, 's') + ', and about ' + fmt(mortarVol) + ' cubic metres (' + litres + ' litres) of mortar.',
+    'Wall area: ' + fmt(L) + ' x ' + fmt(H) + ' - ' + fmt(op) + ' = ' + fmt(wallArea) + ' sq m.\nBricks per sq m: 1 / (' + fmt(bl + 0.01) + ' x ' + fmt(bh + 0.01) + ') = ' + fmt(perSqM) + '.\nBricks: ' + fmt(wallArea) + ' x ' + fmt(perSqM) + ' x 1.1 = ' + fmt(exact * 1.1) + ', rounded up to ' + bricks + '.\nMortar: ' + fmt(wallArea) + ' x ' + fmt(bw) + ' - ' + fmt(exact) + ' x ' + fmt(brickVol) + ' = ' + fmt(mortarVol) + ' cubic metres.');
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

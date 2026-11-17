@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spice Blend Builder | Noryvello</title>
+<meta name="description" content="Pick a spice blend and batch size to get ingredient amounts by parts, with toasting and storage notes. Eight classic blends, from garam masala to za'atar.">
+<link rel="canonical" href="https://noryvello.github.io/spice-blend-builder/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spice Blend Builder">
+<meta property="og:description" content="Build eight classic spice blends in any batch size, by parts.">
+<meta property="og:url" content="https://noryvello.github.io/spice-blend-builder/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does by parts mean in a spice blend?","acceptedAnswer":{"@type":"Answer","text":"Parts are a ratio, not a fixed weight. If a blend says 4 parts coriander and 2 parts cumin, you use twice as much coriander as cumin, whatever size your batch is. The builder turns the parts into grams for the batch size you pick."}},{"@type":"Question","name":"Should I toast whole spices before grinding?","acceptedAnswer":{"@type":"Answer","text":"Toasting whole spices in a dry pan for a few minutes until fragrant brings out much more flavour. Let them cool before grinding, and never toast ground spices, because they burn very quickly."}},{"@type":"Question","name":"How long does a homemade spice blend keep?","acceptedAnswer":{"@type":"Answer","text":"A ground blend keeps its best flavour for about 3 to 6 months in a sealed jar away from heat and light. After that it is still safe to use, but the flavour fades, so make small batches often rather than one big batch."}},{"@type":"Question","name":"Can I change a blend to suit my taste?","acceptedAnswer":{"@type":"Answer","text":"Yes. The parts are a starting point, not a rule. If you like heat, add more chilli or pepper; if you want it milder, cut the hot spices and add more of the warm ones such as coriander or paprika."}},{"@type":"Question","name":"Do I need a spice grinder?","acceptedAnswer":{"@type":"Answer","text":"A grinder gives the finest result, but a mortar and pestle works well for small batches. If you only have ground spices, skip the toasting step and mix them straight from the jar."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Spice Blend Builder</h1>
+<p class="answer">Pick a blend and a batch size and this builder gives you the ingredient amounts by parts, turned into grams for your batch. Eight classic blends are covered, with toasting and storage notes for each one.</p>
+<div class="calc">
+<label for="blend">Which blend do you want to make?</label>
+<select id="blend">
+<option value="">Choose a blend</option>
+<option value="garam">Garam masala</option>
+<option value="curry">Curry powder</option>
+<option value="taco">Taco seasoning</option>
+<option value="italian">Italian seasoning</option>
+<option value="cajun">Cajun seasoning</option>
+<option value="zaatar">Za'atar</option>
+<option value="pumpkin">Pumpkin spice</option>
+<option value="herbes">Herbes de Provence</option>
+</select>
+<label for="batch">Batch size</label>
+<select id="batch">
+<option value="30">Small batch, about 30 g</option>
+<option value="60" selected>Medium batch, about 60 g</option>
+<option value="120">Large batch, about 120 g</option>
+</select>
+<button id="build-btn" type="button" style="margin-top:14px;padding:11px 18px;font-size:16px;font-weight:700;color:#fff;background:#4338ca;border:none;border-radius:8px;cursor:pointer">Build my blend</button>
+<div id="result" class="steps" role="status"></div>
+</div>
+<h2>How to use this builder</h2>
+<p>Choose a blend and a batch size, then press the button. You will get each ingredient in parts and in grams for your batch, plus toasting and storage notes. Parts are a ratio: if a blend says 4 parts coriander and 2 parts cumin, you use twice as much coriander as cumin. The builder does the maths, so you just weigh and mix.</p>
+<p>If you are making a blend for the first time, start with the small batch. Spice blends lose flavour over time, so a small fresh batch always tastes better than a large stale one. Once you know you like a blend, make the medium or large batch and store it in a sealed jar.</p>
+<h2>Toasting whole spices</h2>
+<p>Toasting whole spices in a dry pan over medium heat for a few minutes, until they smell fragrant, brings out far more flavour than using them raw. Shake the pan often and take the spices off the heat as soon as they darken slightly or start to pop. Let them cool completely before grinding, because grinding hot spices turns them into a paste instead of a powder.</p>
+<p>Only toast whole spices. Ground spices burn in seconds in a hot pan, so if you are working from ground spices, skip the toasting step and mix them straight from the jar. Herbs such as oregano, thyme and rosemary should never be toasted either; add them after grinding, when the ground spices have cooled.</p>
+<h2>Grinding and mixing</h2>
+<p>A spice grinder or a clean coffee grinder gives the finest, most even powder. Grind in short bursts and shake the grinder between bursts so the spices do not heat up. A mortar and pestle works well for small batches and gives a slightly coarser blend, which suits rustic blends such as za'atar and herbes de Provence.</p>
+<p>Mix the ground spices well so every spoonful has the same balance, and taste a pinch before you store the blend. If you want more heat, add a little more chilli or pepper; if you want it milder, add more of the warm spices such as coriander or paprika. The parts in this builder are a starting point, and adjusting them to your taste is part of the fun.</p>
+<div class="warn">This page is general cooking guidance. Take care with hot pans when toasting spices, and keep ground spices away from steam, because moisture makes them clump. If a spice smells dusty or has no aroma at all, it is past its best and worth replacing.</div>
+<h2>Storing your blends</h2>
+<p>Store spice blends in a sealed jar in a cool, dark cupboard, away from the stove and away from sunlight. Heat and light fade flavour fast, which is why the cupboard above the stove is the worst place for spices. Label each jar with the blend name and the date you made it, so you know when it is time for a fresh batch.</p>
+<p>A ground blend keeps its best flavour for about 3 to 6 months. After that it is still safe to use, but the flavour weakens and the blend tastes flat. Whole spices keep much longer, so if you buy whole spices and grind them as needed, your blends will always taste fresh. Make small batches often rather than one big batch that sits for a year.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What does by parts mean in a spice blend?</h3><p>Parts are a ratio, not a fixed weight. If a blend says 4 parts coriander and 2 parts cumin, you use twice as much coriander as cumin, whatever size your batch is. The builder turns the parts into grams for the batch size you pick.</p></div>
+<div class="faq"><h3>Should I toast whole spices before grinding?</h3><p>Toasting whole spices in a dry pan for a few minutes until fragrant brings out much more flavour. Let them cool before grinding, and never toast ground spices, because they burn very quickly.</p></div>
+<div class="faq"><h3>How long does a homemade spice blend keep?</h3><p>A ground blend keeps its best flavour for about 3 to 6 months in a sealed jar away from heat and light. After that it is still safe to use, but the flavour fades, so make small batches often rather than one big batch.</p></div>
+<div class="faq"><h3>Can I change a blend to suit my taste?</h3><p>Yes. The parts are a starting point, not a rule. If you like heat, add more chilli or pepper; if you want it milder, cut the hot spices and add more of the warm ones such as coriander or paprika.</p></div>
+<div class="faq"><h3>Do I need a spice grinder?</h3><p>A grinder gives the finest result, but a mortar and pestle works well for small batches. If you only have ground spices, skip the toasting step and mix them straight from the jar.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/marinade-builder/">Marinade Builder</a> · <a href="https://noryvello.github.io/salad-dressing-ratio-guide/">Salad Dressing Ratio Guide</a> · <a href="https://noryvello.github.io/herb-substitution-finder/">Herb Substitution Finder</a> · <a href="https://noryvello.github.io/bbq-meat-quantity-calculator/">BBQ Meat Quantity Calculator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function () {
+  var BLENDS = {
+    garam: {name: "Garam masala", parts: [["Coriander", 4], ["Cumin", 2], ["Cardamom", 1], ["Black pepper", 1], ["Cinnamon", 1], ["Cloves", 1]], note: "Toast the whole spices first, then grind and mix. Warm and aromatic, for curries, stews and roasted vegetables."},
+    curry: {name: "Curry powder", parts: [["Coriander", 4], ["Turmeric", 2], ["Cumin", 2], ["Fenugreek", 1], ["Chilli powder", 1], ["Black pepper", 1]], note: "Toast the whole spices first, then grind and mix. A general-purpose curry powder for everyday cooking."},
+    taco: {name: "Taco seasoning", parts: [["Chilli powder", 3], ["Cumin", 2], ["Paprika", 2], ["Garlic powder", 1], ["Onion powder", 1], ["Oregano", 1], ["Salt", 1]], note: "No toasting needed; mix the ground spices well. Use about 2 tablespoons per 500 g of filling."},
+    italian: {name: "Italian seasoning", parts: [["Oregano", 3], ["Basil", 2], ["Thyme", 1], ["Rosemary", 1], ["Marjoram", 1], ["Garlic powder", 1]], note: "No toasting needed; crush the dried herbs lightly and mix. For pasta sauces, pizza, soups and roasted vegetables."},
+    cajun: {name: "Cajun seasoning", parts: [["Paprika", 3], ["Garlic powder", 2], ["Onion powder", 1], ["Cayenne pepper", 1], ["Oregano", 1], ["Thyme", 1], ["Black pepper", 1]], note: "No toasting needed; mix the ground spices well. Hot and smoky; reduce the cayenne for a milder blend."},
+    zaatar: {name: "Za'atar", parts: [["Dried thyme", 3], ["Toasted sesame seeds", 2], ["Sumac", 2], ["Salt", 1]], note: "Toast the sesame seeds lightly until golden, then cool and mix with the thyme, sumac and salt. Keep it coarse, not finely ground."},
+    pumpkin: {name: "Pumpkin spice", parts: [["Cinnamon", 4], ["Ginger", 2], ["Nutmeg", 1], ["Allspice", 1], ["Cloves", 1]], note: "No toasting needed; mix the ground spices well. For baking, porridge, pancakes and warm drinks."},
+    herbes: {name: "Herbes de Provence", parts: [["Thyme", 3], ["Rosemary", 2], ["Oregano", 2], ["Marjoram", 1], ["Lavender", 1]], note: "No toasting needed; crush the dried herbs lightly and mix. For roasted vegetables, grilled meat and stews."}
+  };
+  var blendSel = document.getElementById("blend");
+  var batchSel = document.getElementById("batch");
+  var button = document.getElementById("build-btn");
+  var result = document.getElementById("result");
+  function show() {
+    var key = blendSel.value;
+    if (!key || !BLENDS[key]) {
+      result.innerHTML = "<p>Please choose a blend first.</p>";
+      return;
+    }
+    var batch = parseFloat(batchSel.value);
+    var b = BLENDS[key];
+    var totalParts = 0;
+    for (var i = 0; i < b.parts.length; i++) { totalParts += b.parts[i][1]; }
+    var perPart = batch / totalParts;
+    var html = "<p><strong>" + b.name + "</strong>, about " + batch + " g.</p><ul>";
+    for (var j = 0; j < b.parts.length; j++) {
+      var grams = Math.round(b.parts[j][1] * perPart * 2) / 2;
+      html += "<li>" + b.parts[j][0] + ": " + b.parts[j][1] + " parts, about " + grams + " g</li>";
+    }
+    html += "</ul><p>" + b.note + "</p>";
+    html += "<p>Store in a sealed jar in a cool, dark cupboard. Best flavour for about 3 to 6 months.</p>";
+    result.innerHTML = html;
+  }
+  button.addEventListener("click", show);
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

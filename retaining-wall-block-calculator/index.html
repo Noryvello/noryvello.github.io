@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retaining Wall Block Calculator | Noryvello</title>
+<meta name="description" content="Work out how many blocks a retaining wall needs. Enter the wall length and height, pick a block size, and get the courses and total blocks with waste allowance.">
+<link rel="canonical" href="https://noryvello.github.io/retaining-wall-block-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Retaining Wall Block Calculator">
+<meta property="og:description" content="Count retaining wall blocks and courses from your wall size and block size.">
+<meta property="og:url" content="https://noryvello.github.io/retaining-wall-block-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:12px;margin-top:14px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.calc button:hover{background:#3730a3}</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a course?", "acceptedAnswer": {"@type": "Answer", "text": "A course is one horizontal row of blocks in a wall. The calculator divides the wall height by the block height to find how many rows the wall needs."}}, {"@type": "Question", "name": "Why are the courses rounded up?", "acceptedAnswer": {"@type": "Answer", "text": "A wall cannot have part of a row, so the calculator rounds up to the next whole course. The top course may need cutting down if the height does not divide evenly."}}, {"@type": "Question", "name": "Why is a waste allowance needed?", "acceptedAnswer": {"@type": "Answer", "text": "Cutting blocks for corners and ends, plus the odd broken block, uses up spares. The default allowance is 10 percent, and you can change it."}}, {"@type": "Question", "name": "Do tall retaining walls need professional design?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. This calculator only counts blocks. A tall wall, a wall holding back a slope, or a wall near a building should be designed by a professional, so get advice before building."}}, {"@type": "Question", "name": "What else does a retaining wall need?", "acceptedAnswer": {"@type": "Answer", "text": "A level base, drainage behind the wall and proper backfill all matter, and this calculator does not cover them. Plan those parts separately, and follow local building practice."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Retaining Wall Block Calculator</h1>
+<p class="answer">Enter your wall measurements and pick a block size, and this calculator works out how many courses of blocks the wall needs and the total block count, including a waste allowance. The working is shown so you can check every step.</p>
+<div class="calc">
+<label for="length">Wall length (m)</label>
+<input id="length" type="number" min="0" step="any" placeholder="e.g. 8">
+<label for="height">Wall height (m)</label>
+<input id="height" type="number" min="0" step="any" placeholder="e.g. 0.9">
+<label for="block">Block face size (length x height)</label>
+<select id="block"><option value="300|150">Small block - 300 x 150 mm</option><option value="400|200" selected>Standard block - 400 x 200 mm</option><option value="600|200">Large block - 600 x 200 mm</option></select>
+<label for="waste">Waste allowance (%)</label>
+<input id="waste" type="number" min="0" step="any" value="10">
+<button id="calc-btn" type="button">Calculate</button>
+<p class="out" id="result"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">Tall walls that hold back soil need professional design. This calculator only counts blocks. A tall wall, a wall holding back a slope, or a wall near a building should be designed by a professional. Always check local building practice before building.</div>
+<h2>How to use this calculator</h2>
+<p>Measure the wall length and height in metres. The height is the finished height of the wall above the ground. Pick the block size closest to the blocks you plan to buy. The picker shows the face size of each block, which is the part you see in the finished wall. Set the waste allowance, then press Calculate to see the courses and the total block count.</p>
+<h2>How the calculation works</h2>
+<p>The number of courses is the wall height divided by the block height, rounded up to a whole course, because a part course still needs a full row of blocks. The blocks per course are the wall length divided by the block length, rounded up the same way. The total is the courses multiplied by the blocks per course, plus the waste allowance. The steps show each part so you can check the figure.</p>
+<h2>How to use the result</h2>
+<p>Order the full block count shown, including the waste allowance, because cutting blocks for corners and ends uses up spares. Check the block size on the pack before ordering, because sizes vary by maker. Remember that this calculator counts blocks only. Drainage, a level base and the wall's stability all need planning too, and tall walls need professional design.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is a course?</h3><p>A course is one horizontal row of blocks in a wall. The calculator divides the wall height by the block height to find how many rows the wall needs.</p></div>
+<div class="faq"><h3>Why are the courses rounded up?</h3><p>A wall cannot have part of a row, so the calculator rounds up to the next whole course. The top course may need cutting down if the height does not divide evenly.</p></div>
+<div class="faq"><h3>Why is a waste allowance needed?</h3><p>Cutting blocks for corners and ends, plus the odd broken block, uses up spares. The default allowance is 10 percent, and you can change it.</p></div>
+<div class="faq"><h3>Do tall retaining walls need professional design?</h3><p>Yes. This calculator only counts blocks. A tall wall, a wall holding back a slope, or a wall near a building should be designed by a professional, so get advice before building.</p></div>
+<div class="faq"><h3>What else does a retaining wall need?</h3><p>A level base, drainage behind the wall and proper backfill all matter, and this calculator does not cover them. Plan those parts separately, and follow local building practice.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/concrete-block-calculator/">Concrete Block Calculator</a> · <a href="https://noryvello.github.io/brick-calculator/">Brick Calculator</a> · <a href="https://noryvello.github.io/paver-calculator/">Paver Calculator</a> · <a href="https://noryvello.github.io/gravel-mulch-calculator/">Gravel and Mulch Calculator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n){return (Math.round(n*10000)/10000).toString();}
+function ceil(n){return Math.ceil(n - 1e-9);}
+function num(id){var v=parseFloat(document.getElementById(id).value);return isFinite(v)?v:NaN;}
+function show(msg,steps){document.getElementById('result').textContent=msg;document.getElementById('steps').textContent=steps||'';}
+function pl(n,s){return n===1?'':s;}
+document.getElementById('calc-btn').addEventListener('click', function () {
+  var L = num('length'), H = num('height'), waste = num('waste');
+  if (!isFinite(L) || L <= 0 || !isFinite(H) || H <= 0) {
+    show('Please enter the wall length and height as numbers above zero.');
+    return;
+  }
+  if (!isFinite(waste) || waste < 0) {
+    show('Please enter a waste allowance of zero or more.');
+    return;
+  }
+  var parts = document.getElementById('block').value.split('|');
+  var bl = parseFloat(parts[0]) / 1000, bh = parseFloat(parts[1]) / 1000;
+  var courses = ceil(H / bh);
+  var perCourse = ceil(L / bl);
+  var plain = courses * perCourse;
+  var total = ceil(plain * (1 + waste / 100));
+  show('You need ' + courses + ' course' + pl(courses, 's') + ' and ' + total + ' block' + pl(total, 's') + '.',
+    'Courses: ' + fmt(H) + ' / ' + fmt(bh) + ' = ' + fmt(H / bh) + ', rounded up to ' + courses + '.\nBlocks per course: ' + fmt(L) + ' / ' + fmt(bl) + ' = ' + fmt(L / bl) + ', rounded up to ' + perCourse + '.\nBlocks: ' + courses + ' x ' + perCourse + ' = ' + plain + '.\nWith ' + fmt(waste) + '% waste: ' + plain + ' x ' + fmt(1 + waste / 100) + ' = ' + fmt(plain * (1 + waste / 100)) + ', rounded up to ' + total + ' blocks.');
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

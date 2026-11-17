@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Potato Cooking Guide | Noryvello</title>
+<meta name="description" content="Pick your potato type and cooking method to get prep steps, a time range and a doneness test. Boiling, roasting, mashing, baking and frying covered.">
+<link rel="canonical" href="https://noryvello.github.io/potato-cooking-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Potato Cooking Guide">
+<meta property="og:description" content="Prep steps, time ranges and doneness tests for every potato and method.">
+<meta property="og:url" content="https://noryvello.github.io/potato-cooking-guide/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should potatoes go into cold or boiling water?","acceptedAnswer":{"@type":"Answer","text":"Start potatoes in cold water and bring the pot to a boil. Starting in boiling water cooks the outside before the inside, which can leave a hard centre under a soft outside."}},{"@type":"Question","name":"What is the difference between floury and waxy potatoes?","acceptedAnswer":{"@type":"Answer","text":"Floury potatoes are dry and starchy, so they break up when cooked and suit mashing, baking and roasting. Waxy potatoes hold their shape, so they suit boiling, salads and gratins."}},{"@type":"Question","name":"Why do my roast potatoes go soggy?","acceptedAnswer":{"@type":"Answer","text":"The usual reasons are a tray that is too crowded, an oven that is not hot enough, or potatoes that went into cold oil. Spread them in one layer, preheat the tray with the oil, and do not cover them."}},{"@type":"Question","name":"How do I know when a baked potato is done?","acceptedAnswer":{"@type":"Answer","text":"Squeeze it gently with an oven glove; it should give easily and feel soft all the way through. A skewer or knife should slide into the centre with no resistance."}},{"@type":"Question","name":"Can I cook potatoes ahead of time?","acceptedAnswer":{"@type":"Answer","text":"Yes. Boiled and mashed potatoes reheat well, and roast potatoes can be parboiled ahead and finished in a hot oven. Cool cooked potatoes quickly and keep them in the fridge if you are not serving them straight away."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Potato Cooking Guide</h1>
+<p class="answer">Pick your potato type and cooking method and this guide gives you the prep steps, a time range and a simple doneness test. Boiling, roasting, mashing, baking and frying are all covered, for floury, waxy, new and sweet potatoes.</p>
+<div class="calc">
+<label for="type">Which type of potato?</label>
+<select id="type">
+<option value="">Choose a potato type</option>
+<option value="floury">Floury potato</option>
+<option value="waxy">Waxy potato</option>
+<option value="new">New potato</option>
+<option value="sweet">Sweet potato</option>
+</select>
+<label for="method">Which cooking method?</label>
+<select id="method">
+<option value="">Choose a method</option>
+<option value="boil">Boil</option>
+<option value="roast">Roast</option>
+<option value="mash">Mash</option>
+<option value="bake">Bake whole</option>
+<option value="fry">Fry</option>
+</select>
+<button id="show-btn" type="button" style="margin-top:14px;padding:11px 18px;font-size:16px;font-weight:700;color:#fff;background:#4338ca;border:none;border-radius:8px;cursor:pointer">Show cooking guide</button>
+<div id="result" class="steps" role="status"></div>
+</div>
+<h2>How to use this guide</h2>
+<p>Choose your potato type and your method, then press the button. You will get prep steps for that combination, a time range, and a doneness test you can use without any special equipment. Times are ranges because potato size matters more than anything else: small pieces cook much faster than large ones, and a big baking potato takes far longer than a small one.</p>
+<p>Cut potatoes to a similar size whenever you cut them at all, so they cook evenly. If the pieces are mixed sizes, the small ones will fall apart before the large ones are done. For whole potatoes, pick ones of a similar size for the same reason. A sharp knife makes cleaner cuts and keeps the pieces even.</p>
+<h2>Choosing the right potato</h2>
+<p>Floury potatoes are dry and starchy, and they break up easily when cooked. That makes them the best choice for mash, for baked potatoes with a fluffy inside, and for roast potatoes with crisp edges. Waxy potatoes hold their shape when cooked, so they are the best choice for boiling, for potato salads, and for dishes where the potato needs to stay in neat slices or cubes.</p>
+<p>New potatoes are young, small and waxy, with thin skins that do not need peeling. They are at their best boiled whole or halved and served simply, though they also roast well. Sweet potatoes are a different vegetable altogether, with sweet orange flesh that cooks a little faster than regular potatoes and suits roasting, mashing and baking. They do not crisp in quite the same way as regular potatoes, so roast them in a single layer and give them space.</p>
+<p>If you are not sure which type you have, cut one open. A floury potato looks dry and pale inside, while a waxy potato looks moist and slightly translucent. When in doubt, use a waxy potato for anything that needs to hold its shape and a floury potato for anything that needs to fall apart.</p>
+<h2>Boiling and mashing</h2>
+<p>Start boiled potatoes in cold water and bring the pot to a boil, so they cook evenly from the outside in. Add salt to the water once it boils. Small chunks take about 15 to 20 minutes, while whole medium potatoes take about 20 to 30 minutes. Test with a knife: it should slide in with no resistance. Drain them well and let the steam escape for a minute before serving, because wet potatoes make watery mash.</p>
+<p>For mash, boil floury potatoes until they are fully tender, then drain and return them to the hot pot for a minute to dry out. Mash them while they are hot, and warm the milk or butter before adding it, because cold liquid cools the mash and makes it gluey. Mash by hand with a masher or a ricer rather than a food processor, which overworks the starch and turns the mash sticky.</p>
+<h2>Roasting, baking and frying</h2>
+<p>For roast potatoes, parboil chunks for about 8 to 10 minutes first, drain them, and rough up the edges by shaking the pot gently. Roast in a hot oven at about 200 degrees Celsius in preheated oil, turning once, for about 35 to 45 minutes until deep golden and crisp. Spread them in a single layer with space between them, because crowded potatoes steam instead of roasting.</p>
+<p>For baked potatoes, prick whole potatoes with a fork, rub them with a little oil and salt, and bake at about 200 degrees Celsius for 45 to 60 minutes for a medium potato. A skewer should slide into the centre with no resistance. For fried potatoes, cut even chips or slices, dry them well, and fry in hot oil in small batches so the temperature stays up. Chips take about 8 to 12 minutes, depending on thickness, and should be golden and crisp.</p>
+<div class="warn">This page is general cooking guidance, not food-safety advice. Take care with hot oil and boiling water, and never leave frying unattended. Cool cooked potatoes quickly and keep them in the fridge if you are not serving them straight away; reheat until steaming hot all the way through.</div>
+<h2>Common mistakes and how to avoid them</h2>
+<p>The most common mistake is uneven cutting, which gives a mix of mushy and undercooked pieces. Take a minute to cut evenly and the whole batch cooks at the same pace. The second is starting potatoes in boiling water, which cooks the outside first and leaves a hard centre. Always start in cold water for boiling. The third is crowding the roasting tray, which traps steam and stops crisping. Use two trays if you need to rather than piling potatoes on top of each other.</p>
+<p>Another frequent mistake is mashing cold potatoes or adding cold milk, which makes gluey mash. Keep everything hot, and mash straight after draining. For roast potatoes, the mistake is skipping the parboil: the parboil and the roughing up of the edges are what make the crisp crust. And for fried potatoes, the mistake is frying too many at once, which drops the oil temperature and leaves them greasy instead of crisp.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Should potatoes go into cold or boiling water?</h3><p>Start potatoes in cold water and bring the pot to a boil. Starting in boiling water cooks the outside before the inside, which can leave a hard centre under a soft outside.</p></div>
+<div class="faq"><h3>What is the difference between floury and waxy potatoes?</h3><p>Floury potatoes are dry and starchy, so they break up when cooked and suit mashing, baking and roasting. Waxy potatoes hold their shape, so they suit boiling, salads and gratins.</p></div>
+<div class="faq"><h3>Why do my roast potatoes go soggy?</h3><p>The usual reasons are a tray that is too crowded, an oven that is not hot enough, or potatoes that went into cold oil. Spread them in one layer, preheat the tray with the oil, and do not cover them.</p></div>
+<div class="faq"><h3>How do I know when a baked potato is done?</h3><p>Squeeze it gently with an oven glove; it should give easily and feel soft all the way through. A skewer or knife should slide into the centre with no resistance.</p></div>
+<div class="faq"><h3>Can I cook potatoes ahead of time?</h3><p>Yes. Boiled and mashed potatoes reheat well, and roast potatoes can be parboiled ahead and finished in a hot oven. Cool cooked potatoes quickly and keep them in the fridge if you are not serving them straight away.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/vegetable-roasting-time-guide/">Vegetable Roasting Time Guide</a> · <a href="https://noryvello.github.io/bean-and-lentil-cooking-guide/">Bean and Lentil Cooking Guide</a> · <a href="https://noryvello.github.io/air-fryer-time-guide/">Air Fryer Time Guide</a> · <a href="https://noryvello.github.io/leftover-food-storage-guide/">Leftover Food Storage Guide</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function () {
+  var TYPES = {
+    floury: "Floury potatoes break up easily when cooked, so they are best for mash, baking and roasting.",
+    waxy: "Waxy potatoes hold their shape when cooked, so they are best for boiling and dishes where the pieces stay whole.",
+    new: "New potatoes are small and waxy with thin skins that do not need peeling.",
+    sweet: "Sweet potatoes cook a little faster than regular potatoes and have sweet, soft flesh."
+  };
+  var METHODS = {
+    boil: {prep: ["Scrub or peel the potatoes and cut them into even pieces.", "Put them in a pot, cover with cold water and add a pinch of salt.", "Bring to a boil, then simmer gently until tender."], time: "Small chunks: 15 to 20 minutes. Whole medium potatoes: 20 to 30 minutes.", test: "A knife slides into the centre with no resistance."},
+    roast: {prep: ["Cut into even chunks and parboil for 8 to 10 minutes.", "Drain well and shake the pot gently to rough up the edges.", "Roast at about 200 degrees Celsius in preheated oil, turning once."], time: "35 to 45 minutes in the oven after parboiling.", test: "Deep golden and crisp outside, fluffy inside; a knife slides in easily."},
+    mash: {prep: ["Peel and cut into even chunks.", "Boil in salted water until fully tender, then drain well.", "Return to the hot pot for a minute to dry, then mash while hot with warm milk and butter."], time: "20 to 25 minutes of boiling, then a few minutes to mash.", test: "The potatoes break apart with no lumps and no hard pieces."},
+    bake: {prep: ["Scrub whole potatoes and prick them several times with a fork.", "Rub with a little oil and salt.", "Bake at about 200 degrees Celsius on the middle shelf."], time: "45 to 60 minutes for a medium potato; larger ones take longer.", test: "The potato gives easily when squeezed with an oven glove, and a skewer slides into the centre."},
+    fry: {prep: ["Cut into even chips or slices and dry them well.", "Heat oil until hot, then fry in small batches.", "Drain on kitchen paper and season while hot."], time: "8 to 12 minutes per batch, depending on thickness.", test: "Golden and crisp outside, soft inside."}
+  };
+  var typeSel = document.getElementById("type");
+  var methodSel = document.getElementById("method");
+  var button = document.getElementById("show-btn");
+  var result = document.getElementById("result");
+  function show() {
+    var t = typeSel.value;
+    var m = methodSel.value;
+    if (!t || !m) {
+      result.innerHTML = "<p>Please choose both a potato type and a cooking method first.</p>";
+      return;
+    }
+    var method = METHODS[m];
+    var html = "<p>" + TYPES[t] + "</p>";
+    html += "<p><strong>Prep steps</strong></p><ol>";
+    for (var i = 0; i < method.prep.length; i++) { html += "<li>" + method.prep[i] + "</li>"; }
+    html += "</ol>";
+    html += "<p><strong>Time range:</strong> " + method.time + "</p>";
+    html += "<p><strong>Doneness test:</strong> " + method.test + "</p>";
+    result.innerHTML = html;
+  }
+  button.addEventListener("click", show);
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pizza Dough Calculator | Noryvello</title>
+<meta name="description" content="Work out exact flour, water, salt and yeast weights for your pizzas by baker's percentages — pick the count, size and hydration.">
+<link rel="canonical" href="https://noryvello.github.io/pizza-dough-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pizza Dough Calculator">
+<meta property="og:description" content="Flour, water, salt and yeast weights for your pizzas, worked out by baker's percentages.">
+<meta property="og:url" content="https://noryvello.github.io/pizza-dough-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.btn{display:inline-block;padding:10px 18px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer;margin-top:10px}.btn:hover{background:#3730a3}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are baker's percentages?","acceptedAnswer":{"@type":"Answer","text":"Baker's percentages express every ingredient as a share of the flour weight, with flour always at 100 percent. Water at 65 percent means 65 g of water for every 100 g of flour, which makes any recipe easy to scale."}},{"@type":"Question","name":"Which hydration should I pick?","acceptedAnswer":{"@type":"Answer","text":"Pick 60 percent if you are new to pizza dough, since it is easy to handle. Pick 65 percent for a softer crumb, and 70 percent for a light, airy crust once you are comfortable with sticky dough."}},{"@type":"Question","name":"What flour works best for pizza dough?","acceptedAnswer":{"@type":"Answer","text":"A strong bread flour or a flour sold for pizza works well, because it builds the gluten that gives the crust its chew. Plain flour makes a softer crust and absorbs less water."}},{"@type":"Question","name":"How much yeast does the calculator use?","acceptedAnswer":{"@type":"Answer","text":"The calculator uses instant yeast at 0.5 percent of the flour weight. If you use active dry yeast, dissolve it in a little of the water first. For a long, slow rise, use less yeast and give the dough more time."}},{"@type":"Question","name":"Can I make the dough ahead of time?","acceptedAnswer":{"@type":"Answer","text":"Yes. After mixing and kneading, the dough keeps in the fridge for a day or two in a covered bowl or oiled bag. Bring it back to room temperature before shaping."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Pizza Dough Calculator</h1>
+<p class="answer">Enter how many pizzas you want, how wide each one is and how wet you like the dough, and this calculator works out the exact flour, water, salt and yeast weights by baker's percentages. The working is shown, so you can check every number.</p>
+<div class="calc">
+<label for="count">Number of pizzas</label>
+<input id="count" type="number" min="1" step="1" placeholder="e.g. 2">
+<label for="diameter">Pizza diameter (cm)</label>
+<input id="diameter" type="number" min="1" step="1" placeholder="e.g. 30">
+<label for="hydration">Hydration</label>
+<select id="hydration">
+<option value="0.60">60% — firm, easy to handle</option>
+<option value="0.65" selected>65% — soft, a good middle ground</option>
+<option value="0.70">70% — wet, light and airy</option>
+</select>
+<button class="btn" id="go" type="button">Calculate dough</button>
+<div class="out" id="out"></div>
+<div class="steps" id="steps"></div>
+</div>
+<div class="warn">This calculator uses 0.35 g of dough per square cm of pizza and standard baker's percentages: salt at 2 percent and instant yeast at 0.5 percent of the flour weight. Flours absorb water differently, so treat the numbers as a starting point and adjust by feel.</div>
+<h2>How baker's percentages work</h2>
+<p>Bakers weigh ingredients as a share of the flour, with flour always at 100 percent. Water at 65 percent means 65 g of water for every 100 g of flour. Salt at 2 percent means 2 g of salt for every 100 g of flour. Because everything is tied to the flour, a recipe scales cleanly: double the flour and every other weight doubles with it.</p>
+<p>This calculator works backwards from the size of your pizzas. It first works out how much dough each pizza needs from its area, then splits that dough into flour, water, salt and yeast using the percentages. The working below the result shows each step, so you can see exactly where the numbers come from.</p>
+<h2>Choosing your hydration</h2>
+<p>Hydration is the share of water relative to flour, and it changes how the dough feels and how the crust bakes. At 60 percent, the dough is firm and easy to shape, which suits beginners and anyone shaping by hand for the first time. At 65 percent, the dough is softer and the crumb is more open. At 70 percent, the dough is wet and sticky to handle, but the baked crust is light and airy.</p>
+<p>Your flour matters as much as the number. Strong bread flour absorbs more water than plain flour, so the same hydration can feel different from one bag to another. If your dough feels too sticky to shape, add flour a little at a time. If it feels stiff and tears, add water a spoonful at a time. Trust your hands over the numbers.</p>
+<h2>Using your dough</h2>
+<p>Mix the flour, water, salt and yeast, then knead until the dough is smooth and springs back when poked. Cover it and let it rise until doubled in size, then divide it into balls of the weight shown and let them rest again before shaping. A rested dough stretches without tearing and without springing back.</p>
+<p>Shape each ball by pressing from the centre outwards, leaving a thicker rim for the crust. Avoid a rolling pin if you want an airy edge: pressing by hand keeps the air in the dough. Top lightly, since too much topping weighs the base down, and bake on the hottest setting your oven allows.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What are baker's percentages?</h3><p>Baker's percentages express every ingredient as a share of the flour weight, with flour always at 100 percent. Water at 65 percent means 65 g of water for every 100 g of flour, which makes any recipe easy to scale.</p></div>
+<div class="faq"><h3>Which hydration should I pick?</h3><p>Pick 60 percent if you are new to pizza dough, since it is easy to handle. Pick 65 percent for a softer crumb, and 70 percent for a light, airy crust once you are comfortable with sticky dough.</p></div>
+<div class="faq"><h3>What flour works best for pizza dough?</h3><p>A strong bread flour or a flour sold for pizza works well, because it builds the gluten that gives the crust its chew. Plain flour makes a softer crust and absorbs less water.</p></div>
+<div class="faq"><h3>How much yeast does the calculator use?</h3><p>The calculator uses instant yeast at 0.5 percent of the flour weight. If you use active dry yeast, dissolve it in a little of the water first. For a long, slow rise, use less yeast and give the dough more time.</p></div>
+<div class="faq"><h3>Can I make the dough ahead of time?</h3><p>Yes. After mixing and kneading, the dough keeps in the fridge for a day or two in a covered bowl or oiled bag. Bring it back to room temperature before shaping.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/pizza-order-calculator/">Pizza Order Calculator</a> · <a href="https://noryvello.github.io/baking-substitution-finder/">Baking Substitution Finder</a> · <a href="https://noryvello.github.io/sourdough-starter-feeding-guide/">Sourdough Starter Feeding Guide</a> · <a href="https://noryvello.github.io/cake-servings-calculator/">Cake Servings Calculator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function num(id){var v=document.getElementById(id).value.trim();if(v===""){return null;}var n=parseFloat(v);return isNaN(n)?null:n;}
+function round1(n){return Math.round(n*10)/10;}
+function calculate(){
+var count=num("count");
+var diameter=num("diameter");
+var hydration=parseFloat(document.getElementById("hydration").value);
+var out=document.getElementById("out");
+var steps=document.getElementById("steps");
+if(count===null||diameter===null||count<=0||diameter<=0){
+out.textContent="Please enter a number above zero for the pizzas and the diameter.";
+steps.textContent="";
+return;
+}
+var radius=diameter/2;
+var area=Math.PI*radius*radius;
+var ball=area*0.35;
+var total=ball*count;
+var divisor=1+hydration+0.02+0.005;
+var flour=total/divisor;
+var water=flour*hydration;
+var salt=flour*0.02;
+var yeast=flour*0.005;
+out.textContent="Flour "+Math.round(flour)+" g · Water "+Math.round(water)+" g · Salt "+round1(salt)+" g · Yeast "+round1(yeast)+" g";
+steps.textContent="Pizza area = 3.14 x "+round1(radius)+" x "+round1(radius)+" = "+Math.round(area)+" square cm\nDough per pizza = "+Math.round(area)+" x 0.35 = "+Math.round(ball)+" g\nTotal dough = "+Math.round(ball)+" x "+count+" = "+Math.round(total)+" g\nFlour = "+Math.round(total)+" / "+round1(divisor)+" = "+Math.round(flour)+" g\nWater = "+Math.round(flour)+" x "+hydration+" = "+Math.round(water)+" g\nSalt = "+Math.round(flour)+" x 0.02 = "+round1(salt)+" g\nYeast = "+Math.round(flour)+" x 0.005 = "+round1(yeast)+" g";
+}
+document.getElementById("go").addEventListener("click",calculate);
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

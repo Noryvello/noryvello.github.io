@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tile Count Calculator | Noryvello</title>
+<meta name="description" content="Work out how many tiles you need for a floor or wall. Enter the area, tile size and waste allowance to get the tile count and boxes, with the working shown.">
+<link rel="canonical" href="https://noryvello.github.io/tile-count-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tile Count Calculator">
+<meta property="og:description" content="Work out how many tiles you need, with the working shown.">
+<meta property="og:url" content="https://noryvello.github.io/tile-count-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:12px;margin-top:14px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much waste should I allow for tiles?","acceptedAnswer":{"@type":"Answer","text":"A waste allowance of 10 percent suits most straight-lay floors and walls. Allow more for diagonal patterns, rooms with many corners or cuts, and patterned tiles that must line up."}},{"@type":"Question","name":"Do I need to allow for grout lines?","acceptedAnswer":{"@type":"Answer","text":"Grout lines are narrow, so this calculator leaves them out of the count. The waste allowance covers the small extra area they take up on most jobs."}},{"@type":"Question","name":"What if my room is not a rectangle?","acceptedAnswer":{"@type":"Answer","text":"Split the floor into rectangles, measure each one, and add the areas together. Enter the total area here, and allow extra waste for the extra cuts."}},{"@type":"Question","name":"How many spare tiles should I keep?","acceptedAnswer":{"@type":"Answer","text":"Keep a few whole tiles from the same batch after the job. Tiles from a later batch can differ slightly in shade, so spares from the original batch are the safest match for future repairs."}},{"@type":"Question","name":"Does this calculator work for wall tiles too?","acceptedAnswer":{"@type":"Answer","text":"Yes. The maths is the same for floors and walls. Measure the wall area in square metres and enter it in the same way."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Tile Count Calculator</h1>
+<p class="answer">This calculator works out how many tiles you need for a floor or wall. Enter the area to tile, the size of one tile and a waste allowance, and it shows the tile count and how many boxes to buy. The working is shown beside the result so you can check every step.</p>
+<div class="calc">
+<label for="tile-area">Area to tile (square metres)</label>
+<input id="tile-area" type="number" min="0" step="any" placeholder="e.g. 12">
+<label for="tile-len">Tile length (centimetres)</label>
+<input id="tile-len" type="number" min="0" step="any" placeholder="e.g. 30">
+<label for="tile-wid">Tile width (centimetres)</label>
+<input id="tile-wid" type="number" min="0" step="any" placeholder="e.g. 30">
+<label for="tile-waste">Waste allowance (percent)</label>
+<input id="tile-waste" type="number" min="0" max="50" step="any" value="10">
+<label for="tile-box">Tiles per box</label>
+<input id="tile-box" type="number" min="0" step="any" placeholder="e.g. 8">
+<button id="tile-btn" type="button">Work out my tiles</button>
+<p class="out" id="tile-out"></p>
+<p class="steps" id="tile-steps"></p>
+</div>
+<div class="warn">This calculator gives an estimate for rectangular areas and standard square or rectangular tiles. It does not allow for patterned layouts, diagonal laying or awkward shapes, which need more waste. Measure twice and check the tile maker's own guidance before ordering.</div>
+<h2>How the tile count is worked out</h2>
+<p>The calculator starts with the area of one tile. It turns the tile length and width from centimetres into metres, then multiplies them together. A tile that measures 30 centimetres by 30 centimetres covers 0.09 square metres. Dividing the area to tile by the area of one tile gives the number of tiles needed before waste, and the result is rounded up because you cannot buy part of a tile.</p>
+<p>Next, the waste allowance is added. Waste covers tiles that are cut, broken or kept as spares. The calculator multiplies the base tile count by one plus the waste percentage, then rounds up again. Finally, it divides the total tile count by the number of tiles in a box and rounds up to whole boxes, because boxes are sold whole.</p>
+<p>As a worked example, take a floor of 12 square metres with 30 by 30 centimetre tiles, a 10 percent waste allowance and 8 tiles per box. One tile covers 0.09 square metres, so the base count is 12 divided by 0.09, which is 133.33, rounded up to 134 tiles. Adding 10 percent waste gives 147.4, rounded up to 148 tiles. Dividing 148 by 8 gives 18.5, rounded up to 19 boxes.</p>
+<h2>How to measure the area</h2>
+<p>For a rectangular floor or wall, measure the length and the width in metres and multiply them together. Measure in more than one place, because walls are rarely perfectly straight, and use the largest measurement so you do not run short. If the room has a bay, a recess or an L-shape, split it into rectangles, work out each area and add them together.</p>
+<p>For a wall, measure the full height and width of the area you plan to tile, and take away the area of any doors, windows or large fittings that will not be tiled. For a floor, measure wall to wall and take away the area of any fitted units the tiles will not run under. Write the measurements down as you go so you can check them later.</p>
+<h2>Choosing a waste allowance</h2>
+<p>A waste allowance of 10 percent suits most straight-lay jobs in a plain rectangular room. The cuts are few and the offcuts are often usable elsewhere in the room. If your room has many corners, pipes to cut around or a diagonal layout, allow more, because each angled cut wastes more tile and fewer offcuts can be reused.</p>
+<p>Patterned tiles and tiles with a veined pattern need extra care too. Matching a pattern across a floor can mean turning tiles around and discarding pieces that do not line up. When in doubt, allow a little extra rather than a little less. A few spare tiles are far cheaper than a second order that arrives from a different batch.</p>
+<h2>Buying and storing spare tiles</h2>
+<p>Buy all your tiles at once, from the same batch, if you can. Tiles from different batches can differ slightly in shade or size, and the difference shows once the tiles are laid side by side. Check the batch number on the boxes before you leave the shop and ask for matching boxes if any differ.</p>
+<p>Keep the spare tiles after the job is finished. Store them flat, somewhere dry, with the batch number noted on the box. A spare tile from the original batch is the safest match if a tile cracks or chips later, and it saves a long search for a matching tile years down the line.</p>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>How much waste should I allow for tiles?</h3>
+<p>A waste allowance of 10 percent suits most straight-lay floors and walls. Allow more for diagonal patterns, rooms with many corners or cuts, and patterned tiles that must line up.</p>
+</div>
+<div class="faq">
+<h3>Do I need to allow for grout lines?</h3>
+<p>Grout lines are narrow, so this calculator leaves them out of the count. The waste allowance covers the small extra area they take up on most jobs.</p>
+</div>
+<div class="faq">
+<h3>What if my room is not a rectangle?</h3>
+<p>Split the floor into rectangles, measure each one, and add the areas together. Enter the total area here, and allow extra waste for the extra cuts.</p>
+</div>
+<div class="faq">
+<h3>How many spare tiles should I keep?</h3>
+<p>Keep a few whole tiles from the same batch after the job. Tiles from a later batch can differ slightly in shade, so spares from the original batch are the safest match for future repairs.</p>
+</div>
+<div class="faq">
+<h3>Does this calculator work for wall tiles too?</h3>
+<p>Yes. The maths is the same for floors and walls. Measure the wall area in square metres and enter it in the same way.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/tile-grout-calculator/">Tile Grout Calculator</a> · <a href="https://noryvello.github.io/flooring-area-calculator/">Flooring Area Calculator</a> · <a href="https://noryvello.github.io/carpet-flooring-area-calculator/">Carpet and Flooring Area Calculator</a> · <a href="https://noryvello.github.io/paver-calculator/">Paver Calculator</a> · <a href="https://noryvello.github.io/drywall-sheets-calculator/">Drywall Sheets Calculator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function(){
+  function val(id){var n=parseFloat(document.getElementById(id).value);return isNaN(n)?null:n;}
+  function fmt(n){return (Math.round(n*100)/100).toString();}
+  document.getElementById("tile-btn").addEventListener("click",function(){
+    var area=val("tile-area"), len=val("tile-len"), wid=val("tile-wid"), waste=val("tile-waste"), perBox=val("tile-box");
+    var out=document.getElementById("tile-out"), steps=document.getElementById("tile-steps");
+    if(area===null||area<=0){out.textContent="Please enter the area to tile in square metres, as a number above zero.";steps.textContent="";return;}
+    if(len===null||len<=0){out.textContent="Please enter the tile length in centimetres, as a number above zero.";steps.textContent="";return;}
+    if(wid===null||wid<=0){out.textContent="Please enter the tile width in centimetres, as a number above zero.";steps.textContent="";return;}
+    if(waste===null||waste<0||waste>50){out.textContent="Please enter a waste allowance between 0 and 50 percent.";steps.textContent="";return;}
+    if(perBox===null||perBox<=0){out.textContent="Please enter how many tiles are in one box, as a number above zero.";steps.textContent="";return;}
+    var tileArea=(len/100)*(wid/100);
+    var base=Math.ceil(area/tileArea);
+    var withWaste=Math.ceil(base*(1+waste/100));
+    var boxes=Math.ceil(withWaste/perBox);
+    out.textContent="You need "+withWaste+" tiles ("+boxes+" boxes of "+fmt(perBox)+").";
+    steps.textContent="One tile covers "+fmt(len/100)+" m x "+fmt(wid/100)+" m = "+fmt(tileArea)+" square metres.\nTiles before waste: "+fmt(area)+" / "+fmt(tileArea)+" = "+fmt(area/tileArea)+", rounded up to "+base+" tiles.\nWith "+fmt(waste)+"% waste: "+base+" x "+fmt(1+waste/100)+" = "+fmt(base*(1+waste/100))+", rounded up to "+withWaste+" tiles.\nBoxes: "+withWaste+" / "+fmt(perBox)+" = "+fmt(withWaste/perBox)+", rounded up to "+boxes+" boxes.";
+  });
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

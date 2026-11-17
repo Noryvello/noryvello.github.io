@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Take a Screenshot | Noryvello</title>
+<meta name="description" content="Take a screenshot on Windows, Mac, Android, or iPhone with the exact keys or buttons for each device, and find out where the image is saved.">
+<link rel="canonical" href="https://noryvello.github.io/screenshot-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Take a Screenshot">
+<meta property="og:description" content="Exact screenshot keys and buttons for Windows, Mac, Android, and iPhone, plus where the image is saved.">
+<meta property="og:url" content="https://noryvello.github.io/screenshot-guide/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{width:100%;padding:12px;margin-top:12px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.calc button:hover{background:#3730a3}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where do screenshots go on a Windows computer?","acceptedAnswer":{"@type":"Answer","text":"Pressing the Windows key and Print Screen together saves the screenshot to the Screenshots folder inside Pictures. Pressing Print Screen on its own only copies the screen to the clipboard, so you need to paste it into an app to keep it."}},{"@type":"Question","name":"Where do screenshots go on a Mac?","acceptedAnswer":{"@type":"Answer","text":"By default, Mac screenshots are saved to the desktop as image files. A small thumbnail appears in the corner of the screen for a few seconds, and clicking it opens the image for editing."}},{"@type":"Question","name":"How do I take a screenshot of only part of the screen?","acceptedAnswer":{"@type":"Answer","text":"On Windows, press Windows, Shift, and S, then drag to select the area. On a Mac, press Command, Shift, and 4, then drag to select the area. On a phone, take a full screenshot and crop it in the photo app."}},{"@type":"Question","name":"Why is my screenshot blank or black?","acceptedAnswer":{"@type":"Answer","text":"Some apps and video players block screenshots for copyright or privacy reasons, and the image comes out black. Try a different app, or check whether the app has its own share or save option."}},{"@type":"Question","name":"Do I need to install an app to take screenshots?","acceptedAnswer":{"@type":"Answer","text":"No. Windows, Mac, Android, and iPhone all have screenshot tools built in. The steps on this page use only those built-in tools, with no downloads."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How to Take a Screenshot</h1>
+<p class="answer">Every computer and phone has a built-in way to capture what is on its screen, and no extra app is needed. Pick your device below to get the exact keys or buttons, and find out where the image is saved.</p>
+<div class="calc">
+<p>Use the picker to get the exact screenshot steps for your device.</p>
+<label for="device">Which device are you using?</label>
+<select id="device">
+<option value="">Choose your device…</option>
+<option value="windows">Windows computer</option>
+<option value="mac">Mac computer</option>
+<option value="android">Android phone or tablet</option>
+<option value="iphone">iPhone</option>
+</select>
+<label for="kind">What do you want to capture?</label>
+<select id="kind">
+<option value="">Choose what to capture…</option>
+<option value="full">The whole screen</option>
+<option value="part">Only part of the screen</option>
+</select>
+<button id="show-btn" type="button">Show the steps</button>
+<div id="out"><p class="steps">Choose your device and what to capture, then press the button to see the steps.</p></div>
+</div>
+<h2>What a screenshot is good for</h2>
+<p>A screenshot is a picture of whatever is on your screen at that moment. People use screenshots to save a receipt, keep a copy of a message, show someone an error on their computer, or remember a recipe or a map. Because a screenshot captures exactly what you see, it is often the fastest way to share something that is hard to describe in words. It also works when there is no save or share button in the app you are using.</p>
+<p>Screenshots are also useful for keeping records. If you book a ticket, pay a bill, or agree to something online, a screenshot of the confirmation page is a handy backup in case the email never arrives. Just remember that a screenshot is only a picture: it does not prove anything on its own, and it can be edited, so keep the original email or receipt as well when something matters.</p>
+<h2>Where screenshots are saved</h2>
+<p>Where your screenshot ends up depends on the device. On Windows, pressing the Windows key and Print Screen together saves the image to the Screenshots folder inside your Pictures folder. Pressing Print Screen on its own does not save a file at all — it copies the screen to the clipboard, and you need to paste it into an app such as Paint or a document to keep it. The Snipping Tool also saves to the same Screenshots folder unless you choose somewhere else.</p>
+<p>On a Mac, screenshots are saved to the desktop by default, as image files with the date and time in the name. A small thumbnail appears in the corner of the screen for a few seconds after you take one, and clicking it opens the image so you can crop it or mark it up before it is saved. On Android phones and iPhones, screenshots go to the photo app, usually in a Screenshots album, where you can find them alongside your photos.</p>
+<h2>Editing and sharing a screenshot</h2>
+<p>Most devices let you crop a screenshot right after taking it, which is useful when you only need part of the screen. On a phone, tap the thumbnail that appears after the capture to open the editor, then drag the corners to crop and tap save. On a computer, open the saved image in your usual photo viewer or editor to crop it. Cropping is worth doing when the screenshot shows private details, such as a notification or an open tab, that you do not want to share.</p>
+<p>Before sharing a screenshot, look it over for anything private: names, addresses, account numbers, or messages in the background. What seems harmless on your screen can be readable to someone else once the image is shared. If you need to hide a detail, cover it with a solid shape in the editor rather than blurring it lightly, because light blurring can sometimes be reversed. Then share the image the way you would share any photo.</p>
+<h2>Troubleshooting screenshots</h2>
+<p>If nothing happens when you press the keys, check that you are pressing them at the same time. On a Windows laptop, the Print Screen key is often shared with another function, and you may need to hold the Fn key as well. On a phone, press the two buttons together briefly rather than holding them down, because holding them can open a different menu. If the screen flashes or you hear a shutter sound, the screenshot was taken even if you cannot see it yet.</p>
+<p>Some apps block screenshots, and the image comes out black. Video apps and banking apps often do this for copyright or privacy reasons, and there is no setting that overrides it. In that case, look for a share or save option inside the app itself. If your screenshots are saving to an unexpected place, check the settings of your screenshot tool or photo app, which usually let you choose the save location.</p>
+<p>Another common problem is taking a screenshot at the wrong moment, such as while a menu is open or a notification is covering the screen. Wait for the screen to settle before you capture it, and dismiss any notification first. If you need to capture a menu that disappears when you press keys, use the timed capture option in your screenshot tool if it has one. On Windows, the Snipping Tool lets you delay a capture by a few seconds, which is useful for menus and pop-ups.</p>
+<div class="warn">These steps use only the built-in screenshot tools on each device, with no software downloads. Some apps block screenshots for privacy or copyright reasons, and those cannot be captured this way. Always check a screenshot for private details before sharing it with anyone.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Where do screenshots go on a Windows computer?</h3><p>Pressing the Windows key and Print Screen together saves the screenshot to the Screenshots folder inside Pictures. Pressing Print Screen on its own only copies the screen to the clipboard, so you need to paste it into an app to keep it.</p></div>
+<div class="faq"><h3>Where do screenshots go on a Mac?</h3><p>By default, Mac screenshots are saved to the desktop as image files. A small thumbnail appears in the corner of the screen for a few seconds, and clicking it opens the image for editing.</p></div>
+<div class="faq"><h3>How do I take a screenshot of only part of the screen?</h3><p>On Windows, press Windows, Shift, and S, then drag to select the area. On a Mac, press Command, Shift, and 4, then drag to select the area. On a phone, take a full screenshot and crop it in the photo app.</p></div>
+<div class="faq"><h3>Why is my screenshot blank or black?</h3><p>Some apps and video players block screenshots for copyright or privacy reasons, and the image comes out black. Try a different app, or check whether the app has its own share or save option.</p></div>
+<div class="faq"><h3>Do I need to install an app to take screenshots?</h3><p>No. Windows, Mac, Android, and iPhone all have screenshot tools built in. The steps on this page use only those built-in tools, with no downloads.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/phone-backup-guide/">Phone Backup Guide</a> · <a href="https://noryvello.github.io/organize-digital-photos-guide/">Organize Digital Photos Guide</a> · <a href="https://noryvello.github.io/phone-photography-guide/">Phone Photography Guide</a> · <a href="https://noryvello.github.io/file-transfer-time-calculator/">File Transfer Time Calculator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function(){
+  var data = {
+    "windows|full": {title: "Screenshot the whole screen on Windows", steps: [
+      "Press the Windows key and the Print Screen key at the same time.",
+      "The screen will dim briefly to show the screenshot was taken.",
+      "Find the image in the Screenshots folder inside your Pictures folder."
+    ], note: "Pressing Print Screen on its own only copies the screen to the clipboard. Paste it into an app such as Paint to save it."},
+    "windows|part": {title: "Screenshot part of the screen on Windows", steps: [
+      "Press the Windows key, Shift, and S at the same time.",
+      "The screen will dim and the cursor will turn into a cross.",
+      "Drag to draw a box around the part of the screen you want.",
+      "Release the mouse button. The capture is copied to the clipboard.",
+      "Click the notification that appears to open it, then save it where you like."
+    ], note: "On some laptops you also need to hold the Fn key for the Print Screen key to work."},
+    "mac|full": {title: "Screenshot the whole screen on a Mac", steps: [
+      "Press Command, Shift, and 3 at the same time.",
+      "A thumbnail appears in the corner of the screen for a few seconds.",
+      "The image is saved to the desktop as a file."
+    ], note: "Click the thumbnail before it disappears if you want to crop or mark up the image first."},
+    "mac|part": {title: "Screenshot part of the screen on a Mac", steps: [
+      "Press Command, Shift, and 4 at the same time.",
+      "The cursor turns into a crosshair.",
+      "Drag to draw a box around the part of the screen you want, then release.",
+      "The image is saved to the desktop as a file."
+    ], note: "Press the Space bar after Command, Shift, and 4 to capture a single window instead of a dragged area."},
+    "android|full": {title: "Screenshot the whole screen on Android", steps: [
+      "Press the Power button and the Volume Down button at the same time.",
+      "The screen will flash and a thumbnail will appear.",
+      "Find the image in your photo app, usually in a Screenshots album."
+    ], note: "On some Android phones you can also swipe down and tap the screenshot button in the quick settings panel."},
+    "android|part": {title: "Screenshot part of the screen on Android", steps: [
+      "Take a full screenshot with the Power and Volume Down buttons together.",
+      "Tap the thumbnail that appears to open the editor.",
+      "Drag the corners to crop the image to the part you want.",
+      "Tap save. The cropped image is kept in your photo app."
+    ], note: "Android captures the full screen first. Cropping afterwards is the usual way to keep only part of it."},
+    "iphone|full": {title: "Screenshot the whole screen on iPhone", steps: [
+      "On an iPhone with Face ID, press the Side button and the Volume Up button at the same time.",
+      "On an iPhone with a Home button, press the Home button and the Side button at the same time.",
+      "The screen will flash and a thumbnail will appear in the corner.",
+      "Find the image in the Photos app, in the Screenshots album."
+    ], note: "Press both buttons together briefly. Holding them down can open a different menu."},
+    "iphone|part": {title: "Screenshot part of the screen on iPhone", steps: [
+      "Take a full screenshot with the button combination for your iPhone.",
+      "Tap the thumbnail that appears in the corner to open the editor.",
+      "Drag the corners to crop the image to the part you want.",
+      "Tap Done, then choose Save to Photos."
+    ], note: "iPhone captures the full screen first. Cropping afterwards is the usual way to keep only part of it."}
+  };
+  var dev = document.getElementById("device");
+  var kind = document.getElementById("kind");
+  var btn = document.getElementById("show-btn");
+  var out = document.getElementById("out");
+  function show(){
+    if(!dev.value || !kind.value){
+      out.innerHTML = '<p class="steps">Please choose your device and what to capture first, then press the button.</p>';
+      return;
+    }
+    var d = data[dev.value + "|" + kind.value];
+    if(!d){
+      out.innerHTML = '<p class="steps">Sorry, there are no steps for that combination. Please try another choice.</p>';
+      return;
+    }
+    var html = '<p class="out">' + d.title + '</p><ol>';
+    for(var i = 0; i < d.steps.length; i++){ html += '<li>' + d.steps[i] + '</li>'; }
+    html += '</ol><p class="steps">' + d.note + '</p>';
+    out.innerHTML = html;
+  }
+  btn.addEventListener("click", show);
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

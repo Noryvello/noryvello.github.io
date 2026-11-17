@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ready-Mix Concrete Bag Calculator | Noryvello</title>
+<meta name="description" content="Work out how many bags of ready-mix concrete a slab needs. Enter the slab size and depth, pick a bag size, and get the volume and bag count with waste allowance.">
+<link rel="canonical" href="https://noryvello.github.io/ready-mix-concrete-bag-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ready-Mix Concrete Bag Calculator">
+<meta property="og:description" content="Count ready-mix concrete bags for a slab from its size, depth and bag size.">
+<meta property="og:url" content="https://noryvello.github.io/ready-mix-concrete-bag-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:12px;margin-top:14px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.calc button:hover{background:#3730a3}</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the yield of a bag?", "acceptedAnswer": {"@type": "Answer", "text": "The yield is the volume of mixed concrete one bag makes, once water is added. The picker shows approximate yields, so check the figure printed on your own bags, because it varies by maker."}}, {"@type": "Question", "name": "Why is a waste allowance included?", "acceptedAnswer": {"@type": "Answer", "text": "Uneven ground, spillage and the concrete that stays in the mixer all use up extra material. Ten percent is the default allowance."}}, {"@type": "Question", "name": "What depth should I enter?", "acceptedAnswer": {"@type": "Answer", "text": "Enter the finished depth of the slab in centimetres, as you plan to pour it. A garden path slab is often around 10 cm deep, but check what your job needs."}}, {"@type": "Question", "name": "How is this different from a mix-ratio calculator?", "acceptedAnswer": {"@type": "Answer", "text": "This calculator counts bags of ready-mix, where the cement, sand and stone are already mixed in the bag. A mix-ratio calculator works out separate cement, sand and stone quantities instead."}}, {"@type": "Question", "name": "Can I use this for a shape that is not a rectangle?", "acceptedAnswer": {"@type": "Answer", "text": "Split the shape into rectangles, work out each volume, and add them together. Run the calculator once per rectangle and add the bag counts, or work out an equivalent rectangle for the combined area."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Ready-Mix Concrete Bag Calculator</h1>
+<p class="answer">Enter your slab measurements and pick a bag size, and this calculator works out the concrete volume and how many bags of ready-mix concrete you need, including a waste allowance. The working is shown so you can check every step.</p>
+<div class="calc">
+<label for="length">Slab length (m)</label>
+<input id="length" type="number" min="0" step="any" placeholder="e.g. 4">
+<label for="width">Slab width (m)</label>
+<input id="width" type="number" min="0" step="any" placeholder="e.g. 3">
+<label for="depth">Slab depth (cm)</label>
+<input id="depth" type="number" min="0" step="any" placeholder="e.g. 10">
+<label for="bag">Bag size (approximate yield per bag)</label>
+<select id="bag"><option value="0.01">20 kg bag - about 0.01 cubic metres</option><option value="0.0125" selected>25 kg bag - about 0.0125 cubic metres</option><option value="0.02">40 kg bag - about 0.02 cubic metres</option></select>
+<label for="waste">Waste allowance (%)</label>
+<input id="waste" type="number" min="0" step="any" value="10">
+<button id="calc-btn" type="button">Calculate</button>
+<p class="out" id="result"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">This calculator estimates the volume of a plain rectangular slab. Ground that is uneven, soft or sloping can need more concrete than the maths suggests, and structural slabs need proper design. Check the yield printed on your bag, because it varies by maker.</div>
+<h2>How to use this calculator</h2>
+<p>Measure the slab length and width in metres, and the depth in centimetres. Pick the bag size you plan to buy. The picker shows the approximate yield of each bag, which is the volume of mixed concrete one bag makes. Set the waste allowance, then press Calculate to see the concrete volume and the number of bags, with the working shown underneath.</p>
+<h2>How the calculation works</h2>
+<p>The volume is the length multiplied by the width multiplied by the depth. The waste allowance is added to that volume, and the total is divided by the yield of one bag. The result is rounded up to a whole bag, because part bags cannot be bought. The steps show the volume, the waste and the division, so you can check the figure before ordering.</p>
+<h2>How to use the result</h2>
+<p>Buy the number of bags shown, and check the yield on your own bags before ordering, because yields vary by maker and mix. Mix in small batches if you are working alone, so the concrete does not set before you finish placing it. Keep a couple of spare bags for topping up low spots, and level the ground well before pouring so the depth stays even.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is the yield of a bag?</h3><p>The yield is the volume of mixed concrete one bag makes, once water is added. The picker shows approximate yields, so check the figure printed on your own bags, because it varies by maker.</p></div>
+<div class="faq"><h3>Why is a waste allowance included?</h3><p>Uneven ground, spillage and the concrete that stays in the mixer all use up extra material. Ten percent is the default allowance.</p></div>
+<div class="faq"><h3>What depth should I enter?</h3><p>Enter the finished depth of the slab in centimetres, as you plan to pour it. A garden path slab is often around 10 cm deep, but check what your job needs.</p></div>
+<div class="faq"><h3>How is this different from a mix-ratio calculator?</h3><p>This calculator counts bags of ready-mix, where the cement, sand and stone are already mixed in the bag. A mix-ratio calculator works out separate cement, sand and stone quantities instead.</p></div>
+<div class="faq"><h3>Can I use this for a shape that is not a rectangle?</h3><p>Split the shape into rectangles, work out each volume, and add them together. Run the calculator once per rectangle and add the bag counts, or work out an equivalent rectangle for the combined area.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/post-hole-concrete-calculator/">Post Hole Concrete Calculator</a> · <a href="https://noryvello.github.io/concrete-mix-calculator/">Concrete Mix Calculator</a> · <a href="https://noryvello.github.io/concrete-block-calculator/">Concrete Block Calculator</a> · <a href="https://noryvello.github.io/paver-calculator/">Paver Calculator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n){return (Math.round(n*10000)/10000).toString();}
+function ceil(n){return Math.ceil(n - 1e-9);}
+function num(id){var v=parseFloat(document.getElementById(id).value);return isFinite(v)?v:NaN;}
+function show(msg,steps){document.getElementById('result').textContent=msg;document.getElementById('steps').textContent=steps||'';}
+function pl(n,s){return n===1?'':s;}
+document.getElementById('calc-btn').addEventListener('click', function () {
+  var L = num('length'), W = num('width'), D = num('depth'), waste = num('waste');
+  var yld = parseFloat(document.getElementById('bag').value);
+  if (!isFinite(L) || L <= 0 || !isFinite(W) || W <= 0) {
+    show('Please enter the slab length and width as numbers above zero.');
+    return;
+  }
+  if (!isFinite(D) || D <= 0) {
+    show('Please enter the slab depth as a number above zero.');
+    return;
+  }
+  if (!isFinite(waste) || waste < 0) {
+    show('Please enter a waste allowance of zero or more.');
+    return;
+  }
+  var vol = L * W * (D / 100);
+  var withWaste = vol * (1 + waste / 100);
+  var bags = ceil(withWaste / yld);
+  show('You need ' + bags + ' bag' + pl(bags, 's') + ' (' + fmt(vol) + ' cubic metres of concrete).',
+    'Volume: ' + fmt(L) + ' x ' + fmt(W) + ' x ' + fmt(D / 100) + ' = ' + fmt(vol) + ' cubic metres.\nWith ' + fmt(waste) + '% waste: ' + fmt(vol) + ' x ' + fmt(1 + waste / 100) + ' = ' + fmt(withWaste) + ' cubic metres.\nBags: ' + fmt(withWaste) + ' / ' + fmt(yld) + ' = ' + fmt(withWaste / yld) + ', rounded up to ' + bags + ' bags.');
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

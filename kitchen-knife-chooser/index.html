@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kitchen Knife Chooser | Noryvello</title>
+<meta name="description" content="Tell us the job — chopping, slicing bread, filleting — and find the right knife, why it fits, and how to look after it.">
+<link rel="canonical" href="https://noryvello.github.io/kitchen-knife-chooser/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kitchen Knife Chooser">
+<meta property="og:description" content="Pick the task and find the right kitchen knife, why it fits, and how to care for it.">
+<meta property="og:url" content="https://noryvello.github.io/kitchen-knife-chooser/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.card{background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}.card h4{font-size:16.5px;margin-bottom:4px}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which knife should a beginner buy first?","acceptedAnswer":{"@type":"Answer","text":"A chef's knife. It handles most everyday jobs, from chopping vegetables to slicing meat, and it is the knife you will reach for most often. Add a paring knife and a bread knife next."}},{"@type":"Question","name":"Can I put kitchen knives in the dishwasher?","acceptedAnswer":{"@type":"Answer","text":"It is better not to. Dishwasher cycles knock blades against other items, which dulls the edge, and the heat and detergent can damage handles. Wash by hand and dry straight away."}},{"@type":"Question","name":"How do I keep a knife sharp?","acceptedAnswer":{"@type":"Answer","text":"Hone it often with a honing rod, sharpen it when honing no longer brings the edge back, and cut on wood or plastic boards rather than glass or stone. Store knives in a block, on a magnetic strip or in blade guards."}},{"@type":"Question","name":"What size chef's knife should I choose?","acceptedAnswer":{"@type":"Answer","text":"Most home cooks are happy with a blade around 20 cm long. It is long enough for large vegetables and roasts but short enough to control. Hold one before you buy, if you can."}},{"@type":"Question","name":"Is a sharp knife safer than a dull one?","acceptedAnswer":{"@type":"Answer","text":"Yes. A sharp knife cuts where you aim it with little force, while a dull knife needs pressure and is more likely to slip. Keep your fingers curled away from the blade and cut away from your body."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Kitchen Knife Chooser</h1>
+<p class="answer">Pick the job you need to do and this chooser tells you which knife fits it best, why it fits, and how to look after it. It covers 10 common kitchen tasks, from chopping vegetables to slicing bread and filleting fish.</p>
+<div class="calc">
+<label for="task">What are you cutting?</label>
+<select id="task">
+<option value="">Choose a task</option>
+<option value="chopping">Chopping vegetables</option>
+<option value="bread">Slicing bread</option>
+<option value="filleting">Filleting fish</option>
+<option value="carving">Carving roast meat</option>
+<option value="herbs">Mincing herbs</option>
+<option value="tomatoes">Slicing tomatoes</option>
+<option value="chicken">Cutting raw chicken</option>
+<option value="peeling">Peeling fruit</option>
+<option value="cheese">Slicing cheese</option>
+<option value="squash">Cutting a large squash or pumpkin</option>
+</select>
+<div id="out"><p>Pick a task from the list to see the right knife for it.</p></div>
+</div>
+<div class="warn">A sharp knife is safer than a dull one, but every knife needs respect. Cut away from your body, keep your fingers curled away from the blade, and never try to catch a falling knife. Let it drop.</div>
+<h2>How to use this chooser</h2>
+<p>Pick the task that matches what you are about to do. The card shows the knife type, why its shape suits that job, and one care note to keep it in good shape. If you do not own the recommended knife, the card still helps: it tells you what quality to look for, so you can pick the closest knife you have.</p>
+<p>Most kitchens do not need a knife for every job. Three knives cover almost everything: a chef's knife for general work, a paring knife for small work, and a bread knife for anything with a crust. The rest are helpful, but they are extras, not essentials.</p>
+<h2>Knife care basics</h2>
+<p>Good care is simple and it makes a bigger difference than the price of the knife. Wash knives by hand with warm soapy water and dry them straight away. Water left on a blade invites rust on carbon steel and spots on stainless steel, and a wet knife left in the sink is a cut waiting to happen.</p>
+<p>Cut on wood or plastic boards. Glass, stone and ceramic plates dull an edge quickly and can chip it. Store knives so the blades do not touch each other: a block, a magnetic strip or blade guards all work. A loose drawer full of knives dulls every blade in it and is dangerous to reach into.</p>
+<p>Hone your main knife often and sharpen it when honing stops bringing the edge back. Honing straightens the edge; sharpening removes a little metal to make a new edge. Both are skills worth learning, and both are covered in our sharpening guide.</p>
+<h2>One knife or a set?</h2>
+<p>A set looks tidy, but it often includes knives you will never use. Buying one good chef's knife, then adding a paring knife and a bread knife as you need them, usually gives you better tools for the same money. Hold a knife before you buy it if you can: it should feel balanced in your hand, with a handle that fits your grip and does not slip when wet.</p>
+<p>Weight is a matter of taste. Some cooks like a heavy knife that does the work for them; others prefer a light knife they can control precisely. Neither is wrong. What matters is that the knife feels like an extension of your hand rather than a tool you are fighting.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Which knife should a beginner buy first?</h3><p>A chef's knife. It handles most everyday jobs, from chopping vegetables to slicing meat, and it is the knife you will reach for most often. Add a paring knife and a bread knife next.</p></div>
+<div class="faq"><h3>Can I put kitchen knives in the dishwasher?</h3><p>It is better not to. Dishwasher cycles knock blades against other items, which dulls the edge, and the heat and detergent can damage handles. Wash by hand and dry straight away.</p></div>
+<div class="faq"><h3>How do I keep a knife sharp?</h3><p>Hone it often with a honing rod, sharpen it when honing no longer brings the edge back, and cut on wood or plastic boards rather than glass or stone. Store knives in a block, on a magnetic strip or in blade guards.</p></div>
+<div class="faq"><h3>What size chef's knife should I choose?</h3><p>Most home cooks are happy with a blade around 20 cm long. It is long enough for large vegetables and roasts but short enough to control. Hold one before you buy, if you can.</p></div>
+<div class="faq"><h3>Is a sharp knife safer than a dull one?</h3><p>Yes. A sharp knife cuts where you aim it with little force, while a dull knife needs pressure and is more likely to slip. Keep your fingers curled away from the blade and cut away from your body.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/knife-sharpening-guide/">Knife Sharpening Guide</a> · <a href="https://noryvello.github.io/cast-iron-care-guide/">Cast Iron Care Guide</a> · <a href="https://noryvello.github.io/meat-temperature-guide/">Meat Temperature Guide</a> · <a href="https://noryvello.github.io/potato-cooking-guide/">Potato Cooking Guide</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var TASKS={
+"chopping":{task:"Chopping vegetables",knife:"Chef's knife",why:"The long, slightly curved blade rocks through piles of vegetables, and the wide side scoops chopped food off the board.",care:"Hand wash and dry at once. Hone often and sharpen when honing stops bringing the edge back."},
+"bread":{task:"Slicing bread",knife:"Bread knife (long serrated blade)",why:"The teeth saw through a crisp crust without crushing the soft crumb underneath, so slices come out even.",care:"Do not sharpen a serrated blade on a flat stone. Use a tapered ceramic rod or leave it to a professional."},
+"filleting":{task:"Filleting fish",knife:"Filleting knife",why:"The thin, flexible blade bends along the bones, so you can lift clean fillets with little waste.",care:"Keep it very sharp. A dull filleting knife tears the flesh instead of cutting it."},
+"carving":{task:"Carving roast meat",knife:"Carving knife",why:"The long, narrow blade cuts thin, even slices in one smooth stroke, without sawing the meat apart.",care:"Hand wash and dry at once. Store in a blade guard so the long edge stays true."},
+"herbs":{task:"Mincing herbs",knife:"Santoku knife",why:"The light blade and flat edge make quick, fine cuts, and the wide blade scoops the minced herbs up easily.",care:"Hand wash and dry at once. Hone lightly and often."},
+"tomatoes":{task:"Slicing tomatoes",knife:"Serrated utility knife",why:"The small serrated edge bites into the skin without squashing the soft flesh, so slices stay neat.",care:"Do not sharpen a serrated blade on a flat stone. Use a tapered ceramic rod or leave it to a professional."},
+"chicken":{task:"Cutting raw chicken",knife:"Boning knife",why:"The short, narrow blade works around joints and bones with control, which is what jointing a bird needs.",care:"Wash well with hot soapy water after touching raw meat, and dry straight away."},
+"peeling":{task:"Peeling fruit",knife:"Paring knife",why:"The short blade gives you close control for peeling, trimming and shaping small fruit.",care:"Hand wash and dry at once. Keep it sharp, since a dull paring knife slips easily."},
+"cheese":{task:"Slicing cheese",knife:"Cheese knife",why:"The holes or narrow blade stop soft cheese from sticking, so slices come away clean.",care:"Hand wash and dry at once. A cheese knife rarely needs sharpening, but keep it clean between cheeses."},
+"squash":{task:"Cutting a large squash or pumpkin",knife:"Heavy chef's knife or cleaver",why:"A heavy blade with weight behind it drives through thick skin and dense flesh without wedging.",care:"Hand wash and dry at once. Never force a stuck blade; rock it free or tap it through with a mallet."}
+};
+function show(){
+var key=document.getElementById("task").value;
+var out=document.getElementById("out");
+if(!key||!TASKS[key]){
+out.innerHTML="<p>Pick a task from the list to see the right knife for it.</p>";
+return;
+}
+var t=TASKS[key];
+out.innerHTML='<div class="card"><h4>'+t.task+'</h4><p><strong>Best knife:</strong> '+t.knife+'</p><p><strong>Why it fits:</strong> '+t.why+'</p><p><strong>Care note:</strong> '+t.care+'</p></div>';
+}
+document.getElementById("task").addEventListener("change",show);
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

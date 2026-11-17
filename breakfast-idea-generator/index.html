@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Breakfast Idea Generator | Noryvello</title>
+<meta name="description" content="Pick how much time you have and the style you want, and get three breakfast ideas with ingredients and three simple steps each. Thirty original ideas to choose from.">
+<link rel="canonical" href="https://noryvello.github.io/breakfast-idea-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Breakfast Idea Generator">
+<meta property="og:description" content="Three breakfast ideas for your time and style, with ingredients and steps.">
+<meta property="og:url" content="https://noryvello.github.io/breakfast-idea-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the generator pick the three ideas?","acceptedAnswer":{"@type":"Answer","text":"It starts with ideas that match both your time and your style, then fills any gaps with ideas in the same style. Press the button again to see a different set of three."}},{"@type":"Question","name":"Can I change the ingredients in an idea?","acceptedAnswer":{"@type":"Answer","text":"Yes. The ingredients are a starting point, not a rule. Swap fruits, spreads, breads and toppings for what you have at home, and adjust the amounts to your appetite."}},{"@type":"Question","name":"Which ideas work for a busy morning?","acceptedAnswer":{"@type":"Answer","text":"Pick the under 10 minutes option, or the on the go style, for ideas you can make and eat in a hurry. Overnight oats and smoothie ideas can be prepared the night before."}},{"@type":"Question","name":"Are the ideas suitable for children?","acceptedAnswer":{"@type":"Answer","text":"Most of them are, and children often enjoy helping with simple ones such as yoghurt bowls, toast toppings and smoothies. Keep hot pans and sharp knives to adults, and cut grapes and similar foods for young children."}},{"@type":"Question","name":"How many ideas are in the bank?","acceptedAnswer":{"@type":"Answer","text":"Thirty original ideas, covering three time bands and five styles, so there is something for a quick weekday morning and for a slow weekend breakfast."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Breakfast Idea Generator</h1>
+<p class="answer">Pick how much time you have and the style you want, and this generator gives you three breakfast ideas, each with its ingredients and three simple steps. Thirty original ideas are in the bank, so press the button again for a fresh set.</p>
+<div class="calc">
+<label for="time">How much time do you have?</label>
+<select id="time">
+<option value="">Choose a time</option>
+<option value="quick">Under 10 minutes</option>
+<option value="medium">10 to 20 minutes</option>
+<option value="long">20 minutes or more</option>
+</select>
+<label for="style">Which style do you want?</label>
+<select id="style">
+<option value="">Choose a style</option>
+<option value="light">Quick and light</option>
+<option value="hearty">Hearty</option>
+<option value="sweet">Sweet</option>
+<option value="savoury">Savoury</option>
+<option value="onthego">On the go</option>
+</select>
+<button id="gen-btn" type="button" style="margin-top:14px;padding:11px 18px;font-size:16px;font-weight:700;color:#fff;background:#4338ca;border:none;border-radius:8px;cursor:pointer">Give me 3 breakfast ideas</button>
+<div id="result" class="steps" role="status"></div>
+</div>
+<h2>How to use this generator</h2>
+<p>Choose the time you have and the style you want, then press the button. You will get three ideas that match, each with a short ingredient list and three steps. If you want a different set, press the button again and the generator will show the next three ideas for your choices. Every idea in the bank is original and written for this page.</p>
+<p>The ingredient lists are starting points. Swap fruits, spreads, breads and toppings for whatever you have at home, and change the amounts to suit your appetite. The steps are kept short on purpose, so each idea is easy to follow on a busy morning without reading a long recipe.</p>
+<h2>Making mornings easier</h2>
+<p>The best breakfasts on busy mornings are the ones that are mostly ready before the morning starts. Overnight oats can be mixed the night before and grabbed from the fridge. Smoothie ingredients can be portioned into bags and frozen, ready to blend. Egg muffins can be baked at the weekend and reheated during the week. A little preparation the night before turns a rushed morning into a calm one.</p>
+<p>Keep a small set of breakfast staples in the cupboard and fridge: oats, bread, eggs, yoghurt, fruit, nuts and a spread you like. With those on hand, most of the ideas in this generator are possible without a special shopping trip. When you find an idea you like, write it down and make it part of your regular rotation, so you never have to think hard about breakfast again.</p>
+<h2>Mixing up the week</h2>
+<p>Eating the same breakfast every day is fine, but a little variety makes mornings more enjoyable. Try a sweet idea one day and a savoury one the next, or a light idea on a warm day and a hearty one when you have a long morning ahead. The generator is designed for this: pick a different style each day and let it suggest something new.</p>
+<p>Weekends are the time for the longer ideas, such as baked oatmeal, a frittata or a proper breakfast plate. Those take 20 minutes or more, but they are worth it when there is no rush. Save the quick ideas for weekdays, when ten minutes is all you have, and let the slow ideas be a weekend treat.</p>
+<div class="warn">This page is general cooking guidance. Take care with hot pans, boiling water and sharp knives, and keep them away from children. If anyone has a food allergy, check every ingredient before cooking, and cut grapes and similar round foods for young children.</div>
+<h2>Ideas for different appetites</h2>
+<p>A light breakfast suits a morning when you want something small and fresh, such as a yoghurt bowl or fruit with cheese. A hearty breakfast suits a long morning or a day with hard work ahead, such as a full plate with eggs and beans. A sweet breakfast suits a slow morning or a treat, such as pancakes or baked oatmeal. A savoury breakfast suits anyone who prefers salt to sugar in the morning, such as eggs with vegetables or a breakfast burrito.</p>
+<p>On-the-go ideas are for mornings when there is no time to sit down at all. A smoothie in a bottle, a breakfast burrito wrapped in foil, or a yoghurt pot with granola can all be eaten on the way. Make them the night before if you can, so the morning is just grab and go.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How does the generator pick the three ideas?</h3><p>It starts with ideas that match both your time and your style, then fills any gaps with ideas in the same style. Press the button again to see a different set of three.</p></div>
+<div class="faq"><h3>Can I change the ingredients in an idea?</h3><p>Yes. The ingredients are a starting point, not a rule. Swap fruits, spreads, breads and toppings for what you have at home, and adjust the amounts to your appetite.</p></div>
+<div class="faq"><h3>Which ideas work for a busy morning?</h3><p>Pick the under 10 minutes option, or the on the go style, for ideas you can make and eat in a hurry. Overnight oats and smoothie ideas can be prepared the night before.</p></div>
+<div class="faq"><h3>Are the ideas suitable for children?</h3><p>Most of them are, and children often enjoy helping with simple ones such as yoghurt bowls, toast toppings and smoothies. Keep hot pans and sharp knives to adults, and cut grapes and similar foods for young children.</p></div>
+<div class="faq"><h3>How many ideas are in the bank?</h3><p>Thirty original ideas, covering three time bands and five styles, so there is something for a quick weekday morning and for a slow weekend breakfast.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/lunchbox-idea-generator/">Lunchbox Idea Generator</a> · <a href="https://noryvello.github.io/meal-prep-planning-checklist/">Meal Prep Planning Checklist</a> · <a href="https://noryvello.github.io/dinner-idea-generator/">Dinner Idea Generator</a> · <a href="https://noryvello.github.io/coffee-brew-ratio-calculator/">Coffee Brew Ratio Calculator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function () {
+  var IDEAS = [
+    {name: "Berry yoghurt bowl", time: "quick", style: "light", ingredients: ["Yoghurt", "Mixed berries", "A spoonful of seeds", "A drizzle of honey"], steps: ["Spoon the yoghurt into a bowl.", "Top with berries and seeds.", "Drizzle with honey and eat straight away."]},
+    {name: "Fruit and cheese plate", time: "quick", style: "light", ingredients: ["Sliced apple and pear", "A few cheese cubes", "A small handful of nuts", "A few crackers"], steps: ["Slice the fruit and cheese.", "Arrange everything on a plate with the nuts and crackers.", "Eat with your fingers, no cooking needed."]},
+    {name: "Peanut butter banana toast", time: "quick", style: "hearty", ingredients: ["2 slices of toast", "Peanut butter", "1 banana", "A pinch of cinnamon"], steps: ["Toast the bread until golden.", "Spread with peanut butter and top with banana slices.", "Sprinkle with cinnamon and serve."]},
+    {name: "Cheese and tomato toastie", time: "quick", style: "hearty", ingredients: ["2 slices of bread", "Sliced cheese", "Sliced tomato", "A little butter"], steps: ["Butter the outside of the bread and fill with cheese and tomato.", "Cook in a dry pan on medium heat until golden on both sides.", "Cut in half and serve hot."]},
+    {name: "Honey banana oats", time: "quick", style: "sweet", ingredients: ["Rolled oats", "Milk", "1 banana", "Honey"], steps: ["Stir the oats and milk together in a bowl.", "Mash in half the banana and top with the rest, sliced.", "Drizzle with honey and eat straight away."]},
+    {name: "Ricotta and jam toast", time: "quick", style: "sweet", ingredients: ["2 slices of toast", "Ricotta", "Berry jam", "A few fresh berries"], steps: ["Toast the bread until golden.", "Spread with ricotta, then a spoonful of jam.", "Top with fresh berries and serve."]},
+    {name: "Avocado and egg toast", time: "quick", style: "savoury", ingredients: ["2 slices of toast", "1 ripe avocado", "1 egg", "Chilli flakes and salt"], steps: ["Fry the egg in a small pan until the white is set.", "Mash the avocado onto the toast and season.", "Top with the egg and a pinch of chilli flakes."]},
+    {name: "Hummus and cucumber wrap", time: "quick", style: "savoury", ingredients: ["1 flatbread or wrap", "Hummus", "Cucumber", "A handful of salad leaves"], steps: ["Spread hummus over the wrap.", "Add sliced cucumber and salad leaves.", "Roll up tightly and cut in half."]},
+    {name: "Banana oat smoothie", time: "quick", style: "onthego", ingredients: ["1 banana", "Rolled oats", "Milk", "A spoonful of yoghurt"], steps: ["Put everything in a blender.", "Blend until smooth.", "Pour into a bottle and take it with you."]},
+    {name: "Yoghurt and granola pot", time: "quick", style: "onthego", ingredients: ["Yoghurt", "Granola", "A small handful of berries", "A small pot with a lid"], steps: ["Layer yoghurt, granola and berries in the pot.", "Put the lid on.", "Take it with you and eat with a spoon."]},
+    {name: "Veggie omelette", time: "medium", style: "light", ingredients: ["2 eggs", "Chopped peppers and mushrooms", "A little butter", "Salt and pepper"], steps: ["Whisk the eggs and cook the vegetables in butter for a few minutes.", "Pour in the eggs and cook gently until just set.", "Fold, slide onto a plate and serve."]},
+    {name: "Tomato herb bruschetta", time: "medium", style: "light", ingredients: ["Sliced bread", "Ripe tomatoes", "Fresh basil", "Olive oil and garlic"], steps: ["Toast the bread and rub lightly with garlic.", "Top with chopped tomatoes and basil.", "Drizzle with olive oil and serve."]},
+    {name: "Full breakfast plate", time: "medium", style: "hearty", ingredients: ["2 eggs", "Baked beans", "Toast", "Grilled tomatoes"], steps: ["Grill the tomatoes and warm the beans.", "Fry or scramble the eggs.", "Serve everything together with toast."]},
+    {name: "Sausage and egg muffin", time: "medium", style: "hearty", ingredients: ["1 English muffin", "1 sausage patty", "1 egg", "A slice of cheese"], steps: ["Cook the sausage patty and fry the egg.", "Toast the muffin halves.", "Stack the sausage, egg and cheese inside and serve."]},
+    {name: "Banana pancakes", time: "medium", style: "sweet", ingredients: ["1 banana", "1 egg", "A few spoonfuls of flour", "A little butter"], steps: ["Mash the banana and stir in the egg and flour.", "Cook small pancakes in a buttered pan until golden on both sides.", "Serve with fruit or a drizzle of honey."]},
+    {name: "French toast with berries", time: "medium", style: "sweet", ingredients: ["2 slices of bread", "1 egg", "A splash of milk", "Berries and a little butter"], steps: ["Whisk the egg and milk, then soak the bread in it.", "Cook in a buttered pan until golden on both sides.", "Top with berries and serve."]},
+    {name: "Shakshuka-style eggs", time: "medium", style: "savoury", ingredients: ["2 eggs", "Chopped tomatoes", "1 pepper", "Cumin and paprika"], steps: ["Cook the pepper and tomatoes with the spices until soft.", "Make wells in the sauce and crack in the eggs.", "Cover and cook until the eggs are set, then serve with bread."]},
+    {name: "Mushroom spinach toast", time: "medium", style: "savoury", ingredients: ["2 slices of toast", "Mushrooms", "A handful of spinach", "Garlic and butter"], steps: ["Cook the mushrooms and garlic in butter until golden.", "Add the spinach and cook until wilted.", "Pile onto toast and serve."]},
+    {name: "Breakfast burrito", time: "medium", style: "onthego", ingredients: ["1 large wrap", "2 scrambled eggs", "Grated cheese", "Salsa"], steps: ["Scramble the eggs and warm the wrap.", "Fill the wrap with eggs, cheese and salsa.", "Roll up tightly in foil and take it with you."]},
+    {name: "Overnight oats jar", time: "medium", style: "onthego", ingredients: ["Rolled oats", "Milk", "Yoghurt", "Chopped fruit and seeds"], steps: ["Mix the oats, milk and yoghurt in a jar the night before.", "Leave in the fridge overnight.", "Top with fruit and seeds in the morning and take it with you."]},
+    {name: "Baked eggs with tomatoes", time: "long", style: "light", ingredients: ["2 eggs", "Chopped tomatoes", "Spinach", "A little cheese"], steps: ["Tip the tomatoes and spinach into a small oven dish.", "Crack in the eggs and scatter the cheese.", "Bake at 190 degrees Celsius for about 15 minutes until the eggs are set."]},
+    {name: "Vegetable frittata", time: "long", style: "light", ingredients: ["4 eggs", "Chopped vegetables", "A little cheese", "Olive oil"], steps: ["Cook the vegetables in an oven-safe pan until soft.", "Pour in the beaten eggs and scatter the cheese.", "Cook on the hob until the edges set, then finish under the grill."]},
+    {name: "Hash brown breakfast plate", time: "long", style: "hearty", ingredients: ["Potatoes", "2 eggs", "Baked beans", "Toast"], steps: ["Grate the potatoes, squeeze dry and fry into crisp hash browns.", "Cook the eggs and warm the beans.", "Serve everything together with toast."]},
+    {name: "Breakfast casserole bake", time: "long", style: "hearty", ingredients: ["Bread cubes", "4 eggs", "Milk", "Cheese and cooked vegetables"], steps: ["Layer bread, vegetables and cheese in a baking dish.", "Pour over the beaten eggs and milk.", "Bake at 180 degrees Celsius for about 30 minutes until set and golden."]},
+    {name: "Baked berry oatmeal", time: "long", style: "sweet", ingredients: ["Rolled oats", "Milk", "Mixed berries", "Honey and cinnamon"], steps: ["Mix the oats, milk, honey and cinnamon in a baking dish.", "Scatter the berries on top.", "Bake at 180 degrees Celsius for about 25 minutes until set."]},
+    {name: "Cinnamon apple porridge bake", time: "long", style: "sweet", ingredients: ["Rolled oats", "Milk", "1 chopped apple", "Cinnamon and honey"], steps: ["Mix the oats, milk, apple and cinnamon in a baking dish.", "Drizzle with honey.", "Bake at 180 degrees Celsius for about 25 minutes until golden."]},
+    {name: "Savoury breakfast muffins", time: "long", style: "savoury", ingredients: ["Flour", "2 eggs", "Grated cheese", "Chopped vegetables"], steps: ["Mix the flour, eggs, cheese and vegetables into a thick batter.", "Spoon into a muffin tin.", "Bake at 190 degrees Celsius for about 20 minutes until golden."]},
+    {name: "Potato and pepper hash", time: "long", style: "savoury", ingredients: ["Potatoes", "Peppers and onion", "2 eggs", "Paprika"], steps: ["Dice the potatoes and fry with peppers, onion and paprika until crisp.", "Make wells and crack in the eggs.", "Cover and cook until the eggs are set."]},
+    {name: "Make-ahead egg muffins", time: "long", style: "onthego", ingredients: ["6 eggs", "Chopped vegetables", "Grated cheese", "A muffin tin"], steps: ["Whisk the eggs and stir in the vegetables and cheese.", "Pour into a greased muffin tin.", "Bake at 180 degrees Celsius for about 20 minutes, cool, and grab one on your way out."]},
+    {name: "Baked granola bars", time: "long", style: "onthego", ingredients: ["Rolled oats", "Honey", "Nuts and seeds", "Dried fruit"], steps: ["Mix the oats, nuts, seeds and dried fruit with warm honey.", "Press firmly into a lined baking tin.", "Bake at 170 degrees Celsius for about 20 minutes, cool, and cut into bars."]}
+  ];
+  var timeSel = document.getElementById("time");
+  var styleSel = document.getElementById("style");
+  var button = document.getElementById("gen-btn");
+  var result = document.getElementById("result");
+  var counter = 0;
+  function show() {
+    var t = timeSel.value;
+    var s = styleSel.value;
+    if (!t || !s) {
+      result.innerHTML = "<p>Please choose both a time and a style first.</p>";
+      return;
+    }
+    var exact = [];
+    var sameStyle = [];
+    for (var i = 0; i < IDEAS.length; i++) {
+      if (IDEAS[i].time === t && IDEAS[i].style === s) { exact.push(IDEAS[i]); }
+      else if (IDEAS[i].style === s) { sameStyle.push(IDEAS[i]); }
+    }
+    var pool = exact.concat(sameStyle);
+    if (pool.length < 3) {
+      for (var k = 0; k < IDEAS.length; k++) {
+        if (pool.indexOf(IDEAS[k]) === -1) { pool.push(IDEAS[k]); }
+      }
+    }
+    var start = counter % pool.length;
+    counter++;
+    var picked = [];
+    for (var n = 0; n < 3; n++) { picked.push(pool[(start + n) % pool.length]); }
+    var html = "";
+    for (var p = 0; p < picked.length; p++) {
+      html += "<p><strong>" + picked[p].name + "</strong></p><p>Ingredients: " + picked[p].ingredients.join(", ") + "</p><ol>";
+      for (var q = 0; q < picked[p].steps.length; q++) { html += "<li>" + picked[p].steps[q] + "</li>"; }
+      html += "</ol>";
+    }
+    result.innerHTML = html;
+  }
+  button.addEventListener("click", show);
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

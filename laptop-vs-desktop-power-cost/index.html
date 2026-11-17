@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laptop vs Desktop Power Cost | Noryvello</title>
+<meta name="description" content="Compare the daily and yearly running cost of a laptop and a desktop with your own watts, hours and energy rate.">
+<link rel="canonical" href="https://noryvello.github.io/laptop-vs-desktop-power-cost/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Laptop vs Desktop Power Cost">
+<meta property="og:description" content="Compare laptop and desktop running costs per day and per year with your own numbers.">
+<meta property="og:url" content="https://noryvello.github.io/laptop-vs-desktop-power-cost/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.btn{display:inline-block;padding:10px 18px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer;margin-top:10px}.btn:hover{background:#3730a3}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where do I find my computer's watts?","acceptedAnswer":{"@type":"Answer","text":"Check the power adapter label for a laptop, which lists watts, or the power supply label inside a desktop. A plug-in power meter gives the most accurate figure, because it measures what the machine actually draws."}},{"@type":"Question","name":"Why do laptops usually cost less to run?","acceptedAnswer":{"@type":"Answer","text":"Laptops are built to run on a battery, so their parts are chosen to use little power. Desktops have no battery limit, so they use more powerful parts and separate monitors, which draw more energy."}},{"@type":"Question","name":"Does the monitor count in the desktop watts?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you want the full picture. Add the monitor's watts to the desktop's watts before entering the number, or enter the two separately and add the results. A laptop's screen is already included in its watts."}},{"@type":"Question","name":"Does sleep mode use power?","acceptedAnswer":{"@type":"Answer","text":"Sleep mode uses a small amount of power to keep the machine ready to wake. It is far less than running, but it is not zero. This calculator only covers the hours you enter as running hours."}},{"@type":"Question","name":"How is the yearly figure worked out?","acceptedAnswer":{"@type":"Answer","text":"The yearly figure multiplies the daily cost by 365 days. If you use the computer fewer days a week, the real yearly figure will be lower."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Laptop vs Desktop Power Cost</h1>
+<p class="answer">Enter the watts and daily hours for each machine plus your energy rate, and this calculator shows the daily and yearly running cost of a laptop and a desktop side by side. Every number comes from you, so the answer matches your own setup.</p>
+<div class="calc">
+<label for="l-watts">Laptop power (watts)</label>
+<input id="l-watts" type="number" min="1" step="1" placeholder="e.g. 65">
+<label for="l-hours">Laptop hours per day</label>
+<input id="l-hours" type="number" min="0.5" step="0.5" placeholder="e.g. 8">
+<label for="d-watts">Desktop power (watts, including monitor)</label>
+<input id="d-watts" type="number" min="1" step="1" placeholder="e.g. 300">
+<label for="d-hours">Desktop hours per day</label>
+<input id="d-hours" type="number" min="0.5" step="0.5" placeholder="e.g. 8">
+<label for="rate">Energy rate (per kWh, in your currency)</label>
+<input id="rate" type="number" min="0.01" step="0.01" placeholder="e.g. 0.30">
+<button class="btn" id="go" type="button">Compare power costs</button>
+<div class="out" id="out"></div>
+<div class="steps" id="steps"></div>
+</div>
+<div class="warn">These are estimates from the numbers you enter. Real power use varies with what the machine is doing: gaming and video work draw far more than browsing and typing. Check your adapter labels or a plug-in power meter for the most accurate figures.</div>
+<h2>How the comparison works</h2>
+<p>Running cost comes from three numbers: power, time and rate. Power in watts becomes energy in kilowatt-hours when multiplied by hours and divided by 1,000. Energy becomes money when multiplied by your rate. The calculator does that for each machine, per day and per year.</p>
+<p>The daily figures show what each machine costs for one day of your usual use. The yearly figures multiply the daily cost by 365 days, which turns a small daily difference into a number you can judge properly. If you use a machine fewer days a week, the real yearly figure will be lower than the one shown.</p>
+<p>The hours are separate for each machine on purpose. You might use a laptop for eight hours and a desktop for two, or the other way round. Entering the real hours for each keeps the comparison honest.</p>
+<h2>What changes the answer</h2>
+<p>The watts gap is usually the biggest factor. Laptops are built to run on a battery, so their parts are chosen to sip power. Desktops have no battery limit, so they use more powerful parts and a separate monitor. That gap shows up directly in the daily and yearly figures.</p>
+<p>What you do with the machine changes its power draw. A desktop idling on a document uses far less than the same machine rendering video or playing a demanding game. The watts you enter should reflect your usual use, not the maximum the machine can draw. A plug-in power meter gives the truest figure if you want one.</p>
+<p>The monitor counts for desktops. A laptop's screen is already included in its watts, but a desktop's monitor is a separate device with its own power draw. Add the monitor's watts to the desktop's watts before entering the number, or the comparison will flatter the desktop.</p>
+<h2>Reading your result</h2>
+<p>Look at the yearly difference first: it tells you what the choice of machine is worth over a year of your use. If the difference is small, power cost should not decide which machine you use. If the difference is large, shifting some of your hours to the laptop is worth considering.</p>
+<p>Remember that running cost is only one part of owning a computer. A desktop may be cheaper to repair and upgrade, while a laptop saves desk space and works anywhere. Let the power figure inform the choice, not make it for you.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Where do I find my computer's watts?</h3><p>Check the power adapter label for a laptop, which lists watts, or the power supply label inside a desktop. A plug-in power meter gives the most accurate figure, because it measures what the machine actually draws.</p></div>
+<div class="faq"><h3>Why do laptops usually cost less to run?</h3><p>Laptops are built to run on a battery, so their parts are chosen to use little power. Desktops have no battery limit, so they use more powerful parts and separate monitors, which draw more energy.</p></div>
+<div class="faq"><h3>Does the monitor count in the desktop watts?</h3><p>Yes, if you want the full picture. Add the monitor's watts to the desktop's watts before entering the number, or enter the two separately and add the results. A laptop's screen is already included in its watts.</p></div>
+<div class="faq"><h3>Does sleep mode use power?</h3><p>Sleep mode uses a small amount of power to keep the machine ready to wake. It is far less than running, but it is not zero. This calculator only covers the hours you enter as running hours.</p></div>
+<div class="faq"><h3>How is the yearly figure worked out?</h3><p>The yearly figure multiplies the daily cost by 365 days. If you use the computer fewer days a week, the real yearly figure will be lower.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/electric-heater-vs-gas-heater-cost/">Electric Heater vs Gas Heater Cost</a> · <a href="https://noryvello.github.io/led-vs-incandescent-running-cost/">LED vs Incandescent Running Cost</a> · <a href="https://noryvello.github.io/charging-time-calculator/">Charging Time Calculator</a> · <a href="https://noryvello.github.io/battery-backup-time-calculator/">Battery Backup Time Calculator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function num(id){var v=document.getElementById(id).value.trim();if(v===""){return null;}var n=parseFloat(v);return isNaN(n)?null:n;}
+function money(n){return n.toFixed(2);}
+function round2(n){return Math.round(n*100)/100;}
+function calculate(){
+var lWatts=num("l-watts");
+var lHours=num("l-hours");
+var dWatts=num("d-watts");
+var dHours=num("d-hours");
+var rate=num("rate");
+var out=document.getElementById("out");
+var steps=document.getElementById("steps");
+if(lWatts===null||lHours===null||dWatts===null||dHours===null||rate===null||lWatts<=0||lHours<=0||dWatts<=0||dHours<=0||rate<=0){
+out.textContent="Please enter a number above zero in every box.";
+steps.textContent="";
+return;
+}
+var lKwhDay=lWatts*lHours/1000;
+var dKwhDay=dWatts*dHours/1000;
+var lCostDay=lKwhDay*rate;
+var dCostDay=dKwhDay*rate;
+var lKwhYear=lKwhDay*365;
+var dKwhYear=dKwhDay*365;
+var lCostYear=lCostDay*365;
+var dCostYear=dCostDay*365;
+var diff=Math.abs(dCostYear-lCostYear);
+out.textContent="Laptop: "+money(lCostDay)+" per day · "+money(lCostYear)+" per year · Desktop: "+money(dCostDay)+" per day · "+money(dCostYear)+" per year · Difference: "+money(diff)+" per year";
+steps.textContent="Laptop energy per day = "+lWatts+" W x "+lHours+" h / 1000 = "+round2(lKwhDay)+" kWh\nLaptop cost per day = "+round2(lKwhDay)+" x "+rate+" = "+money(lCostDay)+"\nLaptop yearly = "+money(lCostDay)+" x 365 = "+money(lCostYear)+"\nDesktop energy per day = "+dWatts+" W x "+dHours+" h / 1000 = "+round2(dKwhDay)+" kWh\nDesktop cost per day = "+round2(dKwhDay)+" x "+rate+" = "+money(dCostDay)+"\nDesktop yearly = "+money(dCostDay)+" x 365 = "+money(dCostYear)+"\nYearly difference = "+money(diff);
+}
+document.getElementById("go").addEventListener("click",calculate);
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carpet and Flooring Area Calculator | Noryvello</title>
+<meta name="description" content="Work out how much carpet you need for a room. Enter the length and width, add a waste allowance, and get the area, carpet quantity and tile count.">
+<link rel="canonical" href="https://noryvello.github.io/carpet-flooring-area-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Carpet and Flooring Area Calculator">
+<meta property="og:description" content="Measure a room and work out how much carpet or how many carpet tiles to buy.">
+<meta property="og:url" content="https://noryvello.github.io/carpet-flooring-area-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:12px;margin-top:14px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.calc button:hover{background:#3730a3}</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I measure a room for carpet?", "acceptedAnswer": {"@type": "Answer", "text": "Measure the longest length and the widest width, wall to wall, in metres. Measure each room separately, and measure into doorways and alcoves as well, because those areas still need covering."}}, {"@type": "Question", "name": "How much waste allowance should I add?", "acceptedAnswer": {"@type": "Answer", "text": "Ten percent is a common starting point for a plain rectangular room. Add more for an awkward shape, a patterned carpet that needs matching, or a room with many corners."}}, {"@type": "Question", "name": "What is the difference between broadloom and carpet tiles?", "acceptedAnswer": {"@type": "Answer", "text": "Broadloom carpet is sold off a roll in a set width and cut to length. Carpet tiles are individual squares laid one by one, which makes it easier to replace a damaged tile later."}}, {"@type": "Question", "name": "Why is the tile count rounded up?", "acceptedAnswer": {"@type": "Answer", "text": "Tiles are sold whole, so the calculator rounds up to the next full tile. The waste allowance already covers cutting, and rounding up covers the last part tile."}}, {"@type": "Question", "name": "Does this calculator work for other flooring?", "acceptedAnswer": {"@type": "Answer", "text": "The area and waste maths works for any flooring sold by area, such as vinyl or laminate. The tile count is for carpet tiles, so check your own tile size before using that figure for other tiles."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Carpet and Flooring Area Calculator</h1>
+<p class="answer">Enter your room measurements and this calculator works out the floor area, the amount of carpet to buy including a waste allowance, and the number of carpet tiles if you choose tiles. It covers both broadloom carpet sold by the roll and square carpet tiles.</p>
+<div class="calc">
+<label for="length">Room length (m)</label>
+<input id="length" type="number" min="0" step="any" placeholder="e.g. 5">
+<label for="width">Room width (m)</label>
+<input id="width" type="number" min="0" step="any" placeholder="e.g. 4">
+<label for="waste">Waste allowance (%)</label>
+<input id="waste" type="number" min="0" step="any" value="10">
+<label for="type">Carpet type</label>
+<select id="type"><option value="broadloom">Broadloom (off the roll)</option><option value="tiles">Carpet tiles</option></select>
+<label for="rollwidth">Broadloom roll width (m)</label>
+<select id="rollwidth"><option value="3.66">3.66 m</option><option value="4">4 m</option></select>
+<label for="tilesize">Carpet tile size</label>
+<select id="tilesize"><option value="0.25">50 x 50 cm</option><option value="0.36">60 x 60 cm</option></select>
+<button id="calc-btn" type="button">Calculate</button>
+<p class="out" id="result"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">This calculator gives an estimate for a plain rectangular room. Rooms with bay windows, alcoves or angled walls need extra measuring, and patterned carpet may need more waste allowance than a plain one. Always check the size printed on the tile box or carpet roll before ordering.</div>
+<h2>How to use this calculator</h2>
+<p>Measure the longest length and the widest width of the room in metres, measuring wall to wall. Enter both numbers, then choose a waste allowance. Ten percent is a common starting point for a plain rectangular room, and you may want more for an awkward shape or a patterned carpet. Pick broadloom if your carpet comes off a roll, or carpet tiles if you are laying squares. For broadloom, pick the roll width your supplier sells. For tiles, pick the tile size. Press Calculate to see the area, the quantity including waste, and the tile count.</p>
+<h2>How the calculation works</h2>
+<p>The floor area is the room length multiplied by the room width. The waste allowance is then added: the area is multiplied by one plus the waste percentage divided by 100. For broadloom, the length to buy is the quantity with waste divided by the roll width. For tiles, the tile count is the quantity with waste divided by the area of one tile, rounded up to a whole tile, because part tiles cannot be bought. Every step is shown next to the result so you can check the maths.</p>
+<h2>How to use the result</h2>
+<p>Use the quantity with waste as your shopping figure, not the bare floor area. For broadloom, check the roll width with your supplier before ordering, because a wider roll can mean fewer joins across the room. For tiles, keep a few spare tiles for later repairs, since dye batches can differ. Measure each room separately and add the results together rather than guessing a total for the whole house, and measure into doorways and alcoves so no patch is missed.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How do I measure a room for carpet?</h3><p>Measure the longest length and the widest width, wall to wall, in metres. Measure each room separately, and measure into doorways and alcoves as well, because those areas still need covering.</p></div>
+<div class="faq"><h3>How much waste allowance should I add?</h3><p>Ten percent is a common starting point for a plain rectangular room. Add more for an awkward shape, a patterned carpet that needs matching, or a room with many corners.</p></div>
+<div class="faq"><h3>What is the difference between broadloom and carpet tiles?</h3><p>Broadloom carpet is sold off a roll in a set width and cut to length. Carpet tiles are individual squares laid one by one, which makes it easier to replace a damaged tile later.</p></div>
+<div class="faq"><h3>Why is the tile count rounded up?</h3><p>Tiles are sold whole, so the calculator rounds up to the next full tile. The waste allowance already covers cutting, and rounding up covers the last part tile.</p></div>
+<div class="faq"><h3>Does this calculator work for other flooring?</h3><p>The area and waste maths works for any flooring sold by area, such as vinyl or laminate. The tile count is for carpet tiles, so check your own tile size before using that figure for other tiles.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/flooring-area-calculator/">Flooring Area Calculator</a> · <a href="https://noryvello.github.io/tile-count-calculator/">Tile Count Calculator</a> · <a href="https://noryvello.github.io/paint-calculator/">Paint Calculator</a> · <a href="https://noryvello.github.io/deck-board-calculator/">Deck Board Calculator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n){return (Math.round(n*10000)/10000).toString();}
+function ceil(n){return Math.ceil(n - 1e-9);}
+function num(id){var v=parseFloat(document.getElementById(id).value);return isFinite(v)?v:NaN;}
+function show(msg,steps){document.getElementById('result').textContent=msg;document.getElementById('steps').textContent=steps||'';}
+function pl(n,s){return n===1?'':s;}
+document.getElementById('calc-btn').addEventListener('click', function () {
+  var L = num('length'), W = num('width'), waste = num('waste');
+  var type = document.getElementById('type').value;
+  if (!isFinite(L) || L <= 0 || !isFinite(W) || W <= 0) {
+    show('Please enter the room length and width as numbers above zero.');
+    return;
+  }
+  if (!isFinite(waste) || waste < 0) {
+    show('Please enter a waste allowance of zero or more.');
+    return;
+  }
+  var area = L * W;
+  var withWaste = area * (1 + waste / 100);
+  var s = 'Floor area: ' + fmt(L) + ' x ' + fmt(W) + ' = ' + fmt(area) + ' sq m.\nWith ' + fmt(waste) + '% waste: ' + fmt(area) + ' x ' + fmt(1 + waste / 100) + ' = ' + fmt(withWaste) + ' sq m.';
+  if (type === 'tiles') {
+    var tileArea = parseFloat(document.getElementById('tilesize').value);
+    var count = ceil(withWaste / tileArea);
+    show('You need ' + count + ' carpet tile' + pl(count, 's') + ' (' + fmt(withWaste) + ' sq m including waste).',
+      s + '\nTiles: ' + fmt(withWaste) + ' / ' + fmt(tileArea) + ' = ' + fmt(withWaste / tileArea) + ', rounded up to ' + count + ' tiles.');
+  } else {
+    var rollW = parseFloat(document.getElementById('rollwidth').value);
+    var len = ceil((withWaste / rollW) * 100) / 100;
+    show('You need about ' + fmt(withWaste) + ' sq m of carpet (' + fmt(len) + ' m of ' + fmt(rollW) + ' m-wide broadloom).',
+      s + '\nLength: ' + fmt(withWaste) + ' / ' + fmt(rollW) + ' = ' + fmt(withWaste / rollW) + ' m, rounded up to ' + fmt(len) + ' m.');
+  }
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

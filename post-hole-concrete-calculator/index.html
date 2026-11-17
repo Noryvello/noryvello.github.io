@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Post Hole Concrete Calculator | Noryvello</title>
+<meta name="description" content="Work out how much concrete fence post holes need. Enter the hole count, diameter and depth, and get the volume per hole, the total volume and the bags needed.">
+<link rel="canonical" href="https://noryvello.github.io/post-hole-concrete-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Post Hole Concrete Calculator">
+<meta property="og:description" content="Work out concrete volume and bags for post holes from their size and count.">
+<meta property="og:url" content="https://noryvello.github.io/post-hole-concrete-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:12px;margin-top:14px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.calc button:hover{background:#3730a3}</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What shape does the calculator assume?", "acceptedAnswer": {"@type": "Answer", "text": "It treats each hole as a straight cylinder, the same diameter from top to bottom. A hole that is wider at the top or bell-shaped at the bottom holds more concrete than the figure shown."}}, {"@type": "Question", "name": "How do I measure the diameter?", "acceptedAnswer": {"@type": "Answer", "text": "Measure across the widest part of the hole at the top, in centimetres. If the hole is uneven, measure in two directions and use the larger figure."}}, {"@type": "Question", "name": "What is the yield of a bag?", "acceptedAnswer": {"@type": "Answer", "text": "The yield is the volume of mixed concrete one bag makes, once water is added. The picker shows approximate yields, so check the figure printed on your own bags, because it varies by maker."}}, {"@type": "Question", "name": "Should I add a waste allowance?", "acceptedAnswer": {"@type": "Answer", "text": "This calculator does not add one, because hole sizes vary so much. Measure generously instead, and keep a spare bag or two for holes that turn out wider than planned."}}, {"@type": "Question", "name": "Can I use this for deck posts?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, the maths is the same for any round post hole. For deck footings that carry weight, check local building practice for the depth and size your deck needs."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Post Hole Concrete Calculator</h1>
+<p class="answer">Enter how many post holes you are digging and their size, and this calculator works out the concrete volume for one hole, the total volume and how many bags of ready-mix concrete you need. The working is shown so you can check every step.</p>
+<div class="calc">
+<label for="count">Number of holes</label>
+<input id="count" type="number" min="0" step="1" placeholder="e.g. 6">
+<label for="diameter">Hole diameter (cm)</label>
+<input id="diameter" type="number" min="0" step="any" placeholder="e.g. 30">
+<label for="depth">Hole depth (cm)</label>
+<input id="depth" type="number" min="0" step="any" placeholder="e.g. 60">
+<label for="bag">Bag size (approximate yield per bag)</label>
+<select id="bag"><option value="0.01">20 kg bag - about 0.01 cubic metres</option><option value="0.0125" selected>25 kg bag - about 0.0125 cubic metres</option><option value="0.02">40 kg bag - about 0.02 cubic metres</option></select>
+<button id="calc-btn" type="button">Calculate</button>
+<p class="out" id="result"></p>
+<p class="steps" id="steps"></p>
+</div>
+<div class="warn">This calculator treats each hole as a straight cylinder. Holes that are wider at the top or bottom, or dug in loose soil that crumbles, need more concrete than the maths suggests. Check the yield printed on your bag, because it varies by maker.</div>
+<h2>How to use this calculator</h2>
+<p>Count the post holes you plan to dig and enter the number. Measure the diameter and depth of a hole in centimetres. Measure a hole you have already dug, or use the size you plan to dig. Pick the bag size you plan to buy. The picker shows the approximate yield of each bag, which is the volume of mixed concrete one bag makes. Press Calculate to see the volume per hole, the total volume and the bag count.</p>
+<h2>How the calculation works</h2>
+<p>Each hole is a cylinder, so the volume of one hole is pi multiplied by the radius squared multiplied by the depth. The radius is half the diameter. The total volume is the volume of one hole multiplied by the number of holes. The bag count is the total volume divided by the yield of one bag, rounded up to a whole bag, because part bags cannot be bought.</p>
+<h2>How to use the result</h2>
+<p>Buy the number of bags shown, and keep one or two spares for holes that turn out wider than planned. Set each post plumb and brace it before the concrete sets. If your holes vary a lot in size, measure the largest few and use those figures, so you do not run short. Mix the concrete to the maker's guidance and fill each hole in one go where you can.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What shape does the calculator assume?</h3><p>It treats each hole as a straight cylinder, the same diameter from top to bottom. A hole that is wider at the top or bell-shaped at the bottom holds more concrete than the figure shown.</p></div>
+<div class="faq"><h3>How do I measure the diameter?</h3><p>Measure across the widest part of the hole at the top, in centimetres. If the hole is uneven, measure in two directions and use the larger figure.</p></div>
+<div class="faq"><h3>What is the yield of a bag?</h3><p>The yield is the volume of mixed concrete one bag makes, once water is added. The picker shows approximate yields, so check the figure printed on your own bags, because it varies by maker.</p></div>
+<div class="faq"><h3>Should I add a waste allowance?</h3><p>This calculator does not add one, because hole sizes vary so much. Measure generously instead, and keep a spare bag or two for holes that turn out wider than planned.</p></div>
+<div class="faq"><h3>Can I use this for deck posts?</h3><p>Yes, the maths is the same for any round post hole. For deck footings that carry weight, check local building practice for the depth and size your deck needs.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/ready-mix-concrete-bag-calculator/">Ready-Mix Concrete Bag Calculator</a> · <a href="https://noryvello.github.io/fence-panel-calculator/">Fence Panel Calculator</a> · <a href="https://noryvello.github.io/concrete-mix-calculator/">Concrete Mix Calculator</a> · <a href="https://noryvello.github.io/deck-board-calculator/">Deck Board Calculator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n){return (Math.round(n*10000)/10000).toString();}
+function ceil(n){return Math.ceil(n - 1e-9);}
+function num(id){var v=parseFloat(document.getElementById(id).value);return isFinite(v)?v:NaN;}
+function show(msg,steps){document.getElementById('result').textContent=msg;document.getElementById('steps').textContent=steps||'';}
+function pl(n,s){return n===1?'':s;}
+document.getElementById('calc-btn').addEventListener('click', function () {
+  var count = num('count'), dia = num('diameter'), depth = num('depth');
+  var yld = parseFloat(document.getElementById('bag').value);
+  if (!isFinite(count) || count <= 0) {
+    show('Please enter the number of holes as a number above zero.');
+    return;
+  }
+  if (!isFinite(dia) || dia <= 0) {
+    show('Please enter the hole diameter as a number above zero.');
+    return;
+  }
+  if (!isFinite(depth) || depth <= 0) {
+    show('Please enter the hole depth as a number above zero.');
+    return;
+  }
+  var r = (dia / 2) / 100;
+  var perHole = Math.PI * r * r * (depth / 100);
+  var total = perHole * count;
+  var bags = ceil(total / yld);
+  show('Each hole needs about ' + Math.round(perHole * 1000) + ' litres. Total for ' + fmt(count) + ' hole' + pl(count, 's') + ': ' + fmt(total) + ' cubic metres (' + Math.round(total * 1000) + ' litres), or ' + bags + ' bag' + pl(bags, 's') + '.',
+    'Radius: ' + fmt(dia) + ' / 2 = ' + fmt(dia / 2) + ' cm = ' + fmt(r) + ' m.\nVolume per hole: pi x ' + fmt(r) + ' x ' + fmt(r) + ' x ' + fmt(depth / 100) + ' = ' + fmt(perHole) + ' cubic metres (' + Math.round(perHole * 1000) + ' litres).\nTotal: ' + fmt(perHole) + ' x ' + fmt(count) + ' = ' + fmt(total) + ' cubic metres.\nBags: ' + fmt(total) + ' / ' + fmt(yld) + ' = ' + fmt(total / yld) + ', rounded up to ' + bags + ' bags.');
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

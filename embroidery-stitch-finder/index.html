@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Embroidery Stitch Finder | Noryvello</title>
+<meta name="description" content="Find the right embroidery stitch for your project. Pick what the stitch is for and your level, and get one of 12 stitches with numbered steps.">
+<link rel="canonical" href="https://noryvello.github.io/embroidery-stitch-finder/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Embroidery Stitch Finder">
+<meta property="og:description" content="Find the right embroidery stitch for your project.">
+<meta property="og:url" content="https://noryvello.github.io/embroidery-stitch-finder/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{width:100%;padding:12px;margin-top:14px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.result{background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.result p.name{font-size:19px;font-weight:700}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which stitch should a complete beginner learn first?","acceptedAnswer":{"@type":"Answer","text":"Running stitch or backstitch. Both use short, even stitches, need no special handling, and are useful for outlines and simple designs."}},{"@type":"Question","name":"What is the difference between stem stitch and backstitch?","acceptedAnswer":{"@type":"Answer","text":"Backstitch makes a neat straight line of touching stitches. Stem stitch makes a smooth, slightly twisted line that curves well, which suits stems and flowing outlines."}},{"@type":"Question","name":"How do I keep my stitches even?","acceptedAnswer":{"@type":"Answer","text":"Mark your line lightly before you start, and keep your stitch length the same. A hoop keeps the fabric taut, which also helps."}},{"@type":"Question","name":"What thread should I use?","acceptedAnswer":{"@type":"Answer","text":"Stranded cotton thread is a common choice for hand embroidery. Use fewer strands for fine detail and more strands for bold lines."}},{"@type":"Question","name":"Why do my French knots keep pulling through?","acceptedAnswer":{"@type":"Answer","text":"Hold the working thread taut as you pull the needle through, and keep the knot close to the fabric. Practise on scrap fabric until the knot sits neatly."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Embroidery Stitch Finder</h1>
+<p class="answer">This finder matches you with one of 12 embroidery stitches. Pick what the stitch is for and your level, and it shows the stitch with numbered steps, uses and a difficulty note. Every set of steps is written in plain words you can follow as you sew.</p>
+<div class="calc">
+<label for="em-purpose">What is the stitch for?</label>
+<select id="em-purpose">
+<option value="outlining">Outlining</option>
+<option value="filling">Filling an area</option>
+<option value="flowers">Flowers and leaves</option>
+<option value="edges">Edges and borders</option>
+<option value="lettering">Lettering</option>
+<option value="texture">Texture and dots</option>
+</select>
+<label for="em-level">Your level</label>
+<select id="em-level">
+<option value="beginner">Beginner</option>
+<option value="easy">Easy</option>
+<option value="intermediate">Intermediate</option>
+</select>
+<button id="em-btn" type="button">Find my stitch</button>
+</div>
+<div class="result" id="em-result"></div>
+<div class="warn">The steps here are general guidance for hand embroidery. Stitches take practice, so try each one on scrap fabric first. This page does not cover machine embroidery.</div>
+<h2>The 12 stitches at a glance</h2>
+<ul>
+<li><strong>Running stitch</strong> — outlining, beginner. A simple in-and-out stitch for lines and gathering.</li>
+<li><strong>Backstitch</strong> — outlining and lettering, beginner. A neat, solid line that follows curves well.</li>
+<li><strong>Stem stitch</strong> — outlining, easy. A smooth, slightly twisted line for stems and flowing shapes.</li>
+<li><strong>Split stitch</strong> — outlining, easy. A fine, rope-like line for delicate outlines.</li>
+<li><strong>Chain stitch</strong> — outlining and filling, easy. A linked line that also fills shapes in rows.</li>
+<li><strong>Satin stitch</strong> — filling, intermediate. Flat, parallel stitches that cover an area smoothly.</li>
+<li><strong>Lazy daisy</strong> — flowers and leaves, beginner. Single chain loops that form petals and leaves.</li>
+<li><strong>French knot</strong> — texture and dots, intermediate. Small raised knots for centres and texture.</li>
+<li><strong>Seed stitch</strong> — texture and filling, beginner. Tiny scattered stitches that fill and shade.</li>
+<li><strong>Blanket stitch</strong> — edges and borders, beginner. A looped edge stitch that finishes hems.</li>
+<li><strong>Feather stitch</strong> — edges and flowers, intermediate. Branching stitches for borders and foliage.</li>
+<li><strong>Cross stitch</strong> — filling and lettering, easy. Even crosses worked in rows on counted fabric.</li>
+</ul>
+<h2>Before you start stitching</h2>
+<p>Stretch your fabric in a hoop so it stays taut while you sew. A taut surface keeps stitches even and stops the fabric puckering around the design. Choose a needle with an eye large enough for your thread, and cut a length of thread no longer than your forearm so it does not tangle or wear thin as you stitch.</p>
+<p>Mark your design lightly on the fabric before you begin. A light pencil line or a washable marker gives you a path to follow and keeps your lines straight. Start with a small knot or a few tiny stitches on the back of the fabric to anchor the thread, and finish the same way so the work does not come undone.</p>
+<h2>Practising a new stitch</h2>
+<p>Try every new stitch on scrap fabric first. Work a short row slowly, watching how the thread sits and how the needle moves. If the stitches look uneven, slow down and keep the stitch length the same. Most stitches feel awkward for the first few tries and smooth out quickly with practice.</p>
+<p>Keep your tension gentle. Pulling the thread too tight puckers the fabric, while leaving it too loose makes floppy stitches. Aim for stitches that lie flat and even. When you are happy with the practice row, move on to your project with confidence.</p>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>Which stitch should a complete beginner learn first?</h3>
+<p>Running stitch or backstitch. Both use short, even stitches, need no special handling, and are useful for outlines and simple designs.</p>
+</div>
+<div class="faq">
+<h3>What is the difference between stem stitch and backstitch?</h3>
+<p>Backstitch makes a neat straight line of touching stitches. Stem stitch makes a smooth, slightly twisted line that curves well, which suits stems and flowing outlines.</p>
+</div>
+<div class="faq">
+<h3>How do I keep my stitches even?</h3>
+<p>Mark your line lightly before you start, and keep your stitch length the same. A hoop keeps the fabric taut, which also helps.</p>
+</div>
+<div class="faq">
+<h3>What thread should I use?</h3>
+<p>Stranded cotton thread is a common choice for hand embroidery. Use fewer strands for fine detail and more strands for bold lines.</p>
+</div>
+<div class="faq">
+<h3>Why do my French knots keep pulling through?</h3>
+<p>Hold the working thread taut as you pull the needle through, and keep the knot close to the fabric. Practise on scrap fabric until the knot sits neatly.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/fabric-needed-calculator/">Fabric Needed Calculator</a> · <a href="https://noryvello.github.io/sew-a-button-guide/">How to Sew a Button</a> · <a href="https://noryvello.github.io/hem-trousers-guide/">How to Hem Trousers</a> · <a href="https://noryvello.github.io/fix-a-zipper-guide/">How to Fix a Zipper</a> · <a href="https://noryvello.github.io/craft-fair-checklist/">Craft Fair Checklist</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function(){
+  var stitches=[
+    {name:"Running stitch",purposes:["outlining"],level:"beginner",uses:"Straight lines, gathering, simple outlines and basting.",note:"Beginner: the simplest stitch to learn. Keep your stitches short and even.",steps:["Bring the needle up through the fabric at the start of your line.","Push the needle down a short distance ahead, then bring it up again the same distance further on.","Keep going in and out along the line, keeping each stitch the same length.","Finish with a small knot or a few tiny stitches on the back."]},
+    {name:"Backstitch",purposes:["outlining","lettering"],level:"beginner",uses:"Solid outlines, lettering and any line that must look continuous.",note:"Beginner: easy to learn and very versatile. The line looks solid from the front.",steps:["Bring the needle up at the start of your line.","Push it down one stitch-length ahead.","Bring it up again one stitch-length ahead of where the thread came out.","Push the needle down into the end of the previous stitch, so each stitch touches the last.","Repeat along the line, always coming up ahead and going down into the last stitch."]},
+    {name:"Stem stitch",purposes:["outlining"],level:"easy",uses:"Stems, vines and smooth curved outlines.",note:"Easy: needs a little practice to keep the twist even. Keep the thread on the same side throughout.",steps:["Bring the needle up at the start of your line.","Push it down a short distance ahead, keeping the thread below the line.","Bring the needle up halfway back, just beside the first stitch, with the thread still below the line.","Repeat, always keeping the thread on the same side so the stitches twist neatly."]},
+    {name:"Split stitch",purposes:["outlining"],level:"easy",uses:"Fine, rope-like outlines and delicate curves.",note:"Easy: the needle splits the previous stitch, which takes a steady hand at first.",steps:["Bring the needle up and make one short straight stitch forward.","Bring the needle up through the middle of that stitch, splitting its threads.","Push the needle down one stitch-length ahead.","Repeat, always coming up through the centre of the last stitch."]},
+    {name:"Chain stitch",purposes:["outlining","filling"],level:"easy",uses:"Bold outlines, borders and filling shapes in rows.",note:"Easy: the loops form quickly once you get the rhythm. Keep each loop the same size.",steps:["Bring the needle up at the start of your line.","Push it down into the same hole, leaving a small loop of thread on top.","Bring the needle up a short distance ahead, inside the loop.","Pull the thread through gently so the loop lies flat, then repeat.","To finish, make a tiny stitch over the last loop to hold it."]},
+    {name:"Satin stitch",purposes:["filling"],level:"intermediate",uses:"Smooth filled shapes such as petals, leaves and monograms.",note:"Intermediate: needs even tension and parallel stitches. Practise on scrap fabric first.",steps:["Mark the outline of the shape you want to fill.","Bring the needle up on one edge of the shape.","Push it down on the opposite edge, keeping the stitch straight.","Bring the needle up beside the first stitch and repeat, laying each stitch flat against the last.","Keep the stitches parallel and close together until the shape is covered."]},
+    {name:"Lazy daisy",purposes:["flowers"],level:"beginner",uses:"Flower petals, leaves and simple floral sprays.",note:"Beginner: a single chain loop held with a tiny stitch. Arrange the loops in a circle for a flower.",steps:["Bring the needle up at the base of the petal.","Push it down into the same hole, leaving a loop of thread on top.","Bring the needle up at the tip of the petal, inside the loop.","Pull gently so the loop forms a petal shape.","Make a tiny stitch over the tip of the loop to hold it in place."]},
+    {name:"French knot",purposes:["texture"],level:"intermediate",uses:"Flower centres, dots, eyes and raised texture.",note:"Intermediate: the knot takes practice. Keep the thread taut as you pull through.",steps:["Bring the needle up where you want the knot.","Wrap the thread around the needle twice, keeping the wraps close together.","Hold the thread taut with your other hand.","Push the needle down very close to where it came up, keeping the thread taut.","Pull the needle through slowly so the knot settles neatly on the fabric."]},
+    {name:"Seed stitch",purposes:["texture","filling"],level:"beginner",uses:"Filling backgrounds, shading and soft texture.",note:"Beginner: tiny scattered stitches. Vary the direction slightly for a natural look.",steps:["Bring the needle up anywhere inside the area to fill.","Push it down a very short distance away to make a tiny stitch.","Bring the needle up nearby and make another tiny stitch.","Scatter the stitches evenly, changing direction a little each time, until the area is filled."]},
+    {name:"Blanket stitch",purposes:["edges"],level:"beginner",uses:"Finishing edges, hems and applique borders.",note:"Beginner: the looped edge is easy once the first stitch is placed. Keep the spacing even.",steps:["Bring the needle up at the edge of the fabric.","Push it down a short distance in from the edge and a little to the right.","Bring the needle up at the edge again, passing it through the loop of thread.","Pull gently so the loop sits along the edge, then repeat."]},
+    {name:"Feather stitch",purposes:["edges","flowers"],level:"intermediate",uses:"Branching borders, foliage and decorative seams.",note:"Intermediate: the alternating sides need rhythm. Work slowly and keep the loops even.",steps:["Bring the needle up at the top of your line.","Push it down a little to the right and bring it up below, inside the loop, to make a slanting stitch.","Pull gently so the loop holds.","Repeat on the left side, alternating left and right down the line."]},
+    {name:"Cross stitch",purposes:["filling","lettering"],level:"easy",uses:"Counted designs, samplers and lettering on even-weave fabric.",note:"Easy: work all the bottom stitches in one direction first, then cross them back the other way.",steps:["Bring the needle up at the bottom-left corner of a square.","Push it down at the top-right corner to make half a cross.","Work a row of half-crosses in the same direction.","Come back along the row, crossing each half in the other direction.","Keep every cross the same way round for a neat finish."]}
+  ];
+  var purposeNames={outlining:"outlining",filling:"filling an area",flowers:"flowers and leaves",edges:"edges and borders",lettering:"lettering",texture:"texture and dots"};
+  document.getElementById("em-btn").addEventListener("click",function(){
+    var purpose=document.getElementById("em-purpose").value;
+    var level=document.getElementById("em-level").value;
+    var box=document.getElementById("em-result");
+    var match=null, fallback=null;
+    for(var i=0;i<stitches.length;i++){
+      var s=stitches[i];
+      if(s.purposes.indexOf(purpose)>=0){
+        if(!fallback){fallback=s;}
+        if(s.level===level){match=s;break;}
+      }
+    }
+    var pick=match||fallback;
+    if(!pick){box.innerHTML="<p>Sorry, no stitch matches those choices. Try another purpose.</p>";return;}
+    var html="";
+    if(!match){html+="<p>No stitch matches both choices exactly, so here is the closest match for "+purposeNames[purpose]+".</p>";}
+    html+='<p class="name">'+pick.name+'</p>';
+    html+="<p>"+pick.note+"</p>";
+    html+="<p><strong>Uses:</strong> "+pick.uses+"</p>";
+    html+="<p><strong>Steps:</strong></p><ol>";
+    for(var j=0;j<pick.steps.length;j++){html+="<li>"+pick.steps[j]+"</li>";}
+    html+="</ol>";
+    box.innerHTML=html;
+  });
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

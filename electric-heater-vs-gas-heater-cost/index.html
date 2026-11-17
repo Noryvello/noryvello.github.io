@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Electric Heater vs Gas Heater Cost | Noryvello</title>
+<meta name="description" content="Compare electric and gas heating costs per hour and per month with your own heater power, hours and energy rates.">
+<link rel="canonical" href="https://noryvello.github.io/electric-heater-vs-gas-heater-cost/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Electric Heater vs Gas Heater Cost">
+<meta property="og:description" content="Compare electric and gas heating costs per hour and per month with your own numbers.">
+<meta property="og:url" content="https://noryvello.github.io/electric-heater-vs-gas-heater-cost/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.btn{display:inline-block;padding:10px 18px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer;margin-top:10px}.btn:hover{background:#3730a3}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does the gas heater use kilowatt-hours?","acceptedAnswer":{"@type":"Answer","text":"Kilowatt-hours keep both options in the same unit, so the comparison is fair. Check your heater's rating plate or your gas bill for the energy use per hour in kilowatt-hours."}},{"@type":"Question","name":"Where do I find my heater's power?","acceptedAnswer":{"@type":"Answer","text":"Check the rating plate on the heater or the manual. Electric heaters list watts, and gas heaters list energy use per hour. If the heater has several settings, enter the one you use most."}},{"@type":"Question","name":"Why are the hours separate for each heater?","acceptedAnswer":{"@type":"Answer","text":"The two heaters may not run for the same time. A gas heater might heat a whole room for the evening, while an electric heater warms one corner for an hour. Separate hours keep the comparison honest."}},{"@type":"Question","name":"Does this cover the cost of buying a heater?","acceptedAnswer":{"@type":"Answer","text":"No. This page compares running costs only, using the numbers you enter. Buying, installing and maintaining a heater are separate costs that this calculator does not include."}},{"@type":"Question","name":"How is the monthly figure worked out?","acceptedAnswer":{"@type":"Answer","text":"The monthly figure multiplies the cost per hour by the hours you use each day and by 30 days. If you heat for fewer days in a month, the real figure will be lower."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Electric Heater vs Gas Heater Cost</h1>
+<p class="answer">Enter each heater's power, how many hours a day you run it and your energy rates, and this calculator shows the cost per hour and per month for electric and gas heating side by side. Every rate and figure comes from you, so the answer matches your own home.</p>
+<div class="calc">
+<label for="e-watts">Electric heater power (watts)</label>
+<input id="e-watts" type="number" min="1" step="1" placeholder="e.g. 2000">
+<label for="e-hours">Electric heater hours per day</label>
+<input id="e-hours" type="number" min="0.5" step="0.5" placeholder="e.g. 4">
+<label for="e-rate">Electricity rate (per kWh, in your currency)</label>
+<input id="e-rate" type="number" min="0.01" step="0.01" placeholder="e.g. 0.30">
+<label for="g-kwh">Gas heater use per hour (kWh)</label>
+<input id="g-kwh" type="number" min="0.1" step="0.1" placeholder="e.g. 2.5">
+<label for="g-hours">Gas heater hours per day</label>
+<input id="g-hours" type="number" min="0.5" step="0.5" placeholder="e.g. 4">
+<label for="g-rate">Gas rate (per kWh, in your currency)</label>
+<input id="g-rate" type="number" min="0.01" step="0.01" placeholder="e.g. 0.10">
+<button class="btn" id="go" type="button">Compare heater costs</button>
+<div class="out" id="out"></div>
+<div class="steps" id="steps"></div>
+</div>
+<div class="warn">Heating costs depend on the numbers you enter and on how your home holds heat. This page compares running costs only. It does not cover buying or installing a heater, and it does not judge which heater warms a room better.</div>
+<h2>How the comparison works</h2>
+<p>Both heaters are measured in the same unit, the kilowatt-hour, so the comparison is fair. The electric heater's watts become kilowatt-hours by dividing by 1,000. The gas heater's use is entered directly in kilowatt-hours per hour, from its rating plate or your gas bill. Each side then gets its own rate, because electricity and gas are priced differently.</p>
+<p>The cost per hour tells you what each heater costs while it is running. The monthly figure multiplies that by the hours you use each day and by 30 days, which turns the hourly cost into a number you can judge against a monthly bill.</p>
+<p>The hours are separate for each heater on purpose. A gas heater might heat a whole room for the evening, while an electric heater warms one corner for an hour or two. Entering the real hours for each keeps the comparison honest instead of forcing both into the same pattern.</p>
+<h2>What changes the answer</h2>
+<p>The rates decide much of the outcome. Where gas is priced well below electricity per unit of energy, a gas heater often wins on running cost even if it uses more energy per hour. Where the rates are close, the heater that uses less energy per hour wins. Your own rates are what matter, not anyone else's.</p>
+<p>Hours matter just as much as rates. A heater that runs for two hours a day costs half as much per month as the same heater running for four hours. If you use one heater far more than the other, the monthly figures will show it clearly.</p>
+<p>Heater settings matter too. A heater with several power settings costs less on a low setting than on a high one, so enter the setting you actually use. If you switch settings through the day, enter an average that feels honest.</p>
+<h2>Reading your result</h2>
+<p>Look at the cost per hour first: it tells you what each heater costs while running, whatever your habits. Then look at the monthly figures, which fold in your real hours. The difference between the two monthly figures is what switching would be worth to you each month.</p>
+<p>Remember what the result does not cover. It does not cover buying or installing a heater, and it does not measure how warm each heater makes a room. A cheaper heater that leaves you cold is no bargain, and a dearer heater that heats only the room you are in can still be the sensible choice.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Why does the gas heater use kilowatt-hours?</h3><p>Kilowatt-hours keep both options in the same unit, so the comparison is fair. Check your heater's rating plate or your gas bill for the energy use per hour in kilowatt-hours.</p></div>
+<div class="faq"><h3>Where do I find my heater's power?</h3><p>Check the rating plate on the heater or the manual. Electric heaters list watts, and gas heaters list energy use per hour. If the heater has several settings, enter the one you use most.</p></div>
+<div class="faq"><h3>Why are the hours separate for each heater?</h3><p>The two heaters may not run for the same time. A gas heater might heat a whole room for the evening, while an electric heater warms one corner for an hour. Separate hours keep the comparison honest.</p></div>
+<div class="faq"><h3>Does this cover the cost of buying a heater?</h3><p>No. This page compares running costs only, using the numbers you enter. Buying, installing and maintaining a heater are separate costs that this calculator does not include.</p></div>
+<div class="faq"><h3>How is the monthly figure worked out?</h3><p>The monthly figure multiplies the cost per hour by the hours you use each day and by 30 days. If you heat for fewer days in a month, the real figure will be lower.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/laptop-vs-desktop-power-cost/">Laptop vs Desktop Power Cost</a> · <a href="https://noryvello.github.io/fan-vs-air-conditioner/">Fan vs Air Conditioner</a> · <a href="https://noryvello.github.io/ac-size-btu-calculator/">AC Size BTU Calculator</a> · <a href="https://noryvello.github.io/led-vs-incandescent-running-cost/">LED vs Incandescent Running Cost</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function num(id){var v=document.getElementById(id).value.trim();if(v===""){return null;}var n=parseFloat(v);return isNaN(n)?null:n;}
+function money(n){return n.toFixed(2);}
+function round2(n){return Math.round(n*100)/100;}
+function calculate(){
+var eWatts=num("e-watts");
+var eHours=num("e-hours");
+var eRate=num("e-rate");
+var gKwh=num("g-kwh");
+var gHours=num("g-hours");
+var gRate=num("g-rate");
+var out=document.getElementById("out");
+var steps=document.getElementById("steps");
+if(eWatts===null||eHours===null||eRate===null||gKwh===null||gHours===null||gRate===null||eWatts<=0||eHours<=0||eRate<=0||gKwh<=0||gHours<=0||gRate<=0){
+out.textContent="Please enter a number above zero in every box.";
+steps.textContent="";
+return;
+}
+var eKwh=eWatts/1000;
+var eHour=eKwh*eRate;
+var gHour=gKwh*gRate;
+var eMonth=eHour*eHours*30;
+var gMonth=gHour*gHours*30;
+var diff=Math.abs(eMonth-gMonth);
+var cheaper=eMonth<gMonth?"Electric":"Gas";
+out.textContent="Electric: "+money(eHour)+" per hour · "+money(eMonth)+" per month · Gas: "+money(gHour)+" per hour · "+money(gMonth)+" per month · "+cheaper+" is cheaper by "+money(diff)+" per month";
+steps.textContent="Electric energy per hour = "+eWatts+" / 1000 = "+round2(eKwh)+" kWh\nElectric cost per hour = "+round2(eKwh)+" x "+eRate+" = "+money(eHour)+"\nElectric monthly = "+money(eHour)+" x "+eHours+" x 30 = "+money(eMonth)+"\nGas cost per hour = "+gKwh+" x "+gRate+" = "+money(gHour)+"\nGas monthly = "+money(gHour)+" x "+gHours+" x 30 = "+money(gMonth)+"\nMonthly difference = "+money(diff);
+}
+document.getElementById("go").addEventListener("click",calculate);
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

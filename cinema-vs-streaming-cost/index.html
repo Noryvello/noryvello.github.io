@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cinema vs Streaming Cost | Noryvello</title>
+<meta name="description" content="Compare cinema vs streaming costs over a year. Enter your visits, ticket and snack costs and streaming subscriptions to see which costs you more.">
+<link rel="canonical" href="https://noryvello.github.io/cinema-vs-streaming-cost/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cinema vs Streaming Cost">
+<meta property="og:description" content="Compare the yearly cost of cinema trips and streaming subscriptions using your own numbers.">
+<meta property="og:url" content="https://noryvello.github.io/cinema-vs-streaming-cost/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{width:100%;padding:12px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;margin-top:14px;cursor:pointer}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I count snacks in the cinema cost?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you usually buy them. Snacks are part of the real cost of a cinema trip, so the calculator includes a box for them. Enter 0 if you never buy snacks."}},{"@type":"Question","name":"What if I share a streaming subscription?","acceptedAnswer":{"@type":"Answer","text":"Enter only the share you actually pay. If a friend pays and you pay nothing, enter 0 for that subscription or leave it out of the count."}},{"@type":"Question","name":"Do cinema visits include the whole family?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter the number of people who usually go, and the calculator multiplies the ticket and snack cost by that number."}},{"@type":"Question","name":"Why are there no prices in the calculator?","acceptedAnswer":{"@type":"Answer","text":"Ticket, snack and subscription prices vary too much by place for one figure to be useful. Your own numbers give a comparison that fits your situation."}},{"@type":"Question","name":"Does this page say cinema is better than streaming?","acceptedAnswer":{"@type":"Answer","text":"No. It only compares yearly money cost. The experience of a big screen and the convenience of watching at home are personal choices."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Cinema vs Streaming Cost</h1>
+<p class="answer">This page compares what a year of cinema trips costs against a year of streaming subscriptions, using your own numbers. Enter how often you go, what tickets and snacks cost, and what your subscriptions cost, and the calculator shows both yearly totals side by side.</p>
+<div class="calc">
+<label for="visits">Cinema visits per month</label>
+<input id="visits" type="number" min="0" step="any" placeholder="For example 2">
+<label for="ticket">Ticket cost per visit, per person</label>
+<input id="ticket" type="number" min="0" step="any" placeholder="Your usual ticket price">
+<label for="snacks">Snacks cost per visit, per person</label>
+<input id="snacks" type="number" min="0" step="any" placeholder="Enter 0 if you never buy snacks">
+<label for="people">People going each time</label>
+<input id="people" type="number" min="1" step="1" placeholder="For example 2">
+<label for="subs">Streaming subscriptions (count)</label>
+<input id="subs" type="number" min="0" step="1" placeholder="How many you pay for">
+<label for="subCost">Average monthly cost per subscription</label>
+<input id="subCost" type="number" min="0" step="any" placeholder="Your average monthly fee">
+<button id="calcBtn" type="button">Compare costs</button>
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+</div>
+<h2>How the comparison works</h2>
+<p>A cinema trip costs a lump sum each time you go, while streaming costs a steady amount every month whether you watch or not. The calculator works out your cinema year first: visits per month times 12 gives your visits for the year, and ticket plus snacks times the number of people gives the cost of one visit. Multiplying those gives the yearly cinema total. For streaming, the calculator multiplies your number of subscriptions by the average monthly cost and by 12 months. Both totals use only the numbers you enter, so the comparison fits your own habits and prices. The steps under the result show the working for both sides.</p>
+<div class="warn">This page compares money only. It cannot say which way of watching is better, and it does not count travel to the cinema or the cost of the screen you watch at home. Enter only the share of each subscription that you actually pay.</div>
+<h2>How to use the result</h2>
+<p>If the two totals are close, small changes tip the balance. One extra cinema visit a month, or one more subscription, can be enough to change which side costs more, so try the numbers for a busy month and a quiet month to see the range. If you share subscriptions, remember to count only your own share, and if you sometimes skip a month, use the average over the year rather than your busiest month. The result is a money comparison only: a night out at the cinema and a quiet evening at home are different experiences, and the calculator does not try to put a value on that difference.</p>
+<h2>What the numbers do not show</h2>
+<p>Some costs sit outside both totals. Travel to the cinema, parking and the time spent getting there are not counted, and neither is the television, sound system or internet connection you use for streaming. New releases reach the cinema first, while streaming gives you a library to browse at any hour, and neither of those facts appears in a money total. Use the result to understand where your money goes, then decide for yourself what the experience is worth.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Should I count snacks in the cinema cost?</h3><p>Yes, if you usually buy them. Snacks are part of the real cost of a cinema trip, so the calculator includes a box for them. Enter 0 if you never buy snacks.</p></div>
+<div class="faq"><h3>What if I share a streaming subscription?</h3><p>Enter only the share you actually pay. If a friend pays and you pay nothing, enter 0 for that subscription or leave it out of the count.</p></div>
+<div class="faq"><h3>Do cinema visits include the whole family?</h3><p>Yes. Enter the number of people who usually go, and the calculator multiplies the ticket and snack cost by that number.</p></div>
+<div class="faq"><h3>Why are there no prices in the calculator?</h3><p>Ticket, snack and subscription prices vary too much by place for one figure to be useful. Your own numbers give a comparison that fits your situation.</p></div>
+<div class="faq"><h3>Does this page say cinema is better than streaming?</h3><p>No. It only compares yearly money cost. The experience of a big screen and the convenience of watching at home are personal choices.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/cable-tv-vs-streaming/">Cable TV vs Streaming</a> · <a href="https://noryvello.github.io/date-night-idea-generator/">Date Night Idea Generator</a> · <a href="https://noryvello.github.io/family-game-night-idea-generator/">Family Game Night Idea Generator</a> · <a href="https://noryvello.github.io/subscription-audit-checklist/">Subscription Audit Checklist</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmt(n){var neg=n<0;n=Math.abs(n);var s=(Math.round(n*100)/100).toString();var parts=s.split(".");parts[0]=parts[0].replace(/\B(?=(\d{3})+(?!\d))/g,",");return (neg?"-":"")+parts.join(".");}
+function num(id){return parseFloat(document.getElementById(id).value);}
+document.getElementById("calcBtn").addEventListener("click",function(){
+var visits=num("visits"),ticket=num("ticket"),snacks=num("snacks"),people=num("people"),subs=num("subs"),subCost=num("subCost");
+var out=document.getElementById("out"),steps=document.getElementById("steps");
+var vals=[visits,ticket,snacks,people,subs,subCost];
+var bad=false;
+for(var i=0;i<vals.length;i++){if(isNaN(vals[i])||vals[i]<0){bad=true;}}
+if(bad||people<1){out.textContent="Please fill in every box with a number of 0 or more (people per visit must be at least 1).";steps.textContent="";return;}
+var visitsYear=visits*12;
+var perVisit=(ticket+snacks)*people;
+var cinemaYear=visitsYear*perVisit;
+var streamYear=subs*subCost*12;
+var diff=Math.abs(cinemaYear-streamYear);
+if(cinemaYear===streamYear){
+out.textContent="Cinema: "+fmt(cinemaYear)+" a year. Streaming: "+fmt(streamYear)+" a year. Both work out the same.";
+}else{
+var cheaper=cinemaYear<streamYear?"Cinema":"Streaming";
+out.textContent="Cinema: "+fmt(cinemaYear)+" a year. Streaming: "+fmt(streamYear)+" a year. "+cheaper+" costs less by "+fmt(diff)+" a year.";
+}
+steps.textContent="Cinema: "+fmt(visits)+" visits a month x 12 = "+fmt(visitsYear)+" visits a year; ("+fmt(ticket)+" ticket + "+fmt(snacks)+" snacks) x "+fmt(people)+" people = "+fmt(perVisit)+" per visit; "+fmt(visitsYear)+" x "+fmt(perVisit)+" = "+fmt(cinemaYear)+" a year.\nStreaming: "+fmt(subs)+" subscriptions x "+fmt(subCost)+" a month x 12 months = "+fmt(streamYear)+" a year.";
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

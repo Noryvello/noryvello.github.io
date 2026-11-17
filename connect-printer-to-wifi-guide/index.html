@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Connect a Printer to Wi-Fi | Noryvello</title>
+<meta name="description" content="Connect your printer to Wi-Fi so any phone or computer at home can print. Pick a connection method for numbered setup steps, plus a troubleshooting checklist.">
+<link rel="canonical" href="https://noryvello.github.io/connect-printer-to-wifi-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Connect a Printer to Wi-Fi">
+<meta property="og:description" content="Numbered Wi-Fi setup steps for your printer, with a troubleshooting checklist.">
+<meta property="og:url" content="https://noryvello.github.io/connect-printer-to-wifi-guide/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{width:100%;padding:12px;margin-top:12px;border:0;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.calc button:hover{background:#3730a3}
+.checklist{list-style:none;margin:8px 0}
+.checklist li{margin:8px 0}
+.checklist input{margin-right:8px}
+.progress{font-weight:700;margin-top:10px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is WPS and should I use it to connect my printer?","acceptedAnswer":{"@type":"Answer","text":"WPS is a button on many routers that lets a printer join the Wi-Fi network without typing the password. Press the WPS button on the router, then start WPS on the printer within a couple of minutes. It is the quickest method when both devices support it."}},{"@type":"Question","name":"Why can my phone see the printer but my computer cannot?","acceptedAnswer":{"@type":"Answer","text":"The phone and the computer are probably on different networks. Check that both are on the same Wi-Fi network name, and that neither is on a guest network. Restarting the printer and the computer also helps."}},{"@type":"Question","name":"Do I need the printer maker's app to set up Wi-Fi?","acceptedAnswer":{"@type":"Answer","text":"Not always. Printers with a screen can usually join Wi-Fi from the screen alone. Printers without a screen often need the maker's app or a temporary USB cable connection for the first setup."}},{"@type":"Question","name":"What if my printer has no screen?","acceptedAnswer":{"@type":"Answer","text":"Use WPS if your router has the button, or use the maker's app, which walks you through the setup on your phone. Some models can also be set up over a USB cable from a computer."}},{"@type":"Question","name":"Will the printer stay connected if I change my Wi-Fi password?","acceptedAnswer":{"@type":"Answer","text":"No. If you change the Wi-Fi password or the network name, the printer will lose its connection and you will need to set it up again with the new details."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How to Connect a Printer to Wi-Fi</h1>
+<p class="answer">A printer on your Wi-Fi network can be used by every phone and computer in the house, with no cable needed. Pick a connection method below for the numbered setup steps, and use the troubleshooting checklist if the printer will not connect.</p>
+<div class="calc">
+<p>Use the picker to get the setup steps for your connection method.</p>
+<label for="method">How do you want to connect the printer?</label>
+<select id="method">
+<option value="">Choose the method…</option>
+<option value="screen">Using the printer's screen</option>
+<option value="wps">Using the WPS button on the router</option>
+<option value="app">Using the maker's app on my phone</option>
+<option value="usb">Using a USB cable for setup</option>
+</select>
+<button id="show-btn" type="button">Show the steps</button>
+<div id="out"><p class="steps">Choose a method above and press the button to see the numbered steps.</p></div>
+</div>
+<h2>What you need before you start</h2>
+<p>Before you start, find your Wi-Fi network name and password. The network name is the one your phone connects to at home, and the password is the one you type when a new device joins. If you do not know the password, it is often printed on a sticker on the router. Keep the printer close to the router for the setup, even if you plan to move it later, because a weak signal during setup can cause the connection to fail.</p>
+<p>Make sure the printer is switched on and has paper loaded, and check whether it has a screen. Printers with a screen can usually join Wi-Fi on their own. Printers without a screen need another method, such as the WPS button on the router or the maker's app. If you are not sure what your printer supports, the manual will say, and the maker's support pages list the setup options for each model.</p>
+<h2>Choosing a connection method</h2>
+<p>The printer's screen is the most straightforward method when the printer has one. You pick your network from a list, type the password, and the printer joins. The WPS button is quicker still: press the button on the router, start WPS on the printer, and the two connect without a password being typed. Not every router has a WPS button, and some routers have it disabled, so check yours first.</p>
+<p>The maker's app is the best choice for printers without a screen. The app finds the printer, asks for your Wi-Fi details, and sends them to the printer. A USB cable is the fallback: connect the printer to a computer with the cable, run the setup, and the computer passes the Wi-Fi details to the printer. Once the printer is on the network, you can remove the cable. Whichever method you use, the result is the same: the printer joins your Wi-Fi network and stays connected.</p>
+<h2>After the printer is connected</h2>
+<p>Once the printer is on the network, print a test page from the printer's own menu to confirm the connection works. Then add the printer on each phone and computer that will use it. On a phone, open the print option in any app and the printer should appear in the list. On a computer, open the printer settings and add a network printer, and the computer should find it. You only need to add the printer once on each device.</p>
+<p>It is worth noting the printer's network name as it appears to your devices, because some homes have more than one printer and the names can look alike. If the printer moves to another room later, check that it still has a good Wi-Fi signal there. A printer in a far corner or behind thick walls may drop off the network, and moving it closer to the router usually fixes that.</p>
+<h2>Troubleshooting checklist</h2>
+<p>If the printer will not connect, work through this list in order. Most connection problems are fixed by one of these steps.</p>
+<ul class="checklist">
+<li><label><input type="checkbox"> The printer is switched on and within range of the router.</label></li>
+<li><label><input type="checkbox"> The Wi-Fi network name and password were typed correctly.</label></li>
+<li><label><input type="checkbox"> The phone or computer and the printer are on the same network.</label></li>
+<li><label><input type="checkbox"> The router has been restarted once.</label></li>
+<li><label><input type="checkbox"> The printer has been restarted once.</label></li>
+<li><label><input type="checkbox"> The printer's wireless light is on, showing wireless is switched on.</label></li>
+</ul>
+<p class="progress" id="progress">0 of 6 done</p>
+<p>If the printer still will not connect after all six checks, look in the printer manual for a network reset option, which clears old settings and lets you start the setup again. The maker's support pages also list model-specific steps.</p>
+<h2>Keeping the connection working</h2>
+<p>A printer that is set up well usually stays connected for a long time, but a few things can break the connection. Changing the Wi-Fi password or the network name will disconnect the printer, and you will need to set it up again with the new details. A new router has the same effect. Moving the printer far from the router can weaken the signal until the printer drops off, so keep it within reasonable range.</p>
+<p>If the printer goes offline now and then, check that it is not in a deep sleep mode. Some printers sleep so deeply that they miss print jobs, and waking them with a button press before printing helps. A printer that is switched off at the wall each night will need a minute to reconnect each morning. Leaving it on, or in its normal sleep mode, avoids that wait.</p>
+<div class="warn">These steps cover the usual ways to connect a printer to Wi-Fi. Exact menus vary by printer model, so check your printer manual if a step here does not match your printer. Never share your Wi-Fi password with anyone you do not trust, and change it if you think someone else knows it.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is WPS and should I use it to connect my printer?</h3><p>WPS is a button on many routers that lets a printer join the Wi-Fi network without typing the password. Press the WPS button on the router, then start WPS on the printer within a couple of minutes. It is the quickest method when both devices support it.</p></div>
+<div class="faq"><h3>Why can my phone see the printer but my computer cannot?</h3><p>The phone and the computer are probably on different networks. Check that both are on the same Wi-Fi network name, and that neither is on a guest network. Restarting the printer and the computer also helps.</p></div>
+<div class="faq"><h3>Do I need the printer maker's app to set up Wi-Fi?</h3><p>Not always. Printers with a screen can usually join Wi-Fi from the screen alone. Printers without a screen often need the maker's app or a temporary USB cable connection for the first setup.</p></div>
+<div class="faq"><h3>What if my printer has no screen?</h3><p>Use WPS if your router has the button, or use the maker's app, which walks you through the setup on your phone. Some models can also be set up over a USB cable from a computer.</p></div>
+<div class="faq"><h3>Will the printer stay connected if I change my Wi-Fi password?</h3><p>No. If you change the Wi-Fi password or the network name, the printer will lose its connection and you will need to set it up again with the new details.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/print-from-phone-guide/">How to Print From Your Phone</a> · <a href="https://noryvello.github.io/improve-wifi-signal-guide/">How to Improve Your Wi-Fi Signal</a> · <a href="https://noryvello.github.io/print-at-home-vs-print-shop/">Print at Home vs Print Shop</a> · <a href="https://noryvello.github.io/home-office-setup-checklist/">Home Office Setup Checklist</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function(){
+  var data = {
+    "screen": {title: "Connecting with the printer's screen", steps: [
+      "Switch the printer on and open its Wi-Fi or network settings from the screen menu.",
+      "Choose your Wi-Fi network from the list of networks the printer finds.",
+      "Type the Wi-Fi password carefully, checking each character as you go.",
+      "Confirm and wait for the printer to connect. The wireless light should stay on.",
+      "Print a test page from the printer menu to confirm the connection works."
+    ], note: "If your network does not appear in the list, move the printer closer to the router and search again."},
+    "wps": {title: "Connecting with the WPS button", steps: [
+      "Switch the printer on and find the WPS option in its Wi-Fi or network settings.",
+      "Press the WPS button on your router. It is usually on the back or side.",
+      "Within a couple of minutes, start WPS on the printer.",
+      "Wait while the printer and the router connect. The wireless light should stay on.",
+      "Print a test page from the printer menu to confirm the connection works."
+    ], note: "If nothing happens, the router may have WPS disabled. Check the router settings or use another method."},
+    "app": {title: "Connecting with the maker's app", steps: [
+      "Install the printer maker's app on your phone from your app store.",
+      "Switch the printer on and make sure your phone is on your home Wi-Fi network.",
+      "Open the app and follow its setup steps to find the printer.",
+      "When asked, choose your Wi-Fi network and type the password.",
+      "Wait for the app to confirm the printer is connected, then print a test page."
+    ], note: "The app usually finds the printer by itself. If it does not, check the printer is on and nearby."},
+    "usb": {title: "Connecting with a USB cable for setup", steps: [
+      "Connect the printer to your computer with a USB cable and switch the printer on.",
+      "Open the printer setup software on the computer, or the maker's app if it offers USB setup.",
+      "Choose the wireless setup option and pick your Wi-Fi network.",
+      "Type the Wi-Fi password when asked and let the setup finish.",
+      "Unplug the USB cable, then print a test page to confirm the wireless connection works."
+    ], note: "The cable is only needed for the setup. Once the printer is on Wi-Fi, you can remove it."}
+  };
+  var sel = document.getElementById("method");
+  var btn = document.getElementById("show-btn");
+  var out = document.getElementById("out");
+  function show(){
+    var v = sel.value;
+    if(!v || !data[v]){
+      out.innerHTML = '<p class="steps">Please choose a method from the list first, then press the button.</p>';
+      return;
+    }
+    var d = data[v];
+    var html = '<p class="out">' + d.title + '</p><ol>';
+    for(var i = 0; i < d.steps.length; i++){ html += '<li>' + d.steps[i] + '</li>'; }
+    html += '</ol><p class="steps">' + d.note + '</p>';
+    out.innerHTML = html;
+  }
+  btn.addEventListener("click", show);
+  var boxes = document.querySelectorAll('input[type="checkbox"]');
+  var prog = document.getElementById("progress");
+  function update(){
+    var done = 0;
+    for(var i = 0; i < boxes.length; i++){ if(boxes[i].checked) done++; }
+    prog.textContent = done + " of " + boxes.length + " done";
+  }
+  for(var j = 0; j < boxes.length; j++){ boxes[j].addEventListener("change", update); }
+  update();
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>
