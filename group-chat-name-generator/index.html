@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Group Chat Name Generator | Noryvello</title>
+<meta name="description" content="Pick your group type and get five fun group chat name ideas from a bank of forty. Names for friends, family, work, classmates, teams, book clubs, travel and gaming.">
+<link rel="canonical" href="https://noryvello.github.io/group-chat-name-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Group Chat Name Generator">
+<meta property="og:description" content="Five fun chat names for your group, from a bank of forty.">
+<meta property="og:url" content="https://noryvello.github.io/group-chat-name-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many names are in the bank?","acceptedAnswer":{"@type":"Answer","text":"Forty original names, five for each of eight group types: friends, family, work, classmates, sports teams, book clubs, travel and gaming."}},{"@type":"Question","name":"Can I use a name from a different group type?","acceptedAnswer":{"@type":"Answer","text":"Yes. The types are only a starting point. A name listed for friends might suit your family group just as well."}},{"@type":"Question","name":"What if nobody in the group likes the name?","acceptedAnswer":{"@type":"Answer","text":"Press the button again for a new set of five, or let each person pick a favourite and vote. The best group names are the ones everyone agrees on."}},{"@type":"Question","name":"Are the names safe for a work chat?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every name in the bank is clean and friendly, with nothing rude or unkind, so they work for work groups as well as friends."}},{"@type":"Question","name":"Can I change the name later?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most chat apps let you rename a group at any time, so you can refresh the name for a trip, a season or a new joke."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Group Chat Name Generator</h1>
+<p class="answer">Pick the kind of group you have and this generator gives you five chat name ideas to choose from. All forty names in the bank are original, friendly and safe to use with any group.</p>
+<div class="calc">
+<label for="pick">What kind of group is it?</label>
+<select id="pick">
+<option value="">Choose a group type</option>
+<option value="friends">Friends</option>
+<option value="family">Family</option>
+<option value="work">Work colleagues</option>
+<option value="classmates">Classmates</option>
+<option value="team">Sports team</option>
+<option value="bookclub">Book club</option>
+<option value="travel">Travel group</option>
+<option value="gaming">Gaming group</option>
+</select>
+<button id="gen-btn" type="button" style="margin-top:14px;padding:11px 18px;font-size:16px;font-weight:700;color:#fff;background:#4338ca;border:none;border-radius:8px;cursor:pointer">Give me 5 chat names</button>
+<div id="result" class="steps" role="status"></div>
+</div>
+<h2>How to use this generator</h2>
+<p>Choose the kind of group you have, then press the button. You will get five names that suit that kind of group, drawn from a bank of forty. Press the button again for a different set, and let the group vote on the favourite.</p>
+<p>The group types are only a guide. A name listed under friends might suit your work group perfectly, and a travel name might fit your family chat. Browse every type before you decide.</p>
+<h2>Picking a name everyone likes</h2>
+<p>The best group chat names make the whole group smile. A name that references a shared joke, a shared plan or a shared habit will feel personal in a way a generic name never does. Ask the group for ideas before you pick.</p>
+<p>Keep it short enough to read at a glance. Long names get cut off on small screens, and a name with too many words is hard to remember. Two to four words is usually the sweet spot.</p>
+<div class="warn">Keep it kind. Only use a name the whole group is happy with, and skip anything that teases one person or shares a private joke outsiders might misunderstand.</div>
+<h2>When to change the name</h2>
+<p>Groups change, and names can change with them. A chat that started for one trip can get a fresh name for the next one, and a work group can get a new name when a project ends. Renaming costs nothing and keeps the chat feeling current.</p>
+<p>Mark special moments with a temporary name. A birthday week, a holiday countdown or a big match can all get a name of their own, then the group can go back to the usual name afterwards.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How many names are in the bank?</h3><p>Forty original names, five for each of eight group types: friends, family, work, classmates, sports teams, book clubs, travel and gaming.</p></div>
+<div class="faq"><h3>Can I use a name from a different group type?</h3><p>Yes. The types are only a starting point. A name listed for friends might suit your family group just as well.</p></div>
+<div class="faq"><h3>What if nobody in the group likes the name?</h3><p>Press the button again for a new set of five, or let each person pick a favourite and vote. The best group names are the ones everyone agrees on.</p></div>
+<div class="faq"><h3>Are the names safe for a work chat?</h3><p>Yes. Every name in the bank is clean and friendly, with nothing rude or unkind, so they work for work groups as well as friends.</p></div>
+<div class="faq"><h3>Can I change the name later?</h3><p>Yes. Most chat apps let you rename a group at any time, so you can refresh the name for a trip, a season or a new joke.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/podcast-name-idea-generator/">Podcast Name Idea Generator</a> · <a href="https://noryvello.github.io/funny-awards-generator/">Funny Awards Generator</a> · <a href="https://noryvello.github.io/sleepover-idea-generator/">Sleepover Idea Generator</a> · <a href="https://noryvello.github.io/would-you-rather-generator/">Would You Rather Generator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function () {
+  var BANK = [{"name":"The Late Reply Club","cat":"friends"},{"name":"Snacks and Stories","cat":"friends"},{"name":"The Group Project","cat":"friends"},{"name":"Always Online","cat":"friends"},{"name":"The Meme Exchange","cat":"friends"},{"name":"The Family Table","cat":"family"},{"name":"Sunday Roast Society","cat":"family"},{"name":"The Cousin Crew","cat":"family"},{"name":"Home Base Chat","cat":"family"},{"name":"The Family Grapevine","cat":"family"},{"name":"The Deadline Club","cat":"work"},{"name":"Coffee Break Crew","cat":"work"},{"name":"The Meeting Survivors","cat":"work"},{"name":"Project Central","cat":"work"},{"name":"The Lunch Bunch","cat":"work"},{"name":"The Study Squad","cat":"classmates"},{"name":"Homework Helpers","cat":"classmates"},{"name":"The Class of Us","cat":"classmates"},{"name":"Exam Season Crew","cat":"classmates"},{"name":"The Library Table","cat":"classmates"},{"name":"The Starting Lineup","cat":"team"},{"name":"Game Day Gang","cat":"team"},{"name":"The Training Ground","cat":"team"},{"name":"Victory Lap Club","cat":"team"},{"name":"The Sideline Chat","cat":"team"},{"name":"The Dog-Eared Pages","cat":"bookclub"},{"name":"Chapter and Verse","cat":"bookclub"},{"name":"The Bookish Bunch","cat":"bookclub"},{"name":"Plot Twist Society","cat":"bookclub"},{"name":"The Reading Nook","cat":"bookclub"},{"name":"The Wandering Crew","cat":"travel"},{"name":"Passport Ready","cat":"travel"},{"name":"The Road Ahead","cat":"travel"},{"name":"Suitcases and Stories","cat":"travel"},{"name":"The Next Adventure","cat":"travel"},{"name":"The Respawn Point","cat":"gaming"},{"name":"Level Up Lounge","cat":"gaming"},{"name":"The Guild Hall","cat":"gaming"},{"name":"No Pauses Allowed","cat":"gaming"},{"name":"The High Score Club","cat":"gaming"}];
+  var VALID = ["friends", "family", "work", "classmates", "team", "bookclub", "travel", "gaming"];
+  var pick = document.getElementById("pick");
+  var button = document.getElementById("gen-btn");
+  var result = document.getElementById("result");
+  var counter = 0;
+  function show() {
+    var v = pick.value;
+    if (!v || VALID.indexOf(v) === -1) {
+      result.innerHTML = "<p>Please choose a group type first.</p>";
+      return;
+    }
+    var pool = [];
+    for (var i = 0; i < BANK.length; i++) { if (BANK[i].cat === v) pool.push(BANK[i]); }
+    for (var j = 0; j < BANK.length; j++) { if (BANK[j].cat !== v) pool.push(BANK[j]); }
+    var start = counter % pool.length;
+    counter++;
+    var html = "<ol>";
+    for (var k = 0; k < 5; k++) { html += "<li>" + pool[(start + k) % pool.length].name + "</li>"; }
+    html += "</ol>";
+    result.innerHTML = html;
+  }
+  button.addEventListener("click", show);
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

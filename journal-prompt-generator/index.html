@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Journal Prompt Generator | Noryvello</title>
+<meta name="description" content="Pick a theme and get journal prompts from a bank of forty original prompts. Gratitude, goals, memories, feelings, creativity, daily life, growth and nature themes.">
+<link rel="canonical" href="https://noryvello.github.io/journal-prompt-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Journal Prompt Generator">
+<meta property="og:description" content="Journal prompts for your theme, from a bank of forty.">
+<meta property="og:url" content="https://noryvello.github.io/journal-prompt-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many prompts are in the bank?","acceptedAnswer":{"@type":"Answer","text":"Forty original prompts, five for each of eight themes: gratitude, goals, memories, feelings, creativity, daily life, growth and nature."}},{"@type":"Question","name":"How long should I write for?","acceptedAnswer":{"@type":"Answer","text":"There is no rule. A few sentences counts, and so does a full page. Write until you feel done, then stop."}},{"@type":"Question","name":"Do I need to answer every prompt?","acceptedAnswer":{"@type":"Answer","text":"No. Pick the one that catches your eye and skip the rest. The prompts are invitations, not homework."}},{"@type":"Question","name":"Should I write by hand or type?","acceptedAnswer":{"@type":"Answer","text":"Either works. Handwriting feels slower and more personal for many people, while typing is faster and easier to search. Use what you enjoy."}},{"@type":"Question","name":"Can children use these prompts?","acceptedAnswer":{"@type":"Answer","text":"Yes. The prompts are written in plain language and are suitable for older children and teens as well as adults."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Journal Prompt Generator</h1>
+<p class="answer">Pick a theme and this generator gives you five journal prompts to write about. Forty original prompts are in the bank, covering gratitude, goals, memories, feelings, creativity, daily life, growth and nature.</p>
+<div class="calc">
+<label for="pick">Which theme do you want to write about?</label>
+<select id="pick">
+<option value="">Choose a theme</option>
+<option value="gratitude">Gratitude</option>
+<option value="goals">Goals</option>
+<option value="memories">Memories</option>
+<option value="feelings">Feelings</option>
+<option value="creativity">Creativity</option>
+<option value="daily">Daily life</option>
+<option value="growth">Growth</option>
+<option value="nature">Nature</option>
+</select>
+<button id="gen-btn" type="button" style="margin-top:14px;padding:11px 18px;font-size:16px;font-weight:700;color:#fff;background:#4338ca;border:none;border-radius:8px;cursor:pointer">Give me 5 journal prompts</button>
+<div id="result" class="steps" role="status"></div>
+</div>
+<h2>How to use this generator</h2>
+<p>Choose a theme, then press the button. You will get five prompts in that theme, drawn from a bank of forty. Pick the one that catches your eye and start writing.</p>
+<p>There is no wrong way to use a prompt. Write a few sentences or a full page, answer it directly or let it lead you somewhere else entirely. The prompt is an invitation, not homework.</p>
+<h2>Building a journaling habit</h2>
+<p>A short daily habit beats a long weekly one. Ten minutes with a prompt, at the same time each day, will build a habit faster than waiting for a free hour that never comes.</p>
+<p>Keep your journal somewhere easy to reach, and do not worry about spelling or neatness. A journal is for you, not for an audience, and messy pages count just as much as tidy ones.</p>
+<div class="warn">Journaling is a writing habit, not a treatment. If something you write about feels too big to carry alone, talk to a person you trust or a professional.</div>
+<h2>What to do with finished pages</h2>
+<p>Some people reread old pages and enjoy seeing how their thoughts change. Others never look back, and that is fine too. Your journal, your rules.</p>
+<p>If you fill a notebook, date the cover and start a new one. A shelf of dated notebooks is a record of your life that no photo album can match. Some people keep a second notebook for lists and plans, so the journal stays a place for thoughts and stories.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How many prompts are in the bank?</h3><p>Forty original prompts, five for each of eight themes: gratitude, goals, memories, feelings, creativity, daily life, growth and nature.</p></div>
+<div class="faq"><h3>How long should I write for?</h3><p>There is no rule. A few sentences counts, and so does a full page. Write until you feel done, then stop.</p></div>
+<div class="faq"><h3>Do I need to answer every prompt?</h3><p>No. Pick the one that catches your eye and skip the rest. The prompts are invitations, not homework.</p></div>
+<div class="faq"><h3>Should I write by hand or type?</h3><p>Either works. Handwriting feels slower and more personal for many people, while typing is faster and easier to search. Use what you enjoy.</p></div>
+<div class="faq"><h3>Can children use these prompts?</h3><p>Yes. The prompts are written in plain language and are suitable for older children and teens as well as adults.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/note-taking-methods-guide/">Note-Taking Methods Guide</a> · <a href="https://noryvello.github.io/effective-study-techniques-guide/">Effective Study Techniques Guide</a> · <a href="https://noryvello.github.io/photography-challenge-generator/">Photography Challenge Generator</a> · <a href="https://noryvello.github.io/road-trip-games-generator/">Road Trip Games Generator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function () {
+  var BANK = [{"name":"Write about three small things that went well today.","cat":"gratitude"},{"name":"Who made your day better this week, and how?","cat":"gratitude"},{"name":"What is one thing in your home you are glad to have?","cat":"gratitude"},{"name":"Describe a meal you enjoyed recently and why it stood out.","cat":"gratitude"},{"name":"What is something you used to take for granted that you now appreciate?","cat":"gratitude"},{"name":"What is one thing you want to learn this month?","cat":"goals"},{"name":"Describe where you would like to be a year from now.","cat":"goals"},{"name":"What is a small step you could take tomorrow towards a goal?","cat":"goals"},{"name":"Write about a goal you reached and what helped you get there.","cat":"goals"},{"name":"What habit would you like to build, and why?","cat":"goals"},{"name":"Describe a favourite place from your childhood.","cat":"memories"},{"name":"Write about a day you would like to relive.","cat":"memories"},{"name":"What is your earliest happy memory?","cat":"memories"},{"name":"Describe a trip that changed how you see a place.","cat":"memories"},{"name":"Write about someone who taught you something important.","cat":"memories"},{"name":"How are you feeling right now, and what might be behind it?","cat":"feelings"},{"name":"Write about a time you felt proud of yourself.","cat":"feelings"},{"name":"What usually helps you feel calm when the day is busy?","cat":"feelings"},{"name":"Describe a moment this week when you felt truly relaxed.","cat":"feelings"},{"name":"What are you looking forward to, and why?","cat":"feelings"},{"name":"Invent a character and describe their perfect day.","cat":"creativity"},{"name":"Write the opening of a story set in a place you love.","cat":"creativity"},{"name":"Describe an imaginary room you would love to spend time in.","cat":"creativity"},{"name":"Write a short poem about the weather today.","cat":"creativity"},{"name":"Invent a new holiday and describe how people celebrate it.","cat":"creativity"},{"name":"Describe your morning routine in detail.","cat":"daily"},{"name":"What did you eat today, and which meal was best?","cat":"daily"},{"name":"Write about a small kindness you saw or gave today.","cat":"daily"},{"name":"Describe the view from your favourite window.","cat":"daily"},{"name":"What is one thing you did today that you would do again?","cat":"daily"},{"name":"What is something you find easier now than a year ago?","cat":"growth"},{"name":"Write about a mistake that taught you something useful.","cat":"growth"},{"name":"What advice would you give your younger self?","cat":"growth"},{"name":"Describe a challenge you are working through right now.","cat":"growth"},{"name":"What is one thing you want to understand better?","cat":"growth"},{"name":"Describe the sky you saw today.","cat":"nature"},{"name":"Write about a walk you enjoyed and what you noticed.","cat":"nature"},{"name":"What is your favourite season, and what do you love about it?","cat":"nature"},{"name":"Describe a plant or tree near your home.","cat":"nature"},{"name":"Write about a time you watched the rain, the sea or the stars.","cat":"nature"}];
+  var VALID = ["gratitude", "goals", "memories", "feelings", "creativity", "daily", "growth", "nature"];
+  var pick = document.getElementById("pick");
+  var button = document.getElementById("gen-btn");
+  var result = document.getElementById("result");
+  var counter = 0;
+  function show() {
+    var v = pick.value;
+    if (!v || VALID.indexOf(v) === -1) {
+      result.innerHTML = "<p>Please choose a theme first.</p>";
+      return;
+    }
+    var pool = [];
+    for (var i = 0; i < BANK.length; i++) { if (BANK[i].cat === v) pool.push(BANK[i]); }
+    for (var j = 0; j < BANK.length; j++) { if (BANK[j].cat !== v) pool.push(BANK[j]); }
+    var start = counter % pool.length;
+    counter++;
+    var html = "<ol>";
+    for (var k = 0; k < 5; k++) { html += "<li>" + pool[(start + k) % pool.length].name + "</li>"; }
+    html += "</ol>";
+    result.innerHTML = html;
+  }
+  button.addEventListener("click", show);
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

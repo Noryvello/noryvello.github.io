@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Band Name Generator | Noryvello</title>
+<meta name="description" content="Pick a genre and get five original band name ideas from a bank of forty. Rock, pop, indie, metal, jazz, folk, electronic and country names, all invented for this page.">
+<link rel="canonical" href="https://noryvello.github.io/band-name-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Band Name Generator">
+<meta property="og:description" content="Five original band names for your genre, from a bank of forty.">
+<meta property="og:url" content="https://noryvello.github.io/band-name-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many band names are in the bank?","acceptedAnswer":{"@type":"Answer","text":"Forty original names, five for each of eight genres: rock, pop, indie, metal, jazz, folk, electronic and country."}},{"@type":"Question","name":"Can I mix names from different genres?","acceptedAnswer":{"@type":"Answer","text":"Yes. Pick a genre to start, then press the button again or try another genre and combine the words you like best into a new name of your own."}},{"@type":"Question","name":"Are these real band names?","acceptedAnswer":{"@type":"Answer","text":"No. Every name in the bank was invented for this page. If a name happens to match a real band you know, pick another one."}},{"@type":"Question","name":"What makes a good band name?","acceptedAnswer":{"@type":"Answer","text":"A good name is short, easy to say and easy to remember, and it fits the sound of the band. Say it out loud, write it down, and check how it looks on a poster."}},{"@type":"Question","name":"Do I need to check a name before using it?","acceptedAnswer":{"@type":"Answer","text":"Yes. Search the name online and check music sites and trademark listings for your country before you print posters or release music under it."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Band Name Generator</h1>
+<p class="answer">Pick a genre and this generator gives you five original band names to try. All forty names in the bank were invented for this page, so none of them are copied from real bands.</p>
+<div class="calc">
+<label for="pick">Which genre is your band?</label>
+<select id="pick">
+<option value="">Choose a genre</option>
+<option value="rock">Rock</option>
+<option value="pop">Pop</option>
+<option value="indie">Indie</option>
+<option value="metal">Metal</option>
+<option value="jazz">Jazz</option>
+<option value="folk">Folk</option>
+<option value="electronic">Electronic</option>
+<option value="country">Country</option>
+</select>
+<button id="gen-btn" type="button" style="margin-top:14px;padding:11px 18px;font-size:16px;font-weight:700;color:#fff;background:#4338ca;border:none;border-radius:8px;cursor:pointer">Give me 5 band names</button>
+<div id="result" class="steps" role="status"></div>
+</div>
+<h2>How to use this generator</h2>
+<p>Choose the genre that sounds closest to your band, then press the button. You will get five names drawn from that genre first, so the names should feel right for your sound. If you like a name, write it down before you press the button again, because the next press shows a different set.</p>
+<p>The bank holds forty names, five per genre, and every name was invented for this page. Press the button as many times as you like and mix words from different names to build something of your own. The generator is a starting point, not a final answer.</p>
+<h2>Picking a name that sticks</h2>
+<p>Short names are easier to remember and easier to shout across a room. Two or three words usually work best, and a name that is easy to spell will help people find you online. Say each candidate out loud and imagine it announced before a show.</p>
+<p>A good name also fits the music. A gentle name suits a quiet folk sound, while a harder name suits a loud rock band. If the name feels wrong for your songs, it probably is, so keep looking until one feels like it belongs to your band.</p>
+<div class="warn">These names are invented suggestions, not a legal check. Before you use a name for a real band, search for it online and check that no other band, business or trademark already uses it.</div>
+<h2>Before you settle on a name</h2>
+<p>Once you have a shortlist, search each name online. Check music streaming sites, social media and video sites to see whether another band already uses it. A name that is already taken will cause confusion and could cause legal trouble later.</p>
+<p>Check the name in writing too. Does it look good on a poster? Can people spell it after hearing it once? Ask a few friends what they think, and listen if several of them stumble over the same name.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How many band names are in the bank?</h3><p>Forty original names, five for each of eight genres: rock, pop, indie, metal, jazz, folk, electronic and country.</p></div>
+<div class="faq"><h3>Can I mix names from different genres?</h3><p>Yes. Pick a genre to start, then press the button again or try another genre and combine the words you like best into a new name of your own.</p></div>
+<div class="faq"><h3>Are these real band names?</h3><p>No. Every name in the bank was invented for this page. If a name happens to match a real band you know, pick another one.</p></div>
+<div class="faq"><h3>What makes a good band name?</h3><p>A good name is short, easy to say and easy to remember, and it fits the sound of the band. Say it out loud, write it down, and check how it looks on a poster.</p></div>
+<div class="faq"><h3>Do I need to check a name before using it?</h3><p>Yes. Search the name online and check music sites and trademark listings for your country before you print posters or release music under it.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/podcast-name-idea-generator/">Podcast Name Idea Generator</a> · <a href="https://noryvello.github.io/start-a-podcast-checklist/">Start a Podcast Checklist</a> · <a href="https://noryvello.github.io/film-video-with-phone-guide/">How to Film a Video With Your Phone</a> · <a href="https://noryvello.github.io/clean-joke-generator/">Clean Joke Generator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function () {
+  var BANK = [{"name":"The Velvet Static","cat":"rock"},{"name":"Copperhead Sky","cat":"rock"},{"name":"Iron Meadow","cat":"rock"},{"name":"The Rusty Compass","cat":"rock"},{"name":"Midnight Low Tide","cat":"rock"},{"name":"Sugar Comet","cat":"pop"},{"name":"Paper Lantern Parade","cat":"pop"},{"name":"The Glitter Sparrows","cat":"pop"},{"name":"Neon Lemonade","cat":"pop"},{"name":"Cloud Nine Club","cat":"pop"},{"name":"The Quiet Cartographers","cat":"indie"},{"name":"Moss and Mirrors","cat":"indie"},{"name":"Fernway","cat":"indie"},{"name":"The Paper Boats","cat":"indie"},{"name":"Slow Radio","cat":"indie"},{"name":"Iron Tempest","cat":"metal"},{"name":"The Ashen Crown","cat":"metal"},{"name":"Thunder Forge","cat":"metal"},{"name":"Grave of Echoes","cat":"metal"},{"name":"Steel Serpent Choir","cat":"metal"},{"name":"The Velvet Keys","cat":"jazz"},{"name":"Smoke and Brass","cat":"jazz"},{"name":"The Moonlight Quartet","cat":"jazz"},{"name":"Copper Swing Society","cat":"jazz"},{"name":"The Lazy Trumpet","cat":"jazz"},{"name":"The Willow Singers","cat":"folk"},{"name":"Harvest Moon Trio","cat":"folk"},{"name":"Cedar and Stone","cat":"folk"},{"name":"The Old Mill Voices","cat":"folk"},{"name":"Prairie Light Band","cat":"folk"},{"name":"Neon Pulse Machine","cat":"electronic"},{"name":"The Static Bloom","cat":"electronic"},{"name":"Circuit Garden","cat":"electronic"},{"name":"Laser Meadow","cat":"electronic"},{"name":"Pixel Tide","cat":"electronic"},{"name":"The Dusty Fiddles","cat":"country"},{"name":"Red Barn Harmony","cat":"country"},{"name":"Wheatfield Road","cat":"country"},{"name":"The Lonely Pines","cat":"country"},{"name":"Sundown Porch Band","cat":"country"}];
+  var VALID = ["rock", "pop", "indie", "metal", "jazz", "folk", "electronic", "country"];
+  var pick = document.getElementById("pick");
+  var button = document.getElementById("gen-btn");
+  var result = document.getElementById("result");
+  var counter = 0;
+  function show() {
+    var v = pick.value;
+    if (!v || VALID.indexOf(v) === -1) {
+      result.innerHTML = "<p>Please choose a genre first.</p>";
+      return;
+    }
+    var pool = [];
+    for (var i = 0; i < BANK.length; i++) { if (BANK[i].cat === v) pool.push(BANK[i]); }
+    for (var j = 0; j < BANK.length; j++) { if (BANK[j].cat !== v) pool.push(BANK[j]); }
+    var start = counter % pool.length;
+    counter++;
+    var html = "<ol>";
+    for (var k = 0; k < 5; k++) { html += "<li>" + pool[(start + k) % pool.length].name + "</li>"; }
+    html += "</ol>";
+    result.innerHTML = html;
+  }
+  button.addEventListener("click", show);
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

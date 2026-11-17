@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Science Fair Project Idea Generator | Noryvello</title>
+<meta name="description" content="Pick a subject and an age group and get science fair project ideas with a question, a method outline and a materials note. Thirty original ideas for younger and older students.">
+<link rel="canonical" href="https://noryvello.github.io/science-fair-project-idea-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Science Fair Project Idea Generator">
+<meta property="og:description" content="Science fair project ideas with a question, method and materials note.">
+<meta property="og:url" content="https://noryvello.github.io/science-fair-project-idea-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many project ideas are in the bank?","acceptedAnswer":{"@type":"Answer","text":"Thirty original ideas, covering plants, water, physics, chemistry, earth and food for both younger and older students."}},{"@type":"Question","name":"What does each idea include?","acceptedAnswer":{"@type":"Answer","text":"Each idea gives you a question to test, a short method outline and a materials note, so you can see what the project needs before you start."}},{"@type":"Question","name":"How do I pick the best idea?","acceptedAnswer":{"@type":"Answer","text":"Choose one you are curious about, that you can finish in the time you have, and that uses materials you can get easily. Curiosity matters more than complexity."}},{"@type":"Question","name":"Do I need a hypothesis?","acceptedAnswer":{"@type":"Answer","text":"Most fairs expect one. Write a guess before you start, such as which seed will sprout fastest and why, then test it and report what actually happened."}},{"@type":"Question","name":"What if my experiment does not work?","acceptedAnswer":{"@type":"Answer","text":"That is still a result. Write down what happened, think about why, and say what you would change next time. Fair judges value honest reporting."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Science Fair Project Idea Generator</h1>
+<p class="answer">Pick a subject and an age group and this generator gives you three science fair project ideas, each with a question to test, a method outline and a materials note. Thirty original ideas are in the bank.</p>
+<div class="calc">
+<label for="pick1">Which subject?</label>
+<select id="pick1">
+<option value="">Choose a subject</option>
+<option value="plants">Plants</option>
+<option value="water">Water</option>
+<option value="physics">Physics</option>
+<option value="chemistry">Chemistry</option>
+<option value="earth">Earth</option>
+<option value="food">Food</option>
+</select>
+<label for="pick2">Which age group?</label>
+<select id="pick2">
+<option value="">Choose an age group</option>
+<option value="younger">Younger students</option>
+<option value="older">Older students</option>
+</select>
+<button id="gen-btn" type="button" style="margin-top:14px;padding:11px 18px;font-size:16px;font-weight:700;color:#fff;background:#4338ca;border:none;border-radius:8px;cursor:pointer">Give me 3 project ideas</button>
+<div id="result" class="steps" role="status"></div>
+</div>
+<h2>How to use this generator</h2>
+<p>Choose a subject and an age group, then press the button. You will get three project ideas that fit, each with a question to test, a method outline and a materials note. Press again for a different set.</p>
+<p>The bank holds thirty ideas across six subjects, for younger and older students. Read the materials note before you commit, so you know the project is one you can actually do.</p>
+<h2>Turning an idea into a project</h2>
+<p>Start by writing your question as a guess. For example, if your question is which soil helps seeds sprout fastest, guess which one it will be and why. That guess is your hypothesis, and testing it is the heart of the project.</p>
+<p>Change one thing at a time. If you test three soils, keep the seeds, the water and the light the same for all of them. Record what happens each day, even when nothing seems to change, because a careful record is what makes a project scientific.</p>
+<div class="warn">Stay safe. Ask a teacher or an adult before you start, never taste or heat anything unless an adult says it is safe, and keep chemicals, hot water and sharp tools out of the project unless a teacher supervises.</div>
+<h2>Presenting your results</h2>
+<p>A good display tells the story of your project: the question, the guess, what you did, what happened and what you learned. Use photos, charts or drawings to show your results, and keep the words short.</p>
+<p>Be honest about surprises. If the result was not what you expected, say so and explain what you would do differently next time. Judges and teachers value honest reporting more than a perfect result.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How many project ideas are in the bank?</h3><p>Thirty original ideas, covering plants, water, physics, chemistry, earth and food for both younger and older students.</p></div>
+<div class="faq"><h3>What does each idea include?</h3><p>Each idea gives you a question to test, a short method outline and a materials note, so you can see what the project needs before you start.</p></div>
+<div class="faq"><h3>How do I pick the best idea?</h3><p>Choose one you are curious about, that you can finish in the time you have, and that uses materials you can get easily. Curiosity matters more than complexity.</p></div>
+<div class="faq"><h3>Do I need a hypothesis?</h3><p>Most fairs expect one. Write a guess before you start, such as which seed will sprout fastest and why, then test it and report what actually happened.</p></div>
+<div class="faq"><h3>What if my experiment does not work?</h3><p>That is still a result. Write down what happened, think about why, and say what you would change next time. Fair judges value honest reporting.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/science-fair-project-planner/">Science Fair Project Planner</a> · <a href="https://noryvello.github.io/effective-study-techniques-guide/">Effective Study Techniques Guide</a> · <a href="https://noryvello.github.io/note-taking-methods-guide/">Note-Taking Methods Guide</a> · <a href="https://noryvello.github.io/classroom-game-idea-generator/">Classroom Game Idea Generator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function () {
+  var BANK = [{"name":"Do Plants Grow Towards the Light?","subject":"plants","age":"younger","body":["Question: Do plants bend towards a light source?","Method: Put two identical seedlings in boxes, one with a hole on one side and one sealed, then water both the same and watch for a week.","Materials: two small potted seedlings, two boxes, water, a ruler."]},{"name":"Which Soil Helps Seeds Sprout Fastest?","subject":"plants","age":"younger","body":["Question: Which soil helps seeds sprout fastest?","Method: Plant the same seeds in three soils, water them equally, and count sprouts each day.","Materials: seeds, three soil types, small pots, water, labels."]},{"name":"Do Leaves Lose Water in Sunlight?","subject":"plants","age":"older","body":["Question: Do leaves lose more water in sunlight than in shade?","Method: Cover a leaf on a sunny plant and a leaf on a shaded plant with clear bags, then compare the water drops after a day.","Materials: a potted plant, clear bags, string, a sunny spot and a shaded spot."]},{"name":"Which Liquid Helps Cut Flowers Last Longest?","subject":"plants","age":"older","body":["Question: Which liquid keeps cut flowers fresh longest?","Method: Put identical flowers in plain water, sugared water and water with a spoonful of vinegar, then record how each looks daily.","Materials: identical flowers, jars, sugar, vinegar, water, a notebook."]},{"name":"How Does Pot Size Change Plant Growth?","subject":"plants","age":"older","body":["Question: Does pot size change how tall a plant grows?","Method: Plant identical seedlings in a small, medium and large pot, water equally, and measure height weekly.","Materials: three pots of different sizes, identical seedlings, soil, water, a ruler."]},{"name":"Which Material Soaks Up the Most Water?","subject":"water","age":"younger","body":["Question: Which material soaks up the most water?","Method: Dip equal pieces of sponge, cloth and paper towel in water, then squeeze each into a measuring jug.","Materials: sponge, cloth, paper towel, a bowl of water, a measuring jug."]},{"name":"Does Warm Water Dissolve Sugar Faster?","subject":"water","age":"younger","body":["Question: Does warm water dissolve sugar faster than cold water?","Method: Stir the same amount of sugar into warm and cold water and time how long each takes to disappear.","Materials: sugar, two cups, warm and cold water, a spoon, a timer."]},{"name":"How Does a Homemade Filter Clean Muddy Water?","subject":"water","age":"older","body":["Question: How well does a homemade filter clean muddy water?","Method: Pour muddy water through layers of sand, gravel and cloth, then compare the colour before and after.","Materials: a plastic bottle, sand, gravel, cloth, muddy water, two jars."]},{"name":"Which Shape of Ice Melts Fastest?","subject":"water","age":"older","body":["Question: Which shape of ice melts fastest?","Method: Freeze water in a flat tray, a cup and a tall bottle, then place all three in the same warm room and time them.","Materials: a tray, a cup, a bottle, water, a freezer, a timer."]},{"name":"Can Water Climb Up Paper?","subject":"water","age":"younger","body":["Question: Can water climb up paper on its own?","Method: Stand strips of paper towel in coloured water and mark how high the water climbs every ten minutes.","Materials: paper towel strips, cups, food colouring, water, a ruler."]},{"name":"Which Paper Plane Flies Furthest?","subject":"physics","age":"younger","body":["Question: Which paper plane design flies furthest?","Method: Fold three different designs, throw each one three times from the same spot, and measure the longest flight.","Materials: paper, a tape measure, an open space."]},{"name":"How Does Ramp Height Change How Far a Toy Car Rolls?","subject":"physics","age":"younger","body":["Question: Does a higher ramp make a toy car roll further?","Method: Roll the same car down a ramp at three heights and measure how far it travels each time.","Materials: a toy car, a board, books for height, a tape measure."]},{"name":"Which Bridge Shape Holds the Most Weight?","subject":"physics","age":"older","body":["Question: Which paper bridge shape holds the most weight?","Method: Build a flat, folded and arched bridge from paper, then add coins one at a time until each collapses.","Materials: paper, two stacks of books, coins, a ruler."]},{"name":"Does a Parachute Size Change How Slowly It Falls?","subject":"physics","age":"older","body":["Question: Does a bigger parachute fall more slowly?","Method: Drop small, medium and large paper parachutes from the same height and time each fall.","Materials: paper, string, small weights, a timer, a safe dropping spot."]},{"name":"Which Surface Makes a Ball Bounce Highest?","subject":"physics","age":"younger","body":["Question: Which surface makes a ball bounce highest?","Method: Drop the same ball from the same height onto wood, carpet and tile, and mark the highest bounce.","Materials: a bouncy ball, a ruler, three surfaces."]},{"name":"Which Household Liquid Cleans a Coin Best?","subject":"chemistry","age":"younger","body":["Question: Which household liquid cleans a dull coin best?","Method: Soak identical dull coins in water, vinegar and lemon juice for an hour, then compare them.","Materials: dull coins, water, vinegar, lemon juice, three cups."]},{"name":"How Does Vinegar Change Baking Soda Fizz?","subject":"chemistry","age":"younger","body":["Question: Does more vinegar make baking soda fizz longer?","Method: Mix the same baking soda with three amounts of vinegar and time how long each fizz lasts.","Materials: baking soda, vinegar, three cups, a timer."]},{"name":"Which Natural Material Makes the Best Dye?","subject":"chemistry","age":"older","body":["Question: Which natural material makes the strongest dye?","Method: Soak white cloth in beetroot, turmeric and onion-skin water, then compare the colours after drying.","Materials: white cloth, beetroot, turmeric, onion skins, pots, water."]},{"name":"Does Temperature Change How Fast Jelly Sets?","subject":"chemistry","age":"older","body":["Question: Does jelly set faster in the fridge or at room temperature?","Method: Pour identical jelly into two dishes, place one in the fridge and one on the counter, and check each every fifteen minutes.","Materials: jelly powder, hot water, two dishes, a timer."]},{"name":"Which Tea Stains Fabric Most?","subject":"chemistry","age":"older","body":["Question: Which tea stains white fabric most?","Method: Soak identical white cloth pieces in black, green and herbal tea for an hour, then rinse and compare.","Materials: white cloth, three teas, hot water, three bowls."]},{"name":"Which Soil Holds the Most Water?","subject":"earth","age":"younger","body":["Question: Which soil holds the most water?","Method: Pour the same water through sandy, clay and garden soil, then measure how much drains out.","Materials: three soil types, funnels, jars, water, a measuring jug."]},{"name":"How Does Slope Change How Fast Water Runs Off?","subject":"earth","age":"older","body":["Question: Does a steeper slope make water run off faster?","Method: Pour water down a soil tray at three angles and time how long it takes to reach the bottom.","Materials: a tray, soil, books for height, water, a timer."]},{"name":"Which Rock Type Weathers Fastest?","subject":"earth","age":"older","body":["Question: Which rock type breaks down fastest in water?","Method: Shake equal pieces of three rocks in jars of water for a minute each day for a week, then compare the pieces.","Materials: three rock types, jars, water, a scale or ruler."]},{"name":"Does a Mini Greenhouse Warm the Soil?","subject":"earth","age":"younger","body":["Question: Does a clear cover warm the soil?","Method: Cover one soil patch with a clear plastic box and leave another open, then measure both temperatures daily.","Materials: two soil patches, a clear plastic box, a thermometer."]},{"name":"Which Direction Does a Shadow Move?","subject":"earth","age":"younger","body":["Question: Which way does a shadow move during the day?","Method: Mark the shadow of a stick every hour from morning to afternoon and draw the path.","Materials: a stick, chalk or markers, a sunny spot, a notebook."]},{"name":"Which Apple Slice Browns Fastest?","subject":"food","age":"younger","body":["Question: Which treatment slows apple browning best?","Method: Leave one slice plain, brush one with lemon juice and wrap one in cling film, then compare the colour after an hour.","Materials: an apple, lemon juice, cling film, plates, an adult with a knife."]},{"name":"Does Bread Mould Grow Faster in Light or Dark?","subject":"food","age":"older","body":["Question: Does bread mould grow faster in light or in the dark?","Method: Place damp bread in two sealed bags, one in light and one in a dark cupboard, and photograph both daily without opening them.","Materials: bread slices, sealed bags, water spray, a camera."]},{"name":"Which Drink Dissolves an Eggshell Fastest?","subject":"food","age":"older","body":["Question: Which drink dissolves an eggshell fastest?","Method: Place raw eggs in water, vinegar and fizzy drink, then check the shells daily without breaking them.","Materials: raw eggs, water, vinegar, fizzy drink, three jars."]},{"name":"Which Way Keeps Bread Fresh Longest?","subject":"food","age":"younger","body":["Question: Which storage method keeps bread fresh longest?","Method: Store identical bread in a bag, in a bread bin and uncovered, then test softness each day.","Materials: identical bread slices, a bag, a bread bin, plates."]},{"name":"Does Freezing Change a Banana Texture?","subject":"food","age":"older","body":["Question: Does freezing change how a banana feels and tastes?","Method: Freeze one banana overnight, then compare it with a fresh one for softness, colour and taste.","Materials: two ripe bananas, a freezer, a plate."]}];
+  var VALID1 = ["plants", "water", "physics", "chemistry", "earth", "food"];
+  var VALID2 = ["younger", "older"];
+  var pick1 = document.getElementById("pick1");
+  var pick2 = document.getElementById("pick2");
+  var button = document.getElementById("gen-btn");
+  var result = document.getElementById("result");
+  var counter = 0;
+  function show() {
+    var a = pick1.value;
+    var c = pick2.value;
+    if (!a || !c || VALID1.indexOf(a) === -1 || VALID2.indexOf(c) === -1) {
+      result.innerHTML = "<p>Please choose both a subject and an age group first.</p>";
+      return;
+    }
+    var pool = [];
+    var i;
+    for (i = 0; i < BANK.length; i++) { if (BANK[i].subject === a && BANK[i].age === c) pool.push(BANK[i]); }
+    for (i = 0; i < BANK.length; i++) { if (BANK[i].subject === a && BANK[i].age !== c) pool.push(BANK[i]); }
+    for (i = 0; i < BANK.length; i++) { if (BANK[i].subject !== a) pool.push(BANK[i]); }
+    var start = counter % pool.length;
+    counter++;
+    var html = "";
+    for (var k = 0; k < 3; k++) {
+      var it = pool[(start + k) % pool.length];
+      html += "<p><strong>" + it.name + "</strong></p>";
+      for (var b = 0; b < it.body.length; b++) { html += "<p>" + it.body[b] + "</p>"; }
+    }
+    result.innerHTML = html;
+  }
+  button.addEventListener("click", show);
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

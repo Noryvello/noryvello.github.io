@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gregorian Calendar Explained | Noryvello</title>
+<meta name="description" content="Why does the calendar have leap years, and why did 1582 need a reform? A plain-words history of the Gregorian calendar and how it stays aligned with the seasons.">
+<link rel="canonical" href="https://noryvello.github.io/gregorian-calendar-explained-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gregorian Calendar Explained">
+<meta property="og:description" content="The Gregorian calendar explained: the 1582 reform, leap years and how it stays aligned.">
+<meta property="og:url" content="https://noryvello.github.io/gregorian-calendar-explained-guide/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{padding:10px 16px;border:1px solid #4338ca;background:#4338ca;color:#fff;border-radius:8px;font-size:16px;cursor:pointer;margin-top:10px}
+.calc input[type="checkbox"]{width:auto;margin-right:8px}
+.pack-item{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+th,td{border:1px solid #cbd5e1;padding:6px 8px;text-align:left}
+th{background:#eef2ff}
+tr:nth-child(even) td{background:rgba(255,255,255,.6)}
+.tablewrap{overflow-x:auto}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why was the Gregorian calendar introduced?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To fix a slow drift in the older Julian calendar. By 1582 the Julian calendar had drifted about ten days away from the seasons, so a reform was needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happened to the missing ten days?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They were skipped in October 1582, when the new calendar began. The calendar jumped forward ten days in one go to line up with the seasons again."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the leap-year rule?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A year is a leap year if it is divisible by four, except for century years, which are leap years only if they are divisible by four hundred."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the year 2100 a leap year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The year 2100 is divisible by four, but it is a century year and 2100 divided by 400 is not a whole number, so it is an ordinary year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do some old dates look different?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Different countries adopted the Gregorian calendar at different times over the following centuries, so old documents can show dates in either the old or the new system."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Gregorian Calendar Explained</h1>
+<p class="answer">The Gregorian calendar is the calendar most of the world uses today, and it was introduced in 1582 to fix a slow drift that had built up in the older Julian calendar. This guide explains the reform, the leap-year rule and how the calendar stays in step with the seasons.</p>
+<div class="calc">
+<label for="year">Check a year with the leap-year rule</label>
+<input id="year" type="number" min="1" max="9999" placeholder="For example 2028">
+<button id="go" type="button">Is it a leap year?</button>
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+</div>
+<h2>The calendar before 1582</h2>
+<p>Before the Gregorian calendar, most of Europe used the Julian calendar, introduced in Roman times. The Julian calendar had a simple rule: every fourth year was a leap year, with an extra day in February. That made the average calendar year 365 and a quarter days long, which is close to the real length of the solar year, but not exact. The real year is about eleven minutes shorter than 365 and a quarter days.</p>
+<p>Eleven minutes a year sounds like nothing, but over centuries it added up. By 1582 the calendar had drifted about ten days away from the seasons. Dates that were meant to fall in spring were arriving in what felt like late winter, and the calendar no longer matched the sky it was meant to describe. Something had to change.</p>
+<h2>What the 1582 reform changed</h2>
+<p>The reform did two things. First, it removed the accumulated drift in one go: ten days were skipped in October 1582, so the calendar jumped forward and lined up with the seasons again. Second, it changed the leap-year rule so the drift would not build up again. Under the new rule, a year is a leap year if it is divisible by four, except for century years, which are leap years only if they are divisible by four hundred.</p>
+<p>That small exception is the heart of the Gregorian calendar. The year 2000 was a leap year, because 2000 divided by 400 is a whole number. The year 1900 was not, because 1900 divided by 400 is not a whole number. The year 2100 will not be a leap year either, for the same reason. Three leap days are skipped every four hundred years, and that is enough to keep the calendar in step.</p>
+<h2>The leap-year rule</h2>
+<p>The rule has three steps, and you can check any year with them. First, if the year is not divisible by four, it is an ordinary year. Second, if the year is divisible by four but not by one hundred, it is a leap year. Third, if the year is divisible by one hundred, it is a leap year only if it is also divisible by four hundred. Try the checker above with 2024, 1900 and 2000 to see the rule at work.</p>
+<p>The rule is easy to remember if you think of it as a series of filters. Most years fail the first filter and are ordinary. Of the years that pass it, most are leap years. Only the century years face the extra test, and only one in four of those passes it. The result is a calendar that stays accurate for thousands of years.</p>
+<h2>How the calendar stays aligned</h2>
+<p>With the new rule, the average Gregorian year is 365.2425 days long, which is very close to the solar year of about 365.2422 days. The remaining difference is tiny: about one day in a few thousand years. For everyday life, the calendar and the seasons now stay in step, and no further correction is needed for a very long time.</p>
+<p>This matters because the calendar is not just a way of counting days. It sets the dates of the seasons, the school year, the farming year and most public holidays. A calendar that drifts would slowly push all of these out of place, as the Julian calendar did. The Gregorian reform fixed that drift, and its leap-year rule keeps it fixed.</p>
+<h2>Why the reform took time to spread</h2>
+<p>The reform was announced in 1582, but it did not take effect everywhere at once. Different countries adopted the new calendar at different times over the following centuries, and some kept the old calendar for a long while. That is why old documents can show dates that look odd to a modern reader: a date written in one country in 1700 might be ten or eleven days away from the same day written in another country.</p>
+<p>Historians keep track of which calendar a document used, and you may see old dates written with both systems noted. Today the Gregorian calendar is the standard almost everywhere, and the slow spread of the reform is a reminder that even a calendar is a human agreement, adopted place by place.</p>
+<h2>The calendar in everyday life</h2>
+<p>The Gregorian calendar is so familiar that it is easy to forget it is a designed system. It sets the dates of the seasons, the school year, the working year and most public holidays. When the calendar says it is the first day of spring, the seasons agree, and that agreement is the reform's achievement. Without it, the calendar would slowly slide away from the seasons, as the Julian calendar did.</p>
+<p>The leap-year rule is the part of the design you can check for yourself. Every four years, February gains a day, and every century the rule pauses to ask whether the year is divisible by four hundred. That pause, three times in four hundred years, is what keeps the whole system accurate. Try the checker above on the years of your own lifetime and see how rarely the century rule actually matters.</p>
+<div class="warn">This page explains the calendar in general terms. The 1582 reform is described as it is usually taught; different countries adopted the new calendar at different times, so old documents can show dates in either system.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Why was the Gregorian calendar introduced?</h3><p>To fix a slow drift in the older Julian calendar. By 1582 the Julian calendar had drifted about ten days away from the seasons, so a reform was needed.</p></div>
+<div class="faq"><h3>What happened to the missing ten days?</h3><p>They were skipped in October 1582, when the new calendar began. The calendar jumped forward ten days in one go to line up with the seasons again.</p></div>
+<div class="faq"><h3>What is the leap-year rule?</h3><p>A year is a leap year if it is divisible by four, except for century years, which are leap years only if they are divisible by four hundred.</p></div>
+<div class="faq"><h3>Is the year 2100 a leap year?</h3><p>No. The year 2100 is divisible by four, but it is a century year and 2100 divided by 400 is not a whole number, so it is an ordinary year.</p></div>
+<div class="faq"><h3>Why do some old dates look different?</h3><p>Different countries adopted the Gregorian calendar at different times over the following centuries, so old documents can show dates in either the old or the new system.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/leap-year-explained/">Leap Year Explained</a> · <a href="https://noryvello.github.io/why-february-has-28-days-guide/">Why February Has 28 Days</a> · <a href="https://noryvello.github.io/months-of-the-year-origins-guide/">Month Name Origins Guide</a> · <a href="https://noryvello.github.io/lunar-calendars-explained-guide/">Lunar Calendars Explained</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+document.getElementById("go").addEventListener("click", function(){
+  var raw = document.getElementById("year").value;
+  var out = document.getElementById("out");
+  var steps = document.getElementById("steps");
+  var y = Number(raw);
+  if (raw === "" || isNaN(y) || y % 1 !== 0 || y < 1 || y > 9999) {
+    out.textContent = "Please enter a whole year between 1 and 9999.";
+    steps.textContent = "";
+    return;
+  }
+  var div4 = (y % 4 === 0);
+  var div100 = (y % 100 === 0);
+  var div400 = (y % 400 === 0);
+  var leap = (div4 && !div100) || div400;
+  if (!div4) {
+    out.textContent = y + " is not a leap year.";
+    steps.textContent = y + " divided by 4 is " + (y / 4) + ", not a whole number, so the leap-year rule does not apply.";
+  } else if (div100 && !div400) {
+    out.textContent = y + " is not a leap year.";
+    steps.textContent = y + " divided by 4 is " + (y / 4) + " exactly, but " + y + " is a century year and " + y + " divided by 400 is " + (y / 400) + ", not a whole number.";
+  } else if (div100 && div400) {
+    out.textContent = y + " is a leap year.";
+    steps.textContent = y + " divided by 400 is " + (y / 400) + " exactly, so " + y + " passes the century test and is a leap year.";
+  } else {
+    out.textContent = y + " is a leap year.";
+    steps.textContent = y + " divided by 4 is " + (y / 4) + " exactly, and " + y + " is not a century year, so it is a leap year.";
+  }
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

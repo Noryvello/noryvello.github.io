@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Podcast Name Idea Generator | Noryvello</title>
+<meta name="description" content="Find a name for your podcast: pick a topic and get five original name ideas from a bank of forty, plus a checklist to test your favourite.">
+<link rel="canonical" href="https://noryvello.github.io/podcast-name-idea-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Podcast Name Idea Generator">
+<meta property="og:description" content="Generate five original podcast name ideas for your topic, then test the name.">
+<meta property="og:url" content="https://noryvello.github.io/podcast-name-idea-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.checklist{list-style:none;margin-left:0}
+.checklist li{margin:9px 0;line-height:1.55}
+.checklist label{cursor:pointer;font-weight:400}
+.calc input[type=checkbox]{width:auto;padding:0;margin-right:8px;accent-color:#4338ca}
+.calc button{width:100%;padding:12px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;margin-top:12px;cursor:pointer}
+.calc button.secondary{background:#e2e8f0;color:#1e293b}
+.progress{font-weight:700;margin-top:12px}
+.phase{font-weight:700;margin:16px 0 2px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long should a podcast name be?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two to four words is a good length. Short names are easier to remember, easier to say at the start of an episode, and easier to fit on cover art. Long names get shortened by listeners anyway."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should my podcast name say what the show is about?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It helps. A listener browsing for a new show should be able to guess roughly what yours covers from the name alone. You do not need to spell it out — a hint of the topic or the mood is enough."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the name I like is already taken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pick another one. Two podcasts with the same name confuse listeners and can cause trouble later. Search the name before you commit, and have a shortlist of favourites rather than a single name."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I change my podcast name later?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can, but it is disruptive — listeners, cover art, and links all need updating. It is worth taking a day or two to choose well now, using the name-check checklist above, rather than renaming later."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a unique name for my podcast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, as far as you can. A unique name is easier to search for, easier to remember, and less likely to clash with another show. The generator above gives you original ideas to start from."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Podcast Name Idea Generator</h1>
+<p class="answer">Naming a podcast is harder than it looks — the name has to say what the show is about, be easy to spell, and stick in the memory. This generator gives you five original name ideas for your topic, plus a checklist to test your favourite before you commit.</p>
+<div class="calc">
+<h2 style="margin-top:0">Podcast name generator</h2>
+<p>Choose your podcast's topic, and the generator will suggest five original name ideas for it.</p>
+<label for="topic-picker">Podcast topic</label>
+<select id="topic-picker"><option value="">Choose a topic</option><option value="true-crime">True Crime</option><option value="history">History</option><option value="food">Food and Cooking</option><option value="tech">Technology</option><option value="comedy">Comedy</option><option value="health">Health and Fitness</option><option value="business">Business and Money</option><option value="stories">Stories and Fiction</option></select>
+<button id="go-btn" type="button">Generate name ideas</button>
+<p class="out" id="out"></p>
+<div class="steps" id="steps"></div>
+</div>
+<div class="calc">
+<h2 style="margin-top:0">Name-check checklist</h2>
+<p>Run your favourite name through this list before you commit to it.</p>
+<ul class="checklist">
+<li><label><input type="checkbox"> <b>Say it out loud.</b> Say the name aloud a few times — it should be easy to say and easy to hear.</label></li>
+<li><label><input type="checkbox"> <b>Check the spelling.</b> Spell the name to a friend and see if they can write it down correctly.</label></li>
+<li><label><input type="checkbox"> <b>Search the name.</b> Search the name online to check no other podcast already uses it.</label></li>
+<li><label><input type="checkbox"> <b>Check it fits the topic.</b> A listener should be able to guess roughly what the show is about from the name.</label></li>
+<li><label><input type="checkbox"> <b>Keep it short.</b> Short names are easier to remember, easier to say, and easier to fit on cover art.</label></li>
+<li><label><input type="checkbox"> <b>Test it on a friend.</b> Tell a friend the name and ask what they think the show is about.</label></li>
+<li><label><input type="checkbox"> <b>Think about the long term.</b> Pick a name that still fits if the show grows or changes direction.</label></li>
+<li><label><input type="checkbox"> <b>Sleep on it.</b> Wait a day before deciding — a name you still like tomorrow is a good sign.</label></li>
+</ul>
+<p class="progress" id="progress"></p>
+<button class="secondary" id="reset-btn" type="button">Reset checklist</button>
+</div>
+<div class="warn">The name ideas here are original suggestions, not guarantees. Always search a name before you use it, to check that no other podcast or brand already uses it.</div>
+
+<h2>What makes a good podcast name</h2>
+<p>A good podcast name does three things: it tells a listener roughly what the show is about, it is easy to say and spell, and it sticks in the memory. Short names do this best. A name of two to four words is easy to remember, easy to fit on cover art, and easy to mention at the end of an episode. Long names get shortened by listeners anyway, so you may as well start short.</p>
+<p>The name should also fit the tone of the show. A true-crime podcast and a comedy podcast can both be excellent, but their names should sound different — a listener should be able to guess the mood from the name alone. If your show is warm and friendly, pick a name that sounds warm and friendly. If it is serious and investigative, pick a name that sounds like it.</p>
+<h2>How to use the ideas</h2>
+<p>Use the generator as a starting point, not a final answer. Pick a topic and look at the five ideas it returns. If one jumps out at you, try it on for size: say it aloud, imagine it on cover art, and picture yourself saying it at the start of every episode. If none of them feels right, mix and match — take a word from one idea and a word from another, and see what you get.</p>
+<p>Do not rush the decision. A podcast name is hard to change once listeners know it, so it is worth a day or two of thought. Write your shortlist down, come back to it the next day, and see which name you still like. The name-check checklist above walks you through the checks worth doing before you commit.</p>
+<h2>Check before you commit</h2>
+<p>Before you settle on a name, search for it. Check that no other podcast already uses the same name or something very close to it, and check that the name is not already a well-known brand. A quick search now saves an awkward rename later. Also check that listeners can spell the name when they hear it — if they cannot find your show by typing what they heard, they will give up.</p>
+<p>Finally, think about the long term. A name tied to a single narrow topic can box you in if the show grows. A name with a little room in it lets the show change direction without changing its name. Pick a name you will still be happy saying in a year's time.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How long should a podcast name be?</h3><p>Two to four words is a good length. Short names are easier to remember, easier to say at the start of an episode, and easier to fit on cover art. Long names get shortened by listeners anyway.</p></div>
+<div class="faq"><h3>Should my podcast name say what the show is about?</h3><p>It helps. A listener browsing for a new show should be able to guess roughly what yours covers from the name alone. You do not need to spell it out — a hint of the topic or the mood is enough.</p></div>
+<div class="faq"><h3>What if the name I like is already taken?</h3><p>Pick another one. Two podcasts with the same name confuse listeners and can cause trouble later. Search the name before you commit, and have a shortlist of favourites rather than a single name.</p></div>
+<div class="faq"><h3>Can I change my podcast name later?</h3><p>You can, but it is disruptive — listeners, cover art, and links all need updating. It is worth taking a day or two to choose well now, using the name-check checklist above, rather than renaming later.</p></div>
+<div class="faq"><h3>Do I need a unique name for my podcast?</h3><p>Yes, as far as you can. A unique name is easier to search for, easier to remember, and less likely to clash with another show. The generator above gives you original ideas to start from.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/start-a-podcast-checklist/">Start a Podcast Checklist</a> · <a href="https://noryvello.github.io/band-name-generator/">Band Name Generator</a> · <a href="https://noryvello.github.io/nickname-idea-generator/">Nickname Idea Generator</a> · <a href="https://noryvello.github.io/group-chat-name-generator/">Group Chat Name Generator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var boxes=document.querySelectorAll('input[type="checkbox"]');
+var progress=document.getElementById("progress");
+var total=boxes.length;
+function update(){
+  var n=0;
+  for(var i=0;i<boxes.length;i++){if(boxes[i].checked){n++;}}
+  progress.textContent=n+" of "+total+" checked";
+}
+for(var i=0;i<boxes.length;i++){boxes[i].addEventListener("change",update);}
+document.getElementById("reset-btn").addEventListener("click",function(){
+  for(var i=0;i<boxes.length;i++){boxes[i].checked=false;}
+  update();
+});
+update();
+var BANK={"true-crime":{label:"True Crime",names:["The Quiet File", "Cold Trail Stories", "The Last Witness", "Unsolved Hours", "The Evidence Room"]},"history":{label:"History",names:["Yesterday's Echo", "The Long Century", "Footnotes of History", "The Archive Hour", "Before Our Time"]},"food":{label:"Food and Cooking",names:["The Simmering Pot", "Second Helpings", "The Spice Route Home", "Table Talk Kitchen", "The Sunday Roast Club"]},"tech":{label:"Technology",names:["The Signal Path", "Code and Coffee", "The Next Update", "Wired Minds", "The Digital Workshop"]},"comedy":{label:"Comedy",names:["The Laughing Stock", "Seriously Funny", "The Joke's On Us", "Punchline Weekly", "The Giggle File"]},"health":{label:"Health and Fitness",names:["The Steady Pace", "Stronger Every Week", "The Morning Mile", "Balanced Days", "The Recovery Room"]},"business":{label:"Business and Money",names:["The Ledger Line", "Small Business Stories", "The Money Map", "The Side Hustle Hour", "Built From Scratch"]},"stories":{label:"Stories and Fiction",names:["The Story Lantern", "Tales After Dark", "The Inkwell Hour", "Fireside Fiction", "The Plot Thickens"]}};
+document.getElementById("go-btn").addEventListener("click",function(){
+  var out=document.getElementById("out");
+  var steps=document.getElementById("steps");
+  var t=BANK[document.getElementById("topic-picker").value];
+  if(!t){out.textContent="";steps.innerHTML="";steps.textContent="Please choose a podcast topic first.";return;}
+  out.textContent=t.label+" name ideas";
+  var h="<ol>";
+  for(var i=0;i<t.names.length;i++){h+="<li>"+t.names[i]+"</li>";}
+  h+="</ol>";
+  steps.innerHTML=h;
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

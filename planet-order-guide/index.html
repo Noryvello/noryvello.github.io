@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planet Order and Memory Guide | Noryvello</title>
+<meta name="description" content="Learn the order of the eight planets from the Sun, build a mnemonic that works for you, and test yourself with the planet-order checker.">
+<link rel="canonical" href="https://noryvello.github.io/planet-order-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Planet Order and Memory Guide">
+<meta property="og:description" content="The eight planets in order from the Sun, with a mnemonic builder and a self-test.">
+<meta property="og:url" content="https://noryvello.github.io/planet-order-guide/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>button{background:#4338ca;color:#fff;border:0;border-radius:8px;padding:10px 16px;font-size:16px;margin:12px 6px 0 0;cursor:pointer}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the order of the planets from the Sun?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus and Neptune. That order never changes, because the planets always orbit the Sun in this sequence."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I remember the planet order?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Build a first-letter mnemonic: a sentence of eight words whose first letters are M, V, E, M, J, S, U and N. Try the mnemonic builder above to check your own sentence."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is Pluto not a planet any more?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Astronomers class Pluto as a dwarf planet. It is a round world, but it has not cleared its orbit of other objects, so it does not meet the full definition of a planet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many planets are in our solar system?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eight: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus and Neptune. Pluto and the other dwarf planets are not counted among the eight."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do the planets ever line up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The planets orbit at different speeds, so they spread out around the Sun and rarely sit in a straight line. This page teaches the order of their orbits, not their positions in the sky tonight."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Planet Order and Memory Guide</h1>
+<p class="answer">The eight planets in order from the Sun are Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus and Neptune. This page helps you remember that order with a mnemonic builder and a self-test checker, and explains where Pluto fits in.</p>
+<div class="warn">This page teaches the order of the planets from the Sun. It does not show where the planets are in the sky tonight — for that you need a current sky chart, because the planets keep moving around the Sun.</div>
+<div class="calc">
+<p><strong>Build your mnemonic</strong></p>
+<p>Type a sentence of eight words, one word for each planet. The first letter of each word should match the first letter of its planet: M for Mercury, V for Venus, E for Earth, M for Mars, J for Jupiter, S for Saturn, U for Uranus and N for Neptune.</p>
+<label for="mnemonic">Your eight-word sentence</label>
+<input id="mnemonic" type="text" placeholder="For example: My Very Eager Monkey Jumps Sideways Under Noodles">
+<button id="mn-check" type="button">Check my mnemonic</button>
+<p class="out" id="mn-out"></p>
+<p class="steps" id="mn-steps"></p>
+</div>
+<div class="calc">
+<p><strong>Test yourself: tap the planets in order</strong></p>
+<p>Tap the eight planet buttons in order, starting with the planet nearest the Sun. Then press Check my order.</p>
+<button id="btn-jupiter" type="button">Jupiter</button>
+<button id="btn-mercury" type="button">Mercury</button>
+<button id="btn-neptune" type="button">Neptune</button>
+<button id="btn-venus" type="button">Venus</button>
+<button id="btn-saturn" type="button">Saturn</button>
+<button id="btn-earth" type="button">Earth</button>
+<button id="btn-uranus" type="button">Uranus</button>
+<button id="btn-mars" type="button">Mars</button>
+<p class="steps" id="picked-out">You have not picked any planets yet.</p>
+<button id="check-order" type="button">Check my order</button>
+<button id="clear-order" type="button">Clear</button>
+<p class="out" id="order-out"></p>
+</div>
+<h2>The eight planets in order</h2>
+<p>Starting at the Sun and moving outwards, the eight planets are:</p>
+<ol>
+<li><strong>Mercury</strong> — the closest planet to the Sun, and the smallest of the eight.</li>
+<li><strong>Venus</strong> — the second planet, wrapped in thick cloud.</li>
+<li><strong>Earth</strong> — the third planet, and the only known world with life.</li>
+<li><strong>Mars</strong> — the fourth planet, the red planet, with deserts and polar ice caps.</li>
+<li><strong>Jupiter</strong> — the fifth planet, and the largest of the eight.</li>
+<li><strong>Saturn</strong> — the sixth planet, famous for its wide rings.</li>
+<li><strong>Uranus</strong> — the seventh planet, an ice giant that rolls around the Sun tipped on its side.</li>
+<li><strong>Neptune</strong> — the eighth and farthest planet, a deep blue ice giant.</li>
+</ol>
+<p>The first four planets are small and rocky, with solid ground you could in principle stand on. The outer four are much larger and are made mostly of gas and ice, with no solid surface like the ground on Earth. This split is worth remembering, because it gives the list a shape: four small rocky worlds, then four giants.</p>
+<p>The order never changes. The planets always orbit the Sun in this sequence, and no planet ever overtakes another. What does change is where each planet sits in the sky, because the planets travel around the Sun at different speeds. Mercury, nearest the Sun, completes its orbit fastest, while Neptune, farthest out, takes the longest. That is why a list of the planets in order is not the same as a map of the night sky: the order is fixed, but the positions are always moving.</p>
+<h2>How a mnemonic works</h2>
+<p>A mnemonic is a memory trick, and the simplest kind is a first-letter sentence: a sentence whose words start with the same letters as the things you want to remember. For the planets, the letters are M, V, E, M, J, S, U and N. Any sentence that follows those letters will do the job, because each word points at one planet in the right order.</p>
+<p>Here is one you can use: <strong>My Very Eager Monkey Jumps Sideways Under Noodles.</strong> My stands for Mercury, Very for Venus, Eager for Earth, Monkey for Mars, Jumps for Jupiter, Sideways for Saturn, Under for Uranus and Noodles for Neptune. Say it a few times and the order starts to stick, because the sentence is easier to hold in your head than a bare list.</p>
+<p>Your own sentence will work even better than a borrowed one. The builder above checks any sentence you type, so you can try as many as you like. A few tips help. Make the sentence funny or strange, because odd images are easier to remember than plain ones. Use words that paint a picture you can see. Keep it to exactly eight words, one per planet, and say it out loud a few times: hearing it helps as much as reading it. Then test yourself the next day without looking, and again a few days later. Each successful recall makes the order more solid.</p>
+<p>Watch out for the two M words. Mercury and Mars both start with M, so your sentence needs two M words in the right places: the first word for Mercury and the fourth word for Mars. The builder will tell you if a word is wrong, so you can fix it and try again.</p>
+<h2>Where does Pluto fit?</h2>
+<p>Pluto used to be counted as the ninth planet, and many people learned the planets with Pluto at the end of the list. Astronomers now class Pluto as a dwarf planet, not one of the eight planets. A dwarf planet is a round world that has not cleared its orbit of other objects, which is one of the tests a body must pass to count as a full planet. Pluto shares its region of space with many other icy bodies, so it fails that test.</p>
+<p>Pluto is not alone. It is one of several known dwarf planets, along with Ceres, Haumea, Makemake and Eris. Ceres sits in the asteroid belt between Mars and Jupiter, while the others, like Pluto, orbit in the cold outer reaches beyond Neptune. They are real worlds, and Pluto is the largest and best known of them, but they sit outside the list of eight.</p>
+<p>If you want to remember Pluto too, just add a ninth word starting with P to the end of your mnemonic. The eight-planet list stays the same either way, and the self-test above covers the eight planets only, because that is the list astronomers use today.</p>
+<h2>How to test yourself</h2>
+<p>Reading the order is only the first step. To make it stick, test yourself with the checker above: tap the planets in order without looking at the list, then press Check my order. If you get it wrong, the checker shows the right order, and you can clear it and try again. A few short tries, spread over a few days, will fix the order in your memory far better than one long study session.</p>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>What is the order of the planets from the Sun?</h3>
+<p>Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus and Neptune. That order never changes, because the planets always orbit the Sun in this sequence.</p>
+</div>
+<div class="faq">
+<h3>How can I remember the planet order?</h3>
+<p>Build a first-letter mnemonic: a sentence of eight words whose first letters are M, V, E, M, J, S, U and N. Try the mnemonic builder above to check your own sentence.</p>
+</div>
+<div class="faq">
+<h3>Why is Pluto not a planet any more?</h3>
+<p>Astronomers class Pluto as a dwarf planet. It is a round world, but it has not cleared its orbit of other objects, so it does not meet the full definition of a planet.</p>
+</div>
+<div class="faq">
+<h3>How many planets are in our solar system?</h3>
+<p>Eight: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus and Neptune. Pluto and the other dwarf planets are not counted among the eight.</p>
+</div>
+<div class="faq">
+<h3>Do the planets ever line up?</h3>
+<p>The planets orbit at different speeds, so they spread out around the Sun and rarely sit in a straight line. This page teaches the order of their orbits, not their positions in the sky tonight.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/moon-phases-explained-guide/">Moon Phases Explained</a> · <a href="https://noryvello.github.io/full-moon-calendar-2028/">Full Moon Calendar 2028</a> · <a href="https://noryvello.github.io/meteor-showers-2027/">Meteor Showers 2027</a> · <a href="https://noryvello.github.io/solstices-equinoxes-2028-guide/">Solstices and Equinoxes 2028</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var PLANETS = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+var INITIALS = ['M', 'V', 'E', 'M', 'J', 'S', 'U', 'N'];
+function checkMnemonic() {
+  var input = document.getElementById('mnemonic');
+  var out = document.getElementById('mn-out');
+  var steps = document.getElementById('mn-steps');
+  var text = input.value.replace(/\s+/g, ' ').replace(/^\s+|\s+$/g, '');
+  if (!text) {
+    out.textContent = 'Type an eight-word sentence first.';
+    steps.textContent = '';
+    return;
+  }
+  var words = text.split(' ');
+  if (words.length !== 8) {
+    out.textContent = 'Your sentence has ' + words.length + ' words — a planet mnemonic needs exactly eight, one for each planet.';
+    steps.textContent = '';
+    return;
+  }
+  var lines = [];
+  var good = 0;
+  for (var i = 0; i < 8; i++) {
+    var first = words[i].charAt(0).toUpperCase();
+    if (first === INITIALS[i]) {
+      good++;
+      lines.push('Word ' + (i + 1) + ' "' + words[i] + '" starts with ' + first + ' — matches ' + PLANETS[i] + '.');
+    } else {
+      lines.push('Word ' + (i + 1) + ' "' + words[i] + '" starts with ' + first + ' — it needs ' + INITIALS[i] + ' for ' + PLANETS[i] + '.');
+    }
+  }
+  if (good === 8) {
+    out.textContent = 'That works — your mnemonic covers all eight planets in order.';
+  } else {
+    out.textContent = good + ' of 8 words match. Fix the rest and try again.';
+  }
+  steps.textContent = lines.join('\n');
+}
+document.getElementById('mn-check').addEventListener('click', checkMnemonic);
+var picked = [];
+function renderPicked() {
+  var el = document.getElementById('picked-out');
+  if (picked.length === 0) {
+    el.textContent = 'You have not picked any planets yet.';
+  } else {
+    el.textContent = 'Your order so far: ' + picked.join(', ') + '.';
+  }
+}
+function pickPlanet(name) {
+  if (picked.indexOf(name) !== -1) {
+    document.getElementById('order-out').textContent = 'You already picked ' + name + ' — pick the next planet in your order.';
+    return;
+  }
+  picked.push(name);
+  document.getElementById('order-out').textContent = '';
+  renderPicked();
+}
+document.getElementById('btn-mercury').addEventListener('click', function () { pickPlanet('Mercury'); });
+document.getElementById('btn-venus').addEventListener('click', function () { pickPlanet('Venus'); });
+document.getElementById('btn-earth').addEventListener('click', function () { pickPlanet('Earth'); });
+document.getElementById('btn-mars').addEventListener('click', function () { pickPlanet('Mars'); });
+document.getElementById('btn-jupiter').addEventListener('click', function () { pickPlanet('Jupiter'); });
+document.getElementById('btn-saturn').addEventListener('click', function () { pickPlanet('Saturn'); });
+document.getElementById('btn-uranus').addEventListener('click', function () { pickPlanet('Uranus'); });
+document.getElementById('btn-neptune').addEventListener('click', function () { pickPlanet('Neptune'); });
+document.getElementById('check-order').addEventListener('click', function () {
+  var out = document.getElementById('order-out');
+  if (picked.length < 8) {
+    out.textContent = 'Pick all eight planets first — you have picked ' + picked.length + ' so far.';
+    return;
+  }
+  var right = true;
+  for (var i = 0; i < 8; i++) {
+    if (picked[i] !== PLANETS[i]) { right = false; break; }
+  }
+  if (right) {
+    out.textContent = 'Correct — that is the order of the planets from the Sun.';
+  } else {
+    out.textContent = 'Not quite. The order from the Sun is Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune. Clear and try again.';
+  }
+});
+document.getElementById('clear-order').addEventListener('click', function () {
+  picked = [];
+  document.getElementById('order-out').textContent = '';
+  renderPicked();
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

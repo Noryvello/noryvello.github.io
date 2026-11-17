@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nickname Idea Generator | Noryvello</title>
+<meta name="description" content="Pick a style and get five nickname ideas from a bank of forty. Sweet, funny, cool, classic, nature, food, sporty and short nicknames, all original and kind.">
+<link rel="canonical" href="https://noryvello.github.io/nickname-idea-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nickname Idea Generator">
+<meta property="og:description" content="Five nickname ideas in your style, from a bank of forty.">
+<meta property="og:url" content="https://noryvello.github.io/nickname-idea-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many nicknames are in the bank?","acceptedAnswer":{"@type":"Answer","text":"Forty original nicknames, five for each of eight styles: sweet, funny, cool, classic, nature, food, sporty and short."}},{"@type":"Question","name":"What if the person does not like the nickname?","acceptedAnswer":{"@type":"Answer","text":"Then do not use it. A nickname only works when the person enjoys hearing it. Ask, listen to the answer, and pick something else if needed."}},{"@type":"Question","name":"Can I use these nicknames for a pet?","acceptedAnswer":{"@type":"Answer","text":"Yes. Many of the sweet, nature and food nicknames work well for pets too, and pets never complain about their names."}},{"@type":"Question","name":"Can I combine two nicknames?","acceptedAnswer":{"@type":"Answer","text":"Yes. Mix words from different styles to make something new, such as a nature word with a food word, and you have a nickname nobody else has."}},{"@type":"Question","name":"Are the nicknames suitable for children?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every nickname in the bank is clean and friendly, with nothing rude or mean, so they are safe for children and for the classroom."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Nickname Idea Generator</h1>
+<p class="answer">Pick a style and this generator gives you five nickname ideas to try. All forty nicknames in the bank are original and kind, and the golden rule is simple: only use a nickname the person likes.</p>
+<div class="calc">
+<label for="pick">Which style do you want?</label>
+<select id="pick">
+<option value="">Choose a style</option>
+<option value="sweet">Sweet</option>
+<option value="funny">Funny</option>
+<option value="cool">Cool</option>
+<option value="classic">Classic</option>
+<option value="nature">Nature</option>
+<option value="food">Food</option>
+<option value="sporty">Sporty</option>
+<option value="short">Short</option>
+</select>
+<button id="gen-btn" type="button" style="margin-top:14px;padding:11px 18px;font-size:16px;font-weight:700;color:#fff;background:#4338ca;border:none;border-radius:8px;cursor:pointer">Give me 5 nicknames</button>
+<div id="result" class="steps" role="status"></div>
+</div>
+<h2>How to use this generator</h2>
+<p>Choose the style you want, then press the button. You will get five nickname ideas in that style, drawn from a bank of forty. Press again for a different set, or try another style to see what else is there.</p>
+<p>Nicknames work best when they fit the person. A sporty nickname suits someone who loves to move, a nature nickname suits someone who loves the outdoors, and a sweet nickname suits someone close to you.</p>
+<h2>The keep-it-kind rule</h2>
+<p>The most important rule of nicknames is simple: only use a nickname the person likes. A nickname should feel like a gift, not a label. If someone asks you to stop using one, stop straight away, no questions asked.</p>
+<p>Never build a nickname around something a person is sensitive about, such as how they look, how they speak or how they learn. The kindest nicknames come from things people enjoy or do well.</p>
+<div class="warn">A nickname is only fun if the person likes it. Ask first, and drop it straight away if they do not. Never use a nickname that teases someone about how they look, speak or learn.</div>
+<h2>Making a nickname your own</h2>
+<p>The generator gives you starting points. You can shorten a nickname, combine two of them, or add a word that means something to you both. A nickname that only makes sense to two people is often the best kind.</p>
+<p>Test a nickname by using it a few times. If it feels natural and the person smiles when they hear it, it has done its job. If it feels forced, move on to the next idea.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How many nicknames are in the bank?</h3><p>Forty original nicknames, five for each of eight styles: sweet, funny, cool, classic, nature, food, sporty and short.</p></div>
+<div class="faq"><h3>What if the person does not like the nickname?</h3><p>Then do not use it. A nickname only works when the person enjoys hearing it. Ask, listen to the answer, and pick something else if needed.</p></div>
+<div class="faq"><h3>Can I use these nicknames for a pet?</h3><p>Yes. Many of the sweet, nature and food nicknames work well for pets too, and pets never complain about their names.</p></div>
+<div class="faq"><h3>Can I combine two nicknames?</h3><p>Yes. Mix words from different styles to make something new, such as a nature word with a food word, and you have a nickname nobody else has.</p></div>
+<div class="faq"><h3>Are the nicknames suitable for children?</h3><p>Yes. Every nickname in the bank is clean and friendly, with nothing rude or mean, so they are safe for children and for the classroom.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/podcast-name-idea-generator/">Podcast Name Idea Generator</a> · <a href="https://noryvello.github.io/funny-awards-generator/">Funny Awards Generator</a> · <a href="https://noryvello.github.io/knock-knock-joke-generator/">Knock-Knock Joke Generator</a> · <a href="https://noryvello.github.io/clean-joke-generator/">Clean Joke Generator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function () {
+  var BANK = [{"name":"Honeybee","cat":"sweet"},{"name":"Sweetpea","cat":"sweet"},{"name":"Sunshine","cat":"sweet"},{"name":"Cupcake","cat":"sweet"},{"name":"Pumpkin","cat":"sweet"},{"name":"Captain Giggles","cat":"funny"},{"name":"Professor Silly","cat":"funny"},{"name":"The Noodle","cat":"funny"},{"name":"Biscuit Brain","cat":"funny"},{"name":"Sir Laughs-a-Lot","cat":"funny"},{"name":"Ace","cat":"cool"},{"name":"Nova","cat":"cool"},{"name":"Blaze","cat":"cool"},{"name":"Shadow","cat":"cool"},{"name":"Jet","cat":"cool"},{"name":"Buddy","cat":"classic"},{"name":"Champ","cat":"classic"},{"name":"Kiddo","cat":"classic"},{"name":"Pal","cat":"classic"},{"name":"Sport","cat":"classic"},{"name":"Willow","cat":"nature"},{"name":"Fern","cat":"nature"},{"name":"River","cat":"nature"},{"name":"Skye","cat":"nature"},{"name":"Maple","cat":"nature"},{"name":"Peanut","cat":"food"},{"name":"Muffin","cat":"food"},{"name":"Cookie","cat":"food"},{"name":"Pickles","cat":"food"},{"name":"Brownie","cat":"food"},{"name":"Speedy","cat":"sporty"},{"name":"Rocket","cat":"sporty"},{"name":"Sparky","cat":"sporty"},{"name":"Dash","cat":"sporty"},{"name":"Turbo","cat":"sporty"},{"name":"Bo","cat":"short"},{"name":"Kit","cat":"short"},{"name":"Rue","cat":"short"},{"name":"Pip","cat":"short"},{"name":"Zed","cat":"short"}];
+  var VALID = ["sweet", "funny", "cool", "classic", "nature", "food", "sporty", "short"];
+  var pick = document.getElementById("pick");
+  var button = document.getElementById("gen-btn");
+  var result = document.getElementById("result");
+  var counter = 0;
+  function show() {
+    var v = pick.value;
+    if (!v || VALID.indexOf(v) === -1) {
+      result.innerHTML = "<p>Please choose a style first.</p>";
+      return;
+    }
+    var pool = [];
+    for (var i = 0; i < BANK.length; i++) { if (BANK[i].cat === v) pool.push(BANK[i]); }
+    for (var j = 0; j < BANK.length; j++) { if (BANK[j].cat !== v) pool.push(BANK[j]); }
+    var start = counter % pool.length;
+    counter++;
+    var html = "<ol>";
+    for (var k = 0; k < 5; k++) { html += "<li>" + pool[(start + k) % pool.length].name + "</li>"; }
+    html += "</ol>";
+    result.innerHTML = html;
+  }
+  button.addEventListener("click", show);
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

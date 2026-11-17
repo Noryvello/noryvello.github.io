@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Packing List Generator | Noryvello</title>
+<meta name="description" content="Build a tick-off packing list for your trip. Pick the trip type, days and weather, and get a printable list with quantities that match your stay.">
+<link rel="canonical" href="https://noryvello.github.io/packing-list-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Packing List Generator">
+<meta property="og:description" content="A tick-off packing list built for your trip type, length and weather.">
+<meta property="og:url" content="https://noryvello.github.io/packing-list-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{padding:10px 16px;border:1px solid #4338ca;background:#4338ca;color:#fff;border-radius:8px;font-size:16px;cursor:pointer;margin-top:10px}
+.calc input[type="checkbox"]{width:auto;margin-right:8px}
+.pack-item{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+th,td{border:1px solid #cbd5e1;padding:6px 8px;text-align:left}
+th{background:#eef2ff}
+tr:nth-child(even) td{background:rgba(255,255,255,.6)}
+.tablewrap{overflow-x:auto}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many days can the list cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "From 1 to 30 days. Enter the number of days you will be away and the quantities adjust to match the length of your trip."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the list add an extra pair of socks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One spare pair covers a wet day, a lost sock or a longer stay. The same idea applies to underwear, which is also counted at one per day plus one spare."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I print the list?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. After the list is built, press the print button below it. A printed list is handy for the final check before you leave."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my trip mixes two types?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Run the generator once for each trip type and combine the two lists. For example, a beach trip with a city stop can use both lists together."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the list include toiletries?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It includes a toothbrush and toothpaste and a toiletries bag. Add your own personal items, such as medication, to the list before you pack."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Packing List Generator</h1>
+<p class="answer">Tell the generator your trip type, how many days you are away and what the weather will be like, and it builds a packing list with quantities for each item. Tick items off as you pack them, and print the list to check again before you leave.</p>
+<div class="calc">
+<label for="trip">Trip type</label>
+<select id="trip">
+<option value="">Choose a trip type</option>
+<option value="beach">Beach holiday</option>
+<option value="city">City break</option>
+<option value="camping">Camping trip</option>
+<option value="business">Business trip</option>
+<option value="family">Family visit</option>
+</select>
+<label for="days">Number of days away (1 to 30)</label>
+<input id="days" type="number" min="1" max="30" placeholder="For example 5">
+<label for="weather">Weather</label>
+<select id="weather">
+<option value="">Choose the weather</option>
+<option value="warm">Warm and sunny</option>
+<option value="cool">Cool and mild</option>
+<option value="rainy">Rainy</option>
+<option value="mixed">Mixed and changeable</option>
+</select>
+<button id="go" type="button">Build my packing list</button>
+<div class="steps" id="msg"></div>
+<div class="steps" id="list"></div>
+<p class="out" id="count"></p>
+<button id="printBtn" type="button" hidden>Print this list</button>
+</div>
+<h2>How the packing list generator works</h2>
+<p>Pick your trip type, enter how many days you are away and choose the weather you expect. The generator builds a list of items with a quantity for each one, sized to the length of your trip. Tick each item off as it goes into your bag, and the counter at the bottom shows how many items are packed and how many are left.</p>
+<p>When the list is complete, press the print button to print it out. A printed list is handy for the final check before you leave the house, and for checking that everything comes home again at the end of the trip.</p>
+<h2>Packing tips that save space</h2>
+<p>Roll soft clothes instead of folding them. Rolled clothes take up less room and come out with fewer creases. Wear your bulkiest shoes and your heaviest jacket for the journey, so they do not take up bag space. Keep travel documents, tickets and chargers together in one easy-to-reach pocket, and pack a spare bag for dirty laundry or souvenirs.</p>
+<p>Pack the things you will need first on top, such as sleepwear for the first night. If you are travelling with others, split shared items between bags so one lost bag does not take everything with it. Finally, leave a little space. Almost every trip brings something home that was not in the bag on the way out.</p>
+<h2>How quantities are worked out</h2>
+<p>Quantities follow simple rules that you can check at a glance. Tops are counted at one per day, and socks and underwear at one per day plus one spare pair. Sleepwear is counted at one set for a short trip and an extra set for longer stays. Smart outfits for a business trip are counted at about half the number of days, plus one spare, since outfits can be worn more than once.</p>
+<p>Weather items are added on top of the trip list. A rainy forecast adds a raincoat or umbrella and extra socks, a cool forecast adds a warm jumper, and a warm forecast adds sun protection and an extra water bottle. If your trip mixes two types, run the generator once for each type and combine the two lists.</p>
+<div class="warn">This list covers the usual items for each trip type. It does not replace your own judgement, so check the weather forecast again before you leave, and always carry any medication or documents you personally need.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How many days can the list cover?</h3><p>From 1 to 30 days. Enter the number of days you will be away and the quantities adjust to match the length of your trip.</p></div>
+<div class="faq"><h3>Why does the list add an extra pair of socks?</h3><p>One spare pair covers a wet day, a lost sock or a longer stay. The same idea applies to underwear, which is also counted at one per day plus one spare.</p></div>
+<div class="faq"><h3>Can I print the list?</h3><p>Yes. After the list is built, press the print button below it. A printed list is handy for the final check before you leave.</p></div>
+<div class="faq"><h3>What if my trip mixes two types?</h3><p>Run the generator once for each trip type and combine the two lists. For example, a beach trip with a city stop can use both lists together.</p></div>
+<div class="faq"><h3>Does the list include toiletries?</h3><p>It includes a toothbrush and toothpaste and a toiletries bag. Add your own personal items, such as medication, to the list before you pack.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/first-time-camping-checklist/">First Time Camping Checklist</a> · <a href="https://noryvello.github.io/first-time-hiking-checklist/">First Time Hiking Checklist</a> · <a href="https://noryvello.github.io/dorm-room-checklist/">Dorm Room Checklist</a> · <a href="https://noryvello.github.io/road-trip-games-generator/">Road Trip Games Generator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var COMMON = [
+["Tops", function(d){ return d; }],
+["Underwear", function(d){ return d + 1; }],
+["Socks", function(d){ return d + 1; }],
+["Sleepwear", function(d){ return Math.max(1, Math.ceil(d / 4)); }],
+["Toothbrush and toothpaste", 1],
+["Toiletries bag", 1],
+["Phone charger", 1],
+["Travel documents and tickets", 1]
+];
+var BY_TRIP = {
+beach: [["Swimwear", 2], ["Sun hat", 1], ["Sunglasses", 1], ["Beach towel", 1], ["Sandals", 1]],
+city: [["Comfortable walking shoes", 1], ["Day bag", 1], ["Light jacket", 1], ["Guidebook or map", 1]],
+camping: [["Tent", 1], ["Sleeping bag", 1], ["Torch", 1], ["Water bottle", 1], ["Sturdy shoes", 1], ["Insect protection", 1], ["Warm layer", 1]],
+business: [["Smart outfits", function(d){ return Math.ceil(d / 2) + 1; }], ["Formal shoes", 1], ["Laptop and charger", 1], ["Notebook and pen", 1]],
+family: [["Comfortable shoes", 1], ["Day bag", 1], ["Book or game for quiet time", 1], ["A small gift or treats", 1]]
+};
+var BY_WEATHER = {
+warm: [["Sun protection", 1], ["Extra water bottle", 1]],
+cool: [["Warm jumper", 1], ["Scarf and gloves", 1]],
+rainy: [["Raincoat or umbrella", 1], ["Waterproof bag cover", 1], ["Extra socks", 2]],
+mixed: [["Light rain jacket", 1], ["Layers you can add or remove", 2]]
+};
+function updateCount(){
+  var boxes = document.getElementById("list").querySelectorAll('input[type="checkbox"]');
+  var done = 0;
+  for (var i = 0; i < boxes.length; i++) { if (boxes[i].checked) done++; }
+  document.getElementById("count").textContent = done + " of " + boxes.length + " packed";
+}
+document.getElementById("go").addEventListener("click", function(){
+  var trip = document.getElementById("trip").value;
+  var daysRaw = document.getElementById("days").value;
+  var weather = document.getElementById("weather").value;
+  var msg = document.getElementById("msg");
+  var list = document.getElementById("list");
+  var days = Number(daysRaw);
+  if (!trip) { msg.textContent = "Please choose a trip type first."; list.innerHTML = ""; document.getElementById("count").textContent = ""; document.getElementById("printBtn").hidden = true; return; }
+  if (daysRaw === "" || isNaN(days) || days % 1 !== 0 || days < 1 || days > 30) { msg.textContent = "Please enter a whole number of days between 1 and 30."; list.innerHTML = ""; document.getElementById("count").textContent = ""; document.getElementById("printBtn").hidden = true; return; }
+  if (!weather) { msg.textContent = "Please choose the weather you expect."; list.innerHTML = ""; document.getElementById("count").textContent = ""; document.getElementById("printBtn").hidden = true; return; }
+  msg.textContent = "";
+  var items = COMMON.concat(BY_TRIP[trip]).concat(BY_WEATHER[weather]);
+  var html = "";
+  for (var i = 0; i < items.length; i++) {
+    var q = (typeof items[i][1] === "function") ? items[i][1](days) : items[i][1];
+    html += '<div class="pack-item"><label><input type="checkbox" data-i="' + i + '"> ' + items[i][0] + " \u2014 " + q + "</label></div>";
+  }
+  list.innerHTML = html;
+  var boxes = list.querySelectorAll('input[type="checkbox"]');
+  for (var j = 0; j < boxes.length; j++) {
+    boxes[j].addEventListener("change", updateCount);
+  }
+  updateCount();
+  document.getElementById("printBtn").hidden = false;
+});
+document.getElementById("printBtn").addEventListener("click", function(){ window.print(); });
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emergency Kit Checklist | Noryvello</title>
+<meta name="description" content="Build an emergency kit step by step: a tick-off checklist by category with a progress counter, plus a review reminder for your kit.">
+<link rel="canonical" href="https://noryvello.github.io/emergency-kit-checklist/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Emergency Kit Checklist">
+<meta property="og:description" content="An emergency kit checklist by category, with a review reminder.">
+<meta property="og:url" content="https://noryvello.github.io/emergency-kit-checklist/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.checklist{list-style:none;margin-left:0}
+.checklist li{margin:9px 0;line-height:1.55}
+.checklist label{cursor:pointer;font-weight:400}
+.calc input[type=checkbox]{width:auto;padding:0;margin-right:8px;accent-color:#4338ca}
+.calc button{width:100%;padding:12px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;margin-top:12px;cursor:pointer}
+.calc button.secondary{background:#e2e8f0;color:#1e293b}
+.progress{font-weight:700;margin-top:12px}
+.phase{font-weight:700;margin:16px 0 2px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What should be in an emergency kit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Drinking water, food that needs no cooking, torches and spare batteries, a phone charger, copies of important documents, and first aid basics. The checklist above covers every category, so you can build your kit step by step."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should I check my emergency kit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Twice a year is a good routine. At each review, check expiry dates on food, water, batteries, and medicines, test the torches, and replace anything used or out of date. The review reminder above works out your next check date."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where should I keep my emergency kit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Somewhere you can reach it in the dark, in a bag or box you could carry if you had to leave the house. Tell everyone in the household where it is — a kit that only one person knows about is only half a kit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much water should I store?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Store enough sealed drinking water for each person for a couple of days, and do not forget pets. Keep clean containers you can fill quickly if you get warning of a disruption to the water supply."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a battery-powered radio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is worth keeping one. If the power and the phone network go down, a battery-powered radio is often the only way to hear official advice. Keep spare batteries for it in the kit."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Emergency Kit Checklist</h1>
+<p class="answer">An emergency kit is a small store of the things you would need if you had to manage without power, water, or shops for a day or two. This checklist builds your kit category by category, and the review reminder helps you keep it up to date.</p>
+<div class="calc">
+<p>Build your kit category by category, and tick each item off as it goes in. The counter tracks every category and the total.</p>
+<p class="phase">Water</p>
+<ul class="checklist">
+<li><label><input type="checkbox" data-phase="water"> <b>Drinking water stored.</b> Keep sealed bottles of drinking water, enough for each person for a couple of days.</label></li>
+<li><label><input type="checkbox" data-phase="water"> <b>Water containers ready.</b> Keep clean containers you can fill quickly if you get warning of a disruption.</label></li>
+<li><label><input type="checkbox" data-phase="water"> <b>Water for pets.</b> Store water for pets as well as people.</label></li>
+</ul>
+<p class="phase">Food</p>
+<ul class="checklist">
+<li><label><input type="checkbox" data-phase="food"> <b>Food that needs no cooking.</b> Keep tinned food, dried fruit, crackers, and energy bars that keep well.</label></li>
+<li><label><input type="checkbox" data-phase="food"> <b>A tin opener.</b> Keep a manual tin opener in the kit — a tin without an opener is no use.</label></li>
+<li><label><input type="checkbox" data-phase="food"> <b>Food for dietary needs.</b> Include food that suits everyone in the household, including babies and anyone with allergies.</label></li>
+<li><label><input type="checkbox" data-phase="food"> <b>Pet food.</b> Keep a few days of pet food in the kit if you have animals.</label></li>
+</ul>
+<p class="phase">Light and power</p>
+<ul class="checklist">
+<li><label><input type="checkbox" data-phase="light"> <b>Torches and spare batteries.</b> Keep at least one torch per person, with spare batteries that fit.</label></li>
+<li><label><input type="checkbox" data-phase="light"> <b>Phone charger.</b> Keep a charged power bank and a charging cable in the kit.</label></li>
+<li><label><input type="checkbox" data-phase="light"> <b>Battery-powered radio.</b> A small radio keeps you informed if the phone network goes down.</label></li>
+<li><label><input type="checkbox" data-phase="light"> <b>Candles and matches.</b> Keep candles and waterproof matches as a backup light source, and use them safely.</label></li>
+</ul>
+<p class="phase">Documents</p>
+<ul class="checklist">
+<li><label><input type="checkbox" data-phase="documents"> <b>ID and insurance papers.</b> Keep copies of identity documents and insurance details in a waterproof folder.</label></li>
+<li><label><input type="checkbox" data-phase="documents"> <b>Emergency numbers on paper.</b> Write down emergency numbers and family contacts — do not rely on a phone alone.</label></li>
+<li><label><input type="checkbox" data-phase="documents"> <b>Medical details.</b> Keep a note of regular medicines, allergies, and your doctor's details.</label></li>
+</ul>
+<p class="phase">First aid basics</p>
+<ul class="checklist">
+<li><label><input type="checkbox" data-phase="firstaid"> <b>First aid kit stocked.</b> Keep plasters, bandages, antiseptic wipes, and scissors in the kit.</label></li>
+<li><label><input type="checkbox" data-phase="firstaid"> <b>Regular medicines.</b> Keep a few days of any regular medicines in the kit, and check their dates.</label></li>
+<li><label><input type="checkbox" data-phase="firstaid"> <b>Basic pain relief.</b> Keep basic pain relief suitable for your household, and check the expiry date.</label></li>
+<li><label><input type="checkbox" data-phase="firstaid"> <b>First aid guide.</b> Keep a simple first aid guide or booklet in the kit for reference.</label></li>
+</ul>
+<p class="progress" id="progress"></p>
+<button class="secondary" id="reset-btn" type="button">Reset checklist</button>
+</div>
+<div class="calc">
+<h2 style="margin-top:0">Review reminder</h2>
+<p>Enter the date you packed or last checked your kit, and the tool will work out when to review it next. A good routine is to review your kit twice a year.</p>
+<label for="kit-date">Date you packed or last checked your kit</label>
+<input id="kit-date" type="date">
+<button id="review-btn" type="button">When should I review it?</button>
+<p class="out" id="review-out"></p>
+<div class="steps" id="review-steps"></div>
+</div>
+<div class="warn">This page is general preparedness guidance only, not medical advice. If someone is injured or unwell, call your local emergency number. Always follow the advice of your local authorities in an emergency.</div>
+
+<h2>What an emergency kit is for</h2>
+<p>An emergency kit is a small store of the things you would need if you had to manage without power, water, or shops for a day or two. It is not a survival bunker and it does not need to be expensive. Most of what you need is already in your home — the kit is about gathering it in one place, checking it works, and knowing where it is.</p>
+<p>Keep the kit somewhere you can reach it in the dark, in a bag or box you could carry if you had to leave the house. Tell everyone in the household where it is. A kit that only one person knows about is only half a kit.</p>
+<h2>Build it category by category</h2>
+<p>Start with water and food, because those are the things you cannot improvise. Sealed bottles of drinking water, food that needs no cooking, and a manual tin opener cover the basics. Then add light and power: torches, spare batteries, a charged power bank, and a battery-powered radio. Then documents: copies of your ID and insurance papers in a waterproof folder, and emergency numbers written on paper.</p>
+<p>First aid basics come last in the list but matter just as much. A stocked first aid kit, a few days of any regular medicines, and a simple first aid guide cover most situations. Check the expiry dates on medicines and first aid supplies when you build the kit, and again at every review.</p>
+<h2>Review the kit twice a year</h2>
+<p>A kit that is never checked slowly stops being a kit. Batteries run flat, food goes out of date, and medicines expire. A good routine is to review the kit twice a year — pick two dates you will remember, such as the start of summer and the start of winter. The review reminder above works out your next check date from the date you last checked.</p>
+<p>At each review, open the kit and check everything. Replace food and water that is out of date, test the torches, charge the power bank, and check that the documents are still current. If anyone in the household has new medication or a new allergy, update the medical note. A ten-minute review twice a year keeps the kit ready when you need it.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What should be in an emergency kit?</h3><p>Drinking water, food that needs no cooking, torches and spare batteries, a phone charger, copies of important documents, and first aid basics. The checklist above covers every category, so you can build your kit step by step.</p></div>
+<div class="faq"><h3>How often should I check my emergency kit?</h3><p>Twice a year is a good routine. At each review, check expiry dates on food, water, batteries, and medicines, test the torches, and replace anything used or out of date. The review reminder above works out your next check date.</p></div>
+<div class="faq"><h3>Where should I keep my emergency kit?</h3><p>Somewhere you can reach it in the dark, in a bag or box you could carry if you had to leave the house. Tell everyone in the household where it is — a kit that only one person knows about is only half a kit.</p></div>
+<div class="faq"><h3>How much water should I store?</h3><p>Store enough sealed drinking water for each person for a couple of days, and do not forget pets. Keep clean containers you can fill quickly if you get warning of a disruption to the water supply.</p></div>
+<div class="faq"><h3>Do I need a battery-powered radio?</h3><p>It is worth keeping one. If the power and the phone network go down, a battery-powered radio is often the only way to hear official advice. Keep spare batteries for it in the kit.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/storm-preparedness-checklist/">Storm Preparedness Checklist</a> · <a href="https://noryvello.github.io/home-energy-audit-checklist/">Home Energy Audit Checklist</a> · <a href="https://noryvello.github.io/buying-a-home-security-camera-mistakes/">7 Mistakes to Avoid When Buying a Home Security Camera</a> · <a href="https://noryvello.github.io/dashboard-warning-lights-finder/">Car Dashboard Warning Lights Finder</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var boxes=document.querySelectorAll('input[type="checkbox"]');
+var progress=document.getElementById("progress");
+var phases=[["water","Water"],["food","Food"],["light","Light and power"],["documents","Documents"],["firstaid","First aid basics"]];
+function update(){
+  var parts=[];
+  var done=0;
+  for(var p=0;p<phases.length;p++){
+    var n=0,t=0;
+    for(var i=0;i<boxes.length;i++){
+      if(boxes[i].getAttribute("data-phase")===phases[p][0]){t++;if(boxes[i].checked){n++;}}
+    }
+    done+=n;
+    parts.push(phases[p][1]+": "+n+" of "+t);
+  }
+  progress.textContent=parts.join(" \u00b7 ")+" \u00b7 Total: "+done+" of "+boxes.length+" checked";
+}
+for(var i=0;i<boxes.length;i++){boxes[i].addEventListener("change",update);}
+document.getElementById("reset-btn").addEventListener("click",function(){
+  for(var i=0;i<boxes.length;i++){boxes[i].checked=false;}
+  update();
+});
+update();
+var MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+document.getElementById("review-btn").addEventListener("click",function(){
+  var out=document.getElementById("review-out");
+  var steps=document.getElementById("review-steps");
+  var raw=document.getElementById("kit-date").value.trim();
+  if(!raw){out.textContent="";steps.textContent="Please pick the date you packed or last checked your kit.";return;}
+  var d=new Date(raw+"T00:00:00");
+  if(isNaN(d.getTime())){out.textContent="";steps.textContent="That date does not look right — please pick a date from the calendar.";return;}
+  var r=new Date(d.getFullYear(),d.getMonth()+6,d.getDate());
+  out.textContent="Check your kit again by "+r.getDate()+" "+MONTHS[r.getMonth()]+" "+r.getFullYear();
+  var lines=[];
+  lines.push("You last checked your kit on "+d.getDate()+" "+MONTHS[d.getMonth()]+" "+d.getFullYear()+".");
+  lines.push("A good routine is to review your kit twice a year, so the next check is six months on.");
+  lines.push("At each review, check expiry dates on food, water, batteries, and medicines, and replace anything used or out of date.");
+  steps.textContent=lines.join("\n");
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

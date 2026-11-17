@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Time Zones Explained | Noryvello</title>
+<meta name="description" content="Why does the world have time zones, and why can it be a different day somewhere else? A plain-words explainer with an offset reader — no live clock.">
+<link rel="canonical" href="https://noryvello.github.io/time-zones-explained-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Time Zones Explained">
+<meta property="og:description" content="Time zones explained in plain words: UTC, offsets and why dates differ.">
+<meta property="og:url" content="https://noryvello.github.io/time-zones-explained-guide/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{padding:10px 16px;border:1px solid #4338ca;background:#4338ca;color:#fff;border-radius:8px;font-size:16px;cursor:pointer;margin-top:10px}
+.calc input[type="checkbox"]{width:auto;margin-right:8px}
+.pack-item{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+th,td{border:1px solid #cbd5e1;padding:6px 8px;text-align:left}
+th{background:#eef2ff}
+tr:nth-child(even) td{background:rgba(255,255,255,.6)}
+.tablewrap{overflow-x:auto}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is UTC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UTC stands for Coordinated Universal Time. It is the reference point for every time zone in the world, and each zone is described by how many hours ahead of it or behind it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does UTC+5 mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It means the zone is five hours ahead of UTC. When it is noon in UTC, it is five in the afternoon in a UTC+5 zone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is it a different day in some places?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the Earth is round, there has to be a line where one day ends and the next begins. That is the International Date Line, and crossing it moves the date by a day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do all time zones differ by whole hours?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A few zones sit half an hour, or even three quarters of an hour, away from the nearest whole hour. These are deliberate choices made by the places that use them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do neighbouring places sometimes share a time zone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Time zone borders follow country and region borders rather than straight lines, because it is far more useful for a whole place to share one time."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Time Zones Explained</h1>
+<p class="answer">Time zones exist because the Earth turns, so noon arrives at a different moment in each part of the world. This guide explains UTC and offsets in plain words, and the offset reader shows what any offset means for the time of day.</p>
+<div class="calc">
+<label for="offset">Pick an offset from UTC</label>
+<select id="offset">
+<option value="">Choose an offset</option>
+<option value="-12">UTC−12</option>
+<option value="-11">UTC−11</option>
+<option value="-10">UTC−10</option>
+<option value="-9">UTC−9</option>
+<option value="-8">UTC−8</option>
+<option value="-7">UTC−7</option>
+<option value="-6">UTC−6</option>
+<option value="-5">UTC−5</option>
+<option value="-4">UTC−4</option>
+<option value="-3">UTC−3</option>
+<option value="-2">UTC−2</option>
+<option value="-1">UTC−1</option>
+<option value="0">UTC</option>
+<option value="1">UTC+1</option>
+<option value="2">UTC+2</option>
+<option value="3">UTC+3</option>
+<option value="4">UTC+4</option>
+<option value="5">UTC+5</option>
+<option value="6">UTC+6</option>
+<option value="7">UTC+7</option>
+<option value="8">UTC+8</option>
+<option value="9">UTC+9</option>
+<option value="10">UTC+10</option>
+<option value="11">UTC+11</option>
+<option value="12">UTC+12</option>
+<option value="13">UTC+13</option>
+<option value="14">UTC+14</option>
+</select>
+<button id="go" type="button">What does this offset mean?</button>
+<p class="out" id="out"></p>
+<p class="steps" id="steps"></p>
+</div>
+<h2>Why time zones exist</h2>
+<p>The Earth turns once a day, and the Sun can only be overhead in one place at a time. When it is noon in one part of the world, it is midnight on the opposite side. If every place used the same clock time, some people would have noon in the middle of the night and midnight at midday. Time zones solve this by giving each part of the world a clock time that roughly matches the Sun overhead.</p>
+<p>Before time zones, towns often kept their own local time, set by the Sun. That worked when travel was slow, but railways and telegraphs made it confusing: a train timetable had to cope with a different local time at every stop. Standard time zones, agreed across countries, gave everyone a shared system that still keeps midday near the middle of the day.</p>
+<h2>What UTC means</h2>
+<p>UTC stands for Coordinated Universal Time, and it is the reference point for every time zone in the world. Every zone is described by its offset from UTC: how many hours ahead of it or behind it. A zone at UTC+5 is five hours ahead of UTC, so when it is noon in UTC, it is five in the afternoon there. A zone at UTC−8 is eight hours behind UTC, so when it is noon in UTC, it is four in the morning there.</p>
+<p>UTC itself is not the time of any one place in particular, although it matches the time kept in a few places. Think of it as the zero line on a ruler, with every other zone measured from it. The offset reader above shows what any offset means, using noon in UTC as the starting point.</p>
+<h2>Reading an offset</h2>
+<p>An offset has two parts: a plus or minus sign, and a number of hours. The sign tells you the direction. A plus means the zone is ahead of UTC, so its clocks show a later time. A minus means the zone is behind UTC, so its clocks show an earlier time. The number tells you how far ahead or behind.</p>
+<p>To work out the time in a zone, start from the time in UTC and add the offset. If it is 12:00 noon in UTC, a UTC+3 zone shows 3:00 in the afternoon, and a UTC−5 zone shows 7:00 in the morning. If adding the offset takes you past midnight, the date changes too, which is how two places can be on different days at the same moment.</p>
+<h2>Why the date can be different</h2>
+<p>Because the Earth is round, there has to be a place where one day ends and the next begins. That place is the International Date Line, which runs through the Pacific Ocean. Cross it in one direction and the date moves forward a day; cross it the other way and the date moves back a day. This is why, at a given moment, it can be Tuesday in one place and Wednesday in another.</p>
+<p>The date line is not a straight line. It bends around islands and countries so that places that belong together stay on the same date. The bending is a practical choice, made by people, in the same way that time zone borders follow country borders rather than straight lines on a map.</p>
+<h2>Why zones are not perfectly straight</h2>
+<p>If time zones followed the Sun exactly, they would be straight bands running from pole to pole. In practice they follow borders, because it is far more useful for a whole country, or a whole region, to share one time. That is why zone borders zigzag on the map, and why neighbouring places sometimes share a zone even when the Sun suggests they should differ.</p>
+<p>A few zones also sit half an hour, or even three quarters of an hour, away from the nearest whole hour. These are deliberate choices made by the places that use them. They are a reminder that time zones are a human system built on top of the Earth's rotation, not a law of nature.</p>
+<h2>Time zones and travel</h2>
+<p>Time zones are most noticeable when you travel. A long flight can cross several zones in a few hours, and the local time at your destination can be hours ahead of, or behind, the time you left. On some routes the plane lands at a local time earlier than the time it took off, which always surprises first-time travellers. It is not a trick of the clock: the plane has simply flown into a zone where the day is younger.</p>
+<p>The same effect explains why the body feels out of step after a long journey. Your body keeps its own rough sense of day and night, and it takes time to adjust when the local time suddenly shifts by several hours. The usual advice is simple: get daylight at your destination, keep meals at local times, and give yourself a day or two to settle in.</p>
+<div class="warn">This page is educational only and has no live clock. Offsets change when places change their rules, so always check the current local time before an important call or journey.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is UTC?</h3><p>UTC stands for Coordinated Universal Time. It is the reference point for every time zone in the world, and each zone is described by how many hours ahead of it or behind it.</p></div>
+<div class="faq"><h3>What does UTC+5 mean?</h3><p>It means the zone is five hours ahead of UTC. When it is noon in UTC, it is five in the afternoon in a UTC+5 zone.</p></div>
+<div class="faq"><h3>Why is it a different day in some places?</h3><p>Because the Earth is round, there has to be a line where one day ends and the next begins. That is the International Date Line, and crossing it moves the date by a day.</p></div>
+<div class="faq"><h3>Do all time zones differ by whole hours?</h3><p>No. A few zones sit half an hour, or even three quarters of an hour, away from the nearest whole hour. These are deliberate choices made by the places that use them.</p></div>
+<div class="faq"><h3>Why do neighbouring places sometimes share a time zone?</h3><p>Time zone borders follow country and region borders rather than straight lines, because it is far more useful for a whole place to share one time.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/daylight-saving-dates-guide/">Daylight Saving Dates Guide</a> · <a href="https://noryvello.github.io/24-hour-clock-guide/">24-Hour Clock Guide</a> · <a href="https://noryvello.github.io/leap-year-explained/">Leap Year Explained</a> · <a href="https://noryvello.github.io/moon-phases-explained-guide/">Moon Phases Explained</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+function fmtHour(h){
+  if (h === 0) return "12:00 at night";
+  if (h === 12) return "12:00 at noon";
+  if (h < 12) return h + ":00 in the morning";
+  var x = h - 12;
+  if (h < 17) return x + ":00 in the afternoon";
+  if (h < 20) return x + ":00 in the evening";
+  return x + ":00 at night";
+}
+document.getElementById("go").addEventListener("click", function(){
+  var raw = document.getElementById("offset").value;
+  var out = document.getElementById("out");
+  var steps = document.getElementById("steps");
+  if (raw === "") { out.textContent = "Please choose an offset first, then press the button."; steps.textContent = ""; return; }
+  var off = Number(raw);
+  var total = 12 + off;
+  var h = ((total % 24) + 24) % 24;
+  var dayNote = "";
+  if (total >= 24) dayNote = ", the next day";
+  if (total < 0) dayNote = ", the day before";
+  var label = "UTC";
+  if (off > 0) label = "UTC+" + off;
+  if (off < 0) label = "UTC" + off;
+  out.textContent = "When it is 12:00 noon in UTC, it is " + fmtHour(h) + dayNote + " in a " + label + " zone.";
+  if (off === 0) steps.textContent = "This zone keeps the same time as UTC.";
+  else if (off > 0) steps.textContent = "That means this zone is " + off + (off === 1 ? " hour" : " hours") + " ahead of UTC.";
+  else steps.textContent = "That means this zone is " + (-off) + ((-off) === 1 ? " hour" : " hours") + " behind UTC.";
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baby Shower Planning Checklist | Noryvello</title>
+<meta name="description" content="Plan a baby shower in phases, from the guest list to the thank-you notes, with a progress counter and a guest-count helper for chairs, drinks and cake.">
+<link rel="canonical" href="https://noryvello.github.io/baby-shower-planning-checklist/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Baby Shower Planning Checklist">
+<meta property="og:description" content="Plan a baby shower in phases, with a guest-count helper for chairs, drinks and cake.">
+<meta property="og:url" content="https://noryvello.github.io/baby-shower-planning-checklist/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.checklist{list-style:none;margin-left:0}
+.checklist li{margin:9px 0;line-height:1.55}
+.checklist label{cursor:pointer;font-weight:400}
+.calc input[type=checkbox]{width:auto;padding:0;margin-right:8px;accent-color:#4338ca}
+.calc button{width:100%;padding:12px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;margin-top:12px;cursor:pointer}
+.calc button.secondary{background:#e2e8f0;color:#1e293b}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+.progress{font-weight:700;margin-top:12px}
+.calc .out{white-space:pre-line}
+table{width:100%;border-collapse:collapse;margin:12px 0}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;font-size:15px}
+th{background:#eef2ff}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When should a baby shower be held?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most showers happen a few weeks before the due date, when the guest of honour is comfortable enough to enjoy the day. The exact timing matters less than the guest of honour's wishes, so ask them first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who hosts a baby shower?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually a close friend or family member, though anyone the guest of honour is comfortable with can host. What matters is that the host knows the guest of honour well enough to plan a day they will enjoy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many guests is normal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no normal number: showers range from a handful of close friends to a large family gathering. The guest-count helper on this page works for any number, and the guest list should be agreed with the guest of honour."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need games at a baby shower?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, but a couple of short, optional games can help guests who do not know each other relax. Keep them simple and brief, and leave plenty of time for conversation, which is what most guests enjoy most."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should the guest of honour open gifts at the shower?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That is up to them. Some people enjoy opening gifts in front of everyone, and some would rather open them later in private. Ask the guest of honour beforehand, and keep a list of who gave what either way."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Baby Shower Planning Checklist</h1>
+<p class="answer">This checklist plans a baby shower in phases, from picking a date and guest list to the games and the thank-you notes. Use the guest-count helper to work out chairs, drinks and cake servings for the number of people coming.</p>
+
+<div class="calc">
+<p><b>Guest-count helper.</b> Enter the number of guests coming, and the helper will work out chairs, drinks and cake servings.</p>
+<label for="guests">Number of guests</label>
+<input id="guests" type="number" min="1" placeholder="For example, 20">
+<button id="guest-btn" type="button">Work out what I need</button>
+<p class="out" id="guest-out"></p>
+<p class="steps" id="guest-steps"></p>
+</div>
+<div class="calc">
+<p>Work through the checklist by phase, and tick each step off when it is done.</p>
+<ul class="checklist">
+<li><label><input type="checkbox"> <b>Talk to the guest of honour.</b> Ask what kind of shower they would like, and who they would like there.</label></li>
+<li><label><input type="checkbox"> <b>Pick a date.</b> Choose a date that suits the guest of honour, and check it with key guests.</label></li>
+<li><label><input type="checkbox"> <b>Set the guest list.</b> Agree the guest list with the guest of honour, and collect addresses or contact details.</label></li>
+<li><label><input type="checkbox"> <b>Choose a venue.</b> Pick a venue that fits the guest list, and book it if it needs booking.</label></li>
+<li><label><input type="checkbox"> <b>Send invitations.</b> Send invitations with the date, time, venue and any gift guidance.</label></li>
+<li><label><input type="checkbox"> <b>Plan the food.</b> Plan food and drink for the guest count, and check dietary needs and allergies.</label></li>
+<li><label><input type="checkbox"> <b>Order the cake.</b> Order or plan the cake, with enough servings for every guest.</label></li>
+<li><label><input type="checkbox"> <b>Plan the decorations.</b> Choose a simple theme and list the decorations you need.</label></li>
+<li><label><input type="checkbox"> <b>Plan the games.</b> Pick two or three games that suit the guests, and gather what each one needs.</label></li>
+<li><label><input type="checkbox"> <b>Buy prizes.</b> Get small prizes for the game winners.</label></li>
+<li><label><input type="checkbox"> <b>Arrange seating.</b> Plan seating for the guest count, with a comfortable chair for the guest of honour.</label></li>
+<li><label><input type="checkbox"> <b>Confirm the guest count.</b> Confirm numbers a week before, and adjust food, seating and cake servings.</label></li>
+<li><label><input type="checkbox"> <b>Buy supplies.</b> Buy plates, cups, napkins and anything else on your list.</label></li>
+<li><label><input type="checkbox"> <b>Prepare a playlist.</b> Put together music for the background, and check the speaker works.</label></li>
+<li><label><input type="checkbox"> <b>Set up early.</b> Arrive early on the day to set up tables, chairs and decorations.</label></li>
+<li><label><input type="checkbox"> <b>Welcome the guests.</b> Greet guests as they arrive, and introduce people who do not know each other.</label></li>
+<li><label><input type="checkbox"> <b>Run the games.</b> Keep the games short and optional, so nobody feels put on the spot.</label></li>
+<li><label><input type="checkbox"> <b>Thank-you notes.</b> Help the guest of honour with thank-you notes for gifts in the days after the shower.</label></li>
+</ul>
+<p class="progress" id="progress"></p>
+<button class="secondary" id="reset-btn" type="button">Reset checklist</button>
+</div>
+<div class="warn">This is general party planning help. Check dietary needs and allergies with your guests before you plan food and drink, and keep the guest of honour's wishes at the centre of every decision.</div>
+
+<h2>Start with the guest of honour</h2>
+<p>Every decision about a baby shower starts with one person: the guest of honour. Before you book anything or invite anyone, ask what kind of shower they would like, who they would like there, and what they would rather skip. Some people love games and surprises; others would rather have a quiet afternoon with close friends. The shower is for them, so their answers set the shape of the whole event.</p>
+<p>Ask early, and ask directly. Guessing what someone wants is how showers end up with games nobody enjoys and guests the guest of honour barely knows. A short conversation at the start saves awkwardness later.</p>
+<h2>The guest list and the date</h2>
+<p>Agree the guest list with the guest of honour before you send anything. The list decides the venue, the food, the seating and the cost of almost everything else, so it is worth getting right. Collect addresses or contact details as you go, and keep the list in one place so you can check numbers later.</p>
+<p>Pick a date that suits the guest of honour first, then check it with the key guests. Send invitations with the date, time, venue and any gift guidance, and give people enough notice to plan around it. Confirm the numbers a week before the shower, and adjust your food, seating and cake servings to match.</p>
+<h2>Food, drink and cake</h2>
+<p>Plan food and drink around the guest count, and check dietary needs and allergies before you buy anything. The guest-count helper at the top of the page works out chairs, drinks and cake servings from your guest number, with a few spares built in: two spare chairs, two drinks per guest, and four spare cake slices. Treat the numbers as a starting point and adjust for your own guests.</p>
+<p>Keep the food simple and easy to eat standing up or sitting in a circle. Finger food, a cake and drinks are enough for most showers, and a simple spread that you can prepare in advance beats an ambitious menu that keeps you in the kitchen all afternoon.</p>
+<h2>Games and activities</h2>
+<p>Two or three short games are plenty. Pick games that suit the guests you actually have, not the ones that look good in a magazine, and keep them optional so nobody feels put on the spot. A game that takes five minutes and gets people talking is better than a long one that divides the room.</p>
+<p>Have small prizes ready for the winners, and a backup plan in case a game falls flat. The best activity at many showers is simply time to talk, so leave plenty of unplanned time in the afternoon and do not pack the schedule full.</p>
+<h2>On the day</h2>
+<p>Arrive early to set up tables, chairs and decorations, and put a comfortable chair in a good spot for the guest of honour. Greet guests as they arrive and introduce people who do not know each other: at a shower, the guests often come from different parts of the guest of honour's life, and a short introduction makes everyone more comfortable.</p>
+<p>Keep an eye on the time, but do not run the day like a timetable. Let the games happen when the mood is right, serve the cake when people are ready for it, and leave time at the end for the guest of honour to open gifts if they want to.</p>
+<h2>After the shower</h2>
+<p>After the shower, help the guest of honour with thank-you notes for the gifts. Keep a list of who gave what as the gifts are opened, so the notes can be personal rather than generic. Notes sent within a week or two are ideal, and a short, warm note is all that is needed.</p>
+<p>Tidy up, return anything borrowed, and keep the leftover supplies for another time. A shower that ends with the guest of honour feeling looked after, rather than overwhelmed, is a shower that went well.</p>
+
+<h2>Questions people ask</h2>
+<div class="faq"><h3>When should a baby shower be held?</h3><p>Most showers happen a few weeks before the due date, when the guest of honour is comfortable enough to enjoy the day. The exact timing matters less than the guest of honour's wishes, so ask them first.</p></div>
+<div class="faq"><h3>Who hosts a baby shower?</h3><p>Usually a close friend or family member, though anyone the guest of honour is comfortable with can host. What matters is that the host knows the guest of honour well enough to plan a day they will enjoy.</p></div>
+<div class="faq"><h3>How many guests is normal?</h3><p>There is no normal number: showers range from a handful of close friends to a large family gathering. The guest-count helper on this page works for any number, and the guest list should be agreed with the guest of honour.</p></div>
+<div class="faq"><h3>Do I need games at a baby shower?</h3><p>No, but a couple of short, optional games can help guests who do not know each other relax. Keep them simple and brief, and leave plenty of time for conversation, which is what most guests enjoy most.</p></div>
+<div class="faq"><h3>Should the guest of honour open gifts at the shower?</h3><p>That is up to them. Some people enjoy opening gifts in front of everyone, and some would rather open them later in private. Ask the guest of honour beforehand, and keep a list of who gave what either way.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/new-baby-congratulations-messages/">New Baby Congratulations Messages</a> · <a href="https://noryvello.github.io/dinner-party-planning-checklist/">Dinner Party Planning Checklist</a> · <a href="https://noryvello.github.io/retirement-party-planning-checklist/">Retirement Party Planning Checklist</a> · <a href="https://noryvello.github.io/family-reunion-planning-checklist/">Family Reunion Planning Checklist</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+
+document.getElementById("guest-btn").addEventListener("click",function(){
+  var out=document.getElementById("guest-out");
+  var steps=document.getElementById("guest-steps");
+  var g=parseInt(document.getElementById("guests").value,10);
+  if(isNaN(g)||g<=0){
+    out.textContent="";
+    steps.textContent="Enter the number of guests coming, and the helper will work out chairs, drinks and cake servings.";
+    return;
+  }
+  var chairs=g+2;
+  var drinks=g*2;
+  var slices=g+4;
+  out.textContent="For "+g+" guest"+(g===1?"":"s");
+  var msg="Chairs: "+g+" guests + 2 spare = "+chairs+" chairs.";
+  msg+="\nDrinks: "+g+" guests x 2 drinks each = "+drinks+" drinks.";
+  msg+="\nCake slices: "+g+" guests + 4 spare = "+slices+" slices.";
+  msg+="\nThese are rough guides for planning: confirm the guest count a week before the shower and adjust the numbers.";
+  steps.textContent=msg;
+});
+var boxes=document.querySelectorAll('input[type="checkbox"]');
+var progress=document.getElementById("progress");
+var total=boxes.length;
+function update(){
+  var n=0;
+  for(var i=0;i<boxes.length;i++){if(boxes[i].checked){n++;}}
+  progress.textContent=n+" of "+total+" checked";
+}
+for(var i=0;i<boxes.length;i++){boxes[i].addEventListener("change",update);}
+document.getElementById("reset-btn").addEventListener("click",function(){
+  for(var i=0;i<boxes.length;i++){boxes[i].checked=false;}
+  update();
+});
+update();
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

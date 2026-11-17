@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Science Fair Project Planner | Noryvello</title>
+<meta name="description" content="Plan a science fair project week by week: enter the fair date and project type for a milestone timeline, plus a materials checklist to tick off as you go.">
+<link rel="canonical" href="https://noryvello.github.io/science-fair-project-planner/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Science Fair Project Planner">
+<meta property="og:description" content="A week-by-week timeline for your science fair project, with a materials checklist.">
+<meta property="og:url" content="https://noryvello.github.io/science-fair-project-planner/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.checklist{list-style:none;margin-left:0}
+.checklist li{margin:9px 0;line-height:1.55}
+.checklist label{cursor:pointer;font-weight:400}
+.calc input[type=checkbox]{width:auto;padding:0;margin-right:8px;accent-color:#4338ca}
+.calc button{width:100%;padding:12px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;margin-top:12px;cursor:pointer}
+.calc button.secondary{background:#e2e8f0;color:#1e293b}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+.progress{font-weight:700;margin-top:12px}
+.calc .out{white-space:pre-line}
+table{width:100%;border-collapse:collapse;margin:12px 0}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;font-size:15px}
+th{background:#eef2ff}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How far ahead should I start my project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eight weeks is a comfortable amount of time for most projects, and the planner is built around that. If you have less time, the planner compresses the same milestones into the weeks you have, but start as soon as you can."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my experiment fails?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A clear result is still a result, even if it is not the one you expected. Write up what happened and why you think it happened, and say what you would change next time. Judges value honest results far more than perfect ones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a hypothesis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For an experiment, yes: a short statement of what you expect and why, written before you start. For an invention, a research study or an observation study, a clear goal or question takes its place."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should my display include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your question, your method, your results with a chart or table, and your conclusion. Keep the text short and the headings clear, and make sure everything on the board can be read from a step or two away."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I work with a partner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That depends on your fair's rules, so check them first. Some fairs allow teams and some do not, and team projects usually need to show what each person did."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Science Fair Project Planner</h1>
+<p class="answer">This planner turns your fair date into a week-by-week plan, with milestones for your question, research, experiment, results and display. Enter the fair date, pick your project type, and tick off the materials checklist as you gather what you need.</p>
+
+<div class="calc">
+<p><b>Timeline planner.</b> Enter the fair date and pick your project type, and the planner will build your week-by-week timeline.</p>
+<label for="fair-date">Fair date</label>
+<input id="fair-date" type="date">
+<label for="ptype">Project type</label>
+<select id="ptype">
+<option value="">Choose a project type</option>
+<option value="experiment">Experiment (test a question with a fair test)</option>
+<option value="invention">Invention or build (make something that solves a problem)</option>
+<option value="research">Research study (gather and compare information)</option>
+<option value="observation">Observation study (watch and record over time)</option>
+</select>
+<button id="plan2-btn" type="button">Build my timeline</button>
+<p class="out" id="plan2-out"></p>
+<p class="steps" id="plan2-steps"></p>
+</div>
+<div class="calc">
+<p>Gather your materials as you go, and tick each item off when it is ready.</p>
+<ul class="checklist">
+<li><label><input type="checkbox"> <b>Project question.</b> Write your question in one sentence and check it with your teacher.</label></li>
+<li><label><input type="checkbox"> <b>Notebook.</b> Get a notebook for your project log, where every step and result gets dated.</label></li>
+<li><label><input type="checkbox"> <b>Research notes.</b> Gather background reading and note down what you learn.</label></li>
+<li><label><input type="checkbox"> <b>Materials list.</b> List every material you need, and tick each one off as you get it.</label></li>
+<li><label><input type="checkbox"> <b>Measuring tools.</b> Check you have the ruler, timer, scale or measuring jug your method needs.</label></li>
+<li><label><input type="checkbox"> <b>Containers and labels.</b> Get containers, labels and a pen for marking samples and trials.</label></li>
+<li><label><input type="checkbox"> <b>Safety gear.</b> Get any safety gear your project needs, such as gloves or eye protection.</label></li>
+<li><label><input type="checkbox"> <b>Camera or phone.</b> Plan how you will photograph each stage of the work.</label></li>
+<li><label><input type="checkbox"> <b>Display board.</b> Get the board, paper, glue and markers for your display.</label></li>
+<li><label><input type="checkbox"> <b>Printed charts.</b> Plan the charts or tables that will show your results.</label></li>
+<li><label><input type="checkbox"> <b>Practice run.</b> Practise explaining your project out loud in under two minutes.</label></li>
+<li><label><input type="checkbox"> <b>Backup copies.</b> Keep a copy of your notes and photos somewhere safe, away from the project itself.</label></li>
+</ul>
+<p class="progress" id="progress"></p>
+<button class="secondary" id="reset-btn" type="button">Reset checklist</button>
+</div>
+<div class="warn">This planner is a scheduling helper, not a science teacher. Check your fair's own rules for what is allowed: some projects need approval, and anything involving animals, chemicals or food needs a teacher's go-ahead first.</div>
+
+<h2>How the timeline works</h2>
+<p>Enter the fair date and your project type, and the planner counts back from the fair to build your milestones. If you have eight weeks or more, you get a full week-by-week plan with a date for each milestone. If you have less time, the planner gives you the same milestones in order and asks you to work through one or two per week. Either way, the order stays the same, because each step builds on the one before it.</p>
+<p>The plan is a guide, not a contract. If your experiment needs more time than the plan allows, move the display work later and protect the experiment time: a strong experiment with a simple display beats a beautiful display with weak results.</p>
+<h2>Picking a project type</h2>
+<p>Most fair projects fall into four types. An <b>experiment</b> tests a question with a fair test, changing one thing at a time. An <b>invention or build</b> makes something that solves a problem, and is judged on how well it works. A <b>research study</b> gathers and compares information to answer a question. An <b>observation study</b> watches and records something over time, without changing it.</p>
+<p>Pick the type that fits your question, not the one that sounds most impressive. A small, well-run experiment will always beat a grand project that ran out of time. If you are unsure, ask your teacher which type fits the question you want to answer.</p>
+<h2>The milestones, in order</h2>
+<p>Every project follows the same rough path. First comes the question: one sentence, clear enough that you could explain it to a friend. Then background research, so you know what is already known. Then the method: what you will do, what you will measure, and what you will keep the same. Then the experiment or build itself, with results recorded as you go, not afterwards from memory.</p>
+<p>The last three milestones are where projects are won and lost. Leave real time to analyse your results, because a clear chart and an honest conclusion matter more than extra trials. Leave time to build the display properly, and leave time to practise explaining the project out loud. A two-minute explanation, practised, is worth more than a perfect display that nobody understands.</p>
+<h2>Gathering materials</h2>
+<p>List everything you need before you start, and tick items off the materials checklist as you get them. Check the measuring tools early: a missing ruler or timer in the middle of an experiment is a problem you do not need. Keep a notebook for your project log from the first day, and date every entry, because a dated log is the best evidence that you did the work yourself.</p>
+<p>Photograph each stage of the work. Photos of your setup, your trials and your results make the display stronger, and they are a backup if something goes wrong with the project itself.</p>
+<h2>The week of the fair</h2>
+<p>In the last week, stop experimenting and start finishing. Build the display, print your charts, and practise your explanation until it fits comfortably in two minutes. Pack everything the night before, and keep a copy of your notes and photos somewhere safe, away from the project itself.</p>
+<p>On the day, the judges will ask you questions. The best preparation is knowing your own project: why you chose the question, what you did, what you found, and what you would do differently next time. An honest answer about something that went wrong is worth more than a perfect-sounding one.</p>
+
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How far ahead should I start my project?</h3><p>Eight weeks is a comfortable amount of time for most projects, and the planner is built around that. If you have less time, the planner compresses the same milestones into the weeks you have, but start as soon as you can.</p></div>
+<div class="faq"><h3>What if my experiment fails?</h3><p>A clear result is still a result, even if it is not the one you expected. Write up what happened and why you think it happened, and say what you would change next time. Judges value honest results far more than perfect ones.</p></div>
+<div class="faq"><h3>Do I need a hypothesis?</h3><p>For an experiment, yes: a short statement of what you expect and why, written before you start. For an invention, a research study or an observation study, a clear goal or question takes its place.</p></div>
+<div class="faq"><h3>What should my display include?</h3><p>Your question, your method, your results with a chart or table, and your conclusion. Keep the text short and the headings clear, and make sure everything on the board can be read from a step or two away.</p></div>
+<div class="faq"><h3>Can I work with a partner?</h3><p>That depends on your fair's rules, so check them first. Some fairs allow teams and some do not, and team projects usually need to show what each person did.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/science-fair-project-idea-generator/">Science Fair Project Idea Generator</a> · <a href="https://noryvello.github.io/effective-study-techniques-guide/">Effective Study Techniques Guide</a> · <a href="https://noryvello.github.io/note-taking-methods-guide/">Note-Taking Methods Guide</a> · <a href="https://noryvello.github.io/back-to-school-2027-checklist/">Back to School 2027 Checklist</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+
+var DAYS=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+function fmt(d){return DAYS[d.getDay()]+" "+d.getDate()+" "+MONTHS[d.getMonth()]+" "+d.getFullYear();}
+var MILESTONES=[
+  {w:8,t:"Choose your question and check the fair rules with your teacher."},
+  {w:7,t:"Do background research and write down what you already know."},
+  {w:6,t:"Plan your method, list your materials and write your hypothesis or goal."},
+  {w:5,t:"Gather materials, set up your experiment or build, and start your project log."},
+  {w:4,t:"Run your experiment or build, and record results as you go."},
+  {w:3,t:"Finish your trials, repeat anything that looks wrong, and organise your results."},
+  {w:2,t:"Analyse your results, make your charts, and write up what you found."},
+  {w:1,t:"Build your display board and practise explaining your project out loud."}
+];
+var TIPS={
+  experiment:"Tip for an experiment: change one thing at a time, and keep everything else the same, so you know what caused your result.",
+  invention:"Tip for an invention: test your build early, even if it is rough, so you have time to fix what does not work.",
+  research:"Tip for a research study: keep a note of where every fact came from, so you can list your sources on the display.",
+  observation:"Tip for an observation study: record on the same schedule every time, and never change the schedule halfway through."
+};
+document.getElementById("plan2-btn").addEventListener("click",function(){
+  var out=document.getElementById("plan2-out");
+  var steps=document.getElementById("plan2-steps");
+  var dv=document.getElementById("fair-date").value;
+  var pt=document.getElementById("ptype").value;
+  if(!dv){
+    out.textContent="";
+    steps.textContent="Enter the fair date and pick a project type, and the planner will build your timeline.";
+    return;
+  }
+  if(!pt||!TIPS[pt]){
+    out.textContent="";
+    steps.textContent="Pick a project type so the planner can add the right tips to your timeline.";
+    return;
+  }
+  var fair=new Date(dv+"T00:00:00");
+  if(isNaN(fair.getTime())){
+    out.textContent="";
+    steps.textContent="That date did not look right. Enter the fair date again, using the date picker.";
+    return;
+  }
+  var today=new Date();
+  today.setHours(0,0,0,0);
+  var days=Math.ceil((fair.getTime()-today.getTime())/86400000);
+  if(days<0){
+    out.textContent="";
+    steps.textContent="That date is in the past. Enter the date of the fair that is coming up.";
+    return;
+  }
+  var weeks=Math.ceil(days/7);
+  out.textContent="Fair day: "+fmt(fair)+" — "+weeks+" week"+(weeks===1?"":"s")+" to go";
+  var msg=TIPS[pt]+"\n\n";
+  if(weeks>=8){
+    msg+="Your 8-week plan:\n";
+    for(var i=0;i<MILESTONES.length;i++){
+      var d=new Date(fair.getTime());
+      d.setDate(d.getDate()-MILESTONES[i].w*7);
+      msg+="\nWeek of "+fmt(d)+": "+MILESTONES[i].t;
+    }
+    msg+="\n\nFair day, "+fmt(fair)+": present your project and enjoy it.";
+  }else if(weeks>=2){
+    msg+="Time is short, so work through the milestones in order, one or two per week:\n";
+    for(var j=0;j<MILESTONES.length;j++){
+      msg+="\n"+(j+1)+". "+MILESTONES[j].t;
+    }
+    msg+="\n\nFair day, "+fmt(fair)+": present your project and enjoy it.";
+  }else{
+    msg+="The fair is very close. Focus on finishing what you have, writing up your results, and building a simple display.\n";
+    msg+="\nFair day, "+fmt(fair)+": present your project and enjoy it.";
+  }
+  steps.textContent=msg;
+});
+var boxes=document.querySelectorAll('input[type="checkbox"]');
+var progress=document.getElementById("progress");
+var total=boxes.length;
+function update(){
+  var n=0;
+  for(var i=0;i<boxes.length;i++){if(boxes[i].checked){n++;}}
+  progress.textContent=n+" of "+total+" checked";
+}
+for(var i=0;i<boxes.length;i++){boxes[i].addEventListener("change",update);}
+document.getElementById("reset-btn").addEventListener("click",function(){
+  for(var i=0;i<boxes.length;i++){boxes[i].checked=false;}
+  update();
+});
+update();
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

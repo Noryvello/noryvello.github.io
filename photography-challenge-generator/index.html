@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photography Challenge Generator | Noryvello</title>
+<meta name="description" content="Pick a theme and a length and get a 7-day or 30-day photo challenge from a bank of thirty original prompts. Nature, people, home, street, colour and light themes.">
+<link rel="canonical" href="https://noryvello.github.io/photography-challenge-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Photography Challenge Generator">
+<meta property="og:description" content="A 7-day or 30-day photo challenge, built around your theme.">
+<meta property="og:url" content="https://noryvello.github.io/photography-challenge-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many prompts are in the bank?","acceptedAnswer":{"@type":"Answer","text":"Thirty original prompts, five for each of six themes: nature, people, home, street, colour and light."}},{"@type":"Question","name":"How does the 7-day challenge work?","acceptedAnswer":{"@type":"Answer","text":"You get seven prompts, one for each day, starting with your chosen theme. Take one photo a day and see how your eye changes by day seven."}},{"@type":"Question","name":"How does the 30-day challenge work?","acceptedAnswer":{"@type":"Answer","text":"You get all thirty prompts in order, starting with your chosen theme. One prompt a day for a month gives you a full set of photos to look back on."}},{"@type":"Question","name":"Do I need a fancy camera?","acceptedAnswer":{"@type":"Answer","text":"No. A phone camera is enough for every prompt in the bank. The challenge is about looking, not about equipment."}},{"@type":"Question","name":"Can I repeat a challenge?","acceptedAnswer":{"@type":"Answer","text":"Yes. Press the button again for a fresh order, or pick a new theme. The same prompt looks different in a new season or a new place."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Photography Challenge Generator</h1>
+<p class="answer">Pick a theme and a length and this generator builds you a photo challenge, seven days or thirty, from a bank of thirty original prompts. One prompt a day keeps your camera busy and your eye sharp.</p>
+<div class="calc">
+<label for="pick1">Which theme?</label>
+<select id="pick1">
+<option value="">Choose a theme</option>
+<option value="nature">Nature</option>
+<option value="people">People</option>
+<option value="home">Home</option>
+<option value="street">Street</option>
+<option value="colour">Colour</option>
+<option value="light">Light</option>
+</select>
+<label for="pick2">How long is the challenge?</label>
+<select id="pick2">
+<option value="">Choose a length</option>
+<option value="7">7 days</option>
+<option value="30">30 days</option>
+</select>
+<button id="gen-btn" type="button" style="margin-top:14px;padding:11px 18px;font-size:16px;font-weight:700;color:#fff;background:#4338ca;border:none;border-radius:8px;cursor:pointer">Build my photo challenge</button>
+<div id="result" class="steps" role="status"></div>
+</div>
+<h2>How to use this generator</h2>
+<p>Choose a theme and a length, then press the button. A seven-day challenge gives you seven prompts, one for each day. A thirty-day challenge gives you all thirty prompts in order, starting with your chosen theme.</p>
+<p>The bank holds thirty prompts across six themes. Press the button again for a fresh order, or pick a new theme and build a different challenge.</p>
+<h2>Making the most of each prompt</h2>
+<p>Read the prompt, then take your time looking before you shoot. Walk around the subject, try a low angle and a high one, and take more than one photo. The first shot is rarely the best one.</p>
+<p>Look at your photos at the end of each day and pick a favourite. Noticing what you like about your own pictures is how your eye improves, one day at a time.</p>
+<div class="warn">Photograph with respect. Ask before you photograph people, keep off private land, and never photograph children you do not know. A good photo is never worth an awkward moment.</div>
+<h2>Sharing your challenge</h2>
+<p>A challenge is more fun with company. Invite a friend to do the same prompts and compare photos at the end of each week. The same prompt can produce very different pictures.</p>
+<p>If you share photos online, keep locations and other people out of the frame unless you have permission. Your own photos are yours to share, but other people's privacy is not. A printed photo on a wall lasts longer than a post in a feed, so print the favourites from your challenge.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How many prompts are in the bank?</h3><p>Thirty original prompts, five for each of six themes: nature, people, home, street, colour and light.</p></div>
+<div class="faq"><h3>How does the 7-day challenge work?</h3><p>You get seven prompts, one for each day, starting with your chosen theme. Take one photo a day and see how your eye changes by day seven.</p></div>
+<div class="faq"><h3>How does the 30-day challenge work?</h3><p>You get all thirty prompts in order, starting with your chosen theme. One prompt a day for a month gives you a full set of photos to look back on.</p></div>
+<div class="faq"><h3>Do I need a fancy camera?</h3><p>No. A phone camera is enough for every prompt in the bank. The challenge is about looking, not about equipment.</p></div>
+<div class="faq"><h3>Can I repeat a challenge?</h3><p>Yes. Press the button again for a fresh order, or pick a new theme. The same prompt looks different in a new season or a new place.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/film-video-with-phone-guide/">How to Film a Video With Your Phone</a> · <a href="https://noryvello.github.io/journal-prompt-generator/">Journal Prompt Generator</a> · <a href="https://noryvello.github.io/packing-list-generator/">Packing List Generator</a> · <a href="https://noryvello.github.io/road-trip-games-generator/">Road Trip Games Generator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function () {
+  var BANK = [{"name":"A leaf with an interesting shape","cat":"nature"},{"name":"Morning light through trees","cat":"nature"},{"name":"A flower photographed from below","cat":"nature"},{"name":"Ripples on water","cat":"nature"},{"name":"A tree against the sky","cat":"nature"},{"name":"A friend laughing","cat":"people"},{"name":"Hands at work","cat":"people"},{"name":"Someone reading","cat":"people"},{"name":"A child playing","cat":"people"},{"name":"A portrait in window light","cat":"people"},{"name":"Your favourite corner of a room","cat":"home"},{"name":"Morning light on a table","cat":"home"},{"name":"A stack of books","cat":"home"},{"name":"Something red in the kitchen","cat":"home"},{"name":"Shadows on a wall","cat":"home"},{"name":"A colourful shopfront","cat":"street"},{"name":"A bicycle leaning on a wall","cat":"street"},{"name":"A puddle reflection","cat":"street"},{"name":"A street sign with character","cat":"street"},{"name":"Patterns in paving","cat":"street"},{"name":"Something bright yellow","cat":"colour"},{"name":"A blue scene","cat":"colour"},{"name":"Three colours in one frame","cat":"colour"},{"name":"A single colour filling the frame","cat":"colour"},{"name":"Complementary colours side by side","cat":"colour"},{"name":"A long shadow","cat":"light"},{"name":"Light through a window","cat":"light"},{"name":"A backlit subject","cat":"light"},{"name":"Golden light at the end of the day","cat":"light"},{"name":"A reflection in glass","cat":"light"}];
+  var THEMES = ["nature", "people", "home", "street", "colour", "light"];
+  var pick1 = document.getElementById("pick1");
+  var pick2 = document.getElementById("pick2");
+  var button = document.getElementById("gen-btn");
+  var result = document.getElementById("result");
+  var counter = 0;
+  function show() {
+    var theme = pick1.value;
+    var len = pick2.value;
+    if (!theme || !len || THEMES.indexOf(theme) === -1 || (len !== "7" && len !== "30")) {
+      result.innerHTML = "<p>Please choose both a theme and a length first.</p>";
+      return;
+    }
+    var pool = [];
+    var i;
+    for (i = 0; i < BANK.length; i++) { if (BANK[i].cat === theme) pool.push(BANK[i]); }
+    for (i = 0; i < BANK.length; i++) { if (BANK[i].cat !== theme) pool.push(BANK[i]); }
+    var n = (len === "30") ? 30 : 7;
+    var start = counter % pool.length;
+    counter++;
+    var html = "<p>Your " + n + "-day challenge, one prompt a day:</p><ol>";
+    for (var k = 0; k < n; k++) { html += "<li>" + pool[(start + k) % pool.length].name + "</li>"; }
+    html += "</ol>";
+    result.innerHTML = html;
+  }
+  button.addEventListener("click", show);
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

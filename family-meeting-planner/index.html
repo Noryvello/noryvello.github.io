@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Family Meeting Planner | Noryvello</title>
+<meta name="description" content="Plan a family meeting with an agenda builder, a rotating chair picker and a decisions log. Build a printable agenda your whole family can follow.">
+<link rel="canonical" href="https://noryvello.github.io/family-meeting-planner/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Family Meeting Planner">
+<meta property="og:description" content="A family meeting planner with an agenda builder, rotating chair picker and decisions log.">
+<meta property="og:url" content="https://noryvello.github.io/family-meeting-planner/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit;min-height:84px}.calc button,.card button{display:block;width:100%;padding:12px;margin-top:12px;border:none;border-radius:8px;background:#4338ca;color:#fff;font-size:16px;font-weight:700;cursor:pointer}.calc button.secondary{background:#0d9488}.card{background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}.card label{display:block;margin:8px 0;font-size:15.5px}input.tk{width:auto;margin-right:8px}</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long should a family meeting last?", "acceptedAnswer": {"@type": "Answer", "text": "Twenty minutes is plenty for most families. If meetings regularly run longer, the agenda is probably too big or one item is taking over. Short and regular beats long and rare — and if a meeting ends early, that means the household is running well."}}, {"@type": "Question", "name": "What ages can join in?", "acceptedAnswer": {"@type": "Answer", "text": "Children of any age can join in, in their own way. Younger children can share good news and pick the next fun plan; older children can take a turn chairing the meeting. The point is that everyone has a voice, not that everyone speaks for the same length of time."}}, {"@type": "Question", "name": "What if one person does all the talking?", "acceptedAnswer": {"@type": "Answer", "text": "That is the chair's job to fix. The chair can invite quieter members in by name — what do you think? — and gently park a long speech for later. Rotating the chair each week also helps, because everyone learns what it feels like to hold the room."}}, {"@type": "Question", "name": "Do we need to meet every week?", "acceptedAnswer": {"@type": "Answer", "text": "Weekly works well for most families, because a week is long enough for things to happen and short enough that nothing is forgotten. If weekly feels like too much, try every two weeks. The rhythm matters more than the frequency — pick one you can keep."}}, {"@type": "Question", "name": "What if a decision is not kept?", "acceptedAnswer": {"@type": "Answer", "text": "Bring it back to the next meeting and ask what got in the way, without blame. Sometimes the decision was too big, sometimes life intervened, and sometimes it simply needs a new date. A decision that is revisited kindly is far more likely to be kept than one that is used as evidence in an argument."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Family Meeting Planner</h1>
+<p class="answer">A short weekly family meeting keeps everyone on the same page, from plans and chores to small problems. This planner builds your agenda from standing items, picks a rotating chair, and keeps a decisions log you can print.</p>
+<p>Most family friction comes not from big disagreements but from small misunderstandings: who was meant to do what, what the plan for the weekend is, or a worry nobody has said out loud. A short family meeting, held at the same time each week, gives all of those things a place to be heard — before they grow into arguments.</p>
+<p>This planner helps you run one. Tick the standing items you want on the agenda, pick a rotating chair so everyone gets a turn at leading, and keep a decisions log so that what you agree actually happens. Print the page to keep the agenda and the log together.</p>
+<div class="card">
+<p><strong>Standing agenda items — tick the ones for this meeting</strong></p>
+<label><input class="tk" id="fm-i1" type="checkbox"> Good news round — one good thing from each person</label>
+<label><input class="tk" id="fm-i2" type="checkbox"> Calendar for the week — plans, dates and lifts</label>
+<label><input class="tk" id="fm-i3" type="checkbox"> Chores and jobs — who does what this week</label>
+<label><input class="tk" id="fm-i4" type="checkbox"> Plans and trips — anything coming up</label>
+<label><input class="tk" id="fm-i5" type="checkbox"> Problems to solve — one small thing each</label>
+<label><input class="tk" id="fm-i6" type="checkbox"> Thank-yous — who helped, and how</label>
+<label><input class="tk" id="fm-i7" type="checkbox"> Money talk — spending and saving this week</label>
+<button id="fm-agenda" type="button">Build my agenda</button>
+<div id="fm-agenda-out" class="steps"></div>
+</div>
+<div class="calc">
+<label for="fm-names">Family members (for the rotating chair)</label>
+<input id="fm-names" type="text" placeholder="Names separated by commas, for example: Ana, Ben, Cara">
+<button id="fm-chair" type="button">Pick this week's chair</button>
+<div id="fm-chair-out" class="steps"></div>
+<label for="fm-decision">A decision from the meeting</label>
+<input id="fm-decision" type="text" placeholder="What did you agree?">
+<label for="fm-who">Who will do it?</label>
+<input id="fm-who" type="text" placeholder="Their name">
+<label for="fm-when">By when?</label>
+<input id="fm-when" type="text" placeholder="For example: Friday, or next meeting">
+<button id="fm-add" type="button">Add to the decisions log</button>
+<button id="fm-print" type="button" class="secondary">Print agenda and log</button>
+<div id="fm-log" class="steps"></div>
+</div>
+<div class="warn">This planner does not save anything — the agenda and log exist only in your browser. Print the page to keep a copy, and start a fresh log for the next meeting.</div>
+<h2>Why family meetings work</h2>
+<p>A family meeting works because it gives small things a regular home. Without one, plans are announced in passing, chores are negotiated in the moment, and worries stay unsaid until they spill out at the wrong time. With one, everyone knows there is a time each week when their voice counts — and that knowledge alone calms a household down.</p>
+<p>Meetings also teach children something valuable: that decisions can be made by talking, that everyone gets a turn, and that agreements are kept. A child who has chaired a family meeting, or seen a decision followed through, learns more about fairness than any lecture could teach.</p>
+<h2>How often and how long</h2>
+<p>Once a week is the rhythm that works for most families, at a time that suits everyone — often a weekend morning, or a weekday evening after dinner. Twenty minutes is plenty. If your meetings regularly run longer, the agenda is probably too big, or one item is taking over. Short and regular beats long and rare.</p>
+<p>Keep the same time each week if you can. Regularity is what turns a meeting into a habit, and a habit is what keeps it going when life gets busy. If you miss a week, do not make up for it with a double-length meeting — just meet again next week as normal.</p>
+<h2>Building your agenda</h2>
+<p>A good agenda has a few standing items that repeat every week, plus space for whatever is new. The standing items in the planner above cover the essentials: good news, the calendar, chores, plans, problems, thank-yous, and money. Tick the ones that fit this week, and let the meeting follow the order on the page.</p>
+<p>Start with good news and thank-yous. Beginning with something positive sets the tone for the whole meeting, and it reminds everyone that the meeting is not a list of complaints. Save problems for the middle, when everyone is settled, and end with the decisions log so that everyone leaves knowing what was agreed.</p>
+<h2>The decisions log</h2>
+<p>A meeting without a log is a conversation; a meeting with a log is a plan. For every decision, write down three things: what was agreed, who will do it, and by when. The log in the planner above keeps it simple — one line per decision — and you can print it to keep on the fridge until the next meeting.</p>
+<p>At the next meeting, start by checking the log. What was done? What slipped, and why? Checking the log is not about blame; it is about keeping promises visible. A decision that is never checked is a decision that quietly disappears.</p>
+<h2>Keeping meetings short and kind</h2>
+<p>The chair's job is to keep the meeting moving and to make sure everyone gets a turn. Rotating the chair — a different person each week — keeps the role fair and gives children a chance to practise leading. The chair does not need to be the loudest person; they need to be the one who notices who has not spoken yet.</p>
+<p>Two simple rules keep meetings kind: one person speaks at a time, and nobody is interrupted. If a topic gets heated, the chair can park it and come back to it next week. And if a meeting ends early because there was nothing to discuss, that is a success, not a failure — it means the household is running well.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How long should a family meeting last?</h3><p>Twenty minutes is plenty for most families. If meetings regularly run longer, the agenda is probably too big or one item is taking over. Short and regular beats long and rare — and if a meeting ends early, that means the household is running well.</p></div>
+<div class="faq"><h3>What ages can join in?</h3><p>Children of any age can join in, in their own way. Younger children can share good news and pick the next fun plan; older children can take a turn chairing the meeting. The point is that everyone has a voice, not that everyone speaks for the same length of time.</p></div>
+<div class="faq"><h3>What if one person does all the talking?</h3><p>That is the chair's job to fix. The chair can invite quieter members in by name — what do you think? — and gently park a long speech for later. Rotating the chair each week also helps, because everyone learns what it feels like to hold the room.</p></div>
+<div class="faq"><h3>Do we need to meet every week?</h3><p>Weekly works well for most families, because a week is long enough for things to happen and short enough that nothing is forgotten. If weekly feels like too much, try every two weeks. The rhythm matters more than the frequency — pick one you can keep.</p></div>
+<div class="faq"><h3>What if a decision is not kept?</h3><p>Bring it back to the next meeting and ask what got in the way, without blame. Sometimes the decision was too big, sometimes life intervened, and sometimes it simply needs a new date. A decision that is revisited kindly is far more likely to be kept than one that is used as evidence in an argument.</p></div>
+
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/family-tradition-ideas-generator/">Family Tradition Ideas Generator</a> · <a href="https://noryvello.github.io/family-game-night-idea-generator/">Family Game Night Idea Generator</a> · <a href="https://noryvello.github.io/family-reunion-planning-checklist/">Family Reunion Planning Checklist</a> · <a href="https://noryvello.github.io/setting-boundaries-guide/">Setting Boundaries Guide</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var fmItems = {
+  "fm-i1": "Good news round — one good thing from each person",
+  "fm-i2": "Calendar for the week — plans, dates and lifts",
+  "fm-i3": "Chores and jobs — who does what this week",
+  "fm-i4": "Plans and trips — anything coming up",
+  "fm-i5": "Problems to solve — one small thing each",
+  "fm-i6": "Thank-yous — who helped, and how",
+  "fm-i7": "Money talk — spending and saving this week"
+};
+document.getElementById("fm-agenda").addEventListener("click", function() {
+  var out = document.getElementById("fm-agenda-out");
+  var chosen = [];
+  var boxes = document.querySelectorAll(".tk");
+  for (var i = 0; i < boxes.length; i++) {
+    if (boxes[i].checked && fmItems[boxes[i].id]) { chosen.push(fmItems[boxes[i].id]); }
+  }
+  if (chosen.length === 0) {
+    out.textContent = "Tick at least one standing item above to build your agenda.";
+    return;
+  }
+  var lines = ["This week's family meeting agenda", ""];
+  for (var j = 0; j < chosen.length; j++) {
+    lines.push((j + 1) + ". " + chosen[j]);
+  }
+  lines.push("");
+  lines.push("Keep the meeting to about twenty minutes. Start with good news, end with the decisions log.");
+  out.textContent = lines.join("\n");
+});
+var fmChairIndex = 0;
+document.getElementById("fm-chair").addEventListener("click", function() {
+  var raw = document.getElementById("fm-names").value;
+  var out = document.getElementById("fm-chair-out");
+  var names = [];
+  var parts = raw.split(",");
+  for (var i = 0; i < parts.length; i++) {
+    var n = parts[i].trim();
+    if (n) { names.push(n); }
+  }
+  if (names.length === 0) {
+    out.textContent = "Write the family members' names first, separated by commas.";
+    return;
+  }
+  var chair = names[fmChairIndex % names.length];
+  fmChairIndex++;
+  out.textContent = "This week's chair is " + chair + ". Next week it will be " + names[fmChairIndex % names.length] + ".";
+});
+var fmLog = [];
+document.getElementById("fm-add").addEventListener("click", function() {
+  var decision = document.getElementById("fm-decision").value.trim();
+  var who = document.getElementById("fm-who").value.trim();
+  var when = document.getElementById("fm-when").value.trim();
+  var out = document.getElementById("fm-log");
+  if (!decision) {
+    out.textContent = "Write down the decision first — what did you agree?";
+    return;
+  }
+  var line = "- " + decision + (who ? " — " + who : "") + (when ? ", by " + when : "");
+  fmLog.push(line);
+  out.textContent = "Decisions log:\n" + fmLog.join("\n");
+  document.getElementById("fm-decision").value = "";
+  document.getElementById("fm-who").value = "";
+  document.getElementById("fm-when").value = "";
+});
+document.getElementById("fm-print").addEventListener("click", function() {
+  window.print();
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

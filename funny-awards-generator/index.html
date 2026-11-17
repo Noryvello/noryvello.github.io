@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funny Awards Generator | Noryvello</title>
+<meta name="description" content="Create kind, funny superlative awards for any occasion. Pick an occasion and get award ideas with ready-to-read wording — clean and family-friendly.">
+<link rel="canonical" href="https://noryvello.github.io/funny-awards-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Funny Awards Generator">
+<meta property="og:description" content="Funny superlative award ideas with ready-to-read wording for any occasion.">
+<meta property="og:url" content="https://noryvello.github.io/funny-awards-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{padding:10px 16px;border:1px solid #4338ca;background:#4338ca;color:#fff;border-radius:8px;font-size:16px;cursor:pointer;margin-top:10px}
+.calc input[type="checkbox"]{width:auto;margin-right:8px}
+.pack-item{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+th,td{border:1px solid #cbd5e1;padding:6px 8px;text-align:left}
+th{background:#eef2ff}
+tr:nth-child(even) td{background:rgba(255,255,255,.6)}
+.tablewrap{overflow-x:auto}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many awards are in the bank?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Thirty original awards, six for each of the five occasions: family party, classroom, office party, friends' night, and team or club event."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I change the wording?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The wording is a starting point. Change a detail to fit the person you have in mind, and keep it kind."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are these awards suitable for children?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every award is clean and kind, and the classroom set is written for school use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many awards does the generator show?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three at a time for the occasion you pick. Press the button again to see three more from the same occasion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if an award does not fit anyone in my group?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Press the button again for a fresh set of three ideas, or try a different occasion. With thirty awards in the bank, there is plenty to choose from."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Funny Awards Generator</h1>
+<p class="answer">Pick an occasion and this generator returns funny award ideas with wording you can read out as it stands. Every award is kind and clean, so it suits family parties, classrooms, offices and friend groups.</p>
+<div class="calc">
+<label for="occasion">Occasion</label>
+<select id="occasion">
+<option value="">Choose an occasion</option>
+<option value="family">Family party</option>
+<option value="classroom">Classroom</option>
+<option value="office">Office party</option>
+<option value="friends">Friends' night</option>
+<option value="team">Team or club event</option>
+</select>
+<button id="go" type="button">Get award ideas</button>
+<div class="steps" id="out"></div>
+</div>
+<h2>How the funny awards generator works</h2>
+<p>Choose the occasion and press the button. The generator shows three award ideas from a bank of thirty original awards, each with wording you can read out as it stands. Press the button again for three more ideas for the same occasion. You can use the wording exactly as written, or change a detail to fit the person you have in mind.</p>
+<p>Superlative awards work best when they are specific. An award that mentions a real habit, such as always being first to arrive or always knowing the coffee order, gets a bigger laugh than a general one. Read through the ideas, pick the ones that fit people in your group, and keep the rest for next time.</p>
+<h2>How to present the awards</h2>
+<p>Keep the presentation short and light. Read the award title, then the wording, then the name of the winner, and let everyone applaud before moving on. A simple printed certificate, a handwritten card or even a paper crown makes the moment feel special without much effort. If you have many awards, spread them through the evening rather than reading them all at once.</p>
+<p>Give every winner a moment in the spotlight, and make sure the applause is warm for each one. If you are presenting to children, let them clap for each other and keep the pace brisk. If you are presenting to colleagues, keep the tone friendly and professional, and skip anything that could touch on work performance.</p>
+<h2>Keeping funny awards kind</h2>
+<ul>
+<li>Laugh with people, never at them. The winner should enjoy hearing the award.</li>
+<li>Pick habits and talents, not looks, mistakes or things people cannot change.</li>
+<li>If an award could embarrass someone, choose a different one.</li>
+<li>Make sure everyone who wants an award gets one, so nobody feels left out.</li>
+<li>When in doubt, ask yourself whether you would be happy to receive the award yourself.</li>
+</ul>
+<div class="warn">These awards are written to be kind and clean. The best funny award is one the winner is happy to hear read aloud — if an award could embarrass someone, choose a different one.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How many awards are in the bank?</h3><p>Thirty original awards, six for each of the five occasions: family party, classroom, office party, friends' night, and team or club event.</p></div>
+<div class="faq"><h3>Can I change the wording?</h3><p>Yes. The wording is a starting point. Change a detail to fit the person you have in mind, and keep it kind.</p></div>
+<div class="faq"><h3>Are these awards suitable for children?</h3><p>Yes. Every award is clean and kind, and the classroom set is written for school use.</p></div>
+<div class="faq"><h3>How many awards does the generator show?</h3><p>Three at a time for the occasion you pick. Press the button again to see three more from the same occasion.</p></div>
+<div class="faq"><h3>What if an award does not fit anyone in my group?</h3><p>Press the button again for a fresh set of three ideas, or try a different occasion. With thirty awards in the bank, there is plenty to choose from.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/compliment-generator/">Compliment Generator</a> · <a href="https://noryvello.github.io/gift-idea-generator-by-budget-and-person/">Gift Idea Generator by Budget and Person</a> · <a href="https://noryvello.github.io/family-game-night-idea-generator/">Family Game Night Idea Generator</a> · <a href="https://noryvello.github.io/date-night-idea-generator/">Date Night Idea Generator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var BANK = {
+family: [
+{t:"The Early Bird Award", w:"For the first one awake every single morning, ready for breakfast before the kettle boils."},
+{t:"The Master Chef Award", w:"For turning whatever is in the fridge into a meal everyone asks for again."},
+{t:"The Storyteller Award", w:"For telling the same family story every year and making it better every time."},
+{t:"The Chief Hugger Award", w:"For hugs that fix bad days, flat tyres and burnt toast."},
+{t:"The Remote Control Keeper", w:"For holding the remote all evening and somehow always picking the right channel."},
+{t:"The Lost and Found Award", w:"For finding the missing keys, the missing shoe and the missing phone, usually in the same place."}
+],
+classroom: [
+{t:"The Question Asker Award", w:"For the question that made the whole class think a little harder."},
+{t:"The Neatest Notes Award", w:"For notes so tidy they could be printed in a textbook."},
+{t:"The Helper of the Day Award", w:"For the first hand up whenever someone needs a hand."},
+{t:"The Bookworm Award", w:"For finishing the class book before anyone else and asking for the next one."},
+{t:"The Quiet Achiever Award", w:"For doing excellent work without ever making a fuss about it."},
+{t:"The Team Player Award", w:"For making every group project feel like a team effort."}
+],
+office: [
+{t:"The Calendar Wizard Award", w:"For finding a meeting time that suits everyone, a feat nobody thought possible."},
+{t:"The Coffee Runner Award", w:"For knowing everyone's coffee order without ever writing it down."},
+{t:"The Inbox Zero Award", w:"For reaching an empty inbox at least once this year, a legend in the making."},
+{t:"The Plant Parent Award", w:"For keeping the office plant alive longer than anyone expected."},
+{t:"The Spreadsheet Star Award", w:"For a spreadsheet so clear it answered the question before anyone asked it."},
+{t:"The Meeting Hero Award", w:"For the meeting that finished early and still covered everything."}
+],
+friends: [
+{t:"The DJ of the Evening Award", w:"For a playlist that kept everyone singing, even the quiet ones."},
+{t:"The Snack Bringer Award", w:"For arriving with snacks when everyone else arrived hungry."},
+{t:"The Photographer Award", w:"For catching the best moments of the night without anyone noticing."},
+{t:"The Laugh Maker Award", w:"For the joke that nobody could stop laughing at."},
+{t:"The Last One Standing Award", w:"For still going strong when everyone else had called it a night."},
+{t:"The Planner Award", w:"For organising the whole evening and making it look easy."}
+],
+team: [
+{t:"The Spirit Award", w:"For cheering the loudest, win or lose, every single time."},
+{t:"The Most Improved Award", w:"For the biggest leap forward this season, built on steady practice."},
+{t:"The Reliable One Award", w:"For turning up to every session, in every weather, without fail."},
+{t:"The Fair Play Award", w:"For playing hard, playing fair and shaking hands after every game."},
+{t:"The Captain's Helper Award", w:"For doing the small jobs that keep the whole team running."},
+{t:"The Comeback Award", w:"For bouncing back after a tough patch and finishing stronger than before."}
+]
+};
+document.getElementById("go").addEventListener("click", function(){
+  var occ = document.getElementById("occasion").value;
+  var out = document.getElementById("out");
+  if (!occ) { out.textContent = "Please choose an occasion first, then press the button."; return; }
+  var list = BANK[occ].slice();
+  for (var i = list.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = list[i]; list[i] = list[j]; list[j] = tmp;
+  }
+  var picked = list.slice(0, 3);
+  var html = "";
+  for (var k = 0; k < picked.length; k++) {
+    html += "<p><strong>" + picked[k].t + "</strong><br>" + picked[k].w + "</p>";
+  }
+  out.innerHTML = html;
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

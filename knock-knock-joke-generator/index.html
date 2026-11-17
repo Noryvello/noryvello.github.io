@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knock-Knock Joke Generator | Noryvello</title>
+<meta name="description" content="Get a fresh knock-knock joke with a punchline reveal. Thirty original, clean jokes for kids, classrooms and family fun — no sign-up needed.">
+<link rel="canonical" href="https://noryvello.github.io/knock-knock-joke-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Knock-Knock Joke Generator">
+<meta property="og:description" content="Thirty original knock-knock jokes with a setup and punchline reveal.">
+<meta property="og:url" content="https://noryvello.github.io/knock-knock-joke-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{padding:10px 16px;border:1px solid #4338ca;background:#4338ca;color:#fff;border-radius:8px;font-size:16px;cursor:pointer;margin-top:10px}
+.calc input[type="checkbox"]{width:auto;margin-right:8px}
+.pack-item{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+th,td{border:1px solid #cbd5e1;padding:6px 8px;text-align:left}
+th{background:#eef2ff}
+tr:nth-child(even) td{background:rgba(255,255,255,.6)}
+.tablewrap{overflow-x:auto}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many jokes are in the bank?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Thirty original knock-knock jokes, each with a setup and a punchline. Every joke is written to be clean and kind."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I get the same joke twice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not until you have seen all thirty. The generator works through the whole bank before it starts again, so each joke is fresh."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are these jokes suitable for children?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every joke in the bank is clean and family-friendly, with no teasing and no rude words."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use these jokes in a classroom?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. They work well for reading aloud and for warm-up games, because the call-and-response pattern keeps the whole group involved."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes a knock-knock joke funny?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The surprise of the wordplay. The setup builds a small expectation, and the punchline turns the name into a pun."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Knock-Knock Joke Generator</h1>
+<p class="answer">Press the button and this generator picks a knock-knock joke from a bank of thirty original, clean jokes. Read the setup out loud, let everyone guess, then reveal the punchline.</p>
+<div class="calc">
+<button id="newBtn" type="button">New joke</button>
+<div class="steps" id="setup"></div>
+<button id="revealBtn" type="button" hidden>Reveal punchline</button>
+<p class="out" id="punch"></p>
+<p class="steps" id="count"></p>
+</div>
+<h2>How to tell a knock-knock joke</h2>
+<p>Every knock-knock joke follows the same four lines. The teller says "Knock knock", the listener answers "Who is there?", the teller gives a name or word, and the listener asks that name followed by "who?". The teller then delivers the punchline, which turns the name into a pun. The pattern is so well known that even young children can join in after hearing one or two jokes.</p>
+<p>The secret is in the delivery. Say the name clearly, pause for a beat after the listener asks who, and then say the punchline slowly enough for everyone to catch the wordplay. If nobody laughs, that is part of the fun too — knock-knock jokes are meant to be a little bit silly, and the groans are half the joke.</p>
+<h2>Why knock-knock jokes work</h2>
+<p>Knock-knock jokes work because everyone knows what is coming, and the fun is in the surprise of the wordplay. The setup builds a small expectation, and the punchline breaks it in a harmless way. That is why they are popular with children: the jokes are easy to remember, easy to retell and safe to share with anyone.</p>
+<p>They are also good practice for speaking and listening. Telling a joke means speaking clearly, waiting for the other person and watching their reaction. Listening to one means following the pattern and guessing the pun. Teachers often use them as a warm-up for reading aloud, because the call-and-response pattern keeps the whole group involved.</p>
+<h2>Joke-telling tips for kids</h2>
+<ul>
+<li>Practise the punchline first, so you can say it without stumbling.</li>
+<li>Speak slowly and clearly, especially on the name in the middle.</li>
+<li>Wait for the listener to ask who before you give the punchline.</li>
+<li>Keep jokes kind and clean, and never make a joke about someone in the room.</li>
+<li>Take turns, so everyone gets a chance to be the teller.</li>
+</ul>
+<div class="warn">Every joke here is written to be clean and kind. If a joke does not land, no problem at all — press the button and try another one.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How many jokes are in the bank?</h3><p>Thirty original knock-knock jokes, each with a setup and a punchline. Every joke is written to be clean and kind.</p></div>
+<div class="faq"><h3>Will I get the same joke twice?</h3><p>Not until you have seen all thirty. The generator works through the whole bank before it starts again, so each joke is fresh.</p></div>
+<div class="faq"><h3>Are these jokes suitable for children?</h3><p>Yes. Every joke in the bank is clean and family-friendly, with no teasing and no rude words.</p></div>
+<div class="faq"><h3>Can I use these jokes in a classroom?</h3><p>Yes. They work well for reading aloud and for warm-up games, because the call-and-response pattern keeps the whole group involved.</p></div>
+<div class="faq"><h3>What makes a knock-knock joke funny?</h3><p>The surprise of the wordplay. The setup builds a small expectation, and the punchline turns the name into a pun.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/clean-joke-generator/">Clean Joke Generator</a> · <a href="https://noryvello.github.io/charades-word-generator/">Charades Word Generator</a> · <a href="https://noryvello.github.io/family-game-night-idea-generator/">Family Game Night Idea Generator</a> · <a href="https://noryvello.github.io/classroom-game-idea-generator/">Classroom Game Idea Generator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+var JOKES = [
+{n:"Alpaca", p:"Alpaca the suitcase, you pack the snacks."},
+{n:"Banana", p:"Banana phone is ringing, and it is for you."},
+{n:"Cow says", p:"Cow says mooo-ve over, I need a seat."},
+{n:"Dishes", p:"Dishes the doorbell. I rang it twice already."},
+{n:"Figs", p:"Figs the doorbell, it never works when I visit."},
+{n:"Honeybee", p:"Honeybee a dear and pass me the honey."},
+{n:"Ice cream", p:"Ice cream if you do not let me in from the cold."},
+{n:"Juicy", p:"Juicy the way I look in my new hat?"},
+{n:"Kangaroo", p:"Kangaroo down and pick up your shoes, please."},
+{n:"Leaf", p:"Leaf the door open, I will only be a minute."},
+{n:"Muffin", p:"Muffin much, I just came by to say hello."},
+{n:"Needle", p:"Needle little help threading this needle."},
+{n:"Olive", p:"Olive you, and I brought you your favourite snack."},
+{n:"Pasta", p:"Pasta the salt, this soup needs a little more."},
+{n:"Quack", p:"Quack open the door, it is raining out here."},
+{n:"Robin", p:"Robin you of your last biscuit? Never, I brought my own."},
+{n:"Scold", p:"Scold outside, please let me in."},
+{n:"Tank", p:"Tank you very much for opening the door so fast."},
+{n:"Voodoo", p:"Voodoo you think you are, answering the door that fast?"},
+{n:"Wooden shoe", p:"Wooden shoe like to hear another joke?"},
+{n:"Yeti", p:"Yeti another joke coming your way, are you ready?"},
+{n:"Zebra", p:"Zebra crossing was closed, so I walked all the way here."},
+{n:"Atch", p:"Bless you!"},
+{n:"Boo", p:"Boo who? Do not cry, I brought cookies."},
+{n:"Dewey", p:"Dewey have to keep telling these jokes all day?"},
+{n:"Gorillas", p:"Gorillas a sandwich, I am so hungry."},
+{n:"Hatch", p:"Hatch your problem? I only knocked once."},
+{n:"Isabelle", p:"Isabelle working? I have been ringing it for ages."},
+{n:"Luke", p:"Luke through the peephole and see who is knocking."},
+{n:"Owl", p:"Owl be seeing you soon, I just stopped by to say hi."}
+];
+var deck = [];
+var shown = 0;
+function shuffleDeck(){
+  deck = JOKES.slice();
+  for (var i = deck.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = deck[i]; deck[i] = deck[j]; deck[j] = tmp;
+  }
+  shown = 0;
+}
+var current = null;
+document.getElementById("newBtn").addEventListener("click", function(){
+  if (deck.length === 0) shuffleDeck();
+  current = deck.pop();
+  shown++;
+  document.getElementById("setup").textContent = "Knock knock.\nWho is there?\n" + current.n + ".\n" + current.n + " who?";
+  document.getElementById("punch").textContent = "";
+  document.getElementById("revealBtn").hidden = false;
+  document.getElementById("count").textContent = "Joke " + shown + " of " + JOKES.length;
+});
+document.getElementById("revealBtn").addEventListener("click", function(){
+  if (current) { document.getElementById("punch").textContent = current.p; }
+});
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

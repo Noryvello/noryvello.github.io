@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Road Trip Games Generator | Noryvello</title>
+<meta name="description" content="Pick the age of your passengers and get road trip games with simple rules from a bank of twenty-four. No equipment needed, just voices, eyes and imagination.">
+<link rel="canonical" href="https://noryvello.github.io/road-trip-games-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Road Trip Games Generator">
+<meta property="og:description" content="Road trip games with simple rules, for your passengers age group.">
+<meta property="og:url" content="https://noryvello.github.io/road-trip-games-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many games are in the bank?","acceptedAnswer":{"@type":"Answer","text":"Twenty-four original games, for young children, older children, teens, adults and mixed ages."}},{"@type":"Question","name":"Do any games need equipment?","acceptedAnswer":{"@type":"Answer","text":"No. Every game in the bank needs only voices, eyes and imagination, so they work in any car with no preparation."}},{"@type":"Question","name":"Can the driver join in?","acceptedAnswer":{"@type":"Answer","text":"Yes, for talking and guessing games. The driver should never look away from the road, so skip any game that needs reading or looking around."}},{"@type":"Question","name":"What if the ages are mixed?","acceptedAnswer":{"@type":"Answer","text":"Pick the mixed ages option for games that work for everyone, or let the youngest passenger choose the game."}},{"@type":"Question","name":"How do I keep games from turning into arguments?","acceptedAnswer":{"@type":"Answer","text":"Keep scores light, celebrate good guesses, and switch games when the mood dips. The point is the journey, not the win."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Road Trip Games Generator</h1>
+<p class="answer">Pick the age of your passengers and this generator gives you three road trip games, each with rules in three short lines. Twenty-four original games are in the bank, and none of them need any equipment.</p>
+<div class="calc">
+<label for="pick">How old are the passengers?</label>
+<select id="pick">
+<option value="">Choose an age group</option>
+<option value="young">Young children</option>
+<option value="older">Older children</option>
+<option value="teens">Teenagers</option>
+<option value="adults">Adults</option>
+<option value="mixed">Mixed ages</option>
+</select>
+<button id="gen-btn" type="button" style="margin-top:14px;padding:11px 18px;font-size:16px;font-weight:700;color:#fff;background:#4338ca;border:none;border-radius:8px;cursor:pointer">Give me 3 road trip games</button>
+<div id="result" class="steps" role="status"></div>
+</div>
+<h2>How to use this generator</h2>
+<p>Choose the age of your passengers, then press the button. You will get three games that suit that age group, each with rules in three short lines. Press again for a different set.</p>
+<p>The bank holds twenty-four games, for young children, older children, teens, adults and mixed ages. None of them need any equipment, so they work in any car with no preparation.</p>
+<h2>Keeping games friendly</h2>
+<p>Keep scores light and celebrate good guesses. If a game starts to cause arguments, switch to another one. The point of a road trip game is to pass the time happily, not to crown a winner.</p>
+<p>Let the youngest passenger choose sometimes, and let everyone take a turn as the leader. Games feel fair when everyone gets a say.</p>
+<div class="warn">The driver plays only with voice and ears, never with eyes off the road. Pick games everyone can join, and take a break if anyone feels travel sick.</div>
+<h2>Games for long stretches</h2>
+<p>On a long drive, rotate games every twenty minutes or so. A guessing game, then a word game, then a quiet game gives everyone a change of pace and keeps the car happy.</p>
+<p>Save the best game for the last stretch, when patience is thinnest. A fresh game at the right moment can turn a tired car into a laughing one. A game that makes the car laugh is worth more than one that simply fills the time, so keep your best ideas in reserve for the moments that need them most.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How many games are in the bank?</h3><p>Twenty-four original games, for young children, older children, teens, adults and mixed ages.</p></div>
+<div class="faq"><h3>Do any games need equipment?</h3><p>No. Every game in the bank needs only voices, eyes and imagination, so they work in any car with no preparation.</p></div>
+<div class="faq"><h3>Can the driver join in?</h3><p>Yes, for talking and guessing games. The driver should never look away from the road, so skip any game that needs reading or looking around.</p></div>
+<div class="faq"><h3>What if the ages are mixed?</h3><p>Pick the mixed ages option for games that work for everyone, or let the youngest passenger choose the game.</p></div>
+<div class="faq"><h3>How do I keep games from turning into arguments?</h3><p>Keep scores light, celebrate good guesses, and switch games when the mood dips. The point is the journey, not the win.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/packing-list-generator/">Packing List Generator</a> · <a href="https://noryvello.github.io/sleepover-idea-generator/">Sleepover Idea Generator</a> · <a href="https://noryvello.github.io/would-you-rather-generator/">Would You Rather Generator</a> · <a href="https://noryvello.github.io/truth-or-dare-generator/">Truth or Dare Generator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></footer>
+</div>
+<script>
+(function () {
+  var BANK = [{"name":"I Spy Colours","age":"young","rules":["One player picks something they can see and says, I spy with my little eye something that is blue.","The others look around and take turns guessing what it is.","The first player to guess correctly picks the next thing to spy."]},{"name":"Animal Noises","age":"young","rules":["One player makes the noise of an animal without naming it.","The others guess which animal it is.","The first correct guesser makes the next animal noise."]},{"name":"Counting Red Cars","age":"young","rules":["Everyone picks a colour before the game starts.","Each time you pass a car in your colour, count it out loud.","The player with the highest count when the journey ends wins."]},{"name":"Favourite Things","age":"young","rules":["One player names a category, such as favourite foods.","Everyone takes a turn naming their favourite in that category.","The last player to answer picks the next category."]},{"name":"The Rhyming Game","age":"young","rules":["One player says a word, such as cat.","The next player says a word that rhymes with it.","Keep going around the car until nobody can think of a rhyme."]},{"name":"The Quietest Wins","age":"young","rules":["Everyone must stay silent for two minutes.","The first person to speak or laugh is out.","The last person still silent wins the round."]},{"name":"The Alphabet Shop","age":"older","rules":["Pick a shop, such as a toy shop.","The first player names something in the shop beginning with A.","Go through the alphabet, one player per letter, until you reach Z."]},{"name":"Twenty Questions","age":"older","rules":["One player thinks of a person, place or thing.","The others ask yes-or-no questions to work out what it is.","They have twenty questions, then one final guess."]},{"name":"Story Chain","age":"older","rules":["One player starts a story with one sentence.","The next player adds a sentence to continue it.","Keep going until the story ends or everyone agrees it is finished."]},{"name":"Spot the Letter","age":"older","rules":["Pick a letter of the alphabet.","Everyone looks for that letter on signs, plates and shops.","The first player to spot it calls it out and picks the next letter."]},{"name":"Number Plate Words","age":"teens","rules":["Read the letters on the next number plate you pass.","Make the longest word you can from those letters.","The best word wins the round, then move on to the next plate."]},{"name":"The Yes-No Game","age":"teens","rules":["One player asks another player questions for one minute.","The player must answer every question without saying yes or no.","If they slip, the questioner wins, and the roles swap."]},{"name":"Song Title Chain","age":"teens","rules":["One player names a song.","The next player names a song that starts with the last word of that title.","Keep the chain going until someone cannot think of a song."]},{"name":"Word Association","age":"teens","rules":["One player says any word.","The next player says the first word that comes to mind.","Keep going fast, and anyone who pauses too long starts a new chain."]},{"name":"Name That Tune by Humming","age":"teens","rules":["One player hums a tune without singing any words.","The others guess the song.","The first correct guesser hums the next tune."]},{"name":"Trivia Relay","age":"adults","rules":["One player asks a general knowledge question.","The first person to answer correctly asks the next question.","Keep score if you like, or just play for the fun of it."]},{"name":"Two Truths and a Dream","age":"adults","rules":["One player tells two true facts and one made-up dream about themselves.","The others guess which one is the dream.","The first correct guesser shares their three statements next."]},{"name":"The Memory Journey","age":"adults","rules":["One player starts, I went on a journey and I packed a hat.","Each player repeats the list and adds one more item.","If you forget an item, you are out, and the last player left wins."]},{"name":"Hypothetical Island","age":"adults","rules":["Imagine you are stuck on an island with only three things.","Each player names their three things and explains why.","Vote for the best list, then invent a new situation."]},{"name":"Would You Rather Road Edition","age":"mixed","rules":["One player asks a would you rather question.","Everyone answers and explains their choice.","The most interesting answer picks the next question."]},{"name":"Categories Race","age":"mixed","rules":["Pick a category, such as animals or countries.","Go around the car naming something in that category.","If you cannot name one in five seconds, you are out."]},{"name":"The Picnic Game","age":"mixed","rules":["One player starts, I am going on a picnic and I am bringing apples.","Each player repeats the list in order and adds one item.","If you forget an item, you are out, and the last player left wins."]},{"name":"Guess the Song","age":"mixed","rules":["One player describes a song without naming it or singing it.","The others guess the song from the clues.","The first correct guesser describes the next song."]},{"name":"The Compliment Game","age":"mixed","rules":["Pick a person in the car.","Everyone takes a turn saying something kind about them.","Then pick the next person, until everyone has had a turn."]}];
+  var VALID = ["young", "older", "teens", "adults", "mixed"];
+  var pick = document.getElementById("pick");
+  var button = document.getElementById("gen-btn");
+  var result = document.getElementById("result");
+  var counter = 0;
+  function show() {
+    var v = pick.value;
+    if (!v || VALID.indexOf(v) === -1) {
+      result.innerHTML = "<p>Please choose an age group first.</p>";
+      return;
+    }
+    var pool = [];
+    for (var i = 0; i < BANK.length; i++) { if (BANK[i].age === v) pool.push(BANK[i]); }
+    for (var j = 0; j < BANK.length; j++) { if (BANK[j].age !== v) pool.push(BANK[j]); }
+    var start = counter % pool.length;
+    counter++;
+    var html = "";
+    for (var k = 0; k < 3; k++) {
+      var g = pool[(start + k) % pool.length];
+      html += "<p><strong>" + g.name + "</strong></p><ol>";
+      for (var r = 0; r < g.rules.length; r++) { html += "<li>" + g.rules[r] + "</li>"; }
+      html += "</ol>";
+    }
+    result.innerHTML = html;
+  }
+  button.addEventListener("click", show);
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>
