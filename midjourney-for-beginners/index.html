@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Midjourney for Beginners: How to Start | Noryvello</title>
+<meta name="description" content="A beginner's guide to Midjourney: what it is, where it runs, how to make your first image, the key settings in plain words, and how upscaling and variations work.">
+<link rel="canonical" href="https://noryvello.github.io/midjourney-for-beginners/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Midjourney for Beginners: How to Start">
+<meta property="og:description" content="Start making images with Midjourney, explained step by step in plain words.">
+<meta property="og:url" content="https://noryvello.github.io/midjourney-for-beginners/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Midjourney free to use?","acceptedAnswer":{"@type":"Answer","text":"Midjourney is a paid service, and the available plans and their limits change over time. Check the current plans page on the Midjourney website before you sign up, so you know what each plan includes."}},{"@type":"Question","name":"Do I need Discord to use Midjourney?","acceptedAnswer":{"@type":"Answer","text":"Midjourney started on Discord and still works there, and it also has its own website where you can generate images. Either way you will need a Midjourney account, and the exact steps for linking accounts can change."}},{"@type":"Question","name":"What is the best aspect ratio for a beginner?","acceptedAnswer":{"@type":"Answer","text":"Start with the default square shape while you learn, because it works for most subjects and is easy to crop later. Once you know what you want, pick a wide shape for landscapes and a tall shape for portraits and phone wallpapers."}},{"@type":"Question","name":"Why do my Midjourney images look different from the examples I see online?","acceptedAnswer":{"@type":"Answer","text":"Published examples are usually the best result from many generations, and the same prompt will give you a different image every time. Prompt wording, the version setting, and the style setting all change the result, so expect to generate several versions before you get one you like."}},{"@type":"Question","name":"Can I use Midjourney images for my business?","acceptedAnswer":{"@type":"Answer","text":"Usage rights depend on your plan and on the current Midjourney terms, which can change. Read the current terms of service before using images commercially, and keep a record of the plan you were on when you made them."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Midjourney for Beginners: How to Start</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">Midjourney is an AI image generator known for rich, artistic pictures made from short text prompts. You describe the image you want, and Midjourney returns a grid of four pictures that you can upscale, vary, or rework. This guide explains where it runs, how to make your first image, and what the key settings mean in plain words.</p>
+<p>Midjourney has a reputation for producing beautiful images with very little effort. Where some image tools need long, careful prompts, Midjourney often turns a short phrase into a polished picture, because it leans toward artistic, painterly, and cinematic styles by default. That is why it became popular with artists, designers, and hobbyists who wanted striking images without learning a long list of settings.</p>
+<p>It is also the image generator with the most unusual way of working. It began life inside a chat app, it uses short text commands, and its best features, like variations and upscaling, are buttons under each image rather than menu options. This guide walks through all of it in plain words, so your first session feels straightforward instead of confusing.</p>
+<div class="warn">Midjourney changes often: commands, menu names, plans, and features are updated regularly, and the steps in this guide describe how things work in general terms. If a button or command has moved, check the current Midjourney help pages, and always check the current pricing page before you pay for a plan.</div>
+<h2>What Midjourney is</h2>
+<p>Midjourney is a service that turns text descriptions into images. You write a prompt, such as "a lighthouse on a rocky coast at sunset, oil painting", and the service generates four images that match the description. Each image is a new creation, not a copy of an existing picture.</p>
+<p>What sets Midjourney apart is its default look. Left to itself, it tends to produce images with strong composition, rich colour, and a slightly artistic finish, even from plain prompts. That makes it a good choice for illustrations, concept art, book covers, mood boards, and social media images, where a striking look matters more than photographic accuracy.</p>
+<p>It is less suited to jobs that need exact, repeatable details. If you need a precise product shot, an accurate portrait of a real person, or an image with readable text, Midjourney will often struggle, like most image generators. Its strength is imagination, not precision.</p>
+<p>Midjourney is a paid service, and you use it through an account. The plans and their limits change over time, so this guide does not list them. Before you sign up, check the current plans page to see what each plan includes and how much image-making time it gives you.</p>
+<h2>Where Midjourney runs</h2>
+<p>Midjourney began on Discord, a chat app where people join servers and talk in channels. In the early days, the only way to use Midjourney was to send commands to its bot inside a Discord channel, and your images appeared in the chat alongside everyone else's. That chat-based start shaped how the tool works, and many of its habits, like short commands and public galleries, come from it.</p>
+<p>Today Midjourney also has its own website, where you can type prompts into a web page and browse your images in a personal gallery. The website feels more like a normal app: you sign in, write a prompt, and your images appear in your own space. Both ways of working use the same account and the same image-making engine, so you can pick whichever feels more comfortable.</p>
+<p>If you use Discord, you will work inside the Midjourney server or in a direct message with the Midjourney bot. Images you make in a public channel are visible to other people in that channel, which is worth knowing before you generate anything personal. On the website, your images live in your own gallery, and you control what you share.</p>
+<h2>Your first image, step by step</h2>
+<p>Getting started takes a few steps, and they are the same in general terms whether you use the website or Discord. The exact names of buttons and menus may differ from what is described here, because the interface is updated regularly.</p>
+<ol>
+<li><strong>Create an account.</strong> Sign up on the Midjourney website with an account, and choose a plan. You will need an active plan before you can generate images.</li>
+<li><strong>Open the place where you generate.</strong> On the website, this is the main creation page. On Discord, it is a channel in the Midjourney server or a direct message with the bot.</li>
+<li><strong>Start a generation.</strong> On Discord, you begin with a short command followed by your prompt. On the website, you type your prompt into the prompt box. Either way, the prompt is a plain description of the image you want.</li>
+<li><strong>Write a simple first prompt.</strong> Keep it short and concrete: a subject, a setting, and a style. A good first prompt is something like "a small wooden cabin in a pine forest at dawn, watercolour painting".</li>
+<li><strong>Wait for the grid.</strong> Midjourney returns four images in a grid. The generation takes a short while, and you can watch the images sharpen as they develop.</li>
+<li><strong>Pick a favourite.</strong> Under the grid, buttons let you upscale one image to a larger size or create variations of it. You do not need to use them yet; just look at the four results and see what the tool did with your words.</li>
+<li><strong>Try again with a change.</strong> Change one part of the prompt, like the style or the time of day, and generate again. Comparing the two grids shows you how much difference a single word can make.</li>
+</ol>
+<p>Your first few sessions are for learning, not for producing finished work. Generate freely, try strange prompts, and save the ones you like. The skill of prompting grows fastest when you compare results side by side and notice which words changed the picture.</p>
+<h2>The key settings in plain words</h2>
+<p>Midjourney has a small set of settings that change how your images come out. They are often called parameters, and on Discord they are added to the end of a prompt as short codes. On the website, they appear as options you can pick. You do not need to memorise them, but knowing what each one does will save you a lot of guessing.</p>
+<ul>
+<li><strong>Aspect ratio:</strong> the shape of the image. The default is square, but you can ask for a wide rectangle for landscapes or a tall rectangle for portraits and phone screens. Think of it as choosing the shape of the canvas before you start painting. Picking the right shape at the start is better than cropping later, because the generator composes the whole scene for that shape.</li>
+<li><strong>Style:</strong> how artistic or literal the result should be. A low style setting keeps the image close to your words, while a high style setting gives Midjourney more freedom to make the image beautiful in its own way. Beginners should start with the default and only raise the style setting when they want a more dramatic, artistic result.</li>
+<li><strong>Version:</strong> which generation of the Midjourney engine makes your image. Newer versions usually handle detail, hands, and text better, and they have a different default look. Older versions are kept available because some people prefer their style. As a beginner, the newest default version is the right choice, and you can explore older versions later if you are curious.</li>
+<li><strong>Chaos or variety:</strong> how different the four images in a grid are from each other. A low setting gives four similar images, which is useful when you are close to what you want. A high setting gives four very different images, which is useful when you are exploring ideas and want surprises.</li>
+</ul>
+<p>These settings are optional. A prompt with no settings at all will still produce good images, because the defaults are chosen to work well for most people. Add one setting at a time, and only when you know what you want it to change.</p>
+<h2>Upscaling and variations</h2>
+<p>When Midjourney returns a grid of four images, each one is a small preview. The real work happens in the next step, when you choose one image and either make it bigger or make new versions of it.</p>
+<p><strong>Upscaling</strong> enlarges one image from the grid into a larger, more detailed version. The upscaled image is the one you download and use. Upscaling also adds fine detail, so an image that looked good at small size can look even better when enlarged, though it can also reveal flaws that were hidden in the preview.</p>
+<p><strong>Variations</strong> create a new grid of four images based on one image you liked. The new images keep the general composition and subject but change the details, the colours, or the mood. Variations are the main way to refine an image: you pick the best one, vary it, pick the best of the new batch, and repeat until you have something you are happy with.</p>
+<p>There is also a stronger variation option, which changes the image more dramatically, and a gentler one, which keeps it close to the original. Use the gentle option when you like the image and want small improvements, and the stronger option when you like the idea but want a fresh take on it.</p>
+<p>A good habit is to upscale only after you have finished varying. Upscaling early wastes time, because you may find a better version in the next batch of variations. When you have an image you genuinely like, upscale it, download it, and move on to the next idea.</p>
+<h2>Getting better results as a beginner</h2>
+<p>The fastest way to improve is to write better prompts, and the rules are simple. Start with the subject, add the setting, name the style, and add one lighting word and one camera word. "A fox sitting in autumn leaves, soft morning light, photograph, close-up" will beat "a fox" every time, because it tells the generator what matters to you.</p>
+<p>Keep your prompts in plain language. Midjourney responds well to natural descriptions, and you do not need a string of disconnected keywords. A sentence like "a quiet reading corner by a window, rain outside, warm lamplight" works better than a pile of adjectives, because it describes a scene rather than a list.</p>
+<p>Study the public gallery. Midjourney shows images made by other people, along with the prompts that made them. Reading those prompts is the best free lesson available: you will see which words produce which looks, and you can adapt a prompt you admire by changing the subject or the setting.</p>
+<p>Finally, be patient with yourself. Everyone's first images are a mix of surprises and disappointments, and the people whose work looks effortless have usually generated hundreds of images. Each grid teaches you something, even the ones you delete.</p>
+<h2>What to do when results disappoint</h2>
+<p>When an image goes wrong, resist the urge to rewrite the whole prompt. Instead, look at what is wrong and change the part that controls it. If the colours are dull, change the lighting words. If the composition is crowded, change the camera words to a wider shot. If the style is wrong, name a different style. Changing one thing at a time keeps the parts that were working.</p>
+<p>If the generator keeps ignoring a detail, try describing it in simpler words, or move it to the start of the prompt. Midjourney pays more attention to the words at the beginning, so the most important detail should come first. If a prompt asks for too many unusual things at once, split it into two prompts and generate the parts separately.</p>
+<p>Hands, faces, and text are the most common disappointments, and they are weaknesses of image generators in general, not just Midjourney. Ask for a wider shot, a side view, or a subject looking away, and keep any text in the image very short. For anything that must be exact, like a logo or a sign, plan to add it later with an image editor.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Is Midjourney free to use?</h3><p>Midjourney is a paid service, and the available plans and their limits change over time. Check the current plans page on the Midjourney website before you sign up, so you know what each plan includes.</p></div>
+<div class="faq"><h3>Do I need Discord to use Midjourney?</h3><p>Midjourney started on Discord and still works there, and it also has its own website where you can generate images. Either way you will need a Midjourney account, and the exact steps for linking accounts can change.</p></div>
+<div class="faq"><h3>What is the best aspect ratio for a beginner?</h3><p>Start with the default square shape while you learn, because it works for most subjects and is easy to crop later. Once you know what you want, pick a wide shape for landscapes and a tall shape for portraits and phone wallpapers.</p></div>
+<div class="faq"><h3>Why do my Midjourney images look different from the examples I see online?</h3><p>Published examples are usually the best result from many generations, and the same prompt will give you a different image every time. Prompt wording, the version setting, and the style setting all change the result, so expect to generate several versions before you get one you like.</p></div>
+<div class="faq"><h3>Can I use Midjourney images for my business?</h3><p>Usage rights depend on your plan and on the current Midjourney terms, which can change. Read the current terms of service before using images commercially, and keep a record of the plan you were on when you made them.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/how-to-write-image-generation-prompts/">How to Write Image Prompts</a> · <a href="https://noryvello.github.io/dalle-vs-midjourney-vs-stable-diffusion/">DALL-E vs Midjourney vs Stable Diffusion</a> · <a href="https://noryvello.github.io/ai-image-prompt-examples/">50 AI Image Prompt Examples</a> · <a href="https://noryvello.github.io/how-ai-image-generators-work/">How AI Image Generators Work</a> · <a href="https://noryvello.github.io/ai-image-styles-explained/">AI Image Styles Explained</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

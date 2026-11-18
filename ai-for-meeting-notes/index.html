@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Use AI for Meeting Notes and Summaries | Noryvello</title>
+<meta name="description" content="Use AI for meeting notes: consent-first recording rules, transcript to summary, action-item extraction, and sharing formats people actually read.">
+<link rel="canonical" href="https://noryvello.github.io/ai-for-meeting-notes/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Use AI for Meeting Notes and Summaries">
+<meta property="og:description" content="Turn meetings into clear notes with AI — consent rules, summaries, action items, and sharing formats that people read.">
+<meta property="og:url" content="https://noryvello.github.io/ai-for-meeting-notes/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need permission to record a meeting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Always tell everyone the meeting is being recorded and get their agreement before you start. Check your workplace policy too, since many organisations have rules about recording, storage, and who can access transcripts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate are AI meeting summaries?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Good enough to be useful, not good enough to trust blindly. AI summaries can misattribute decisions, invent details, or miss the point of a discussion. Always review the summary against the transcript before sharing it, and fix names and key terms yourself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the transcript has errors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Skim the transcript before using the summary, and correct names, technical terms, and any misheard decisions. Good audio helps enormously: a quiet room, one speaker at a time, and a decent microphone reduce errors more than any software setting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How should I share meeting notes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Send them the same day, in a short scannable format: a one-line summary, then decisions, then action items. Match the format to the audience — a team needs actions, a manager needs decisions, a client needs a polished summary."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can AI attend a meeting for me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some tools can join a call and take notes on your behalf, but that only works with everyone's knowledge and consent. Tell the other participants in advance that a note-taking tool will be present, and check whether your workplace allows it."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How to Use AI for Meeting Notes and Summaries</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">AI can turn a meeting recording or transcript into clear notes, decisions, and action items in minutes. This guide covers the consent rules for recording, how to get good summaries, and how to share notes people actually read.</p>
+<p>Meetings produce decisions, but decisions evaporate without notes. Most people have been in a meeting where everyone nodded, and a week later nobody could remember what was agreed. AI changes that equation: a recording becomes a transcript, a transcript becomes a summary, and a summary becomes a short list of who does what by when.</p>
+<p>The technology is the easy part. The hard parts are the rules around recording, the quality of the summary, and whether anyone reads the notes afterwards. This guide covers all three, starting with the one rule that matters most: consent comes first.</p>
+<div class="warn">Never record people without their permission. Recording a meeting without consent can break workplace policy and, in some places, the law — and it destroys trust even where it is technically allowed. Always tell everyone the meeting is being recorded, explain what the recording is for, and give people a chance to object before you press record.</div>
+<h2>Consent first: the recording rules</h2>
+<p>Before any tool, any transcript, or any summary, there is a question: does everyone in this meeting know they are being recorded, and have they agreed? The answer must be yes before recording starts. A simple announcement at the start works: "I would like to record this meeting so we can have accurate notes. Is everyone happy with that?"</p>
+<p>Check your workplace policy too. Many organisations have rules about recording, storage, and who can access transcripts. Some clients and partners have their own rules, and some meetings — disciplinary discussions, for example — should not be recorded at all. When in doubt, ask before the meeting, not during it.</p>
+<p>Tell people what will happen to the recording. Will it be deleted after the notes are written? Who can read the transcript? A short, honest answer builds trust: "The recording will be deleted once the notes are done, and only the people in this meeting will see the summary." Then keep that promise.</p>
+<h2>From recording to transcript</h2>
+<p>Most AI meeting tools work the same way: they record the audio, turn it into a written transcript, and then summarise the transcript. The transcript is the raw material, and its quality decides everything that follows. Good audio matters more than any tool feature — a quiet room and a decent microphone beat a noisy room with the best software.</p>
+<p>For in-person meetings, place the recording device in the middle of the table and ask people to speak one at a time. For video calls, use the platform's own recording feature where possible, since it captures each speaker cleanly. If the transcript matters, test the setup in a short call first rather than discovering a problem in an important meeting.</p>
+<p>Expect transcript errors. Names, technical terms, and accents are the usual casualties, and overlapping speech confuses every tool. Skim the transcript before you trust the summary, and fix the names and key terms yourself — a summary built on a misheard name can attribute a decision to the wrong person.</p>
+<h2>Turn a transcript into a useful summary</h2>
+<p>A transcript is not a summary. A transcript is everything that was said, including the tangents, the repetitions, and the small talk. A summary is what was decided, what was discussed, and what happens next — and that is what people actually need.</p>
+<p>Give the AI a clear brief for the summary. A good prompt pattern is: "Summarise this meeting transcript in three sections: decisions made, topics discussed, and open questions. Keep each section to short bullet points. Do not invent anything that was not said." The instruction not to invent is important — AI summaries sometimes add plausible-sounding details that never happened.</p>
+<p>Ask for the right length. A summary for people who attended can be short — they were there. A summary for people who missed the meeting needs more context. Tell the AI who will read it: "Write this for a colleague who could not attend and needs to catch up in two minutes." The audience decides the length.</p>
+<h2>Pull out decisions and action items</h2>
+<p>The most valuable part of meeting notes is the action list: who does what, by when. Ask AI to extract it explicitly: "List every action item from this transcript, with the person responsible and the deadline if one was mentioned. If no deadline was given, mark it as no deadline."</p>
+<p>Check every action item against the transcript. AI sometimes assigns a task to the wrong person, or turns a suggestion into a commitment. Read the list as if you were the person named: would you agree this is your job? If the wording is vague — "look into the budget" — sharpen it before you share the notes, ideally by asking the person involved.</p>
+<p>Decisions deserve the same care. Ask for a separate decisions list: "List every decision made in this meeting, with one sentence of context for each." A written decision prevents the most common meeting failure — the same question being debated again next week because nobody wrote down the answer.</p>
+<h2>Sharing formats people actually read</h2>
+<p>The best notes in the world are useless if nobody opens them. The format that gets read is short, scannable, and sent quickly. A good pattern is: a one-line summary at the top, then decisions, then action items, then a link to the full transcript for anyone who wants detail. Most readers will stop after the action items, and that is fine.</p>
+<p>Send notes the same day. Notes sent a week later arrive after people have already moved on, and the action items lose their force. AI makes same-day notes realistic: the summary takes minutes, and your review takes a few more. Build the habit of reviewing and sending notes before you leave for the day.</p>
+<p>Match the format to the audience. A project team needs the action list. A manager needs the decisions. A client needs a polished summary without internal discussion. Ask AI to produce two versions from the same transcript — an internal version with everything, and an external version with only what the client needs to see — and check both before sending.</p>
+<h2>Filing notes so they can be found later</h2>
+<p>Meeting notes earn their keep months later, when someone asks "what did we decide about this?" and the answer is in a note from March. That only works if notes are filed consistently. Use a simple naming pattern — date, project, topic — and store notes where the team already looks, not in a separate system nobody opens.</p>
+<p>Ask AI to help with the filing. A good prompt: "Give this meeting a one-line title and five keywords, so it can be found later by search." Add the keywords to the note or the file name. Future you will be grateful.</p>
+<p>Delete recordings once the notes are done, unless your policy requires keeping them. Recordings take storage, create privacy risk, and are rarely listened to again once good notes exist. A short retention rule — delete after the notes are approved — is the simplest policy, and the easiest to keep.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Do I need permission to record a meeting?</h3><p>Yes. Always tell everyone the meeting is being recorded and get their agreement before you start. Check your workplace policy too, since many organisations have rules about recording, storage, and who can access transcripts.</p></div>
+<div class="faq"><h3>How accurate are AI meeting summaries?</h3><p>Good enough to be useful, not good enough to trust blindly. AI summaries can misattribute decisions, invent details, or miss the point of a discussion. Always review the summary against the transcript before sharing it, and fix names and key terms yourself.</p></div>
+<div class="faq"><h3>What if the transcript has errors?</h3><p>Skim the transcript before using the summary, and correct names, technical terms, and any misheard decisions. Good audio helps enormously: a quiet room, one speaker at a time, and a decent microphone reduce errors more than any software setting.</p></div>
+<div class="faq"><h3>How should I share meeting notes?</h3><p>Send them the same day, in a short scannable format: a one-line summary, then decisions, then action items. Match the format to the audience — a team needs actions, a manager needs decisions, a client needs a polished summary.</p></div>
+<div class="faq"><h3>Can AI attend a meeting for me?</h3><p>Some tools can join a call and take notes on your behalf, but that only works with everyone's knowledge and consent. Tell the other participants in advance that a note-taking tool will be present, and check whether your workplace allows it.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/how-to-use-gemini-for-beginners/">How to Use Gemini</a> · <a href="https://noryvello.github.io/chatgpt-file-upload-guide/">How to Use ChatGPT File Uploads</a> · <a href="https://noryvello.github.io/ai-for-customer-support/">How Small Businesses Use AI for Customer Support</a> · <a href="https://noryvello.github.io/how-to-write-better-ai-prompts/">How to Write Better AI Prompts</a> · <a href="https://noryvello.github.io/ai-chatbot-privacy-comparison/">AI Chatbot Privacy Compared</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

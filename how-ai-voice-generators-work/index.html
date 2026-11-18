@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How AI Voice Generators Work | Noryvello</title>
+<meta name="description" content="How AI voice generators turn text into natural-sounding speech: classic text-to-speech, neural voices, voice samples, and what makes a voice sound real.">
+<link rel="canonical" href="https://noryvello.github.io/how-ai-voice-generators-work/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How AI Voice Generators Work">
+<meta property="og:description" content="A plain-English guide to AI voice generation, from old robotic voices to modern neural speech.">
+<meta property="og:url" content="https://noryvello.github.io/how-ai-voice-generators-work/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is an AI voice different from old text-to-speech?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Old text-to-speech stitched together recorded fragments, which sounded flat and mechanical. Modern AI voices use a neural network trained on recordings, so they predict natural rhythm, pitch, and pacing for new sentences."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can an AI voice read words it has never heard before?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A neural voice builds speech from the patterns it learned, not from recordings of specific words, so it can pronounce new words. Unusual names and foreign words are the cases where it is most likely to go wrong."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is voice cloning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Voice cloning builds a voice model from samples of a specific person, so generated speech sounds like them. It is different from ordinary voice generation, which uses a ready-made voice supplied by the service."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does a generated voice sometimes stress the wrong word?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Emphasis depends on meaning, and the model guesses meaning from the shape of the sentence. When a sentence is ambiguous, the guess can be wrong. Rewording the sentence usually fixes it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do AI voices replace human voice actors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not entirely. AI voices are excellent for narration, updates, and high-volume work, but acting, humour, and deeply personal delivery still benefit from a human speaker."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How AI Voice Generators Work</h1><p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">An AI voice generator turns written text into spoken audio by learning how a voice sounds from recorded samples, then predicting the sounds, rhythm, and tone of new sentences. This guide explains the old and new approaches in plain words.</p>
+<p>If you have listened to a voice assistant, an audiobook, or a narrated video lately, you have probably heard an AI voice without realising it. Modern generated voices can sound warm, clear, and very nearly human. That was not always the case: early computer voices sounded flat and robotic, and the difference between then and now is a change in how the voices are made.</p>
+<p>This guide explains that change. It starts with the old way of making computer speech, then explains how neural voice generators learn from recordings, what makes a voice sound natural, and how voice cloning differs from ordinary voice generation.</p>
+<div class="warn">Voice technology changes quickly, and the details of how each service builds its voices are its own business. This guide describes the general ideas behind the technology, not the inner workings of any single product.</div>
+<h2>What an AI voice generator does</h2>
+<p>At its simplest, an AI voice generator takes text and produces audio of someone speaking that text. You type or paste a sentence, pick a voice, and the tool returns a recording. The voice may be a ready-made voice supplied by the service, or a voice built from samples of a particular person speaking.</p>
+<p>People use voice generators for narration, video voiceovers, audiobooks, accessibility tools, language learning, and announcements. The appeal is obvious: you can produce spoken audio without a microphone, a quiet room, or a recording session, and you can fix a mistake by editing the text and generating again instead of re-recording.</p>
+<p>The quality of the result depends on the tool, the voice, and the text. A well-written script with natural sentences will sound much better than a stiff block of formal writing, even from the same voice. The words you feed the generator matter as much as the technology behind it.</p>
+<h2>Classic text-to-speech: the old way</h2>
+<p>The earliest computer voices were built by stitching together tiny recorded pieces of speech. Engineers recorded a speaker saying many syllables and words, cut the recordings into fragments, and stored them like tiles. To speak a new sentence, the system picked the fragments it needed and joined them in order.</p>
+<p>This approach, often called concatenative synthesis, could produce understandable speech, but it sounded mechanical. The joins between fragments were audible, the rhythm was even and lifeless, and the voice could not express emotion or emphasis. It was the voice of satnavs and early screen readers: useful, but unmistakably a machine.</p>
+<p>A later variation used rules instead of recordings, generating sounds from phonetic instructions. This made voices smaller and more flexible, but the result was still flat. Both approaches shared the same weakness: they assembled speech from parts, and human speech is more than the sum of its parts.</p>
+<h2>Neural voices: how modern generators work</h2>
+<p>Modern AI voice generators work differently. Instead of stitching fragments, they use a neural network trained on many hours of recorded speech. During training, the network learns the patterns of a voice: how sounds flow into each other, how pitch rises and falls across a sentence, where pauses naturally land, and how emphasis changes meaning.</p>
+<p>When you ask it to speak a new sentence, the network predicts what that sentence should sound like, sound by sound, based on everything it learned. It does not play back a recording; it builds new audio from the patterns it knows. That is why a neural voice can read words it has never heard spoken before and still sound natural.</p>
+<p>The result is speech with a human-like rhythm. Questions rise at the end. Important words get a little more weight. Pauses appear where a speaker would breathe. None of this is programmed rule by rule; it emerges from the patterns the network learned from real speech.</p>
+<h2>Training on voice samples</h2>
+<p>Every AI voice starts with recordings. For a ready-made voice, the service records a voice actor reading a wide range of sentences, covering different sounds, sentence shapes, and tones. The training process studies those recordings and builds a model of that voice.</p>
+<p>The range of the recordings matters. A voice trained only on calm, neutral reading will struggle to sound excited or urgent, because it has never heard those patterns from its speaker. A voice trained on varied material, with questions, lists, emphasis, and emotion, will handle a wider range of text.</p>
+<p>This is also why two services can offer voices that sound quite different even when they use similar technology. The training recordings shape the voice, and the quality and variety of those recordings show up in every sentence the voice speaks.</p>
+<h2>What makes a voice sound natural</h2>
+<p>Naturalness is not about the sound of individual words. It is about the things between and around them. The first is prosody, the rise and fall of pitch across a sentence. Human speakers lift their pitch for questions, drop it at the end of statements, and vary it to show interest. A voice that stays on one note sounds robotic even if every word is clear.</p>
+<p>The second is pacing. People pause briefly between phrases, slow down for important points, and speed up for asides. A voice that rushes through every sentence at the same speed feels mechanical, while one that varies its pace feels alive.</p>
+<p>The third is emphasis. In a sentence like "I never said that," the meaning changes completely depending on which word is stressed. Good neural voices pick up emphasis from the shape of the sentence, though they do not always get it right. When a generated voice stresses the wrong word, the sentence can sound odd even though every word is correct.</p>
+<h2>Voice cloning vs voice generation</h2>
+<p>Voice generation and voice cloning are related but different. Voice generation uses a ready-made voice to read any text you provide. Voice cloning builds a new voice model from samples of a specific person, so the generated speech sounds like that person.</p>
+<p>Cloning needs recordings of the target voice. The more varied the samples, the better the clone. A clone built from a few short samples will usually sound like a rough impression, while one built from longer, varied recordings can sound strikingly close to the real person.</p>
+<p>Because cloning can imitate a real person, it carries risks that ordinary voice generation does not. A cloned voice can be used to create fake audio of someone saying things they never said. Responsible services require proof that you have the right to clone a voice, and the safest rule is simple: only clone your own voice, or a voice you have clear permission to use.</p>
+<h2>Where AI voices are used, and where they fall short</h2>
+<p>AI voices now appear in many places: video narration, e-learning courses, audiobooks, announcements, accessibility tools, and customer service messages. They are especially useful when the text changes often, because updating the audio is as simple as editing the text and generating again.</p>
+<p>They still fall short in places where genuine human feeling matters. A generated voice can imitate warmth or excitement, but it does not feel those things, and over a long passage the performance can start to feel thin. Subtle acting, humour that depends on timing, and deeply personal delivery are still best done by a human speaker.</p>
+<p>AI voices also make mistakes. They can mispronounce unusual names, stress the wrong word, or read an ambiguous sentence the wrong way. Always listen to the full output before you publish it, and fix the text when the voice gets something wrong. A small rewording often solves a mispronunciation that no setting can fix.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How is an AI voice different from old text-to-speech?</h3><p>Old text-to-speech stitched together recorded fragments, which sounded flat and mechanical. Modern AI voices use a neural network trained on recordings, so they predict natural rhythm, pitch, and pacing for new sentences.</p></div>
+<div class="faq"><h3>Can an AI voice read words it has never heard before?</h3><p>Yes. A neural voice builds speech from the patterns it learned, not from recordings of specific words, so it can pronounce new words. Unusual names and foreign words are the cases where it is most likely to go wrong.</p></div>
+<div class="faq"><h3>What is voice cloning?</h3><p>Voice cloning builds a voice model from samples of a specific person, so generated speech sounds like them. It is different from ordinary voice generation, which uses a ready-made voice supplied by the service.</p></div>
+<div class="faq"><h3>Why does a generated voice sometimes stress the wrong word?</h3><p>Emphasis depends on meaning, and the model guesses meaning from the shape of the sentence. When a sentence is ambiguous, the guess can be wrong. Rewording the sentence usually fixes it.</p></div>
+<div class="faq"><h3>Do AI voices replace human voice actors?</h3><p>Not entirely. AI voices are excellent for narration, updates, and high-volume work, but acting, humour, and deeply personal delivery still benefit from a human speaker.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/how-to-make-ai-voiceovers/">How to Make AI Voiceovers</a> · <a href="https://noryvello.github.io/text-to-speech-vs-ai-voice/">Text-to-Speech vs AI Voice</a> · <a href="https://noryvello.github.io/ai-voice-cloning-explained/">AI Voice Cloning Explained</a> · <a href="https://noryvello.github.io/how-generative-ai-works/">How Generative AI Works</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

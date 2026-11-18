@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Teachers Use AI for Feedback on Student Work | Noryvello</title>
+<meta name="description" content="Teachers' guide to AI feedback: rubric-based feedback drafts, comment banks, spotting common errors, and keeping teacher judgment central — with a privacy warn box.">
+<link rel="canonical" href="https://noryvello.github.io/ai-for-grading-and-feedback/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Teachers Use AI for Feedback on Student Work">
+<meta property="og:description" content="Speed up feedback with AI — rubric drafts, comment banks, and error spotting, with teacher judgment always in charge.">
+<meta property="og:url" content="https://noryvello.github.io/ai-for-grading-and-feedback/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can AI grade student work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI should not decide grades. It does not know your students, cannot weigh effort or context, and can make errors of judgment. Use AI to draft feedback and spot patterns, but keep every grading decision with the teacher."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I protect student privacy when using AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Never paste student names, identifiable work, or grades into an AI tool. Work with your rubric and anonymised notes instead, check your school's policy, and read the tool's privacy terms before you use it with anything student-related."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I do with AI feedback drafts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Edit every draft before it reaches a student. Add the specific detail only you know — which paragraph, which example, which sentence — and remove anything generic or inaccurate. The draft is scaffolding; your judgment is the feedback."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can AI spot plagiarism in student work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI tools are unreliable at detecting copied or AI-generated work, and they can wrongly flag honest students. Do not use AI detection claims as evidence. If you suspect plagiarism, follow your school's established process instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I keep feedback personal when using AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Write the draft with AI, then rewrite it in your own voice with details from the student's actual work. Name the specific paragraph, the specific strength, and the specific next step. Students can tell the difference between feedback written for them and feedback written for anyone."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How Teachers Use AI for Feedback on Student Work</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">AI can draft rubric-based feedback, build comment banks, and help spot common errors across a class — with the teacher's judgment always in charge. This guide shows a safe workflow that speeds up feedback without handing grading over to a machine.</p>
+<p>Marking is the part of teaching that follows teachers home. A set of thirty essays can take an entire weekend, and the feedback students receive is often shorter than it should be — not because teachers do not care, but because there are only so many hours. AI can help, but only in the right role: as a drafting assistant, never as a grader.</p>
+<p>The workflow in this guide keeps the teacher at the centre. You decide the grade, you own the judgment, and you sign off on every word that reaches a student. AI does the repetitive drafting — turning rubric criteria into sentences, spotting patterns across a class, and building a bank of comments you can reuse. Used this way, feedback gets faster and better at the same time.</p>
+<div class="warn">Never paste student work containing names, or any identifiable student information, into an AI tool. Student names, grades, and personal details are private, and most AI tools are not designed to handle them. Check your school's policy and the tool's privacy terms before use, and work with anonymised samples or your own example texts instead.</div>
+<h2>Rubric-based feedback drafts</h2>
+<p>A rubric turns marking from guesswork into a structured judgment — and it is also the best input you can give an AI tool. Paste your rubric (not student work) and describe a piece of work in general terms: "Using this rubric, draft feedback for a student whose essay has a strong argument but weak paragraph structure. Write three sentences: one strength, one area to improve, and one specific next step."</p>
+<p>The structure matters. Ask for the same shape every time — strength, improvement, next step — and the feedback stays consistent across the class. Students notice consistency: it makes feedback feel fair, and it makes the next steps easy to compare between pieces of work.</p>
+<p>Edit every draft before it goes out. AI feedback tends towards the generic — "good effort, work on your structure" — and generic feedback helps nobody. Add the specific detail only you know: which paragraph, which example, which sentence. The AI gives you the scaffolding; you give it the substance.</p>
+<h2>Build a comment bank that sounds like you</h2>
+<p>Teachers write the same comments dozens of times a term: "develop this point," "check your verb tenses," "good use of evidence." A comment bank turns those repeated phrases into a reusable resource. Ask AI to draft one: "Create a comment bank for essay feedback, with five comments each for argument, evidence, structure, and language. Each comment should be one sentence and include a next step."</p>
+<p>Then make it yours. Rewrite the comments in your own voice, drop the ones you would never say, and add the phrases your students already know. A comment bank that sounds like you is one you will actually use; a bank of generic AI phrases will sit untouched in a document.</p>
+<p>Keep the bank organised by rubric area and by level. A comment for a strong student should push them further; a comment for a struggling student should name one achievable step. Ask AI to write each comment at two levels — "one version for a confident student, one for a student who needs encouragement" — and file both.</p>
+<h2>Spot common errors across the class</h2>
+<p>When thirty students make the same mistake, the problem is usually the teaching, not the students. AI can help you see those patterns if you describe them. After marking a set, list the errors you noticed and ask: "Here are the ten most common errors I saw in this set of essays. Group them into three teaching points for my next lesson, with one example activity for each."</p>
+<p>This turns marking into planning. Instead of writing the same correction thirty times, you teach the point once, properly, to the whole class. Students get better feedback, and you get your evening back.</p>
+<p>Use the patterns to check your own teaching too. If a whole class missed the same concept, the explanation may need a different approach next time. Ask AI for alternative explanations: "My class struggled with this concept. Suggest three different ways to explain it, with an example for each." A fresh angle often succeeds where repetition failed.</p>
+<h2>Keep teacher judgment central</h2>
+<p>AI does not know your students. It does not know that one student's short essay represents enormous effort, or that another student's polished paragraph hides a copied idea. It cannot weigh effort, context, or growth — and those are the things that make feedback fair.</p>
+<p>That is why AI should never decide a grade. Use it to draft, to suggest, and to summarise — and then apply your own judgment to every decision. If an AI draft suggests a comment that does not fit the student, change it. If it misses the real issue in a piece of work, say so in your own words. The teacher's judgment is not a rubber stamp on AI output; it is the whole point of feedback.</p>
+<p>Be honest with students about the process. You do not need to announce every tool you use, but feedback should never pretend to be something it is not. If a student asks how you mark, a simple answer is best: you read their work, you decide the feedback, and you sometimes use software to help draft it. Transparency builds trust, and trust makes feedback work.</p>
+<h2>Give feedback students actually use</h2>
+<p>The best feedback in the world is useless if students do not read it. Research and classroom experience agree on what makes feedback usable: it is specific, it names a next step, and it arrives while the work is still fresh. AI can help with all three, by drafting specific comments quickly enough to return work promptly.</p>
+<p>Keep feedback short. Three focused points beat a page of corrections, because students can act on three points and will ignore twenty. Ask AI to help you prioritise: "Here are my notes on a student's essay. Pick the three most important points and draft one sentence for each, with a specific next step."</p>
+<p>Close the loop. Ask students to respond to feedback — to fix one thing, or to write one sentence saying what they will do differently next time. Feedback that asks for a response becomes a conversation instead of a verdict, and a conversation is what helps students improve.</p>
+<h2>A safe workflow for AI-assisted feedback</h2>
+<p>Put the pieces together into a routine you can repeat. First, read the student work yourself and make brief notes — never paste the work itself into an AI tool. Second, use AI with your rubric and your anonymised notes to draft feedback. Third, edit every draft in your own voice and apply your judgment. Fourth, return the feedback promptly and ask students to respond to it.</p>
+<p>Check your school's policy at the start of the year, not in the middle of marking season. Policies differ: some schools allow AI drafting tools, some restrict them, and some require disclosure. Knowing the rules in advance saves awkward questions later.</p>
+<p>Review the workflow each term. Are the drafts saving time, or creating extra editing? Is the feedback more specific than before? Ask your students whether the feedback helps — their answer is the only measure that matters. AI-assisted feedback is worth it only if students learn more, and only you can judge that.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Can AI grade student work?</h3><p>AI should not decide grades. It does not know your students, cannot weigh effort or context, and can make errors of judgment. Use AI to draft feedback and spot patterns, but keep every grading decision with the teacher.</p></div>
+<div class="faq"><h3>How do I protect student privacy when using AI?</h3><p>Never paste student names, identifiable work, or grades into an AI tool. Work with your rubric and anonymised notes instead, check your school's policy, and read the tool's privacy terms before you use it with anything student-related.</p></div>
+<div class="faq"><h3>What should I do with AI feedback drafts?</h3><p>Edit every draft before it reaches a student. Add the specific detail only you know — which paragraph, which example, which sentence — and remove anything generic or inaccurate. The draft is scaffolding; your judgment is the feedback.</p></div>
+<div class="faq"><h3>Can AI spot plagiarism in student work?</h3><p>AI tools are unreliable at detecting copied or AI-generated work, and they can wrongly flag honest students. Do not use AI detection claims as evidence. If you suspect plagiarism, follow your school's established process instead.</p></div>
+<div class="faq"><h3>How do I keep feedback personal when using AI?</h3><p>Write the draft with AI, then rewrite it in your own voice with details from the student's actual work. Name the specific paragraph, the specific strength, and the specific next step. Students can tell the difference between feedback written for them and feedback written for anyone.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/ai-for-teachers-lesson-plans/">How Teachers Use AI for Lesson Plans</a> · <a href="https://noryvello.github.io/chatgpt-prompts-for-teachers/">ChatGPT Prompts for Teachers</a> · <a href="https://noryvello.github.io/ai-chatbot-privacy-comparison/">AI Chatbot Privacy Compared</a> · <a href="https://noryvello.github.io/chatgpt-privacy-settings-guide/">ChatGPT Privacy Settings</a> · <a href="https://noryvello.github.io/claude-for-research/">How to Use Claude for Research</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

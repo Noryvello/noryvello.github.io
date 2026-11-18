@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Projects Explained: How to Organize Long Work | Noryvello</title>
+<meta name="description" content="Claude Projects explained in plain words: what they are, how to add knowledge files and custom instructions, when they help, and when a plain chat is enough.">
+<link rel="canonical" href="https://noryvello.github.io/claude-projects-explained/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Claude Projects Explained: How to Organize Long Work">
+<meta property="og:description" content="Claude Projects explained: knowledge files, custom instructions, and when a Project beats a plain chat.">
+<meta property="og:url" content="https://noryvello.github.io/claude-projects-explained/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a paid plan to use Projects?","acceptedAnswer":{"@type":"Answer","text":"Availability and limits vary by plan and change over time, so check the current plan details for your account. In general, the idea is the same on every plan: a Project is a folder that keeps files, instructions, and chats for one piece of work together."}},{"@type":"Question","name":"How many files can I add to a Project?","acceptedAnswer":{"@type":"Answer","text":"Limits on the number and size of files exist and change over time. The practical advice is to add only the files the work actually needs. A small set of relevant files works better than a large pile of maybe-useful ones."}},{"@type":"Question","name":"Can I share a Project with someone else?","acceptedAnswer":{"@type":"Answer","text":"Sharing options vary by plan and change over time. Before sharing anything, check what the other person will be able to see, and remove any file that contains private information. If you are unsure, share the finished text instead of the whole Project."}},{"@type":"Question","name":"What happens to my chats inside a Project?","acceptedAnswer":{"@type":"Answer","text":"Chats started inside a Project stay in that Project and can use its knowledge files and custom instructions. That is the main benefit: each new chat in the Project starts with the context already in place, instead of starting from nothing."}},{"@type":"Question","name":"Can I move a chat into a Project?","acceptedAnswer":{"@type":"Answer","text":"In general, chats can be organized into Projects from the chat list, though the exact steps depend on the current version. If you cannot move a chat, start a new chat inside the Project and paste the important context into it."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Claude Projects Explained: How to Organize Long Work</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">A Claude Project is a folder for one piece of long work: it holds your files, your instructions, and your chats in one place, so every new chat in the Project starts with the context already there. This guide explains what Projects are, how to add knowledge files and custom instructions, and when a Project helps and when a plain chat is enough.</p>
+<p>The problem Projects solve is repetition. Without them, every new chat starts blank. If you are writing a book, researching a topic, or running a repeated task, you end up pasting the same background into every conversation: the same files, the same instructions, the same explanation of what you are doing. A Project removes that repetition by keeping the background in one place that every chat in the Project can use.</p>
+<p>Think of a Project as a desk drawer for one job. Inside the drawer are the reference files, a note about how you want the work done, and all the conversations about that job. When you sit down to work, everything is already there. The rest of this guide explains how to set that drawer up and how to keep it useful.</p>
+<div class="warn">Project features, limits, and sharing options vary by plan and change between updates, so the steps in this guide are described in general terms. If something looks different on your screen, check the current version. Never upload files with personal details, account numbers, or other people's private information to a Project.</div>
+<h2>What Projects are</h2>
+<p>A Project is a workspace inside Claude for one ongoing piece of work. It has three parts: knowledge files, custom instructions, and the chats that belong to it. Knowledge files are the documents you upload so Claude can refer to them. Custom instructions are standing directions, such as the tone to use or the audience to write for. Chats inside the Project can use both, which means each new conversation starts with the background already in place.</p>
+<p>Projects are best for work that stretches over days or weeks, or for tasks you repeat often. Writing a book, planning a course, researching a topic, or preparing a regular report are all good fits. The common thread is that the work has background material and standing rules that would be tedious to repeat in every chat. If a task has no background and no rules, it probably does not need a Project.</p>
+<h2>Adding knowledge files</h2>
+<p>Knowledge files are the reference material for your Project: documents, notes, spreadsheets, or any file the work depends on. Once a file is added, chats inside the Project can read it and answer questions about it, quote from it, and use it as the basis for drafts. This is what makes a Project feel different from a plain chat: the chatbot already knows your material.</p>
+<p>Add files with a light hand. A small set of relevant files works better than a large pile. Before adding a file, ask whether the work actually needs it. Remove files that are out of date, and replace a draft with the final version when one exists. If a file contains anything private, clean it first or leave it out entirely, since anything in a Project can be read by every chat inside it.</p>
+<h2>Custom instructions</h2>
+<p>Custom instructions are standing directions that apply to every chat in the Project. They are the place to say things you would otherwise repeat: the tone to use, the audience to write for, the format you prefer, or the rules to follow. A good set of instructions is short and specific. "Write in a plain, friendly style for adult beginners. Use short paragraphs and everyday words. Never invent facts or statistics." is a better set of instructions than a long list of vague wishes.</p>
+<p>Instructions work best when they describe outcomes rather than processes. Say what a good answer looks like, not how Claude should think. It also helps to include anything Claude should never do, such as inventing quotes or using jargon. You can change the instructions at any time, and it is worth revising them after a few chats, once you see which directions are actually being followed and which are being ignored.</p>
+<h2>When Projects help</h2>
+<p>Projects help most with long, messy work. Writing a book is the classic example: the Project holds your notes, your outline, and your drafts, and every chat knows the characters, the setting, and the style. Research is another: the Project holds your sources, and each chat can compare them, summarize them, or find a specific claim. Repeated tasks are a third: if you write the same kind of report every month, a Project can hold the template, the standing instructions, and last month's version.</p>
+<p>The test is simple. If you find yourself pasting the same background into chat after chat, that background belongs in a Project. If you keep re-explaining the same rules, those rules belong in the custom instructions. A Project earns its place the second time you would otherwise have repeated yourself.</p>
+<h2>When a plain chat is enough</h2>
+<p>Not every task needs a Project, and making one for a small task adds work instead of saving it. A one-off question, a single email, a quick brainstorm, or a short explanation are all better in a plain chat. Setting up a Project for those is like opening a filing cabinet to store one letter.</p>
+<p>A plain chat is also the right choice when you are exploring and do not yet know what the work will become. Start in a plain chat, see where the conversation goes, and only create a Project once the task has a shape: files worth keeping, rules worth repeating, and more chats to come. Many good Projects start as a plain chat that grew into something bigger.</p>
+<h2>Setting up your first Project</h2>
+<p>Setting up a Project takes a few minutes. Create the Project and give it a clear name, one that tells future-you what it is for. Then add the knowledge files the work needs, starting with the most important one or two. Then write the custom instructions: a few sentences covering tone, audience, format, and anything to avoid. Then start a chat inside the Project and test it with a real question.</p>
+<p>The test chat matters. Ask something that needs the files, such as "summarize the main argument of the document I uploaded" or "draft the next section in the style of the notes." If the answer shows that Claude is using the files and following the instructions, the Project is set up well. If it is not, the fix is usually simpler instructions or fewer, better-chosen files.</p>
+<h2>Keeping a Project tidy</h2>
+<p>A Project is only as good as its contents, and contents go stale. Set a habit of tidying it every so often: remove files that are out of date, replace drafts with final versions, and update the instructions to match what you have learned. A Project with old files and forgotten instructions will give answers based on material you no longer trust.</p>
+<p>It also helps to keep the chat list tidy. Give important chats a clear purpose, and delete the ones that were dead ends. When a Project is finished, decide what to do with it: keep it as a record, or delete it if the work is done and the files live elsewhere. A tidy Project stays useful; a neglected one becomes a drawer full of things you no longer recognize.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Do I need a paid plan to use Projects?</h3><p>Availability and limits vary by plan and change over time, so check the current plan details for your account. In general, the idea is the same on every plan: a Project is a folder that keeps files, instructions, and chats for one piece of work together.</p></div>
+<div class="faq"><h3>How many files can I add to a Project?</h3><p>Limits on the number and size of files exist and change over time. The practical advice is to add only the files the work actually needs. A small set of relevant files works better than a large pile of maybe-useful ones.</p></div>
+<div class="faq"><h3>Can I share a Project with someone else?</h3><p>Sharing options vary by plan and change over time. Before sharing anything, check what the other person will be able to see, and remove any file that contains private information. If you are unsure, share the finished text instead of the whole Project.</p></div>
+<div class="faq"><h3>What happens to my chats inside a Project?</h3><p>Chats started inside a Project stay in that Project and can use its knowledge files and custom instructions. That is the main benefit: each new chat in the Project starts with the context already in place, instead of starting from nothing.</p></div>
+<div class="faq"><h3>Can I move a chat into a Project?</h3><p>In general, chats can be organized into Projects from the chat list, though the exact steps depend on the current version. If you cannot move a chat, start a new chat inside the Project and paste the important context into it.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/how-to-use-claude-for-beginners/">How to Use Claude</a> · <a href="https://noryvello.github.io/claude-for-research/">Use Claude for Research</a> · <a href="https://noryvello.github.io/claude-artifacts-explained/">Claude Artifacts Explained</a> · <a href="https://noryvello.github.io/how-to-build-a-prompt-library/">Build Your Own Prompt Library</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

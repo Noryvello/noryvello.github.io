@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Write Prompts for AI Image Generators | Noryvello</title>
+<meta name="description" content="Learn the seven parts of a strong image prompt — subject, action, setting, style, lighting, camera, and mood — with ten worked prompts and fixes for common bad results.">
+<link rel="canonical" href="https://noryvello.github.io/how-to-write-image-generation-prompts/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Write Prompts for AI Image Generators">
+<meta property="og:description" content="A plain guide to writing image prompts that give you the picture you actually imagined.">
+<meta property="og:url" content="https://noryvello.github.io/how-to-write-image-generation-prompts/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long should an image prompt be?","acceptedAnswer":{"@type":"Answer","text":"Most good prompts are one to three sentences, or about fifteen to fifty words. Shorter prompts give the generator more freedom, while longer prompts give it more to follow, so aim for enough detail to describe the subject, setting, style, lighting, and camera view, and stop when every important part is covered."}},{"@type":"Question","name":"Do I need to use commas in an image prompt?","acceptedAnswer":{"@type":"Answer","text":"Commas are a handy way to separate the parts of a prompt, but they are not required. A plain sentence works just as well, and what matters most is that each part of the image is described in clear words."}},{"@type":"Question","name":"Why does the same prompt give different images each time?","acceptedAnswer":{"@type":"Answer","text":"Image generators start from random noise and build the picture step by step, so the same words can lead to a different result on every run. If you want the same picture again, most tools let you reuse a seed value, which fixes the starting point and makes the result repeatable."}},{"@type":"Question","name":"What should I do when the generator ignores part of my prompt?","acceptedAnswer":{"@type":"Answer","text":"First, shorten the prompt so the ignored part stands out, then move it closer to the start and describe it with simpler, more concrete words. If it still fails, split the idea into two prompts and generate the parts separately."}},{"@type":"Question","name":"Can I copy a prompt that someone else used?","acceptedAnswer":{"@type":"Answer","text":"Yes, studying and adapting other people's prompts is a normal way to learn, and changing the subject, style, or setting makes the result your own. Keep in mind that the same prompt will still produce a different image for you, because every generation starts fresh."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How to Write Prompts for AI Image Generators</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">A good image prompt describes the subject, the action, the setting, the style, the lighting, the camera view, and the mood, in that order of importance. You do not need fancy vocabulary, just clear concrete words that say what you want to see. This guide explains each part, shows ten worked prompts that change one part at a time, and gives fixes for the most common bad results.</p>
+<p>An AI image generator turns words into pictures, but it cannot read your mind. When you type "a dog", it has to guess the breed, the pose, the place, the light, and the style, and its guess is rarely the picture you had in mind. The gap between a vague prompt and a clear one is usually the gap between a disappointing image and a useful one.</p>
+<p>The good news is that prompt writing is a learnable skill, and it is mostly about being specific in the right places. You do not need to know photography jargon or art history. You need a simple checklist of parts, the habit of changing one thing at a time, and a few fixes for the results that go wrong.</p>
+<div class="warn">Image generators are unpredictable by design: the same prompt can produce a different picture on every run, and small wording changes can shift the whole image. Treat every prompt as a starting point, not a guarantee, and expect to generate several versions before you keep one.</div>
+<h2>What an image prompt actually is</h2>
+<p>An image prompt is a description of a picture that does not exist yet. The generator reads your words, matches them against patterns it learned from millions of image-and-text pairs, and builds a new picture from scratch. It does not search the internet for a photo, and it does not copy a single training image. It invents.</p>
+<p>That invention is both the strength and the weakness of the tool. It can combine things that have never been photographed together, like a lighthouse made of glass on a desert dune. But it also fills every gap in your description with its own guess, and those guesses follow the most common patterns in its training data. If you say "a doctor", it will picture whatever a doctor most often looked like in the images it learned from. If you want something different, you have to say so.</p>
+<p>Think of the prompt as a brief you hand to an illustrator who works very fast but asks no questions. The illustrator will draw exactly what you describe and invent the rest. Your job is to describe the parts that matter and leave the rest deliberately vague, so the generator has room to be creative where you do not care.</p>
+<h2>The seven parts of a strong image prompt</h2>
+<p>Every strong prompt covers some or all of seven parts. You do not need all seven every time, but checking them off before you generate will catch most of the vagueness that ruins results.</p>
+<ul>
+<li><strong>Subject:</strong> the main thing in the picture. Name it concretely: not "an animal" but "a ginger cat", not "a building" but "a small white cottage with a thatched roof". Add one or two details that make it specific, like age, colour, or material.</li>
+<li><strong>Action:</strong> what the subject is doing. A still subject is fine, but an action adds life: "sitting on a windowsill", "pouring tea", "running through autumn leaves". If the subject is a person, the action often includes the expression too, like "smiling at the camera" or "looking out to sea".</li>
+<li><strong>Setting:</strong> where the picture happens. A setting can be a place, a time of day, or a season: "in a busy market at dusk", "on a quiet beach in winter", "inside a warm kitchen". The setting does much of the work of making an image feel real.</li>
+<li><strong>Style:</strong> how the picture should look. This is where you name the medium or the look: "photorealistic", "watercolour painting", "flat vector illustration", "35mm film photograph", "children's book illustration". Without a style, the generator picks its own default, which is often a glossy, generic look.</li>
+<li><strong>Lighting:</strong> the light in the scene. Lighting words change the mood more than almost anything else: "soft morning light", "warm golden hour light", "harsh midday sun", "candlelight", "neon glow at night". Even one lighting word can transform a flat image.</li>
+<li><strong>Camera:</strong> the viewpoint. Camera words tell the generator where the viewer stands: "close-up", "wide shot", "bird's-eye view", "low angle", "eye-level portrait", "shot on a wide-angle lens". They also control how much of the scene is visible.</li>
+<li><strong>Mood:</strong> the feeling of the picture. Mood words are short and simple: "calm", "joyful", "mysterious", "lonely", "festive", "peaceful". They guide the colours, the light, and the composition toward a feeling rather than a list of objects.</li>
+</ul>
+<p>When you are starting out, write your prompts in this order: subject first, then action, then setting, then style, then lighting, then camera, then mood. Putting the subject first matters, because most generators pay the most attention to the words at the start of a prompt.</p>
+<h2>How to put the parts together</h2>
+<p>A full prompt reads like a short descriptive sentence, with the parts separated by commas. Here is one built from all seven parts: "A young woman in a yellow raincoat standing on a stone bridge, holding an umbrella, over a river in a small town at dusk, photorealistic, soft blue evening light, wide shot, quiet and thoughtful mood."</p>
+<p>That prompt is about forty words long, and every word earns its place. Compare it with the starting point, "a woman on a bridge", and you can see how much information was missing: her clothes, her umbrella, the town, the time of day, the style, the light, the framing, and the feeling.</p>
+<p>You do not always need forty words. A simple prompt like "A red bicycle leaning against a wooden fence in a small garden, morning light, photograph" can work well, because the subject, setting, lighting, and style are all there. The rule is to cover the parts that matter for the picture you want, and to leave out parts you are happy to leave to chance.</p>
+<p>One habit that helps is writing the prompt, then reading it back and asking one question for each part: do I know what the subject is, what it is doing, where it is, how it should look, what the light is, where the camera stands, and how it should feel? Any part you cannot answer is a part the generator will guess.</p>
+<h2>Ten worked prompts: change one part at a time</h2>
+<p>The fastest way to learn how each part works is to change one part at a time and watch what moves. Here is a base prompt, followed by ten versions that each change exactly one part. Try them yourself and compare the results side by side.</p>
+<p><strong>Base prompt:</strong> "A red bicycle leaning against a wooden fence in a small garden, morning light, photograph, eye-level view, calm mood."</p>
+<ol>
+<li><strong>Change the subject colour:</strong> "A blue bicycle leaning against a wooden fence in a small garden, morning light, photograph, eye-level view, calm mood." Only the bicycle changes colour; everything else stays the same, which is how you know the colour word is doing its job.</li>
+<li><strong>Change the action:</strong> "A red bicycle lying on its side on the grass in a small garden, morning light, photograph, eye-level view, calm mood." The scene shifts from tidy to casual, and the mood softens, even though the mood word did not change.</li>
+<li><strong>Change the setting:</strong> "A red bicycle leaning against a wooden fence on a quiet seaside promenade, morning light, photograph, eye-level view, calm mood." The garden becomes the coast, and the whole background rebuilds itself around the new place.</li>
+<li><strong>Change the style:</strong> "A red bicycle leaning against a wooden fence in a small garden, morning light, watercolour painting, eye-level view, calm mood." The same scene becomes a painting, with softer edges and visible brush texture.</li>
+<li><strong>Change the lighting:</strong> "A red bicycle leaning against a wooden fence in a small garden, golden hour light, photograph, eye-level view, calm mood." Morning light becomes warm evening light, and the colours turn amber and gold.</li>
+<li><strong>Change the camera view:</strong> "A red bicycle leaning against a wooden fence in a small garden, morning light, photograph, bird's-eye view, calm mood." The viewpoint moves overhead, so the garden layout and the bicycle's shadow become part of the picture.</li>
+<li><strong>Change the mood:</strong> "A red bicycle leaning against a wooden fence in a small garden, morning light, photograph, eye-level view, lonely mood." The mood word alone darkens the colours and empties the scene of small cheerful details.</li>
+<li><strong>Change the time of day:</strong> "A red bicycle leaning against a wooden fence in a small garden, moonlight, photograph, eye-level view, calm mood." Night replaces morning, and the generator reworks the light, the sky, and the shadows.</li>
+<li><strong>Add a detail to the subject:</strong> "A red bicycle with a wicker basket full of wildflowers leaning against a wooden fence in a small garden, morning light, photograph, eye-level view, calm mood." One added detail gives the picture a story and a focal point.</li>
+<li><strong>Change the composition:</strong> "A red bicycle leaning against a wooden fence in a small garden, morning light, photograph, close-up of the handlebars, calm mood." The close-up crops the scene to a single detail, turning a landscape into a study of one object.</li>
+</ol>
+<p>Notice how each change is small on the page and large in the picture. That is the core skill: knowing which word to change when the result is close but not right, instead of rewriting the whole prompt and losing the parts that were working.</p>
+<h2>Common fixes for bad results</h2>
+<p>Most bad results come from a small set of problems, and each one has a simple fix. Work through this list when an image disappoints you.</p>
+<ul>
+<li><strong>The image is generic and dull.</strong> Add a style word and a lighting word. "Photorealistic, soft window light" or "vintage film photograph, warm afternoon light" will do more than ten extra adjectives about the subject.</li>
+<li><strong>The subject looks wrong or melts.</strong> Simplify the prompt. Long prompts with many objects overload the generator, so remove the least important details and generate again with fewer things to draw.</li>
+<li><strong>Hands and faces look strange.</strong> This is a known weakness of image generators. Ask for a wider shot, a side view, or a subject turned away, or crop the problem out of the frame by asking for a close-up of a different detail.</li>
+<li><strong>The text in the image is garbled.</strong> Most generators still struggle with words inside pictures. Keep any text short, put it in quotation marks in the prompt, and expect to generate several versions. For a sign or a label, you may need to add the text later with an image editor.</li>
+<li><strong>The generator ignored part of the prompt.</strong> Move the ignored part to the front of the prompt, describe it in simpler words, and remove competing details. If a prompt asks for three unusual things at once, the generator will usually deliver one or two and drop the rest.</li>
+<li><strong>The colours are muddy or washed out.</strong> Name the colours you want and the lighting that produces them: "vivid green and gold, bright sunlight" or "muted blue-grey tones, overcast light". Colour words near the start of the prompt carry more weight.</li>
+<li><strong>Every result looks the same.</strong> Change the style word or the camera word, not just the subject. Style and viewpoint are the biggest levers for variety, and a new combination of the two will usually break the pattern.</li>
+</ul>
+<h2>Words that help, words that hurt</h2>
+<p>Concrete words help; vague words hurt. "A small wooden rowing boat on a still lake at dawn" gives the generator something to build, while "a nice boat in a beautiful place" gives it almost nothing. Adjectives like "nice", "beautiful", "amazing", and "great" are so broad that they barely change the result, and they waste space that a concrete detail could use.</p>
+<p>Numbers help when they are simple: "three candles", "two chairs", "a row of five trees". Generators handle small counts reasonably well, though they often miscount larger ones, so keep counts low and do not rely on exact numbers for anything important.</p>
+<p>Contradictions hurt. Asking for "bright night" or "a tiny giant" confuses the generator, because the two words pull the image in opposite directions. If a prompt contains a contradiction, the generator will usually satisfy one side and ignore the other, and you cannot predict which side wins.</p>
+<p>Negative words are unreliable. Writing "no people" or "without text" sometimes works and sometimes does the opposite, because the generator still has to think about people or text to know what to avoid. It is usually better to describe what you do want and leave the unwanted thing unmentioned.</p>
+<h2>A simple workflow for better results</h2>
+<p>Good prompt writing is a loop, not a single attempt. Start with a short prompt that covers the subject, setting, and style, and generate a first batch of images. Pick the one that is closest to what you want, even if it is far from perfect, and look at it carefully: what is right, and what is wrong?</p>
+<p>Then change one thing. If the light is wrong, change only the lighting words. If the framing is wrong, change only the camera words. Generate again and compare. When you change one part at a time, you learn what each word does, and you keep the parts that were already working.</p>
+<p>Keep a small notebook of prompts that worked, with a note about what made them work. Over time you will build a personal library of style words, lighting words, and camera words that you trust, and new prompts will start from a stronger place. The best prompt writers are not people with a magic vocabulary; they are people who test, compare, and remember what worked.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How long should an image prompt be?</h3><p>Most good prompts are one to three sentences, or about fifteen to fifty words. Shorter prompts give the generator more freedom, while longer prompts give it more to follow, so aim for enough detail to describe the subject, setting, style, lighting, and camera view, and stop when every important part is covered.</p></div>
+<div class="faq"><h3>Do I need to use commas in an image prompt?</h3><p>Commas are a handy way to separate the parts of a prompt, but they are not required. A plain sentence works just as well, and what matters most is that each part of the image is described in clear words.</p></div>
+<div class="faq"><h3>Why does the same prompt give different images each time?</h3><p>Image generators start from random noise and build the picture step by step, so the same words can lead to a different result on every run. If you want the same picture again, most tools let you reuse a seed value, which fixes the starting point and makes the result repeatable.</p></div>
+<div class="faq"><h3>What should I do when the generator ignores part of my prompt?</h3><p>First, shorten the prompt so the ignored part stands out, then move it closer to the start and describe it with simpler, more concrete words. If it still fails, split the idea into two prompts and generate the parts separately.</p></div>
+<div class="faq"><h3>Can I copy a prompt that someone else used?</h3><p>Yes, studying and adapting other people's prompts is a normal way to learn, and changing the subject, style, or setting makes the result your own. Keep in mind that the same prompt will still produce a different image for you, because every generation starts fresh.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/how-ai-image-generators-work/">How AI Image Generators Work</a> · <a href="https://noryvello.github.io/ai-image-prompt-examples/">50 AI Image Prompt Examples</a> · <a href="https://noryvello.github.io/ai-image-styles-explained/">AI Image Styles Explained</a> · <a href="https://noryvello.github.io/gemini-image-generation-guide/">How to Generate Images with Gemini</a> · <a href="https://noryvello.github.io/midjourney-for-beginners/">Midjourney for Beginners</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

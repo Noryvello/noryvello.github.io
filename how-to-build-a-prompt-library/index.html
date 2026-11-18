@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Build Your Own Prompt Library | Noryvello</title>
+<meta name="description" content="Build your own prompt library step by step, with a starter folder structure, a simple spreadsheet layout, naming rules, and five starter prompts.">
+<link rel="canonical" href="https://noryvello.github.io/how-to-build-a-prompt-library/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Build Your Own Prompt Library">
+<meta property="og:description" content="Set up a prompt library you can actually reuse, with folders, naming, and testing.">
+<meta property="og:url" content="https://noryvello.github.io/how-to-build-a-prompt-library/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where should I keep my prompt library?","acceptedAnswer":{"@type":"Answer","text":"Keep it wherever you can open it in seconds: a notes app, a plain text document, a spreadsheet, or a folder of small files. The best home is the one you already use every day, because a library you cannot reach quickly is a library you will not use."}},{"@type":"Question","name":"How many prompts do I need to start?","acceptedAnswer":{"@type":"Answer","text":"Five is enough to start. Save the prompts you already use most, add new ones only when a prompt proves itself, and let the library grow from real use rather than from a big collecting effort."}},{"@type":"Question","name":"How do I know a prompt is worth saving?","acceptedAnswer":{"@type":"Answer","text":"Save a prompt when it has given you a good answer more than once, on different days, with different inputs. A prompt that worked once by luck is not worth keeping, but a prompt that works three times in a row has earned its place."}},{"@type":"Question","name":"Should I share my prompt library?","acceptedAnswer":{"@type":"Answer","text":"Sharing is a good idea if you strip out anything personal first, including names, private details, and anything tied to your work or accounts. A shared library with short notes on what each prompt is for helps everyone who uses it."}},{"@type":"Question","name":"How often should I update my library?","acceptedAnswer":{"@type":"Answer","text":"A quick review every month or two is enough. Retire prompts you no longer use, update the ones that have drifted out of date, and save any new prompt that has proved itself since your last review."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How to Build Your Own Prompt Library</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">A prompt library is a small collection of prompts you have tested and saved, organized by task so you can reuse them instead of starting from scratch. This guide shows you how to set one up with a simple folder structure and a spreadsheet, how to name and version your prompts, and how to test them before you trust them. It ends with five starter prompts you can copy in today.</p>
+<p>Everybody who uses AI regularly ends up rewriting the same prompts. You work out a good way to ask for a summary, then a week later you need it again and you cannot remember the exact wording. You build a great prompt for drafting emails, then you lose it in a long chat history. A prompt library fixes this by giving your best prompts a permanent home.</p>
+<p>A library does not need to be large or fancy. Five well-chosen prompts, saved where you can find them in seconds, are worth more than a hundred prompts buried in a document you never open. This guide walks through the whole setup: organizing, naming, versioning, testing, and sharing, plus a starter folder structure, a spreadsheet layout, and five prompts to begin with.</p>
+<div class="warn">Keep private information out of your library. Prompts that contain real names, addresses, account details, or work documents should never be saved as-is, and never shared. Replace real details with placeholders before you store or share any prompt.</div>
+<h2>What a prompt library is and why it saves time</h2>
+<p>A prompt library is simply a collection of prompts that worked, kept in one place with a note about what each one does. It is not a pile of prompts you copied from the internet. It is a working tool built from your own experience: prompts you have actually used, tested, and improved. When a task comes up again, you open the library, copy the prompt, fill in the blanks, and send it.</p>
+<p>The time saving comes from two places. First, you stop rewriting prompts from scratch, which is slower than it feels, because good wording takes several tries. Second, you stop getting bad answers from rushed prompts, because the saved version is the one you already fixed. Over a few weeks, the library becomes a quiet habit: check the library first, write a new prompt only when nothing fits. That habit alone will make your AI use faster and more consistent.</p>
+<h2>Organize by task, not by tool</h2>
+<p>The most useful way to organize a library is by what the prompt does, not by which chatbot you used it with. Most good prompts work across chatbots with small changes, so sorting by tool creates duplicate folders for the same job. Sorting by task means each folder answers a real need: writing, planning, learning, editing, or researching.</p>
+<p>Start with a short list of tasks you actually do. If you write emails every day, you need a writing folder. If you study, you need a learning folder. If you plan projects, you need a planning folder. Five or six task folders are plenty to begin with, and you can add more only when a folder gets crowded. A good test for any folder name is whether you could guess where a prompt lives without thinking. If you have to hunt, the folders are wrong, and you should rename or merge them until the structure feels obvious.</p>
+<h2>A starter folder structure</h2>
+<p>If you keep your library as files or folders, here is a simple structure that works well. Create one main folder called Prompt Library. Inside it, make one folder for each task: Writing, Planning, Learning, Editing, and Everyday. Each prompt lives in its own small file inside the folder it belongs to, named after what it does. For example, the Writing folder might hold a file called email follow-up, and the Learning folder might hold one called explain a concept simply.</p>
+<p>Keep the structure flat. One level of task folders is enough, and deep nesting makes prompts harder to find. If one folder grows past about ten prompts, split it by a smaller task, such as splitting Writing into Emails and Drafts. Add one extra folder called Archive for prompts you no longer use but do not want to delete. Moving a prompt to Archive keeps your working folders clean without losing anything, and you can always bring a prompt back if you need it again.</p>
+<h2>Name every prompt so you can find it later</h2>
+<p>A prompt you cannot find is a prompt you do not have, so naming matters more than it seems. Give every prompt a short name that says what it does, in plain words, starting with a verb. Names like <code>summarize a long article</code>, <code>draft a polite follow-up email</code>, and <code>turn notes into a study plan</code> tell you everything at a glance. Names like <code>prompt 7</code> or <code>good one</code> tell you nothing, and you will stop trusting the library if you have to open every file to find the right one.</p>
+<p>Use the same style for every name: lowercase words, a verb first, and no abbreviations that only you understand today. If a prompt has a special version, add a short tag at the end, such as <code>short version</code> or <code>for beginners</code>. When you search your library, you will search by the words you would naturally type, so name prompts with the words you would search for. A few seconds spent naming saves minutes spent hunting.</p>
+<h2>Version your prompts when you improve them</h2>
+<p>Prompts get better over time. You add a line, change a word, or tighten the format, and the answers improve. The trouble is that a change can also make a prompt worse, and if you overwrote the old version, you have lost the one that worked. Versioning solves this by keeping the old version whenever you change a prompt.</p>
+<p>You do not need a complicated system. When you edit a prompt, save the new version with a simple number, such as <code>summarize a long article v2</code>, and keep v1 beside it. Add one line at the top saying what changed and why, such as <code>v2: added a word limit because answers were too long</code>. If the new version turns out worse, go back to the old one without any fuss. Over time, the version notes become a small record of what you learned about prompting, which is useful in its own right.</p>
+<h2>Test a prompt before you trust it</h2>
+<p>A prompt earns its place in the library by working more than once. A prompt that gave a great answer one time might have been luck, a fluke of the topic, or a good day for the chatbot. Before you save a prompt, run it three times with different inputs and check whether the answers stay good. If they do, the prompt is solid. If they vary wildly, the prompt needs tightening before it is worth keeping.</p>
+<p>Testing also means checking the failure modes. Try the prompt with a hard input, a vague input, and an empty input, and see what comes back. A good prompt handles weak inputs gracefully, asking for more detail or giving a careful partial answer, instead of inventing confident nonsense. Write a short note with each saved prompt about what you tested and what to watch for. That note is what makes the library trustworthy months later, when you no longer remember the details of how a prompt behaves.</p>
+<h2>A simple spreadsheet layout for your library</h2>
+<p>If you prefer a spreadsheet to folders, one sheet with a few columns is all you need. Set up the columns in this order: name, task, prompt text, when to use it, and notes. Each row is one prompt. The name column holds the short verb-first name, the task column holds the folder name it would belong to, and the prompt text column holds the full prompt with its blanks marked in square brackets.</p>
+<p>The last two columns are what make the sheet useful. The when to use it column holds one sentence describing the situation the prompt fits, such as <code>use after reading a long report</code>. The notes column holds the version history and any test results, such as <code>v2, works best with short inputs</code>. Keep the sheet sorted by task so related prompts sit together, and use the search function instead of scrolling when the list grows. A spreadsheet library is easy to share, easy to back up, and easy to search, which is why many people prefer it to folders.</p>
+<h2>Sharing your library with others</h2>
+<p>A prompt library becomes more valuable when it is shared, because other people find gaps you missed and add prompts you never thought of. Sharing works best as a small, deliberate act: pick the prompts that are genuinely useful, clean them up, and share them with a short note about what each one does. A shared library of ten good prompts helps a team more than a shared folder of a hundred untested ones.</p>
+<p>Before you share anything, strip out personal details and anything tied to your work, your accounts, or other people. Replace real examples with made-up ones, and remove any prompt that only makes sense with private context. If you share inside a team, agree on who can add prompts and how new prompts get tested before they are added. A shared library with no rules quickly fills with clutter, but one with a simple rule, test it three times before adding it, stays clean and useful for everyone.</p>
+<h2>Five starter prompts to copy into your library</h2>
+<p>Here are five original starter prompts, one for each common task, ready to copy into your library and adapt to your own needs. Each one has square brackets marking the parts you fill in. Try each one a few times before you save it, and adjust the wording until the answers match what you want.</p>
+<ol>
+<li><strong>Summarize a long article:</strong> Summarize the article below in [number] short bullet points, keeping the main argument and the three most important facts. Use plain language and skip any detail that does not change the meaning.</li>
+<li><strong>Draft a polite follow-up email:</strong> Draft a polite follow-up email to [person] about [topic]. Remind them of our last message on [date], ask for an update, and keep the tone friendly and professional. The email should be under [number] words.</li>
+<li><strong>Explain a concept simply:</strong> Explain [concept] in simple words, as if to someone who has never heard of it. Start with a one-sentence definition, then give one everyday example, then list the two most common misunderstandings about it.</li>
+<li><strong>Turn notes into a study plan:</strong> Turn these notes into a study plan for [number] days. Group related ideas together, put the hardest topics first, and end each day with three short questions I can use to test myself.</li>
+<li><strong>Improve a draft:</strong> Read the draft below and suggest improvements. Point out any sentence that is unclear, any claim that needs support, and any part that could be shorter. Do not rewrite the whole draft, only list the changes you suggest.</li>
+</ol>
+<p>Once these five are in your library, the habit is set. Every time a prompt works well, save it. Every time you fix a prompt, save the new version. Within a month you will have a personal collection that fits your work better than any list you could download, because every prompt in it is one you have actually used.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Where should I keep my prompt library?</h3><p>Keep it wherever you can open it in seconds: a notes app, a plain text document, a spreadsheet, or a folder of small files. The best home is the one you already use every day, because a library you cannot reach quickly is a library you will not use.</p></div>
+<div class="faq"><h3>How many prompts do I need to start?</h3><p>Five is enough to start. Save the prompts you already use most, add new ones only when a prompt proves itself, and let the library grow from real use rather than from a big collecting effort.</p></div>
+<div class="faq"><h3>How do I know a prompt is worth saving?</h3><p>Save a prompt when it has given you a good answer more than once, on different days, with different inputs. A prompt that worked once by luck is not worth keeping, but a prompt that works three times in a row has earned its place.</p></div>
+<div class="faq"><h3>Should I share my prompt library?</h3><p>Sharing is a good idea if you strip out anything personal first, including names, private details, and anything tied to your work or accounts. A shared library with short notes on what each prompt is for helps everyone who uses it.</p></div>
+<div class="faq"><h3>How often should I update my library?</h3><p>A quick review every month or two is enough. Retire prompts you no longer use, update the ones that have drifted out of date, and save any new prompt that has proved itself since your last review.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/prompt-formulas-that-work/">7 Prompt Formulas That Work</a> · <a href="https://noryvello.github.io/ai-prompt-templates-for-everyday-tasks/">40 AI Prompt Templates for Everyday Tasks</a> · <a href="https://noryvello.github.io/what-is-prompt-engineering/">What Is Prompt Engineering?</a> · <a href="https://noryvello.github.io/how-to-write-better-ai-prompts/">How to Write Better AI Prompts</a> · <a href="https://noryvello.github.io/claude-projects-explained/">Claude Projects Explained</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

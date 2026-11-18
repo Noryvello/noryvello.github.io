@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Use Claude for Research and Long Documents | Noryvello</title>
+<meta name="description" content="Use Claude to read long documents, pull out key points, compare sections, and build outlines from your sources — with honest advice on checking every fact.">
+<link rel="canonical" href="https://noryvello.github.io/claude-for-research/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Use Claude for Research and Long Documents">
+<meta property="og:description" content="A practical guide to using Claude as a research assistant for long documents.">
+<meta property="og:url" content="https://noryvello.github.io/claude-for-research/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can Claude read a whole book?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude can work with very long documents, but a whole book is best handled in parts, such as a chapter at a time. Summarise each part first, then ask deeper questions about the chapters that matter most to you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I check a quote Claude gives me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask Claude for the exact wording and the section it comes from, then open the original document and find the passage yourself. Copy the quote from the source, never from the chat, because AI quotes can contain small errors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I upload several documents at once?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can bring more than one document into a conversation and ask Claude to compare them, find where they agree, or point out where they disagree. Keep the documents clearly labelled so you know which claim came from which source."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my uploaded document private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Treat any AI chat as a place you should not put sensitive material. Do not upload confidential work documents, private personal records, or anything you would not want stored on a third-party service."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if Claude says it cannot find something in my document?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rephrase the question, narrow it to one section, or quote a few words from the passage yourself. If it still cannot find the material, search the document directly, because the passage may be worded differently from how you remember it."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How to Use Claude for Research and Long Documents</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">Claude can read long documents, pull out the key points, and help you compare ideas across sources, which makes it a useful research assistant. You upload a file or paste text, then ask focused questions about what it says. The results still need checking against the original, because AI summaries can miss details or misstate them.</p>
+<p>Research used to mean hours of reading before you could even tell whether a document was useful. A long report, a thesis chapter, or a dense policy paper can take a whole evening to get through, and much of that time goes to passages that turn out to be irrelevant. Claude changes the shape of that work: it can read the whole document for you and answer questions about it, so you can decide quickly where to spend your own reading time.</p>
+<p>This guide shows how to use Claude for research in a way that stays honest and reliable. You will learn how to upload documents, ask for summaries that match your purpose, track down specific claims, compare sections, and turn a pile of sources into a clear outline. It also covers what Claude cannot do, because knowing the limits matters as much as knowing the tricks.</p>
+<div class="warn">Claude's answers about a document are only as reliable as the document and the question. It can misquote a passage, blend two ideas together, or invent a detail that sounds right. Always check important quotes and facts against the original source before you use them, and never upload private or confidential documents into any AI chat.</div>
+<h2>Start by uploading the document the right way</h2>
+<p>Begin with a single document and a clear goal. Upload the file or paste the text into a new chat, then tell Claude what the document is and what you are trying to find out. A short opening message works well, such as explaining that the file is a research report and that you want to understand its main argument and its evidence.</p>
+<p>Very long documents can be handled in parts. If a file is hundreds of pages, ask for a chapter-by-chapter summary first, then go deeper into the chapters that matter. This keeps the conversation focused and makes it easier to spot where Claude's summary is thin. Working through a document in stages also helps you keep track of which claims came from which part.</p>
+<p>Scanned documents and image-based PDFs can be harder for Claude to read, because the text may not be clean. If the answers look confused or Claude says it cannot read parts of the file, try a version with selectable text, or paste the key sections yourself. A clean, readable file makes every later step more reliable.</p>
+<h2>Ask for a summary that fits your purpose</h2>
+<p>Not all summaries are equal. A one-paragraph overview suits a quick decision about whether a document is worth reading, while a section-by-section summary suits a document you plan to cite. Tell Claude which one you need, and say how long it should be. Asking for a summary in your own words also helps, because it forces the answer into plain language you can actually use.</p>
+<p>Good summary prompts name the angle you care about. Instead of asking for a general summary, try asking for the main argument, the evidence behind it, and what the author admits is uncertain. You can also ask what the document does not cover, which is often as revealing as what it does. A summary that lists the author's conclusions separately from their evidence is easier to check later.</p>
+<p>When the summary arrives, read it against the document's own headings and introduction. If a heading promises something the summary never mentions, ask about that section directly. Summaries are a map, not the territory, and a quick cross-check keeps you honest about what you have really learned.</p>
+<h2>Find specific claims and evidence</h2>
+<p>Research often comes down to one question: where exactly does the document say this? Claude can search the text you gave it and point you to the passage. Ask for the claim in the author's own words and ask which section it appears in, so you can open the original and confirm it yourself.</p>
+<p>Be specific about what counts as evidence. You can ask Claude to list every example the author gives for a particular claim, or to quote the sentence where a conclusion is stated. You can also ask it to distinguish between what the author proves, what the author assumes, and what the author merely suggests. These distinctions matter when you write about the document later.</p>
+<p>Quotes deserve special care. AI tools sometimes produce near-quotes that are slightly wrong — a word changed here, a clause dropped there. Treat every quote Claude gives you as a lead, not a finished citation. Open the original, find the passage, and copy the words from the source itself.</p>
+<h2>Compare sections and spot contradictions</h2>
+<p>Long documents often argue with themselves. An introduction may promise one thing while a later chapter quietly says another, and a careful reader notices the gap. Claude is good at this kind of comparison because it can hold the whole document in view at once. Ask it to compare two sections side by side, or to list points where the author's position seems to shift.</p>
+<p>You can also ask for a simple table of arguments for and against a position, drawn only from the document. This works well for policy papers and reports, where the same evidence is often presented from several angles. Ask Claude to keep each row tied to a specific section, so you can verify the table against the original.</p>
+<p>Contradictions are not always mistakes. Sometimes an author changes their mind in the course of a long argument, or presents a view in order to argue against it. When Claude flags a contradiction, read both passages yourself and decide what the author actually meant. The AI points; you judge.</p>
+<h2>Build an outline from your sources</h2>
+<p>Once you understand a document, the next step is often turning it into something of your own: an essay plan, a briefing note, or a literature review. Claude can help by grouping the ideas you found into themes and suggesting an order for them. Give it the points you care about and ask for an outline with a short note under each heading.</p>
+<p>Outlines work best when they are built from your notes, not from Claude's memory alone. Paste in the key quotes and ideas you collected, then ask Claude to arrange them into a logical structure and to flag where the argument is thin. A good follow-up question is which section needs more evidence, because that tells you where to read next.</p>
+<p>Keep the outline as your own document. Move headings around, cut what does not belong, and add your own judgement at every step. An outline that Claude drafted and you never questioned is just a summary in disguise, and it will show in the final work.</p>
+<h2>Prompt patterns that work well for research</h2>
+<p>A few reusable prompt patterns cover most research tasks. Keep them in a note file and adapt the wording to each document.</p>
+<ul>
+<li><strong>Summarise with structure:</strong> Summarise this document in five bullet points, then list the author's three strongest pieces of evidence.</li>
+<li><strong>Find and quote:</strong> Find every passage where the author discusses this topic, and quote the most important sentence from each one.</li>
+<li><strong>Compare two parts:</strong> Compare the introduction with the conclusion. What changed, and what stayed the same?</li>
+<li><strong>Challenge the argument:</strong> What are the weakest points in this argument, and what evidence would make it stronger?</li>
+<li><strong>Explain simply:</strong> Explain this section as if I were new to the subject, using an everyday example.</li>
+<li><strong>List what is missing:</strong> What questions does this document raise but not answer?</li>
+</ul>
+<p>Notice that each pattern asks for something checkable: a list, a quote, a comparison, or a gap. Vague prompts such as asking whether a document is good tend to produce vague answers. The more concrete the request, the more useful the reply, and the easier it is to verify.</p>
+<h2>What Claude cannot do for your research</h2>
+<p>Claude can only work with what you give it. It cannot fetch a paywalled article, check a library database, or read a book you have not uploaded. If a source is not in the conversation, Claude has no access to it, and any claim it makes about that source is guesswork. Keep your own library of sources and bring the text into the chat yourself.</p>
+<p>It also cannot verify facts. Claude may sound certain about a date, a name, or a statistic and still be wrong, because it predicts likely text rather than checking a database. For anything you plan to publish or submit, confirm the facts against a trusted source. This is especially important for numbers, names, and quotations.</p>
+<p>Finally, Claude cannot replace reading the original when the stakes are high. A summary is fine for deciding what to read, but a thesis, a legal brief, or a medical decision deserves your own eyes on the source. Use Claude to find the passages that matter, then read those passages yourself. That combination — AI speed plus human judgement — is where research with Claude works best.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Can Claude read a whole book?</h3><p>Claude can work with very long documents, but a whole book is best handled in parts, such as a chapter at a time. Summarise each part first, then ask deeper questions about the chapters that matter most to you.</p></div>
+<div class="faq"><h3>How do I check a quote Claude gives me?</h3><p>Ask Claude for the exact wording and the section it comes from, then open the original document and find the passage yourself. Copy the quote from the source, never from the chat, because AI quotes can contain small errors.</p></div>
+<div class="faq"><h3>Can I upload several documents at once?</h3><p>Yes, you can bring more than one document into a conversation and ask Claude to compare them, find where they agree, or point out where they disagree. Keep the documents clearly labelled so you know which claim came from which source.</p></div>
+<div class="faq"><h3>Is my uploaded document private?</h3><p>Treat any AI chat as a place you should not put sensitive material. Do not upload confidential work documents, private personal records, or anything you would not want stored on a third-party service.</p></div>
+<div class="faq"><h3>What if Claude says it cannot find something in my document?</h3><p>Rephrase the question, narrow it to one section, or quote a few words from the passage yourself. If it still cannot find the material, search the document directly, because the passage may be worded differently from how you remember it.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/how-to-use-claude-for-beginners/">How to Use Claude: A Beginner's Guide</a> · <a href="https://noryvello.github.io/claude-projects-explained/">Claude Projects Explained</a> · <a href="https://noryvello.github.io/claude-artifacts-explained/">Claude Artifacts Explained</a> · <a href="https://noryvello.github.io/how-to-prompt-ai-for-accurate-answers/">How to Prompt AI for More Accurate Answers</a> · <a href="https://noryvello.github.io/claude-prompts-for-writing/">30 Claude Prompts for Writing</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Write Better AI Prompts: 10 Rules That Work | Noryvello</title>
+<meta name="description" content="Ten practical rules for better AI prompts, each with a weak and a strong example: be specific, give context, set a role, state the format, and more.">
+<link rel="canonical" href="https://noryvello.github.io/how-to-write-better-ai-prompts/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Write Better AI Prompts: 10 Rules That Work">
+<meta property="og:description" content="Ten rules for writing AI prompts that get better answers, with weak and strong examples.">
+<meta property="og:url" content="https://noryvello.github.io/how-to-write-better-ai-prompts/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long should a prompt be?",
+      "acceptedAnswer": {"@type": "Answer", "text": "As long as it needs to be clear, and no longer. A quick question needs one sentence. A writing task may need three or four: the task, the context, the limits, and the format."}
+    },
+    {
+      "@type": "Question",
+      "name": "What if the answer is still weak after a good prompt?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Iterate. Tell the chatbot what to change, add a constraint, give an example, or rephrase the request. If it stays weak, split the task into smaller steps."}
+    },
+    {
+      "@type": "Question",
+      "name": "Should I always set a role?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Roles help when the tone, level, or angle matters — teaching, editing, coaching. For a quick factual question, a role adds nothing and can distract from the answer."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can I reuse prompts that work?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes, and you should. Save prompts that gave great answers, and reuse them as templates by swapping in the new topic. Over time you will build a small library of prompts you trust."}
+    },
+    {
+      "@type": "Question",
+      "name": "Is it safe to paste personal details into a prompt?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Remove names, addresses, account details, and other private information before pasting anything into a chatbot. Describe the situation in general terms instead."}
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How to Write Better AI Prompts: 10 Rules That Work</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">Better prompts are not longer prompts — they are clearer ones. These ten rules cover the habits that make the biggest difference, and each one comes with a weak example and a strong one so you can see the change.</p>
+<p>Most weak answers come from weak prompts, not weak chatbots. The good news is that the fixes are small and easy to learn. Each rule below is one habit; you do not need all ten at once.</p>
+<p>Read through them, then try one rule on a real task today. The examples are short on purpose — the point is the pattern, not the topic. Swap in your own task and the same pattern works.</p>
+<div class="warn">These rules improve your answers, but they do not make a chatbot reliable. AI can still invent facts, miss the point, or give outdated information, so check anything important against a trusted source.</div>
+<h2>Why Small Changes Matter</h2>
+<p>A chatbot can only work with the words you give it. Change the words and you change the answer — sometimes dramatically. Adding an audience, a length, or a format takes seconds and often turns a useless reply into a useful one. The ten rules below are ordered from the most basic to the most overlooked. The first five shape the prompt itself; the last five shape how you work with the answer. Together they cover almost everything that separates a frustrating chatbot session from a productive one.</p>
+<h2>Rule 1: Be Specific</h2>
+<p>Weak: "Write about healthy eating." Strong: "Write three short tips for eating more vegetables when you cook for one person, with no special equipment." The weak prompt leaves everything to guesswork — audience, length, angle. The strong prompt names the topic, the number of tips, the situation, and a constraint. Specificity is the single most powerful rule: if your answer is vague, your prompt probably was too. Ask yourself what a helpful stranger would need to know to answer well, and put that in the prompt.</p>
+<h2>Rule 2: Give Context</h2>
+<p>Weak: "Help me plan a talk." Strong: "Help me plan a ten-minute talk for new volunteers at a food bank, explaining what we do and how they can help on their first day." Context tells the chatbot why the answer matters and who it is for. Without it, the chatbot guesses — and the guess is usually generic. A sentence or two of background is enough: the occasion, the audience, and the goal. You already know this information; the chatbot does not, and it cannot ask you for it.</p>
+<h2>Rule 3: Set a Role</h2>
+<p>Weak: "Explain interest rates." Strong: "You are a patient teacher explaining interest rates to a teenager who has just opened a first savings account. Use one everyday example." A role changes the tone, the level, and the angle of the answer. Teacher, editor, coach, critic — each one steers the reply in a different direction. Roles work best when they are specific: "patient teacher" beats "teacher," and "strict editor" beats "editor." Use a role when the default answer feels too formal, too vague, or pitched at the wrong level.</p>
+<h2>Rule 4: State the Format</h2>
+<p>Weak: "Tell me about the water cycle." Strong: "Explain the water cycle as five numbered steps, one sentence each, in plain words." Without a format, the chatbot chooses one — often a long block of text. Naming the format gets you lists, tables, short paragraphs, or step-by-step plans, whichever fits the task. Format also controls length: "in three bullet points" is a polite way of saying "keep it short." If you plan to paste the answer somewhere, say so — "as a list I can copy into a message" gets you cleaner output.</p>
+<h2>Rule 5: Set Limits</h2>
+<p>Weak: "Give me ideas for a birthday party." Strong: "Give me five birthday party ideas for eight adults at home, no alcohol, and nothing that needs more than an hour of preparation." Limits do two jobs: they cut out what you do not want, and they force the chatbot to be creative inside the lines. Number, time, and what to avoid — any of these sharpens the answer. Limits are especially useful when the first answer is a list of obvious ideas: add a constraint and ask again.</p>
+<h2>Rule 6: Give an Example</h2>
+<p>Weak: "Write a catchy slogan for my bakery." Strong: "Write a catchy slogan for my bakery. I like short, warm slogans like 'Baked at dawn, gone by noon' — give me five in that style." An example shows the chatbot what "good" looks like far better than adjectives can. One example sets the style; two or three set a pattern. This is the heart of few-shot prompting, and it works for tone, format, and structure alike. Pick an example you genuinely like, and say what you like about it if you can.</p>
+<h2>Rule 7: Break Big Tasks Down</h2>
+<p>Weak: "Plan my whole wedding." Strong: "First, help me list the main decisions for a small wedding, in the order I should make them. We will tackle one decision per chat." Big tasks overwhelm chatbots the same way they overwhelm people: the answer tries to cover everything and covers nothing well. Splitting the work into steps — outline first, then details — gives you better answers and a sense of progress. Ask for the plan first, then work through it one piece at a time.</p>
+<h2>Rule 8: Iterate, Don't Settle</h2>
+<p>Weak: accepting the first answer even when it misses. Strong: "That is close, but make it simpler, cut it to half the length, and give me two more options." The first answer is a draft, not a verdict. Follow-ups are where the real value lives: refine, shorten, rephrase, ask for alternatives. Each round costs seconds and usually improves the result. If the chatbot seems stuck, rephrase the request rather than repeating it — new words point it at new patterns.</p>
+<h2>Rule 9: Check the Output</h2>
+<p>Weak: copying an answer straight into a message, a document, or a decision. Strong: reading it with fresh eyes, checking names, dates, and numbers, and asking the chatbot to explain anything that looks odd. Chatbots write confidently even when they are wrong, and a polished answer can hide an invented fact. A quick check — a search, a look at the original document, a second opinion — catches most errors. The more the answer matters, the more it deserves checking.</p>
+<h2>Rule 10: Protect Private Data</h2>
+<p>Weak: pasting a document full of names, addresses, and account details into a chat. Strong: removing personal details before you paste, and describing the situation in general terms instead. A chatbot does not need your private information to help you: it can draft, explain, and plan from anonymised text just as well. Before you paste anything, ask whether a stranger reading it would learn something about you or someone else. If the answer is yes, take it out first.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How long should a prompt be?</h3><p>As long as it needs to be clear, and no longer. A quick question needs one sentence. A writing task may need three or four: the task, the context, the limits, and the format.</p></div>
+<div class="faq"><h3>What if the answer is still weak after a good prompt?</h3><p>Iterate. Tell the chatbot what to change, add a constraint, give an example, or rephrase the request. If it stays weak, split the task into smaller steps.</p></div>
+<div class="faq"><h3>Should I always set a role?</h3><p>No. Roles help when the tone, level, or angle matters — teaching, editing, coaching. For a quick factual question, a role adds nothing and can distract from the answer.</p></div>
+<div class="faq"><h3>Can I reuse prompts that work?</h3><p>Yes, and you should. Save prompts that gave great answers, and reuse them as templates by swapping in the new topic. Over time you will build a small library of prompts you trust.</p></div>
+<div class="faq"><h3>Is it safe to paste personal details into a prompt?</h3><p>No. Remove names, addresses, account details, and other private information before pasting anything into a chatbot. Describe the situation in general terms instead.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/what-is-prompt-engineering/">What Is Prompt Engineering?</a> · <a href="https://noryvello.github.io/prompt-formulas-that-work/">7 Prompt Formulas That Work</a> · <a href="https://noryvello.github.io/prompt-mistakes-to-avoid/">10 Prompt Mistakes to Avoid</a> · <a href="https://noryvello.github.io/how-to-prompt-ai-for-accurate-answers/">How to Prompt AI for Accurate Answers</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Is Prompt Engineering? | Noryvello</title>
+<meta name="description" content="Prompt engineering means writing better instructions for AI chatbots. Learn why wording changes answers, the four parts of a good prompt, and three before-and-after examples.">
+<link rel="canonical" href="https://noryvello.github.io/what-is-prompt-engineering/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Is Prompt Engineering?">
+<meta property="og:description" content="What prompt engineering is, why wording changes AI answers, and how to write better prompts.">
+<meta property="og:url" content="https://noryvello.github.io/what-is-prompt-engineering/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is prompt engineering a real job?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Some roles involve writing and testing prompts professionally, but for most people prompt engineering is simply a useful everyday skill. You do not need a job title to benefit from asking a chatbot well."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to learn prompt engineering to use AI?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. You can chat with an AI chatbot using plain questions from the start. Prompt engineering just helps you get better answers faster, especially for writing, planning, and learning."}
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most important part of a prompt?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The task: a clear statement of what you want. If the task is vague, no amount of polish elsewhere will save the answer. After that, context and format make the biggest difference."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can a good prompt fix a wrong answer?",
+      "acceptedAnswer": {"@type": "Answer", "text": "A good prompt can reduce mistakes, but it cannot guarantee accuracy. If an answer matters, check it against a trusted source, and ask the chatbot to show its reasoning so you can spot errors."}
+    },
+    {
+      "@type": "Question",
+      "name": "Does prompt engineering work the same on every chatbot?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The principles are the same everywhere, because all chatbots respond to clear instructions. Small differences exist, so a prompt that works well on one chatbot may need a small tweak on another."}
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>What Is Prompt Engineering?</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">Prompt engineering is the skill of writing clear instructions for AI chatbots so you get useful answers instead of vague ones. It is not programming — it is explaining what you want, with enough context, limits, and shape, that the chatbot can do the job properly.</p>
+<p>If you have ever typed a question into a chatbot and got an answer that missed the point, you have met the problem prompt engineering solves. The chatbot is not being difficult; it is answering the question you actually asked, which is often not the question you meant.</p>
+<p>Prompt engineering is simply the habit of asking well. It has a grand name, but the skill itself is ordinary: say what you want, give the background, set the limits, and say what the answer should look like. Anyone can learn it in an afternoon.</p>
+<div class="warn">Prompt engineering improves your odds, but it cannot guarantee a correct answer. AI chatbots can still be wrong, confident, and outdated, so check important facts against a trusted source no matter how well you wrote the prompt.</div>
+<h2>Prompt Engineering in Plain Words</h2>
+<p>A prompt is the message you send to a chatbot. Prompt engineering is the deliberate craft of shaping that message so the reply is closer to what you need. The word "engineering" makes it sound technical, but most of it is just clear communication: the same skills you use when you ask a colleague for help. You would not say "write something about sales" to a colleague; you would say what it is for, who will read it, and how long it should be. A chatbot needs the same. Prompt engineering also includes the habit of iterating — reading the first answer, noticing what is off, and adjusting the prompt until the answer fits. It is a conversation, not a single magic sentence.</p>
+<h2>Why Wording Changes the Answer</h2>
+<p>A chatbot builds its reply from patterns in the words you give it, so different wording points it at different patterns. Ask "Tell me about dogs" and you get a general essay, because the prompt gives no direction. Ask "Give me three reasons a first-time owner might choose a greyhound, in short sentences" and you get something specific, because the prompt names the topic, the angle, the number, and the style. Small changes matter: adding "for a beginner" changes the vocabulary; adding "in a table" changes the shape; adding "keep it under 100 words" changes the length. The chatbot is not guessing what you want — it is following the instructions it can see. Better instructions, better answers.</p>
+<h2>The Four Parts of a Good Prompt</h2>
+<p>Most strong prompts contain four parts. The task says what you want done: "Draft an email," "Explain this idea," "List five options." The context gives the background the chatbot needs: who it is for, why it matters, what has already happened. The constraints set the limits: length, tone, what to leave out, what not to invent. The format says what shape the answer should take: a list, a table, short paragraphs, a step-by-step plan. You do not need all four every time — a quick question needs only a task — but when an answer keeps missing, the missing part is usually one of these four. Checking your prompt against this list is the fastest way to improve it.</p>
+<h2>Before and After: Planning a Meal</h2>
+<p>Before: "Give me a dinner idea." The chatbot might reply with a random recipe that needs ingredients you do not have and an hour you do not have. After: "Suggest a dinner I can make in under 30 minutes with chicken, rice, and vegetables, for two people, with no spicy heat. Give me the steps as a numbered list." The second prompt names the task, the time limit, the ingredients, the number of people, a constraint, and the format. The answer is far more likely to be something you can actually cook tonight. Notice what changed: not the chatbot, just the instructions.</p>
+<h2>Before and After: Writing an Email</h2>
+<p>Before: "Write an email to my boss." The chatbot has to guess the topic, the tone, and the point, so the draft will be generic. After: "Draft a short email to my manager asking to move Friday's meeting to Monday morning because a client visit was rescheduled. Keep it polite and under 80 words, and suggest two possible times." Now the chatbot knows the purpose, the reason, the tone, the length, and what to include. The draft will still need your eye — only you know your manager — but it starts close to finished instead of close to blank. The lesson is the same: the more of the situation you put into the prompt, the less the chatbot has to invent.</p>
+<h2>Before and After: Learning Something New</h2>
+<p>Before: "Explain photosynthesis." The chatbot might produce a long textbook answer, too detailed or too simple for you. After: "Explain photosynthesis in three short paragraphs for someone who left school years ago and wants to help a child with homework. Use one everyday comparison, and end with a question I can ask the child." The second prompt sets the audience, the length, the level, a style request, and a useful ending. The answer fits the real situation: a parent helping with homework, not a student cramming for an exam. When you write a prompt, picture the person it is for — often that person is you, in a specific moment.</p>
+<h2>Prompt Engineering Is a Skill You Build</h2>
+<p>Nobody writes perfect prompts on the first try, and you do not need to. The skill grows by noticing what works: keep the prompts that gave great answers, and reuse them as templates for new tasks. When an answer disappoints, change one thing at a time — add context, or set a format, or narrow the task — and see what improves. Over a few weeks you will build a feel for how much detail a chatbot needs, and writing a good prompt will take seconds rather than minutes. The pages linked below go deeper: ten practical rules, seven reusable formulas, and techniques like role prompting and few-shot prompting. Start with one, try it on a real task today, and let the results teach you.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Is prompt engineering a real job?</h3><p>Some roles involve writing and testing prompts professionally, but for most people prompt engineering is simply a useful everyday skill. You do not need a job title to benefit from asking a chatbot well.</p></div>
+<div class="faq"><h3>Do I need to learn prompt engineering to use AI?</h3><p>No. You can chat with an AI chatbot using plain questions from the start. Prompt engineering just helps you get better answers faster, especially for writing, planning, and learning.</p></div>
+<div class="faq"><h3>What is the most important part of a prompt?</h3><p>The task: a clear statement of what you want. If the task is vague, no amount of polish elsewhere will save the answer. After that, context and format make the biggest difference.</p></div>
+<div class="faq"><h3>Can a good prompt fix a wrong answer?</h3><p>A good prompt can reduce mistakes, but it cannot guarantee accuracy. If an answer matters, check it against a trusted source, and ask the chatbot to show its reasoning so you can spot errors.</p></div>
+<div class="faq"><h3>Does prompt engineering work the same on every chatbot?</h3><p>The principles are the same everywhere, because all chatbots respond to clear instructions. Small differences exist, so a prompt that works well on one chatbot may need a small tweak on another.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/how-to-write-better-ai-prompts/">How to Write Better AI Prompts</a> · <a href="https://noryvello.github.io/prompt-formulas-that-work/">7 Prompt Formulas That Work</a> · <a href="https://noryvello.github.io/role-prompting-explained/">Role Prompting Explained</a> · <a href="https://noryvello.github.io/few-shot-prompting-explained/">Few-Shot Prompting Explained</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

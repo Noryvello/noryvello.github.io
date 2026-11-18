@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How AI Models Are Trained, Step by Step | Noryvello</title>
+<meta name="description" content="How are AI models trained? A step-by-step plain-English guide: data collection, training, fine-tuning, evaluation, and deployment, and why training needs so much computing power.">
+<link rel="canonical" href="https://noryvello.github.io/how-ai-models-are-trained/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How AI Models Are Trained, Step by Step">
+<meta property="og:description" content="AI training explained step by step: data, training, fine-tuning, evaluation, and deployment, in plain words.">
+<meta property="og:url" content="https://noryvello.github.io/how-ai-models-are-trained/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does it take to train an AI model?","acceptedAnswer":{"@type":"Answer","text":"It varies enormously. A small model on a small set of examples can train in minutes on an ordinary computer. The largest language models take far longer and need specialised hardware running without a break. The time depends on the size of the model, the amount of data, and the computing power available."}},{"@type":"Question","name":"What is fine-tuning?","acceptedAnswer":{"@type":"Answer","text":"Fine-tuning is a second, shorter round of training that adapts a general model to a specific job. A language model trained on general text can be fine-tuned on medical writing to help with medical questions, or on a company's documents to answer questions about that company. It starts from what the model already knows and specialises it."}},{"@type":"Question","name":"Does a model keep learning after training?","acceptedAnswer":{"@type":"Answer","text":"Usually not. Most models you use were trained once and then frozen: they apply what they learned to your questions but do not update themselves from them. A model that keeps learning from users is a deliberate design choice, and it brings risks, because it can pick up bad behaviour from bad input."}},{"@type":"Question","name":"What happens if the training data is biased?","acceptedAnswer":{"@type":"Answer","text":"The model learns the bias. If the training data underrepresents some people or contains stereotypes, the model's answers will reflect that. This is one of the most serious problems in AI, and it is why the quality and fairness of training data matter as much as the size of the model."}},{"@type":"Question","name":"Can I train my own AI model?","acceptedAnswer":{"@type":"Answer","text":"For a small task, yes. There are free tools that let you train a simple model on your own examples, such as a classifier that sorts your photos or a chatbot trained on your own documents. Training a large model from scratch needs far more data and computing power than one person usually has."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How AI Models Are Trained, Step by Step</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">Training an AI model means teaching it patterns from examples, in five steps: collecting data, training the model, fine-tuning it for its real job, testing it, and putting it to work. Each step matters, and the quality of the data sets the ceiling for everything that follows. This guide walks through all five steps in plain words.</p>
+<p>When people say an AI model was "trained", they mean it was taught to do its job by studying examples, not by following hand-written rules. A chatbot was trained on text. An image tool was trained on pictures. A voice assistant was trained on speech. The training process is the same in spirit for all of them, even though the details differ.</p>
+<p>This guide explains the five steps of training in order: data collection, training, fine-tuning, evaluation, and deployment. It also explains why training takes so much computing power, and why the data matters more than the machinery. No technical background is needed.</p>
+<div class="warn">A trained model is only as good as its training data. If the data was narrow, biased, or out of date, the model's answers will be too, no matter how impressive the training process sounds. Always treat AI output as a draft to check, not as a verified fact.</div>
+<h2>Training in one sentence</h2>
+<p>Training an AI model means showing it many examples with known answers, letting it guess, correcting its mistakes, and repeating the process until its guesses become good. That is the whole idea. Everything else in this guide is detail: where the examples come from, how the guessing works, how the corrections are made, and how the finished model is tested and released.</p>
+<p>It helps to think of training as teaching a skill by practice. A person learning to recognise birds does not memorise a list of rules; they look at many birds, make guesses, get corrected, and gradually get better. An AI model learns the same way, except it can study far more examples than any person, and it never gets tired. The scale is different, but the principle is the same: learn from examples, with feedback.</p>
+<p>The result of training is a set of internal settings, called weights, that capture what the model learned. A trained model is, in a sense, its weights: everything it knows about its task is stored in those numbers. When you use a chatbot, you are using a model whose weights were set by training on a huge amount of text. The training is the work; the model is the result.</p>
+<h2>Step 1: Collecting the data</h2>
+<p>Every training process starts with data: the examples the model will learn from. For a language model, the data is text: books, articles, websites, and conversations. For an image model, it is pictures, each labelled with what it shows. For a voice assistant, it is recordings of speech with written transcripts. The data must match the job: a model can only learn what its examples contain.</p>
+<p>Collecting data is not just gathering as much as possible. The data must be cleaned: duplicates removed, errors fixed, and irrelevant material filtered out. It must be varied enough to cover the situations the model will face. And it must be labelled where needed: a photo of a cat must be marked as a cat, or the model cannot learn what a cat looks like. Labelling is slow, careful work, and it is often done by people.</p>
+<p>The quality of the data matters more than its size. A smaller set of clean, varied, well-labelled examples often produces a better model than a huge set of messy ones. And the data's biases become the model's biases: if the examples underrepresent some people or contain stereotypes, the model will learn those patterns too. Data collection is where many AI problems begin, and where many of them could be prevented.</p>
+<h2>Step 2: Training the model</h2>
+<p>Training is the core step: the model studies the data and adjusts its internal settings until its guesses improve. The process is a loop. The model is shown an example, makes a guess, and is told how far off it was. It then adjusts its settings slightly, so the next guess is a little better. This loop runs over the examples again and again, and the guesses gradually improve.</p>
+<p>For a language model, the guessing game is predicting the next word. The model reads a piece of text, predicts the word that comes next, and is corrected when it is wrong. For an image model, the game is recognising what is in a picture. For a voice model, it is turning sounds into words. The game differs by task, but the loop is the same: guess, compare, adjust, repeat.</p>
+<p>Training a large model takes a great deal of computing power, because the loop must run over an enormous number of examples, and each step involves a huge amount of arithmetic. The model has a vast number of settings to adjust, and each adjustment requires calculation. This is why training the largest models needs specialised hardware running for a long time, and why it is one of the most expensive parts of building AI.</p>
+<h2>Step 3: Fine-tuning for the real job</h2>
+<p>General training produces a model that knows a lot about its field in general. Fine-tuning adapts that general model to a specific job. It is a second, shorter round of training, using a smaller set of examples chosen for the task at hand. A language model trained on general text can be fine-tuned on legal writing to help with legal questions, or on a company's documents to answer questions about that company.</p>
+<p>Fine-tuning is efficient because it starts from what the model already knows. The general training taught it language, reasoning patterns, and broad knowledge. Fine-tuning teaches it the specifics: the vocabulary of the job, the format of the answers, and the style that fits. It is like hiring someone with a good general education and then training them for a particular role, rather than teaching them everything from scratch.</p>
+<p>Fine-tuning is also where behaviour is shaped. A chatbot is fine-tuned on examples of good answers, so it learns to be helpful, to follow instructions, and to refuse some requests. This stage is what turns a raw text-predicting system into an assistant you can actually use. Without it, the model would be knowledgeable but unfocused, like a person who knows a great deal but cannot hold a conversation.</p>
+<h2>Step 4: Evaluation — testing before release</h2>
+<p>Before a trained model is released, it is tested, a step called evaluation. The model is given examples it has never seen before, and its answers are scored. This tests whether the model has learned general patterns or merely memorised its training data. A model that only memorised will do well on familiar examples and badly on new ones, which is a sign that it has not really learned the task.</p>
+<p>Evaluation also tests for problems: does the model give biased answers, invent facts, or fail on certain kinds of input? Testers try to break it on purpose, feeding it tricky questions, unusual cases, and edge cases, to find its weaknesses before real users do. The results guide further training or fine-tuning, and sometimes the model goes back for another round before it is released.</p>
+<p>No evaluation is perfect. A model can pass every test and still fail in the real world, because real users ask questions the testers never thought of. That is why responsible releases include ongoing monitoring: watching how the model behaves in real use, and updating it when problems appear. Training does not really end at release; it continues in the form of fixes and improvements.</p>
+<h2>Step 5: Deployment — putting the model to work</h2>
+<p>Deployment is the step where the trained model is put into a product people can use: a chatbot, an app, a website feature. The model itself is only part of the product. Around it, engineers build the interface, the safety checks, and the limits that make it usable. A chatbot needs a chat window, a way to handle long conversations, and guardrails that block harmful requests. None of that is the model, but all of it is part of the product.</p>
+<p>Deployment also involves practical decisions about speed and cost. A large model needs powerful hardware to answer quickly, and every answer uses computing resources. Products balance these against the experience they want to give: how fast the answer should come, how long a conversation can be, and how many people can use the service at once. These are engineering choices, and they shape what the user actually experiences.</p>
+<p>Once deployed, the model meets the real world, and the real world is the final test. Users ask unexpected questions, find new uses, and discover new flaws. Good teams watch for these, collect feedback, and feed what they learn into the next round of training. Deployment is not the end of the story; it is the beginning of a cycle of use, feedback, and improvement.</p>
+<h2>Why training takes huge computing power</h2>
+<p>Training a large model needs enormous computing power for a simple reason: the training loop runs over a huge number of examples, and each step involves a huge amount of arithmetic. The model has a vast number of internal settings, and each setting must be adjusted many times. Multiply a vast number of settings by a vast number of examples, and the total arithmetic is staggering.</p>
+<p>The hardware matters too. Training is done on specialised processors designed for the kind of arithmetic neural networks need: many simple calculations done in parallel. Ordinary computers can train small models, but the largest models need rooms full of specialised hardware working together. The scale of the hardware is a direct result of the scale of the arithmetic.</p>
+<p>This is why training is expensive, and why only a few organisations train the largest models from scratch. Most teams start from a model someone else trained and fine-tune it for their own task, which needs far less computing power. Understanding this split, a few large training runs, many smaller fine-tuning runs, explains much of how the AI industry is organised today.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How long does it take to train an AI model?</h3><p>It varies enormously. A small model on a small set of examples can train in minutes on an ordinary computer. The largest language models take far longer and need specialised hardware running without a break. The time depends on the size of the model, the amount of data, and the computing power available.</p></div>
+<div class="faq"><h3>What is fine-tuning?</h3><p>Fine-tuning is a second, shorter round of training that adapts a general model to a specific job. A language model trained on general text can be fine-tuned on medical writing to help with medical questions, or on a company's documents to answer questions about that company. It starts from what the model already knows and specialises it.</p></div>
+<div class="faq"><h3>Does a model keep learning after training?</h3><p>Usually not. Most models you use were trained once and then frozen: they apply what they learned to your questions but do not update themselves from them. A model that keeps learning from users is a deliberate design choice, and it brings risks, because it can pick up bad behaviour from bad input.</p></div>
+<div class="faq"><h3>What happens if the training data is biased?</h3><p>The model learns the bias. If the training data underrepresents some people or contains stereotypes, the model's answers will reflect that. This is one of the most serious problems in AI, and it is why the quality and fairness of training data matter as much as the size of the model.</p></div>
+<div class="faq"><h3>Can I train my own AI model?</h3><p>For a small task, yes. There are free tools that let you train a simple model on your own examples, such as a classifier that sorts your photos or a chatbot trained on your own documents. Training a large model from scratch needs far more data and computing power than one person usually has.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/what-is-a-neural-network/">What Is a Neural Network?</a> · <a href="https://noryvello.github.io/what-is-a-large-language-model/">What Is a Large Language Model (LLM)?</a> · <a href="https://noryvello.github.io/how-generative-ai-works/">How Generative AI Works, Explained Simply</a> · <a href="https://noryvello.github.io/what-is-a-token-in-ai/">What Is a Token in AI?</a> · <a href="https://noryvello.github.io/what-is-artificial-intelligence/">What Is Artificial Intelligence?</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

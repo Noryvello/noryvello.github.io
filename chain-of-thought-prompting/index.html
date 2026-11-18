@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chain-of-Thought Prompting: How to Get AI to Show Its Reasoning | Noryvello</title>
+<meta name="description" content="Chain-of-thought prompting asks AI to show its reasoning step by step. Learn the 'think step by step' pattern, with a worked math and planning example.">
+<link rel="canonical" href="https://noryvello.github.io/chain-of-thought-prompting/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chain-of-Thought Prompting: How to Get AI to Show Its Reasoning">
+<meta property="og:description" content="How chain-of-thought prompting gets AI to show its reasoning, with worked math and planning examples.">
+<meta property="og:url" content="https://noryvello.github.io/chain-of-thought-prompting/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does \"think step by step\" always improve answers?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. It helps most with multi-step problems like maths and planning, where the reasoning matters. For simple facts or creative tasks, it often adds padding without improving the answer."}
+    },
+    {
+      "@type": "Question",
+      "name": "What kinds of tasks benefit most?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Problems with stages that depend on each other: multi-step maths, planning, comparisons, and decisions with trade-offs. It also helps when you want to learn the method, not just get an answer."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can chain-of-thought prompting make answers worse?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes, on simple questions. Asking for steps where none are needed can produce invented reasoning and longer answers that bury the point. Use it where the path to the answer matters."}
+    },
+    {
+      "@type": "Question",
+      "name": "Should I ask for reasoning on simple questions?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Usually not. A simple factual question needs a short answer, and step-by-step reasoning adds noise. Save the technique for problems where you need to see how the answer was reached."}
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work on every chatbot?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. The phrase \"think step by step\" works across chatbots, because it changes the shape of the task rather than relying on a special feature. The quality of the steps varies, so check them."}
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Chain-of-Thought Prompting: How to Get AI to Show Its Reasoning</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">Chain-of-thought prompting means asking a chatbot to show its working step by step instead of jumping straight to an answer. The most common version is simply adding "think step by step" to your prompt — and it makes the reasoning visible, so you can check it.</p>
+<p>When a chatbot answers a tricky question in one leap, you get an answer but no way to check it. If the answer is wrong, you cannot tell where it went wrong. Chain-of-thought prompting fixes that by asking for the steps.</p>
+<p>The technique is simple and surprisingly powerful, especially for maths, planning, and any problem where the path matters as much as the destination. This guide explains how it works, shows two worked examples, and tells you when it helps and when it only adds noise.</p>
+<div class="warn">Showing reasoning does not make reasoning correct. A chatbot can lay out neat steps and still make a mistake in one of them, so check the working — especially any arithmetic — before you trust the final answer.</div>
+<h2>What Chain-of-Thought Prompting Is</h2>
+<p>Chain-of-thought prompting means asking a chatbot to work through a problem in steps, out loud, before giving its final answer. Instead of "How many pencils is that?" you ask "Work it out step by step: how many pencils is that?" The chatbot then lays out each stage — what it starts with, what it calculates, and how the stages connect. The name comes from the idea of a chain: each step links to the next, and you can follow the links. The technique matters for two reasons. First, the steps often improve the answer, because working in stages gives the chatbot room to handle one thing at a time. Second, and more importantly, the steps let you check the reasoning.</p>
+<h2>The "Think Step by Step" Pattern</h2>
+<p>The simplest version of the technique is a short phrase added to your prompt: "think step by step," "show your working," or "work through this one step at a time." That is often enough. For harder problems, you can be more specific: "List each step on its own line," "State what you know first, then what you need to find," or "Check your answer at the end by working backwards." The pattern works because it changes the shape of the task: instead of one big leap, the chatbot takes small steps, and each step is easier to get right than the whole jump. It also gives you something to read and verify, which a bare answer never does.</p>
+<h2>Worked Example: A Math Problem</h2>
+<p>Here is a simple problem, worked the chain-of-thought way. The prompt: "A teacher has 96 pencils to share equally among 8 tables. She buys 2 more packs of 12 pencils. How many pencils are there per table now? Think step by step." The reasoning should run like this. Step 1: start with 96 pencils. Step 2: 2 packs of 12 is 24 more pencils. Step 3: 96 plus 24 is 120 pencils in total. Step 4: 120 shared among 8 tables is 15 pencils per table. The answer is 15. Notice what the steps give you: if the chatbot had said 14, you could look at the chain and find the wrong step — perhaps it added the packs wrong, or divided wrong. Without the steps, you would have only a wrong number and no way to know why.</p>
+<h2>Worked Example: Planning a Small Event</h2>
+<p>Chain-of-thought is not only for maths. Try planning: "Help me plan a Saturday morning picnic for six friends, step by step." A good chain-of-thought answer works through the stages: first, fix the time and place; next, list what to bring, split by who brings what; then, plan the food so there is enough for six with something for everyone; then, think about what could go wrong — rain, a late start — and what the backup is; finally, put the morning in order as a short timeline. Each step builds on the last, and you can stop the chain at any point and adjust it. If the food list looks short, say so before the timeline is built. The steps turn a vague request into a plan you can actually follow.</p>
+<h2>When Chain-of-Thought Helps Most</h2>
+<p>Chain-of-thought helps most when the problem has stages that depend on each other: multi-step maths, planning, comparisons, and decisions with trade-offs. It also helps when the answer matters and you want to check it, because the steps are the evidence. It is especially useful for learning: watching a problem worked step by step teaches you the method, not just the answer. If you are stuck on a problem, asking the chatbot to think step by step often unblocks you even when the final answer needs adjusting — the steps show you where your own thinking went wrong.</p>
+<h2>When It Just Adds Noise</h2>
+<p>Not every question needs reasoning. For a simple fact — "What is the capital of France?" — asking for step-by-step thinking produces padding: a chain of obvious steps that adds nothing and wastes your time. The same goes for creative tasks, where showing the reasoning can flatten the result, and for questions with no real steps, where the chatbot invents stages to fill the space. A good rule: if you could not explain why the answer needs steps, it probably does not. Save chain-of-thought for problems where the path matters, and let simple questions stay simple.</p>
+<h2>Checking the Reasoning, Not Just the Answer</h2>
+<p>The real value of chain-of-thought is that it gives you something to check. Read the steps, not just the final line. In a maths problem, redo the arithmetic — chatbots make small calculation slips even when the method is right. In a plan, check that each step follows from the last and that nothing important was skipped. If a step looks wrong, say so: "Step 3 looks off — can you redo it?" The chatbot can usually correct a single step more easily than it can redo a whole answer. Over time, this habit makes you a better checker of AI output in general, which matters far more than any single technique. The answer is the destination, but the steps are the map — and a map you have checked is worth more than a destination you cannot trust.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Does "think step by step" always improve answers?</h3><p>No. It helps most with multi-step problems like maths and planning, where the reasoning matters. For simple facts or creative tasks, it often adds padding without improving the answer.</p></div>
+<div class="faq"><h3>What kinds of tasks benefit most?</h3><p>Problems with stages that depend on each other: multi-step maths, planning, comparisons, and decisions with trade-offs. It also helps when you want to learn the method, not just get an answer.</p></div>
+<div class="faq"><h3>Can chain-of-thought prompting make answers worse?</h3><p>Yes, on simple questions. Asking for steps where none are needed can produce invented reasoning and longer answers that bury the point. Use it where the path to the answer matters.</p></div>
+<div class="faq"><h3>Should I ask for reasoning on simple questions?</h3><p>Usually not. A simple factual question needs a short answer, and step-by-step reasoning adds noise. Save the technique for problems where you need to see how the answer was reached.</p></div>
+<div class="faq"><h3>Does it work on every chatbot?</h3><p>Yes. The phrase "think step by step" works across chatbots, because it changes the shape of the task rather than relying on a special feature. The quality of the steps varies, so check them.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/what-is-prompt-engineering/">What Is Prompt Engineering?</a> · <a href="https://noryvello.github.io/few-shot-prompting-explained/">Few-Shot Prompting Explained</a> · <a href="https://noryvello.github.io/how-to-prompt-ai-for-accurate-answers/">How to Prompt AI for Accurate Answers</a> · <a href="https://noryvello.github.io/ai-for-learning-math/">How to Use AI to Learn Math</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

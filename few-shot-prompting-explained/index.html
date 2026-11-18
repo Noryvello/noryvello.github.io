@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Few-Shot Prompting Explained with Examples | Noryvello</title>
+<meta name="description" content="Few-shot prompting means showing an AI chatbot examples before asking it to do the task. Learn how it works, see a worked example, and know when it helps.">
+<link rel="canonical" href="https://noryvello.github.io/few-shot-prompting-explained/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Few-Shot Prompting Explained with Examples">
+<meta property="og:description" content="What few-shot prompting is, with a worked example showing three examples before the task.">
+<meta property="og:url" content="https://noryvello.github.io/few-shot-prompting-explained/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many examples should I give?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Three is a good starting point. Two can work for simple formats, and five helps for trickier patterns. Beyond five, the extra examples rarely improve the output and make the prompt long."}
+    },
+    {
+      "@type": "Question",
+      "name": "What makes a good example?",
+      "acceptedAnswer": {"@type": "Answer", "text": "A good example is consistent with the others, shows the pattern on a different input, and matches the quality you want. Write examples as if they were finished work, because the chatbot will copy their standard."}
+    },
+    {
+      "@type": "Question",
+      "name": "Does few-shot prompting work on every chatbot?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every chatbot learns from examples in the prompt, because the technique relies on pattern-matching, which all chatbots do. The exact wording of the prompt may need small tweaks between chatbots."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can few-shot prompting make answers worse?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the examples are inconsistent or poor quality. The chatbot copies what it sees, so muddled examples teach a muddled pattern. Check your examples carefully before you send them."}
+    },
+    {
+      "@type": "Question",
+      "name": "Is few-shot prompting the same as fine-tuning?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Few-shot prompting shows examples inside a single conversation, and nothing is saved or changed permanently. Fine-tuning retrains a model on many examples, which is a different and much larger process."}
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Few-Shot Prompting Explained with Examples</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">Few-shot prompting means giving a chatbot a few examples of what you want before you ask it to do the task. The examples teach it the format, the style, and the pattern in a way that instructions alone often cannot.</p>
+<p>Imagine asking someone to sort your post into piles without telling them the categories — then showing them three sorted letters and saying "like this." The second way works far better, and it works for chatbots too. That is few-shot prompting.</p>
+<p>The name comes from machine learning: "shot" means an example, and "few" means you only need a handful. Two or three good examples usually do the job. This guide explains why it works, shows a full worked example, and tells you when it helps and when it does not.</p>
+<div class="warn">Examples guide a chatbot, but they do not guarantee correct answers. A chatbot can still misread the pattern or invent details, so check the output — especially for classification tasks where a wrong label has real consequences.</div>
+<h2>What Few-Shot Prompting Means</h2>
+<p>In few-shot prompting, you show the chatbot what you want before asking for it. Instead of describing the format in words — "write a short, warm reply in two sentences" — you give two or three finished examples and then present the new task. The chatbot studies the pattern across your examples: the length, the tone, the structure, the way each one starts and ends. Then it follows the same pattern for the new item. It is the difference between describing a dance and demonstrating it. The technique is simple, but it is one of the most reliable ways to get consistent output from a chatbot.</p>
+<h2>Zero-Shot, One-Shot, Few-Shot: The Difference</h2>
+<p>With no examples — zero-shot — you describe the task in words and hope the chatbot's idea of the format matches yours. Often it does, for simple tasks. With one example — one-shot — the chatbot has a model to copy, which fixes most format problems. With a few examples — few-shot, usually two to five — the chatbot can see what stays the same across examples and what changes, which is what makes the pattern clear. More examples are not always better: beyond about five, the returns shrink and the prompt gets long. Start with three. If the output is inconsistent, add one or two more; if it is consistent, three was enough.</p>
+<h2>A Worked Example: Three Examples Before the Task</h2>
+<p>Say you want short, friendly replies to customer messages for a small bakery. Without examples, the chatbot might write long, formal replies. With three examples, it learns the pattern. Your prompt could look like this. Example 1 — Message: "Do you have gluten-free bread?" Reply: "Yes, we bake a fresh gluten-free loaf every morning — it usually sells out by noon, so do pop in early." Example 2 — Message: "Can I order a birthday cake for Saturday?" Reply: "Of course — we would love to make it. Tell us the size and any flavours you like, and we will have it ready for Saturday morning." Example 3 — Message: "What time do you close?" Reply: "We close at six, and the ovens come out for the last time at five — you are very welcome until then." Then the task: "Now reply to this message in the same style: 'Do you sell coffee as well?'" The chatbot has learned the pattern — short, warm, specific, with a helpful detail — and the reply follows it naturally.</p>
+<h2>When Few-Shot Prompting Helps</h2>
+<p>Few-shot prompting shines in three situations. First, format: when you need output in a particular shape — a certain length, a certain structure, a certain way of starting and ending — examples show the shape better than words. Second, style: when you want a particular tone — warm, plain, playful, formal — examples carry the tone in a way adjectives cannot. Third, classification: when you want items sorted into categories, examples show where the boundaries fall. A chatbot shown three messages labelled "urgent," "routine," and "spam" will sort the next one far more reliably than a chatbot given only the category names.</p>
+<h2>When It Does Not Help</h2>
+<p>Few-shot prompting is not always the right tool. For open-ended creative work, examples can narrow the chatbot's thinking: it copies the pattern instead of exploring. For factual questions, examples add nothing — a question needs an answer, not a model. For tasks where the examples are hard to write — a brand-new kind of problem with no obvious template — describing the task well matters more than forcing examples. And if your examples are inconsistent with each other, the chatbot learns a muddled pattern and the output gets worse, not better. When in doubt, try the task without examples first; add them only if the output is inconsistent or off-style.</p>
+<h2>Tips for Picking Good Examples</h2>
+<p>Good examples share three qualities. They are consistent: each one follows the same pattern, so the chatbot can see what stays the same. They are varied: they show the pattern working on different inputs, so the chatbot learns the rule rather than memorising one case. And they are the quality you want: the chatbot will match the standard of your examples, so a sloppy example teaches sloppy output. Write your examples as if they were the finished work — because in a sense, they are. If you cannot write a good example yourself, that is useful information: it may mean the task needs a clearer description before examples will help. A useful test is to read your examples as a stranger would: if the pattern is not obvious to you, it will not be obvious to the chatbot either.</p>
+<h2>Few-Shot Prompting and Longer Conversations</h2>
+<p>Few-shot prompting works best at the start of a chat, where the examples set the pattern for everything that follows. Once the chatbot has followed the pattern a few times, you can usually drop the examples and just give new tasks — the pattern carries forward in the conversation. If the chatbot drifts, paste the examples again as a reminder. For repeated work — weekly replies, regular reports, a series of similar tasks — save your best few-shot prompt as a template and reuse it. It becomes a small, reliable tool: the same examples, the same quality, every time.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How many examples should I give?</h3><p>Three is a good starting point. Two can work for simple formats, and five helps for trickier patterns. Beyond five, the extra examples rarely improve the output and make the prompt long.</p></div>
+<div class="faq"><h3>What makes a good example?</h3><p>A good example is consistent with the others, shows the pattern on a different input, and matches the quality you want. Write examples as if they were finished work, because the chatbot will copy their standard.</p></div>
+<div class="faq"><h3>Does few-shot prompting work on every chatbot?</h3><p>Yes. Every chatbot learns from examples in the prompt, because the technique relies on pattern-matching, which all chatbots do. The exact wording of the prompt may need small tweaks between chatbots.</p></div>
+<div class="faq"><h3>Can few-shot prompting make answers worse?</h3><p>Yes, if the examples are inconsistent or poor quality. The chatbot copies what it sees, so muddled examples teach a muddled pattern. Check your examples carefully before you send them.</p></div>
+<div class="faq"><h3>Is few-shot prompting the same as fine-tuning?</h3><p>No. Few-shot prompting shows examples inside a single conversation, and nothing is saved or changed permanently. Fine-tuning retrains a model on many examples, which is a different and much larger process.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/what-is-prompt-engineering/">What Is Prompt Engineering?</a> · <a href="https://noryvello.github.io/chain-of-thought-prompting/">Chain-of-Thought Prompting</a> · <a href="https://noryvello.github.io/role-prompting-explained/">Role Prompting Explained</a> · <a href="https://noryvello.github.io/how-to-write-better-ai-prompts/">How to Write Better AI Prompts</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

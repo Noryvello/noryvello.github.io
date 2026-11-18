@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Use Gemini in Gmail and Google Docs | Noryvello</title>
+<meta name="description" content="Learn how Gemini helps inside Gmail and Google Docs: drafting emails, summarising threads, writing documents, and rewriting text — in plain steps.">
+<link rel="canonical" href="https://noryvello.github.io/gemini-in-gmail-and-docs/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Use Gemini in Gmail and Google Docs">
+<meta property="og:description" content="How Gemini works inside Gmail and Google Docs for drafting, summarising, and rewriting.">
+<meta property="og:url" content="https://noryvello.github.io/gemini-in-gmail-and-docs/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need a paid plan to use Gemini in Gmail and Docs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Availability varies by account type and region, and some features may require a paid plan while others do not. Check the help pages for your account to see which Gemini features are included for you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Gemini read all my emails?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gemini works with the emails and documents you ask it about, such as the thread you have open or the document you are editing. It does not browse your inbox on its own, and you should still avoid putting sensitive material into any AI prompt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the draft sound like me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Approximately, but not exactly. Gemini writes in a smooth, fairly neutral style, so you should edit the draft to match your own voice before sending it. Reading the draft aloud is the fastest way to spot sentences that do not sound like you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Gemini reply to emails by itself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, it drafts replies for you to review and send. You stay in control of what goes out, which is important because AI drafts can contain errors. Always read a draft before you send it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if Gemini is missing from my Gmail or Docs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most likely reason is availability for your account type or region. Check the help pages for the current availability, and look for the Gemini option in the app menus, since its position changes with updates."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How to Use Gemini in Gmail and Google Docs</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">Gemini works inside Gmail and Google Docs, where it can draft emails, summarize long threads, and help you write and rewrite documents. You ask in plain words, and it produces a draft you can edit before sending or saving. Availability varies by account and region, so the features you see may differ.</p>
+<p>Most people meet Gemini as a chatbot in a browser tab, but some of its most useful work happens inside the apps you already use every day. In Gmail it can draft replies and untangle long threads; in Google Docs it can start a document from a prompt and help you rewrite a rough paragraph into something polished.</p>
+<p>This guide walks through the main uses in both apps, in general terms, so you know what to ask for and what to check. It also covers the editing habit that matters most with AI drafts: reading them carefully before anyone else sees them.</p>
+<div class="warn">Availability varies by account type and region — some features appear for some accounts and not others, and Google changes what is included over time. If a feature described here is missing from your account, check the help pages for the current availability in your region.</div>
+<h2>Where Gemini appears in Gmail</h2>
+<p>In Gmail, Gemini appears as a helper inside the email window, usually as a button or a side panel, depending on your account and how Google has arranged the interface. You do not need to open a separate app: the help is right there while you read and write email.</p>
+<p>The two main uses are drafting and summarising. When you reply to an email, Gemini can draft a response based on the thread. When you open a long thread with many messages, it can summarise what has been said so far. Both save time, and both need your review before you act on them.</p>
+<p>Because the interface changes, do not memorise button names from this guide. Look for the Gemini option in your Gmail window, and if it is not there, check the help pages for your account type. Availability is the most common reason a feature is missing.</p>
+<h2>Drafting an email with Gemini</h2>
+<p>Drafting is the most common use. Open the reply window, tell Gemini what the email needs to say, and it will produce a draft. Give it the key facts: who the email is for, what you are asking or confirming, and the tone you want. A prompt with those three pieces produces a far better draft than a bare instruction to write a reply.</p>
+<p>The draft is a starting point, not a finished email. Read it as if you wrote it yourself: check the facts, the names, and the tone, and fix anything that sounds wrong or unlike you. A draft that mentions a meeting time or a deadline needs special care, because AI can invent details that look plausible.</p>
+<p>You can also ask Gemini to change the draft: make it shorter, make it more formal, add a sentence about a specific point, or turn a long draft into a short one. Short follow-up instructions like these are the fastest way to get a draft you are happy to send.</p>
+<h2>Summarizing a long email thread</h2>
+<p>Long email threads are hard to follow: many people, many replies, and the important decision buried in the middle. Gemini can read the thread and summarise it, listing the key points, the decisions made, and any open questions. This is a lifesaver when you join a thread late or return to one after a holiday.</p>
+<p>Ask for the summary in a shape that helps you act on it. A short list of decisions and next steps is more useful than a paragraph of prose, because it tells you what needs doing. You can also ask who said what, or ask for the thread's history on one specific question.</p>
+<p>Summaries can miss things, especially in threads where people change their minds or where the real decision happened off the thread. Use the summary to orient yourself, then skim the key messages before you reply. A summary tells you where to look; it does not replace looking.</p>
+<h2>Where Gemini appears in Google Docs</h2>
+<p>In Google Docs, Gemini appears as a writing helper, usually in a side panel or through a menu option, depending on your account. It can draft new text, rewrite selected text, summarise a document, and help you brainstorm. Like Gmail, the exact placement changes with updates, so look for the Gemini option in your document window.</p>
+<p>The most useful starting point is a blank document and a clear prompt. Tell Gemini what the document is for, who will read it, and roughly how long it should be, and it will produce a first draft. From there you can ask for changes section by section, which is faster than asking for a perfect document in one go.</p>
+<p>Gemini can also work with a document you have already written. Select a paragraph and ask for a rewrite, a shorter version, or a version in a different tone. This is often more useful than drafting from scratch, because you bring the ideas and Gemini helps with the wording.</p>
+<h2>Drafting a document from a prompt</h2>
+<p>A good document prompt has four parts: the purpose, the audience, the main points, and the length. For example, asking for a one-page briefing for new team members, covering three specific topics, in a friendly tone, gives Gemini enough to produce a useful draft. A prompt that only names the topic will produce something generic.</p>
+<p>Work in sections rather than all at once. Ask for an outline first, check that the structure makes sense, then ask Gemini to draft one section at a time. This gives you control over the flow and makes it easier to spot weak sections before they grow into weak pages.</p>
+<p>Keep your own voice in the document. AI drafts tend to sound smooth and slightly formal, which is fine for a first draft but rarely the voice you want in the end. Read each section aloud, change the sentences that do not sound like you, and add the specific examples and details that only you know.</p>
+<h2>Rewriting, shortening, and polishing text</h2>
+<p>Rewriting is where Gemini earns its place in Docs. A rough paragraph that took you ten minutes can be tightened in seconds, and a long section can be cut to its essentials without losing the meaning. Select the text, describe what you want — shorter, clearer, more formal, simpler words — and compare the result with the original.</p>
+<p>Shortening is a skill worth practising. Ask Gemini to cut a paragraph to half its length while keeping every fact, and notice what it removes: usually repetition, filler phrases, and hedging. Reading the shortened version teaches you to spot the same clutter in your own writing.</p>
+<p>Polishing is different from rewriting. A polish keeps your words and your meaning but fixes the rough edges: a tangled sentence, a repeated word, an awkward transition. Ask for a light polish when the draft is already close, and a full rewrite only when the structure needs to change.</p>
+<h2>Editing AI drafts before you send them</h2>
+<p>Every AI draft needs a human edit, and the edit has three jobs: check the facts, check the tone, and check that it sounds like you. Facts are the most important, because AI can invent a date, a name, or a number that looks right. Tone comes next, because a draft that is too formal or too casual can embarrass you. Voice comes last, because a draft that does not sound like you will confuse the reader.</p>
+<p>Read the draft out loud before you send it. Your ear catches problems your eye misses: a sentence that runs too long, a phrase you would never say, a tone that shifts halfway through. If a sentence sounds odd aloud, rewrite it in your own words.</p>
+<p>Finally, remember that the reader sees your name on the email or the document, not Gemini's. You are responsible for what it says. That responsibility is easy to carry when you have read the draft carefully, and it is the price of the time AI saves you.</p>
+<h2>What to keep out of AI drafts</h2>
+<p>Some things should never go into an AI prompt, however convenient it feels. Passwords, financial details, medical information, and other people's private details are all off limits. If a draft needs a sensitive fact, add it yourself after Gemini has done the writing, rather than pasting it into the chat.</p>
+<p>The same caution applies to other people's words. Do not paste a colleague's private message into Gemini to get a reply, and do not ask it to summarise a confidential document. If the material is not yours to share, keep it out of the AI entirely.</p>
+<p>A simple rule covers most cases: if you would not want the text read aloud in a meeting, do not put it in a prompt. AI drafts are a convenience, and convenience is never worth a privacy mistake.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Do I need a paid plan to use Gemini in Gmail and Docs?</h3><p>Availability varies by account type and region, and some features may require a paid plan while others do not. Check the help pages for your account to see which Gemini features are included for you.</p></div>
+<div class="faq"><h3>Can Gemini read all my emails?</h3><p>Gemini works with the emails and documents you ask it about, such as the thread you have open or the document you are editing. It does not browse your inbox on its own, and you should still avoid putting sensitive material into any AI prompt.</p></div>
+<div class="faq"><h3>Will the draft sound like me?</h3><p>Approximately, but not exactly. Gemini writes in a smooth, fairly neutral style, so you should edit the draft to match your own voice before sending it. Reading the draft aloud is the fastest way to spot sentences that do not sound like you.</p></div>
+<div class="faq"><h3>Can Gemini reply to emails by itself?</h3><p>No, it drafts replies for you to review and send. You stay in control of what goes out, which is important because AI drafts can contain errors. Always read a draft before you send it.</p></div>
+<div class="faq"><h3>What if Gemini is missing from my Gmail or Docs?</h3><p>The most likely reason is availability for your account type or region. Check the help pages for the current availability, and look for the Gemini option in the app menus, since its position changes with updates.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/how-to-use-gemini-for-beginners/">How to Use Gemini: A Beginner's Guide</a> · <a href="https://noryvello.github.io/gemini-privacy-settings-guide/">Gemini Privacy Settings: What to Check</a> · <a href="https://noryvello.github.io/chatgpt-for-email-writing/">How to Write Better Emails with ChatGPT</a> · <a href="https://noryvello.github.io/ai-for-email-marketing/">How to Use AI for Email Marketing</a> · <a href="https://noryvello.github.io/gemini-vs-google-assistant/">Gemini vs Google Assistant</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Is Computer Vision? How Machines See | Noryvello</title>
+<meta name="description" content="What is computer vision? A plain-English guide to how machines read images: object detection, face recognition, OCR, everyday uses, and privacy.">
+<link rel="canonical" href="https://noryvello.github.io/what-is-computer-vision/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Is Computer Vision? How Machines See">
+<meta property="og:description" content="Computer vision explained in plain words: how machines read images, recognise faces, and read text from photos.">
+<meta property="og:url" content="https://noryvello.github.io/what-is-computer-vision/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can a computer really see?","acceptedAnswer":{"@type":"Answer","text":"Not the way people see. A computer vision system turns an image into numbers and finds patterns in those numbers. It can recognise objects and faces with impressive accuracy, but it has no experience of seeing and no understanding of what it is looking at."}},{"@type":"Question","name":"What is the difference between computer vision and image generation?","acceptedAnswer":{"@type":"Answer","text":"Computer vision reads images: it takes a picture in and produces an answer, such as what objects are in it. Image generation does the opposite: it takes words in and produces a new picture. One understands images, the other creates them."}},{"@type":"Question","name":"How does face recognition work?","acceptedAnswer":{"@type":"Answer","text":"It measures the features of a face, such as the distances between the eyes, nose, and mouth, and turns those measurements into a pattern. It then compares that pattern with stored patterns to find a match. It is pattern-matching, not understanding who someone is."}},{"@type":"Question","name":"Is computer vision watching me?","acceptedAnswer":{"@type":"Answer","text":"It depends on where you are and what you use. Cameras in public places, shops, and workplaces may use computer vision, and your phone uses it to organise photos and unlock with your face. The rules about what is allowed vary by place, so check the privacy policies of the services you use."}},{"@type":"Question","name":"Why does computer vision sometimes make mistakes?","acceptedAnswer":{"@type":"Answer","text":"Because it recognises patterns, not objects. Bad lighting, unusual angles, partial views, and objects that look alike can all confuse it. It also inherits biases from its training data: if some kinds of faces or objects were underrepresented in training, the system will be weaker at recognising them."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>What Is Computer Vision? How Machines See</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">Computer vision is the branch of AI that lets machines work with images: recognising objects, reading text in photos, and identifying faces. It turns a picture into numbers, finds patterns in those numbers, and produces an answer. This guide explains how it works, where you already use it, and why it raises privacy questions.</p>
+<p>Your phone unlocks when it sees your face. Your photo app groups pictures of the same person together. A shop's camera counts how many people walk in. A document scanner turns a photo of a page into editable text. All of these are computer vision: software that takes in images and makes sense of them.</p>
+<p>Computer vision is one of the most practical branches of AI, and one of the oldest. It is also one of the most sensitive, because cameras are everywhere and faces are personal. This guide explains how machines read images, what the main techniques are, and what the privacy concerns really are.</p>
+<div class="warn">Privacy note: computer vision can identify faces and track people, and cameras using it are common in public places, shops, and workplaces. Your face is personal data. Check the privacy settings of apps that use your camera or photos, and think before uploading pictures of other people.</div>
+<h2>What computer vision actually is</h2>
+<p>Computer vision is the field of AI concerned with images and video. Its goal is simple to state and hard to achieve: take in a picture and work out what is in it. That might mean naming the objects in a photo, finding every face, reading the text on a sign, or deciding whether a medical scan shows something unusual. The input is always visual; the output is always an answer about what the image contains.</p>
+<p>The challenge is that a computer does not see a picture the way you do. You look at a photo and instantly see a dog on a beach. A computer sees a grid of numbers: brightness and colour values for millions of tiny dots, called pixels. Turning that grid of numbers into "dog on a beach" is the whole problem of computer vision, and it took decades of research to do it well.</p>
+<p>Modern computer vision is built on deep learning: neural networks with many layers, trained on huge collections of labelled images. Each layer learns patterns at a different level, from simple edges to whole objects, until the network can recognise what it is looking at. The result is systems that can match or beat human accuracy on many narrow tasks, while still failing in ways a person never would.</p>
+<h2>How machines read images</h2>
+<p>Reading an image starts with breaking it into numbers. Every digital photo is a grid of pixels, and each pixel has values for brightness and colour. A computer vision system processes this grid through a neural network. The first layers of the network detect simple features: edges, corners, and changes in brightness. The next layers combine those features into shapes. Deeper layers combine shapes into parts of objects, and the final layers decide what the objects are.</p>
+<p>Training is what makes this work. The network is shown many images, each labelled with what it contains: this one has a cat, that one has a car, this one has a face. It makes guesses, gets corrected, and adjusts its internal settings until its guesses improve. After enough examples, it can recognise objects in images it has never seen before, because it has learned the general patterns, not just memorised the examples.</p>
+<p>The quality of the result depends on the training data. A system trained mostly on photos taken in daylight will struggle at night. A system trained mostly on one kind of face will be weaker at recognising others. This is why computer vision systems can be both impressive and biased at the same time: they reflect the data they were trained on, including its gaps.</p>
+<h2>Object detection: finding things in a picture</h2>
+<p>Object detection is the task of finding and naming the things in an image. A system that detects objects does not just say "there is a car in this photo"; it says where the car is, usually by drawing a box around it. If there are several cars, it finds each one. If there are people, bicycles, and traffic lights too, it finds those as well, each with its own box and label.</p>
+<p>This is the technology behind many everyday features. A car's driver-assistance system uses object detection to spot pedestrians, other vehicles, and road signs. A warehouse system uses it to count boxes on a shelf. A wildlife camera uses it to record which animals visit a waterhole. In each case, the system is doing the same basic job: look at the image, find the objects, name them, and say where they are.</p>
+<p>Object detection works best when the objects are clear, well-lit, and similar to the training examples. It struggles with objects that are partly hidden, seen from unusual angles, or in bad light. A person half hidden behind a tree is still obviously a person to you; to a detection system, the missing half can be enough to cause a miss. These limits matter whenever the system is used for safety, where a missed detection can have real consequences.</p>
+<h2>Face recognition: how it works, and why it worries people</h2>
+<p>Face recognition is a specialised form of computer vision. It works in two steps. First, the system finds faces in an image, the same detection job described above. Then, for each face, it measures the features: the distances between the eyes, the shape of the jaw, the width of the nose, and many other measurements. These measurements are turned into a pattern, a kind of numerical fingerprint for that face, which can be compared with stored patterns to find a match.</p>
+<p>The everyday uses are familiar. Your phone uses face recognition to unlock when it sees you. Your photo app uses it to group pictures of the same person. These are convenient, and they usually run on your own device, with your own photos. The concerns arise when face recognition is used on other people's faces, without their knowledge or consent: in public places, in shops, or by authorities.</p>
+<p>The worries are real and worth taking seriously. Face recognition can be used to track where people go and who they meet. It can make mistakes, and those mistakes fall unevenly: systems have repeatedly been shown to be less accurate for some groups of people than for others, because of gaps in their training data. A mistaken match in a shop is an embarrassment; a mistaken match in a security setting can be much worse. These are the reasons face recognition is regulated in some places and debated everywhere.</p>
+<h2>OCR: reading text from images</h2>
+<p>OCR, short for optical character recognition, is the task of reading text from an image. When you photograph a printed page, a receipt, or a sign, OCR turns the shapes of the letters in the photo into actual text you can copy, search, and edit. It is one of the oldest computer vision tasks, and one of the most useful.</p>
+<p>OCR works by finding the text regions in an image, then recognising each character. Modern OCR uses neural networks, trained on many examples of printed and handwritten text, which makes it far more accurate than the older template-based systems. It can handle different fonts, sizes, and layouts, and it can often read handwriting too, though handwriting is much harder and the results are less reliable.</p>
+<p>The everyday uses are everywhere. Document-scanning apps turn photos of pages into searchable text. Translation apps read a foreign sign through your camera and show you the translation. Banking apps read the numbers on a cheque from a photo. In each case, OCR is the bridge between the visual world and the text world, letting software read what was previously only visible to human eyes.</p>
+<h2>Everyday uses you already meet</h2>
+<p>Beyond faces and text, computer vision is quietly present in many ordinary moments. Your phone's camera uses it to focus on faces, adjust the light, and recognise the scene: a sunset, a plate of food, a document. Your photo app uses it to search your pictures by what is in them: type "beach" and it finds beach photos, without anyone ever labelling them.</p>
+<p>In shops and streets, computer vision counts people, watches shelves, and reads number plates. In farming, it checks crops for disease from drone photos. In medicine, it helps specialists look at scans, flagging areas that deserve a closer look. In each case, the system is doing a narrow visual job, trained on examples of that job, and doing it at a scale no person could match.</p>
+<p>None of these uses feels like science fiction, because they are simply useful features. But they all rest on the same technology: a neural network, trained on labelled images, turning pixels into answers. Understanding that shared foundation helps you judge each new use on its merits, rather than being impressed or alarmed by the technology itself.</p>
+<h2>Where computer vision goes wrong</h2>
+<p>Computer vision fails in ways that are worth knowing about, because the failures are not always obvious. A system can be confident and wrong at the same time, just like a chatbot. It can mistake one object for another when they look alike, miss an object that is partly hidden, or fail entirely in lighting conditions it was not trained on. A person adapts to bad light instantly; a vision system may not.</p>
+<p>Bias is the deeper problem. If the training images underrepresent certain people, places, or objects, the system will be weaker at recognising them. This is not a small detail: it affects face recognition accuracy, medical image analysis, and many other uses. The bias is in the data, and the system faithfully learns it. Fixing it means fixing the data, which is slow and difficult work.</p>
+<p>The practical lesson is to treat computer vision output as a suggestion, not a verdict. A face match should be checked by a person before it is acted on. A medical flag should be reviewed by a specialist. A photo search result should be confirmed by looking at the photo. The technology is powerful, but it is pattern-matching, and patterns can mislead.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Can a computer really see?</h3><p>Not the way people see. A computer vision system turns an image into numbers and finds patterns in those numbers. It can recognise objects and faces with impressive accuracy, but it has no experience of seeing and no understanding of what it is looking at.</p></div>
+<div class="faq"><h3>What is the difference between computer vision and image generation?</h3><p>Computer vision reads images: it takes a picture in and produces an answer, such as what objects are in it. Image generation does the opposite: it takes words in and produces a new picture. One understands images, the other creates them.</p></div>
+<div class="faq"><h3>How does face recognition work?</h3><p>It measures the features of a face, such as the distances between the eyes, nose, and mouth, and turns those measurements into a pattern. It then compares that pattern with stored patterns to find a match. It is pattern-matching, not understanding who someone is.</p></div>
+<div class="faq"><h3>Is computer vision watching me?</h3><p>It depends on where you are and what you use. Cameras in public places, shops, and workplaces may use computer vision, and your phone uses it to organise photos and unlock with your face. The rules about what is allowed vary by place, so check the privacy policies of the services you use.</p></div>
+<div class="faq"><h3>Why does computer vision sometimes make mistakes?</h3><p>Because it recognises patterns, not objects. Bad lighting, unusual angles, partial views, and objects that look alike can all confuse it. It also inherits biases from its training data: if some kinds of faces or objects were underrepresented in training, the system will be weaker at recognising them.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/what-is-a-neural-network/">What Is a Neural Network?</a> · <a href="https://noryvello.github.io/how-ai-image-generators-work/">How AI Image Generators Work</a> · <a href="https://noryvello.github.io/what-is-artificial-intelligence/">What Is Artificial Intelligence?</a> · <a href="https://noryvello.github.io/ai-vs-machine-learning-vs-deep-learning/">AI vs Machine Learning vs Deep Learning</a> · <a href="https://noryvello.github.io/ai-image-editing-guide/">AI Image Editing Guide</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

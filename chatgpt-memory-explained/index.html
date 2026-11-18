@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChatGPT Memory Explained: What It Remembers and How to Control It | Noryvello</title>
+<meta name="description" content="What ChatGPT memory stores, what it never stores, and how to view, delete, and switch off memories. A plain guide to staying in control of what the chatbot remembers.">
+<link rel="canonical" href="https://noryvello.github.io/chatgpt-memory-explained/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ChatGPT Memory Explained: What It Remembers and How to Control It">
+<meta property="og:description" content="What ChatGPT memory stores, and how to view, delete, and switch off memories.">
+<meta property="og:url" content="https://noryvello.github.io/chatgpt-memory-explained/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does ChatGPT remember everything I say?","acceptedAnswer":{"@type":"Answer","text":"No. Memory saves short summaries of things that seem useful for future chats, not a full recording of every message. Your chat history is separate from memory, and you can delete either one at any time from the settings."}},{"@type":"Question","name":"Can I stop ChatGPT remembering one thing?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can ask it in plain words to forget a specific detail, or open the memory list in the settings and delete that one entry. Either way, the memory is removed and will not be used in future chats."}},{"@type":"Question","name":"Does memory work across all my chats?","acceptedAnswer":{"@type":"Answer","text":"Saved memories can be used across your chats in the same account, which is the point of the feature. If you want a chat that is not shaped by your memories, you can use a temporary chat instead, which does not save memories and does not use them."}},{"@type":"Question","name":"What happens if I turn memory off?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT stops saving new memories. Your existing saved memories stay where they are unless you delete them separately, and each chat then starts fresh. You can turn memory back on later if you change your mind."}},{"@type":"Question","name":"Is my memory shared with other people?","acceptedAnswer":{"@type":"Answer","text":"No. Memories are tied to your own account and are not shown to other users. If you share your device or your account with someone else, they could see your chats and memories, so keep your account to yourself."}}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>ChatGPT Memory Explained: What It Remembers and How to Control It</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">ChatGPT memory lets the chatbot remember useful details from your chats, such as your preferences and ongoing projects, so you do not have to repeat yourself every time. You can view what it has saved, delete single memories, or switch memory off entirely. This guide explains what memory stores, what it never stores, and how to stay in control of it.</p>
+<p>Memory is one of those features that sounds helpful and slightly worrying at the same time. Helpful, because it is genuinely useful when a chatbot remembers that you prefer short answers, or that you are learning a language, or that you run a small shop. Worrying, because nobody wants a chatbot quietly building a file on them. The good news is that memory is not a mystery box. You can look inside it, change it, and turn it off, and this guide shows you how.</p>
+<p>The key idea is simple. Memory saves short summaries, not full transcripts. When something in a chat looks like it will matter later, ChatGPT notes it down in a few words. Later chats can then use those notes. Nothing is hidden from you: the saved memories are listed in the settings, and each one can be deleted on its own. The rest of this guide walks through what gets saved, what does not, and every control you have.</p>
+<div class="warn">Settings and menus move between updates, so the exact names and places described here may change. If a step does not match what you see on screen, look for a similarly named option in the settings area. Memory features also vary by plan and region, so some controls may look different on your account.</div>
+<h2>What ChatGPT memory is</h2>
+<p>Memory is a feature that lets ChatGPT carry information from one chat into another. Without it, every new chat starts blank: the chatbot knows nothing about you, your work, or your preferences. With memory switched on, it can remember the things you have told it and use them to give more useful answers. The change is easy to feel. Ask for help planning a week, and a chatbot with memory knows you have a standing meeting on Tuesdays. Ask for a summary, and it knows you like bullet points.</p>
+<p>It helps to think of memory as a small notebook the chatbot keeps about you, not as a recording of your life. The notebook holds short notes, and you are allowed to read it, cross things out, or throw the whole notebook away. That is what makes memory different from the chat history, which is the full record of your conversations. History is the transcript; memory is the set of notes taken from it.</p>
+<h2>What memory stores</h2>
+<p>Memory stores the kind of detail that makes future answers better. Common examples include your name and what you prefer to be called, the language you write in, your work or studies, and your ongoing projects. It also stores preferences you express, such as liking short answers, wanting examples with every explanation, or preferring a formal tone in emails. If you tell ChatGPT that you are training for a race, it may remember that and suggest training-related ideas later.</p>
+<p>It also stores facts you ask it to remember. You can say something like "remember that I am a teacher" or "remember that my shop opens at nine", and it will save that as a memory. These direct requests are the most reliable way to shape what gets stored, because you are choosing the note yourself instead of leaving it to the chatbot's judgement about what matters.</p>
+<h2>What memory never stores</h2>
+<p>Memory is not meant to hold sensitive personal details. It should not store things like passwords, account numbers, or identity documents, and you should never share those in a chat in the first place. It is also designed to avoid saving details about other people that you mention in passing, and it should not store information that is clearly meant to be private to one conversation, such as something you said while working through a personal problem.</p>
+<p>That said, no automatic system is perfect. A memory can be saved that you would rather not have kept, which is why the controls matter more than the promises. The safest habit is to treat memory like a notebook you share with a helpful colleague: useful for work preferences and ongoing projects, not the place for secrets. If you are ever unsure whether something should be remembered, do not put it in the chat at all.</p>
+<h2>How to view your memories</h2>
+<p>Seeing what ChatGPT remembers takes less than a minute. Open the settings area of your account and look for the memory section, where your saved memories are listed as short lines of text. Each line is one memory. Reading through the list is the best way to understand what the feature actually does, because the list is usually shorter and plainer than people expect.</p>
+<p>You can also ask ChatGPT directly. Try asking "what do you remember about me?" in a chat. It will usually summarize the memories it has saved, which is a quick way to check without opening the settings. If anything in the list surprises you, that is a sign to clean it up, which is the next section.</p>
+<h2>How to delete memories</h2>
+<p>There are two ways to remove a memory. The first is to delete a single entry from the memory list in the settings. Find the line you want gone and remove it. That memory stops being used right away. The second is to ask in a chat, in plain words, for ChatGPT to forget a specific thing, such as "forget that I prefer short answers". Both work, and the settings list is the better choice when you want to remove several memories at once.</p>
+<p>You can also clear all memories at once, which empties the whole notebook. This is useful if you have been using ChatGPT for a long time and the memories no longer match who you are or what you do. Clearing everything does not delete your chat history, and it does not affect your account. After clearing, ChatGPT simply starts building new memories from scratch, unless you switch memory off.</p>
+<h2>How to turn memory off</h2>
+<p>If you would rather ChatGPT did not remember anything between chats, you can switch memory off in the settings. Once it is off, no new memories are saved. Your existing saved memories remain until you delete them, so if you want a clean break, clear the list first and then switch the feature off. Turning memory off does not change anything else about how the chatbot works: you can still chat, ask questions, and use every other feature as normal.</p>
+<p>There is also a middle option. Temporary chats do not save memories and do not use the memories you already have. They are handy for a one-off question where you do not want the conversation to shape future answers. A temporary chat is also a good choice when someone else is using your device, since nothing from that chat is kept.</p>
+<h2>Memory and your privacy</h2>
+<p>Memory raises a fair question: who else can see what the chatbot remembers about you? The short answer is that memories are tied to your own account and are not shared with other users. They are not published, and they are not shown to anyone you chat with. The main risk is the ordinary one: if someone else uses your device or your account, they can open your settings and read the list, just as they could read your chat history.</p>
+<p>A sensible routine is to check your memory list every few months, the way you might tidy a desk drawer. Delete anything outdated, anything about a project that ended, and anything you do not remember telling it. Keep the memories that genuinely help, like your preferred language and your work. Used this way, memory is a small convenience, not a risk: a few helpful notes, fully under your control.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Does ChatGPT remember everything I say?</h3><p>No. Memory saves short summaries of things that seem useful for future chats, not a full recording of every message. Your chat history is separate from memory, and you can delete either one at any time from the settings.</p></div>
+<div class="faq"><h3>Can I stop ChatGPT remembering one thing?</h3><p>Yes. You can ask it in plain words to forget a specific detail, or open the memory list in the settings and delete that one entry. Either way, the memory is removed and will not be used in future chats.</p></div>
+<div class="faq"><h3>Does memory work across all my chats?</h3><p>Saved memories can be used across your chats in the same account, which is the point of the feature. If you want a chat that is not shaped by your memories, you can use a temporary chat instead, which does not save memories and does not use them.</p></div>
+<div class="faq"><h3>What happens if I turn memory off?</h3><p>ChatGPT stops saving new memories. Your existing saved memories stay where they are unless you delete them separately, and each chat then starts fresh. You can turn memory back on later if you change your mind.</p></div>
+<div class="faq"><h3>Is my memory shared with other people?</h3><p>No. Memories are tied to your own account and are not shown to other users. If you share your device or your account with someone else, they could see your chats and memories, so keep your account to yourself.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/chatgpt-privacy-settings-guide/">ChatGPT Privacy Settings</a> · <a href="https://noryvello.github.io/how-to-use-chatgpt-for-beginners/">How to Use ChatGPT</a> · <a href="https://noryvello.github.io/chatgpt-free-vs-plus/">ChatGPT Free vs Plus</a> · <a href="https://noryvello.github.io/ai-chatbot-privacy-comparison/">AI Chatbot Privacy Compared</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

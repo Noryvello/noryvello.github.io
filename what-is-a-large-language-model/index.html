@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Is a Large Language Model (LLM)? | Noryvello</title>
+<meta name="description" content="What is a large language model? A plain-English guide to LLMs: how they are trained, how next-word prediction works, and why they sound so confident.">
+<link rel="canonical" href="https://noryvello.github.io/what-is-a-large-language-model/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Is a Large Language Model (LLM)?">
+<meta property="og:description" content="A plain-English guide to large language models: what they are, how they predict words, and why confidence is not the same as correctness.">
+<meta property="og:url" content="https://noryvello.github.io/what-is-a-large-language-model/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is an LLM the same as AI?","acceptedAnswer":{"@type":"Answer","text":"No. AI is the broad field, and a large language model is one kind of AI system. An LLM specialises in language: reading and writing text. Other AI systems specialise in images, sound, or driving, and they are not language models."}},{"@type":"Question","name":"Does an LLM understand what it writes?","acceptedAnswer":{"@type":"Answer","text":"No. An LLM works out which words are most likely to come next based on patterns in its training data. It can produce fluent, sensible-sounding text without understanding what the words mean, which is why its answers need checking."}},{"@type":"Question","name":"Why does an LLM sometimes invent facts?","acceptedAnswer":{"@type":"Answer","text":"Because it predicts likely words rather than looking up facts. When it does not know something, it can still produce a confident-sounding answer that is made up. This is often called hallucination, and it is the main reason to verify important details."}},{"@type":"Question","name":"What is the difference between an LLM and a search engine?","acceptedAnswer":{"@type":"Answer","text":"A search engine finds pages that already exist and shows you links to them. An LLM writes a new answer from patterns it learned during training. Search points you to sources you can check; an LLM gives you text that may or may not be right."}},{"@type":"Question","name":"Can I trust an LLM's answers?","acceptedAnswer":{"@type":"Answer","text":"Treat them as drafts, not facts. LLMs are often right about general knowledge and very good at drafting and explaining, but they can be wrong about dates, numbers, quotes, and recent events. Check anything important against a reliable source."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>What Is a Large Language Model (LLM)?</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">A large language model, or LLM, is a type of AI trained on huge amounts of written text, so it can read, write, and answer questions in natural language. It works by predicting the most likely next word, one word at a time, based on patterns it learned during training. That simple mechanism is what powers the chatbots millions of people use every day.</p>
+<p>The letters LLM appear in almost every conversation about modern AI, yet few explanations say plainly what the thing actually is. A large language model is not a person, not a search engine, and not a database of facts. It is a piece of software that has read an enormous amount of text and learned the patterns of how words follow one another. When you ask it a question, it uses those patterns to write an answer.</p>
+<p>This guide explains LLMs in plain words: what they are, how they are trained, why they sound so confident, and where they go wrong. You do not need any technical background. By the end, you will know enough to use chatbots wisely and to spot the claims about them that are overblown.</p>
+<div class="warn">An LLM predicts likely words; it does not check facts. It can invent dates, names, quotes, and sources while sounding completely sure of itself. Never treat an LLM answer as a verified fact, and always check anything important against a reliable source.</div>
+<h2>What a large language model actually is</h2>
+<p>The name breaks down into three parts, and each one tells you something real. "Large" refers to the scale: these models are trained on vast collections of text, far more than any person could read in a lifetime, and they contain a huge number of internal settings that capture the patterns in that text. "Language" means the model works with words: it reads text in and writes text out. "Model" means it is a mathematical system built from training, not a set of rules written by hand.</p>
+<p>Think of it as a very experienced autocomplete. The autocomplete on your phone suggests the next word in a message based on what you usually type. An LLM does the same thing at a much larger scale, drawing on patterns from books, articles, websites, and conversations. It does not store those texts and copy from them; it stores the patterns, and it generates new text from those patterns every time you ask it something.</p>
+<p>This is why two people can ask the same question and get different answers. The model is not looking up a fixed response. It is writing a fresh answer each time, choosing likely words in sequence. The answers are usually similar in substance, but the wording varies, and sometimes the details vary too, which is one reason to double-check anything that matters.</p>
+<h2>How an LLM is trained, in plain words</h2>
+<p>Training an LLM means showing it a huge amount of text and letting it learn the patterns. During training, the model is given a piece of text with the next word hidden, and it guesses the hidden word. When it guesses wrong, it adjusts its internal settings slightly, so it is more likely to guess right next time. Repeated over an enormous number of examples, this process builds a system that is very good at predicting what comes next in a sentence.</p>
+<p>The training text comes from many sources: books, articles, websites, and other published writing. The model learns grammar, facts, styles, and ways of arguing, all as patterns in words. It also learns the biases and mistakes present in that text, because it cannot tell good information from bad during training. What it learns is what the text contains, for better and for worse.</p>
+<p>After this general training, most LLMs go through further tuning to make them useful as assistants. They are trained on examples of questions and good answers, and on feedback about which responses people prefer. This is what turns a raw text-predicting system into a chatbot that answers questions, follows instructions, and refuses some requests. The base ability is prediction; the assistant behaviour is added on top.</p>
+<h2>Next-word prediction: the engine underneath</h2>
+<p>Everything an LLM does comes down to one repeated action: given the words so far, predict the most likely next word. When you type "The capital of France is", the model predicts "Paris" because that is the overwhelmingly likely next word in its training patterns. It then adds "Paris" to the text and predicts the next word again, and again, until it has written a full answer.</p>
+<p>This is a strange way to produce knowledge, and it explains both the strengths and the weaknesses of LLMs. It explains why they write fluent, natural-sounding text: they have learned the patterns of fluent writing extremely well. It also explains why they can be confidently wrong: a wrong answer that follows the usual patterns of language sounds just as plausible to the model as a right one. The model has no separate way of checking whether what it wrote is true.</p>
+<p>It also explains why the same question can get different answers. At each step, the model chooses among several likely words, and a small change in the choice can send the answer in a different direction. Asking a question twice, or rephrasing it slightly, can produce a noticeably different reply. That variability is a feature of how prediction works, not a bug.</p>
+<h2>Why LLMs sound so confident</h2>
+<p>LLMs write in the style of confident, polished text, because confident, polished text dominates their training data. Books, articles, and well-written web pages rarely hedge every sentence, so the model learns to write in a sure tone. When it does not know an answer, it still writes in that same sure tone, because the tone is a pattern it learned, not a report on how certain it is.</p>
+<p>People are wired to trust fluent, confident language. When an answer is well structured, uses the right vocabulary, and reads smoothly, it feels true. This is the most important trap in using LLMs: fluency feels like knowledge, but the two are separate. A model can write a beautiful explanation of something that is completely wrong, and the writing itself gives no hint that anything is off.</p>
+<p>The practical defence is simple. Treat confident-sounding answers as claims to verify, especially when they include specific facts: dates, numbers, names, quotes, or references to studies and books. If an answer matters, check it against a source you trust. The more specific the claim, the more it deserves checking.</p>
+<h2>Common LLMs you may have heard of</h2>
+<p>Several large language models are widely known, and you may already have used one. GPT is the family of models behind ChatGPT. Claude is a model family known for long documents and careful writing. Gemini is Google's model family, built into Google's products. Llama is a model family from Meta that is openly available for others to build on. Each one is a different system, trained by a different organisation, with its own strengths and quirks.</p>
+<p>Despite the differences, all of them work on the same basic principle: predict the next word, trained on large amounts of text. The differences are in the details of training, tuning, and the products built around them. One may be better at writing, another at following long instructions, another at answering questions about a document you upload. For everyday use, any of them can draft, explain, summarise, and brainstorm.</p>
+<p>You do not need to memorise model names to use LLMs well. What matters is knowing what the tool is: a text-prediction system, not a mind. That understanding transfers to every chatbot you will ever use, whatever it is called, and it is the best protection against being misled by fluent nonsense.</p>
+<h2>What LLMs are good at, and where they fail</h2>
+<p>LLMs are genuinely good at several kinds of work. They draft and rewrite text quickly, explain complicated ideas in simpler words, summarise long documents, brainstorm lists of ideas, and help with learning by answering follow-up questions. For these tasks, they are like a tireless assistant who never gets bored and always has a suggestion. Used with checking, they save real time.</p>
+<p>They fail in predictable ways. They invent facts, get arithmetic wrong, misquote sources, and struggle with questions that need up-to-date information or real-world judgment. They are also poor at knowing their own limits: they rarely say "I don't know" unless they have been specifically tuned to do so. A question with no good answer often gets a polished bad answer instead of an honest admission.</p>
+<p>The best approach is to use LLMs for what they do well and to keep a person in charge of the rest. Let the model draft, and let yourself decide. Let it explain, and verify the explanation. Let it brainstorm, and pick the ideas that actually make sense. That partnership, model as assistant and person as judge, is where LLMs are most useful and least risky.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Is an LLM the same as AI?</h3><p>No. AI is the broad field, and a large language model is one kind of AI system. An LLM specialises in language: reading and writing text. Other AI systems specialise in images, sound, or driving, and they are not language models.</p></div>
+<div class="faq"><h3>Does an LLM understand what it writes?</h3><p>No. An LLM works out which words are most likely to come next based on patterns in its training data. It can produce fluent, sensible-sounding text without understanding what the words mean, which is why its answers need checking.</p></div>
+<div class="faq"><h3>Why does an LLM sometimes invent facts?</h3><p>Because it predicts likely words rather than looking up facts. When it does not know something, it can still produce a confident-sounding answer that is made up. This is often called hallucination, and it is the main reason to verify important details.</p></div>
+<div class="faq"><h3>What is the difference between an LLM and a search engine?</h3><p>A search engine finds pages that already exist and shows you links to them. An LLM writes a new answer from patterns it learned during training. Search points you to sources you can check; an LLM gives you text that may or may not be right.</p></div>
+<div class="faq"><h3>Can I trust an LLM's answers?</h3><p>Treat them as drafts, not facts. LLMs are often right about general knowledge and very good at drafting and explaining, but they can be wrong about dates, numbers, quotes, and recent events. Check anything important against a reliable source.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/what-is-artificial-intelligence/">What Is Artificial Intelligence?</a> · <a href="https://noryvello.github.io/how-generative-ai-works/">How Generative AI Works, Explained Simply</a> · <a href="https://noryvello.github.io/what-is-a-token-in-ai/">What Is a Token in AI?</a> · <a href="https://noryvello.github.io/how-ai-models-are-trained/">How AI Models Are Trained, Step by Step</a> · <a href="https://noryvello.github.io/what-is-natural-language-processing/">What Is Natural Language Processing (NLP)?</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

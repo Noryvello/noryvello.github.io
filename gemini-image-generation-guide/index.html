@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Generate Images with Gemini | Noryvello</title>
+<meta name="description" content="Learn to generate images with Gemini: describing subject, style, and mood, editing with follow-up prompts, and honest advice on text, faces, and hands.">
+<link rel="canonical" href="https://noryvello.github.io/gemini-image-generation-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Generate Images with Gemini">
+<meta property="og:description" content="How to generate and edit images with Gemini, including its honest limits.">
+<meta property="og:url" content="https://noryvello.github.io/gemini-image-generation-guide/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is image generation free in Gemini?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Image generation is available in Gemini, though the exact access depends on your account and plan, and the details change over time. Check the current plan information to see what is included for your account."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Gemini edit a photo I upload?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can upload a photo and ask Gemini to change it with a follow-up prompt, such as changing the style or adjusting the scene. The result is a new generated image based on your photo, not a precise edit of the original."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does text in my image look wrong?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rendering readable text inside images is a known weakness of AI image generators. Letters often come out misspelled or garbled, especially in longer phrases. For readable text, add it afterwards with an image editor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use the images commercially?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The rules about commercial use depend on the current terms of the service, which change over time. Check the terms before using a generated image on a product page, in advertising, or anywhere money is involved."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes a good image prompt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A good image prompt names the subject, the setting, the style, and the mood in plain words. One clear subject, one style, and one lighting choice will outperform a long list of adjectives almost every time."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How to Generate Images with Gemini</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">You can ask Gemini to create images right in chat by describing what you want in plain words — the subject, the setting, and the style. Follow-up prompts let you change colours, swap details, or try a new mood. The results can be striking, but text inside images, faces, and hands often come out wrong.</p>
+<p>Image generation turns a sentence into a picture. You describe what you want — a subject, a place, a style, a mood — and Gemini creates an image to match. It is a remarkable tool for illustrations, mock-ups, social posts, and creative experiments, and it takes no drawing skill at all.</p>
+<p>This guide shows how to ask for images well: how to describe a subject clearly, how to add style and mood, how to edit with follow-up prompts, and how to save the results. It also gives an honest account of the limits, because knowing what goes wrong saves a lot of frustration.</p>
+<div class="warn">AI images have real limits: words inside an image often come out misspelled or garbled, faces can look slightly off, and hands are a classic weak spot. Treat generated images as drafts to review, and never present an AI image as a real photograph.</div>
+<h2>Asking for your first image</h2>
+<p>Start with a simple request in the chat box: describe the image you want in one or two sentences. Asking for a watercolour painting of a lighthouse at sunset, for example, gives Gemini a subject, a style, and a mood to work with. The first result may not be perfect, and that is normal — image generation is a conversation, not a single command.</p>
+<p>Keep your first prompts short and concrete. A clear subject and a clear setting beat a long list of adjectives, because each extra detail is another thing the model has to balance. Once you see the first result, you can add detail in follow-up prompts, changing one thing at a time.</p>
+<p>Generate a few versions of the same idea before you judge it. The same prompt can produce very different images, and the third or fourth attempt is often much better than the first. Variety is free, so use it.</p>
+<h2>Describing the subject clearly</h2>
+<p>The subject is the heart of the prompt, and it deserves the most care. Name what is in the image, how many of them there are, and what they are doing. A prompt that says a red bicycle leaning against a wooden fence gives the model a clear scene; a prompt that only says a bicycle leaves everything to chance.</p>
+<p>Details about position and scale help too. Say whether the subject fills the frame or sits small in a landscape, whether it is viewed from above or at eye level, and whether anything else shares the scene. These small choices shape the composition more than any style word.</p>
+<p>If the subject is a person, keep the description simple and avoid asking for a real, identifiable person. Generic descriptions — a gardener, a student, a grandmother — work better and avoid the problems that come with trying to recreate a real face.</p>
+<h2>Adding style and mood</h2>
+<p>Style words change the whole feeling of an image. Watercolour, oil painting, pencil sketch, 3D render, vintage photograph, and flat illustration each produce a different look, and naming one in your prompt is the fastest way to control it. Pick one style per prompt rather than mixing several, because mixed styles often come out muddled.</p>
+<p>Mood words work the same way. Calm, dramatic, playful, mysterious, and warm each push the image in a different direction, mostly through colour and light. A calm morning scene and a dramatic storm scene can share the same subject and look completely different, and the mood word is what decides.</p>
+<p>Lighting deserves a word of its own. Golden hour, soft daylight, moonlight, and studio lighting each give an image a distinct atmosphere, and naming the light is one of the most reliable ways to improve a result. If an image feels flat, the missing ingredient is often the light.</p>
+<h2>Editing an image with follow-up prompts</h2>
+<p>Once you have an image you mostly like, follow-up prompts let you change it. Ask to change the colour of one object, to add or remove an element, to shift the time of day, or to try a different style. Each change is a new generation, so the image will shift in small ways beyond what you asked for — that is normal.</p>
+<p>Change one thing at a time. A prompt that changes the colour, the background, and the style all at once gives the model three chances to misunderstand you, and the result is often worse than the original. Small, patient edits keep the image close to the version you liked.</p>
+<p>If a follow-up makes things worse, go back to the earlier version and try a different wording. Sometimes a small change in how you describe the edit — saying make the sky deeper blue instead of change the sky — is enough to get the result you wanted.</p>
+<h2>Saving and using your images</h2>
+<p>When you have an image you like, save it right away. Download it to your device rather than relying on the chat history, because conversations can be hard to search later. Give the file a clear name that describes the image, so you can find it again.</p>
+<p>Think about where the image will be used. An image for a social post needs to look good small, so a simple subject and strong colours work best. An image for a presentation slide needs space for text, so ask for the subject on one side with empty space on the other. Naming the use in your prompt helps Gemini frame the image for it.</p>
+<p>Check the current terms before using a generated image commercially, such as on a product page or in an advertisement. The rules about ownership and commercial use vary and change, and this guide does not give legal advice. For personal and creative use, generated images are generally fine to enjoy and share.</p>
+<h2>Honest limits: text, faces, and hands</h2>
+<p>Text inside images is the most visible limit. Ask Gemini to put words on a sign, a book cover, or a poster, and the letters often come out misspelled, repeated, or garbled. Short words sometimes work, and long phrases rarely do. If your image needs readable text, plan to add it yourself afterwards with a simple editor.</p>
+<p>Faces are the second limit. A generated face can look almost right and still feel wrong: eyes that do not quite match, a smile that looks pasted on, or skin that looks too smooth. Small faces in a crowd are usually fine, but a large portrait will reward close inspection — and close inspection is where the flaws show.</p>
+<p>Hands are the classic weak spot of every image generator. Fingers can be the wrong number, bent in impossible ways, or merged together. Prompts that keep hands out of the frame, or show them small and simple, avoid the problem entirely. When hands matter, check them first and regenerate if they look wrong.</p>
+<h2>Fixing common problems</h2>
+<p>Most bad results have a simple cause. If the image ignores part of your prompt, the prompt was probably too long or too complicated — shorten it and try again. If the image looks generic, the prompt was too vague — add a specific subject, setting, and style. If the colours look wrong, name the colours you want instead of leaving them to chance.</p>
+<p>If the same problem repeats across several attempts, change your approach rather than repeating the prompt. Describe the scene differently, swap the style word, or break the request into two steps: generate the scene first, then ask for the change you want as a follow-up.</p>
+<p>Some problems have no fix. A request that needs accurate text, a real person's face, or precise detail may be beyond what the tool can do today. Recognising that quickly — and switching to a different approach, such as a real photo or a hand-made graphic — saves more time than endlessly regenerating.</p>
+<h2>Ideas for images worth making</h2>
+<p>Some kinds of images play to the tool's strengths. Illustrations for stories and blog posts, concept art for a project, mood boards, greeting-card designs, and decorative backgrounds all work well, because they value atmosphere over accuracy. Abstract and fantasy scenes are especially strong, since there is no real version to compare them against.</p>
+<p>Images for learning are another good use. A diagram-style illustration of a concept, a labelled scene for a language lesson, or a visual metaphor for a difficult idea can make study material more memorable. Keep the text out of the image and add labels yourself.</p>
+<p>Finally, use image generation to explore. Try the same subject in five styles, or the same style across five subjects, and notice what changes. Play is how you learn what the tool does well, and the experiments that fail teach you as much as the ones that work.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Is image generation free in Gemini?</h3><p>Image generation is available in Gemini, though the exact access depends on your account and plan, and the details change over time. Check the current plan information to see what is included for your account.</p></div>
+<div class="faq"><h3>Can Gemini edit a photo I upload?</h3><p>You can upload a photo and ask Gemini to change it with a follow-up prompt, such as changing the style or adjusting the scene. The result is a new generated image based on your photo, not a precise edit of the original.</p></div>
+<div class="faq"><h3>Why does text in my image look wrong?</h3><p>Rendering readable text inside images is a known weakness of AI image generators. Letters often come out misspelled or garbled, especially in longer phrases. For readable text, add it afterwards with an image editor.</p></div>
+<div class="faq"><h3>Can I use the images commercially?</h3><p>The rules about commercial use depend on the current terms of the service, which change over time. Check the terms before using a generated image on a product page, in advertising, or anywhere money is involved.</p></div>
+<div class="faq"><h3>What makes a good image prompt?</h3><p>A good image prompt names the subject, the setting, the style, and the mood in plain words. One clear subject, one style, and one lighting choice will outperform a long list of adjectives almost every time.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/how-ai-image-generators-work/">How AI Image Generators Work</a> · <a href="https://noryvello.github.io/how-to-write-image-generation-prompts/">How to Write Prompts for AI Image Generators</a> · <a href="https://noryvello.github.io/ai-image-prompt-examples/">50 AI Image Prompt Examples</a> · <a href="https://noryvello.github.io/ai-image-styles-explained/">AI Image Styles Explained</a> · <a href="https://noryvello.github.io/how-to-use-gemini-for-beginners/">How to Use Gemini: A Beginner's Guide</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

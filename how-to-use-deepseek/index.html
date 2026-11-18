@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Use DeepSeek: A Beginner's Guide | Noryvello</title>
+<meta name="description" content="New to DeepSeek? Learn how to sign up, write your first prompt, use reasoning mode, and follow up for better answers.">
+<link rel="canonical" href="https://noryvello.github.io/how-to-use-deepseek/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Use DeepSeek: A Beginner's Guide">
+<meta property="og:description" content="A beginner's guide to DeepSeek, including reasoning mode explained in plain words.">
+<meta property="og:url" content="https://noryvello.github.io/how-to-use-deepseek/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is DeepSeek free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DeepSeek offers free access to its chat service, with limits that can change over time. Check the current options on the service itself, because free tiers and paid plans change between updates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is reasoning mode for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reasoning mode shows the assistant's step-by-step thinking before its final answer. It is most useful for maths, logic, planning, and debugging, where seeing the working helps you check the result."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can DeepSeek browse the web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Whether DeepSeek can search the web depends on the version and settings available to you, and this can change. If you need current information, ask for sources and check them yourself, or verify the facts elsewhere."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I start a new chat instead of continuing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Look for a new chat button, usually near the top of the chat list or sidebar. Starting a new chat clears the conversation context, so the assistant will not carry details from the old topic into the new one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I trust DeepSeek's answers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Treat them as a helpful draft, not a verified fact. Check important numbers, quotes, and claims against a reliable source, and test any code it writes before you use it."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How to Use DeepSeek: A Beginner's Guide</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">DeepSeek is a chat-based AI assistant you can talk to in plain words: ask a question, and it answers in a chat window. Its reasoning mode shows its step-by-step thinking before it answers, which can help with maths, planning, and tricky problems. This guide walks you through signing up, writing your first prompts, and getting useful follow-up answers.</p>
+<p>DeepSeek works like other AI chatbots: you type a message, it replies, and you can keep the conversation going. What makes it stand out for many people is its reasoning mode, which lets you watch the assistant work through a problem step by step before giving its final answer. For homework, planning, and logic puzzles, seeing the working can be as useful as the answer itself.</p>
+<p>You do not need any technical background to start. If you can type a question, you can use DeepSeek. This guide covers the first steps, how to write prompts that get good answers, what reasoning mode is for, and the limits worth knowing before you rely on it.</p>
+<div class="warn">DeepSeek's features, menus, and limits change over time, so the steps here are described in general terms. Answers can contain mistakes, so check important facts, numbers, and code before you rely on them. Never share passwords, account details, or other sensitive information in a chat.</div>
+<h2>What DeepSeek is and what it is good for</h2>
+<p>DeepSeek is an AI assistant built around a large language model. You chat with it in plain language, and it can answer questions, explain ideas, draft text, help with code, and work through problems. It is a general-purpose tool, so the same chat window can help with an essay outline, a recipe, and a maths problem.</p><p>It is particularly popular for reasoning tasks: problems where the answer needs several steps, such as working out a budget, planning a schedule, or debugging a piece of code. Its reasoning mode is designed for exactly these jobs, and it is the feature most worth trying first if you are new to the tool.</p>
+<h2>Signing up and opening your first chat</h2>
+<p>To start, create an account on the DeepSeek website or app using an email address or another sign-in option offered on the screen. Once you are in, you will see a chat window with a text box at the bottom. That box is the whole interface: type your question there and send it.</p><p>Your past chats are usually listed in a sidebar, so you can return to an earlier conversation or start a fresh one. Start a new chat whenever you change topics, because the assistant uses the whole conversation as context. Mixing two unrelated topics in one chat can confuse its answers.</p>
+<h2>Writing your first prompt</h2>
+<p>A good first prompt is specific. Instead of <code>help me with maths</code>, try <code>explain how to solve 3x + 7 = 22 step by step, as if I am learning algebra for the first time</code>. The extra detail tells DeepSeek what you know, what you want, and how to explain it.</p><p>If the answer is too long, too short, or too advanced, say so in your next message. Short follow-ups like <code>shorter, please</code> or <code>explain that part again with an example</code> work well. Think of the first answer as a draft you can shape, not a final result you must accept.</p>
+<h2>Reasoning mode, explained in plain words</h2>
+<p>Reasoning mode is a setting you can turn on before you send a question. When it is on, DeepSeek works through the problem out loud, showing its thinking in steps, and then gives a final answer. You can read the thinking to see how it reached its conclusion, which makes it easier to spot a wrong step.</p><p>Use reasoning mode for problems with a right answer: maths, logic puzzles, planning with constraints, and debugging. For creative writing or simple questions, the extra thinking adds little and takes longer. If the thinking looks confused, rephrase the question with clearer details and try again.</p>
+<h2>Follow-ups: how to steer an answer</h2>
+<p>The real skill with any chatbot is the follow-up. After the first answer, you can ask it to explain a step, give an example, try a different approach, or compare two options. Each follow-up builds on the same conversation, so you do not need to repeat the original question.</p><p>If an answer feels wrong, ask it to show its working or to check its own answer. You can also paste the answer back with a question like <code>is there a mistake in step two?</code> This does not guarantee a correct result, but it often surfaces errors that a single answer would hide.</p>
+<h2>Everyday uses: writing, learning, coding, planning</h2>
+<p>For writing, DeepSeek can draft emails, outline essays, and rewrite a paragraph in a simpler style. For learning, it can explain a concept at your level, quiz you on a topic, and turn notes into flashcards. For coding, it can explain what a piece of code does, suggest a fix for an error, and write small functions you can test yourself.</p><p>For planning, it can break a big task into steps, draft a weekly schedule, or compare two options side by side. In each case, give it the facts it needs inside the prompt, because it cannot see your files, your calendar, or your inbox unless you share them.</p>
+<h2>Limits worth knowing</h2>
+<p>DeepSeek can be confidently wrong. It may invent a fact, misquote a source, or make an arithmetic slip while sounding certain. Treat its answers as a starting point, and verify anything important against a reliable source or your own working.</p><p>It also has no memory of you between chats unless the service offers a memory feature, and it cannot browse your device or act on your behalf. Knowing these limits keeps your expectations realistic and your results more reliable.</p>
+<h2>Saving and organising your chats</h2>
+<p>Over time, your chat list fills up with half-finished questions and useful answers you may want again. Get into the habit of naming the chats that matter, so you can find them later without scrolling through a long list of first questions. If the service lets you rename a conversation, give it a short label like the topic or the project it belongs to.</p><p>For chats that produced something you want to keep, copy the useful part into your own notes rather than relying on the chat history. Services change, accounts close, and history can be deleted by accident. Your own notes are the durable copy, and copying the answer by hand also helps you remember it.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Is DeepSeek free to use?</h3><p>DeepSeek offers free access to its chat service, with limits that can change over time. Check the current options on the service itself, because free tiers and paid plans change between updates.</p></div>
+<div class="faq"><h3>What is reasoning mode for?</h3><p>Reasoning mode shows the assistant's step-by-step thinking before its final answer. It is most useful for maths, logic, planning, and debugging, where seeing the working helps you check the result.</p></div>
+<div class="faq"><h3>Can DeepSeek browse the web?</h3><p>Whether DeepSeek can search the web depends on the version and settings available to you, and this can change. If you need current information, ask for sources and check them yourself, or verify the facts elsewhere.</p></div>
+<div class="faq"><h3>How do I start a new chat instead of continuing?</h3><p>Look for a new chat button, usually near the top of the chat list or sidebar. Starting a new chat clears the conversation context, so the assistant will not carry details from the old topic into the new one.</p></div>
+<div class="faq"><h3>Can I trust DeepSeek's answers?</h3><p>Treat them as a helpful draft, not a verified fact. Check important numbers, quotes, and claims against a reliable source, and test any code it writes before you use it.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/how-to-use-chatgpt-for-beginners/">How to Use ChatGPT</a> · <a href="https://noryvello.github.io/deepseek-vs-chatgpt/">DeepSeek vs ChatGPT</a> · <a href="https://noryvello.github.io/best-free-ai-chatbots/">The Best Free AI Chatbots</a> · <a href="https://noryvello.github.io/how-to-choose-an-ai-chatbot/">How to Choose an AI Chatbot</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

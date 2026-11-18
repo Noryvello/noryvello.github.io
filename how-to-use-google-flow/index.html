@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Use Google Flow for AI Video | Noryvello</title>
+<meta name="description" content="Learn how to use Google Flow for AI video: text-to-video, frames-to-video, camera controls, credits, and downloading clips, with honest notes on its limits.">
+<link rel="canonical" href="https://noryvello.github.io/how-to-use-google-flow/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Use Google Flow for AI Video">
+<meta property="og:description" content="A beginner's guide to making short AI video clips with Google Flow, from your first prompt to a finished download.">
+<meta property="og:url" content="https://noryvello.github.io/how-to-use-google-flow/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need a paid plan to use Google Flow?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Access depends on the plan tied to your Google account, and the details change over time. Check the current access and plan information in the product before you start, and look at the credits display so you know what you have available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long are the clips Flow makes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Flow produces short clips rather than long videos. If you need a longer piece, plan it as a series of short shots, generate each clip separately, and join them in a video editor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Flow make videos with readable text or clear speech?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not reliably. On-screen text and speech in generated clips are often garbled, which is a known limit of current AI video tools. Plan around it by adding real text and voiceover in your editor instead of asking the model to produce them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is frames-to-video?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Frames-to-video starts from images instead of words. You supply a starting image, and in some cases an ending image, and Flow creates the movement between them. It is useful when you already have the look you want and only need motion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use Flow clips in my own videos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can download your clips and edit them into your own projects. For commercial use, check the current terms in the product, because the rules for generated content can change."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How to Use Google Flow for AI Video</h1><p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">Google Flow is Google's AI video tool: you describe a scene in words, or start from an image, and it generates a short video clip you can download and edit. This guide walks through signing in, text-to-video and frames-to-video, camera controls, and credits, plus the limits to expect.</p>
+<p>AI video tools have gone from a curiosity to a practical part of everyday creating. Flow is Google's entry into that space, aimed at people who want to turn an idea into a moving clip without a camera, a set, or editing experience. You type what you want to see, or you give it a picture to start from, and the tool produces a short clip you can review, regenerate, or download.</p>
+<p>This guide covers the whole first session: what Flow is, how to sign in, how its two main creation modes work, how to steer the camera, how credits are counted, and how to get your clips out of the tool. It also covers the honest limits, because knowing what Flow does badly saves you more time than knowing what it does well.</p>
+<div class="warn">Flow's features, menus, credit rules, and limits change often, so the steps in this guide describe how the tool generally works rather than a fixed button-by-button path. Generated clips are short, and on-screen text and speech in them are often garbled, so plan your projects around those limits.</div>
+<h2>What Google Flow is</h2>
+<p>Flow is a web-based tool for creating short video clips with AI. Instead of filming, you write a prompt that describes a scene, a subject, and a mood, and the tool's video model generates a clip that matches it. You can also start from images: give Flow a picture and it will animate it, or give it a starting frame and an ending frame and it will create the movement between them.</p>
+<p>Flow is built for short-form work. Think of it as a clip maker, not a full video editor. It is useful for social media clips, short ads, storyboards that move, background visuals, and experiments. A finished video usually comes from generating several clips in Flow and joining them in a video editor, where you add music, captions, and your own cuts.</p>
+<p>Like all AI video tools, Flow works best when you treat it as a collaborator rather than a vending machine. Your first generation is a draft. Review it, change the prompt, adjust the settings, and generate again. The people who get the best results are the ones who expect to iterate.</p>
+<h2>Signing in and finding your way around</h2>
+<p>Flow runs in a web browser and uses a Google account to sign in. After signing in, you land on a workspace where your projects live. A project holds the clips you generate for one idea, so it pays to start a new project for each video you are planning rather than letting every experiment pile into one place.</p>
+<p>The main screen centres on the prompt box, where you describe the clip you want. Around it you will find your saved clips, your projects, and the settings for each generation, such as the aspect ratio and the quality level. The exact layout changes between updates, so if a button has moved since you last visited, look for the same ideas under a slightly different name rather than assuming the feature is gone.</p>
+<p>Before your first generation, take a minute to find three things: where your credits are shown, where finished clips are stored, and how to download a clip. Knowing those three spots up front keeps the rest of the session smooth.</p>
+<h2>Text-to-video: turning a written idea into a clip</h2>
+<p>Text-to-video is the simplest way to start. You write a prompt describing the scene, and Flow generates a clip from it. A good prompt names the subject, the action, the setting, and the look. Compare a weak prompt, "a dog in a park," with a stronger one: "a golden retriever running across a sunny park lawn, leaves blowing, warm afternoon light, handheld camera feel." The second prompt gives the model far more to work with.</p>
+<p>Motion words matter more than decoration. Words like walking, turning, rising, drifting, and spinning tell the model what should move and how. Without motion words, the model may produce a clip that looks like a still photo with a slight wobble. If your clip comes back too static, add one clear action to the prompt and generate again.</p>
+<p>Keep prompts focused on one shot. A prompt that tries to describe three scenes in one clip usually produces a muddle, because the tool is generating a single short shot. One subject, one action, one setting, and a few words about light and mood is a reliable shape for a first prompt.</p>
+<h2>Frames-to-video: starting from images</h2>
+<p>Frames-to-video starts from pictures instead of words. You supply a starting image, and Flow animates it into a clip. In some cases you can also supply an ending image, and the tool creates the movement that connects the two. This mode is useful when you already have the look you want and only need motion.</p>
+<p>This mode gives you more control over the first frame than text-to-video does. If you have a product photo, an illustration, or a still from a shoot, frames-to-video lets you keep that exact image and add movement to it. That makes it a good fit for product shots, animated posters, and scenes where the composition is already decided.</p>
+<p>The images you supply should be clear and well lit, and the subject should be easy to pick out. A cluttered or blurry starting image gives the model a weak foundation, and the clip will show it. If the result looks odd, try a simpler starting image before blaming the prompt.</p>
+<h2>Camera controls: directing the shot</h2>
+<p>Flow offers camera controls that let you steer how the shot moves, in general terms: whether the camera stays still, pushes in, pulls back, pans across a scene, or follows the subject. These controls are the closest thing Flow has to a director's chair, and they make a bigger difference to the feel of a clip than most prompt words do.</p>
+<p>Match the camera move to the mood you want. A slow push-in feels intimate and focused. A wide, steady shot feels calm and observational. A fast pan feels energetic but can also feel chaotic, so use it sparingly. When in doubt, start with a still or slow-moving camera: it is the easiest move to get right, and it lets the subject carry the clip.</p>
+<p>One common mistake is stacking several camera moves into one short clip. A clip that pans, zooms, and tilts at once usually looks restless rather than cinematic. Pick one move per clip, and if you want variety, generate several clips with different moves and cut between them in your editor.</p>
+<h2>Credits: how generation is counted</h2>
+<p>Flow counts generations with credits. Each clip you generate uses some of your credits, and the amount can depend on the settings you choose, such as the quality level. Higher-quality generations generally use more credits than standard ones, so it is worth using the standard setting while you are experimenting and saving the higher setting for the clips you actually plan to keep.</p>
+<p>How many credits you have, and how they refill, depends on the plan tied to your account. The details of plans and credit rules change over time, so this guide does not state any specific amounts. Check the credits display inside Flow before a long session, and check the current plan information if you are deciding whether to upgrade.</p>
+<p>A practical habit is to plan before you generate. Sketch your shot list on paper, write your prompts in advance, and generate in small batches. Every clip you generate without a plan is a credit spent on an experiment you may not need. A short plan at the start of a session usually pays for itself several times over.</p>
+<h2>Downloading and using your clips</h2>
+<p>When a clip looks good, download it to your own device rather than leaving it only inside Flow. Downloaded clips can be trimmed, joined, captioned, and mixed with music in any video editor. Most projects need this step: Flow makes the raw material, and your editor turns it into a finished video.</p>
+<p>Before downloading, watch the whole clip at full size. Small previews hide problems. Look for warped hands, flickering backgrounds, objects that appear and disappear, and text that reads as nonsense. These flaws are common in AI video, and catching them now is easier than fixing them after you have built a whole edit around a flawed clip.</p>
+<p>Keep the clips you like, and keep notes on the prompts that produced them. A simple habit, writing the prompt next to the file name or in a notes file, saves you from trying to remember how you got a result you want to repeat. Over time, those notes become your own prompt library.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Do I need a paid plan to use Google Flow?</h3><p>Access depends on the plan tied to your Google account, and the details change over time. Check the current access and plan information in the product before you start, and look at the credits display so you know what you have available.</p></div>
+<div class="faq"><h3>How long are the clips Flow makes?</h3><p>Flow produces short clips rather than long videos. If you need a longer piece, plan it as a series of short shots, generate each clip separately, and join them in a video editor.</p></div>
+<div class="faq"><h3>Can Flow make videos with readable text or clear speech?</h3><p>Not reliably. On-screen text and speech in generated clips are often garbled, which is a known limit of current AI video tools. Plan around it by adding real text and voiceover in your editor instead of asking the model to produce them.</p></div>
+<div class="faq"><h3>What is frames-to-video?</h3><p>Frames-to-video starts from images instead of words. You supply a starting image, and in some cases an ending image, and Flow creates the movement between them. It is useful when you already have the look you want and only need motion.</p></div>
+<div class="faq"><h3>Can I use Flow clips in my own videos?</h3><p>Yes, you can download your clips and edit them into your own projects. For commercial use, check the current terms in the product, because the rules for generated content can change.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/how-ai-video-generators-work/">How AI Video Generators Work</a> · <a href="https://noryvello.github.io/how-to-make-ai-videos-for-beginners/">How to Make AI Videos</a> · <a href="https://noryvello.github.io/ai-video-prompt-examples/">AI Video Prompt Examples</a> · <a href="https://noryvello.github.io/text-to-video-vs-image-to-video/">Text-to-Video vs Image-to-Video</a> · <a href="https://noryvello.github.io/ai-video-mistakes-to-avoid/">AI Video Mistakes to Avoid</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>
