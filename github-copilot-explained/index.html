@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub Copilot Explained: What It Does and Who It's For | Noryvello</title>
+<meta name="description" content="What is GitHub Copilot? How it suggests code as you type, where it works, who it fits best, and free vs paid access in general terms — with honest limits.">
+<link rel="canonical" href="https://noryvello.github.io/github-copilot-explained/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GitHub Copilot Explained: What It Does and Who It's For">
+<meta property="og:description" content="GitHub Copilot suggests code as you type — here is what it does, where it works, and who it fits best.">
+<meta property="og:url" content="https://noryvello.github.io/github-copilot-explained/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is GitHub Copilot free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Copilot is offered in both free and paid forms, and what each includes changes over time. The free form typically covers limited use, enough to try it properly. Check the current terms for the details, since plans and prices change."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which editors does Copilot work in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Copilot works as an extension in the code editors most developers use, and in GitHub's own browser and chat tools. The exact list changes as new versions appear, so check the current documentation for the editors you use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Copilot write a whole program by itself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Copilot suggests code line by line or function by function — it does not design or build a whole application on its own. It helps with the pieces; the architecture, the decisions, and the responsibility for the result stay with the programmer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to know how to code to use Copilot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can use Copilot as a beginner, and it can teach you patterns by example. But it is far more useful — and far safer — once you can read the code it suggests and judge whether it is right. Learn the basics of a language first, then let Copilot speed you up."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why must I review every suggestion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because Copilot can suggest code that is wrong, insecure, or outdated, and it presents every suggestion with the same confidence. A wrong suggestion that looks right is the most dangerous kind. Reading and testing each suggestion is what turns a fast tool into a safe one."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>GitHub Copilot Explained: What It Does and Who It's For</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">GitHub Copilot is an AI assistant that suggests code as you type, right inside your code editor. This guide explains what it is, how its suggestions work, where you can use it, and who benefits most — and why every suggestion still needs a human review.</p>
+<p>GitHub Copilot is one of the best-known AI coding tools, and the idea behind it is simple: as you write code, it suggests what comes next. Sometimes that is a single line; sometimes it is a whole function. You accept what is right, ignore what is not, and keep writing.</p>
+<p>It sounds like magic, and on a good day it feels like it. But Copilot is a prediction tool, not a programmer: it suggests the code most likely to follow, based on patterns it has learned. Understanding that difference is the key to using it well — and to knowing when not to trust it.</p>
+<div class="warn">Every Copilot suggestion must be reviewed before you use it. Copilot can suggest code that is wrong, insecure, outdated, or simply not what you meant — and it presents all suggestions with the same confidence. Read each one, test it, and only keep it if you understand what it does.</div>
+<h2>What Copilot is</h2>
+<p>GitHub Copilot is an AI pair programmer built by GitHub: a tool that sits inside your code editor and suggests code as you write. It works from context — the file you are editing, the comments you have written, and the code around your cursor — and offers completions that you can accept with a keystroke or dismiss and keep typing.</p>
+<p>It is not a chatbot you have to talk to, and it is not a separate program. It lives where you already work, which is the point: the suggestions appear in the flow of writing, at the moment you need them, without switching windows or breaking concentration.</p>
+<p>Copilot supports many programming languages and works best with the languages that have the most code written in them — the common ones, where patterns are well established. In less common languages or unusual frameworks, its suggestions are thinner and less reliable.</p>
+<h2>How it suggests code</h2>
+<p>Copilot predicts code the way a keyboard predicts words: given what you have written so far, it suggests what is most likely to come next. It learned those patterns from a large body of existing code, which is why it is good at common tasks — a loop over a list, a function that reads a file, a standard way to handle an error.</p>
+<p>Comments steer it. If you write a comment describing what you want — "sort the list of customers by last name" — Copilot will try to write the code that does it. A clear comment produces a better suggestion than a vague one, which is why writing good comments is now a coding skill in its own right.</p>
+<p>Suggestions come in shades of confidence, though Copilot does not label them. A suggestion for a standard pattern is usually sound; a suggestion for unusual logic may look right and be subtly wrong. The only way to tell is to read the code and test it — there is no shortcut around that.</p>
+<h2>Where it works</h2>
+<p>Copilot works inside the code editors most developers use, as an extension you install. Once installed, it activates automatically when you open a code file: you type, it suggests, you accept or ignore. There is nothing else to set up for the basic experience.</p>
+<p>It also works in other places GitHub provides — in the browser, in chat-style interfaces where you can ask it questions about code, and in tools that help with pull requests. The editor extension is where most people meet it first, and it is where it is most useful day to day.</p>
+<p>Interfaces and features change over time, as they do with every tool. The details of where Copilot appears and what each version offers will shift, so treat any step-by-step guide as a snapshot and check the current documentation when you set it up.</p>
+<h2>Who it fits best</h2>
+<p>Copilot fits developers who already know how to code and want to move faster. It is strongest at the routine parts of programming: boilerplate, standard patterns, repetitive code, and the small functions that take minutes to write and seconds to suggest. An experienced developer can spot a wrong suggestion in a glance and gain real speed.</p>
+<p>Beginners can benefit too, but differently. For a learner, Copilot is a source of examples: suggestions show how a task is usually written, which teaches patterns. The risk is accepting code you do not understand — so beginners should read every suggestion, ask what it does when unsure, and practise writing the same code by hand.</p>
+<p>It fits less well where the code is unusual or the stakes are high. Security-sensitive code, novel algorithms, and code that must meet strict rules all need a human who understands the problem deeply. Copilot can draft, but it cannot take responsibility for the result.</p>
+<h2>Free and paid access in general terms</h2>
+<p>Copilot is offered in both free and paid forms, and what each includes changes over time. The free form typically covers a limited amount of use — enough to try it properly and to help with small projects — while paid plans offer fuller access and additional features for people who use it every day.</p>
+<p>Students and teachers have historically had access through education programs, and open-source maintainers have had their own arrangements. These offers change, so check the current terms rather than relying on what someone told you last year.</p>
+<p>Plans and prices change, and this guide does not state them. If you are deciding whether a paid plan is worth it, try the free form first for a week or two of real work. You will learn more from that than from any comparison page — including whether you actually reach for it or forget it is there.</p>
+<h2>Limits worth knowing</h2>
+<p>Copilot's biggest limit is also its biggest risk: it is confident about everything. A wrong suggestion looks exactly like a right one. It does not know your project, your users, or what "correct" means for your situation — it only knows what code usually looks like.</p>
+<p>It can also suggest outdated approaches. The patterns it learned come from code written over many years, and some of that code uses methods that are no longer recommended. If you are learning, a suggestion may teach you an old habit; if you are building something real, it may introduce a weakness you did not ask for.</p>
+<p>Finally, Copilot can make you lazy. Accepting suggestions without reading them feels fast, but it builds a program you do not understand — and a program you do not understand is one you cannot fix, secure, or improve. The discipline of reading every suggestion is the price of the speed.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Is GitHub Copilot free?</h3><p>Copilot is offered in both free and paid forms, and what each includes changes over time. The free form typically covers limited use, enough to try it properly. Check the current terms for the details, since plans and prices change.</p></div>
+<div class="faq"><h3>Which editors does Copilot work in?</h3><p>Copilot works as an extension in the code editors most developers use, and in GitHub&#x27;s own browser and chat tools. The exact list changes as new versions appear, so check the current documentation for the editors you use.</p></div>
+<div class="faq"><h3>Can Copilot write a whole program by itself?</h3><p>Copilot suggests code line by line or function by function — it does not design or build a whole application on its own. It helps with the pieces; the architecture, the decisions, and the responsibility for the result stay with the programmer.</p></div>
+<div class="faq"><h3>Do I need to know how to code to use Copilot?</h3><p>You can use Copilot as a beginner, and it can teach you patterns by example. But it is far more useful — and far safer — once you can read the code it suggests and judge whether it is right. Learn the basics of a language first, then let Copilot speed you up.</p></div>
+<div class="faq"><h3>Why must I review every suggestion?</h3><p>Because Copilot can suggest code that is wrong, insecure, or outdated, and it presents every suggestion with the same confidence. A wrong suggestion that looks right is the most dangerous kind. Reading and testing each suggestion is what turns a fast tool into a safe one.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/ai-code-assistants-compared/">AI Code Assistants Compared: Copilot, Cursor, and More</a> · <a href="https://noryvello.github.io/how-to-use-ai-for-coding/">How to Use AI for Coding: A Beginner&#x27;s Guide</a> · <a href="https://noryvello.github.io/how-to-review-ai-written-code/">How to Review AI-Written Code Before You Use It</a> · <a href="https://noryvello.github.io/claude-for-coding-beginners/">How Beginners Can Use Claude for Coding Help</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

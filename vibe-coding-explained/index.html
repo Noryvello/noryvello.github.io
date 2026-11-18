@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vibe Coding Explained: Building Software by Describing It | Noryvello</title>
+<meta name="description" content="What is vibe coding? The describe-and-iterate loop explained: what it suits, what it does not suit, and realistic expectations for building software by describing it.">
+<link rel="canonical" href="https://noryvello.github.io/vibe-coding-explained/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vibe Coding Explained: Building Software by Describing It">
+<meta property="og:description" content="Vibe coding means building software by describing what you want — here is how the loop works and where its limits lie.">
+<meta property="og:url" content="https://noryvello.github.io/vibe-coding-explained/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need to know how to code to try vibe coding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — that is the point of it. You describe what you want in plain language and the AI writes the code. But learning a little about how software works makes you much better at it: you describe more clearly, judge results more honestly, and know when something is beyond the approach."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What can I build with vibe coding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prototypes, small personal tools, simple web pages, and experiments are ideal. A birthday message board, a simple calculator, a page that shows information in a useful way — these are all realistic. Anything involving logins, payments, or personal data is not."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is vibe coding safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For small, low-stakes projects, yes — with testing. For anything involving security, money, or personal data, no: code you have not read and do not understand cannot be trusted with real consequences. Use vibe coding to prototype such ideas, then have them built properly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is vibe coding different from using a code assistant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A code assistant helps a programmer write code faster — the programmer still reads, understands, and owns the code. Vibe coding replaces the writing entirely: the person building may never read the code. That makes it faster to start and riskier to trust."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the limits of vibe coding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It struggles with large systems, security-critical features, and anything where a failure would cause real harm. The result is only as good as your descriptions and your checking. If you cannot tell whether the result is right, you cannot improve it — and that is the limit that matters most."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Vibe Coding Explained: Building Software by Describing It</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">Vibe coding means building software by describing what you want in plain language and letting AI write the code, then iterating on the result. This guide explains the describe-and-iterate loop, what it suits, what it does not suit, and what to realistically expect from it.</p>
+<p>Vibe coding is a new name for a new way of building software: instead of writing code, you describe what you want — "a page where visitors can leave birthday messages" — and an AI tool writes the code for you. You look at the result, describe what to change, and repeat. The loop is describe, look, adjust, repeat.</p>
+<p>It feels like a superpower the first time it works, and in some ways it is: people who could never have built a small tool can now build one in an afternoon. But it has real limits, and understanding them is the difference between a useful prototype and a project that falls apart the moment it matters.</p>
+<div class="warn">Vibe-coded software still needs testing and review. Code you did not write can contain bugs, security holes, and features that do not do what you think they do. Never ship anything security-critical — logins, payments, personal data — that you do not understand, and never trust a vibe-coded app with real user data until it has been properly checked.</div>
+<h2>What vibe coding means</h2>
+<p>Vibe coding is building software by describing it in plain language and letting AI produce the code. The name comes from the feeling of it: you go with the vibe, describing what you want and refining it as you see the result, rather than planning every detail in advance. The AI handles the code; you handle the describing and the judging.</p>
+<p>It differs from traditional coding in who writes the code, and from using a code assistant in how much you engage with it. A code assistant helps a programmer write code faster; vibe coding replaces the writing entirely. The person building the software may never read a line of code — which is both the appeal and the risk.</p>
+<p>The term is new, but the idea builds on tools that have been maturing for a while: AI assistants that generate code from descriptions, editors built around AI, and platforms that turn a prompt into a working page. Vibe coding is what happens when those tools get good enough that describing feels like building.</p>
+<h2>The describe-and-iterate loop</h2>
+<p>The core of vibe coding is a loop with four steps. First, describe what you want in plain language — the clearer the description, the better the result. Second, let the AI build it. Third, look at what it made and test it: does it do what you asked? Fourth, describe what to change, and repeat.</p>
+<p>Good descriptions are specific. "A birthday page" is vague; "a page with a cake illustration, a message board where visitors can leave a short birthday message, and a button to share the page" gives the AI something to build. The more concrete your description, the less the AI has to guess — and guessing is where things go wrong.</p>
+<p>Iteration is where the quality comes from. The first version is rarely right. The second version fixes the obvious problems; the third fixes the ones you only notice by using it. Each round of describing and adjusting moves the result closer to what you actually wanted — as long as you keep testing it.</p>
+<h2>What it suits: prototypes and small tools</h2>
+<p>Vibe coding shines where the stakes are low and speed matters. A prototype to show an idea, a personal tool for your own use, a small page for a party or a hobby, a quick experiment to test whether an idea works — these are ideal. If the result is wrong, little is lost; if it is right, you have saved hours.</p>
+<p>It is also good for learning what is possible. Describing an idea and seeing a working version of it teaches you what software can do, and it helps you refine the idea before investing serious effort. Many good projects start as a vibe-coded sketch that shows the concept is worth building properly.</p>
+<p>Small, self-contained tools are the sweet spot: one page, one job, no sensitive data, no complicated connections to other systems. The simpler the thing you describe, the more likely the result is to work — and the easier it is for you to check that it does.</p>
+<h2>What it does not suit: security-critical and large systems</h2>
+<p>Vibe coding does not suit anything where getting it wrong has real consequences. Logins, payments, personal data, health information, and anything involving money all need code that is carefully written, reviewed, and tested by people who understand it. AI-generated code that you have not read cannot meet that standard.</p>
+<p>It also struggles with large systems. A whole application with many parts — a database, user accounts, different pages that share data — needs a design that holds together, and describing a design in plain language is hard. The AI can build the pieces, but it cannot hold the whole architecture in mind the way a programmer can.</p>
+<p>The boundary is simple: if a failure would harm someone, lose money, or expose private information, vibe coding is the wrong approach. Use it to prototype the idea, then have it built properly — or learn enough to build it yourself, with AI as an assistant rather than a replacement.</p>
+<h2>Realistic expectations</h2>
+<p>The honest picture of vibe coding is more modest than the hype. It is fast, it is fun, and it can produce real working software for simple jobs. It is not a way to build serious applications without understanding them, and it does not remove the need for testing, judgment, and care.</p>
+<p>Expect the first version to be rough. Expect to spend time describing fixes, testing the result, and sometimes starting over when a description leads the AI down the wrong path. The time you save on writing code, you spend on describing, checking, and iterating — which is still usually less time, but it is not zero time.</p>
+<p>Expect limits. The result will be as good as your descriptions and your checking. If you cannot tell whether the result is right, you cannot improve it — which is why even vibe coders benefit from learning a little about how software works. A small amount of understanding goes a long way.</p>
+<h2>Skills that still matter</h2>
+<p>Vibe coding does not remove skill from software — it moves it. The valuable skills become describing clearly, judging results honestly, testing thoroughly, and knowing when something is beyond the approach. These are real skills, and they improve with practice.</p>
+<p>Clear describing is the most important. The ability to say exactly what you want, in plain language, with the details that matter and without the ones that do not, is a skill that transfers everywhere — to working with programmers, to writing briefs, to managing any project.</p>
+<p>And the best vibe coders learn some code. Not necessarily to write it from scratch, but to read it, to understand what the AI produced, and to make small fixes themselves. A little knowledge turns vibe coding from a gamble into a craft — and it is the first step toward building things that truly last.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Do I need to know how to code to try vibe coding?</h3><p>No — that is the point of it. You describe what you want in plain language and the AI writes the code. But learning a little about how software works makes you much better at it: you describe more clearly, judge results more honestly, and know when something is beyond the approach.</p></div>
+<div class="faq"><h3>What can I build with vibe coding?</h3><p>Prototypes, small personal tools, simple web pages, and experiments are ideal. A birthday message board, a simple calculator, a page that shows information in a useful way — these are all realistic. Anything involving logins, payments, or personal data is not.</p></div>
+<div class="faq"><h3>Is vibe coding safe?</h3><p>For small, low-stakes projects, yes — with testing. For anything involving security, money, or personal data, no: code you have not read and do not understand cannot be trusted with real consequences. Use vibe coding to prototype such ideas, then have them built properly.</p></div>
+<div class="faq"><h3>How is vibe coding different from using a code assistant?</h3><p>A code assistant helps a programmer write code faster — the programmer still reads, understands, and owns the code. Vibe coding replaces the writing entirely: the person building may never read the code. That makes it faster to start and riskier to trust.</p></div>
+<div class="faq"><h3>What are the limits of vibe coding?</h3><p>It struggles with large systems, security-critical features, and anything where a failure would cause real harm. The result is only as good as your descriptions and your checking. If you cannot tell whether the result is right, you cannot improve it — and that is the limit that matters most.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/how-to-use-ai-for-coding/">How to Use AI for Coding: A Beginner&#x27;s Guide</a> · <a href="https://noryvello.github.io/ai-code-assistants-compared/">AI Code Assistants Compared: Copilot, Cursor, and More</a> · <a href="https://noryvello.github.io/how-to-review-ai-written-code/">How to Review AI-Written Code Before You Use It</a> · <a href="https://noryvello.github.io/ai-for-debugging/">How to Use AI to Debug Code</a> · <a href="https://noryvello.github.io/claude-for-coding-beginners/">How Beginners Can Use Claude for Coding Help</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

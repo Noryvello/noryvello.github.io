@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Use AI to Debug Code | Noryvello</title>
+<meta name="description" content="Debug faster with AI: paste errors effectively, ask for causes before fixes, use the rubber-duck method, build a minimal reproduction, and verify every fix.">
+<link rel="canonical" href="https://noryvello.github.io/ai-for-debugging/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Use AI to Debug Code">
+<meta property="og:description" content="AI can help you find bugs faster — if you paste errors well, ask for causes first, and verify every fix.">
+<meta property="og:url" content="https://noryvello.github.io/ai-for-debugging/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Should I paste my whole file when asking AI for help?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Paste the smallest amount of code that shows the problem: the function where the error happens, plus the code that calls it, and the full error message. A whole file buries the problem; a minimal reproduction shows it clearly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the AI fix does not work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Say so and describe what happened — the new error, or the wrong result. But if two or three fixes have failed, stop guessing and build a minimal reproduction instead. Repeated failed fixes usually mean the cause is not understood yet, and understanding comes first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can AI find security bugs in my code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI can point out common security weaknesses, such as unprotected input handling, but it is not a security review. It can miss real problems and flag harmless code. For anything that handles personal data, money, or logins, a careful human review and proper testing are essential."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is rubber-duck debugging?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rubber-duck debugging means explaining your code line by line, out loud, as if to a rubber duck. The act of explaining often reveals the bug, because it forces you to state what each part is supposed to do. AI makes a good rubber duck because it asks questions back."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I write a minimal reproduction?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with the code that fails, then remove parts one at a time, running the code after each cut. If the bug disappears, the part you removed was involved. When you cannot cut anything more without the bug disappearing, what remains is your minimal reproduction."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How to Use AI to Debug Code</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">AI can make debugging faster by explaining error messages, suggesting causes, and helping you narrow a problem down to a small reproduction. This guide shows how to work with AI through a bug — from the first error message to a fix you have actually verified.</p>
+<p>Debugging is the least glamorous part of programming and the part where beginners lose the most time. A cryptic error message, a program that fails silently, a result that is wrong in a way you cannot explain — these are the moments that make people give up. AI helps here more than anywhere else in coding, because debugging is mostly about asking good questions.</p>
+<p>The trick is to use AI as a thinking partner, not as a vending machine for fixes. A fix you do not understand will break again next week. A cause you understand becomes knowledge you keep. This guide follows that order: understand first, fix second, verify always.</p>
+<div class="warn">Strip secrets and private data from code before you paste it anywhere. Remove passwords, API keys, connection details, personal information, and anything from your workplace that is not yours to share. Replace real values with clearly fake placeholders, and never paste a whole private codebase into a chatbot.</div>
+<h2>Pasting errors effectively</h2>
+<p>The quality of AI help depends on the quality of what you paste. A good bug report has three parts: the full error message, the code that produced it, and what you expected to happen. "It does not work" tells the tool nothing. "This function should return 15 but returns 0, and here is the error message" tells it exactly where to look.</p>
+<p>Paste the complete error message, not a summary of it. Error messages contain details that matter — a line number, a file name, the exact wording — and paraphrasing them away removes the clues. If the error is long, paste the whole thing; the tool can find the relevant part faster than you can guess it.</p>
+<p>Include the smallest amount of code that shows the problem, with enough context to understand it. The function where the error happens, plus the code that calls it, is usually enough. A whole file is too much; a single line is usually too little.</p>
+<h2>Ask for causes before fixes</h2>
+<p>When you paste an error, your first question should be about the cause, not the fix: "What does this error mean, and what are the most likely causes?" An answer that explains the cause teaches you something; an answer that only gives a fix teaches you nothing, and the same bug will return.</p>
+<p>Ask for the reasoning, not just the conclusion. "Why would this value be empty here?" is a better question than "How do I fix this?" The first question leads to understanding; the second leads to a patch that may hide the real problem.</p>
+<p>If the AI suggests a cause, check it before accepting it. Does the explanation fit what you see? Can you test it — for example, by printing the value it claims is empty? A cause you have verified is knowledge; a cause you accepted on trust is a guess.</p>
+<h2>The rubber-duck method</h2>
+<p>Rubber-duck debugging is a classic technique: explain your code, line by line, to an inanimate object — traditionally a rubber duck — and the act of explaining often reveals the bug. AI makes an excellent rubber duck, because it asks questions back and points out the parts of your explanation that do not add up.</p>
+<p>Try it when you are stuck. Paste your code and explain what each part is supposed to do, in your own words. Then ask the AI to point out where your explanation and the code disagree. The disagreement is often the bug: you described what you meant to write, and the code says something slightly different.</p>
+<p>The method works because bugs hide in the gap between intention and code. Writing the explanation forces you to state your intention clearly, and comparing it with the code makes the gap visible. It feels slow; it is actually one of the fastest ways to find a bug.</p>
+<h2>Minimal reproduction</h2>
+<p>A minimal reproduction is the smallest piece of code that still shows the bug. Building one is the most reliable debugging technique there is: it strips away everything irrelevant until only the problem remains, and the problem is usually obvious once it stands alone.</p>
+<p>Build it by cutting. Start with the code that fails, then remove parts one at a time, running the code after each cut. If the bug disappears, the part you just removed was involved; put it back and cut something else. When you cannot cut anything more without the bug disappearing, you have your reproduction.</p>
+<p>AI can help at each step: it can suggest what to cut next, and it can explain why a particular part matters. And a minimal reproduction is also the best thing to paste when you ask for help — from AI or from a human — because it shows the problem with nothing in the way.</p>
+<h2>Verifying the fix</h2>
+<p>A fix is not finished when the error goes away; it is finished when you have verified it. Run the code again with the input that failed, and check the result is actually correct — not just that no error appears. A fix that silences an error while producing a wrong answer is worse than the error was.</p>
+<p>Test the neighbours. If the bug was in a function that handles a list, test it with an empty list, a list of one item, and a list with unusual values. A fix that works on one case and breaks another is not a fix — it is a new bug.</p>
+<p>Then ask why the fix works. If you cannot explain it, you have not finished debugging — you have papered over the problem. Ask the AI to explain the fix in plain words, and keep asking until the explanation makes sense. Understanding the fix is what stops the bug from coming back.</p>
+<h2>When AI debugging goes wrong</h2>
+<p>AI debugging has failure modes worth knowing. The most common is the confident wrong fix: a suggestion that looks plausible, changes the code, and introduces a new problem. If a fix makes things worse, undo it and go back to understanding the cause — do not stack more fixes on top of a bad one.</p>
+<p>Another failure mode is the loop: AI suggests a fix, it does not work, you paste the new error, it suggests another fix, and so on. If you are three fixes in and no closer to understanding the bug, stop and build a minimal reproduction instead. The loop means the problem is not understood yet, and more guesses will not fix that.</p>
+<p>Finally, AI can mislead you about the cause. Its explanation may be wrong even when it sounds authoritative. Treat every AI explanation as a hypothesis to test, not as a fact. The test is what makes it true.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Should I paste my whole file when asking AI for help?</h3><p>No. Paste the smallest amount of code that shows the problem: the function where the error happens, plus the code that calls it, and the full error message. A whole file buries the problem; a minimal reproduction shows it clearly.</p></div>
+<div class="faq"><h3>What if the AI fix does not work?</h3><p>Say so and describe what happened — the new error, or the wrong result. But if two or three fixes have failed, stop guessing and build a minimal reproduction instead. Repeated failed fixes usually mean the cause is not understood yet, and understanding comes first.</p></div>
+<div class="faq"><h3>Can AI find security bugs in my code?</h3><p>AI can point out common security weaknesses, such as unprotected input handling, but it is not a security review. It can miss real problems and flag harmless code. For anything that handles personal data, money, or logins, a careful human review and proper testing are essential.</p></div>
+<div class="faq"><h3>What is rubber-duck debugging?</h3><p>Rubber-duck debugging means explaining your code line by line, out loud, as if to a rubber duck. The act of explaining often reveals the bug, because it forces you to state what each part is supposed to do. AI makes a good rubber duck because it asks questions back.</p></div>
+<div class="faq"><h3>How do I write a minimal reproduction?</h3><p>Start with the code that fails, then remove parts one at a time, running the code after each cut. If the bug disappears, the part you removed was involved. When you cannot cut anything more without the bug disappearing, what remains is your minimal reproduction.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/how-to-review-ai-written-code/">How to Review AI-Written Code Before You Use It</a> · <a href="https://noryvello.github.io/how-to-use-ai-for-coding/">How to Use AI for Coding: A Beginner&#x27;s Guide</a> · <a href="https://noryvello.github.io/claude-for-coding-beginners/">How Beginners Can Use Claude for Coding Help</a> · <a href="https://noryvello.github.io/chain-of-thought-prompting/">Chain-of-Thought Prompting: How to Get AI to Show Its Reasoning</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

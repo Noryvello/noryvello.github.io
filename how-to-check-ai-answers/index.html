@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Check AI Answers Before You Trust Them | Noryvello</title>
+<meta name="description" content="A 7-step verification routine for AI answers, in order: source check, second phrasing, known-fact test, number check, date check, expert comparison, and uncertainty ask.">
+<link rel="canonical" href="https://noryvello.github.io/how-to-check-ai-answers/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Check AI Answers Before You Trust Them">
+<meta property="og:description" content="A 7-step routine for checking any AI answer, plus a worked example of catching a wrong one.">
+<meta property="og:url" content="https://noryvello.github.io/how-to-check-ai-answers/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.byline{font-size:14px;color:#64748b;margin:6px 0 0}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does the 7-step routine take?","acceptedAnswer":{"@type":"Answer","text":"A quick version takes less than a minute for a simple fact: a source check and a second phrasing are often enough. The full routine takes a few minutes for an important answer. The time is small compared with the cost of acting on a wrong answer."}},{"@type":"Question","name":"Which step catches the most errors?","acceptedAnswer":{"@type":"Answer","text":"The source check and the expert-source comparison catch the most, because they test the answer against the outside world rather than against the chatbot itself. The second-phrasing step is the fastest way to reveal a guess, because a hallucinated answer often changes when the question changes."}},{"@type":"Question","name":"What if the chatbot gives sources? Can I trust the answer?","acceptedAnswer":{"@type":"Answer","text":"Not until you have checked the sources. Chatbots can invent citations or attach real citations to claims they do not support. Open each source, confirm it exists, and confirm it says what was claimed. A checked source is evidence; an unchecked one is not."}},{"@type":"Question","name":"Should I check answers about topics I know well?","acceptedAnswer":{"@type":"Answer","text":"Yes, and those are the best answers to practise on. Checking a familiar topic teaches you how the chatbot fails and which steps catch the failures. That practice makes you faster and more accurate when you check answers about topics you do not know."}},{"@type":"Question","name":"What should I do if I cannot verify an answer at all?","acceptedAnswer":{"@type":"Answer","text":"Treat it as unverified. Do not repeat it as fact, and do not base a decision on it. Either find an expert source that confirms it, or ask someone with real knowledge. An honest gap is better than a confident error."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>How to Check AI Answers Before You Trust Them</h1>
+<p class="byline">By the Noryvello team · Published 18 November 2026 · Updated 18 November 2026</p>
+<p class="answer">AI answers are a starting point, not a source of truth, so they deserve a quick check before you trust them. This guide gives you a 7-step verification routine you can run on any answer, from a simple fact to a complex claim. It also walks through a worked example of catching a wrong answer, so you can see the routine in action.</p>
+<p>Chatbots are useful because they answer quickly and clearly. They are risky for the same reason. A fast, clear answer feels true, and the feeling is strongest exactly when the answer is wrong, because a wrong answer arrives with the same confidence as a right one. The defence is not to stop using chatbots, but to build a checking habit that is fast enough to use every time.</p>
+<p>The routine below takes a few minutes for an important answer, and less than a minute for a simple one. The steps are in order: start with the source, then test the answer itself, then compare it with expert sources. You do not need all seven steps every time, but you should know all seven, so you can reach for the right one when it matters.</p>
+<div class="warn">No routine catches every error. This guide is general information, not professional advice. For decisions about health, money, law, or safety, use qualified expert sources and professional advice, not a chatbot answer alone, however carefully you have checked it.</div>
+<h2>Why checking matters</h2>
+<p>A chatbot's answer is a prediction, not a lookup. It generates the most likely words based on patterns in its training data, and the most likely words are sometimes wrong. The error may be small, like a wrong date, or large, like an invented fact. Either way, the answer arrives in the same polished voice, and nothing in the voice tells you it is wrong.</p>
+<p>Checking matters because the cost of a wrong answer depends on what you do with it. A wrong fact in a casual conversation costs little. The same wrong fact in a work report, a school essay, or a decision about money costs far more. The checking habit should match the stakes, but the habit itself should be automatic.</p>
+<p>It also matters because AI answers shape what you believe. If you accept a wrong answer without checking, you may repeat it, act on it, and pass it to others. A few minutes of checking protects not only you, but everyone who hears the answer from you.</p>
+<h2>The 7-step verification routine</h2>
+<p>Run these steps in order. Each step catches a different kind of error, and together they cover the most common ways an AI answer can go wrong. For a quick check, steps one to three may be enough. For an important answer, run all seven.</p>
+<ol><li>Step 1, source check: ask where the answer came from. If the chatbot gave sources, open them and confirm they exist and say what was claimed. If it gave no sources, search for the claim yourself. An answer with no verifiable source is an unverified answer.</li><li>Step 2, second phrasing: ask the same question in different words, or ask a follow-up that approaches the fact from another angle. A correct answer stays consistent. A hallucinated answer often changes, contradicts itself, or produces a different wrong detail.</li><li>Step 3, known-fact test: check the answer against something you already know. If the chatbot's explanation of a topic you know well contains errors, its explanation of a topic you do not know is also suspect. Use your own knowledge as a calibration test.</li><li>Step 4, number check: test every number. Do the sums by hand where you can, and check figures against a trusted source. Numbers feel authoritative, which is why wrong numbers are dangerous. A precise figure from a chatbot is a claim to verify, not a fact to quote.</li><li>Step 5, date check: check every date, and remember that a chatbot's knowledge has a cut-off. Events, prices, rules, and leaders may have changed since the model was trained. For anything time-sensitive, confirm the current position from a current source.</li><li>Step 6, expert-source comparison: compare the answer with a source written by experts in the field, such as an official guide, a specialist publication, or a reference work. Agreement with an expert source is strong evidence. Disagreement is a reason to trust the expert, not the chatbot.</li><li>Step 7, uncertainty ask: ask the chatbot directly how sure it is, and what would change its answer. A well-built chatbot may hedge, qualify, or admit a gap. The reply is not proof either way, but a chatbot that cannot explain its confidence is a chatbot whose answer needs more checking, not less.</li></ol>
+<h2>Worked example: catching a wrong answer</h2>
+<p>Imagine you ask a chatbot for the opening hours of a famous museum, because you are planning a visit. It replies with confident detail: the museum opens at nine, closes at six, and is closed on Mondays. The answer looks complete and helpful, and you are tempted to plan around it.</p>
+<p>Step one, the source check, finds no source. The chatbot gave no link, so you search for the museum's official website yourself. Step five, the date check, matters here too: opening hours change for holidays and seasons, and a chatbot's training data may be months or years old.</p>
+<p>On the official website, you find that the museum opens at ten, not nine, and is closed on Tuesdays, not Mondays. The chatbot's answer was wrong in two details, and both would have spoiled your visit. Step two, the second phrasing, confirms the problem: when you ask the chatbot again in different words, it gives yet another set of hours.</p>
+<p>This example is small, but the pattern is general. The chatbot produced a plausible answer from patterns in its training data, and the answer was wrong in ways that only an official source could settle. The routine caught it in minutes, and the official website gave the true answer. The lesson is not that chatbots are useless, but that they are a first draft, and the source is the authority.</p>
+<h2>Quick checks for everyday answers</h2>
+<p>Not every answer needs all seven steps. For everyday questions, a quick version works well. Ask yourself three things: does the answer match what I already know, does it come with a source I can check, and would it matter if it were wrong? If the answer passes the first two and the stakes are low, you can accept it and move on.</p>
+<p>A fast source check is often enough for a simple fact. Search for the key claim and glance at the first few results from sources you trust. If they agree with the chatbot, you have reasonable confidence. If they disagree, or if nothing confirms the claim, dig deeper before you use it.</p>
+<p>The second-phrasing step is also quick and powerful. Reword the question and compare the two answers. Consistency is not proof, but inconsistency is a clear warning. A chatbot that gives different answers to the same question is guessing, and a guess deserves a source check before you trust it.</p>
+<h2>Deeper checks for important answers</h2>
+<p>When an answer will go into a report, an essay, a decision, or advice to someone else, run the full routine. Start with the source check and the number and date checks, then compare the answer with an expert source. The extra minutes are a small price for the confidence that your work is built on facts.</p>
+<p>For numbers, do the arithmetic yourself. If a chatbot says a total, a percentage, or a conversion, work it out by hand or with a calculator. Chatbots are famously weak at arithmetic, and a wrong number in an otherwise good answer is easy to miss. Showing your working, as you would in a school exercise, catches most of these errors.</p>
+<p>For quotations and citations, check each one individually. Search for the exact words of a quotation, and open each cited source to confirm it exists and supports the claim. A single fake citation is a reason to distrust the whole answer, because it shows the chatbot was generating plausible text rather than reporting real sources.</p>
+<h2>What to do when sources disagree</h2>
+<p>Sometimes your checks will find a disagreement: the chatbot says one thing, and a source says another. When that happens, trust the source, not the chatbot, especially if the source is official, expert, or primary. A museum's own website beats a chatbot's memory of its opening hours, and a medical authority beats a chatbot's summary of a treatment.</p>
+<p>If two trusted sources disagree with each other, the question may be genuinely uncertain, or the answer may have changed over time. In that case, say so. An honest statement that sources differ is more useful than a confident answer built on one side of the disagreement. Note the date of each source, because the newest one is usually the most reliable for current facts.</p>
+<p>If no source confirms the chatbot's answer, treat the answer as unverified. Do not repeat it as fact, and do not build on it. Either find a source that confirms it, or set the question aside and ask an expert. An unanswered question is better than a wrong answer presented as truth.</p>
+<h2>Building the habit</h2>
+<p>Checking feels slow at first, and it is tempting to skip it when you are busy. The habit becomes fast with practice. Start by checking one answer a day, using the full routine, until the steps feel natural. Within a week, the quick version will take less than a minute, and the full version will feel routine rather than burdensome.</p>
+<p>It helps to check answers you already know first. Ask the chatbot about a topic you know well, and run the routine on its answer. You will quickly learn which kinds of errors it makes, and which steps catch them. That calibration makes you faster and sharper when you check answers about topics you do not know.</p>
+<p>Finally, make checking a shared habit. If you work with others, agree that AI answers are drafts until checked, and that checking is part of the work, not a sign of distrust. A team that checks together catches more errors than a person checking alone, and it builds a culture where accuracy matters more than speed.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How long does the 7-step routine take?</h3><p>A quick version takes less than a minute for a simple fact: a source check and a second phrasing are often enough. The full routine takes a few minutes for an important answer. The time is small compared with the cost of acting on a wrong answer.</p></div>
+<div class="faq"><h3>Which step catches the most errors?</h3><p>The source check and the expert-source comparison catch the most, because they test the answer against the outside world rather than against the chatbot itself. The second-phrasing step is the fastest way to reveal a guess, because a hallucinated answer often changes when the question changes.</p></div>
+<div class="faq"><h3>What if the chatbot gives sources? Can I trust the answer?</h3><p>Not until you have checked the sources. Chatbots can invent citations or attach real citations to claims they do not support. Open each source, confirm it exists, and confirm it says what was claimed. A checked source is evidence; an unchecked one is not.</p></div>
+<div class="faq"><h3>Should I check answers about topics I know well?</h3><p>Yes, and those are the best answers to practise on. Checking a familiar topic teaches you how the chatbot fails and which steps catch the failures. That practice makes you faster and more accurate when you check answers about topics you do not know.</p></div>
+<div class="faq"><h3>What should I do if I cannot verify an answer at all?</h3><p>Treat it as unverified. Do not repeat it as fact, and do not base a decision on it. Either find an expert source that confirms it, or ask someone with real knowledge. An honest gap is better than a confident error.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/ai-hallucinations-explained/">AI Hallucinations Explained: Why AI Makes Things Up</a> · <a href="https://noryvello.github.io/how-to-prompt-ai-for-accurate-answers/">How to Prompt AI for More Accurate Answers</a> · <a href="https://noryvello.github.io/ai-bias-explained/">AI Bias Explained: Why AI Gets Things Wrong</a> · <a href="https://noryvello.github.io/how-to-spot-ai-generated-images/">How to Spot AI-Generated Images: 10 Telltale Signs</a> · <a href="https://noryvello.github.io/how-to-spot-deepfakes/">How to Spot Deepfake Videos</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>
