@@ -74,7 +74,8 @@ code{background:#eef2ff;padding:1px 5px;border-radius:5px}
 <button class="pause-btn" id="btn-pause" type="button">Pause</button>
 </div>
 <div class="game-controls"><button class="game-btn" id="btn-left" type="button">LEFT FLIPPER</button><button class="game-btn" id="btn-right" type="button">RIGHT FLIPPER</button></div>
-<div class="game-controls"><button class="game-btn" id="btn-launch" type="button">LAUNCH</button><button class="game-btn" id="btn-nudge" type="button">NUDGE</button><button class="mute-btn" id="btn-mute" type="button">Sound: Off</button></div>
+<div class="game-controls"><button class="game-btn" id="btn-launch" type="button">LAUNCH</button><button class="game-btn" id="btn-nudge" type="button">NUDGE</button><button class="mute-btn" id="btn-mute" type="button">Sound: Off</button>
+<button class="mute-btn" type="button" onclick="toggleFS()">Fullscreen</button></div>
 <div class="game-overlay" id="ov-start"><div class="ov-title">Retro Pinball</div><p>Hold LAUNCH to charge, release to fire the ball up the lane.</p><p>Tap the big flipper buttons, or tap the left and right sides of the table, to flip.</p><p>Three balls. Bumpers, ramps and lanes build your score.</p><button class="game-btn-wide" id="btn-start" type="button">Start Game</button></div>
 <div class="game-overlay" id="ov-pause" style="display:none"><div class="ov-title">Paused</div><p>Take a breath. The ball is frozen exactly where it was.</p><button class="game-btn-wide" id="btn-resume" type="button">Resume</button><button class="game-btn-wide" id="btn-restart" type="button">Restart</button><button class="game-btn-wide" id="btn-how" type="button">How to Play</button></div>
 <div class="game-overlay" id="ov-how" style="display:none"><div class="ov-title">How to Play</div><p>Launch the ball, then flip it away from the drain. Bumpers pay 100, slingshots 50, ramps 250. Light all three top lanes to raise the multiplier. Nudge is limited to three per ball.</p><button class="game-btn-wide" id="btn-how-back" type="button">Back</button></div>
@@ -559,5 +560,8 @@ if (typeof document !== 'undefined' && document.getElementById) {
 
 </script>
 <script src="../ads-config.js"></script>
+<script>
+function toggleFS(){var d=document;if(d.fullscreenElement){d.exitFullscreen();return;}var e=d.documentElement;var f=e.requestFullscreen||e.webkitRequestFullscreen;if(f){try{var p=f.call(e);if(p&&p.catch){p.catch(function(){});}}catch(err){}}}
+</script>
 </body>
 </html>

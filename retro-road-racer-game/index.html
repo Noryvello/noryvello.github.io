@@ -101,6 +101,7 @@ th{background:#eef2ff}
 </div>
 <div class="game-controls">
 <button class="mute-btn" id="rr-mute" type="button">Sound: Off</button>
+<button class="mute-btn" type="button" onclick="toggleFS()">Fullscreen</button>
 </div>
 <p class="game-status" id="rr-status">Drag on the road to steer, or use the Left and Right buttons.</p>
 </div>
@@ -649,5 +650,8 @@ th{background:#eef2ff}
 
 </script>
 <script src="../ads-config.js"></script>
+<script>
+function toggleFS(){var d=document;if(d.fullscreenElement){d.exitFullscreen();return;}var e=d.documentElement;var f=e.requestFullscreen||e.webkitRequestFullscreen;if(f){try{var p=f.call(e);if(p&&p.catch){p.catch(function(){});}}catch(err){}}}
+</script>
 </body>
 </html>

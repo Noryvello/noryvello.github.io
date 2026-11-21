@@ -75,7 +75,8 @@ code{background:#eef2ff;padding:1px 5px;border-radius:5px}
 <canvas id="game-canvas" class="game-canvas" width="480" height="360"></canvas>
 <button class="pause-btn" id="btn-pause" type="button">Pause</button>
 </div>
-<div class="game-controls"><button class="game-btn" id="btn-up" type="button">UP</button><button class="game-btn" id="btn-down" type="button">DOWN</button><button class="mute-btn" id="btn-mute" type="button">Sound: Off</button></div>
+<div class="game-controls"><button class="game-btn" id="btn-up" type="button">UP</button><button class="game-btn" id="btn-down" type="button">DOWN</button><button class="mute-btn" id="btn-mute" type="button">Sound: Off</button>
+<button class="mute-btn" type="button" onclick="toggleFS()">Fullscreen</button></div>
 <div class="game-overlay" id="ov-start"><div class="ov-title">Retro Pong</div><p>Drag up or down on the right side to move your paddle, or use the UP and DOWN buttons.</p><p>The ball speeds up every rally. First to 7 points wins the match.</p><p>Pick a difficulty above, then press Start.</p><button class="game-btn-wide" id="btn-start" type="button">Start Game</button></div>
 <div class="game-overlay" id="ov-pause" style="display:none"><div class="ov-title">Paused</div><p>Take a breath. The ball is frozen exactly where it was.</p><button class="game-btn-wide" id="btn-resume" type="button">Resume</button><button class="game-btn-wide" id="btn-restart" type="button">Restart</button><button class="game-btn-wide" id="btn-how" type="button">How to Play</button></div>
 <div class="game-overlay" id="ov-how" style="display:none"><div class="ov-title">How to Play</div><p>Your paddle is on the right. Drag on the table or hold UP and DOWN to move it. Hit the ball with the edge of the paddle to send it at a sharp angle. First to 7 wins. Difficulty is picked above the table before the match.</p><button class="game-btn-wide" id="btn-how-back" type="button">Back</button></div>
@@ -393,5 +394,8 @@ if (typeof document !== 'undefined' && document.getElementById) {
 
 </script>
 <script src="../ads-config.js"></script>
+<script>
+function toggleFS(){var d=document;if(d.fullscreenElement){d.exitFullscreen();return;}var e=d.documentElement;var f=e.requestFullscreen||e.webkitRequestFullscreen;if(f){try{var p=f.call(e);if(p&&p.catch){p.catch(function(){});}}catch(err){}}}
+</script>
 </body>
 </html>
