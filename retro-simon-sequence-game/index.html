@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retro Simon Sequence — Play the Classic Memory Sequence Game Free | Noryvello</title>
+<meta name="description" content="Play Retro Simon Sequence free in your browser — watch the colour pattern, repeat it, and see how long a sequence you can remember. No download, no signup.">
+<link rel="canonical" href="https://noryvello.github.io/retro-simon-sequence-game/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Retro Simon Sequence — Play the Classic Memory Sequence Game Free">
+<meta property="og:description" content="Watch the colour pattern, repeat it, and see how long a sequence you can remember.">
+<meta property="og:url" content="https://noryvello.github.io/retro-simon-sequence-game/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.byline{font-size:14px;color:#64748b;margin:6px 0 0}
+.hub{margin:18px 0 4px;font-size:16px;font-weight:700}.hub a{color:#4338ca}
+.game-wrap{position:relative}
+.game-canvas{display:block;width:100%;max-width:480px;margin:0 auto;background:#0a1f0a;border:3px solid #1e293b;border-radius:10px;touch-action:none}
+.game-score{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:16px;margin:6px 0 10px;flex-wrap:wrap;gap:6px}
+.game-btn{min-height:90px;min-width:90px;padding:12px 18px;border:0;border-radius:14px;font-size:18px;font-weight:700;cursor:pointer;touch-action:manipulation}
+.game-btn-wide{width:100%;min-height:90px;padding:14px 18px;border:0;border-radius:14px;font-size:19px;font-weight:700;cursor:pointer;touch-action:manipulation}
+.game-controls{display:flex;gap:10px;justify-content:space-between;margin-top:12px;flex-wrap:wrap}
+.game-controls .game-btn{flex:1;touch-action:none}
+.game-overlay{position:absolute;inset:0;background:rgba(10,31,10,.94);color:#e8f7ef;border-radius:10px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px;text-align:center;gap:12px;overflow:auto;z-index:4}
+.game-overlay[hidden]{display:none}
+.game-overlay .ov-title{font-size:22px;font-weight:700}
+.game-overlay p{font-size:16px;max-width:420px}
+.ov-row{display:flex;gap:10px;width:100%}
+.ov-row .game-btn{flex:1;min-width:0}
+.pause-btn{position:absolute;top:8px;right:8px;min-width:90px;min-height:72px;padding:10px 14px;border:0;border-radius:12px;font-size:17px;font-weight:700;cursor:pointer;z-index:5;touch-action:manipulation}
+.mute-btn{min-width:72px;min-height:72px;padding:10px 14px;border:0;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;touch-action:manipulation}
+.game-btn,.game-btn-wide{background:#4338ca;color:#fff}.pause-btn,.mute-btn{background:#0d9488;color:#fff}
+.game-score .pause-btn{position:static}
+.game-status{font-size:15px;color:#334155;margin-top:10px;text-align:center}
+.pads{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:480px;margin:0 auto}
+.pad{min-height:150px;border:3px solid #1e293b;border-radius:14px;cursor:pointer;touch-action:none;opacity:.55;transition:opacity .12s, box-shadow .12s}
+.pad:focus-visible{outline:3px solid #1e293b;outline-offset:2px}
+.pad-green{background:#16a34a}.pad-red{background:#dc2626}.pad-yellow{background:#eab308}.pad-blue{background:#2563eb}
+.pad.lit{opacity:1;box-shadow:0 0 24px 6px rgba(255,255,255,.85)}
+table{border-collapse:collapse;width:100%;margin:10px 0;font-size:15px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left}
+th{background:#eef2ff}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Retro Simon Sequence free to play?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The game is completely free, with no download, no signup and nothing to buy. You open the page, tap Start Sequence, and play as many runs as you like."}}, {"@type": "Question", "name": "How is this different from a pairs matching game?", "acceptedAnswer": {"@type": "Answer", "text": "A pairs matching game asks you to find two cards that match. This game is different: it plays a growing pattern of colours and tones, and you repeat the whole pattern back in order. It tests your memory for sequences, not your memory for locations."}}, {"@type": "Question", "name": "Do I need sound to play?", "acceptedAnswer": {"@type": "Answer", "text": "No. Sound helps, because each pad has its own tone and the pattern becomes a short melody, but the game is fully playable without it. When you turn the sound off, the pads stay lit for longer on every step so you can follow the pattern by sight alone."}}, {"@type": "Question", "name": "How long can a sequence get?", "acceptedAnswer": {"@type": "Answer", "text": "There is no fixed end. Each round adds one step, and the speed rises every five rounds until round twenty-one, when it stays at its fastest pace. Most players finish between eight and fifteen steps, and a score past twenty is an excellent run."}}, {"@type": "Question", "name": "Where is my best score saved?", "acceptedAnswer": {"@type": "Answer", "text": "Your best score is saved in your browser on your own device, using the browser's own storage. It is still there the next time you open the page, and it is never sent to any server. Clearing your browser data will remove it."}}, {"@type": "Question", "name": "Can I play Retro Simon Sequence on my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The game was built phone-first: the four pads are large tap targets, the Start and Pause buttons are big, and the page never scrolls while you play. It works in any modern phone browser, and on a computer with a mouse or the number keys 1 to 4."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Retro Simon Sequence</h1>
+<p class="byline">By the Noryvello team · Published 21 November 2026 · Updated 21 November 2026</p>
+<p class="answer">Retro Simon Sequence is a colour-and-sound memory game: the game plays a pattern of lights and tones, and you repeat it back, one colour at a time. Each round adds one more step, so the pattern grows until a single wrong tap ends the run. It plays free in your browser on your phone or computer, with no download and no signup.</p>
+<div class="calc">
+<div class="game-score"><span>Round: <b id="sim-round">0</b></span><span>Score: <b id="sim-score">0</b></span><span>Best: <b id="sim-best">0</b></span><button class="pause-btn" id="sim-pause" type="button">Pause</button></div>
+<div class="game-wrap">
+<div class="pads">
+<button class="pad pad-green" data-pad="0" type="button" aria-label="Green pad"></button>
+<button class="pad pad-red" data-pad="1" type="button" aria-label="Red pad"></button>
+<button class="pad pad-yellow" data-pad="2" type="button" aria-label="Yellow pad"></button>
+<button class="pad pad-blue" data-pad="3" type="button" aria-label="Blue pad"></button>
+</div>
+<div class="game-overlay" id="sim-start-ov">
+<p class="ov-title">Retro Simon Sequence</p>
+<p>Watch the pads light up, then tap them back in the same order. Each round adds one more step.</p>
+<button class="game-btn-wide" id="sim-start" type="button">Start Sequence</button>
+</div>
+<div class="game-overlay" id="sim-pause-ov" hidden>
+<p class="ov-title">Paused</p>
+<p>The pattern is waiting.</p>
+<button class="game-btn-wide" id="sim-resume" type="button">Resume</button>
+<div class="ov-row"><button class="game-btn" id="sim-restart" type="button">Restart</button><button class="game-btn" id="sim-how" type="button">How to Play</button></div>
+</div>
+<div class="game-overlay" id="sim-over-ov" hidden>
+<p class="ov-title">Game Over</p>
+<p id="sim-final">Score: 0</p>
+<p id="sim-newbest" hidden>New Best!</p>
+<button class="game-btn-wide" id="sim-again" type="button">Play Again</button>
+</div>
+</div>
+<div class="game-controls">
+<button class="mute-btn" id="sim-mute" type="button">Sound: On</button>
+</div>
+<p class="game-status" id="sim-status">Tap Start Sequence, then watch and repeat.</p>
+</div>
+<div class="warn">This is an original game inspired by the classics of that era. It is not affiliated with Nokia or any original publisher. This is a sequence game, not a pairs matching game — watch the pattern, then repeat it.</div>
+<h2>What Retro Simon Sequence is</h2>
+<p>Retro Simon Sequence is a memory game built around four coloured pads: green, red, yellow and blue. The game lights up the pads in a pattern, one at a time, and each pad plays its own tone as it lights. When the pattern finishes, it is your turn: tap the pads back in the same order. Get it right and the game adds one more step to the pattern and plays it again. Get one tap wrong and the run ends. That is the whole game, and it is enough to keep you playing for far longer than you planned.</p>
+<p>The score is the longest sequence you manage to repeat. A run that ends on a pattern of nine steps gives you a score of nine, and your best score is saved on your own device, so the next time you open the page you can try to beat it. There is no timer counting down and no opponent rushing you, which is part of the charm: the pressure comes from your own memory, not from a clock.</p>
+<p>This page is a guide as well as a game. Below the game you will find how the speed rises, how memory chunking works, five tips that genuinely help, and the mistakes that end most runs early. Play a round first, then read the tips and play again — most players add two or three steps to their best on the second try.</p>
+<h2>A short history of sequence-memory games</h2>
+<p>Sequence-memory games began with a round electronic toy released in 1978. It had four coloured buttons, each with its own musical note, and one simple job: play a pattern and ask the player to copy it. The toy was a hit in living rooms around the world, and the idea never really went away. It showed up in game shows, in school classrooms, in phone games and in brain-training apps, always with the same four colours and the same growing pattern.</p>
+<p>The idea worked because it is honest. Nothing about the game is hidden from you: you see the whole pattern, you hear every note, and the only thing standing between you and a longer run is your own memory. Early versions of the idea were slow and gentle, with long pauses between notes. Later versions added speed, longer patterns and two-player modes, but the core never changed.</p>
+<p>On old phones, sequence games were a natural fit. The screen was small, the buttons were few, and a game that needed only four inputs worked beautifully. Players would pass a phone around and compare best scores, and a run of twelve or more steps earned real respect. This version keeps that spirit: four pads, four tones, one pattern that grows until it beats you. The speed rises every five rounds, the way the old games did, so a long run tests both your memory and your nerve.</p>
+<h2>How to play</h2>
+<div id="how-to-play">
+<p>Tap the big Start Sequence button. The game lights one pad and plays its tone. That is the whole first pattern, so tap that pad and the round is yours. The game then plays a pattern of two steps, then three, then four, adding one step every round.</p>
+<p>Watch the full pattern before you touch anything. While the pads are playing, your taps are ignored, so there is no rush and no penalty for waiting. When the pattern ends, the status line says it is your turn. Tap the pads in the order they played. Each correct tap lights the pad and plays its tone again, so you get a small confirmation with every step. If you tap a pad that does not belong at that point in the pattern, the run ends at once and the game shows your score.</p>
+<p>The speed rises every five rounds. Rounds one to five play at a relaxed pace, with a clear gap between steps. From round six the gap shortens, and by round sixteen the pattern moves quickly enough that you need to watch closely rather than glance. The game never becomes unfair: the gap between steps always leaves time to see and hear each pad.</p>
+<p>Sound is part of the game, so it is on by default here. Each pad has its own tone, and many players find the melody easier to remember than the colours alone. If you prefer silence, the Sound button turns the tones off. When the sound is off, the pads stay lit for longer on every step, so the game stays fully playable by sight alone.</p>
+<p>You can pause at any time with the Pause button in the top-right corner of the game. Pausing freezes the game completely. When you resume, the game shows the current pattern again from the start, so you never lose your place.</p>
+</div>
+<h2>Controls</h2>
+<p>Four pads, four ways in. On a phone, tap the pads directly — each one is a large target, far bigger than a fingertip, so you can play without zooming or squinting. On a computer, click the pads with the mouse, or use the number keys 1, 2, 3 and 4. The Pause button sits in the top-right corner of the game area and is always visible while you play.</p>
+<table><tr><th>Action</th><th>On a phone</th><th>On a computer</th></tr>
+<tr><td>Tap a pad</td><td>Tap the pad</td><td>Click the pad, or press 1 to 4</td></tr>
+<tr><td>Start a run</td><td>Tap Start Sequence</td><td>Click Start Sequence</td></tr>
+<tr><td>Pause or resume</td><td>Tap Pause</td><td>Tap Pause, or press P</td></tr>
+<tr><td>Sound on or off</td><td>Tap Sound</td><td>Tap Sound, or press M</td></tr></table>
+<p>The pads respond to a press, not a release, so a quick tap is enough. You never need to swipe, drag or hold anything down, which makes this one of the easiest games in this pack to play one-handed.</p>
+<h2>Scoring and levels</h2>
+<p>Your score is the longest sequence you repeat in full. If you repeat a pattern of eight steps and then miss on the ninth, your score is eight. The round counter shows the length of the pattern you are currently facing, so when it says nine, you are one correct tap away from a score of nine.</p>
+<p>Your best score is saved in your browser, on your own device, and it is still there the next time you open the page. Nothing is sent anywhere and no account is involved. If you clear your browser data, the best score goes with it, so a truly great run deserves a screenshot.</p>
+<p>The speed steps are fixed, so you always know what is coming. Rounds one to five play at the slowest pace. Rounds six to ten are a little quicker. Rounds eleven to fifteen quicken again, and from round sixteen the pattern moves fast. Past round twenty-one it stays at its fastest pace and the challenge is purely about memory. Most players find the first real test arrives around round eight, when the pattern is long enough that a single lapse ends the run. A score of twelve or more is a genuinely strong result, and anything past twenty is the kind of run worth telling people about.</p>
+<h2>Strategy: 5 tips that work</h2>
+<ol>
+<li><strong>Chunk the pattern in threes.</strong> Short-term memory holds about four items at a time, but a group counts as one item. Instead of remembering eight separate colours, remember three groups: green-red-yellow, blue-green, red-yellow. Say each group as one word in your head and the pattern shrinks.</li>
+<li><strong>Say the colours out loud.</strong> Hearing your own voice adds a second memory trace. Players who whisper the colours as they watch — red, blue, blue, green — consistently outlast players who only watch. The tones help the same way: each pad has its own note, so the pattern is also a short melody.</li>
+<li><strong>Watch the centre, not the pads.</strong> If your eyes jump from pad to pad, you spend your attention on moving your eyes. Fix your gaze on the middle of the four pads and let the flashes come to you. The colour and the tone together tell you which pad lit, without any head-turning.</li>
+<li><strong>Keep your hand still until your turn.</strong> Tapping along while the pattern plays feels helpful but it is not: your taps are ignored during the show, and moving your hand early breaks your focus. Hands still, eyes on the centre, and only move when the status line says it is your turn.</li>
+<li><strong>Replay the pattern in your head before you tap.</strong> When the show ends, take one breath and run the pattern through your mind once. That single mental replay catches the step you were unsure about more often than not, and there is no time limit, so the breath costs you nothing.</li>
+</ol>
+<h2>Common mistakes</h2>
+<p>Rushing is the most common way to lose. The pattern ends, the player taps fast to get it over with, and a finger lands on the wrong pad two steps in. There is no time limit on your turn, so slow down and tap each pad deliberately.</p>
+<p>Watching only one pad is the second trap. Players who stare at the green pad and wait for it to light miss the yellow flashes at the edge of their vision. Keep your gaze in the centre and trust the colour and the tone to reach you.</p>
+<p>Tapping during the show is the third. The pads ignore your taps while the pattern plays, so an early tap does nothing — but it does break your concentration, and a broken pattern is a forgotten pattern.</p>
+<p>Playing tired is the fourth. Memory games punish tired brains more than most games do. If your best drops by three or four steps from your usual, stop for a while and come back fresh. Ten minutes of rest does more for your score than ten more runs.</p>
+<p>The last mistake is skipping the sound. Some players mute the tones on the first run and never try them. The melody is a real memory aid — give it three runs with the sound on before you decide.</p>
+<h2>Why old games still feel good</h2>
+<p>Old games had almost nothing: a few colours, a few tones, one rule. That was the point. A game with one rule can be learned in ten seconds and played for years, because the depth comes from the player, not from the instructions. Retro Simon Sequence has one rule — repeat the pattern — and every run is different because every pattern is different.</p>
+<p>These games also respected your time. There was no account to create, no update to install, no shop to visit before you could play. You opened the game and you were playing. This version keeps that: no download, no signup, no waiting. Your best score lives on your own device and nowhere else.</p>
+<p>Then there is the one-more-try pull. A run ends on a single wrong tap, and the gap between your score and your best is usually one or two steps. That gap is small enough to feel closable and large enough to matter, which is why most people play just one more run five times in a row. It is a gentle pull, not a trap: there is nothing to buy and nothing to lose, just a pattern waiting to be beaten.</p>
+<p>That is why these games are still here, forty years on. They ask for a little attention and give back a small, honest victory — and a reason to try again.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Is Retro Simon Sequence free to play?</h3><p>Yes. The game is completely free, with no download, no signup and nothing to buy. You open the page, tap Start Sequence, and play as many runs as you like.</p></div><div class="faq"><h3>How is this different from a pairs matching game?</h3><p>A pairs matching game asks you to find two cards that match. This game is different: it plays a growing pattern of colours and tones, and you repeat the whole pattern back in order. It tests your memory for sequences, not your memory for locations.</p></div><div class="faq"><h3>Do I need sound to play?</h3><p>No. Sound helps, because each pad has its own tone and the pattern becomes a short melody, but the game is fully playable without it. When you turn the sound off, the pads stay lit for longer on every step so you can follow the pattern by sight alone.</p></div><div class="faq"><h3>How long can a sequence get?</h3><p>There is no fixed end. Each round adds one step, and the speed rises every five rounds until round twenty-one, when it stays at its fastest pace. Most players finish between eight and fifteen steps, and a score past twenty is an excellent run.</p></div><div class="faq"><h3>Where is my best score saved?</h3><p>Your best score is saved in your browser on your own device, using the browser's own storage. It is still there the next time you open the page, and it is never sent to any server. Clearing your browser data will remove it.</p></div><div class="faq"><h3>Can I play Retro Simon Sequence on my phone?</h3><p>Yes. The game was built phone-first: the four pads are large tap targets, the Start and Pause buttons are big, and the page never scrolls while you play. It works in any modern phone browser, and on a computer with a mouse or the number keys 1 to 4.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/retro-pinball-game/">Retro Pinball</a> · <a href="https://noryvello.github.io/retro-pong-game/">Retro Pong</a> · <a href="https://noryvello.github.io/retro-road-racer-game/">Retro Road Racer</a></div>
+<div class="hub"><a href="https://toolbari.github.io/retro-games/">More retro games</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+(function () {
+  'use strict';
+  // Retro Simon Sequence — sequence-memory game.
+  // Pure logic on window.GAME (testable without a canvas); DOM/sound are
+  // bound below and guarded so the script also runs in a node test sandbox.
+  var FREQS = [415, 310, 252, 209]; // green, red, yellow, blue
+  var BEST_KEY = 'rg-simon-best';
+
+  function loadBest() {
+    try {
+      var v = parseInt(window.localStorage.getItem(BEST_KEY), 10);
+      return isNaN(v) ? 0 : v;
+    } catch (e) { return 0; }
+  }
+  function saveBest(v) {
+    try { window.localStorage.setItem(BEST_KEY, String(v)); } catch (e) {}
+  }
+  // Step time (ms per pad) by round; speed rises every 5 rounds.
+  function stepTimeFor(round) {
+    if (round <= 5) return 450;
+    if (round <= 10) return 380;
+    if (round <= 15) return 320;
+    if (round <= 20) return 270;
+    return 230;
+  }
+  function randomPad() { return Math.floor(Math.random() * 4); }
+
+  var G = {
+    state: 'idle', // idle | showing | input | paused | over
+    sequence: [],
+    inputIndex: 0,
+    score: 0,
+    best: loadBest(),
+    muted: false, // sound is part of this game: default ON
+    newBest: false,
+    testMode: false,
+    timers: [],
+    audioCtx: null
+  };
+
+  function $(id) { return document.getElementById(id); }
+  function on(el, ev, fn) { if (el && el.addEventListener) el.addEventListener(ev, fn); }
+  var pads = [];
+  try { pads = document.querySelectorAll('.pad'); } catch (e) { pads = []; }
+
+  function ensureAudio() {
+    if (G.audioCtx) return G.audioCtx;
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return null;
+    try {
+      G.audioCtx = new AC();
+      if (G.audioCtx.resume) G.audioCtx.resume();
+    } catch (e) { G.audioCtx = null; }
+    return G.audioCtx;
+  }
+  function tone(freq, ms, type) {
+    if (G.muted) return;
+    var ctx = ensureAudio();
+    if (!ctx) return;
+    try {
+      var osc = ctx.createOscillator();
+      var gain = ctx.createGain();
+      osc.type = type || 'sine';
+      osc.frequency.setValueAtTime(freq, ctx.currentTime);
+      gain.gain.setValueAtTime(0.0001, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.25, ctx.currentTime + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + ms / 1000);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + ms / 1000 + 0.05);
+    } catch (e) {}
+  }
+  function playTone(i, ms) { tone(FREQS[i], ms, 'sine'); }
+  function playBuzz() { tone(110, 400, 'sawtooth'); }
+
+  function flashMsFor(round) {
+    var step = stepTimeFor(round);
+    // When muted the pads flash longer so the game stays playable by sight.
+    return G.muted ? Math.round(step * 0.85) : Math.round(step * 0.55);
+  }
+  function flashPad(i, ms) {
+    var p = pads[i];
+    if (!p || !p.classList) return;
+    p.classList.add('lit');
+    if (ms > 0) {
+      G.timers.push(setTimeout(function () { p.classList.remove('lit'); }, ms));
+    } else {
+      p.classList.remove('lit');
+    }
+  }
+  function clearTimers() {
+    for (var i = 0; i < G.timers.length; i++) clearTimeout(G.timers[i]);
+    G.timers = [];
+  }
+  function setText(id, text) { var el = $(id); if (el) el.textContent = text; }
+  function showOv(id, show) { var el = $(id); if (el) el.hidden = !show; }
+
+  function updateUI() {
+    setText('sim-round', String(G.sequence.length));
+    setText('sim-score', String(G.score));
+    setText('sim-best', String(G.best));
+    showOv('sim-start-ov', G.state === 'idle');
+    showOv('sim-pause-ov', G.state === 'paused');
+    showOv('sim-over-ov', G.state === 'over');
+    var status = '';
+    if (G.state === 'idle') status = 'Tap Start Sequence, then watch and repeat.';
+    else if (G.state === 'showing') status = 'Watch the pattern...';
+    else if (G.state === 'input') status = 'Your turn — repeat the pattern.';
+    else if (G.state === 'paused') status = 'Paused. Resume to see the pattern again.';
+    else if (G.state === 'over') status = 'Game over. Tap Play Again for another run.';
+    setText('sim-status', status);
+    var pauseBtn = $('sim-pause');
+    if (pauseBtn) pauseBtn.textContent = (G.state === 'paused') ? 'Resume' : 'Pause';
+    if (G.state === 'over') {
+      setText('sim-final', 'Score: ' + G.score + ' · Best: ' + G.best);
+      var nb = $('sim-newbest');
+      if (nb) nb.hidden = !G.newBest;
+    }
+    var muteBtn = $('sim-mute');
+    if (muteBtn) muteBtn.textContent = G.muted ? 'Sound: Off' : 'Sound: On';
+  }
+
+  function showSequence() {
+    G.state = 'showing';
+    updateUI();
+    var step = stepTimeFor(G.sequence.length);
+    var flashMs = flashMsFor(G.sequence.length);
+    if (G.testMode) {
+      for (var k = 0; k < G.sequence.length; k++) { flashPad(G.sequence[k], 0); }
+      G.state = 'input';
+      G.inputIndex = 0;
+      updateUI();
+      return;
+    }
+    var i = 0;
+    function next() {
+      if (G.state !== 'showing') return;
+      if (i >= G.sequence.length) {
+        G.state = 'input';
+        G.inputIndex = 0;
+        updateUI();
+        return;
+      }
+      var pad = G.sequence[i];
+      flashPad(pad, flashMs);
+      playTone(pad, flashMs);
+      i++;
+      G.timers.push(setTimeout(next, step));
+    }
+    G.timers.push(setTimeout(next, 400));
+  }
+
+  function start() {
+    clearTimers();
+    G.sequence = [randomPad()];
+    G.score = 0;
+    G.inputIndex = 0;
+    G.newBest = false;
+    ensureAudio();
+    showSequence();
+  }
+
+  function gameOver() {
+    clearTimers();
+    G.state = 'over';
+    playBuzz();
+    updateUI();
+  }
+
+  function pressPad(i) {
+    if (G.state !== 'input') return false;
+    flashPad(i, 220);
+    playTone(i, 220);
+    if (i === G.sequence[G.inputIndex]) {
+      G.inputIndex++;
+      if (G.inputIndex >= G.sequence.length) {
+        // Round complete: score is the longest sequence repeated.
+        G.score = G.sequence.length;
+        if (G.score > G.best) { G.best = G.score; G.newBest = true; saveBest(G.best); }
+        G.sequence.push(randomPad());
+        G.state = 'showing'; // block input during the gap before the next show
+        updateUI();
+        if (G.testMode) { showSequence(); }
+        else { G.timers.push(setTimeout(showSequence, 700)); }
+      } else {
+        updateUI();
+      }
+      return true;
+    }
+    gameOver();
+    return false;
+  }
+
+  function pause() {
+    if (G.state !== 'showing' && G.state !== 'input') return false;
+    G.state = 'paused';
+    clearTimers();
+    updateUI();
+    return true;
+  }
+  function resume() {
+    if (G.state !== 'paused') return false;
+    // Re-show the current sequence from the start, then back to input.
+    showSequence();
+    return true;
+  }
+  function setMuted(m) {
+    G.muted = !!m;
+    updateUI();
+  }
+
+  function bindUI() {
+    for (var i = 0; i < pads.length; i++) {
+      (function (idx) {
+        on(pads[idx], 'pointerdown', function (e) {
+          if (e && e.preventDefault) e.preventDefault();
+          pressPad(idx);
+        });
+      })(i);
+    }
+    on($('sim-start'), 'click', start);
+    on($('sim-again'), 'click', start);
+    on($('sim-resume'), 'click', resume);
+    on($('sim-restart'), 'click', start);
+    on($('sim-how'), 'click', function () {
+      var el = document.getElementById('how-to-play');
+      if (el && el.scrollIntoView) el.scrollIntoView();
+    });
+    on($('sim-pause'), 'click', function () {
+      if (G.state === 'paused') resume(); else pause();
+    });
+    on($('sim-mute'), 'click', function () { setMuted(!G.muted); });
+    on(document, 'keydown', function (e) {
+      if (!e) return;
+      var k = e.key;
+      if (k === '1' || k === '2' || k === '3' || k === '4') pressPad(parseInt(k, 10) - 1);
+      else if (k === 'p' || k === 'P') { if (G.state === 'paused') resume(); else pause(); }
+      else if (k === 'm' || k === 'M') setMuted(!G.muted);
+    });
+    var calc = null;
+    try { calc = document.querySelector('.calc'); } catch (e) { calc = null; }
+    if (calc && calc.addEventListener) {
+      calc.addEventListener('touchmove', function (e) { e.preventDefault(); }, { passive: false });
+    }
+  }
+
+  window.GAME = {
+    start: start,
+    pause: pause,
+    resume: resume,
+    restart: start,
+    pressPad: pressPad,
+    setMuted: setMuted,
+    getState: function () { return G.state; },
+    getScore: function () { return G.score; },
+    getBest: function () { return G.best; },
+    getRound: function () { return G.sequence.length; },
+    getSequence: function () { return G.sequence.slice(); },
+    getInputIndex: function () { return G.inputIndex; },
+    isMuted: function () { return G.muted; },
+    stepTimeFor: stepTimeFor,
+    flashMsFor: flashMsFor,
+    setTestMode: function (b) { G.testMode = !!b; },
+    _G: G
+  };
+
+  bindUI();
+  updateUI();
+})();
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

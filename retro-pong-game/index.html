@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retro Pong — How to Play the First Video Game Free in Your Browser | Noryvello</title>
+<meta name="description" content="Learn how to play Retro Pong and play it free in your browser — the 1972 classic, you versus the computer, first to 7 points wins. No download, no signup.">
+<link rel="canonical" href="https://noryvello.github.io/retro-pong-game/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Retro Pong — How to Play the First Video Game Free in Your Browser">
+<meta property="og:description" content="Play Retro Pong free in your browser — the 1972 classic, you versus the computer, first to 7 wins.">
+<meta property="og:url" content="https://noryvello.github.io/retro-pong-game/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.byline{font-size:14px;color:#64748b;margin:6px 0 0}
+.hub{margin:18px 0 4px;font-size:16px;font-weight:700}.hub a{color:#4338ca}
+.game-wrap{position:relative}
+.game-canvas{display:block;width:100%;max-width:480px;margin:0 auto;background:#0a1f0a;border:3px solid #1e293b;border-radius:10px;touch-action:none}
+.game-score{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:16px;margin:6px 0 10px;flex-wrap:wrap;gap:6px}
+.game-btn{min-height:90px;min-width:90px;padding:12px 18px;border:0;border-radius:14px;font-size:18px;font-weight:700;cursor:pointer;touch-action:manipulation}
+.game-btn-wide{width:100%;min-height:90px;padding:14px 18px;border:0;border-radius:14px;font-size:19px;font-weight:700;cursor:pointer;touch-action:manipulation}
+.game-controls{display:flex;gap:10px;justify-content:space-between;margin-top:12px;flex-wrap:wrap}
+.game-controls .game-btn{flex:1}
+.game-overlay{position:absolute;inset:0;background:rgba(10,31,10,.92);color:#e8f7ef;border-radius:10px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px;text-align:center;gap:12px}
+.game-overlay .ov-title{font-size:22px;font-weight:800}
+.game-overlay p{font-size:16px;max-width:420px}
+.pause-btn{position:absolute;top:8px;right:8px;min-width:90px;min-height:90px;padding:10px 14px;border:0;border-radius:12px;font-size:17px;font-weight:700;cursor:pointer;z-index:5;touch-action:manipulation}
+.mute-btn{min-width:90px;min-height:72px;padding:10px 14px;border:0;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;touch-action:manipulation}
+.game-btn,.game-btn-wide{background:#4338ca;color:#fff}
+.pause-btn,.mute-btn{background:#0d9488;color:#fff}
+.calc{position:relative}
+.game-overlay{z-index:10;border-radius:12px;overflow-y:auto}
+.diff-btn{flex:1;min-height:72px;min-width:72px}
+.diff-btn[aria-pressed="true"]{outline:3px solid #0d9488;outline-offset:2px}
+.ct{border-collapse:collapse;width:100%;margin:10px 0}
+.ct th,.ct td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;font-size:15px}
+.ct th{background:#eef2ff}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Retro Pong free to play?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It is completely free, with no download, no signup, no account, and no in-game purchases. It runs in your browser on your phone, tablet, or computer."}}, {"@type": "Question", "name": "How do I move my paddle on my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Drag up or down on the right side of the table and the paddle follows your finger, sitting a little above it so your thumb never covers the ball. You can also hold the big UP and DOWN buttons under the table."}}, {"@type": "Question", "name": "What score wins the match?", "acceptedAnswer": {"@type": "Answer", "text": "The first player to 7 points wins the match. There is no need to win by two points — a 7 to 6 result is a win."}}, {"@type": "Question", "name": "Is there a two-player mode?", "acceptedAnswer": {"@type": "Answer", "text": "No. This version is you against the computer only, on three difficulty levels. There is no two-player mode on one screen or over the internet."}}, {"@type": "Question", "name": "Where is my best score saved?", "acceptedAnswer": {"@type": "Answer", "text": "Your best rally and your match wins are saved in your browser on your own device, and they stay there when you close the page. They are never sent anywhere, and nobody else can see them."}}, {"@type": "Question", "name": "Can I change the difficulty mid-match?", "acceptedAnswer": {"@type": "Answer", "text": "No. Pick Easy, Normal, or Hard on the Start screen before the match begins. If you want a different difficulty, finish the match and pick again on the Start screen."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Retro Pong</h1>
+<p class="byline">By the Noryvello team · Published 21 November 2026 · Updated 21 November 2026</p>
+<p class="answer">Retro Pong is the 1972 classic, free in your browser: your paddle on the right, the computer on the left, first to 7 points wins the match. Drag to move on your phone, or use the arrow keys on a desktop — no download and no signup needed.</p>
+<div class="calc" id="game-calc">
+<div class="game-score"><span id="gs-you">You: 0</span><span id="gs-cpu">CPU: 0</span><span id="gs-rally">Rally: 0</span><span id="gs-best">Best Rally: 0</span></div>
+<div style="font-weight:700;margin:0 0 6px">Difficulty</div>
+<div class="game-controls" style="margin-top:0;margin-bottom:12px"><button class="game-btn diff-btn" id="diff-easy" type="button" aria-pressed="false">Easy</button><button class="game-btn diff-btn" id="diff-normal" type="button" aria-pressed="true">Normal</button><button class="game-btn diff-btn" id="diff-hard" type="button" aria-pressed="false">Hard</button></div>
+<div class="game-wrap">
+<canvas id="game-canvas" class="game-canvas" width="480" height="360"></canvas>
+<button class="pause-btn" id="btn-pause" type="button">Pause</button>
+</div>
+<div class="game-controls"><button class="game-btn" id="btn-up" type="button">UP</button><button class="game-btn" id="btn-down" type="button">DOWN</button><button class="mute-btn" id="btn-mute" type="button">Sound: Off</button></div>
+<div class="game-overlay" id="ov-start"><div class="ov-title">Retro Pong</div><p>Drag up or down on the right side to move your paddle, or use the UP and DOWN buttons.</p><p>The ball speeds up every rally. First to 7 points wins the match.</p><p>Pick a difficulty above, then press Start.</p><button class="game-btn-wide" id="btn-start" type="button">Start Game</button></div>
+<div class="game-overlay" id="ov-pause" style="display:none"><div class="ov-title">Paused</div><p>Take a breath. The ball is frozen exactly where it was.</p><button class="game-btn-wide" id="btn-resume" type="button">Resume</button><button class="game-btn-wide" id="btn-restart" type="button">Restart</button><button class="game-btn-wide" id="btn-how" type="button">How to Play</button></div>
+<div class="game-overlay" id="ov-how" style="display:none"><div class="ov-title">How to Play</div><p>Your paddle is on the right. Drag on the table or hold UP and DOWN to move it. Hit the ball with the edge of the paddle to send it at a sharp angle. First to 7 wins. Difficulty is picked above the table before the match.</p><button class="game-btn-wide" id="btn-how-back" type="button">Back</button></div>
+<div class="game-overlay" id="ov-over" style="display:none"><div class="ov-title" id="go-title">Game Over</div><p id="go-score">Match: You 0 : 0 CPU</p><p id="go-best">Best rally: 0</p><p id="go-newbest" style="display:none">New Best!</p><button class="game-btn-wide" id="btn-again" type="button">Play Again</button></div>
+</div>
+<div class="warn">This is an original game inspired by the classics of that era. It is not affiliated with Nokia or any original publisher. You play against the computer — there is no two-player mode.</div>
+<h2>A short history of Pong</h2><p>Pong was released in November 1972, and it was the first video game to become a commercial success. It was built by a small American company called Atari, and the game itself was designed by an engineer named Allan Alcorn as a training exercise. The brief was simple: make a game with two paddles and a ball. Alcorn added the details that made it feel alive — the ball sped up during long rallies, and hitting it with the edge of the paddle sent it off at an angle.</p><p>The first Pong machine was installed in a bar in California, and within days the bar called Atari to say the machine had broken down. It had not broken down. The coin box was so full of quarters that the machine had jammed. That story has become part of gaming history, and it tells you everything about how new the idea was: people had never played a video game before, and they could not stop.</p><p>Pong was deliberately simple. Two paddles, one square ball, a score at the top, and a sound when the ball bounced. There was no story, no character, and no way to lose except by missing the ball. That simplicity was the point. Anyone could understand it in five seconds, and anyone could get better at it in five minutes. Every video game since — every shooter, racer, and puzzle — descends from that little square ball bouncing between two paddles.</p><h2>How to play Retro Pong</h2><p>Your paddle is on the right side of the table, and the computer controls the paddle on the left. The ball serves from the centre, and your job is to return it past the computer's paddle. Every time the ball passes the computer's paddle, you score a point; every time it passes yours, the computer scores. The first player to reach 7 points wins the match.</p><p>The ball speeds up a little with every paddle hit, so rallies get faster and more dangerous the longer they last. A rally that starts gently can end with the ball flying across the table at more than twice its starting speed. The rally counter at the top of the table shows how many returns the current rally has lasted, and your longest rally is saved on your device as your best.</p><p>Before you start, pick a difficulty on the Start screen: Easy, Normal, or Hard. The difficulty changes how fast the computer paddle moves, which is explained in the section below. You cannot change the difficulty in the middle of a match — finish the match first, then pick a new one on the Start screen. Each match lasts a few minutes, and a new match is one tap away when the last one ends.</p><h2>Controls on phone and desktop</h2><p>On a phone, the easiest way to play is to drag. Put your finger on the right side of the table and slide it up or down — the paddle follows your finger, sitting a little above it so your thumb never covers the ball. If you would rather use buttons, the big UP and DOWN buttons under the table move the paddle while you hold them. Both ways work, and you can switch between them mid-rally.</p><table class="ct"><tr><th>Action</th><th>Phone</th><th>Desktop</th></tr><tr><td>Move paddle up</td><td>Drag up on the right side, or hold the UP button</td><td>Up arrow or W</td></tr><tr><td>Move paddle down</td><td>Drag down on the right side, or hold the DOWN button</td><td>Down arrow or S</td></tr><tr><td>Pick difficulty</td><td>Tap Easy, Normal, or Hard on the Start screen</td><td>Click Easy, Normal, or Hard on the Start screen</td></tr><tr><td>Pause</td><td>Pause button, top-right of the table</td><td>P key, or the Pause button</td></tr><tr><td>Sound</td><td>Sound button under the table (off by default)</td><td>Sound button under the table</td></tr></table><p>The page will not scroll while you are playing, and the paddle buttons are 90 pixels tall, so they are easy to hold with a thumb. The Pause button is always visible at the top-right of the table, and pausing freezes the ball exactly where it is.</p><h2>How the computer difficulty works</h2><p>The three difficulty levels change one thing only: how fast the computer paddle can move. On Easy, the computer moves slowly — about three quarters of the ball's starting speed — and it waits until the ball is clearly above or below it before it starts moving. It misses often, especially on fast balls and sharp angles. Easy is the right choice for a first game, or for a relaxed match.</p><p>On Normal, the computer moves at roughly the ball's starting speed and reacts sooner. It returns most balls that come straight at it, but it can still be beaten with a well-placed angle or a fast rally, because the ball speeds up while the computer does not. Normal is the fairest match: the computer is beatable, but it punishes lazy play.</p><p>On Hard, the computer moves almost twice as fast as the ball's starting speed, reacts to tiny differences, and even aims slightly ahead of where the ball is going. It rarely misses a straight ball. The only way to beat it is with angles — hit the ball with the edge of your paddle so it flies to a corner the computer cannot reach in time. Hard is a genuine challenge, and winning a match on Hard is something to be proud of.</p><h2>Scoring, rallies and the match</h2><p>Scoring in Pong is as simple as the game itself. One point for every ball that passes your opponent's paddle. The first player to 7 points wins the match, and there is no need to win by two — 7 to 6 is a win. After each point there is a short pause, then the ball serves again from the centre toward the player who just lost the point.</p><p>The rally counter is the quiet star of the game. It counts every return in the current rally, and it resets when someone scores. A rally of 10 returns is a good rally; a rally of 20 is a great one. Your longest rally is saved on your device, along with the number of matches you have won. The score bar at the top of the table always shows your points, the computer's points, the current rally, and your best rally.</p><p>There is no time limit on a match. A quick match can be over in two minutes; a tight match on Hard can last five. If you need to stop, the Pause button freezes everything, and you can come back to the same match whenever you like.</p><h2>Five tips that really work</h2><p><strong>1. Aim with the edge.</strong> Hitting the ball with the centre of your paddle sends it straight back. Hitting it with the top or bottom edge sends it at a sharp angle toward a corner. Angles win points; straight returns just keep the rally going.</p><p><strong>2. Return to the middle.</strong> After every return, drift your paddle back toward the centre of the table. A paddle waiting in the middle can reach a ball going either way; a paddle stuck at the top cannot reach a ball at the bottom.</p><p><strong>3. Watch the ball, not the score.</strong> The score bar is a distraction during a fast rally. Keep your eyes on the ball and on your paddle, and check the score only between points.</p><p><strong>4. Slow the rally down when you are in trouble.</strong> If the ball is flying and you are barely keeping up, return it softly with the centre of the paddle. A soft return resets the pace and gives you a second to recover.</p><p><strong>5. Use the walls.</strong> The ball bounces off the top and bottom walls at the same angle it hits them. A ball hit at an angle toward a wall will come back at an angle too — aim for the wall on your return and the computer has to guess where the ball will go.</p><h2>Common mistakes</h2><p>The most common mistake is chasing the ball. New players move the paddle to wherever the ball is right now, instead of where it is going to be. The ball moves faster than the paddle, so chasing it means you are always a step behind. Instead, watch the ball's direction and move to where it will arrive.</p><p>The second mistake is standing still in the middle and hoping. A paddle that never moves returns only the balls that come straight at it, and the computer will quickly learn to aim at the corners. Keep your paddle moving, even a little, so you are always ready to react.</p><p>The third mistake is hitting every ball as hard as possible. In Pong there is no power button — the angle of the hit decides everything, and a wild edge hit can send the ball past your own paddle on the return. Aim first, then worry about speed. And the fourth mistake is forgetting that the ball speeds up. A rally that felt comfortable at the start is twice as fast after ten returns, so leave yourself room to react.</p><h2>Why old games still feel good</h2><p>Pong is more than fifty years old, and it still works, because it never tried to be more than it is. Two paddles, one ball, first to seven. The rules fit in a sentence, the skill takes weeks, and every point is decided by timing and judgement rather than by luck or by something you bought. There is nothing to unlock, nothing to wait for, and no advertisement between you and the next match.</p><p>Old games respect your time. A match of Pong takes a few minutes, and you can play one while waiting for a bus and stop without losing anything, because the only progress is your best rally and your match wins, and both are saved on your own device. The game asks for nothing and gives you a fair contest every time.</p><p>This version keeps that bargain. It is free, it works in your browser, it needs no download and no account, and it never asks you for anything. Just you, a paddle, and a square ball.</p><h2>Questions people ask</h2>
+<div class="faq"><h3>Is Retro Pong free to play?</h3><p>Yes. It is completely free, with no download, no signup, no account, and no in-game purchases. It runs in your browser on your phone, tablet, or computer.</p></div><div class="faq"><h3>How do I move my paddle on my phone?</h3><p>Drag up or down on the right side of the table and the paddle follows your finger, sitting a little above it so your thumb never covers the ball. You can also hold the big UP and DOWN buttons under the table.</p></div><div class="faq"><h3>What score wins the match?</h3><p>The first player to 7 points wins the match. There is no need to win by two points — a 7 to 6 result is a win.</p></div><div class="faq"><h3>Is there a two-player mode?</h3><p>No. This version is you against the computer only, on three difficulty levels. There is no two-player mode on one screen or over the internet.</p></div><div class="faq"><h3>Where is my best score saved?</h3><p>Your best rally and your match wins are saved in your browser on your own device, and they stay there when you close the page. They are never sent anywhere, and nobody else can see them.</p></div><div class="faq"><h3>Can I change the difficulty mid-match?</h3><p>No. Pick Easy, Normal, or Hard on the Start screen before the match begins. If you want a different difficulty, finish the match and pick again on the Start screen.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/retro-pinball-game/">Retro Pinball</a> · <a href="https://noryvello.github.io/retro-simon-sequence-game/">Retro Simon Sequence</a> · <a href="https://noryvello.github.io/retro-road-racer-game/">Retro Road Racer</a></div>
+<div class="hub"><a href="https://toolbari.github.io/retro-games/">More retro games</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+
+(function(){
+'use strict';
+var W = 480, H = 360, PW = 10, PH = 72, BS = 10, WIN = 7;
+var store = (function(){ try { if (typeof localStorage !== 'undefined' && localStorage) return localStorage; } catch (e) {} var m = {}; return { getItem: function (k) { return (k in m) ? m[k] : null; }, setItem: function (k, v) { m[k] = String(v); } }; })();
+var KEY = 'rg-pong-best';
+var audio = null, soundOn = false;
+function beep(f, d) {
+  if (!soundOn) return;
+  try {
+    if (typeof window === 'undefined' || !(window.AudioContext || window.webkitAudioContext)) return;
+    if (!audio) audio = new (window.AudioContext || window.webkitAudioContext)();
+    var o = audio.createOscillator(), g = audio.createGain();
+    o.frequency.value = f; o.type = 'square'; g.gain.value = 0.04;
+    o.connect(g); g.connect(audio.destination); o.start(); o.stop(audio.currentTime + (d || 0.08));
+  } catch (e) {}
+}
+function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
+var DIFFS = {
+  easy: { speed: 210, dead: 26, predict: 0, label: 'Easy' },
+  normal: { speed: 340, dead: 12, predict: 0.08, label: 'Normal' },
+  hard: { speed: 480, dead: 5, predict: 0.18, label: 'Hard' }
+};
+function loadBest() {
+  try {
+    var raw = store.getItem(KEY);
+    if (raw) { var o = JSON.parse(raw); return { bestRally: o.bestRally || 0, wins: o.wins || 0 }; }
+  } catch (e) {}
+  return { bestRally: 0, wins: 0 };
+}
+function saveBest() {
+  try { store.setItem(KEY, JSON.stringify({ bestRally: S.bestRally, wins: S.wins })); } catch (e) {}
+}
+var S = {
+  state: 'ready', // ready | playing | paused | over
+  diff: 'normal',
+  you: 0, cpu: 0, rally: 0, bestRally: 0, wins: 0,
+  py: H / 2, cy: H / 2, targetY: null, up: false, down: false,
+  ball: { x: W / 2, y: H / 2, vx: 0, vy: 0 },
+  speedMul: 1, serveT: 0, serveDir: 1, won: false, newBest: false
+};
+(function () { var b = loadBest(); S.bestRally = b.bestRally; S.wins = b.wins; })();
+
+function serve() {
+  S.ball.x = W / 2 - BS / 2; S.ball.y = H / 2 - BS / 2;
+  S.ball.vx = S.serveDir * 280; S.ball.vy = (S.serveDir > 0 ? 120 : -120);
+  S.serveDir = -S.serveDir;
+  S.speedMul = 1;
+}
+function startGame(diff) {
+  if (diff && DIFFS[diff]) S.diff = diff;
+  S.you = 0; S.cpu = 0; S.rally = 0; S.newBest = false; S.won = false;
+  S.py = H / 2; S.cy = H / 2; S.targetY = null; S.up = false; S.down = false;
+  S.state = 'playing'; S.serveT = 0.9; S.serveDir = 1;
+  S.ball.x = W / 2 - BS / 2; S.ball.y = H / 2 - BS / 2; S.ball.vx = 0; S.ball.vy = 0;
+  S.speedMul = 1;
+}
+function pauseGame() { if (S.state === 'playing') S.state = 'paused'; }
+function resumeGame() { if (S.state === 'paused') S.state = 'playing'; }
+function pointTo(who) {
+  if (S.rally > S.bestRally) { S.bestRally = S.rally; S.newBest = true; saveBest(); }
+  S.rally = 0;
+  if (who === 'you') { S.you += 1; beep(660, 0.12); } else { S.cpu += 1; beep(220, 0.12); }
+  if (S.you >= WIN || S.cpu >= WIN) {
+    S.won = S.you >= WIN;
+    if (S.won) { S.wins += 1; saveBest(); }
+    S.state = 'over';
+    return;
+  }
+  S.serveT = 0.9;
+  S.ball.x = W / 2 - BS / 2; S.ball.y = H / 2 - BS / 2; S.ball.vx = 0; S.ball.vy = 0;
+}
+function step(dt) {
+  if (S.state !== 'playing') return;
+  var d = DIFFS[S.diff];
+  // Player paddle
+  if (S.up) { S.py -= 430 * dt; S.targetY = null; }
+  else if (S.down) { S.py += 430 * dt; S.targetY = null; }
+  else if (S.targetY !== null) {
+    var dy = S.targetY - S.py, mv = 700 * dt;
+    S.py += clamp(dy, -mv, mv);
+  }
+  S.py = clamp(S.py, PH / 2, H - PH / 2);
+  // Computer paddle
+  var target;
+  if (S.ball.vx < 0) target = S.ball.y + BS / 2 + S.ball.vy * d.predict;
+  else target = H / 2;
+  var cdy = target - S.cy;
+  if (Math.abs(cdy) > d.dead) {
+    var cmv = d.speed * dt * (S.ball.vx < 0 ? 1 : 0.5);
+    S.cy += clamp(cdy, -cmv, cmv);
+  }
+  S.cy = clamp(S.cy, PH / 2, H - PH / 2);
+  if (S.serveT > 0) { S.serveT -= dt; if (S.serveT <= 0) serve(); return; }
+  var b = S.ball;
+  b.x += b.vx * dt;
+  b.y += b.vy * dt;
+  if (b.y < 0) { b.y = 0; b.vy = Math.abs(b.vy); beep(330, 0.04); }
+  if (b.y + BS > H) { b.y = H - BS; b.vy = -Math.abs(b.vy); beep(330, 0.04); }
+  // Player paddle (right, x 452-462)
+  if (b.vx > 0 && b.x + BS >= 452 && b.x < 462 &&
+      b.y + BS > S.py - PH / 2 && b.y < S.py + PH / 2) {
+    var off = clamp((b.y + BS / 2 - S.py) / (PH / 2), -1, 1);
+    S.speedMul = Math.min(2.6, S.speedMul * 1.05);
+    var sp = 280 * S.speedMul;
+    b.vx = -sp;
+    b.vy = off * 340;
+    b.x = 452 - BS;
+    S.rally += 1;
+    beep(440, 0.05);
+  }
+  // Computer paddle (left, x 18-28)
+  if (b.vx < 0 && b.x <= 28 && b.x + BS > 18 &&
+      b.y + BS > S.cy - PH / 2 && b.y < S.cy + PH / 2) {
+    var off2 = clamp((b.y + BS / 2 - S.cy) / (PH / 2), -1, 1);
+    S.speedMul = Math.min(2.6, S.speedMul * 1.05);
+    var sp2 = 280 * S.speedMul;
+    b.vx = sp2;
+    b.vy = off2 * 340;
+    b.x = 28;
+    S.rally += 1;
+    beep(440, 0.05);
+  }
+  if (b.x + BS < 0) pointTo('cpu');
+  else if (b.x > W) pointTo('you');
+}
+var GAME = {
+  start: startGame, pause: pauseGame, resume: resumeGame, restart: function () { startGame(S.diff); },
+  step: step,
+  setPlayerY: function (y) { S.targetY = clamp(y, PH / 2, H - PH / 2); },
+  moveUp: function (down) { S.up = !!down; },
+  moveDown: function (down) { S.down = !!down; },
+  setDifficulty: function (d) { if (DIFFS[d]) S.diff = d; },
+  getDifficulty: function () { return S.diff; },
+  getState: function () { return S.state; },
+  getScore: function () { return { you: S.you, cpu: S.cpu, rally: S.rally }; },
+  getBest: function () { return { bestRally: S.bestRally, wins: S.wins }; },
+  getBall: function () { return { x: S.ball.x, y: S.ball.y, vx: S.ball.vx, vy: S.ball.vy }; },
+  getPaddles: function () { return { py: S.py, cy: S.cy }; },
+  setBall: function (x, y, vx, vy) { S.ball.x = x; S.ball.y = y; S.ball.vx = vx; S.ball.vy = vy; S.serveT = 0; },
+  setScore: function (you, cpu) { S.you = you; S.cpu = cpu; },
+  won: function () { return S.won; },
+  isNewBest: function () { return S.newBest; },
+  toggleSound: function () { soundOn = !soundOn; return soundOn; },
+  soundOn: function () { return soundOn; }
+};
+if (typeof window !== 'undefined') window.GAME = GAME;
+
+// ---- DOM + rendering (browser only) ----
+if (typeof document !== 'undefined' && document.getElementById) {
+  var cv = document.getElementById('game-canvas');
+  var ctx = cv ? cv.getContext('2d') : null;
+  var elYou = document.getElementById('gs-you');
+  var elCpu = document.getElementById('gs-cpu');
+  var elRally = document.getElementById('gs-rally');
+  var elBest = document.getElementById('gs-best');
+  var ovStart = document.getElementById('ov-start');
+  var ovPause = document.getElementById('ov-pause');
+  var ovOver = document.getElementById('ov-over');
+  var ovHow = document.getElementById('ov-how');
+  var elTitle = document.getElementById('go-title');
+  var elFinal = document.getElementById('go-score');
+  var elFinalBest = document.getElementById('go-best');
+  var elNewBest = document.getElementById('go-newbest');
+  function show(el, on) { if (el) el.style.display = on ? 'flex' : 'none'; }
+  function syncOverlays() {
+    show(ovStart, S.state === 'ready');
+    show(ovPause, S.state === 'paused');
+    show(ovOver, S.state === 'over');
+    syncDiffBtns();
+    if (S.state === 'over') {
+      if (elTitle) elTitle.textContent = S.won ? 'You Win!' : 'Computer Wins';
+      if (elFinal) elFinal.textContent = 'Match: You ' + S.you + ' : ' + S.cpu + ' CPU';
+      if (elFinalBest) elFinalBest.textContent = 'Best rally: ' + S.bestRally + '  ·  Matches won: ' + S.wins;
+      if (elNewBest) elNewBest.style.display = S.newBest ? 'block' : 'none';
+    }
+  }
+  function updateHUD() {
+    if (elYou) elYou.textContent = 'You: ' + S.you;
+    if (elCpu) elCpu.textContent = 'CPU: ' + S.cpu;
+    if (elRally) elRally.textContent = 'Rally: ' + S.rally;
+    if (elBest) elBest.textContent = 'Best Rally: ' + S.bestRally;
+  }
+  function draw() {
+    if (!ctx) return;
+    ctx.fillStyle = '#0a1f0a'; ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = '#4ade80'; ctx.lineWidth = 3; ctx.strokeRect(2, 2, W - 4, H - 4);
+    ctx.setLineDash([10, 12]);
+    ctx.beginPath(); ctx.moveTo(W / 2, 8); ctx.lineTo(W / 2, H - 8); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(18, S.cy - PH / 2, PW, PH);
+    ctx.fillRect(452, S.py - PH / 2, PW, PH);
+    ctx.fillRect(S.ball.x, S.ball.y, BS, BS);
+    ctx.fillStyle = '#a7f3d0'; ctx.font = 'bold 15px system-ui, sans-serif'; ctx.textAlign = 'left';
+    ctx.fillText(DIFFS[S.diff].label, 12, H - 12);
+    ctx.textAlign = 'right';
+    ctx.fillText('First to 7', W - 12, H - 12);
+  }
+  var last = 0, rafOn = false;
+  function loop(ts) {
+    if (!rafOn) return;
+    var dt = last ? Math.min((ts - last) / 1000, 1 / 30) : 1 / 60;
+    last = ts;
+    step(dt);
+    draw();
+    updateHUD();
+    syncOverlays();
+    if (typeof requestAnimationFrame !== 'undefined') requestAnimationFrame(loop);
+  }
+  function ensureLoop() {
+    if (rafOn) return;
+    rafOn = true; last = 0;
+    if (typeof requestAnimationFrame !== 'undefined') requestAnimationFrame(loop);
+    else { setInterval(function () { step(1 / 60); draw(); updateHUD(); syncOverlays(); }, 16); }
+  }
+  function tap(id, fn) {
+    var b = document.getElementById(id);
+    if (!b) return;
+    b.addEventListener('click', function (e) { e.preventDefault(); fn(); });
+  }
+  function bindBtn(id, down, up) {
+    var b = document.getElementById(id);
+    if (!b) return;
+    b.addEventListener('touchstart', function (e) { e.preventDefault(); down(); }, { passive: false });
+    b.addEventListener('touchend', function (e) { e.preventDefault(); if (up) up(); }, { passive: false });
+    b.addEventListener('touchcancel', function () { if (up) up(); });
+    b.addEventListener('mousedown', function (e) { e.preventDefault(); down(); });
+    b.addEventListener('mouseup', function () { if (up) up(); });
+    b.addEventListener('mouseleave', function () { if (up) up(); });
+  }
+  var diffBtns = ['diff-easy', 'diff-normal', 'diff-hard'];
+  function syncDiffBtns() {
+    var locked = !(S.state === 'ready' || S.state === 'over');
+    diffBtns.forEach(function (o) {
+      var ob = document.getElementById(o);
+      if (ob) ob.disabled = locked;
+    });
+  }
+  diffBtns.forEach(function (id) {
+    var b = document.getElementById(id);
+    if (!b) return;
+    b.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (!(S.state === 'ready' || S.state === 'over')) return;
+      GAME.setDifficulty(id.replace('diff-', ''));
+      diffBtns.forEach(function (o) {
+        var ob = document.getElementById(o);
+        if (ob) ob.setAttribute('aria-pressed', o === id ? 'true' : 'false');
+      });
+    });
+  });
+  tap('btn-start', function () { startGame(S.diff); ensureLoop(); syncOverlays(); updateHUD(); });
+  tap('btn-again', function () { startGame(S.diff); ensureLoop(); syncOverlays(); updateHUD(); });
+  tap('btn-pause', function () { pauseGame(); syncOverlays(); });
+  tap('btn-resume', function () { resumeGame(); syncOverlays(); });
+  tap('btn-restart', function () { startGame(S.diff); syncOverlays(); updateHUD(); });
+  tap('btn-how', function () { show(ovPause, false); show(ovHow, true); });
+  tap('btn-how-back', function () { show(ovHow, false); show(ovPause, true); });
+  tap('btn-mute', function () {
+    var on = GAME.toggleSound();
+    var m = document.getElementById('btn-mute');
+    if (m) m.textContent = on ? 'Sound: On' : 'Sound: Off';
+  });
+  bindBtn('btn-up', function () { GAME.moveUp(true); }, function () { GAME.moveUp(false); });
+  bindBtn('btn-down', function () { GAME.moveDown(true); }, function () { GAME.moveDown(false); });
+  if (cv) {
+    var dragY = function (e) {
+      var r = cv.getBoundingClientRect();
+      var y = (e.touches ? e.touches[0].clientY : e.clientY) - r.top;
+      return y * (H / r.height) - 40;
+    };
+    cv.addEventListener('touchstart', function (e) { e.preventDefault(); GAME.setPlayerY(dragY(e)); }, { passive: false });
+    cv.addEventListener('touchmove', function (e) { e.preventDefault(); GAME.setPlayerY(dragY(e)); }, { passive: false });
+    cv.addEventListener('mousedown', function (e) { GAME.setPlayerY(dragY(e)); });
+    cv.addEventListener('mousemove', function (e) { if (e.buttons) GAME.setPlayerY(dragY(e)); });
+  }
+  var calc = document.getElementById('game-calc');
+  if (calc) {
+    calc.addEventListener('touchmove', function (e) { e.preventDefault(); }, { passive: false });
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.code === 'ArrowUp' || e.code === 'KeyW') { e.preventDefault(); GAME.moveUp(true); }
+    else if (e.code === 'ArrowDown' || e.code === 'KeyS') { e.preventDefault(); GAME.moveDown(true); }
+    else if (e.code === 'KeyP') { if (S.state === 'paused') resumeGame(); else pauseGame(); syncOverlays(); }
+  });
+  document.addEventListener('keyup', function (e) {
+    if (e.code === 'ArrowUp' || e.code === 'KeyW') GAME.moveUp(false);
+    else if (e.code === 'ArrowDown' || e.code === 'KeyS') GAME.moveDown(false);
+  });
+  draw();
+  updateHUD();
+  syncOverlays();
+}
+})();
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

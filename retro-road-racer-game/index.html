@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retro Road Racer — Play the Classic Top-Down Racing Game Free | Noryvello</title>
+<meta name="description" content="Play Retro Road Racer free in your browser — dodge traffic, grab fuel and coins, and drive as far as you can on the old highway. No download, no signup.">
+<link rel="canonical" href="https://noryvello.github.io/retro-road-racer-game/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Retro Road Racer — Play the Classic Top-Down Racing Game Free">
+<meta property="og:description" content="Dodge traffic, grab fuel and coins, and drive as far as you can on the old highway.">
+<meta property="og:url" content="https://noryvello.github.io/retro-road-racer-game/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.byline{font-size:14px;color:#64748b;margin:6px 0 0}
+.hub{margin:18px 0 4px;font-size:16px;font-weight:700}.hub a{color:#4338ca}
+.game-wrap{position:relative}
+.game-canvas{display:block;width:100%;max-width:480px;margin:0 auto;background:#0a1f0a;border:3px solid #1e293b;border-radius:10px;touch-action:none}
+.game-score{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:16px;margin:6px 0 10px;flex-wrap:wrap;gap:6px}
+.game-btn{min-height:90px;min-width:90px;padding:12px 18px;border:0;border-radius:14px;font-size:18px;font-weight:700;cursor:pointer;touch-action:manipulation}
+.game-btn-wide{width:100%;min-height:90px;padding:14px 18px;border:0;border-radius:14px;font-size:19px;font-weight:700;cursor:pointer;touch-action:manipulation}
+.game-controls{display:flex;gap:10px;justify-content:space-between;margin-top:12px;flex-wrap:wrap}
+.game-controls .game-btn{flex:1;touch-action:none}
+.game-overlay{position:absolute;inset:0;background:rgba(10,31,10,.94);color:#e8f7ef;border-radius:10px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px;text-align:center;gap:12px;overflow:auto;z-index:4}
+.game-overlay[hidden]{display:none}
+.game-overlay .ov-title{font-size:22px;font-weight:700}
+.game-overlay p{font-size:16px;max-width:420px}
+.ov-row{display:flex;gap:10px;width:100%}
+.ov-row .game-btn{flex:1;min-width:0}
+.pause-btn{position:absolute;top:8px;right:8px;min-width:90px;min-height:72px;padding:10px 14px;border:0;border-radius:12px;font-size:17px;font-weight:700;cursor:pointer;z-index:5;touch-action:manipulation}
+.mute-btn{min-width:72px;min-height:72px;padding:10px 14px;border:0;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;touch-action:manipulation}
+.game-btn,.game-btn-wide{background:#4338ca;color:#fff}.pause-btn,.mute-btn{background:#0d9488;color:#fff}
+.game-score .pause-btn{position:static}
+.game-status{font-size:15px;color:#334155;margin-top:10px;text-align:center}
+.pads{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:480px;margin:0 auto}
+.pad{min-height:150px;border:3px solid #1e293b;border-radius:14px;cursor:pointer;touch-action:none;opacity:.55;transition:opacity .12s, box-shadow .12s}
+.pad:focus-visible{outline:3px solid #1e293b;outline-offset:2px}
+.pad-green{background:#16a34a}.pad-red{background:#dc2626}.pad-yellow{background:#eab308}.pad-blue{background:#2563eb}
+.pad.lit{opacity:1;box-shadow:0 0 24px 6px rgba(255,255,255,.85)}
+table{border-collapse:collapse;width:100%;margin:10px 0;font-size:15px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left}
+th{background:#eef2ff}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Retro Road Racer free to play?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The game is completely free, with no download, no signup and nothing to buy. You open the page, tap Start Driving, and play as many runs as you like."}}, {"@type": "Question", "name": "How do I steer on my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Drag your finger left or right anywhere on the road and the car follows it. If you prefer buttons, hold the big Left or Right button under the game. On a computer you can use the Left and Right arrow keys, or A and D."}}, {"@type": "Question", "name": "What happens when the fuel runs out?", "acceptedAnswer": {"@type": "Answer", "text": "The run ends. Fuel drains steadily while you drive, and a full tank lasts about a minute on its own. Red fuel cans on the road add thirty-five percent each, so collecting them is the only way to drive for long."}}, {"@type": "Question", "name": "How is the score counted?", "acceptedAnswer": {"@type": "Answer", "text": "Your score is your distance in metres plus twenty-five points for every coin you collect. Distance is the bigger part of a good score, because it grows the whole time you drive. The level rises every five hundred metres."}}, {"@type": "Question", "name": "Where is my best score saved?", "acceptedAnswer": {"@type": "Answer", "text": "Your best score is saved in your browser on your own device, using the browser's own storage. It is still there the next time you open the page, and it is never sent to any server. Clearing your browser data will remove it."}}, {"@type": "Question", "name": "Can I pause during a run?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Pause button is always visible in the top-right corner of the game area, and pressing P works too. Pausing freezes the game completely, including the fuel gauge, and Resume picks the run up exactly where it stopped."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Retro Road Racer</h1>
+<p class="byline">By the Noryvello team · Published 21 November 2026 · Updated 21 November 2026</p>
+<p class="answer">Retro Road Racer is a top-down driving game: steer your car through traffic, collect fuel and coins, and drive as far as you can before the fuel runs out or a crash ends the run. Speed rises the further you drive, and your best distance is saved on your device. It plays free in your browser on your phone or computer, with no download and no signup.</p>
+<div class="calc">
+<div class="game-score"><span>Score: <b id="rr-score">0</b></span><span>Best: <b id="rr-best">0</b></span><span>Fuel: <b id="rr-fuel">100%</b></span></div>
+<div class="game-wrap">
+<canvas class="game-canvas" id="rr-canvas" width="360" height="480"></canvas>
+<button class="pause-btn" id="rr-pause" type="button">Pause</button>
+<div class="game-overlay" id="rr-start-ov">
+<p class="ov-title">Retro Road Racer</p>
+<p>Steer through traffic, collect fuel and coins. Speed rises as you drive further.</p>
+<button class="game-btn-wide" id="rr-start" type="button">Start Driving</button>
+</div>
+<div class="game-overlay" id="rr-pause-ov" hidden>
+<p class="ov-title">Paused</p>
+<p>Your car is waiting on the highway.</p>
+<button class="game-btn-wide" id="rr-resume" type="button">Resume</button>
+<div class="ov-row"><button class="game-btn" id="rr-restart" type="button">Restart</button><button class="game-btn" id="rr-how" type="button">How to Play</button></div>
+</div>
+<div class="game-overlay" id="rr-over-ov" hidden>
+<p class="ov-title">Game Over</p>
+<p id="rr-final">Score: 0</p>
+<p id="rr-newbest" hidden>New Best!</p>
+<button class="game-btn-wide" id="rr-again" type="button">Play Again</button>
+</div>
+</div>
+<div class="game-controls">
+<button class="game-btn" id="rr-left" type="button">Left</button>
+<button class="game-btn" id="rr-right" type="button">Right</button>
+</div>
+<div class="game-controls">
+<button class="mute-btn" id="rr-mute" type="button">Sound: Off</button>
+</div>
+<p class="game-status" id="rr-status">Drag on the road to steer, or use the Left and Right buttons.</p>
+</div>
+<div class="warn">This is an original game inspired by the classics of that era. It is not affiliated with Nokia or any original publisher. There is no brake — speed is automatic, steering is yours.</div>
+<h2>What Retro Road Racer is</h2>
+<p>Retro Road Racer is a top-down driving game. Your car sits near the bottom of the screen, the road scrolls toward you, and traffic comes down the highway in four lanes. Your job is simple: steer between the cars, pick up fuel cans and coins, and drive as far as you can. One crash ends the run — unless you have picked up the shield, which saves you once.</p>
+<p>There is no brake and no accelerator. The car drives itself forward and the speed rises the further you go, so the only control that matters is steering. That sounds easy for the first thirty seconds. It stops sounding easy when the road fills with traffic, the fuel gauge drops, and a coin sits in the one lane you were about to leave.</p>
+<p>The score is your distance plus your coins. Every metre you drive adds to the score, and every coin adds twenty-five points. Your best score is saved on your own device, so each run is a small contest against your last one. A run lasts one to five minutes, which makes this the kind of game you play while waiting for a bus — and then play again, because the last run ended one fuel can short of a new best.</p>
+<h2>A short history of top-down racers</h2>
+<p>Top-down racers are among the oldest driving games. In the arcades of the 1970s and 1980s, a whole race could fit on one screen: the track seen from above, tiny cars, and a steering wheel or a joystick. The view was simple because the hardware was simple, but the view turned out to be a strength. Seeing the whole road at once lets you plan ahead, and planning ahead is the whole skill of the genre.</p>
+<p>When driving games moved to home computers and then to phones, the top-down view came with them. Early phone racers had no room for a three-dimensional road, so they showed a strip of highway from above and let the player steer with two buttons. The formula needed almost nothing — a road, some traffic, a fuel gauge — and it worked on the smallest screens ever made.</p>
+<p>This version keeps that formula and nothing else. Four lanes, traffic that drifts down the screen, fuel cans and coins to collect, and a speed that rises until the road feels faster than your thumbs. The shield is the one modern mercy: one pickup per run that saves you from a single crash. Everything else is the old game, exactly as it was — steer, dodge, collect, survive.</p>
+<h2>How to play</h2>
+<div id="how-to-play">
+<p>Tap Start Driving. Your car starts in the middle of the road with a full tank of fuel. Traffic begins to appear after a couple of seconds — never at once, so the first stretch is always safe. Steer left and right to stay in a clear lane. Your car follows your finger when you drag on the road, or moves steadily while you hold the Left or Right button.</p>
+<p>Fuel drains the whole time you drive. A full tank lasts about a minute on its own, so you need the red fuel cans that appear on the road. Each can adds thirty-five percent to your tank. Coins are worth twenty-five points each and often appear in short lines of two or three. Grab them when the lane is clear, but never chase a coin into traffic.</p>
+<p>One shield pickup appears in every run, usually after the first half minute. It is the blue circle on the road. Pick it up and the next crash is forgiven: the shield breaks, the other car is cleared away, and you keep driving with a brief moment of protection. There is only one shield per run, so do not waste it — or rather, do not count on it. Drive as if it were not there.</p>
+<p>The run ends in one of two ways: a crash with no shield, or an empty fuel tank. Either way the game shows your score, your best, and how far you drove. Tap Play Again and the road starts over, with the same first seconds of clear road and the same rising speed.</p>
+</div>
+<h2>Controls</h2>
+<p>Steering is the only control, and there are three ways to do it. On a phone, drag your finger left or right anywhere on the road and the car follows it. If you prefer buttons, hold the big Left or Right button under the game and the car moves steadily in that direction. On a computer, use the Left and Right arrow keys, or A and D. The Pause button sits in the top-right corner of the game area and is always visible while you play.</p>
+<table><tr><th>Action</th><th>On a phone</th><th>On a computer</th></tr>
+<tr><td>Steer</td><td>Drag left or right on the road</td><td>Left and Right arrows, or A and D</td></tr>
+<tr><td>Steer (buttons)</td><td>Hold the Left or Right button</td><td>Hold the arrow keys</td></tr>
+<tr><td>Start a run</td><td>Tap Start Driving</td><td>Click Start Driving</td></tr>
+<tr><td>Pause or resume</td><td>Tap Pause</td><td>Tap Pause, or press P</td></tr>
+<tr><td>Sound on or off</td><td>Tap Sound</td><td>Tap Sound, or press M</td></tr></table>
+<p>There is no brake button, and there is no need for one: speed is automatic and rises with distance. The car never leaves the road on its own, and it never speeds up or slows down at your command. Your whole job is choosing where on the road to be.</p>
+<h2>Fuel, coins and scoring</h2>
+<p>Fuel is the real clock in this game. The tank starts full and drains steadily — about one and a half percent every second — so a run with no fuel pickups ends after roughly a minute. Each red can adds thirty-five percent, and cans appear every few seconds in a random lane. A good run is really a chain of fuel cans: miss two in a row and the gauge starts to matter more than the traffic.</p>
+<p>Coins are the bonus, not the goal. Each coin adds twenty-five points, and they usually appear in short lines down a single lane, so a clean line of three coins is worth seventy-five points for no extra risk. But a coin in a busy lane is a trap: the points are never worth a crash. Take the coins that sit on your line and leave the rest.</p>
+<p>Your score is your distance in metres plus twenty-five points per coin. Distance is the bigger part of any good score, because it never stops growing while you drive. The level counter rises every five hundred metres, and each level brings slightly faster traffic and slightly tighter gaps. Your best score is saved in your browser on your own device and is still there the next time you open the page.</p>
+<h2>Strategy: 5 tips that work</h2>
+<ol>
+<li><strong>Stay in the lane with the gap.</strong> Do not pick a favourite lane. Look at the whole road, find the lane with the longest clear stretch ahead, and sit in it. Move only when the gap ahead of you closes.</li>
+<li><strong>Plan two cars ahead.</strong> The car directly in front of you is not the danger — the car behind it is. Before you change lanes, check what is coming in the lane you are moving into. A lane that is clear now and busy in two seconds is not a lane at all.</li>
+<li><strong>Take fuel before coins.</strong> A fuel can is worth more than any line of coins, because fuel is time and time is distance. If a can and a coin are in different lanes, take the can. The coins will come again; the fuel gauge will not wait.</li>
+<li><strong>Use the shield as insurance, not as a plan.</strong> The shield saves you once, and it appears only once per run. If you have it, you can take one risk you would not otherwise take — a fuel can in a tight lane, for example. But drive as if the shield were already gone, and let it surprise you when it saves a run.</li>
+<li><strong>Steer early and steer little.</strong> Small, early moves beat big, late ones. A gentle shift two seconds before the gap closes is safe; a hard swerve at the last moment is how most runs end. Drag steering rewards a calm hand.</li>
+</ol>
+<h2>Common mistakes</h2>
+<p>Weaving constantly is the fastest way to crash. Players who change lanes every second spend all their time crossing traffic instead of sitting in a gap. Pick a lane, stay in it, and move only when you must.</p>
+<p>Ignoring the fuel gauge is the second mistake. The gauge sits in the score bar and on the canvas, and it is easy to forget while you are busy dodging. Glance at it every few seconds. When it drops below a third, the next fuel can is your only job.</p>
+<p>Chasing every coin is the third. A line of coins in a busy lane is bait. The twenty-five points are not worth a run, and a run that ends on a coin chase feels worse than any other kind of crash.</p>
+<p>Hugging the edge is the fourth. The outer lanes look safe because the road edge is right there, but the edge gives you only one direction to escape. The middle lanes give you two. Use the edge lanes to pass, not to live in.</p>
+<p>The last mistake is reaching for a brake that does not exist. New players tap the screen looking for a way to slow down. There is none, and that is the point: the game is about choosing a line, not choosing a speed. Once you stop wishing for a brake, the game gets much easier.</p>
+<h2>Why old games still feel good</h2>
+<p>Old games had almost nothing: a road, some traffic, one rule. That was the point. A game with one rule can be learned in ten seconds and played for years, because the depth comes from the player, not from the instructions. Retro Road Racer has one rule — stay on the road — and every run is different because every stretch of traffic is different.</p>
+<p>These games also respected your time. There was no account to create, no update to install, no shop to visit before you could play. You opened the game and you were playing. This version keeps that: no download, no signup, no waiting. Your best score lives on your own device and nowhere else.</p>
+<p>Then there is the one-more-try pull. A run ends on a single crash or an empty tank, and the gap between your score and your best is usually one fuel can or one clean stretch of road. That gap is small enough to feel closable and large enough to matter, which is why most people play just one more run five times in a row. It is a gentle pull, not a trap: there is nothing to buy and nothing to lose, just a highway waiting to be driven.</p>
+<p>That is why these games are still here, forty years on. They ask for a little attention and give back a small, honest victory — and a reason to try again.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Is Retro Road Racer free to play?</h3><p>Yes. The game is completely free, with no download, no signup and nothing to buy. You open the page, tap Start Driving, and play as many runs as you like.</p></div><div class="faq"><h3>How do I steer on my phone?</h3><p>Drag your finger left or right anywhere on the road and the car follows it. If you prefer buttons, hold the big Left or Right button under the game. On a computer you can use the Left and Right arrow keys, or A and D.</p></div><div class="faq"><h3>What happens when the fuel runs out?</h3><p>The run ends. Fuel drains steadily while you drive, and a full tank lasts about a minute on its own. Red fuel cans on the road add thirty-five percent each, so collecting them is the only way to drive for long.</p></div><div class="faq"><h3>How is the score counted?</h3><p>Your score is your distance in metres plus twenty-five points for every coin you collect. Distance is the bigger part of a good score, because it grows the whole time you drive. The level rises every five hundred metres.</p></div><div class="faq"><h3>Where is my best score saved?</h3><p>Your best score is saved in your browser on your own device, using the browser's own storage. It is still there the next time you open the page, and it is never sent to any server. Clearing your browser data will remove it.</p></div><div class="faq"><h3>Can I pause during a run?</h3><p>Yes. The Pause button is always visible in the top-right corner of the game area, and pressing P works too. Pausing freezes the game completely, including the fuel gauge, and Resume picks the run up exactly where it stopped.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/retro-pinball-game/">Retro Pinball</a> · <a href="https://noryvello.github.io/retro-pong-game/">Retro Pong</a> · <a href="https://noryvello.github.io/retro-simon-sequence-game/">Retro Simon Sequence</a></div>
+<div class="hub"><a href="https://toolbari.github.io/retro-games/">More retro games</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+(function () {
+  'use strict';
+  // Retro Road Racer — top-down road racer.
+  // Pure logic on window.GAME (testable without a canvas); rendering and
+  // input are bound below and guarded so the script also runs in a node
+  // test sandbox.
+  var W = 360, H = 480;
+  var ROAD_LEFT = 36, ROAD_RIGHT = 324;
+  var LANES = [72, 144, 216, 288];
+  var PLAYER_Y = 396;
+  var PLAYER_W = 44, PLAYER_H = 72;
+  var BEST_KEY = 'rg-road-racer-best';
+  var TRAFFIC_COLOURS = ['#dc2626', '#2563eb', '#eab308', '#f8fafc', '#9333ea', '#16a34a'];
+
+  function loadBest() {
+    try {
+      var v = parseInt(window.localStorage.getItem(BEST_KEY), 10);
+      return isNaN(v) ? 0 : v;
+    } catch (e) { return 0; }
+  }
+  function saveBest(v) {
+    try { window.localStorage.setItem(BEST_KEY, String(v)); } catch (e) {}
+  }
+  function rand(a, b) { return a + Math.random() * (b - a); }
+  function randLane() { return LANES[Math.floor(Math.random() * LANES.length)]; }
+
+  var G = {
+    state: 'idle', // idle | playing | paused | over
+    playerX: 180, targetX: 180, steerDir: 0, keyDir: 0, btnDir: 0, dragging: false,
+    distance: 0, coins: 0, fuel: 100, shield: false, shieldSpawned: false,
+    invuln: 0,
+    speed: 140, level: 1, score: 0, best: loadBest(),
+    traffic: [], pickups: [],
+    trafficTimer: 2.0, coinTimer: 2.5, fuelTimer: 6.0,
+    lastRowAt: -99, lastRowLanes: [],
+    elapsed: 0, overReason: null,
+    muted: true, // sound OFF by default on this game
+    newBest: false, testMode: false,
+    audioCtx: null, lastTs: 0, frames: 0
+  };
+
+  function $(id) { return document.getElementById(id); }
+  function on(el, ev, fn) { if (el && el.addEventListener) el.addEventListener(ev, fn); }
+  var canvas = null, ctx = null;
+  try {
+    canvas = document.getElementById('rr-canvas');
+    if (canvas && canvas.getContext) ctx = canvas.getContext('2d');
+  } catch (e) { canvas = null; ctx = null; }
+
+  function ensureAudio() {
+    if (G.audioCtx) return G.audioCtx;
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return null;
+    try {
+      G.audioCtx = new AC();
+      if (G.audioCtx.resume) G.audioCtx.resume();
+    } catch (e) { G.audioCtx = null; }
+    return G.audioCtx;
+  }
+  function beep(freq, ms, type) {
+    if (G.muted) return;
+    var c = ensureAudio();
+    if (!c) return;
+    try {
+      var osc = c.createOscillator();
+      var gain = c.createGain();
+      osc.type = type || 'sine';
+      osc.frequency.setValueAtTime(freq, c.currentTime);
+      gain.gain.setValueAtTime(0.0001, c.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.2, c.currentTime + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + ms);
+      osc.connect(gain);
+      gain.connect(c.destination);
+      osc.start();
+      osc.stop(c.currentTime + ms + 0.05);
+    } catch (e) {}
+  }
+
+  function applySteer() {
+    var d = G.keyDir + G.btnDir;
+    if (d > 1) d = 1;
+    if (d < -1) d = -1;
+    G.steerDir = d;
+  }
+
+  function spawnTrafficRow() {
+    var count = Math.random() < 0.45 ? 2 : 1;
+    var lanes = LANES.slice();
+    for (var i = lanes.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = lanes[i]; lanes[i] = lanes[j]; lanes[j] = t;
+    }
+    var picked = [];
+    for (var k = 0; k < lanes.length && picked.length < count; k++) {
+      // If the previous row spawned recently, avoid repeating its lanes
+      // so the player always has a gap to aim for.
+      if (G.elapsed - G.lastRowAt < 1.2 && G.lastRowLanes.indexOf(lanes[k]) >= 0) continue;
+      picked.push(lanes[k]);
+    }
+    if (picked.length === 0) picked = [lanes[0]];
+    for (var m = 0; m < picked.length; m++) {
+      // Fixed speed for every traffic car: rows stay rigid, so two rows can
+      // never merge into a wall. (Per-car speed variance let a fast car in
+      // a trailing row catch a slow car ahead, closing the gap between rows
+      // until all four lanes were blocked at once — an unavoidable crash.)
+      G.traffic.push({ x: picked[m], y: -80, w: PLAYER_W, h: PLAYER_H,
+        speed: 32,
+        colour: TRAFFIC_COLOURS[Math.floor(Math.random() * TRAFFIC_COLOURS.length)] });
+    }
+    G.lastRowAt = G.elapsed;
+    G.lastRowLanes = picked;
+  }
+  function spawnCoin() {
+    var lane = randLane();
+    var n = 1 + Math.floor(Math.random() * 3);
+    for (var i = 0; i < n; i++) {
+      G.pickups.push({ kind: 'coin', x: lane, y: -40 - i * 52, r: 12 });
+    }
+  }
+  function spawnFuel() {
+    G.pickups.push({ kind: 'fuel', x: randLane(), y: -40, r: 16 });
+  }
+  function spawnShield() {
+    G.pickups.push({ kind: 'shield', x: randLane(), y: -40, r: 16 });
+    G.shieldSpawned = true;
+  }
+
+  function setText(id, text) { var el = $(id); if (el) el.textContent = text; }
+  function showOv(id, show) { var el = $(id); if (el) el.hidden = !show; }
+
+  function updateUI() {
+    setText('rr-score', String(G.score));
+    setText('rr-best', String(G.best));
+    setText('rr-fuel', Math.round(G.fuel) + '%');
+    setText('rr-status', 'Distance: ' + Math.floor(G.distance) + ' m · Coins: ' + G.coins +
+      ' · Level: ' + G.level + (G.shield ? ' · Shield ready' : ''));
+    showOv('rr-start-ov', G.state === 'idle');
+    showOv('rr-pause-ov', G.state === 'paused');
+    showOv('rr-over-ov', G.state === 'over');
+    var pauseBtn = $('rr-pause');
+    if (pauseBtn) pauseBtn.textContent = (G.state === 'paused') ? 'Resume' : 'Pause';
+    if (G.state === 'over') {
+      var why = G.overReason === 'fuel' ? 'Out of fuel. ' : 'Crash. ';
+      setText('rr-final', why + 'Score: ' + G.score + ' · Best: ' + G.best +
+        ' · Distance: ' + Math.floor(G.distance) + ' m');
+      var nb = $('rr-newbest');
+      if (nb) nb.hidden = !G.newBest;
+    }
+    var muteBtn = $('rr-mute');
+    if (muteBtn) muteBtn.textContent = G.muted ? 'Sound: Off' : 'Sound: On';
+  }
+
+  function gameOver(reason) {
+    G.state = 'over';
+    G.overReason = reason;
+    if (G.newBest) saveBest(G.best);
+    if (reason === 'crash') beep(110, 0.3, 'sawtooth');
+    updateUI();
+  }
+
+  function step(dt) {
+    if (G.state !== 'playing') return;
+    if (dt > 0.05) dt = 0.05;
+    if (dt <= 0) return;
+    G.elapsed += dt;
+    G.level = 1 + Math.floor(G.distance / 500);
+    G.speed = Math.min(320, 140 + G.distance * 0.02);
+    G.distance += G.speed * dt / 40;
+    G.fuel -= 1.6 * dt;
+    if (G.invuln > 0) G.invuln -= dt;
+    if (G.fuel <= 0) { G.fuel = 0; gameOver('fuel'); return; }
+    // Steering: drag follows the finger fast; buttons/keys move at 260 px/s.
+    if (G.dragging) {
+      var dx = G.targetX - G.playerX;
+      var maxMove = 900 * dt;
+      if (dx > maxMove) dx = maxMove;
+      if (dx < -maxMove) dx = -maxMove;
+      G.playerX += dx;
+    } else if (G.steerDir !== 0) {
+      G.playerX += G.steerDir * 260 * dt;
+    }
+    if (G.playerX < ROAD_LEFT + 24) G.playerX = ROAD_LEFT + 24;
+    if (G.playerX > ROAD_RIGHT - 24) G.playerX = ROAD_RIGHT - 24;
+    // Spawns.
+    G.trafficTimer -= dt;
+    if (G.trafficTimer <= 0) {
+      spawnTrafficRow();
+      // Rows stay 200-280px apart in road space, whatever the speed: the
+      // collision zone is 144px tall, so at most one row (max 2 cars) is
+      // ever inside it and at least two lanes are always free. The gap is
+      // speed-aware — as the road speeds up, rows arrive more often but
+      // never closer together — so the difficulty ramp comes from reaction
+      // time, never from an unfair wall.
+      G.trafficTimer = rand(200, 280) / (G.speed * 0.55 + 32);
+    }
+    G.coinTimer -= dt;
+    if (G.coinTimer <= 0) { spawnCoin(); G.coinTimer = rand(2.0, 3.2); }
+    G.fuelTimer -= dt;
+    if (G.fuelTimer <= 0) { spawnFuel(); G.fuelTimer = rand(6.0, 8.5); }
+    if (!G.shieldSpawned && G.elapsed > 25) spawnShield();
+    // Move traffic (same direction, slower than the road scroll).
+    for (var i = G.traffic.length - 1; i >= 0; i--) {
+      var t = G.traffic[i];
+      t.y += (G.speed * 0.55 + t.speed) * dt;
+      if (t.y > H + 80) G.traffic.splice(i, 1);
+    }
+    // Move pickups (fixed on the road, scroll with it).
+    for (var j = G.pickups.length - 1; j >= 0; j--) {
+      var p = G.pickups[j];
+      p.y += G.speed * dt;
+      if (p.y > H + 60) G.pickups.splice(j, 1);
+    }
+    // Collisions with traffic.
+    var px0 = G.playerX - PLAYER_W / 2, px1 = G.playerX + PLAYER_W / 2;
+    var py0 = PLAYER_Y - PLAYER_H / 2, py1 = PLAYER_Y + PLAYER_H / 2;
+    for (var k = G.traffic.length - 1; k >= 0; k--) {
+      var c = G.traffic[k];
+      if (c.x - c.w / 2 < px1 && c.x + c.w / 2 > px0 &&
+          c.y - c.h / 2 < py1 && c.y + c.h / 2 > py0) {
+        if (G.invuln > 0) continue;
+        if (G.shield) {
+          G.shield = false;
+          G.invuln = 1.5;
+          G.traffic.splice(k, 1);
+          beep(520, 0.15, 'square');
+        } else {
+          gameOver('crash');
+          return;
+        }
+      }
+    }
+    // Pickups.
+    for (var m = G.pickups.length - 1; m >= 0; m--) {
+      var q = G.pickups[m];
+      if (Math.abs(q.x - G.playerX) < 34 && Math.abs(q.y - PLAYER_Y) < 44) {
+        if (q.kind === 'coin') { G.coins++; beep(880, 0.08, 'sine'); }
+        else if (q.kind === 'fuel') { G.fuel = Math.min(100, G.fuel + 35); beep(660, 0.12, 'sine'); }
+        else if (q.kind === 'shield') { G.shield = true; beep(520, 0.15, 'sine'); }
+        G.pickups.splice(m, 1);
+      }
+    }
+    G.score = Math.floor(G.distance) + G.coins * 25;
+    if (G.score > G.best) { G.best = G.score; G.newBest = true; }
+  }
+
+  function start() {
+    G.state = 'playing';
+    G.playerX = 180; G.targetX = 180;
+    G.steerDir = 0; G.keyDir = 0; G.btnDir = 0; G.dragging = false;
+    G.distance = 0; G.coins = 0; G.fuel = 100; G.shield = false; G.shieldSpawned = false;
+    G.invuln = 0; G.speed = 140; G.level = 1; G.score = 0; G.newBest = false;
+    G.traffic = []; G.pickups = [];
+    G.trafficTimer = 2.0; G.coinTimer = 2.5; G.fuelTimer = 6.0;
+    G.lastRowAt = -99; G.lastRowLanes = [];
+    G.elapsed = 0; G.overReason = null; G.lastTs = 0;
+    ensureAudio();
+    updateUI();
+  }
+  function pause() {
+    if (G.state !== 'playing') return false;
+    G.state = 'paused';
+    updateUI();
+    return true;
+  }
+  function resume() {
+    if (G.state !== 'paused') return false;
+    G.state = 'playing';
+    G.lastTs = 0;
+    updateUI();
+    return true;
+  }
+  function setMuted(m) {
+    G.muted = !!m;
+    updateUI();
+  }
+
+  function drawCar(x, y, colour, isPlayer) {
+    var w = PLAYER_W, h = PLAYER_H;
+    ctx.fillStyle = '#0f172a';
+    ctx.fillRect(x - w / 2 - 3, y - h / 2 + 8, 6, 16);
+    ctx.fillRect(x + w / 2 - 3, y - h / 2 + 8, 6, 16);
+    ctx.fillRect(x - w / 2 - 3, y + h / 2 - 24, 6, 16);
+    ctx.fillRect(x + w / 2 - 3, y + h / 2 - 24, 6, 16);
+    ctx.fillStyle = colour;
+    ctx.fillRect(x - w / 2, y - h / 2, w, h);
+    ctx.fillStyle = '#bae6fd';
+    ctx.fillRect(x - w / 2 + 5, y - h / 2 + 12, w - 10, 14);
+    ctx.fillStyle = colour;
+    ctx.fillRect(x - w / 2 + 4, y - 6, w - 8, 18);
+    ctx.fillStyle = '#0f172a';
+    ctx.fillRect(x - w / 2 + 6, y + 16, w - 12, 10);
+    if (isPlayer) {
+      ctx.fillStyle = '#fef08a';
+      ctx.fillRect(x - w / 2 + 3, y - h / 2, 8, 4);
+      ctx.fillRect(x + w / 2 - 11, y - h / 2, 8, 4);
+    } else {
+      ctx.fillStyle = '#ef4444';
+      ctx.fillRect(x - w / 2 + 3, y + h / 2 - 4, 8, 4);
+      ctx.fillRect(x + w / 2 - 11, y + h / 2 - 4, 8, 4);
+    }
+  }
+  function drawPickup(p) {
+    if (p.kind === 'coin') {
+      ctx.fillStyle = '#f59e0b';
+      ctx.beginPath(); ctx.arc(p.x, p.y, 12, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#fde68a';
+      ctx.beginPath(); ctx.arc(p.x, p.y, 8, 0, Math.PI * 2); ctx.fill();
+    } else if (p.kind === 'fuel') {
+      ctx.fillStyle = '#dc2626';
+      ctx.fillRect(p.x - 12, p.y - 14, 24, 28);
+      ctx.fillRect(p.x - 6, p.y - 20, 12, 8);
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 16px Arial';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('F', p.x, p.y + 1);
+    } else if (p.kind === 'shield') {
+      ctx.fillStyle = '#38bdf8';
+      ctx.beginPath(); ctx.arc(p.x, p.y, 16, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#e0f2fe';
+      ctx.beginPath(); ctx.arc(p.x, p.y, 10, 0, Math.PI * 2); ctx.fill();
+    }
+  }
+  function draw() {
+    if (!ctx) return;
+    ctx.fillStyle = '#14532d';
+    ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = '#334155';
+    ctx.fillRect(ROAD_LEFT, 0, ROAD_RIGHT - ROAD_LEFT, H);
+    ctx.fillStyle = '#f8fafc';
+    ctx.fillRect(ROAD_LEFT + 2, 0, 4, H);
+    ctx.fillRect(ROAD_RIGHT - 6, 0, 4, H);
+    var off = (G.distance * 40) % 44;
+    ctx.fillStyle = '#e2e8f0';
+    for (var x = 108; x <= 252; x += 72) {
+      for (var y = -44 + off; y < H; y += 44) {
+        ctx.fillRect(x - 2, y, 4, 26);
+      }
+    }
+    for (var i = 0; i < G.pickups.length; i++) { drawPickup(G.pickups[i]); }
+    for (var j = 0; j < G.traffic.length; j++) { drawCar(G.traffic[j].x, G.traffic[j].y, G.traffic[j].colour, false); }
+    if (G.invuln <= 0 || Math.floor(G.invuln * 8) % 2 === 0) {
+      drawCar(G.playerX, PLAYER_Y, '#e11d48', true);
+    }
+    if (G.shield) {
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(G.playerX, PLAYER_Y, 52, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    ctx.fillStyle = 'rgba(0,0,0,0.45)';
+    ctx.fillRect(8, 8, 120, 16);
+    ctx.fillStyle = G.fuel > 30 ? '#22c55e' : '#ef4444';
+    ctx.fillRect(10, 10, 116 * (G.fuel / 100), 12);
+  }
+
+  function loop(ts) {
+    var now = (typeof ts === 'number') ? ts : Date.now();
+    var dt = G.lastTs ? (now - G.lastTs) / 1000 : 0.016;
+    G.lastTs = now;
+    if (G.state === 'playing') {
+      step(dt);
+      G.frames++;
+      if (G.frames % 6 === 0) updateUI();
+    }
+    draw();
+    if (window.requestAnimationFrame) window.requestAnimationFrame(loop);
+  }
+
+  function canvasX(e) {
+    if (!canvas || !canvas.getBoundingClientRect) return G.playerX;
+    var rect = canvas.getBoundingClientRect();
+    var cx = 0;
+    if (e.clientX !== undefined) cx = e.clientX;
+    else if (e.touches && e.touches[0]) cx = e.touches[0].clientX;
+    if (!rect.width) return G.playerX;
+    return (cx - rect.left) * (W / rect.width);
+  }
+  function holdButton(el, dir) {
+    if (!el) return;
+    on(el, 'pointerdown', function (e) { if (e && e.preventDefault) e.preventDefault(); G.btnDir = dir; applySteer(); });
+    var release = function () { if (G.btnDir === dir) { G.btnDir = 0; applySteer(); } };
+    on(el, 'pointerup', release);
+    on(el, 'pointercancel', release);
+    on(el, 'pointerleave', release);
+  }
+
+  function bindUI() {
+    on(canvas, 'pointerdown', function (e) {
+      if (e && e.preventDefault) e.preventDefault();
+      if (G.state !== 'playing') return;
+      G.dragging = true;
+      G.targetX = canvasX(e);
+    });
+    on(canvas, 'pointermove', function (e) {
+      if (!G.dragging) return;
+      if (e && e.preventDefault) e.preventDefault();
+      G.targetX = canvasX(e);
+    });
+    var stopDrag = function () { G.dragging = false; };
+    on(canvas, 'pointerup', stopDrag);
+    on(canvas, 'pointercancel', stopDrag);
+    on(canvas, 'pointerleave', stopDrag);
+    holdButton($('rr-left'), -1);
+    holdButton($('rr-right'), 1);
+    on($('rr-start'), 'click', start);
+    on($('rr-again'), 'click', start);
+    on($('rr-resume'), 'click', resume);
+    on($('rr-restart'), 'click', start);
+    on($('rr-how'), 'click', function () {
+      var el = document.getElementById('how-to-play');
+      if (el && el.scrollIntoView) el.scrollIntoView();
+    });
+    on($('rr-pause'), 'click', function () {
+      if (G.state === 'paused') resume(); else pause();
+    });
+    on($('rr-mute'), 'click', function () { setMuted(!G.muted); });
+    var keys = {};
+    on(document, 'keydown', function (e) {
+      if (!e) return;
+      var k = e.key;
+      if (k === 'ArrowLeft' || k === 'a' || k === 'A') { keys.left = true; if (e.preventDefault) e.preventDefault(); }
+      else if (k === 'ArrowRight' || k === 'd' || k === 'D') { keys.right = true; if (e.preventDefault) e.preventDefault(); }
+      else if (k === 'p' || k === 'P') { if (G.state === 'paused') resume(); else pause(); }
+      else if (k === 'm' || k === 'M') setMuted(!G.muted);
+      G.keyDir = (keys.right ? 1 : 0) - (keys.left ? 1 : 0);
+      applySteer();
+    });
+    on(document, 'keyup', function (e) {
+      if (!e) return;
+      var k = e.key;
+      if (k === 'ArrowLeft' || k === 'a' || k === 'A') keys.left = false;
+      else if (k === 'ArrowRight' || k === 'd' || k === 'D') keys.right = false;
+      G.keyDir = (keys.right ? 1 : 0) - (keys.left ? 1 : 0);
+      applySteer();
+    });
+    var calc = null;
+    try { calc = document.querySelector('.calc'); } catch (e) { calc = null; }
+    if (calc && calc.addEventListener) {
+      calc.addEventListener('touchmove', function (e) { e.preventDefault(); }, { passive: false });
+    }
+    if (canvas && ctx && window.requestAnimationFrame) window.requestAnimationFrame(loop);
+    else draw();
+  }
+
+  window.GAME = {
+    start: start,
+    pause: pause,
+    resume: resume,
+    restart: start,
+    step: step,
+    setMuted: setMuted,
+    steer: function (d) { G.btnDir = d; applySteer(); },
+    setTargetX: function (x) { G.dragging = true; G.targetX = x; },
+    stopDrag: function () { G.dragging = false; },
+    getState: function () { return G.state; },
+    getScore: function () { return G.score; },
+    getBest: function () { return G.best; },
+    getFuel: function () { return G.fuel; },
+    getDistance: function () { return G.distance; },
+    getCoins: function () { return G.coins; },
+    getLevel: function () { return G.level; },
+    getSpeed: function () { return G.speed; },
+    getPlayerX: function () { return G.playerX; },
+    hasShield: function () { return G.shield; },
+    isMuted: function () { return G.muted; },
+    addTraffic: function (x, y, speed) {
+      G.traffic.push({ x: x, y: y, w: PLAYER_W, h: PLAYER_H, speed: speed || 30, colour: '#dc2626' });
+    },
+    addPickup: function (kind, x, y) {
+      G.pickups.push({ kind: kind, x: x, y: y, r: 14 });
+    },
+    setFuel: function (f) { G.fuel = f; },
+    setTestMode: function (b) { G.testMode = !!b; },
+    _G: G
+  };
+
+  bindUI();
+  updateUI();
+})();
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>
