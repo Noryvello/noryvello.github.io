@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website Maintenance Planner — Keep Your Site Fast, Safe and Fresh | Noryvello</title>
+<meta name="description" content="Free website maintenance planner — a weekly, monthly and yearly checklist that keeps your site working. No signup, phone friendly.">
+<link rel="canonical" href="https://noryvello.github.io/website-maintenance-planner/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Website Maintenance Planner — Keep Your Site Fast, Safe and Fresh">
+<meta property="og:description" content="Free website maintenance planner — a weekly, monthly and yearly checklist that keeps your site working. No signup, phone friendly.">
+<meta property="og:url" content="https://noryvello.github.io/website-maintenance-planner/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How often should I update my website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Check the basics every week: pages loading, links working and forms sending. Do updates, backups and analytics once a month, and refresh old content and review security once a year. This planner builds that rhythm into a dated schedule."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most important maintenance task?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Backups. Everything else can be fixed in an afternoon, but a site with no backup can lose years of work in one bad update or one hacked account. Make a backup every month and check that it restores."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to back up a small site?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, especially a small site. A small site is just as easy to break as a large one, and its owner is usually the only person who can rebuild it. A backup takes minutes and is the cheapest insurance a site can have."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I check for broken links?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open your most-visited pages and click the links, or use your browser to check new and changed pages after every update. For a larger site, a free link-checking tool can scan the whole site in minutes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I do every month?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Update the software, make a backup and check it works, review your visitor numbers, and check that prices, hours and contact details are current. The planner puts these tasks in your monthly list automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I skip maintenance if nothing changes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Even a site that never changes needs updates, backups and security checks, because the software and the web around it keep changing. A site with no maintenance slowly becomes slow, insecure and out of date."
+      }
+    }
+  ]
+}
+</script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;min-height:72px;margin-top:14px;padding:16px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#e0e7ff;color:#1e293b}
+.calc input,.calc select,.calc textarea{min-height:72px;font-size:17px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;background:#fff;font-family:inherit}
+.tscroll{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef2ff}
+.opt{display:block;width:100%;text-align:left;margin:8px 0}
+.q{font-size:18px;font-weight:700;margin:12px 0}
+.small{font-size:14px;color:#64748b}
+.card{border:1px solid #cbd5e1;border-radius:12px;padding:12px 14px;margin:10px 0;background:rgba(255,255,255,.6)}
+.chip{display:inline-block;background:#eef2ff;border-radius:999px;padding:4px 12px;margin:2px;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Website Maintenance Planner</h1>
+<p class="answer">Build a dated maintenance schedule for your site in a minute. Tell the planner your site type and how often it changes, and it gives you weekly, monthly and yearly tasks with tick boxes that save in your browser.</p>
+<div class="calc">
+<label for="mtype">What kind of site is it?</label>
+<select id="mtype">
+<option value="blog">Blog or news site</option>
+<option value="business">Small business site</option>
+<option value="shop">Online shop</option>
+<option value="portfolio">Portfolio or personal site</option>
+</select>
+<label for="mpages">How many pages does it have?</label>
+<select id="mpages">
+<option value="few">1 to 10 pages</option>
+<option value="some">11 to 50 pages</option>
+<option value="many">51 to 200 pages</option>
+<option value="huge">More than 200 pages</option>
+</select>
+<label for="mfreq">How often does the content change?</label>
+<select id="mfreq">
+<option value="daily">Daily</option>
+<option value="weekly">Weekly</option>
+<option value="monthly">Monthly</option>
+<option value="rarely">Rarely</option>
+</select>
+<label for="mstart">Schedule starts on</label>
+<input id="mstart" type="date">
+<button id="gen-btn" type="button">Build my schedule</button>
+<div id="sched-out"></div>
+<button id="copy-btn" type="button" class="secondary" style="display:none">Copy my schedule</button>
+<div id="copy-out" class="small"></div>
+</div>
+<div class="warn">A schedule only works if you follow it. Tick tasks off as you finish them, and keep at least one backup somewhere other than the server the site runs on.</div>
+<h2>What website maintenance is</h2>
+<p>Website maintenance is the regular work that keeps a site fast, safe and fresh after it is built. A website is not a poster you hang once and forget: software needs updates, links break, content goes out of date, and forms stop working. A site that is never maintained slowly falls apart, and visitors notice long before the owner does.</p><p>Maintenance has three rhythms. Weekly work catches small problems early: a broken link, a form that stopped sending, a page that loads slowly. Monthly work keeps the site healthy: software updates, backups, and a look at what visitors actually read. Yearly work keeps the site honest: old content refreshed, security reviewed, and the design checked against a current phone. None of this work is hard, but all of it is easy to forget, which is why a written schedule matters.</p><p>This planner builds that schedule for you. Tell it your site type, how many pages you have, and how often the content changes, and it gives you a dated list of tasks with tick boxes that save in your browser. Work through the list, tick tasks off, and your site stays in good shape with a small amount of regular effort.</p>
+<h2>Weekly checks: links, forms and speed</h2>
+<p>Once a week, spend ten minutes on the basics. Open your homepage and your most-visited pages and check that they load correctly. Click the main links and make sure they go where they should. Fill in your contact form and check that the message arrives. These three checks catch most of the problems that cost a small site its visitors.</p><p>Pay attention to speed as well. A page that took two seconds to load when the site was new can take six seconds after a year of added images and plugins. If a page feels slow, look for the cause: oversized images are the most common one. A photo straight from a camera can be ten times larger than it needs to be on a web page, and shrinking it is usually a five-minute job.</p><p>If your site changes daily — a news site, a busy blog, a shop with new products — check more often. This planner gives daily-change sites a check every three days instead of every seven, because new content brings new chances for something to break.</p>
+<h2>Monthly checks: updates, backups and analytics</h2>
+<p>Once a month, update the software your site runs on. Updates fix security holes and bugs, and skipping them is the most common reason small sites get hacked. Update one thing at a time, check the site still works after each update, and keep a note of what you changed so you can undo it if something breaks.</p><p>Backups belong in the same monthly routine. A backup is only useful if you know it works, so do not just make one — check that you can open it and that it contains what you expect. Keep at least one copy somewhere other than the server the site runs on: a backup that lives on the same server as the site disappears in the same accident.</p><p>Monthly is also the right time to look at your visitor numbers. Which pages do people actually read? Which pages does nobody visit? The answers tell you what to refresh, what to promote, and what to remove. A page that nobody reads for a year is a page you can safely delete or rewrite.</p>
+<h2>Yearly checks: content refresh and security review</h2>
+<p>Once a year, read your oldest and most-visited pages with fresh eyes. Prices change, opening hours change, phone numbers change, and old advice goes out of date. A page that was accurate three years ago can quietly mislead visitors today. Refresh the facts, fix the tone, and remove anything that no longer applies.</p><p>The yearly security review is just as important. Change passwords, remove access for people who no longer need it, and check who can log in to your site and your hosting account. Old accounts belonging to former helpers or old agencies are a common way into a small site. While you are there, check that the site still works well on a current phone: screens and browsers change every year, and a site that looked fine two years ago can look broken today.</p><p>Yearly work feels like a chore, but it is the work that keeps a site alive for years instead of months. Put it in the calendar and treat it like an appointment you cannot cancel.</p>
+<h2>How to use this planner</h2>
+<p>Choose your site type first. A blog, a small business site, an online shop and a portfolio each get slightly different tasks: a shop needs its checkout tested, a blog needs new posts checked for spelling and broken images, and a business site needs its prices and contact details checked every month. The planner picks the right tasks for the type you choose.</p><p>Then tell it how many pages you have and how often the content changes. A site with more than two hundred pages needs the same checks, but you will want to work through them in batches rather than all at once. A site that changes daily gets more frequent weekly checks, because new content brings new risks.</p><p>Pick a start date — today is the default — and tap the button. The planner builds a dated schedule: weekly tasks for the next four weeks, monthly tasks for the next three months, and yearly tasks for the next year. Tick each task off as you finish it; your ticks save in your browser, so they are still there when you come back. Use the copy button to take the schedule with you, into a notes app or onto paper.</p>
+<h2>Worked example: a small business site</h2>
+<p>Consider a small bakery with a website of twelve pages: a homepage, a menu, a gallery, a contact page, and a few pages about the business. The owner updates the menu once a month and posts news every week or two. She opens the planner, chooses small business site, 11 to 50 pages, and monthly changes, and builds her schedule.</p><p>Her weekly tasks are short: check the homepage loads, test the contact form, and check the links on any new or changed pages. Her monthly tasks take a little longer: update the software, make a backup, review which pages visitors read, and check that the menu prices and opening hours are current. Her yearly tasks are a bigger job: refresh the oldest pages, review security, and check the site on a current phone.</p><p>The whole routine takes about ten minutes a week and half an hour a month. Before she had a schedule, she forgot the backups for a year and found out only when a plugin update broke the site. Now the tick boxes remind her, and the site has not had a serious problem since.</p>
+<h2>Common mistakes</h2>
+<ul><li><strong>Never backing up.</strong> The most expensive mistake in website maintenance. A backup takes minutes and saves weeks of rebuilding. Make one every month and check that it works.</li><li><strong>Ignoring broken links.</strong> A link to a page that no longer exists frustrates visitors and makes the site look abandoned. Check links on new and changed pages every week.</li><li><strong>Letting content go stale.</strong> Old prices, old opening hours and old advice mislead visitors and damage trust. Review your most-visited pages at least once a year.</li><li><strong>Updating everything at once.</strong> If you update ten things together and the site breaks, you cannot tell which one caused it. Update one thing at a time and check the site after each.</li><li><strong>Skipping the phone check.</strong> Most visitors read on a phone. A site that works on a desktop can still be broken on a phone, so test on a real phone, not only on your computer.</li><li><strong>No schedule at all.</strong> Maintenance that depends on memory does not happen. A written schedule with tick boxes is the simplest fix, and it is what this page gives you.</li></ul>
+<h2>What this planner cannot do</h2>
+<p>This planner builds a schedule and reminds you what to do. It does not do the maintenance for you: it cannot update your software, make your backups, or fix your broken links. It also cannot see your site — it does not scan your pages or check your links. The checks themselves are yours to do, with your own eyes and your own tools.</p><p>The schedule is a starting point, not a guarantee. A busy shop may need more frequent checks than the planner suggests, and a site that rarely changes may need fewer. Use the schedule for a month, notice which tasks matter most for your site, and adjust it. And remember that your tick boxes save in this browser only: if you switch devices, use the copy button to take your schedule with you.</p>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>How often should I update my website?</h3>
+<p>Check the basics every week: pages loading, links working and forms sending. Do updates, backups and analytics once a month, and refresh old content and review security once a year. This planner builds that rhythm into a dated schedule.</p>
+</div>
+<div class="faq">
+<h3>What is the most important maintenance task?</h3>
+<p>Backups. Everything else can be fixed in an afternoon, but a site with no backup can lose years of work in one bad update or one hacked account. Make a backup every month and check that it restores.</p>
+</div>
+<div class="faq">
+<h3>Do I need to back up a small site?</h3>
+<p>Yes, especially a small site. A small site is just as easy to break as a large one, and its owner is usually the only person who can rebuild it. A backup takes minutes and is the cheapest insurance a site can have.</p>
+</div>
+<div class="faq">
+<h3>How do I check for broken links?</h3>
+<p>Open your most-visited pages and click the links, or use your browser to check new and changed pages after every update. For a larger site, a free link-checking tool can scan the whole site in minutes.</p>
+</div>
+<div class="faq">
+<h3>What should I do every month?</h3>
+<p>Update the software, make a backup and check it works, review your visitor numbers, and check that prices, hours and contact details are current. The planner puts these tasks in your monthly list automatically.</p>
+</div>
+<div class="faq">
+<h3>Can I skip maintenance if nothing changes?</h3>
+<p>No. Even a site that never changes needs updates, backups and security checks, because the software and the web around it keep changing. A site with no maintenance slowly becomes slow, insecure and out of date.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/website-wireframe-builder/">Website Wireframe Builder</a> · <a href="https://noryvello.github.io/web-typography-previewer/">Web Typography Previewer</a> · <a href="https://noryvello.github.io/public-dataset-directory/">Public Dataset Directory</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+
+window.NP = window.NP || {};
+(function () {
+  var TASKS = {
+    weekly: [
+      {label: "Check the homepage and the most-visited pages load correctly", all: true},
+      {label: "Test the contact form and any other forms", all: true},
+      {label: "Check for broken links on new and changed pages", all: true},
+      {label: "Check the checkout still works end to end", shop: true},
+      {label: "Check new posts for spelling and broken images", blog: true}
+    ],
+    monthly: [
+      {label: "Update the site software and plugins", all: true},
+      {label: "Make a full backup and check it restores", all: true},
+      {label: "Review visitor numbers and the most-read pages", all: true},
+      {label: "Check prices, opening hours and contact details are current", business: true},
+      {label: "Remove out-of-stock or out-of-date listings", shop: true}
+    ],
+    yearly: [
+      {label: "Refresh the oldest and most-visited content", all: true},
+      {label: "Review security: passwords, access and permissions", all: true},
+      {label: "Check the site still works well on a current phone", all: true},
+      {label: "Review the design and the main pages with fresh eyes", all: true}
+    ]
+  };
+  function addDays(iso, n) {
+    var d = new Date(iso + "T00:00:00Z");
+    d.setUTCDate(d.getUTCDate() + n);
+    return d.toISOString().slice(0, 10);
+  }
+  function formatDate(iso) {
+    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var parts = iso.split("-");
+    return parseInt(parts[2], 10) + " " + months[parseInt(parts[1], 10) - 1] + " " + parts[0];
+  }
+  function tasksFor(period, type) {
+    return TASKS[period].filter(function (t) { return t.all || t[type]; });
+  }
+  function buildSchedule(opts) {
+    var start = opts.start || new Date().toISOString().slice(0, 10);
+    var out = [];
+    var weeklyGap = opts.freq === "daily" ? 3 : 7;
+    var i, j, list;
+    for (i = 1; i <= 4; i++) {
+      list = tasksFor("weekly", opts.type);
+      for (j = 0; j < list.length; j++) {
+        out.push({date: addDays(start, i * weeklyGap), label: list[j].label, period: "weekly"});
+      }
+    }
+    for (i = 1; i <= 3; i++) {
+      list = tasksFor("monthly", opts.type);
+      for (j = 0; j < list.length; j++) {
+        out.push({date: addDays(start, i * 30), label: list[j].label, period: "monthly"});
+      }
+    }
+    list = tasksFor("yearly", opts.type);
+    for (j = 0; j < list.length; j++) {
+      out.push({date: addDays(start, 365), label: list[j].label, period: "yearly"});
+    }
+    out.sort(function (a, b) { return a.date < b.date ? -1 : (a.date > b.date ? 1 : 0); });
+    return out;
+  }
+  function scheduleText(items) {
+    return items.map(function (it) { return formatDate(it.date) + " — " + it.label + " (" + it.period + ")"; }).join("\n");
+  }
+  window.NP.TASKS = TASKS;
+  window.NP.addDays = addDays;
+  window.NP.formatDate = formatDate;
+  window.NP.tasksFor = tasksFor;
+  window.NP.buildSchedule = buildSchedule;
+  window.NP.scheduleText = scheduleText;
+  if (typeof document === "undefined") return;
+  var KEY = "np-website-maintenance-planner-ticks";
+  var startInput = document.getElementById("mstart");
+  startInput.value = new Date().toISOString().slice(0, 10);
+  function loadTicks() {
+    try { return JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { return {}; }
+  }
+  function saveTicks(ticks) {
+    try { localStorage.setItem(KEY, JSON.stringify(ticks)); } catch (e) { /* storage unavailable */ }
+  }
+  var currentItems = [];
+  function render(items) {
+    currentItems = items;
+    var out = document.getElementById("sched-out");
+    out.innerHTML = "";
+    var ticks = loadTicks();
+    var head = document.createElement("p");
+    head.className = "out";
+    head.textContent = "Your schedule: " + items.length + " tasks. Tick each one off as you finish it.";
+    out.appendChild(head);
+    items.forEach(function (it, idx) {
+      var row = document.createElement("label");
+      row.style.display = "flex";
+      row.style.alignItems = "center";
+      row.style.gap = "12px";
+      row.style.minHeight = "72px";
+      row.style.borderTop = "1px solid #e2e8f0";
+      row.style.padding = "10px 0";
+      var box = document.createElement("input");
+      box.type = "checkbox";
+      box.style.minHeight = "44px";
+      box.style.width = "44px";
+      box.style.flexShrink = "0";
+      var id = it.date + "|" + it.label;
+      box.checked = !!ticks[id];
+      box.addEventListener("change", function () {
+        var t = loadTicks();
+        if (box.checked) { t[id] = true; } else { delete t[id]; }
+        saveTicks(t);
+      });
+      var text = document.createElement("span");
+      text.textContent = formatDate(it.date) + " — " + it.label + " (" + it.period + ")";
+      row.appendChild(box);
+      row.appendChild(text);
+      out.appendChild(row);
+    });
+    document.getElementById("copy-btn").style.display = "block";
+  }
+  document.getElementById("gen-btn").addEventListener("click", function () {
+    var items = buildSchedule({
+      type: document.getElementById("mtype").value,
+      pages: document.getElementById("mpages").value,
+      freq: document.getElementById("mfreq").value,
+      start: startInput.value || new Date().toISOString().slice(0, 10)
+    });
+    render(items);
+  });
+  document.getElementById("copy-btn").addEventListener("click", function () {
+    var btn = document.getElementById("copy-btn");
+    var text = scheduleText(currentItems);
+    function done(ok) {
+      btn.textContent = ok ? "Copied!" : "Copy failed — select the text by hand";
+      document.getElementById("copy-out").textContent = ok ? "Your schedule is on the clipboard." : "";
+      setTimeout(function () { btn.textContent = "Copy my schedule"; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+    } else {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      done(ok);
+    }
+  });
+})();
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

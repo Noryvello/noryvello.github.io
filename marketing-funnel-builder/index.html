@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marketing Funnel Builder — Turn Strangers into Customers Step by Step | Noryvello</title>
+<meta name="description" content="Free marketing funnel builder — map every step from first visit to sale, and find where people drop off. No signup, phone friendly.">
+<link rel="canonical" href="https://noryvello.github.io/marketing-funnel-builder/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Marketing Funnel Builder — Turn Strangers into Customers Step by Step">
+<meta property="og:description" content="Free marketing funnel builder — map every step from first visit to sale, and find where people drop off. No signup, phone friendly.">
+<meta property="og:url" content="https://noryvello.github.io/marketing-funnel-builder/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc textarea{width:100%;min-height:150px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+.calc input,.calc select{width:100%;min-height:72px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc button{display:block;width:100%;min-height:72px;margin-top:12px;padding:12px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#fff;color:#4338ca;border:2px solid #4338ca}
+.calc button.danger{background:#fff;color:#991b1b;border:2px solid #991b1b}
+.calc .out{font-size:17px;font-weight:400;margin-top:14px;white-space:pre-line}
+.calc .out b{font-weight:700}
+.calc .row{margin:10px 0}
+.calc .checkrow{display:flex;gap:12px;align-items:center;margin:0;padding:20px 0;border-bottom:1px solid #e2e8f0;cursor:pointer;min-height:72px}
+.calc .checkrow input{width:30px;height:30px;min-height:30px;flex:none;margin:0;accent-color:#4338ca}
+.calc .checkrow span{font-size:16px;line-height:1.5}
+table.data{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+table.data th,table.data td{border:1px solid #cbd5e1;padding:8px;text-align:left;vertical-align:top}
+table.data th{background:#eef2ff}
+.tag{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:700}
+.tag.ok{background:#dcfce7;color:#166534}
+.tag.bad{background:#fee2e2;color:#991b1b}
+.tag.mid{background:#fef3c7;color:#92400e}
+.cardline{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin:10px 0}
+.cardline b{font-size:16.5px}
+.small{font-size:14px;color:#64748b}
+.funnelbar{background:#4338ca;color:#fff;border-radius:8px;padding:10px 12px;margin:6px 0;font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.funnelbar.alt{background:#0d9488}
+.outline-row{display:flex;gap:8px;align-items:stretch;margin:8px 0}
+.outline-row input{flex:1;min-width:0}
+.outline-row button{flex:none;width:58px;min-height:72px;margin-top:0;padding:8px 4px;border-radius:12px;font-size:18px}
+.blockbtns{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.blockbtns button{flex:1 1 40%;width:auto;min-height:72px;margin-top:0}
+.planweek{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin:10px 0}
+.planweek b{font-size:16.5px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a marketing funnel?", "acceptedAnswer": {"@type": "Answer", "text": "A marketing funnel is a picture of the path a stranger takes to become a customer, in five stages: discover, interest, consider, buy and repeat. Each stage is narrower than the last, because not everyone who discovers you will buy. The funnel shows you where people drop off, so you know which step to fix first."}}, {"@type": "Question", "name": "How many stages should a funnel have?", "acceptedAnswer": {"@type": "Answer", "text": "Five is a good number for most small businesses: discover, interest, consider, buy and repeat. Fewer stages hide the useful detail — you cannot tell whether people leave because they are not interested or because the price puts them off. More stages add detail you cannot measure, and the funnel becomes a guess."}}, {"@type": "Question", "name": "Where do most funnels leak?", "acceptedAnswer": {"@type": "Answer", "text": "The biggest leak is usually at the top, between discover and interest: most people who find you are not the right audience, or the first thing they see does not explain clearly what you sell. But every business is different, and the only way to know your own leakiest stage is to measure your own numbers — which is what this builder does."}}, {"@type": "Question", "name": "Do I need a funnel for a small shop?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and a small shop needs it more than a big one, because every lost buyer matters more. A small shop's funnel is simple: people who walk past, people who walk in, people who ask about something, people who buy, people who come back. Writing it down takes ten minutes and shows you which step to fix first."}}, {"@type": "Question", "name": "What is the difference between a funnel and a campaign?", "acceptedAnswer": {"@type": "Answer", "text": "A funnel is the permanent path people take through your business; a campaign is a temporary push with one goal and one end date. The campaign brings people into the top of the funnel. If the funnel is broken, the campaign pours people in and they leak away — so fix the funnel before you run a big campaign."}}, {"@type": "Question", "name": "How do I measure each stage?", "acceptedAnswer": {"@type": "Answer", "text": "Use a number you can actually count, for the same period — a typical month — at every stage. Discover: visitors or views. Interest: people who read the product page or send a message. Consider: people who ask for a price or start a trial. Buy: orders. Repeat: second orders. Count each person once per stage, and mark estimates as estimates."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Marketing Funnel Builder</h1>
+<p class="answer">This builder maps your funnel in five stages — discover, interest, consider, buy and repeat — from your own numbers and your own words. It draws the funnel as bars, works out where people drop off, and gives you a checklist for the leakiest stage first, so you fix what matters most.</p>
+<div class="calc">
+<p class="small"><b>Stage 1 — Discover</b></p>
+<label for="mf-ch1">Channel for this stage</label>
+<input id="mf-ch1" type="text" placeholder="Example: search and social posts" maxlength="80">
+<label for="mf-ac1">What does the person do here?</label>
+<input id="mf-ac1" type="text" placeholder="Example: sees the post for the first time" maxlength="120">
+<label for="mf-n1">How many people reach this stage in a typical month?</label>
+<input id="mf-n1" type="number" inputmode="numeric" min="0" max="100000000" step="1" value="2000"><p class="small"><b>Stage 2 — Interest</b></p>
+<label for="mf-ch2">Channel for this stage</label>
+<input id="mf-ch2" type="text" placeholder="Example: the course page" maxlength="80">
+<label for="mf-ac2">What does the person do here?</label>
+<input id="mf-ac2" type="text" placeholder="Example: reads the course page" maxlength="120">
+<label for="mf-n2">How many people reach this stage in a typical month?</label>
+<input id="mf-n2" type="number" inputmode="numeric" min="0" max="100000000" step="1" value="400"><p class="small"><b>Stage 3 — Consider</b></p>
+<label for="mf-ch3">Channel for this stage</label>
+<input id="mf-ch3" type="text" placeholder="Example: the trial lesson page" maxlength="80">
+<label for="mf-ac3">What does the person do here?</label>
+<input id="mf-ac3" type="text" placeholder="Example: starts the free trial lesson" maxlength="120">
+<label for="mf-n3">How many people reach this stage in a typical month?</label>
+<input id="mf-n3" type="number" inputmode="numeric" min="0" max="100000000" step="1" value="120"><p class="small"><b>Stage 4 — Buy</b></p>
+<label for="mf-ch4">Channel for this stage</label>
+<input id="mf-ch4" type="text" placeholder="Example: the checkout page" maxlength="80">
+<label for="mf-ac4">What does the person do here?</label>
+<input id="mf-ac4" type="text" placeholder="Example: buys the full course" maxlength="120">
+<label for="mf-n4">How many people reach this stage in a typical month?</label>
+<input id="mf-n4" type="number" inputmode="numeric" min="0" max="100000000" step="1" value="36"><p class="small"><b>Stage 5 — Repeat</b></p>
+<label for="mf-ch5">Channel for this stage</label>
+<input id="mf-ch5" type="text" placeholder="Example: email to past buyers" maxlength="80">
+<label for="mf-ac5">What does the person do here?</label>
+<input id="mf-ac5" type="text" placeholder="Example: buys a second course later" maxlength="120">
+<label for="mf-n5">How many people reach this stage in a typical month?</label>
+<input id="mf-n5" type="number" inputmode="numeric" min="0" max="100000000" step="1" value="12"><button id="mf-build" type="button">Build my funnel</button>
+<div class="out" id="mf-out" style="display:none"></div>
+<button id="mf-copy" type="button" class="secondary" style="display:none" data-label="Copy my funnel">Copy my funnel</button>
+</div>
+<div class="warn">A funnel shows where people drop off — it does not create customers by itself. The numbers you enter must be your own real counts, or honest estimates you have marked as such. A funnel built from invented numbers will point you at the wrong stage.</div>
+<h2>How to use this builder</h2>
+<p>Fill in the five stages, one at a time. For each stage, write the channel where it happens and the action the person takes, then enter the number of people who reach that stage in a typical month. Discover is how many people first hear about you. Interest is how many look closer. Consider is how many seriously think about buying. Buy is how many actually buy. Repeat is how many come back.</p>
+<p>Tap Build my funnel and the builder draws your funnel as bars — wide at the top, narrow at the bottom — and works out the conversion between each pair of stages. It also names the leakiest stage, the step where you lose the largest share of people, and gives you a short checklist for fixing it. The checklist is specific to that stage, not generic advice.</p>
+<p>Tap Copy my funnel to keep the numbers and the checklist as plain text. Your entries are saved on this device only, so you can come back next month, update the numbers, and see whether the funnel got better. Nothing you type is sent anywhere — everything happens in your browser.</p>
+<h2>What a marketing funnel is</h2>
+<p>A marketing funnel is a picture of the path a stranger takes to become a customer. At the top, many people discover you. Some of them get interested. Fewer still consider buying. Fewer again buy. And a small number come back and buy again. The shape is a funnel because each step is narrower than the last — and that is normal. No business converts every visitor into a buyer, and a funnel that loses people at every step is not broken, it is honest.</p>
+<p>The value of the funnel is not the shape, it is the comparison between steps. If 1,000 people discover you and 100 buy, your funnel converts 10 percent overall. But that single number hides the useful question: where did the 900 go? If 800 of them left between discover and interest, your message is not reaching the right people. If 800 left between consider and buy, your offer or your price is the problem. The funnel tells you where to look.</p>
+<p>Every business has a funnel, whether it is written down or not. Writing it down turns a vague feeling — sales are slow — into a specific question — which step loses the most people? And a specific question has a specific fix.</p>
+<h2>What belongs in each stage</h2>
+<p>Discover is the first contact: someone sees your post, finds you in search, hears about you from a friend, or walks past your shop. The channel matters more than the message here, because you are reaching people who do not know you yet. The action is simple: they notice you. Count first visits, first views, or first enquiries — whichever you can actually see.</p>
+<p>Interest is the second look: they visit your page, read about the product, watch a video, or ask a question. They are not buying yet, but they are paying attention. Consider is the serious step: they compare your offer with others, read the details, check the price, or talk to someone who bought before. Buy is the purchase itself. Repeat is the return: they buy again, book again, or bring a friend.</p>
+<p>Each stage needs one channel and one action, written in your own words. Vague stages — "people find us somehow" — cannot be measured and cannot be fixed. If you cannot name the channel for a stage, that stage is a guess, and the funnel will show it: the numbers will not add up, and the leakiest stage will be the one you understand least.</p>
+<h2>How to measure each stage</h2>
+<p>Measure each stage with a number you can actually count. Discover: visitors to your page, views of your posts, or people who walk in. Interest: people who read the product page, watch the video to the end, or send a message. Consider: people who ask for a price, add something to a basket, or book a call. Buy: orders. Repeat: second orders, or people who return within a few months.</p>
+<p>Use the same period for every stage — a typical month is the easiest — and count each person once per stage. Do not mix periods: discover from last month and buy from this month will give you a funnel that means nothing. And do not count the same person twice in one stage: ten visits from one person is one interested person, not ten.</p>
+<p>If you cannot count a stage, estimate it honestly and mark it as an estimate. A funnel with one honest estimate is still useful; a funnel with five invented numbers is a drawing, not a tool. Over time, replace estimates with real counts — the funnel gets more honest the more you measure.</p>
+<h2>How to fix the leakiest stage first</h2>
+<p>The leakiest stage is the step where you lose the largest share of people — not the largest number, but the largest share. If 1,000 people discover you and 100 show interest, you lost 90 percent at that step. If 100 consider and 50 buy, you lost 50 percent there. The first leak is the bigger problem, even though the numbers look smaller further down.</p>
+<p>Fix one stage at a time, starting with the leakiest. A leak between discover and interest usually means the wrong audience or an unclear message: the people who find you are not the people who want what you sell. A leak between interest and consider usually means the product page does not answer the real questions — price, delivery, what happens next. A leak between consider and buy often means friction: a hard checkout, a slow reply, or a price that surprises people at the last step.</p>
+<p>A leak between buy and repeat means the first experience did not earn a second one: the product, the delivery, or the follow-up fell short. And if there is no repeat stage at all — no follow-up message, no reason to return — that is the easiest fix of all: ask buyers how it went, and give them a reason to come back.</p>
+<h2>Worked example: an online course funnel</h2>
+<p>Leila sells an online course in basic bookkeeping. In a typical month, 2,000 people discover her through search and social posts. Of those, 400 visit the course page and read it — 20 percent. Of those, 120 start the free trial lesson — 30 percent. Of those, 36 buy the full course — 30 percent. And 12 of the 36 buy her second course later — 33 percent repeat.</p>
+<p>The leakiest stage is discover to interest: she loses 80 percent there. The builder's checklist tells her to look at her message and her audience: are the right people finding her, and does the first thing they see explain the course clearly? She rewrites the first lines of her page to say exactly who the course is for and what it teaches, and she stops posting in groups where nobody wants bookkeeping.</p>
+<p>Two months later, discover is down to 1,600 — fewer people, but the right ones — and 480 now visit the course page: 30 percent instead of 20. The funnel got narrower at the top and wider further down, and sales rose from 36 to 43 a month. The funnel did not bring more people; it showed her where the real problem was, and fixing that one stage changed everything below it.</p>
+<h2>Common mistakes</h2>
+<p>The first mistake is no follow-up. A buyer who hears nothing after the sale has no reason to return, and a person who asked a question and got no reply will not ask twice. The second mistake is asking for the sale too early: a stranger who has just discovered you is not ready to buy, and a hard sell at the first step drives people away before they have had a chance to get interested.</p>
+<p>The third mistake is no repeat stage at all. Many funnels stop at the purchase, as if the customer stops existing after paying. But a returning buyer costs far less to reach than a new one, and a buyer who returns is worth more than a buyer who buys once. The repeat stage is not an extra — it is where the profit usually lives.</p>
+<p>The fourth mistake is measuring the wrong numbers: counting followers instead of buyers, or counting visits instead of enquiries. The fifth mistake is fixing the wrong stage — polishing the checkout when the real leak is at the top, or rewriting the headline when the real problem is a price nobody can find. The funnel exists to stop exactly that: fix the leakiest stage first, and only then move to the next.</p>
+<h2>Funnel vs campaign: what is the difference?</h2>
+<p>A funnel is the permanent path people take through your business. A campaign is a temporary push with one goal and one end date. The funnel is the road; the campaign is a journey on it. You need both, but they do different jobs, and confusing them leads to the wrong decisions.</p>
+<p>A campaign brings people into the top of the funnel: it finds new strangers and gets them to discover you. But if the funnel itself is broken — if the product page does not answer questions, or the checkout is hard — then the campaign pours people into a funnel that leaks them all away. That is why fixing the funnel comes before running a big campaign: there is no point paying to bring people to a path that does not work.</p>
+<p>Think of it this way: the funnel is what you build once and improve slowly, month after month. The campaign is what you run for a few weeks to fill it. A good funnel makes every campaign cheaper, because more of the people the campaign brings actually buy. And a good campaign shows you where the funnel needs work, because it sends enough people through it to see the leaks clearly.</p>
+<h2>What this builder cannot do</h2>
+<p>This builder cannot count your visitors for you. It works from the numbers you enter, and if those numbers are guesses, the funnel is a guess too — an organised one, but still a guess. It cannot see your website, your shop, or your messages, and it cannot tell you which of your buyers came from which channel unless you track that yourself.</p>
+<p>It also cannot fix the funnel for you. It names the leakiest stage and gives you a checklist, but the work — rewriting the page, answering messages faster, following up with buyers — is yours. And it cannot promise a result: a funnel that converts 10 percent today might convert 8 percent next month, because audiences and seasons change. What it can do is show you, clearly and honestly, where your people go — and that is the information every good marketing decision starts from.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is a marketing funnel?</h3><p>A marketing funnel is a picture of the path a stranger takes to become a customer, in five stages: discover, interest, consider, buy and repeat. Each stage is narrower than the last, because not everyone who discovers you will buy. The funnel shows you where people drop off, so you know which step to fix first.</p></div>
+<div class="faq"><h3>How many stages should a funnel have?</h3><p>Five is a good number for most small businesses: discover, interest, consider, buy and repeat. Fewer stages hide the useful detail — you cannot tell whether people leave because they are not interested or because the price puts them off. More stages add detail you cannot measure, and the funnel becomes a guess.</p></div>
+<div class="faq"><h3>Where do most funnels leak?</h3><p>The biggest leak is usually at the top, between discover and interest: most people who find you are not the right audience, or the first thing they see does not explain clearly what you sell. But every business is different, and the only way to know your own leakiest stage is to measure your own numbers — which is what this builder does.</p></div>
+<div class="faq"><h3>Do I need a funnel for a small shop?</h3><p>Yes, and a small shop needs it more than a big one, because every lost buyer matters more. A small shop&#x27;s funnel is simple: people who walk past, people who walk in, people who ask about something, people who buy, people who come back. Writing it down takes ten minutes and shows you which step to fix first.</p></div>
+<div class="faq"><h3>What is the difference between a funnel and a campaign?</h3><p>A funnel is the permanent path people take through your business; a campaign is a temporary push with one goal and one end date. The campaign brings people into the top of the funnel. If the funnel is broken, the campaign pours people in and they leak away — so fix the funnel before you run a big campaign.</p></div>
+<div class="faq"><h3>How do I measure each stage?</h3><p>Use a number you can actually count, for the same period — a typical month — at every stage. Discover: visitors or views. Interest: people who read the product page or send a message. Consider: people who ask for a price or start a trial. Buy: orders. Repeat: second orders. Count each person once per stage, and mark estimates as estimates.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/marketing-campaign-planner/">Marketing Campaign Planner</a> · <a href="https://noryvello.github.io/ab-testing-planner/">A/B Testing Planner</a> · <a href="https://noryvello.github.io/customer-persona-generator/">Customer Persona Generator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function copyText(text, btn){
+  function done(){ if(btn){ var old=btn.getAttribute('data-label')||btn.textContent; btn.textContent='Copied!'; setTimeout(function(){ btn.textContent=old; },2000); } }
+  function fallback(){
+    var ta=document.createElement('textarea');
+    ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta); done();
+  }
+  if (typeof navigator!=='undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else { fallback(); }
+}
+function el(id){ return (typeof document!=='undefined' && document.getElementById) ? document.getElementById(id) : null; }
+function show(node){ if(node) node.style.display='block'; }
+function saveLS(key, val){ try{ if(typeof localStorage!=='undefined') localStorage.setItem(key, JSON.stringify(val)); }catch(e){} }
+function loadLS(key){ try{ if(typeof localStorage!=='undefined'){ var v=localStorage.getItem(key); return v ? JSON.parse(v) : null; } }catch(e){} return null; }
+function fmtDate(iso){
+  if(!iso) return '';
+  var p=iso.split('-'); if(p.length!==3) return iso;
+  var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var m=parseInt(p[1],10);
+  return p[2].replace(/^0/,'')+' '+months[m-1]+' '+p[0];
+}
+
+
+var MF_STAGES = ['Discover','Interest','Consider','Buy','Repeat'];
+var MF_CHECKLISTS = {
+  'Discover to Interest': [
+    'Check the first thing people see: does it say clearly what you sell and who it is for?',
+    'Check the audience: are the people finding you the people who would actually buy?',
+    'Make the next step obvious — one clear action, not five.'
+  ],
+  'Interest to Consider': [
+    'Answer the real questions on the product page: price, delivery, what happens next.',
+    'Add proof: photos, examples, or short quotes from real buyers (with permission).',
+    'Make it easy to ask a question — and answer fast.'
+  ],
+  'Consider to Buy': [
+    'Remove friction: a simple checkout, a clear price, no surprises at the last step.',
+    'Reply to every enquiry the same day.',
+    'Say plainly what happens after they buy: when it arrives, what to expect.'
+  ],
+  'Buy to Repeat': [
+    'Follow up after the sale: ask how it went.',
+    'Give buyers a reason to return: a next step, a second product, a reminder.',
+    'Thank them — a short message costs nothing and is remembered.'
+  ]
+};
+function mfRate(prev, next){
+  if (!prev || prev <= 0) return null;
+  return Math.round((next / prev) * 1000) / 10;
+}
+function mfBuildFunnel(stages){
+  var rates = [];
+  for (var i = 0; i < stages.length - 1; i++) {
+    rates.push({from: stages[i].name, to: stages[i + 1].name,
+      rate: mfRate(stages[i].count, stages[i + 1].count)});
+  }
+  var leakiest = null;
+  rates.forEach(function(r){
+    if (r.rate !== null && (leakiest === null || r.rate < leakiest.rate)) leakiest = r;
+  });
+  var overall = null;
+  if (stages[0].count > 0 && stages[3].count !== undefined) {
+    overall = mfRate(stages[0].count, stages[3].count);
+  }
+  var checklist = [];
+  if (leakiest) {
+    var key = leakiest.from + ' to ' + leakiest.to;
+    checklist = MF_CHECKLISTS[key] || [];
+  }
+  return {stages: stages, rates: rates, leakiest: leakiest,
+    overall: overall, checklist: checklist};
+}
+function mfFunnelText(f){
+  var lines = [];
+  lines.push('Marketing funnel');
+  f.stages.forEach(function(s){
+    lines.push(s.name + ': ' + s.count + ' people — ' + s.channel + ' — ' + s.action);
+  });
+  lines.push('Conversions between stages:');
+  f.rates.forEach(function(r){
+    lines.push('- ' + r.from + ' to ' + r.to + ': ' + (r.rate === null ? 'cannot tell' : r.rate + ' percent'));
+  });
+  if (f.overall !== null) lines.push('Overall, discover to buy: ' + f.overall + ' percent.');
+  if (f.leakiest) {
+    lines.push('Leakiest stage: ' + f.leakiest.from + ' to ' + f.leakiest.to + ' (' + f.leakiest.rate + ' percent get through).');
+    lines.push('Checklist for that stage:');
+    f.checklist.forEach(function(c){ lines.push('- ' + c); });
+  }
+  return lines.join('\n');
+}
+function mfValidate(stages){
+  var errs = [];
+  stages.forEach(function(s){
+    if (isNaN(s.count) || s.count < 0) errs.push('Enter a number of 0 or more for ' + s.name + '.');
+  });
+  if (stages[0].count <= 0) errs.push('Enter how many people discover you in a typical month (more than 0).');
+  return errs;
+}
+window.NP = {STAGES: MF_STAGES, CHECKLISTS: MF_CHECKLISTS, rate: mfRate,
+  buildFunnel: mfBuildFunnel, funnelText: mfFunnelText, validate: mfValidate};
+if (typeof document !== 'undefined' && document.getElementById) {
+  var LS_KEY = 'np-marketing-funnel-builder';
+  var saved = loadLS(LS_KEY);
+  if (saved && saved.length === 5) {
+    saved.forEach(function(s, i){
+      var n = i + 1;
+      if (s.channel && el('mf-ch' + n)) el('mf-ch' + n).value = s.channel;
+      if (s.action && el('mf-ac' + n)) el('mf-ac' + n).value = s.action;
+      if (s.count !== undefined && el('mf-n' + n)) el('mf-n' + n).value = s.count;
+    });
+  }
+  var buildBtn = el('mf-build');
+  if (buildBtn) buildBtn.addEventListener('click', function(){
+    var stages = [];
+    for (var i = 1; i <= 5; i++) {
+      stages.push({name: MF_STAGES[i - 1], channel: el('mf-ch' + i).value,
+        action: el('mf-ac' + i).value, count: parseFloat(el('mf-n' + i).value)});
+    }
+    var errs = mfValidate(stages);
+    var out = el('mf-out');
+    var copyBtn = el('mf-copy');
+    if (errs.length) { out.textContent = errs.join('\n'); show(out); if (copyBtn) copyBtn.style.display = 'none'; return; }
+    saveLS(LS_KEY, stages);
+    var f = mfBuildFunnel(stages);
+    var max = stages[0].count || 1;
+    var html = '<b>Your funnel</b>\n\n';
+    stages.forEach(function(s, i){
+      var w = Math.max(8, Math.round((s.count / max) * 100));
+      html += '<div class="funnelbar' + (i % 2 ? ' alt' : '') + '" style="width:' + w + '%">' +
+        esc(s.name) + ': ' + s.count + '</div>';
+    });
+    html += '\n<b>Conversions between stages</b>\n';
+    f.rates.forEach(function(r){
+      html += '- ' + esc(r.from) + ' to ' + esc(r.to) + ': ' +
+        (r.rate === null ? 'cannot tell' : r.rate + ' percent') + '\n';
+    });
+    if (f.overall !== null) html += '\nOverall, discover to buy: ' + f.overall + ' percent.\n';
+    if (f.leakiest) {
+      html += '\n<b>Leakiest stage: ' + esc(f.leakiest.from) + ' to ' + esc(f.leakiest.to) +
+        ' (' + f.leakiest.rate + ' percent get through)</b>\n';
+      html += 'Fix this stage first:\n';
+      f.checklist.forEach(function(c){ html += '- ' + esc(c) + '\n'; });
+    }
+    out.innerHTML = html;
+    show(out);
+    if (copyBtn) {
+      show(copyBtn);
+      copyBtn.onclick = function(){ copyText(mfFunnelText(f), copyBtn); };
+    }
+  });
+}
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

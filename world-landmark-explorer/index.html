@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World Landmark Explorer — Famous Landmarks Around the World | Noryvello</title>
+<meta name="description" content="Explore world landmarks free — the Eiffel Tower, the Great Wall, the Pyramids and more, with facts, best times to visit and tips. No signup.">
+<link rel="canonical" href="https://noryvello.github.io/world-landmark-explorer/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="World Landmark Explorer — Famous Landmarks Around the World">
+<meta property="og:description" content="Explore world landmarks free, with facts, best times to visit and tips for famous places around the world.">
+<meta property="og:url" content="https://noryvello.github.io/world-landmark-explorer/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the most visited landmark in the world?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on how you count visitors, but the Forbidden City in Beijing and the Eiffel Tower in Paris are among the most visited landmarks in the world, with millions of visitors every year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How old is the Great Wall?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The first walls were built more than 2,000 years ago, and most of the wall visitors see today was built during the Ming dynasty, about 500-600 years ago."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When is the best time to visit the Eiffel Tower?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Spring and autumn are the best times to visit the Eiffel Tower — the weather is mild and the queues are shorter than in summer. Evenings are lovely too, when the light is soft. Book your tickets online in advance, because the ticket line at the tower is long."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need tickets in advance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For the most popular landmarks, yes. The Eiffel Tower, the Colosseum, the Statue of Liberty and Machu Picchu all reward booking ahead — some sell out weeks or months in advance. For outdoor landmarks like the Grand Canyon or Uluru, you can usually just turn up, but always check the official site first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a UNESCO site?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A UNESCO World Heritage Site is a place listed by the United Nations cultural agency because it has outstanding value for all of humanity. Famous examples on this page include the Great Wall of China, the Pyramids of Giza and the Taj Mahal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I test myself here?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — use the quiz on this page. It shows a landmark and asks which country it is in, gives you ten questions, and shows your score at the end. Your best score is saved in your browser."
+      }
+    }
+  ]
+}
+</script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;min-height:72px;margin-top:14px;padding:16px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#e0e7ff;color:#1e293b}
+.calc input,.calc select{min-height:72px;font-size:17px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;min-height:120px;font-family:inherit}
+.tscroll{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef2ff}
+.opt{display:block;width:100%;text-align:left;margin:8px 0}
+.q{font-size:18px;font-weight:700;margin:12px 0}
+.small{font-size:14px;color:#64748b}
+.card{border:1px solid #cbd5e1;border-radius:12px;padding:12px 14px;margin:10px 0;background:rgba(255,255,255,.6)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>World Landmark Explorer</h1>
+<p class="answer">This page explores famous landmarks around the world — what each one is, where it stands, the best time to visit and one practical tip. A ten-question quiz tests whether you can match each landmark to its country. Everything is free, and there is no signup.</p>
+<div class="calc">
+<button id="start-btn" type="button">Start the quiz</button>
+<div id="q-text" class="q">Press Start the quiz to begin.</div>
+<div id="options"></div>
+<div id="feedback"></div>
+<button id="next-btn" type="button" class="secondary" style="display:none">Next question</button>
+<div id="score" class="out"></div>
+<div id="best" class="small"></div>
+<button id="copy-btn" type="button" class="secondary" style="display:none">Copy my score</button>
+</div>
+<div id="browse"></div>
+<div class="warn">Opening times, ticket prices and access change — check the official site of each landmark before you visit.</div>
+<h2>How to use this page</h2>
+<p>This page is a guided tour of 22 of the most famous landmarks on Earth, grouped by continent. Each card tells you what the landmark is, where it stands, why it is famous, the best time to visit, and one practical tip from people who have been there.</p>
+<p>Browse the cards first, starting with the continent that interests you most. Then take the quiz: it shows you a landmark and asks which country it is in, with four choices and a score at the end. Your best score is saved in your browser, so you can try to beat it next time. The quiz picks its ten questions at random from all 22 landmarks, so no two rounds are ever the same.</p>
+<p>Everything here is free, with no signup and nothing to download. The page works on a phone as well as on a computer, so you can browse landmarks on the bus and quiz yourself in a spare minute.</p>
+<h2>The landmarks by continent</h2>
+<p>The 22 landmarks on this page are spread across six continents. Here is what each continent holds, so you can plan your browsing — or your dreaming.</p>
+<ul>
+<li><strong>Asia, five landmarks.</strong> The Great Wall of China and the Taj Mahal in India are the two most famous, joined by Angkor Wat in Cambodia, the rose-red city of Petra in Jordan, and Borobudur in Indonesia, a 9th-century Buddhist temple built as a stepped pyramid.</li>
+<li><strong>Europe, six landmarks.</strong> The Eiffel Tower in Paris and the Colosseum in Rome lead the list, with Big Ben in London, the Sagrada Familia in Barcelona, the Acropolis in Athens, and Neuschwanstein Castle in Bavaria, the fairytale castle that inspired storybook drawings around the world.</li>
+<li><strong>Africa, three landmarks.</strong> The Pyramids of Giza in Egypt are the oldest wonder on this page, joined by Victoria Falls on the border of Zambia and Zimbabwe, and Table Mountain above Cape Town in South Africa.</li>
+<li><strong>North America, three landmarks.</strong> The Statue of Liberty in New York harbour, the Grand Canyon in Arizona, and Chichen Itza, the Maya city on Mexico's Yucatan peninsula.</li>
+<li><strong>South America, three landmarks.</strong> Machu Picchu high in the Andes of Peru, Christ the Redeemer above Rio de Janeiro in Brazil, and Iguazu Falls on the border of Argentina and Brazil.</li>
+<li><strong>Oceania, two landmarks.</strong> The Sydney Opera House in Australia, famous for its sail-like roofs, and Uluru, the giant sandstone rock rising from the desert in central Australia, sacred to the Anangu people.</li>
+</ul>
+<h2>The stories behind the famous ones</h2>
+<p>The Great Wall of China is not one wall but a chain of walls and forts built over centuries to guard China's northern borders. The first walls went up more than 2,000 years ago, and most of the wall visitors walk on today was built during the Ming dynasty, about 500 to 600 years ago. It is the longest structure ever built by human hands.</p>
+<p>The Pyramids of Giza were built around 2560 BCE as tombs for pharaohs — more than 4,500 years ago. The Great Pyramid is the last surviving wonder of the ancient world, and it was the tallest building on Earth for more than 3,800 years.</p>
+<p>The Taj Mahal in Agra is a white marble mausoleum built in the 1600s by the emperor Shah Jahan for his wife Mumtaz Mahal. It took more than twenty years to build, and its marble changes colour with the light — pink at dawn, white at noon, golden at sunset.</p>
+<p>The Eiffel Tower was built in 1889 for the World's Fair in Paris, and at 330 metres it was the tallest structure in the world when it opened. Many Parisians disliked it at first, but it became the symbol of the city and is now one of the most visited landmarks on Earth.</p>
+<p>Machu Picchu is a 15th-century Inca citadel high in the Andes, built of stone fitted together without mortar. It was never found by the Spanish conquerors, and the outside world only learned of it in 1911, when it was brought to attention by the explorer Hiram Bingham.</p>
+<p>The Colosseum in Rome opened in 80 CE, and crowds of tens of thousands watched gladiators fight there. It held tens of thousands of spectators, and its ruins are still among the most visited sights in Europe.</p>
+<h2>Planning a visit: tickets, crowds and best time</h2>
+<p>The single best piece of advice for famous landmarks is to book ahead. The Eiffel Tower, the Colosseum, the Sagrada Familia and Neuschwanstein Castle all sell timed tickets online, and the ticket line at the gate is always longer than you expect. For Machu Picchu, entry tickets and the train should be booked months ahead, and Statue of Liberty crown tickets sell out weeks in advance.</p>
+<p>The second-best advice is to go early. Most landmarks open in the morning, and the first hour is quieter, cooler and better for photographs than any other time of day. The Taj Mahal at sunrise and Angkor Wat at sunrise are famous for a reason — and the crowds arrive later.</p>
+<p>Spring and autumn are the kindest seasons for most of the landmarks on this page: mild weather, smaller crowds and softer light. Summer brings heat and queues, and winter can bring closures or bad weather, though some places — the Pyramids, the Taj Mahal, Victoria Falls — are best in the cooler months from November to February.</p>
+<p>Check the official site of each landmark before you go. Opening times, ticket prices and access change, and some landmarks close on certain days — the Taj Mahal, for example, is closed on Fridays. A five-minute check saves a wasted journey.</p>
+<h2>A worked example: one day, three landmarks — how to plan it</h2>
+<p>Imagine a day in Rome, where three great sights stand close together: the Colosseum, the Roman Forum and Palatine Hill. Here is how to see all three without rushing, using the planning method from this page.</p>
+<ul>
+<li><strong>The night before:</strong> book a timed morning ticket for the Colosseum online, and check the opening times on the official site. Pack water, good shoes and a hat — Rome's ancient stones are hard on feet and there is little shade.</li>
+<li><strong>Morning, at opening time:</strong> start at the Colosseum, when the light is good and the crowds are still thin. Give it two hours, and read the signs — the arena's story is better when you know what you are looking at.</li>
+<li><strong>Midday:</strong> walk next door to the Roman Forum, the ruined heart of ancient Rome, and then up Palatine Hill for the view over the Forum and the city. This is the hottest part of the day, so take it slowly and drink water.</li>
+<li><strong>Afternoon:</strong> rest. A long lunch, a shaded square, and time to look at your photographs. Trying to add a fourth or fifth sight in the afternoon is how a good day turns into a tired one.</li>
+<li><strong>Evening:</strong> walk back past the Colosseum at dusk, when it is lit up and the crowds have thinned. The same building looks like a different place in the evening light.</li>
+</ul>
+<p>The pattern works anywhere: one big sight in the morning, nearby sights in the middle of the day, rest in the afternoon, and one evening view. Three landmarks, well seen, beat six landmarks glimpsed through a tired haze.</p>
+<h2>Common mistakes when visiting landmarks</h2>
+<ul>
+<li><strong>Trying to see everything in one day.</strong> A famous landmark deserves hours, not minutes. Pick two or three and enjoy them properly, instead of collecting ten in a blur.</li>
+<li><strong>Ignoring opening times.</strong> Landmarks close on certain days and in certain seasons, and hours change. The Taj Mahal is closed on Fridays, and the Table Mountain cable car stops in strong wind — both are the kind of detail that ruins a day if you only learn it at the gate.</li>
+<li><strong>Not booking tickets.</strong> The most popular landmarks sell out. Machu Picchu tickets go months ahead, Statue of Liberty crown tickets go weeks ahead, and the Eiffel Tower's ticket line can eat half your morning.</li>
+<li><strong>Going at midday in summer.</strong> Heat, glare and crowds all peak at noon. Early morning and late afternoon are better in every way — cooler, quieter and prettier.</li>
+<li><strong>Forgetting the practical things.</strong> Water, good shoes, a hat and a charged phone matter more than a guidebook. The marble paths of the Acropolis are slippery, the climb at Borobudur is steep, and the spray at Victoria Falls will soak you — the tips on each card are there for a reason.</li>
+<li><strong>Standing too close to the edge.</strong> The Grand Canyon's South Rim is open all year and its views are breathtaking, but the edge is a real drop. Stay back from it, especially with children.</li>
+</ul>
+<h2>What this page cannot do</h2>
+<p>This page covers 22 landmarks — the most famous ones, but only a small share of the world's great places. There are thousands of castles, temples, mountains and old cities that are not here, and many of them are wonderful. Use this page as a starting point, not a complete list.</p>
+<p>It cannot give you live information. Opening times, ticket prices and access change, and this page does not update them. Always check the official site of a landmark before you travel.</p>
+<p>And it cannot book anything for you. Tickets, trains and tours are bought from the landmark itself or from a travel agent, never from this page. What this page can do is help you choose where to go, when to go, and what to watch out for — and then test how much you remember with the quiz.</p>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>What is the most visited landmark in the world?</h3>
+<p>It depends on how you count visitors, but the Forbidden City in Beijing and the Eiffel Tower in Paris are among the most visited landmarks in the world, with millions of visitors every year.</p>
+</div>
+<div class="faq">
+<h3>How old is the Great Wall?</h3>
+<p>The first walls were built more than 2,000 years ago, and most of the wall visitors see today was built during the Ming dynasty, about 500-600 years ago.</p>
+</div>
+<div class="faq">
+<h3>When is the best time to visit the Eiffel Tower?</h3>
+<p>Spring and autumn are the best times to visit the Eiffel Tower — the weather is mild and the queues are shorter than in summer. Evenings are lovely too, when the light is soft. Book your tickets online in advance, because the ticket line at the tower is long.</p>
+</div>
+<div class="faq">
+<h3>Do I need tickets in advance?</h3>
+<p>For the most popular landmarks, yes. The Eiffel Tower, the Colosseum, the Statue of Liberty and Machu Picchu all reward booking ahead — some sell out weeks or months in advance. For outdoor landmarks like the Grand Canyon or Uluru, you can usually just turn up, but always check the official site first.</p>
+</div>
+<div class="faq">
+<h3>What is a UNESCO site?</h3>
+<p>A UNESCO World Heritage Site is a place listed by the United Nations cultural agency because it has outstanding value for all of humanity. Famous examples on this page include the Great Wall of China, the Pyramids of Giza and the Taj Mahal.</p>
+</div>
+<div class="faq">
+<h3>Can I test myself here?</h3>
+<p>Yes — use the quiz on this page. It shows a landmark and asks which country it is in, gives you ten questions, and shows your score at the end. Your best score is saved in your browser.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/world-capitals-explorer/">World Capitals Explorer</a> · <a href="https://noryvello.github.io/country-information-directory/">Country Information Directory</a> · <a href="https://noryvello.github.io/public-transport-route-planner/">Public Transport Route Planner</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+
+var LANDMARKS = [{"name": "Great Wall of China", "country": "China", "continent": "Asia", "what": "A chain of walls and forts built over centuries to guard China's northern borders; most of what visitors see today dates from the Ming dynasty.", "best": "Spring and autumn, when the weather is mild and the skies are clear.", "tip": "Mutianyu is less crowded than Badaling and has a cable car up."}, {"name": "Taj Mahal", "country": "India", "continent": "Asia", "what": "A white marble mausoleum in Agra, built in the 1600s by the emperor Shah Jahan for his wife Mumtaz Mahal.", "best": "November to February, in the early morning.", "tip": "Arrive at sunrise and note that it is closed on Fridays."}, {"name": "Angkor Wat", "country": "Cambodia", "continent": "Asia", "what": "A vast 12th-century temple in Siem Reap, the largest religious monument in the world.", "best": "November to February, in the dry season.", "tip": "Watch sunrise at the reflecting pool and carry water — the site is huge."}, {"name": "Petra", "country": "Jordan", "continent": "Asia", "what": "An ancient city carved into rose-red rock by the Nabataeans, famous for the Treasury building at the end of a narrow canyon.", "best": "Spring and autumn, when the desert heat eases.", "tip": "Walk in early in the morning, before the heat and the crowds."}, {"name": "Borobudur", "country": "Indonesia", "continent": "Asia", "what": "A 9th-century Buddhist temple on Java, built as a stepped pyramid with hundreds of carved panels.", "best": "The dry season, from April to October.", "tip": "Go for sunrise; the climb to the top is steep, so take your time."}, {"name": "Eiffel Tower", "country": "France", "continent": "Europe", "what": "A 330-metre iron tower in Paris, built in 1889 for the World's Fair and now the symbol of the city.", "best": "Spring and autumn evenings, when the light is soft and the queues are shorter.", "tip": "Book tickets online in advance — the ticket line at the tower is long."}, {"name": "Colosseum", "country": "Italy", "continent": "Europe", "what": "An arena in Rome opened in 80 CE, where gladiators fought and crowds of tens of thousands watched.", "best": "Spring and autumn mornings.", "tip": "Book a timed ticket and combine the visit with the Roman Forum next door."}, {"name": "Big Ben", "country": "United Kingdom", "continent": "Europe", "what": "The great bell of the Elizabeth Tower at the Palace of Westminster in London; the tower was completed in 1859.", "best": "Any time of year — it is best seen from outside.", "tip": "See it from Westminster Bridge at dusk, when the tower is lit."}, {"name": "Sagrada Familia", "country": "Spain", "continent": "Europe", "what": "A basilica in Barcelona designed by Antoni Gaudi, begun in 1882 and still being finished.", "best": "Morning, when sunlight fills the coloured windows.", "tip": "Book online; the towers need a separate ticket."}, {"name": "Acropolis", "country": "Greece", "continent": "Europe", "what": "A rocky hill in Athens topped by the Parthenon, built in the 5th century BCE as the centre of ancient Greek life.", "best": "Spring and autumn.", "tip": "Go early and wear good shoes — the marble paths are slippery."}, {"name": "Neuschwanstein Castle", "country": "Germany", "continent": "Europe", "what": "A 19th-century fairytale castle in Bavaria, built for King Ludwig II and the model for many storybook castles.", "best": "Late spring and autumn.", "tip": "Book tickets online and allow time for the steep walk up."}, {"name": "Pyramids of Giza", "country": "Egypt", "continent": "Africa", "what": "Three great pyramids built around 2560 BCE as tombs for pharaohs, including the Great Pyramid, the last surviving wonder of the ancient world.", "best": "November to February, when the desert is cooler.", "tip": "Go early and agree the price before any camel ride."}, {"name": "Victoria Falls", "country": "Zambia", "continent": "Africa", "what": "One of the largest waterfalls in the world, on the border of Zambia and Zimbabwe, known locally as Mosi-oa-Tunya, the smoke that thunders.", "best": "February to May, when the river is full.", "tip": "Bring a raincoat — the spray soaks you at the viewpoints."}, {"name": "Table Mountain", "country": "South Africa", "continent": "Africa", "what": "A flat-topped mountain above Cape Town, reached by cable car or by hiking trails.", "best": "November to March, the summer months.", "tip": "Check the wind first — the cable car stops in strong wind."}, {"name": "Statue of Liberty", "country": "United States", "continent": "North America", "what": "A gift from France in 1886, standing on Liberty Island in New York harbour as a symbol of freedom.", "best": "Spring and autumn.", "tip": "Book the ferry and crown tickets weeks ahead — they sell out."}, {"name": "Grand Canyon", "country": "United States", "continent": "North America", "what": "A vast canyon in Arizona carved by the Colorado River over millions of years, more than a mile deep in places.", "best": "Spring and autumn.", "tip": "The South Rim is open all year; stay back from the edge."}, {"name": "Chichen Itza", "country": "Mexico", "continent": "North America", "what": "A Maya city on the Yucatan peninsula, famous for the step pyramid El Castillo.", "best": "November to April, in the dry season.", "tip": "Go at opening time to beat the heat and the crowds."}, {"name": "Machu Picchu", "country": "Peru", "continent": "South America", "what": "A 15th-century Inca citadel high in the Andes, built of stone fitted without mortar.", "best": "May to September, the dry season.", "tip": "Book entry tickets and the train months ahead."}, {"name": "Christ the Redeemer", "country": "Brazil", "continent": "South America", "what": "A 38-metre statue of Christ with open arms above Rio de Janeiro, opened in 1931.", "best": "Morning, before the clouds gather.", "tip": "Check the weather — clouds can hide the view completely."}, {"name": "Iguazu Falls", "country": "Argentina", "continent": "South America", "what": "A huge system of waterfalls on the border of Argentina and Brazil, wider than Victoria Falls and taller than Niagara.", "best": "March to May.", "tip": "See both sides if you can — the Argentine side has the walkways, the Brazilian side has the wide view."}, {"name": "Sydney Opera House", "country": "Australia", "continent": "Oceania", "what": "A performing arts centre in Sydney Harbour, opened in 1973, famous for its sail-like roofs.", "best": "Any time of year.", "tip": "Walk around Circular Quay at sunset for the best photos."}, {"name": "Uluru", "country": "Australia", "continent": "Oceania", "what": "A giant sandstone rock rising from the desert in central Australia, sacred to the Anangu people.", "best": "May to September, the cooler months.", "tip": "Climbing is closed — sunrise and sunset give the best light and the best colours."}];
+function shuffleInPlace(arr, rand) {
+  for (var i = arr.length - 1; i > 0; i--) {
+    var j = Math.floor(rand() * (i + 1));
+    var t = arr[i];
+    arr[i] = arr[j];
+    arr[j] = t;
+  }
+  return arr;
+}
+function makeCountryOptions(correct, pool, rand) {
+  rand = rand || Math.random;
+  var values = pool.map(function (x) { return typeof x === "string" ? x : x.country; });
+  var others = [];
+  values.forEach(function (v) {
+    if (v !== correct && others.indexOf(v) < 0) { others.push(v); }
+  });
+  shuffleInPlace(others, rand);
+  var opts = others.slice(0, 3);
+  opts.push(correct);
+  shuffleInPlace(opts, rand);
+  return opts;
+}
+function buildLandmarkQuiz(pool, count, rand) {
+  rand = rand || Math.random;
+  var items = shuffleInPlace(pool.slice(), rand);
+  var countries = pool.map(function (l) { return l.country; });
+  return items.slice(0, Math.min(count, items.length)).map(function (l) {
+    return { landmark: l.name, country: l.country,
+             options: makeCountryOptions(l.country, countries, rand) };
+  });
+}
+function scoreQuiz(answers) {
+  var correct = 0;
+  answers.forEach(function (a) { if (a) { correct += 1; } });
+  return { correct: correct, total: answers.length };
+}
+var NP = { LANDMARKS: LANDMARKS, buildLandmarkQuiz: buildLandmarkQuiz,
+           makeCountryOptions: makeCountryOptions, scoreQuiz: scoreQuiz };
+if (typeof window !== "undefined") { window.NP = NP; }
+if (typeof document !== "undefined") {
+  (function () {
+    var CONTINENTS = ["Asia", "Europe", "Africa", "North America",
+                      "South America", "Oceania"];
+    var browse = document.getElementById("browse");
+    if (browse) {
+      var out = "";
+      CONTINENTS.forEach(function (cont) {
+        var list = LANDMARKS.filter(function (l) { return l.continent === cont; });
+        if (!list.length) { return; }
+        out += '<p class="q">' + cont + "</p>";
+        list.forEach(function (l) {
+          out += '<div class="card"><p class="q">' + l.name + "</p><p>"
+            + l.country + "</p><p>" + l.what + "</p><p>Best time: " + l.best
+            + "</p><p>Tip: " + l.tip + "</p></div>";
+        });
+      });
+      browse.innerHTML = out;
+    }
+    var BEST_KEY = "np-world-landmark-explorer-best";
+    var startBtn = document.getElementById("start-btn");
+    var nextBtn = document.getElementById("next-btn");
+    var copyBtn = document.getElementById("copy-btn");
+    var qText = document.getElementById("q-text");
+    var optionsBox = document.getElementById("options");
+    var feedback = document.getElementById("feedback");
+    var scoreBox = document.getElementById("score");
+    var bestBox = document.getElementById("best");
+    var questions = [];
+    var index = 0;
+    var answers = [];
+    function loadBest() {
+      try {
+        var v = window.localStorage.getItem(BEST_KEY);
+        return v ? parseInt(v, 10) : 0;
+      } catch (e) { return 0; }
+    }
+    function saveBest(n) {
+      try { window.localStorage.setItem(BEST_KEY, String(n)); } catch (e) {}
+    }
+    function showBest() {
+      var b = loadBest();
+      bestBox.textContent = b > 0 ? "Best score: " + b + " out of 10"
+                                  : "Best score: not set yet — take the quiz!";
+    }
+    showBest();
+    function showQuestion() {
+      var q = questions[index];
+      qText.textContent = "Which country is " + q.landmark + " in?";
+      feedback.textContent = "";
+      nextBtn.style.display = "none";
+      scoreBox.textContent = "Question " + (index + 1) + " of " + questions.length;
+      optionsBox.innerHTML = "";
+      q.options.forEach(function (opt) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "opt";
+        b.textContent = opt;
+        b.addEventListener("click", function () { answer(opt); });
+        optionsBox.appendChild(b);
+      });
+    }
+    function answer(picked) {
+      var q = questions[index];
+      var right = picked === q.country;
+      answers.push(right);
+      var btns = optionsBox.querySelectorAll("button");
+      btns.forEach(function (b) { b.disabled = true; });
+      feedback.textContent = right ? "Correct!"
+        : "Not quite — the answer is " + q.country + ".";
+      nextBtn.style.display = "block";
+    }
+    function finish() {
+      var result = scoreQuiz(answers);
+      qText.textContent = "Quiz finished — well done!";
+      optionsBox.innerHTML = "";
+      feedback.textContent = "";
+      nextBtn.style.display = "none";
+      scoreBox.textContent = "You scored " + result.correct + " out of "
+        + result.total + ".";
+      var best = loadBest();
+      if (result.correct > best) { saveBest(result.correct); best = result.correct; }
+      bestBox.textContent = "Best score: " + best + " out of 10";
+      copyBtn.style.display = "block";
+      startBtn.textContent = "Play again";
+      startBtn.style.display = "block";
+    }
+    startBtn.addEventListener("click", function () {
+      questions = buildLandmarkQuiz(LANDMARKS, 10);
+      index = 0;
+      answers = [];
+      copyBtn.style.display = "none";
+      startBtn.style.display = "none";
+      showQuestion();
+    });
+    nextBtn.addEventListener("click", function () {
+      index += 1;
+      if (index >= questions.length) { finish(); } else { showQuestion(); }
+    });
+    function fallbackCopy(text, done) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+    copyBtn.addEventListener("click", function () {
+      var result = scoreQuiz(answers);
+      var text = "I scored " + result.correct + " out of " + result.total
+        + " on the World Landmarks Quiz on Noryvello.";
+      function done() {
+        var old = copyBtn.textContent;
+        copyBtn.textContent = "Copied!";
+        setTimeout(function () { copyBtn.textContent = old; }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () {
+          fallbackCopy(text, done);
+        });
+      } else {
+        fallbackCopy(text, done);
+      }
+    });
+  })();
+}
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

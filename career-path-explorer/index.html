@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Career Path Explorer — Find the Right Career for You | Noryvello</title>
+<meta name="description" content="Explore career paths free — answer a few questions about what you like and are good at, and see careers that fit, with skills and first steps. No signup.">
+<link rel="canonical" href="https://noryvello.github.io/career-path-explorer/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Career Path Explorer — Find the Right Career for You">
+<meta property="og:description" content="Explore career paths free and find the right career for you.">
+<meta property="og:url" content="https://noryvello.github.io/career-path-explorer/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc textarea{width:100%;min-height:150px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+.calc input,.calc select{width:100%;min-height:72px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc button{display:block;width:100%;min-height:72px;margin-top:12px;padding:12px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#fff;color:#4338ca;border:2px solid #4338ca}
+.calc button.danger{background:#fff;color:#991b1b;border:2px solid #991b1b}
+.calc .out{font-size:17px;font-weight:400;margin-top:14px;white-space:pre-line}
+.calc .out b{font-weight:700}
+.calc .row{margin:10px 0}
+.calc .checkrow{display:flex;gap:12px;align-items:flex-start;margin:0;padding:14px 0;border-bottom:1px solid #e2e8f0;cursor:pointer}
+.calc .checkrow input{width:30px;height:30px;min-height:30px;flex:none;margin:0;accent-color:#4338ca}
+.calc .checkrow span{font-size:16px;line-height:1.5}
+table.data{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+table.data th,table.data td{border:1px solid #cbd5e1;padding:8px;text-align:left;vertical-align:top}
+table.data th{background:#eef2ff}
+.tag{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:700}
+.tag.ok{background:#dcfce7;color:#166534}
+.tag.bad{background:#fee2e2;color:#991b1b}
+.tag.mid{background:#fef3c7;color:#92400e}
+.cardline{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin:10px 0}
+.cardline b{font-size:16.5px}
+.small{font-size:14px;color:#64748b}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I choose a career?", "acceptedAnswer": {"@type": "Answer", "text": "Start with what you enjoy and what you are good at, then look at what each job is actually like day to day and how much study it needs. This explorer matches you with three paths to start from, but the real test is talking to people who do the job and, if you can, trying a day of it."}}, {"@type": "Question", "name": "What if I like more than one thing?", "acceptedAnswer": {"@type": "Answer", "text": "That is normal, and it is a strength, not a problem. Look for the overlap: someone who likes both words and people might suit teaching, marketing, or writing. Pick the option whose ordinary day appeals to you most, and remember you can change direction later."}}, {"@type": "Question", "name": "Do I need a degree for every good job?", "acceptedAnswer": {"@type": "Answer", "text": "No. Some careers need years of study, such as teaching or nursing, but many good jobs start with a short course or with learning on the job, such as driving, cooking, gardening, or writing. The explorer shows the study each match needs so you can choose honestly."}}, {"@type": "Question", "name": "Can I change careers later?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and many people do. Skills travel with you: a teacher who learns to write can move into training or content work, and a mechanic who learns about electric vehicles stays in demand. Changing direction is not starting over — it is building on what you already know."}}, {"@type": "Question", "name": "What is the first step?", "acceptedAnswer": {"@type": "Answer", "text": "Talk to one person who does the job, and ask what an ordinary day looks like. Then take the smallest real step the explorer suggests for that career — a free lesson, a visit, or a short course — and see how it feels before you commit to anything big."}}, {"@type": "Question", "name": "Is salary the most important thing?", "acceptedAnswer": {"@type": "Answer", "text": "It matters, but it is not the whole job. Hours, travel, the people you work with, and whether the work itself suits you all shape your life every day. A high salary in a job you dislike is a poor trade; a fair salary in work you enjoy is worth far more."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Career Path Explorer</h1>
+<p class="answer">Answer three short questions about what you enjoy, what you are good at, and how much study you can do, and this explorer matches you with three career paths that fit. Each match shows what the job is like day to day, the skills it needs, the study it takes, and the first step to take.</p>
+<div class="calc">
+<label for="ce-enjoy">What do you enjoy most?</label>
+<select id="ce-enjoy">
+<option value="people">Working with people</option>
+<option value="numbers">Working with numbers</option>
+<option value="machines">Working with machines</option>
+<option value="words">Working with words</option>
+<option value="outdoors">Working outdoors</option>
+</select>
+<label for="ce-skill">Your strongest skill</label>
+<select id="ce-skill">
+<option value="talking">Talking to people</option>
+<option value="numbers">Working with numbers</option>
+<option value="fixing">Fixing things</option>
+<option value="writing">Writing and explaining</option>
+<option value="organizing">Organizing things</option>
+<option value="helping">Helping people stay healthy</option>
+<option value="hands">Working with your hands</option>
+</select>
+<label for="ce-study">How much study can you do?</label>
+<select id="ce-study">
+<option value="0">I cannot study long — I need to start soon</option>
+<option value="1">I can do a short course (weeks or months)</option>
+<option value="2">I can study for a few years</option>
+</select>
+<button id="ce-match" type="button">Find my career paths</button>
+<div class="out" id="ce-out" style="display:none"></div>
+<button id="ce-copy" type="button" class="secondary" style="display:none" data-label="Copy my matches">Copy my matches</button>
+</div>
+<div class="warn">These matches are starting points, not a verdict on your future. The explorer only knows the three answers you give it, so treat the results as ideas to explore — talk to people who do the job before you decide.</div>
+<h2>How to use this explorer</h2>
+<p>Answer the three questions above: what you enjoy, your strongest skill, and how much study you can do. Then tap Find my career paths. The explorer compares your answers with twelve careers and shows the three best matches, in order.</p>
+<p>Each match tells you four things: what the job actually involves day to day, the skills it needs most, how much study it takes, and the first step you can take this week. Tap Copy my matches to keep the result as plain text. You can change any answer and tap again as many times as you like — nothing is saved, and nothing leaves your phone.</p>
+<p>The guide below covers all twelve careers in plain words, so you can read about any of them even if the explorer did not match it to you. A match is a suggestion, not a decision: the final choice is yours, and it is worth a slow look at the ordinary day of each job before you commit.</p>
+<h2>The questions, explained</h2>
+<p>The first question is about enjoyment: people, numbers, machines, words, or the outdoors. It matters because you spend most of your waking life at work. A job built around something you enjoy is easier to keep doing well for years; a job built around something you dislike wears you down even when the pay is fair. Enjoyment is not a luxury in career choice — it is the fuel.</p>
+<p>The second question is about your strongest skill. Building on a strength is faster and more satisfying than fixing a weakness from zero. If you are good with your hands, a trade may suit you better than a desk job; if you are good with words, teaching, writing, or marketing may fit. The explorer matches your strongest skill to the careers that use it every day.</p>
+<p>The third question is about study, and it is the honest one: how much time and money can you really give to learning right now? Some careers need years of study, others need a short course, and some you can start with practice alone. There is no wrong answer — only an honest one. A career that needs three years of study is a bad match for someone who needs to earn this month, no matter how interesting it sounds.</p>
+<h2>The 12 careers in detail</h2>
+<p><b>Teacher.</b> You plan lessons, explain ideas, and help learners grow, day after day. Needs patience, clear speech, and the ability to keep a room interested. Study takes a few years. First step: offer to help at a local class or tutor one learner for free.</p>
+<p><b>Nurse.</b> You care for sick and injured people, watch their condition, and give treatment under a doctor's guidance. Needs calm under pressure, kindness, and careful record-keeping. Study takes a few years. First step: talk to a working nurse about a real shift.</p>
+<p><b>Software developer.</b> You write and fix the programs that run phones, websites, and machines. Needs logical thinking, patience with problems, and steady learning, because the tools change often. A short course plus practice can get you started. First step: finish one free beginner coding lesson.</p>
+<p><b>Graphic designer.</b> You make posters, logos, pages, and images that communicate clearly and look good. Needs an eye for colour and layout, and the ability to listen to what a client actually wants. A short course plus a small portfolio can get you started. First step: redesign one real poster or menu for practice.</p>
+<p><b>Electrician.</b> You install and repair wiring, lights, and electrical systems in homes and buildings. Needs steady hands, safety discipline, and comfort working in many different places. A short course plus supervised practice is the usual path. First step: learn the basic safety rules and watch a qualified electrician at work.</p>
+<p><b>Driver.</b> You move people or goods safely from place to place, on time, in all weather. Needs focus, patience in traffic, and a good sense of direction. No long study is needed, but a proper licence is. First step: check the licence rules where you live and the cost of training.</p>
+<p><b>Accountant.</b> You keep financial records straight, prepare accounts, and help a business or person understand their money. Needs care with numbers, honesty, and comfort with routine work done exactly. Study takes a few years. First step: learn how a simple household budget is kept, then try a free bookkeeping lesson.</p>
+<p><b>Digital marketer.</b> You help a business reach customers online through posts, pages, and messages. Needs clear writing, a sense of what people respond to, and comfort with numbers like views and clicks. A short course plus practice can get you started. First step: plan one week of posts for a small shop you know.</p>
+<p><b>Mechanic.</b> You find and fix what is wrong with cars, bikes, or machines, and keep them running well. Needs a practical mind, strong hands, and the patience to find a fault instead of guessing. A short course plus workshop practice is the usual path. First step: learn to do one basic service job properly, such as an oil change.</p>
+<p><b>Writer.</b> You write articles, stories, instructions, or messages that people can follow and enjoy. Needs a love of words, the discipline to write every day, and the ability to rewrite without taking it personally. No long study is needed, but steady practice is. First step: write one short piece every day for two weeks.</p>
+<p><b>Chef.</b> You prepare food people enjoy, in a kitchen that runs on timing, heat, and teamwork. Needs stamina, a good memory for orders, and calm when the kitchen is busy. No long study is needed, but kitchen experience is. First step: cook one full meal for family or friends, on time, from start to finish.</p>
+<p><b>Gardener.</b> You grow and care for plants, trees, and green spaces, outdoors in all seasons. Needs physical stamina, patience, and a willingness to learn how plants actually grow. No long study is needed. First step: grow one vegetable or flower from seed and keep it alive to harvest or bloom.</p>
+<h2>Picking between two good options</h2>
+<p>When two careers both look good, compare the ordinary day, not the best day. Every job has great moments; the question is whether you can enjoy, or at least accept, the normal Tuesday. Talk to someone who does each job and ask what a normal day looks like from start to finish. Then compare the study each one needs: the time, the cost, and how soon you can start earning. Compare the working conditions too: indoors or outdoors, alone or with people, fixed hours or shifts. If you still cannot choose, try the smallest real step for each one — a free lesson, a visit, a day of helping — and notice which one you want to do again. And remember that choosing one now does not lock the other away forever. Many people move between related careers, and the skills you build in one will help you in the next.</p>
+<h2>A worked example: a student who likes fixing things</h2>
+<p>Take a student who enjoys machines, whose strongest skill is fixing things, and who can manage a short course but not years of study. The explorer matches three careers. First, electrician: the work is hands-on, the study is a short course plus supervised practice, and the first step is learning the safety rules and watching a qualified electrician. Second, mechanic: the work is finding faults and fixing them, the study is a short course plus workshop practice, and the first step is learning one basic service job properly. Third, software developer: the work is fixing problems too, but in code rather than in machines, and a short course plus practice can get you started.</p>
+<p>The student now has three real options to compare, not one vague idea. If working outdoors and with your hands matters most, electrician or mechanic wins. If working indoors with a screen appeals, developer is worth a try. The next step is the same for all three: talk to one person doing the job, and take the smallest first step the explorer suggests. In a week, the student will know far more than any quiz can tell them.</p>
+<h2>Common mistakes</h2>
+<p>The first mistake is picking only by salary. Pay matters, but a high salary in work you dislike is a poor trade, and the salary figures you see online are often from another city or another kind of employer. The second mistake is ignoring what the day looks like: a job title can sound exciting while the daily work is mostly routine, and the reverse is true too. The third mistake is copying a friend's choice. Your friend's strengths, situation, and study time are not yours, and a career that fits them may not fit you.</p>
+<p>The fourth mistake is waiting for a perfect answer. There is rarely one right career and eleven wrong ones; there are usually several good fits, and the best way to tell them apart is to try something small. The fifth mistake is thinking one choice lasts forever. Careers change, industries change, and people change — a choice you make now is a starting point, not a life sentence. Pick the best fit you can see today, take the first step, and keep learning as you go.</p>
+<h2>What this explorer cannot do</h2>
+<p>This explorer only knows the three answers you give it. It cannot measure your talent, your health, your family situation, or the jobs actually available near you. It cannot predict which industries will grow or shrink, and it cannot tell you what you will enjoy in five years. The twelve careers here are a starting set, not the whole world of work — there are hundreds of jobs this page does not cover.</p>
+<p>Use the matches as ideas to explore, not as a verdict. The real test of a career is a conversation with someone who does it and a small taste of the work itself. If none of the three matches excites you, read the full list of twelve in the guide above, or change your answers and try again. The explorer is here to open doors, not to close them.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How do I choose a career?</h3><p>Start with what you enjoy and what you are good at, then look at what each job is actually like day to day and how much study it needs. This explorer matches you with three paths to start from, but the real test is talking to people who do the job and, if you can, trying a day of it.</p></div>
+<div class="faq"><h3>What if I like more than one thing?</h3><p>That is normal, and it is a strength, not a problem. Look for the overlap: someone who likes both words and people might suit teaching, marketing, or writing. Pick the option whose ordinary day appeals to you most, and remember you can change direction later.</p></div>
+<div class="faq"><h3>Do I need a degree for every good job?</h3><p>No. Some careers need years of study, such as teaching or nursing, but many good jobs start with a short course or with learning on the job, such as driving, cooking, gardening, or writing. The explorer shows the study each match needs so you can choose honestly.</p></div>
+<div class="faq"><h3>Can I change careers later?</h3><p>Yes, and many people do. Skills travel with you: a teacher who learns to write can move into training or content work, and a mechanic who learns about electric vehicles stays in demand. Changing direction is not starting over — it is building on what you already know.</p></div>
+<div class="faq"><h3>What is the first step?</h3><p>Talk to one person who does the job, and ask what an ordinary day looks like. Then take the smallest real step the explorer suggests for that career — a free lesson, a visit, or a short course — and see how it feels before you commit to anything big.</p></div>
+<div class="faq"><h3>Is salary the most important thing?</h3><p>It matters, but it is not the whole job. Hours, travel, the people you work with, and whether the work itself suits you all shape your life every day. A high salary in a job you dislike is a poor trade; a fair salary in work you enjoy is worth far more.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/skill-gap-analyzer/">Skill Gap Analyzer</a> · <a href="https://noryvello.github.io/job-description-analyzer/">Job Description Analyzer</a> · <a href="https://noryvello.github.io/salary-comparison-portal/">Salary Comparison Portal</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function copyText(text, btn){
+  function done(){ if(btn){ var old=btn.getAttribute('data-label')||btn.textContent; btn.textContent='Copied!'; setTimeout(function(){ btn.textContent=old; },2000); } }
+  function fallback(){
+    var ta=document.createElement('textarea');
+    ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta); done();
+  }
+  if (typeof navigator!=='undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else { fallback(); }
+}
+function show(el){ if(el) el.style.display='block'; }
+
+var CAREERS = [
+  {name:'Teacher', day:'Plan lessons, explain ideas, and help learners grow, day after day.', skills:'Patience, clear speech, keeping a room interested.', study:'A few years of study.', first:'Offer to help at a local class or tutor one learner for free.', enjoy:['people','words'], skill:['talking','writing','helping'], studyLevel:2},
+  {name:'Nurse', day:'Care for sick and injured people, watch their condition, and give treatment under a doctor\'s guidance.', skills:'Calm under pressure, kindness, careful record-keeping.', study:'A few years of study.', first:'Talk to a working nurse about a real shift.', enjoy:['people'], skill:['helping','talking'], studyLevel:2},
+  {name:'Software Developer', day:'Write and fix the programs that run phones, websites, and machines.', skills:'Logical thinking, patience with problems, steady learning.', study:'A short course plus practice can get you started.', first:'Finish one free beginner coding lesson.', enjoy:['numbers','machines'], skill:['numbers'], studyLevel:1},
+  {name:'Graphic Designer', day:'Make posters, logos, pages, and images that communicate clearly and look good.', skills:'An eye for colour and layout, listening to what a client wants.', study:'A short course plus a small portfolio can get you started.', first:'Redesign one real poster or menu for practice.', enjoy:['words','people'], skill:['writing','hands'], studyLevel:1},
+  {name:'Electrician', day:'Install and repair wiring, lights, and electrical systems in homes and buildings.', skills:'Steady hands, safety discipline, comfort working in many places.', study:'A short course plus supervised practice.', first:'Learn the basic safety rules and watch a qualified electrician at work.', enjoy:['machines','outdoors'], skill:['fixing','hands'], studyLevel:1},
+  {name:'Driver', day:'Move people or goods safely from place to place, on time, in all weather.', skills:'Focus, patience in traffic, a good sense of direction.', study:'No long study — a proper licence is needed.', first:'Check the licence rules where you live and the cost of training.', enjoy:['outdoors','machines'], skill:['hands'], studyLevel:0},
+  {name:'Accountant', day:'Keep financial records straight, prepare accounts, and help a business understand its money.', skills:'Care with numbers, honesty, comfort with exact routine work.', study:'A few years of study.', first:'Learn how a simple household budget is kept, then try a free bookkeeping lesson.', enjoy:['numbers'], skill:['numbers','organizing'], studyLevel:2},
+  {name:'Digital Marketer', day:'Help a business reach customers online through posts, pages, and messages.', skills:'Clear writing, a sense of what people respond to, comfort with numbers.', study:'A short course plus practice can get you started.', first:'Plan one week of posts for a small shop you know.', enjoy:['people','words'], skill:['talking','writing','organizing'], studyLevel:1},
+  {name:'Mechanic', day:'Find and fix what is wrong with cars, bikes, or machines, and keep them running well.', skills:'A practical mind, strong hands, patience to find a fault.', study:'A short course plus workshop practice.', first:'Learn to do one basic service job properly, such as an oil change.', enjoy:['machines'], skill:['fixing','hands'], studyLevel:1},
+  {name:'Writer', day:'Write articles, stories, instructions, or messages that people can follow and enjoy.', skills:'A love of words, the discipline to write every day, the ability to rewrite.', study:'No long study — steady practice is what matters.', first:'Write one short piece every day for two weeks.', enjoy:['words'], skill:['writing'], studyLevel:0},
+  {name:'Chef', day:'Prepare food people enjoy, in a kitchen that runs on timing, heat, and teamwork.', skills:'Stamina, a good memory for orders, calm when the kitchen is busy.', study:'No long study — kitchen experience is what matters.', first:'Cook one full meal for family or friends, on time, from start to finish.', enjoy:['people','outdoors'], skill:['hands','organizing'], studyLevel:0},
+  {name:'Gardener', day:'Grow and care for plants, trees, and green spaces, outdoors in all seasons.', skills:'Physical stamina, patience, willingness to learn how plants grow.', study:'No long study is needed.', first:'Grow one vegetable or flower from seed and keep it alive to harvest or bloom.', enjoy:['outdoors'], skill:['hands'], studyLevel:0}
+];
+function matchCareers(enjoy, skill, studyCap){
+  studyCap = Number(studyCap);
+  var scored = CAREERS.map(function(c, i){
+    var s = 0;
+    if (c.enjoy.indexOf(enjoy) >= 0) s += 3;
+    if (c.skill.indexOf(skill) >= 0) s += 2;
+    s += (c.studyLevel <= studyCap) ? 2 : -2;
+    return {career: c, score: s, order: i};
+  });
+  scored.sort(function(a, b){ return (b.score - a.score) || (a.order - b.order); });
+  return scored.slice(0, 3).map(function(x){ return x.career; });
+}
+window.NP = { matchCareers: matchCareers, CAREERS: CAREERS };
+if (typeof document !== 'undefined' && document.querySelector('.calc')) {
+  var lastText = '';
+  document.getElementById('ce-match').addEventListener('click', function(){
+    var matches = matchCareers(
+      document.getElementById('ce-enjoy').value,
+      document.getElementById('ce-skill').value,
+      document.getElementById('ce-study').value);
+    var h = '<b>Your 3 matched career paths</b>\n';
+    var plain = 'My 3 matched career paths\n';
+    matches.forEach(function(c, i){
+      h += '\n<b>' + (i + 1) + '. ' + esc(c.name) + '</b>\nDay to day: ' + esc(c.day) + '\nSkills needed: ' + esc(c.skills) + '\nStudy: ' + esc(c.study) + '\nFirst step: ' + esc(c.first) + '\n';
+      plain += '\n' + (i + 1) + '. ' + c.name + '\nDay to day: ' + c.day + '\nSkills needed: ' + c.skills + '\nStudy: ' + c.study + '\nFirst step: ' + c.first + '\n';
+    });
+    h += '\n<span class="small">Matches are starting points. Talk to someone who does the job before you decide.</span>';
+    lastText = plain;
+    var out = document.getElementById('ce-out');
+    out.innerHTML = h;
+    show(out);
+    show(document.getElementById('ce-copy'));
+  });
+  document.getElementById('ce-copy').addEventListener('click', function(){
+    copyText(lastText, document.getElementById('ce-copy'));
+  });
+}
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

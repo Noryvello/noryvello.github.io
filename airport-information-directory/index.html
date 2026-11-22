@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Airport Information Directory — Airports Around the World, Explained | Noryvello</title>
+<meta name="description" content="Airport information free — codes, terminals, transport and what to expect at major airports around the world. No signup.">
+<link rel="canonical" href="https://noryvello.github.io/airport-information-directory/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Airport Information Directory — Airports Around the World, Explained">
+<meta property="og:description" content="A searchable directory of thirty major airports, with codes, transport options and plain-words guides to flying.">
+<meta property="og:url" content="https://noryvello.github.io/airport-information-directory/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is an IATA code?", "acceptedAnswer": {"@type": "Answer", "text": "An IATA code is a three-letter code that identifies an airport. Dhaka is DAC, London Heathrow is LHR and Singapore Changi is SIN. You will see the code on your ticket, your boarding pass and your luggage tag."}}, {"@type": "Question", "name": "How early should I arrive?", "acceptedAnswer": {"@type": "Answer", "text": "A common rule of thumb is two hours before a domestic flight and three hours before an international one. Check-in and bag drop close before departure, and security queues can be long, so arriving early is safer than cutting it close."}}, {"@type": "Question", "name": "What is a layover?", "acceptedAnswer": {"@type": "Answer", "text": "A layover is the waiting time between two flights on one journey, spent at an airport in between. Short layovers mean staying in the airport, while a long one may give you time to rest, eat or, if the rules allow, leave the airport and come back."}}, {"@type": "Question", "name": "How do I get from the airport to the city?", "acceptedAnswer": {"@type": "Answer", "text": "Use the table above to see the usual options for your airport, such as a train, a metro line, a bus, a taxi or an app cab. Trains are often the fastest in big cities, while a taxi or app cab is simpler if you have heavy bags. Check the airport's own site before you travel, because services change."}}, {"@type": "Question", "name": "What if my flight is delayed?", "acceptedAnswer": {"@type": "Answer", "text": "Check the departure boards and your airline's announcements for the new time, and keep your phone charged so you can receive updates. If you have a connecting flight, tell the airline staff as soon as you can, because they can rebook you. This page does not show live flight status, so use the airport or airline information for the latest news."}}, {"@type": "Question", "name": "Which airport do I fly from?", "acceptedAnswer": {"@type": "Answer", "text": "Check the three-letter code on your ticket and match it in the table above. Several cities have more than one airport: Bangkok has BKK and DMK, Tokyo has HND and NRT, London has LHR and LGW, and Paris has CDG and ORY. Going to the wrong airport is one of the most common travel mistakes."}}]}</script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;min-height:72px;margin-top:14px;padding:16px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#e0e7ff;color:#1e293b}
+.calc input,.calc select{min-height:72px;font-size:17px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;min-height:120px;font-family:inherit}
+.tscroll{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef2ff}
+.opt{display:block;width:100%;text-align:left;margin:8px 0}
+.q{font-size:18px;font-weight:700;margin:12px 0}
+.small{font-size:14px;color:#64748b}
+.card{border:1px solid #cbd5e1;border-radius:12px;padding:12px 14px;margin:10px 0;background:rgba(255,255,255,.6)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Airport Information Directory</h1>
+<p class="answer">Find the airport you need: its city, its full name, its three-letter code and how to get from the airport into the city. Search by city, airport name or code, and copy the results to keep with your travel notes. The directory covers thirty major airports around the world, with plain-words guides to codes, arrival times and layovers.</p>
+<div class="calc">
+<label for="q">Search by city, airport or code</label>
+<input id="q" type="text" placeholder="Type a city, airport or code">
+<p class="out" id="count">Showing 30 of 30 airports</p>
+<button id="copy-btn" type="button">Copy shown airports</button>
+</div>
+<div class="tscroll"><table>
+<thead><tr><th>City</th><th>Airport</th><th>IATA code</th><th>Getting to the city</th></tr></thead>
+<tbody id="rows"></tbody>
+</table></div>
+<div class="warn">Airport transport changes: train lines close for work, bus routes change and timetables move. Check the airport's own site before you travel.</div>
+<h2>How to use the directory</h2>
+<p>Type in the search box to find an airport. You can search by city, by airport name or by its three-letter code: typing Dubai, Changi or SIN all work, and the table narrows as you type. The line under the search box tells you how many airports match, so you can see at a glance whether you need to narrow your search.</p>
+<p>When the list shows what you need, press the copy button to copy the shown airports as plain text, ready to paste into your travel notes or a message. The copy button copies exactly what the table shows, so search first and copy second if you only need one city.</p>
+<p>Pay special attention to cities with more than one airport. Bangkok has two, Suvarnabhumi (BKK) and Don Mueang (DMK). Tokyo has two, Haneda (HND) and Narita (NRT). London has Heathrow (LHR) and Gatwick (LGW), Paris has Charles de Gaulle (CDG) and Orly (ORY), and New York has Kennedy (JFK) and LaGuardia (LGA). The code on your ticket tells you which one you need, and the table shows both so you can compare them.</p>
+<p>The transport column is the part travellers use most. Before you book a flight, check how you will get from the airport into the city: an airport with a fast train can be quicker to reach than a closer airport with only a bus. The table lists the usual options for each airport, so you can compare them side by side before you decide. The directory works in your browser on a phone or a computer, with no sign-up and nothing to install.</p>
+<h2>The airport table — what each column means</h2>
+<p>The table has four columns. City is the city the airport serves, which is not always the city the airport sits in: some airports are named after a nearby city but sit outside it, and a few serve a whole region. Airport is the full name of the airport, which is what you will see on signs and on your booking.</p>
+<p>IATA code is the three-letter code that identifies the airport, the code that appears on your ticket, your boarding pass and your luggage tag. It is the fastest way to be sure you are talking about the right airport, because names can be similar and cities can have more than one. A few airports in the table share a city, and a few cities share an airport name with another place, which is why the code column matters so much. The code is unique: no two airports in the world share the same IATA code. If you remember nothing else about your booking, remember the three letters, and check them against the table before you leave home.</p>
+<p>Getting to the city lists the usual ways to travel between the airport and the city centre: a train, a metro line, a bus, a taxi or an app cab. The list is a starting point, not a timetable: it tells you what kind of transport exists, so you can plan, but times, prices and routes change, so check the airport's own site before you travel. Trains and metro lines are usually the fastest in big cities, especially in rush hour, while a taxi or an app cab is simpler when you have heavy bags or you arrive late at night.</p>
+<h2>Airport codes explained — why Dhaka is DAC</h2>
+<p>Every airport in the world has a three-letter IATA code, and the codes follow a few simple patterns once you know them. Many codes come straight from the city name: SIN for Singapore, DEL for Delhi, FRA for Frankfurt, AMS for Amsterdam.</p>
+<p>Dhaka is DAC because the city's name used to be spelled Dacca, and the code kept the old spelling even after the spelling changed. Mumbai is BOM for the same reason: the city used to be called Bombay. Some codes come from the airport's name rather than the city: New York's Kennedy airport is JFK after John F. Kennedy, and Paris Charles de Gaulle is CDG.</p>
+<p>Some codes look strange because the obvious letters were already taken. Los Angeles is LAX: LA came from the city name and the X was added to make three letters. Toronto Pearson is YYZ, which looks like nothing at all: Canadian airport codes traditionally start with Y, and YYZ was built from the letters of a nearby radio station. Codes rarely change, even when a city renames itself or an airport gets a new name, which is why they are so useful: the code on your ticket is the same code the airline, the airport and your luggage tag all use. When two airports serve one city, the code is the only sure way to tell them apart.</p>
+<h2>Getting to and from the airport</h2>
+<p>The journey between the airport and the city is part of the trip, and it is worth planning before you land. Many large airports have a dedicated train: the Airport Express in Hong Kong, the Airport Rail Link in Bangkok, the KLIA Ekspres in Kuala Lumpur, the Heathrow Express in London, the Leonardo Express in Rome and the UP Express in Toronto. These trains are usually the fastest way into the city because they skip the traffic.</p>
+<p>Other airports are served by the city's metro or suburban train, such as the MRT in Singapore, the Dubai Metro, the RER in Paris or the S-Bahn in Frankfurt. Buses run from almost every airport and are usually the cheapest option, though they are slower and can be caught in traffic. Taxis and app cabs are available everywhere and are the simplest choice with heavy bags, late at night, or when you are travelling with children.</p>
+<p>Whichever you choose, allow extra time in rush hour, check when the last train or bus leaves, and keep the airport's name and code handy to show the driver. If your flight lands late, check in advance whether public transport still runs: in some cities the trains stop before midnight, and a taxi becomes the only option.</p>
+<p>If you are travelling with a group, compare the total cost: a taxi for four people can cost less than four train tickets, and it takes you door to door. If you are travelling alone with one bag, the train is usually the better choice. In cities where the airport train is expensive, the ordinary metro or bus that serves the airport can be much cheaper, though slower, so the transport column is only the start of the decision.</p>
+<h2>Arriving on time — and what to do on a layover</h2>
+<p>Airlines commonly suggest arriving two hours before a domestic flight and three hours before an international one, and that is a good rule of thumb for most travellers. Check-in and bag drop close before departure, and security queues can be long at busy times, so arriving early is safer than cutting it close. If you have checked bags, are travelling with children, or are flying from an airport you do not know, add extra time. Online check-in saves time at the airport, but you still need to allow for bag drop and security.</p>
+<p>A layover is the waiting time between two flights on one journey. On a short layover, stay in the airport, follow the signs for transfers, and check the departure board for your gate as soon as you land. On a long layover of several hours, you have time to eat, rest, walk around, and charge your phone. Some airports offer rest areas, showers and even short tours of the city, while others are small and quiet, so what you can do depends on the airport.</p>
+<p>Before you leave the airport on a long layover, check whether you need a visa to enter the country, whether you must collect your bags, and what time you must be back for your next flight. If your layover is overnight, check whether the airport stays open all night: some airports close, and you will need a hotel. If your connecting flight is with a different airline, ask at check-in whether your bags are checked through to your final destination, because on separate bookings you may need to collect them and check in again. Keep your passport and your onward boarding pass with you at all times during a layover, not in a bag you leave behind.</p>
+<h2>Common mistakes — the wrong airport and the late arrival</h2>
+<p>The most expensive mistake in air travel is going to the wrong airport. It happens most often in cities with two airports: a traveller books a flight from Don Mueang and goes to Suvarnabhumi, or books from Haneda and goes to Narita, and the two airports can be an hour or more apart. Always match the three-letter code on your ticket with the airport you are heading to, and say the code, not just the city, when you book a taxi.</p>
+<p>The second mistake is arriving too late. Check-in closes before the departure time, not at it, and a long security queue can eat the time you thought you had. The third mistake is trusting your memory for transport. Bus routes change, train lines close for engineering work, and a service that ran last year may not run today, so check the airport's own site before you travel.</p>
+<p>The fourth mistake is forgetting the terminal: large airports have several terminals, and the wrong terminal can mean a long walk or a shuttle ride. Your booking usually names the terminal, so check it before you leave home. A fifth mistake is forgetting to check the date and time on your ticket in the local time of the departure city, not your home time. A flight that leaves at 1 in the morning is easy to misread as the night before, and travellers have missed flights by turning up a day late. Read the date, the time and the airport code together, every time you book.</p>
+<h2>What this page cannot do</h2>
+<p>This directory tells you which airport serves which city, what its code is, and how people usually travel between the airport and the city. It does not show live flight times, delays or gate numbers, and it cannot book a ticket or check you in. It does not list fares, because prices change constantly, and it does not promise that a particular train or bus will be running on the day you travel: transport changes, so check the airport's own site before you go.</p>
+<p>Terminal information also changes as airports rebuild, so confirm your terminal on your booking. It also covers thirty major airports, not every airport in the world. Smaller airports and domestic-only airports are not listed, so for those, check the airport's own site or your airline's information.</p>
+<p>The guides on this page are general advice for ordinary travel, not rules for your particular flight: your airline and your booking always have the final word. What the page does well is the simple job: a searchable table of thirty major airports with their codes and transport options, plus plain-words guides to reading your booking, arriving on time and handling a layover, free to use with no sign-up.</p>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>What is an IATA code?</h3>
+<p>An IATA code is a three-letter code that identifies an airport. Dhaka is DAC, London Heathrow is LHR and Singapore Changi is SIN. You will see the code on your ticket, your boarding pass and your luggage tag.</p>
+</div>
+<div class="faq">
+<h3>How early should I arrive?</h3>
+<p>A common rule of thumb is two hours before a domestic flight and three hours before an international one. Check-in and bag drop close before departure, and security queues can be long, so arriving early is safer than cutting it close.</p>
+</div>
+<div class="faq">
+<h3>What is a layover?</h3>
+<p>A layover is the waiting time between two flights on one journey, spent at an airport in between. Short layovers mean staying in the airport, while a long one may give you time to rest, eat or, if the rules allow, leave the airport and come back.</p>
+</div>
+<div class="faq">
+<h3>How do I get from the airport to the city?</h3>
+<p>Use the table above to see the usual options for your airport, such as a train, a metro line, a bus, a taxi or an app cab. Trains are often the fastest in big cities, while a taxi or app cab is simpler if you have heavy bags. Check the airport's own site before you travel, because services change.</p>
+</div>
+<div class="faq">
+<h3>What if my flight is delayed?</h3>
+<p>Check the departure boards and your airline's announcements for the new time, and keep your phone charged so you can receive updates. If you have a connecting flight, tell the airline staff as soon as you can, because they can rebook you. This page does not show live flight status, so use the airport or airline information for the latest news.</p>
+</div>
+<div class="faq">
+<h3>Which airport do I fly from?</h3>
+<p>Check the three-letter code on your ticket and match it in the table above. Several cities have more than one airport: Bangkok has BKK and DMK, Tokyo has HND and NRT, London has LHR and LGW, and Paris has CDG and ORY. Going to the wrong airport is one of the most common travel mistakes.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/travel-visa-information-directory/">Travel Visa Information Directory</a> · <a href="https://noryvello.github.io/country-information-directory/">Country Information Directory</a> · <a href="https://noryvello.github.io/public-transport-route-planner/">Public Transport Route Planner</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+window.NP = (function () {
+var AIRPORTS = [{"city": "Dhaka", "iata": "DAC", "name": "Hazrat Shahjalal International Airport", "transport": "Taxi, ride-hailing app or airport bus into the city."}, {"city": "Chittagong", "iata": "CGP", "name": "Shah Amanat International Airport", "transport": "Taxi or auto-rickshaw into the city."}, {"city": "Kolkata", "iata": "CCU", "name": "Netaji Subhas Chandra Bose International Airport", "transport": "Taxi, app cab or airport bus."}, {"city": "Delhi", "iata": "DEL", "name": "Indira Gandhi International Airport", "transport": "Airport Express metro, taxi or bus."}, {"city": "Mumbai", "iata": "BOM", "name": "Chhatrapati Shivaji Maharaj International Airport", "transport": "Taxi, app cab or bus."}, {"city": "Bangkok", "iata": "BKK", "name": "Suvarnabhumi Airport", "transport": "Airport Rail Link train, taxi or bus."}, {"city": "Bangkok", "iata": "DMK", "name": "Don Mueang International Airport", "transport": "Train, taxi or bus."}, {"city": "Singapore", "iata": "SIN", "name": "Singapore Changi Airport", "transport": "MRT train, taxi or bus."}, {"city": "Kuala Lumpur", "iata": "KUL", "name": "Kuala Lumpur International Airport", "transport": "KLIA Ekspres train, taxi or bus."}, {"city": "Jakarta", "iata": "CGK", "name": "Soekarno-Hatta International Airport", "transport": "Airport train, taxi or bus."}, {"city": "Hong Kong", "iata": "HKG", "name": "Hong Kong International Airport", "transport": "Airport Express train, taxi or bus."}, {"city": "Tokyo", "iata": "HND", "name": "Tokyo Haneda Airport", "transport": "Tokyo Monorail, Keikyu Line train, taxi or bus."}, {"city": "Tokyo", "iata": "NRT", "name": "Narita International Airport", "transport": "Narita Express or Access Express train, or bus."}, {"city": "Sydney", "iata": "SYD", "name": "Sydney Airport", "transport": "Airport Link train, taxi or bus."}, {"city": "Dubai", "iata": "DXB", "name": "Dubai International Airport", "transport": "Dubai Metro Red Line, taxi or bus."}, {"city": "Abu Dhabi", "iata": "AUH", "name": "Zayed International Airport", "transport": "Taxi or bus."}, {"city": "Doha", "iata": "DOH", "name": "Hamad International Airport", "transport": "Doha Metro Red Line, taxi or bus."}, {"city": "Jeddah", "iata": "JED", "name": "King Abdulaziz International Airport", "transport": "Haramain train, taxi or bus."}, {"city": "Istanbul", "iata": "IST", "name": "Istanbul Airport", "transport": "Metro, bus or taxi."}, {"city": "London", "iata": "LHR", "name": "London Heathrow Airport", "transport": "Heathrow Express, Elizabeth line, Tube or taxi."}, {"city": "London", "iata": "LGW", "name": "London Gatwick Airport", "transport": "Gatwick Express, Thameslink train or taxi."}, {"city": "Paris", "iata": "CDG", "name": "Paris Charles de Gaulle Airport", "transport": "RER B train, taxi or bus."}, {"city": "Paris", "iata": "ORY", "name": "Paris Orly Airport", "transport": "Metro line 14, bus or taxi."}, {"city": "Frankfurt", "iata": "FRA", "name": "Frankfurt Airport", "transport": "S-Bahn or regional train, or taxi."}, {"city": "Amsterdam", "iata": "AMS", "name": "Amsterdam Airport Schiphol", "transport": "Train to Amsterdam Centraal, taxi or bus."}, {"city": "Rome", "iata": "FCO", "name": "Leonardo da Vinci-Fiumicino Airport", "transport": "Leonardo Express train, taxi or bus."}, {"city": "New York", "iata": "JFK", "name": "John F. Kennedy International Airport", "transport": "AirTrain plus subway, or taxi."}, {"city": "New York", "iata": "LGA", "name": "LaGuardia Airport", "transport": "Bus plus subway, or taxi."}, {"city": "Los Angeles", "iata": "LAX", "name": "Los Angeles International Airport", "transport": "Taxi, app cab, bus or shuttle to the Metro."}, {"city": "Toronto", "iata": "YYZ", "name": "Toronto Pearson International Airport", "transport": "UP Express train, taxi or bus."}];
+function norm(s) { return String(s == null ? "" : s).toLowerCase(); }
+function filterAirports(query) {
+  var q = norm(query).trim();
+  if (!q) return AIRPORTS.slice();
+  return AIRPORTS.filter(function (x) {
+    return norm(x.city).indexOf(q) >= 0 || norm(x.name).indexOf(q) >= 0 || norm(x.iata).indexOf(q) >= 0;
+  });
+}
+function getAirport(iata) {
+  var q = norm(iata).trim();
+  for (var i = 0; i < AIRPORTS.length; i++) { if (norm(AIRPORTS[i].iata) === q) return AIRPORTS[i]; }
+  return null;
+}
+function airportsText(list) {
+  return list.map(function (x) {
+    return x.city + " \u2014 " + x.name + " (" + x.iata + "); Getting to the city: " + x.transport;
+  }).join("\n");
+}
+return { AIRPORTS: AIRPORTS, filterAirports: filterAirports, getAirport: getAirport, airportsText: airportsText };
+})();
+if (typeof document !== "undefined") {
+  var NP = window.NP;
+  var tbody = document.getElementById("rows");
+  var countEl = document.getElementById("count");
+  var qEl = document.getElementById("q");
+  var copyBtn = document.getElementById("copy-btn");
+  var shown = NP.AIRPORTS;
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function render() {
+    var list = NP.filterAirports(qEl.value);
+    shown = list;
+    countEl.textContent = "Showing " + list.length + " of " + NP.AIRPORTS.length + " airports";
+    var html = "";
+    for (var i = 0; i < list.length; i++) {
+      var a = list[i];
+      html += "<tr><td>" + esc(a.city) + "</td><td>" + esc(a.name) + "</td><td>" + esc(a.iata) + "</td><td>" + esc(a.transport) + "</td></tr>";
+    }
+    tbody.innerHTML = html;
+  }
+  function copyShown() {
+    var text = NP.airportsText(shown);
+    function done() {
+      copyBtn.textContent = "Copied!";
+      setTimeout(function () { copyBtn.textContent = "Copy shown airports"; }, 2000);
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+    if (typeof navigator !== "undefined" && navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  }
+  qEl.addEventListener("input", render);
+  copyBtn.addEventListener("click", copyShown);
+  render();
+}
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

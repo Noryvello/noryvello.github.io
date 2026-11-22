@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Public Statistics Explorer — Find Real Numbers About the World | Noryvello</title>
+<meta name="description" content="Free public statistics explorer — find trusted statistics on population, health, education, economy and more. No signup, phone friendly.">
+<link rel="canonical" href="https://noryvello.github.io/public-statistics-explorer/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Public Statistics Explorer — Find Real Numbers About the World">
+<meta property="og:description" content="A curated explorer of 33 official statistics sources on population, health, education, economy and more, with links and a guide to reading numbers honestly.">
+<meta property="og:url" content="https://noryvello.github.io/public-statistics-explorer/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;min-height:72px;margin-top:14px;padding:12px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#fff;color:#4338ca;border:2px solid #4338ca}
+.calc input,.calc select{min-height:72px}
+.calc textarea{width:100%;min-height:72px;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:15px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef2ff}
+.tscroll{overflow-x:auto;margin:14px 0}
+.tscroll table{min-width:640px}
+.q{font-size:18px;font-weight:700;margin:12px 0 4px}
+.opt{display:block;width:100%;text-align:left;margin:8px 0}
+.small{font-size:14px;color:#64748b}
+.feedback{font-size:15px;margin:6px 0 14px;padding:10px 12px;border-radius:8px;background:#f1f5f9}
+.feedback.good{background:#dcfce7}
+.feedback.bad{background:#fee2e2}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Public Statistics Explorer</h1>
+<p class="answer">This explorer lists 33 official statistics sources — national statistics offices, the UN, the World Bank and more — with what each one measures and an official link. It also teaches you how to read numbers honestly: what a percentage hides, why correlation is not cause, and why two sources can disagree. It points to sources; it does not invent or republish figures.</p>
+<div class="calc">
+<label for="topic">Filter by topic</label>
+<select id="topic">
+<option value="all">All topics</option>
+<option value="Government">Government</option>
+<option value="Economy">Economy</option>
+<option value="Population & society">Population & society</option>
+<option value="Health & food">Health & food</option>
+<option value="Energy & climate">Energy & climate</option>
+<option value="Education & work">Education & work</option>
+</select>
+<label for="q">Search for a source</label>
+<input id="q" type="text" placeholder="Try population, health, jobs or trade">
+<p class="out" id="count">Showing 35 of 35 sources.</p>
+<button id="copy-btn" type="button">Copy shown sources</button>
+<p class="small">The table below filters as you type or pick a topic. Copy gives you the shown sources as plain text, with their links.</p>
+</div>
+<div class="warn">This page points to official statistics sources and teaches you how to read them — it does not invent or republish figures. Numbers change over time, so always check the source itself for the latest figure and the year it refers to.</div>
+<h2>The explorer</h2>
+<p>Every source below is an official or well-known publisher of statistics. Each entry says what the source measures, and the name links straight to the source itself. This page points to official sources and teaches you how to read them — it does not invent or republish figures. Use the filter above to see one topic at a time, or search for a source by name or subject.</p>
+<div class="tscroll"><table id="stats-table">
+<thead><tr><th>Source</th><th>Topic</th><th>What it measures</th><th>Coverage</th></tr></thead>
+<tbody>
+<tr data-topic="Government"><td><a href="https://data.gov.au/">Australian Government Open Data</a></td><td>Government</td><td>Statistics from Australian governments</td><td>Australia</td></tr>
+<tr data-topic="Government"><td><a href="https://data.europa.eu/">EU Open Data</a></td><td>Government</td><td>Statistics from European Union institutions</td><td>European Union</td></tr>
+<tr data-topic="Government"><td><a href="https://open.canada.ca/data/en">Open Government Canada</a></td><td>Government</td><td>Statistics from Canadian federal departments</td><td>Canada</td></tr>
+<tr data-topic="Government"><td><a href="https://data.gov.uk/">UK Government Open Data</a></td><td>Government</td><td>Statistics from UK government departments</td><td>United Kingdom</td></tr>
+<tr data-topic="Government"><td><a href="https://data.gov/">US Government Open Data</a></td><td>Government</td><td>Statistics from US federal agencies</td><td>United States</td></tr>
+<tr data-topic="Economy"><td><a href="https://ec.europa.eu/eurostat">Eurostat</a></td><td>Economy</td><td>Statistics for the European Union</td><td>European Union</td></tr>
+<tr data-topic="Economy"><td><a href="https://data.imf.org/">IMF Data</a></td><td>Economy</td><td>Economic and financial figures from the International Monetary Fund</td><td>Worldwide</td></tr>
+<tr data-topic="Economy"><td><a href="https://data.oecd.org/">OECD Data</a></td><td>Economy</td><td>Economic and social statistics for OECD member countries</td><td>OECD member countries</td></tr>
+<tr data-topic="Economy"><td><a href="https://www.statista.com/">Statista</a></td><td>Economy</td><td>Charts and figures on markets, consumers and industries (free and paid)</td><td>Worldwide (selected topics)</td></tr>
+<tr data-topic="Economy"><td><a href="https://www.ons.gov.uk/">UK Office for National Statistics</a></td><td>Economy</td><td>UK statistics on population, economy and society</td><td>United Kingdom</td></tr>
+<tr data-topic="Economy"><td><a href="https://www.bls.gov/">US Bureau of Labor Statistics</a></td><td>Economy</td><td>US figures on jobs, prices and pay</td><td>United States</td></tr>
+<tr data-topic="Economy"><td><a href="https://www.wto.org/">WTO Statistics</a></td><td>Economy</td><td>World trade statistics</td><td>Worldwide</td></tr>
+<tr data-topic="Economy"><td><a href="https://databank.worldbank.org/">World Bank DataBank</a></td><td>Economy</td><td>Custom tables built from World Bank data</td><td>Worldwide</td></tr>
+<tr data-topic="Economy"><td><a href="https://data.worldbank.org/">World Bank Open Data</a></td><td>Economy</td><td>Development indicators: income, poverty, education, health</td><td>Worldwide</td></tr>
+<tr data-topic="Population & society"><td><a href="https://www.gapminder.org/">Gapminder</a></td><td>Population & society</td><td>Charts about world development</td><td>Worldwide</td></tr>
+<tr data-topic="Population & society"><td><a href="https://ourworldindata.org/">Our World in Data</a></td><td>Population & society</td><td>Charts on poverty, health, climate and more</td><td>Worldwide</td></tr>
+<tr data-topic="Population & society"><td><a href="https://www.pewresearch.org/">Pew Research Center</a></td><td>Population & society</td><td>Survey findings on society, politics and technology</td><td>Worldwide (selected countries)</td></tr>
+<tr data-topic="Population & society"><td><a href="https://data.un.org/">UN Data</a></td><td>Population & society</td><td>Statistics from UN agencies on population, health and development</td><td>Worldwide</td></tr>
+<tr data-topic="Population & society"><td><a href="https://population.un.org/">UN Population Division</a></td><td>Population & society</td><td>Population estimates and projections for every country</td><td>Worldwide</td></tr>
+<tr data-topic="Population & society"><td><a href="https://data.undp.org/">UNDP Data</a></td><td>Population & society</td><td>Human development figures from the UN Development Programme</td><td>Worldwide</td></tr>
+<tr data-topic="Population & society"><td><a href="https://data.unhcr.org/">UNHCR Data</a></td><td>Population & society</td><td>Figures on refugees and displaced people</td><td>Worldwide</td></tr>
+<tr data-topic="Population & society"><td><a href="https://www.unodc.org/">UNODC</a></td><td>Population & society</td><td>Figures on crime, drugs and justice</td><td>Worldwide</td></tr>
+<tr data-topic="Population & society"><td><a href="https://www.census.gov/">US Census Bureau</a></td><td>Population & society</td><td>US population and economic census figures</td><td>United States</td></tr>
+<tr data-topic="Health & food"><td><a href="https://www.fao.org/faostat/en/">FAOSTAT</a></td><td>Health & food</td><td>Food and agriculture statistics from the FAO</td><td>Worldwide</td></tr>
+<tr data-topic="Health & food"><td><a href="https://data.unicef.org/">UNICEF Data</a></td><td>Health & food</td><td>Figures on children: health, nutrition, education, protection</td><td>Worldwide</td></tr>
+<tr data-topic="Health & food"><td><a href="https://www.who.int/data">WHO Data</a></td><td>Health & food</td><td>Health statistics from the World Health Organization</td><td>Worldwide</td></tr>
+<tr data-topic="Energy & climate"><td><a href="https://www.iea.org/data-and-statistics">IEA Data</a></td><td>Energy & climate</td><td>Energy statistics from the International Energy Agency</td><td>Worldwide</td></tr>
+<tr data-topic="Energy & climate"><td><a href="https://www.irena.org/">IRENA</a></td><td>Energy & climate</td><td>Renewable energy statistics</td><td>Worldwide</td></tr>
+<tr data-topic="Energy & climate"><td><a href="https://data.nasa.gov/">NASA Open Data</a></td><td>Energy & climate</td><td>Earth science and climate datasets from NASA</td><td>Worldwide</td></tr>
+<tr data-topic="Energy & climate"><td><a href="https://www.ncei.noaa.gov/">NOAA NCEI</a></td><td>Energy & climate</td><td>Weather and climate records</td><td>Worldwide (US focus)</td></tr>
+<tr data-topic="Energy & climate"><td><a href="https://www.epa.gov/">US EPA Data</a></td><td>Energy & climate</td><td>Environmental figures from the US Environmental Protection Agency</td><td>United States</td></tr>
+<tr data-topic="Education & work"><td><a href="https://www.ilo.org/">ILO</a></td><td>Education & work</td><td>Labour statistics from the International Labour Organization</td><td>Worldwide</td></tr>
+<tr data-topic="Education & work"><td><a href="https://uis.unesco.org/">UNESCO Institute for Statistics</a></td><td>Education & work</td><td>Education, science and culture statistics</td><td>Worldwide</td></tr>
+<tr data-topic="Economy"><td>FRED (Federal Reserve Economic Data) — named here only, see the note below</td><td>Economy</td><td>US economic data from the Federal Reserve Bank of St. Louis</td><td>United States</td></tr>
+<tr data-topic="Population & society"><td>Transparency International — named here only, see the note below</td><td>Population & society</td><td>The Corruption Perceptions Index and anti-corruption research</td><td>Worldwide</td></tr>
+</tbody>
+</table></div>
+<p>Two well-known sources are listed by name only: FRED, the US Federal Reserve's economic data, and Transparency International, which publishes the Corruption Perceptions Index. Both appear in the table without links, because their addresses could not be confirmed when this page was written. Search for them by name to reach them. Every other source above was checked and links to its official home.</p>
+<h2>What a percentage hides</h2>
+<p>A percentage always hides the number it came from. A rise of 50% sounds large, but 50% of 10 is only 5, while 5% of a million is 50,000. Before you trust a percentage, ask what it is a percentage of, and over what time. A second trick is the starting point: a number that doubles from a tiny base is still small, and a number that falls by half from a huge base is still large. Good sources state the base number next to the percentage. If a claim gives you only the percentage, find the base before you repeat it.</p>
+<p>Percentages also confuse when they describe a change in another percentage. If a rate moves from 10% to 12%, that is a rise of 2 percentage points — but it is also a rise of 20% in relative terms, because 2 is a fifth of 10. Headlines often pick the bigger-sounding number, so always check which one is meant. The same care applies to survey results: a party rising from 30% to 33% has gained 3 points, not 3%, and a fall from 5% to 4% is a drop of 1 point but a fifth of the original share. When in doubt, write both numbers down — the points and the relative change — and the confusion disappears.</p>
+<h2>Averages can mislead</h2>
+<p>An average can hide more than it shows. Take a street of ten households where nine earn a modest living and one earns a fortune: the average income looks comfortable, but it describes nobody on the street. That is why good sources often give the median as well as the mean — the median is the middle value, the point where half the group is above and half below, and it is not pulled about by a few extreme cases. When you see an average, ask which kind it is and what the spread looks like. Averages also hide change: an average that stays flat can conceal a group splitting apart, with some rising and others falling. Whenever a source offers a breakdown — by age, by region, by income group — read the breakdown before you trust the headline number.</p>
+<h2>Correlation is not cause</h2>
+<p>Two things can move together without one causing the other. Ice cream sales and drownings both rise in summer, but ice cream does not cause drowning — hot weather causes both. This is the most common mistake in reading statistics, and it appears everywhere: in health claims, in economics and in the news. When you see a link between two numbers, ask three questions. Could a third thing cause both? Could the link run the other way round? Could it be chance? If you cannot answer those, say the numbers are linked — never say one caused the other.</p>
+<h2>Sample size and old data</h2>
+<p>A statistic is only as good as the sample behind it. A survey of 50 people cannot speak for a country, and a study of one town cannot speak for the world. Good sources state their sample size and their method, so check for both before you trust a result. Age matters just as much: a figure from 2015 does not describe today, and a population figure from a census ten years ago is already out of date. Always note the year a figure refers to, and be suspicious of any number given without a date at all.</p>
+<p>Watch out for samples that are not random. A poll of a website's own readers tells you about those readers, not about the public. A study that only includes people who volunteered may miss everyone who was too busy or too unwell to take part. Good surveys describe who was included and who was left out, and they say how sure they are — often as a margin of error, such as plus or minus 3 points. A result of 52% with a margin of 3 points could really be anywhere from 49% to 55%, which changes the story completely.</p>
+<h2>Why two sources give different numbers</h2>
+<p>Two honest sources often disagree, and the reason is usually the definition. One source counts unemployment as people without work who are looking for it; another counts everyone without work. One measures income before tax; another measures it after tax. Dates matter too: figures from different years, or from different months of the same year, will differ. Methods matter as well — a survey and a census of the same thing can give different answers. When two sources disagree, compare their definitions, their dates and their methods before you decide which one fits your question. The disagreement is usually information, not an error.</p>
+<h2>Finding one real number, step by step</h2>
+<p>Suppose you need the population of the world for a school project. You type population in the search box above and see the UN Population Division, which publishes population estimates for every country. On the source's own site you find the latest world population estimate and, just as important, the year it refers to and the method behind it. You write the number down with its year, and you credit the source by name and address. If a classmate quotes a different number, you compare: different year, different source, or a rounded version of the same estimate. That comparison — not the number alone — is what makes the work honest.</p>
+<h2>What this explorer cannot do</h2>
+<p>This explorer points to sources and teaches you how to read them. It does not republish figures, so the numbers you need live on the sources' own sites, where they are kept up to date. It cannot settle an argument by itself: when two sources disagree, the answer is usually in their definitions and dates, not in picking the number you like. And it cannot tell you whether a number is true — only the source, its method and its date can do that.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Where do I find trusted statistics?</h3><p>Start with official sources: national statistics offices, the United Nations, the World Bank, the World Health Organization and the OECD. The table on this page lists 33 of them with links. Official sources publish their methods and their dates, which is what makes their numbers checkable.</p></div>
+<div class="faq"><h3>What is the difference between a statistic and a fact?</h3><p>A fact is something true about the world, such as the height of a mountain. A statistic is a number produced by counting or measuring, such as the average income in a country. Statistics describe facts, but they depend on definitions, samples and dates — which is why two statistics about the same thing can differ.</p></div>
+<div class="faq"><h3>How do I know if a number is recent?</h3><p>Look for the year the figure refers to, which good sources state next to the number. A figure from a census ten years ago is already out of date, and a figure with no date at all should not be trusted. Always write the year down with the number when you use it.</p></div>
+<div class="faq"><h3>What does correlation mean?</h3><p>Correlation means two things move together — when one rises, the other tends to rise or fall. It does not mean one causes the other. Ice cream sales and drownings both rise in summer, but hot weather causes both. Always ask whether a third thing could explain the link.</p></div>
+<div class="faq"><h3>Why do two sources give different numbers?</h3><p>Usually because of definitions, dates or methods. One source may count unemployment differently from another, or measure income before tax while another measures it after tax. Compare the definitions, the dates and the methods before you decide which number fits your question.</p></div>
+<div class="faq"><h3>Can I use these numbers in my work?</h3><p>Yes, with credit. Name the source, give its address, and note the date you found the number and the year it refers to. Most official statistics are free to use with credit, but check the licence on the source's own site before you publish anything.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/public-dataset-directory/">Public Dataset Directory</a> · <a href="https://noryvello.github.io/renewable-energy-learning-hub/">Renewable Energy Learning Hub</a> · <a href="https://noryvello.github.io/reading-comprehension-trainer/">Reading Comprehension Trainer</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where do I find trusted statistics?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with official sources: national statistics offices, the United Nations, the World Bank, the World Health Organization and the OECD. The table on this page lists 33 of them with links. Official sources publish their methods and their dates, which is what makes their numbers checkable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a statistic and a fact?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A fact is something true about the world, such as the height of a mountain. A statistic is a number produced by counting or measuring, such as the average income in a country. Statistics describe facts, but they depend on definitions, samples and dates — which is why two statistics about the same thing can differ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know if a number is recent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Look for the year the figure refers to, which good sources state next to the number. A figure from a census ten years ago is already out of date, and a figure with no date at all should not be trusted. Always write the year down with the number when you use it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does correlation mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Correlation means two things move together — when one rises, the other tends to rise or fall. It does not mean one causes the other. Ice cream sales and drownings both rise in summer, but hot weather causes both. Always ask whether a third thing could explain the link."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do two sources give different numbers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually because of definitions, dates or methods. One source may count unemployment differently from another, or measure income before tax while another measures it after tax. Compare the definitions, the dates and the methods before you decide which number fits your question."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use these numbers in my work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, with credit. Name the source, give its address, and note the date you found the number and the year it refers to. Most official statistics are free to use with credit, but check the licence on the source's own site before you publish anything."
+      }
+    }
+  ]
+}
+</script>
+<script>
+window.NP = {
+  matchSource: function (topic, query, rowTopic, rowText) {
+    topic = (topic || "").toLowerCase();
+    query = (query || "").toLowerCase().trim();
+    if (topic && topic !== "all" && String(rowTopic).toLowerCase() !== topic) return false;
+    if (query && String(rowText).toLowerCase().indexOf(query) === -1) return false;
+    return true;
+  },
+  sourcesText: function (rows) {
+    return rows.map(function (r) {
+      return r[0] + " (" + r[1] + ") - " + r[2] + " - " + r[3] + (r[4] ? " - " + r[4] : "");
+    }).join("\n");
+  }
+};
+if (typeof document !== "undefined" && document.getElementById) {
+  var topicEl = document.getElementById("topic");
+  var qEl = document.getElementById("q");
+  var countEl = document.getElementById("count");
+  var copyBtn = document.getElementById("copy-btn");
+  var rows = Array.prototype.slice.call(document.querySelectorAll("#stats-table tbody tr"));
+  function visibleRows() {
+    var topic = topicEl.value;
+    var q = qEl.value;
+    return rows.filter(function (tr) {
+      return NP.matchSource(topic, q, tr.getAttribute("data-topic"), tr.textContent);
+    });
+  }
+  function render() {
+    var vis = visibleRows();
+    rows.forEach(function (tr) {
+      tr.style.display = vis.indexOf(tr) === -1 ? "none" : "";
+    });
+    countEl.textContent = "Showing " + vis.length + " of " + rows.length + " sources.";
+  }
+  function copyShown() {
+    var data = visibleRows().map(function (tr) {
+      var c = tr.querySelectorAll("td");
+      var a = tr.querySelector("a");
+      return [c[0].textContent, c[1].textContent, c[2].textContent, c[3].textContent, a ? a.href : ""];
+    });
+    var text = NP.sourcesText(data);
+    function done() {
+      copyBtn.textContent = "Copied!";
+      setTimeout(function () { copyBtn.textContent = "Copy shown sources"; }, 2000);
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+    if (typeof navigator !== "undefined" && navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  }
+  topicEl.addEventListener("change", render);
+  qEl.addEventListener("input", render);
+  copyBtn.addEventListener("click", copyShown);
+  render();
+}
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

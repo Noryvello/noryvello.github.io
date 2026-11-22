@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bird Species Explorer — Meet the Birds Around You | Noryvello</title>
+<meta name="description" content="Free bird species explorer — learn to recognise common birds by size, colour, song and where they live. No signup, phone friendly.">
+<link rel="canonical" href="https://noryvello.github.io/bird-species-explorer/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bird Species Explorer — Meet the Birds Around You">
+<meta property="og:description" content="Free bird species explorer — learn to recognise common birds by size, colour, song and where they live. No signup, phone friendly.">
+<meta property="og:url" content="https://noryvello.github.io/bird-species-explorer/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{min-height:72px;padding:14px 18px;font-size:17px;font-weight:700;border:0;border-radius:10px;background:#4338ca;color:#fff;cursor:pointer;width:100%;margin-top:12px}
+.calc button.secondary{background:#e2e8f0;color:#1e293b}
+.calc button.small{width:auto;min-height:72px;padding:14px 18px;margin:8px 6px 0 0}
+.calc input,.calc select,.calc textarea{min-height:72px;font-size:17px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;background:#fff;font-family:inherit}
+.calc .opt{display:block;width:100%;text-align:left;background:#fff;border:2px solid #cbd5e1;color:#1e293b;border-radius:10px;padding:14px 16px;margin:8px 0;font-size:16px;font-weight:600;cursor:pointer;min-height:72px}
+.calc .opt.correct{border-color:#16a34a;background:#f0fdf4}
+.calc .opt.wrong{border-color:#dc2626;background:#fef2f2}
+.calc .opt:disabled{cursor:default;opacity:1}
+.calc .result{font-size:16px;margin-top:12px}
+.calc .passage{font-size:16.5px;line-height:1.7;margin:12px 0}
+.calc .tag{display:inline-block;background:#eef2ff;border-radius:999px;padding:4px 12px;font-size:13.5px;font-weight:600;margin:2px 4px 2px 0}
+.calc table{width:100%;border-collapse:collapse;font-size:15px;margin:10px 0}
+.calc th,.calc td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+.calc th{background:#eef2ff}
+
+.bird{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin:10px 0;font-size:15.5px}
+.bird .bname{font-weight:800;font-size:17px}
+.checkrow{display:flex;align-items:center;gap:12px;min-height:72px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:10px 12px;margin:8px 0;font-size:15.5%}
+.calc input[type=checkbox]{min-height:28px;height:28px;width:28px;flex:0 0 28px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Bird Species Explorer</h1>
+<p class="answer">This explorer helps you recognise common birds by size, colour, song and where they live. Filter the directory to narrow it down, then check the details against the bird in front of you.</p>
+<div class="calc">
+
+<label for="be-colour">Main colour</label>
+<select id="be-colour">
+<option value="all">Any colour</option><option value="brown">Brown</option><option value="grey">Grey</option><option value="black">Black</option><option value="white">White</option><option value="blue">Blue</option><option value="green">Green</option><option value="yellow">Yellow</option><option value="red">Red or orange</option>
+</select>
+<label for="be-size">Size</label>
+<select id="be-size">
+<option value="all">Any size</option><option value="small">Small (sparrow-sized)</option><option value="medium">Medium (blackbird-sized)</option><option value="large">Large (crow-sized or bigger)</option>
+</select>
+<label for="be-query">Search by name</label>
+<input type="text" id="be-query" placeholder="For example: robin">
+<button type="button" class="secondary" id="be-reset">Show all birds</button>
+<p class="out" id="be-count"></p>
+<div id="be-list"></div>
+<p class="result">Beginner's identification checklist — tick each step as you work through it.</p>
+<div id="be-check"></div>
+<p class="out" id="be-progress"></p>
+
+</div>
+<div class="warn">These descriptions are written for beginners from standard field-guide facts. They are a starting point, not a replacement for a full field guide, and the links below point to full guides for deeper study.</div>
+<h2>What birdwatching is really about</h2>
+<p>Birdwatching is often described as a hobby for experts with expensive equipment, but it starts much more simply than that. It starts with noticing: the bird on the fence, the song outside the window in the morning, the shape crossing the sky. Most people already see dozens of birds a day. Birdwatching is the habit of stopping for a second and asking which one it is.</p><p>You do not need to travel anywhere special. Gardens, parks, streets and rooftops hold plenty of birds, and the common ones are the best teachers. A robin, a blackbird and a blue tit will teach you more about size, colour and song in a week than a rare bird ever could, because you see them every day and you can compare them easily.</p><p>This explorer covers 32 common birds with the facts a beginner needs: size, colours, song, food and where to spot each one. Use the filters to narrow the list down, then read the details and compare them with the bird in front of you. The more you practise, the faster the recognition becomes — until one day you know a bird by its shape before you have even seen its colours.</p>
+<h2>How to use this explorer</h2>
+<p>Start with what you noticed. If the bird was small and blue, pick small for size and blue for colour, and the list narrows to a handful. If you know part of the name, type it in the search box. Each bird card gives you the size in centimetres, the main colours, a description of the song, what it eats, and where you are most likely to spot it.</p><p>Use the identification checklist at the bottom of the tool as a habit, not a test. It walks you through the eight things worth noting about any bird you see: size, colours, beak shape, place, song, behaviour, similar birds, and the date and place of your sighting. Your ticks save on this device, so you can work through the checklist over several outings.</p><p>When two birds look similar, read both cards side by side and find the one clear difference. A coal tit and a great tit are both small and black-and-white, but the great tit is bigger and has a yellow belly. One clear difference is worth more than ten vague similarities.</p>
+<h2>Start with size, then colour</h2>
+<p>Beginners usually start with colour, and colour often misleads them. Light changes colour: a blackbird looks brown in bright sun, a blue tit looks grey on a dull day, and a bird against the sky looks black whatever its real colour. Size is far more reliable, because it does not change with the light.</p><p>Learn three sizes and compare every bird to them. Small means sparrow-sized, about 12 to 15 centimetres: robins, tits, wrens and finches. Medium means blackbird-sized, about 22 to 35 centimetres: thrushes, starlings, doves and jays. Large means crow-sized or bigger, about 40 centimetres and up: crows, magpies, pigeons, herons and ducks. Once you have the size, the list of possible birds shrinks at once.</p><p>Then look at colour, but look for patterns rather than single colours. A white wing bar, a black cap, a red face, a yellow belly — these markings are far more useful than the general colour of the bird. The directory lists the main colours for each bird, and the clearest markings are described in the song and spot notes where they matter.</p>
+<h2>Listen first: the song gives them away</h2>
+<p>Many birds are heard before they are seen, and some are easier to identify by ear than by eye. A wren is tiny and brown and hides in hedges, but its song is astonishingly loud for its size. A song thrush repeats each phrase two or three times, which is a clear giveaway. A great spotted woodpecker drums on hollow wood, which no other common bird does.</p><p>Learn five songs well rather than twenty badly. Start with the robin, the blackbird, the great tit, the wren and the chaffinch — all common, all loud, all different. Listen for them on a morning walk and try to pick each one out. Once you know five, the next five come faster, because your ear is trained to listen for patterns.</p><p>Calls matter as much as songs. A jay's harsh scream, a magpie's chattering, a collared dove's soft coo and a green woodpecker's laughing call are all easy to recognise once you have heard them twice. The directory describes the song or call of every bird, so you can match what you hear to what you see.</p>
+<h2>What to carry, and what to leave at home</h2>
+<p>You need very little to start birdwatching. A notebook and a pen are the most useful things you can carry: write down what you saw, where, and when, and your notes become a record you will enjoy reading back. A phone is useful for checking this directory and for taking a quick photo to compare later.</p><p>Binoculars help, but they are not needed at the start. Garden birds come close enough to see with the naked eye, and learning to identify them without binoculars trains your eye to notice size, shape and behaviour. If you do buy binoculars later, a simple pair is fine — the expensive ones are for people who watch birds at long distances over water or open country.</p><p>Leave behind anything that makes noise or moves quickly. Birds notice movement before anything else, so walk slowly, stop often, and stand still when you see one. Wear plain, dull colours if you can. And go out early: the first two hours after dawn are the busiest time for birds, and the quietest time for people.</p>
+<h2>A worked example: identifying one bird step by step</h2>
+<p>Imagine you are in a garden and you see a small bird on a fence. First, the size: it is sparrow-sized, so it is small. That rules out every medium and large bird in the directory at once. Next, the colours: it has a blue cap, a yellow belly and a white face. Set the filters to small and blue, and the list narrows to a few birds.</p><p>Now read the cards. The blue tit matches exactly: blue cap, yellow belly, white face, about 12 centimetres. The great tit is similar but bigger, with a black stripe down its belly, and the coal tit has a black cap instead of a blue one. One clear difference — the blue cap — settles it. You have identified a blue tit.</p><p>Now check the song and the behaviour to confirm. Is it making high clear tsee-tsee notes? Is it hanging upside down from a branch to reach insects? Both fit the blue tit. Write down the date, the place and what you saw. That is the whole method: size, then colour, then one clear difference, then confirm with song and behaviour.</p>
+<h2>Common mistakes beginners make</h2>
+<p>The first mistake is trying to learn too many birds at once. Thirty-two birds is a lot, and nobody learns them all in a weekend. Pick five common ones — robin, blackbird, blue tit, woodpigeon and magpie — and learn them properly before adding more. Five birds you know well are worth more than thirty you half-remember.</p><p>The second mistake is trusting colour alone. As this page keeps saying, light changes colour, and birds look different in sun and shade. Always start with size, then shape, then colour. A bird's shape — long tail, short beak, round body — is as useful as its colour and far more stable.</p><p>The third mistake is giving up after one confusing bird. Every birdwatcher has stared at a bird and failed to name it. That is normal, and it is how you learn. Note what you saw, check the directory when you get home, and try again next time. For deeper study, <a href="https://ebird.org/">eBird</a> and the <a href="https://www.birds.cornell.edu/">Cornell Lab of Ornithology</a> are full field guides with recordings of songs and calls.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How do I start identifying birds?</h3><p>Start with the five most common birds where you live — a robin, a blackbird, a blue tit, a woodpigeon and a magpie are a good set in many places. Learn those properly, then add new ones one at a time. Use the filters on this page to narrow down any bird you see.</p></div>
+<div class="faq"><h3>What should I look at first — colour or size?</h3><p>Size first. Colour changes with the light: a blackbird looks brown in bright sun and black against the sky. Size does not change. Learn three sizes — sparrow-sized, blackbird-sized and crow-sized — and compare every bird to them.</p></div>
+<div class="faq"><h3>Do I need binoculars?</h3><p>Not to start. Garden birds come close enough to see with the naked eye, and learning without binoculars trains your eye to notice size, shape and behaviour. A simple pair is worth having later if you start watching birds over water or open country.</p></div>
+<div class="faq"><h3>What time of day is best?</h3><p>The first two hours after dawn are the busiest time for birds and the quietest time for people. Late afternoon is also good. Midday is usually quiet, especially in hot weather, when many birds rest in shade.</p></div>
+<div class="faq"><h3>How do I tell similar birds apart?</h3><p>Find one clear difference and use it every time. A coal tit and a great tit look alike, but the great tit is bigger and has a yellow belly. One clear difference is worth more than ten vague similarities.</p></div>
+<div class="faq"><h3>Is it okay to feed wild birds?</h3><p>Yes, with the right food: seeds, nuts and fat balls suit most garden birds, and fresh water matters as much as food. Avoid bread, milk and anything salty, and clean feeders regularly so disease does not spread.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/sustainable-product-directory/">Sustainable Product Directory</a> · <a href="https://noryvello.github.io/renewable-energy-learning-hub/">Renewable Energy Learning Hub</a> · <a href="https://noryvello.github.io/family-tree-builder/">Family Tree Builder</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+</div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I start identifying birds?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the five most common birds where you live — a robin, a blackbird, a blue tit, a woodpigeon and a magpie are a good set in many places. Learn those properly, then add new ones one at a time. Use the filters on this page to narrow down any bird you see."}}, {"@type": "Question", "name": "What should I look at first — colour or size?", "acceptedAnswer": {"@type": "Answer", "text": "Size first. Colour changes with the light: a blackbird looks brown in bright sun and black against the sky. Size does not change. Learn three sizes — sparrow-sized, blackbird-sized and crow-sized — and compare every bird to them."}}, {"@type": "Question", "name": "Do I need binoculars?", "acceptedAnswer": {"@type": "Answer", "text": "Not to start. Garden birds come close enough to see with the naked eye, and learning without binoculars trains your eye to notice size, shape and behaviour. A simple pair is worth having later if you start watching birds over water or open country."}}, {"@type": "Question", "name": "What time of day is best?", "acceptedAnswer": {"@type": "Answer", "text": "The first two hours after dawn are the busiest time for birds and the quietest time for people. Late afternoon is also good. Midday is usually quiet, especially in hot weather, when many birds rest in shade."}}, {"@type": "Question", "name": "How do I tell similar birds apart?", "acceptedAnswer": {"@type": "Answer", "text": "Find one clear difference and use it every time. A coal tit and a great tit look alike, but the great tit is bigger and has a yellow belly. One clear difference is worth more than ten vague similarities."}}, {"@type": "Question", "name": "Is it okay to feed wild birds?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with the right food: seeds, nuts and fat balls suit most garden birds, and fresh water matters as much as food. Avoid bread, milk and anything salty, and clean feeders regularly so disease does not spread."}}]}</script>
+<script>
+
+(function(){
+  var BIRDS = [{"name": "House Sparrow", "size": "small", "length": 14, "colours": ["brown", "grey", "black"], "song": "Short chirps and chattering, often in a busy group.", "food": "Seeds, crumbs and insects.", "spot": "Gardens, streets and rooftops, close to houses."}, {"name": "European Robin", "size": "small", "length": 14, "colours": ["brown", "red"], "song": "A sweet warbling song, heard in every season.", "food": "Worms, insects and berries.", "spot": "Gardens, parks and woodland edges."}, {"name": "Blue Tit", "size": "small", "length": 12, "colours": ["blue", "yellow", "white"], "song": "High clear tsee-tsee notes.", "food": "Insects, caterpillars and seeds.", "spot": "Gardens, trees and hedgerows."}, {"name": "Great Tit", "size": "small", "length": 14, "colours": ["black", "yellow", "white", "green"], "song": "A loud two-note teacher-teacher call.", "food": "Insects, seeds and nuts.", "spot": "Gardens and woodland."}, {"name": "Blackbird", "size": "medium", "length": 25, "colours": ["black", "yellow"], "song": "A rich fluting song at dawn and dusk.", "food": "Worms, insects and berries.", "spot": "Gardens, parks and hedgerows."}, {"name": "Song Thrush", "size": "medium", "length": 23, "colours": ["brown", "white"], "song": "Repeats each phrase two or three times.", "food": "Snails, worms and berries.", "spot": "Gardens, woodland and parks."}, {"name": "Magpie", "size": "large", "length": 46, "colours": ["black", "white"], "song": "A harsh chattering chack-chack.", "food": "Insects, eggs, carrion and scraps.", "spot": "Gardens, parks and farmland."}, {"name": "Carrion Crow", "size": "large", "length": 47, "colours": ["black"], "song": "A deep harsh caw.", "food": "Carrion, insects, eggs and scraps.", "spot": "Fields, towns and coasts, almost everywhere."}, {"name": "Woodpigeon", "size": "large", "length": 41, "colours": ["grey", "white"], "song": "A deep five-note coo.", "food": "Seeds, grain and young shoots.", "spot": "Gardens, parks and farmland."}, {"name": "Collared Dove", "size": "medium", "length": 32, "colours": ["grey", "white", "black"], "song": "A soft repeated coo.", "food": "Seeds and grain.", "spot": "Gardens, towns and farmland."}, {"name": "Starling", "size": "medium", "length": 22, "colours": ["black", "green"], "song": "Whistles, clicks and copies of other birds.", "food": "Insects, worms and fruit.", "spot": "Gardens, rooftops and open fields."}, {"name": "Chaffinch", "size": "small", "length": 15, "colours": ["brown", "blue", "grey"], "song": "A loud fast song that falls away at the end.", "food": "Seeds and insects.", "spot": "Gardens, woodland and hedgerows."}, {"name": "Goldfinch", "size": "small", "length": 12, "colours": ["red", "black", "yellow", "white"], "song": "Light twittering, often in flight.", "food": "Thistle and teasel seeds.", "spot": "Gardens, fields and waste ground."}, {"name": "Greenfinch", "size": "small", "length": 15, "colours": ["green", "yellow"], "song": "A long wheezing note.", "food": "Seeds, buds and berries.", "spot": "Gardens, hedgerows and woodland edges."}, {"name": "Wren", "size": "small", "length": 9, "colours": ["brown"], "song": "A very loud song for such a small bird.", "food": "Insects and spiders.", "spot": "Gardens, hedgerows and woodland."}, {"name": "Dunnock", "size": "small", "length": 14, "colours": ["brown", "grey"], "song": "A thin warbling song.", "food": "Insects and seeds.", "spot": "Gardens, hedgerows and scrub."}, {"name": "Goldcrest", "size": "small", "length": 9, "colours": ["green", "yellow"], "song": "A very high thin song.", "food": "Tiny insects.", "spot": "Conifer trees, and gardens in winter."}, {"name": "Long-tailed Tit", "size": "small", "length": 14, "colours": ["black", "white"], "song": "A high three-note call.", "food": "Insects and spiders.", "spot": "Trees, hedgerows and gardens, usually in small flocks."}, {"name": "Coal Tit", "size": "small", "length": 11, "colours": ["black", "white", "grey"], "song": "A clear two-note song.", "food": "Insects and seeds.", "spot": "Conifers, gardens and woodland."}, {"name": "Nuthatch", "size": "small", "length": 14, "colours": ["blue", "grey", "red"], "song": "Loud ringing calls.", "food": "Insects, nuts and seeds.", "spot": "Woodland and large gardens; climbs down trees head-first."}, {"name": "Treecreeper", "size": "small", "length": 12, "colours": ["brown", "white"], "song": "A high thin song.", "food": "Insects picked from bark.", "spot": "Woodland, parks and large gardens; spirals up tree trunks."}, {"name": "Great Spotted Woodpecker", "size": "medium", "length": 23, "colours": ["black", "white", "red"], "song": "A sharp kick call, and drumming on wood.", "food": "Insects, nuts and seeds.", "spot": "Woodland, parks and gardens."}, {"name": "Green Woodpecker", "size": "medium", "length": 32, "colours": ["green", "red", "yellow"], "song": "A loud laughing call, sometimes called a yaffle.", "food": "Ants, dug from the ground.", "spot": "Grassland, woodland edges and gardens."}, {"name": "Jay", "size": "medium", "length": 35, "colours": ["brown", "blue", "white"], "song": "A harsh scream, often the first sign of one.", "food": "Acorns, insects and eggs.", "spot": "Woodland and parks."}, {"name": "Jackdaw", "size": "medium", "length": 34, "colours": ["black", "grey"], "song": "A short chuck-chuck call.", "food": "Insects, seeds and scraps.", "spot": "Towns, cliffs and farmland."}, {"name": "Rook", "size": "large", "length": 46, "colours": ["black"], "song": "Deep cawing, often in large colonies.", "food": "Worms, insects and grain.", "spot": "Farmland and open fields."}, {"name": "Swift", "size": "small", "length": 16, "colours": ["black", "brown"], "song": "High screaming calls in flight.", "food": "Flying insects, caught on the wing.", "spot": "Skies over towns in summer."}, {"name": "Swallow", "size": "small", "length": 17, "colours": ["blue", "red", "white"], "song": "A twittering song.", "food": "Flying insects.", "spot": "Farmland and villages in summer."}, {"name": "House Martin", "size": "small", "length": 13, "colours": ["blue", "white"], "song": "Soft twittering.", "food": "Flying insects.", "spot": "Towns and villages in summer."}, {"name": "Kingfisher", "size": "small", "length": 16, "colours": ["blue", "red"], "song": "A high sharp whistle.", "food": "Small fish.", "spot": "Rivers, streams and ponds."}, {"name": "Grey Heron", "size": "large", "length": 94, "colours": ["grey", "white", "black"], "song": "A harsh croak, usually in flight.", "food": "Fish, frogs and small animals.", "spot": "Lakes, rivers and marshes."}, {"name": "Mallard", "size": "large", "length": 58, "colours": ["green", "brown", "yellow"], "song": "The female quacks; the male is much quieter.", "food": "Plants, seeds and insects.", "spot": "Ponds, lakes and rivers."}];
+  var CHECKLIST = ["I noted the size first (small, medium or large).", "I noted the main colours and any clear markings.", "I noted the shape of the beak (short, long, thick, thin).", "I noted where I saw it (garden, trees, water, open field).", "I listened to the song or call, if it made one.", "I noted what it was doing (feeding on the ground, in a tree, in flight).", "I compared it with two similar birds in the directory.", "I wrote down the date and place of my sighting."];
+  var KEY = "np-bird-species-explorer-checklist";
+  var NP = {};
+  NP.BIRDS = BIRDS;
+  NP.CHECKLIST = CHECKLIST;
+  NP.filterBirds = function(birds, opts){
+    opts = opts || {};
+    var colour = opts.colour || "all";
+    var size = opts.size || "all";
+    var query = (opts.query || "").trim().toLowerCase();
+    return (birds || []).filter(function(b){
+      if (size !== "all" && b.size !== size) return false;
+      if (colour !== "all" && b.colours.indexOf(colour) < 0) return false;
+      if (query && b.name.toLowerCase().indexOf(query) < 0) return false;
+      return true;
+    });
+  };
+  NP.birdSummary = function(b){
+    return b.name + " — " + b.size + ", about " + b.length + " cm. " + b.song;
+  };
+  if (typeof window !== "undefined") { window.NP = NP; }
+  if (typeof document === "undefined") return;
+  var colourEl = document.getElementById("be-colour");
+  var sizeEl = document.getElementById("be-size");
+  var queryEl = document.getElementById("be-query");
+  var listEl = document.getElementById("be-list");
+  var countEl = document.getElementById("be-count");
+  function render(){
+    var res = NP.filterBirds(BIRDS, {colour: colourEl.value, size: sizeEl.value, query: queryEl.value});
+    countEl.textContent = res.length + " of " + BIRDS.length + " birds match.";
+    listEl.innerHTML = "";
+    if (!res.length){
+      var p = document.createElement("p");
+      p.className = "result";
+      p.textContent = "No birds match those filters. Try widening the colour or size.";
+      listEl.appendChild(p);
+      return;
+    }
+    res.forEach(function(b){
+      var div = document.createElement("div");
+      div.className = "bird";
+      var name = document.createElement("p");
+      name.className = "bname";
+      name.textContent = b.name;
+      div.appendChild(name);
+      var meta = document.createElement("p");
+      meta.textContent = b.size + " · about " + b.length + " cm · colours: " + b.colours.join(", ");
+      div.appendChild(meta);
+      var song = document.createElement("p");
+      song.textContent = "Song: " + b.song;
+      div.appendChild(song);
+      var food = document.createElement("p");
+      food.textContent = "Food: " + b.food;
+      div.appendChild(food);
+      var spot = document.createElement("p");
+      spot.textContent = "Where to spot it: " + b.spot;
+      div.appendChild(spot);
+      listEl.appendChild(div);
+    });
+  }
+  colourEl.addEventListener("change", render);
+  sizeEl.addEventListener("change", render);
+  queryEl.addEventListener("input", render);
+  document.getElementById("be-reset").addEventListener("click", function(){
+    colourEl.value = "all";
+    sizeEl.value = "all";
+    queryEl.value = "";
+    render();
+  });
+  // Identification checklist
+  var checked = {};
+  try { checked = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { checked = {}; }
+  var checkEl = document.getElementById("be-check");
+  var progEl = document.getElementById("be-progress");
+  function renderCheck(){
+    var done = 0;
+    CHECKLIST.forEach(function(item, i){
+      if (checked[i]) done++;
+    });
+    progEl.textContent = "You have checked " + done + " of " + CHECKLIST.length + " steps.";
+  }
+  CHECKLIST.forEach(function(item, i){
+    var row = document.createElement("label");
+    row.className = "checkrow";
+    var cb = document.createElement("input");
+    cb.type = "checkbox";
+    cb.checked = !!checked[i];
+    cb.addEventListener("change", function(){
+      checked[i] = cb.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(checked)); } catch (e) {}
+      renderCheck();
+    });
+    row.appendChild(cb);
+    var span = document.createElement("span");
+    span.textContent = item;
+    row.appendChild(span);
+    checkEl.appendChild(row);
+  });
+  render();
+  renderCheck();
+})();
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

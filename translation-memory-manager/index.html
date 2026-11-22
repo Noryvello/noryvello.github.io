@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Translation Memory Manager — Keep Your Translations Consistent | Noryvello</title>
+<meta name="description" content="Free guide to translation memory — how translators reuse past translations, stay consistent, and save time. No signup, phone friendly.">
+<link rel="canonical" href="https://noryvello.github.io/translation-memory-manager/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Translation Memory Manager — Keep Your Translations Consistent">
+<meta property="og:description" content="Free guide to translation memory — how translators reuse past translations, stay consistent, and save time. No signup, phone friendly.">
+<meta property="og:url" content="https://noryvello.github.io/translation-memory-manager/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is translation memory?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Translation memory is a database of past translations, stored as pairs of source sentences and their translations. When a similar sentence appears again, the memory shows the saved translation so the translator can reuse it instead of starting over."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need special software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For real translation work, yes: a CAT tool holds the memory, the glossary and the document together. This page teaches the method and gives you a glossary manager to practise with, and it links to free CAT tools to try next."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a glossary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A glossary is a list of approved translations for single terms: product names, technical words and job titles that must always be translated the same way. It keeps wording consistent across documents and translators."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a match percentage work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The tool compares the new sentence with saved sentences word by word. A 100 percent match means the sentences are identical; a lower percentage means some words differ. High matches are worth reusing with edits; low matches are usually faster to translate fresh."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a beginner use translation memory?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The ideas are simple: store translations, reuse them, and keep a short glossary. Start with the glossary manager on this page, then try a free CAT tool with a short document to see the method in practice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between memory and machine translation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Translation memory stores and reuses a human translator's past work. Machine translation creates new translations automatically with software. Many translators use both: the machine drafts, the memory keeps wording consistent, and the human checks everything."
+      }
+    }
+  ]
+}
+</script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;min-height:72px;margin-top:14px;padding:16px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#e0e7ff;color:#1e293b}
+.calc input,.calc select,.calc textarea{min-height:72px;font-size:17px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;background:#fff;font-family:inherit}
+.tscroll{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef2ff}
+.opt{display:block;width:100%;text-align:left;margin:8px 0}
+.q{font-size:18px;font-weight:700;margin:12px 0}
+.small{font-size:14px;color:#64748b}
+.card{border:1px solid #cbd5e1;border-radius:12px;padding:12px 14px;margin:10px 0;background:rgba(255,255,255,.6)}
+.chip{display:inline-block;background:#eef2ff;border-radius:999px;padding:4px 12px;margin:2px;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Translation Memory Manager</h1>
+<p class="answer">A real translation memory is desktop CAT-tool software. This page teaches the method and gives you a working in-browser glossary manager to practise with, so you can learn how translators stay consistent.</p>
+<div class="calc">
+<label for="src">Source term</label>
+<input id="src" type="text" placeholder="e.g. home page">
+<label for="tgt">Translation</label>
+<input id="tgt" type="text" placeholder="e.g. página principal">
+<label for="nt">Note (optional)</label>
+<input id="nt" type="text" placeholder="e.g. website menu, formal tone">
+<button id="add-btn" type="button">Add to glossary</button>
+<label for="sq">Search the glossary</label>
+<input id="sq" type="text" placeholder="Type to search terms and translations">
+<div id="gloss-out"></div>
+<button id="copy-all-btn" type="button" class="secondary">Copy whole glossary</button>
+<label for="seg-a">Match tester — saved segment</label>
+<input id="seg-a" type="text" placeholder="e.g. Welcome to our website">
+<label for="seg-b">Match tester — new segment</label>
+<input id="seg-b" type="text" placeholder="e.g. Welcome to our new website">
+<button id="match-btn" type="button" class="secondary">Check the match</button>
+<div id="match-out" class="out"></div>
+<div id="copy-out" class="small"></div>
+</div>
+<div class="warn">This page teaches translation memory — it does not replace CAT-tool software. The glossary manager saves on this device only, so copy your glossary somewhere safe if you want to keep it.</div>
+<h2>What translation memory is</h2>
+<p>Translation memory is a simple idea that saves translators a great deal of time. Every time a translator finishes a sentence, the source sentence and its translation are stored together as a pair. The next time a similar sentence appears — in the same document, in an update, or in a completely different project — the memory shows the saved translation, so the translator does not start from zero. Over months and years, the memory grows into a personal library of approved translations.</p><p>The unit of a translation memory is the segment, which is usually one sentence. Translators work segment by segment, and the memory works the same way. When a new segment matches a saved one exactly, it is a 100 percent match, and the saved translation can be reused as it is. When it mostly matches, with a word or two changed, it is a fuzzy match, and the translator edits the changed words instead of translating the whole sentence again.</p><p>This matters most for texts that repeat themselves: software menus, product manuals, legal documents, and websites that are updated every month. A company that changes one paragraph of a fifty-page manual should not pay to translate the other forty-nine pages again, and with a translation memory, it does not have to.</p>
+<h2>How segments and matches work</h2>
+<p>Imagine you translated the sentence 'Welcome to our website' last year. This year the client changes it to 'Welcome to our new website'. A translation memory compares the new segment with the saved one, word by word, and reports a match percentage. One word out of five has changed, so the match is high — around 80 percent. The translator sees the old translation, changes one word, and moves on. The work takes seconds instead of minutes.</p><p>Try it with the match tester on this page. Type a saved segment and a new segment, and the tester shows the match percentage and what it means. A 100 percent match means the segments are identical. A match of 75 percent or more usually means the saved translation is worth reusing with small edits. A match below 50 percent usually means it is faster to translate the segment fresh.</p><p>Match percentages are a guide, not a judgement. A 90 percent match can still be wrong if the changed word is the important one — 'do not press the red button' and 'press the red button' differ by only one word, but they mean the opposite. A good translator always reads the match before accepting it. The memory suggests; the human decides.</p>
+<h2>How to build a glossary</h2>
+<p>A glossary is the other half of consistent translation. Where a translation memory stores whole sentences, a glossary stores single terms: product names, technical words, job titles, and any word that must always be translated the same way. A good glossary is short and strict: it lists the approved translation for each term and nothing else.</p><p>Start with the words that cause arguments. Every company has them: the product name that three translators spell three ways, the job title that becomes something different in every document, the technical term that one person translates and another leaves in English. Agree on one translation for each, write it in the glossary, and use it every time.</p><p>Add a short note to each entry when the reason is not obvious. 'Formal tone', 'website menu', 'do not translate', 'use the short form' — these notes save the next translator from guessing. Review the glossary every few months and remove terms you no longer use. A glossary with a thousand entries that nobody trusts is worse than a glossary with fifty entries that everyone uses.</p>
+<h2>How to use the glossary manager</h2>
+<p>The glossary manager on this page is a working tool you can practise with. It starts with five sample English-to-Spanish terms so you can see how it works. Type a source term and its translation, add an optional note, and tap the button to add it. Your entries save in your browser, so they are still there when you come back.</p><p>Use the search box to find a term quickly: it searches the source terms, the translations and the notes at the same time. Each entry has a copy button that copies the pair to your clipboard, and a delete button for terms you no longer need. The copy button at the bottom copies the whole glossary as plain text, one pair per line, so you can paste it into a document or share it with a colleague.</p><p>The glossary saves on this device only. If you want to keep it safe, copy it somewhere else — a notes app, a document, or an email to yourself. This page does not upload anything, so your terms never leave your browser unless you copy them out.</p>
+<h2>Worked examples</h2>
+<p><strong>A software menu.</strong> A small app has twenty menu items: Home, Settings, Help, Sign in, Sign out, and so on. The translator puts each one in the glossary with its approved translation. Six months later the app adds five new menu items and changes two old ones. The glossary gives the translator the approved wording for the unchanged items at once, and the translation memory gives high matches for the two changed ones. The update takes an hour instead of a day.</p><p><strong>A product manual.</strong> A manual warns 'Do not open the case while the device is switched on' in twelve places. The first time, the translator translates it carefully and it goes into the memory. The next eleven times, the memory offers a 100 percent match, and the warning reads exactly the same in every place. Readers trust a manual that is consistent, and consistency is what the memory is for.</p><p><strong>A website update.</strong> A company rewrites its homepage and changes three sentences out of forty. The translation memory matches the thirty-seven unchanged sentences at 100 percent, and the translator only works on the three new ones. The client pays for three sentences of work, not forty, and the translation stays consistent with the old version.</p>
+<h2>Free CAT tools to try next</h2>
+<p>When you are ready to move beyond this page, real CAT tools — computer-assisted translation tools — hold the memory, the glossary and the document together in one program. Several respected ones are free. <a href="https://omegat.org/">OmegaT</a> is a free, open-source translation memory tool that runs on most computers and handles common file formats. <a href="https://cafetran.com/">CafeTran Espresso</a> offers a free version with a translation memory and glossary. <a href="https://matecat.com/">MateCat</a> is a free web-based tool that works in the browser. <a href="https://wordfast.com/">Wordfast</a> offers a free version for smaller projects.</p><p>These tools do what this page cannot: they open your real documents, split them into segments, show matches as you type, and save everything in standard formats that other translators and agencies can use. This page is a place to learn the method; a CAT tool is where you do the real work. Try one of the free tools with a short document and see how the memory and the glossary feel in practice.</p><p>Whichever tool you choose, the method stays the same: translate segment by segment, reuse what the memory offers, check every match before you accept it, and keep your glossary short and strict. The tool changes; the craft does not.</p>
+<h2>Common mistakes</h2>
+<ul><li><strong>Accepting every match without reading it.</strong> A 95 percent match can still be wrong. The changed word may be the one that matters most. Read every match before you accept it.</li><li><strong>A glossary nobody uses.</strong> A glossary that lives in a forgotten document helps no one. Keep it short, keep it where translators can find it, and update it when terms change.</li><li><strong>Translating the same term two ways.</strong> If 'home page' becomes three different translations across a website, readers get confused and the site looks careless. One term, one translation, every time.</li><li><strong>Storing bad translations.</strong> A memory is only as good as what goes into it. A wrong translation stored once gets reused a hundred times. Fix mistakes in the memory as soon as you find them.</li><li><strong>Expecting the memory to translate.</strong> A translation memory stores past work; it does not create new translations. New sentences still need a human translator, and always will.</li></ul>
+<h2>What this page cannot do</h2>
+<p>This page teaches translation memory and gives you a glossary manager to practise with. It is not a CAT tool: it cannot open your documents, split them into segments, or hold a real translation memory with thousands of sentence pairs. For real translation work, use one of the free CAT tools linked above.</p><p>The match tester is a teaching tool, not a professional matcher. It compares words simply, while real CAT tools compare word order, tags, numbers and formatting as well. Its percentages show you how matching works; they are not the percentages a professional tool would report. And the glossary saves in this browser only, so copy it out if you want to keep it.</p>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>What is translation memory?</h3>
+<p>Translation memory is a database of past translations, stored as pairs of source sentences and their translations. When a similar sentence appears again, the memory shows the saved translation so the translator can reuse it instead of starting over.</p>
+</div>
+<div class="faq">
+<h3>Do I need special software?</h3>
+<p>For real translation work, yes: a CAT tool holds the memory, the glossary and the document together. This page teaches the method and gives you a glossary manager to practise with, and it links to free CAT tools to try next.</p>
+</div>
+<div class="faq">
+<h3>What is a glossary?</h3>
+<p>A glossary is a list of approved translations for single terms: product names, technical words and job titles that must always be translated the same way. It keeps wording consistent across documents and translators.</p>
+</div>
+<div class="faq">
+<h3>How does a match percentage work?</h3>
+<p>The tool compares the new sentence with saved sentences word by word. A 100 percent match means the sentences are identical; a lower percentage means some words differ. High matches are worth reusing with edits; low matches are usually faster to translate fresh.</p>
+</div>
+<div class="faq">
+<h3>Can a beginner use translation memory?</h3>
+<p>Yes. The ideas are simple: store translations, reuse them, and keep a short glossary. Start with the glossary manager on this page, then try a free CAT tool with a short document to see the method in practice.</p>
+</div>
+<div class="faq">
+<h3>What is the difference between memory and machine translation?</h3>
+<p>Translation memory stores and reuses a human translator&#x27;s past work. Machine translation creates new translations automatically with software. Many translators use both: the machine drafts, the memory keeps wording consistent, and the human checks everything.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/multilingual-dictionary/">Multilingual Dictionary</a> · <a href="https://noryvello.github.io/language-level-assessment/">Language Level Assessment</a> · <a href="https://noryvello.github.io/reading-comprehension-trainer/">Reading Comprehension Trainer</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+
+window.NP = window.NP || {};
+(function () {
+  var STARTER = [
+    {src: "Welcome", tgt: "Bienvenido", note: "English to Spanish"},
+    {src: "Thank you", tgt: "Gracias", note: "English to Spanish"},
+    {src: "Home page", tgt: "Página principal", note: "English to Spanish"},
+    {src: "Sign in", tgt: "Iniciar sesión", note: "English to Spanish"},
+    {src: "Privacy policy", tgt: "Política de privacidad", note: "English to Spanish"}
+  ];
+  function words(s) {
+    return s.toLowerCase().replace(/[^a-z0-9áéíóúñü\s]/g, " ").split(/\s+/).filter(function (w) { return w.length > 0; });
+  }
+  function matchPercent(a, b) {
+    var wa = words(a), wb = words(b);
+    if (wa.length === 0 || wb.length === 0) return 0;
+    var setA = {}, setB = {}, i;
+    for (i = 0; i < wa.length; i++) setA[wa[i]] = true;
+    for (i = 0; i < wb.length; i++) setB[wb[i]] = true;
+    var inter = 0, union = 0, k;
+    for (k in setA) { union++; if (setB[k]) inter++; }
+    for (k in setB) { if (!setA[k]) union++; }
+    return Math.round((inter / union) * 100);
+  }
+  function searchGlossary(entries, q) {
+    q = (q || "").toLowerCase().trim();
+    if (!q) return entries.slice();
+    return entries.filter(function (e) {
+      return e.src.toLowerCase().indexOf(q) >= 0 || e.tgt.toLowerCase().indexOf(q) >= 0 ||
+        (e.note || "").toLowerCase().indexOf(q) >= 0;
+    });
+  }
+  function addEntry(entries, src, tgt, note) {
+    var out = entries.slice();
+    out.push({src: src, tgt: tgt, note: note || ""});
+    return out;
+  }
+  function formatGlossary(entries) {
+    return entries.map(function (e) {
+      return e.src + " = " + e.tgt + (e.note ? " (" + e.note + ")" : "");
+    }).join("\n");
+  }
+  window.NP.STARTER_GLOSSARY = STARTER;
+  window.NP.matchPercent = matchPercent;
+  window.NP.searchGlossary = searchGlossary;
+  window.NP.addEntry = addEntry;
+  window.NP.formatGlossary = formatGlossary;
+  if (typeof document === "undefined") return;
+  var KEY = "np-translation-memory-manager-glossary";
+  function load() {
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (!raw) return STARTER.slice();
+      var parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : STARTER.slice();
+    } catch (e) { return STARTER.slice(); }
+  }
+  function save(entries) {
+    try { localStorage.setItem(KEY, JSON.stringify(entries)); } catch (e) { /* storage unavailable */ }
+  }
+  var entries = load();
+  function render() {
+    var q = document.getElementById("sq").value;
+    var list = searchGlossary(entries, q);
+    var out = document.getElementById("gloss-out");
+    out.innerHTML = "";
+    var head = document.createElement("p");
+    head.className = "out";
+    head.textContent = list.length + " of " + entries.length + " terms";
+    out.appendChild(head);
+    list.forEach(function (e) {
+      var card = document.createElement("div");
+      card.className = "card";
+      var line = document.createElement("p");
+      line.style.margin = "0";
+      line.textContent = e.src + " = " + e.tgt + (e.note ? " (" + e.note + ")" : "");
+      var copy = document.createElement("button");
+      copy.type = "button";
+      copy.className = "secondary";
+      copy.textContent = "Copy this term";
+      copy.addEventListener("click", function () {
+        var text = e.src + " = " + e.tgt;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            copy.textContent = "Copied!";
+            setTimeout(function () { copy.textContent = "Copy this term"; }, 2000);
+          }, function () { copy.textContent = "Copy failed"; });
+        } else {
+          copy.textContent = "Copy not available";
+        }
+      });
+      var del = document.createElement("button");
+      del.type = "button";
+      del.className = "secondary";
+      del.textContent = "Delete";
+      del.addEventListener("click", function () {
+        entries = entries.filter(function (x) { return x !== e; });
+        save(entries);
+        render();
+      });
+      card.appendChild(line);
+      card.appendChild(copy);
+      card.appendChild(del);
+      out.appendChild(card);
+    });
+  }
+  document.getElementById("add-btn").addEventListener("click", function () {
+    var s = document.getElementById("src").value.trim();
+    var t = document.getElementById("tgt").value.trim();
+    var n = document.getElementById("nt").value.trim();
+    if (!s || !t) {
+      document.getElementById("copy-out").textContent = "Type both a source term and a translation first.";
+      return;
+    }
+    entries = addEntry(entries, s, t, n);
+    save(entries);
+    document.getElementById("src").value = "";
+    document.getElementById("tgt").value = "";
+    document.getElementById("nt").value = "";
+    document.getElementById("copy-out").textContent = "";
+    render();
+  });
+  document.getElementById("sq").addEventListener("input", render);
+  document.getElementById("copy-all-btn").addEventListener("click", function () {
+    var btn = document.getElementById("copy-all-btn");
+    var text = formatGlossary(entries);
+    function done(ok) {
+      btn.textContent = ok ? "Copied!" : "Copy failed — select the text by hand";
+      document.getElementById("copy-out").textContent = ok ? "Your glossary is on the clipboard." : "";
+      setTimeout(function () { btn.textContent = "Copy whole glossary"; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+    } else {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      done(ok);
+    }
+  });
+  document.getElementById("match-btn").addEventListener("click", function () {
+    var a = document.getElementById("seg-a").value;
+    var b = document.getElementById("seg-b").value;
+    var pct = matchPercent(a, b);
+    var note = pct === 100 ? "A full match — reuse the saved translation as it is." :
+      pct >= 75 ? "A high fuzzy match — reuse it and edit the changed words." :
+      pct >= 50 ? "A partial match — it may help, but check every word." :
+      "A low match — translate it fresh and add it to the memory.";
+    document.getElementById("match-out").textContent = "Match: " + pct + " percent. " + note;
+  });
+  render();
+})();
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

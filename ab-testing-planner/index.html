@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A/B Testing Planner — Test One Change at a Time and Learn What Works | Noryvello</title>
+<meta name="description" content="Free A/B testing planner — plan a fair test, pick what to change, and read the result without fooling yourself. No signup, phone friendly.">
+<link rel="canonical" href="https://noryvello.github.io/ab-testing-planner/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A/B Testing Planner — Test One Change at a Time and Learn What Works">
+<meta property="og:description" content="Free A/B testing planner — plan a fair test, pick what to change, and read the result without fooling yourself. No signup, phone friendly.">
+<meta property="og:url" content="https://noryvello.github.io/ab-testing-planner/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc textarea{width:100%;min-height:150px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+.calc input,.calc select{width:100%;min-height:72px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc button{display:block;width:100%;min-height:72px;margin-top:12px;padding:12px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#fff;color:#4338ca;border:2px solid #4338ca}
+.calc button.danger{background:#fff;color:#991b1b;border:2px solid #991b1b}
+.calc .out{font-size:17px;font-weight:400;margin-top:14px;white-space:pre-line}
+.calc .out b{font-weight:700}
+.calc .row{margin:10px 0}
+.calc .checkrow{display:flex;gap:12px;align-items:center;margin:0;padding:20px 0;border-bottom:1px solid #e2e8f0;cursor:pointer;min-height:72px}
+.calc .checkrow input{width:30px;height:30px;min-height:30px;flex:none;margin:0;accent-color:#4338ca}
+.calc .checkrow span{font-size:16px;line-height:1.5}
+table.data{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+table.data th,table.data td{border:1px solid #cbd5e1;padding:8px;text-align:left;vertical-align:top}
+table.data th{background:#eef2ff}
+.tag{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:700}
+.tag.ok{background:#dcfce7;color:#166534}
+.tag.bad{background:#fee2e2;color:#991b1b}
+.tag.mid{background:#fef3c7;color:#92400e}
+.cardline{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin:10px 0}
+.cardline b{font-size:16.5px}
+.small{font-size:14px;color:#64748b}
+.funnelbar{background:#4338ca;color:#fff;border-radius:8px;padding:10px 12px;margin:6px 0;font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.funnelbar.alt{background:#0d9488}
+.outline-row{display:flex;gap:8px;align-items:stretch;margin:8px 0}
+.outline-row input{flex:1;min-width:0}
+.outline-row button{flex:none;width:58px;min-height:72px;margin-top:0;padding:8px 4px;border-radius:12px;font-size:18px}
+.blockbtns{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.blockbtns button{flex:1 1 40%;width:auto;min-height:72px;margin-top:0}
+.planweek{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin:10px 0}
+.planweek b{font-size:16.5px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is A/B testing?", "acceptedAnswer": {"@type": "Answer", "text": "A/B testing means showing two versions of the same thing to different visitors and seeing which one works better. Version A is what you have now, version B is the same thing with one change. Half your visitors see each version, and you count which group does more of what you want."}}, {"@type": "Question", "name": "What should I test first?", "acceptedAnswer": {"@type": "Answer", "text": "Test the thing closest to the action you want. For sign-ups, test the sign-up button first — its words, its position, or its colour. For sales, test the price display or the buy button. If people leave your page in seconds, test the headline, because that is what decides whether they stay at all."}}, {"@type": "Question", "name": "How long should a test run?", "acceptedAnswer": {"@type": "Answer", "text": "At least one full week, so the test catches the whole weekly pattern of your visitors. The planner estimates the days you need from your daily visitors and the size of the improvement you want to detect — small improvements need more visitors and therefore more days. Decide the length before you start and let the test run to the end."}}, {"@type": "Question", "name": "How many visitors do I need?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your current rate and the smallest improvement that matters to you. The planner estimates it with a standard rule of thumb: the smaller the improvement you want to detect, the more visitors each version needs. A huge improvement can show up in a few hundred visitors; a small one can take thousands per version."}}, {"@type": "Question", "name": "What if version B wins by a tiny amount?", "acceptedAnswer": {"@type": "Answer", "text": "A tiny win might be real, but it might also be noise, and it is rarely worth rebuilding your page for. If the difference is small, treat the test as telling you the change made little difference, keep the version you prefer, and test a bigger change next time. A clear win — B beating A by a fifth or more — is worth acting on."}}, {"@type": "Question", "name": "Can I test two things at once?", "acceptedAnswer": {"@type": "Answer", "text": "No — not in one test. If you change the headline and the button together and version B wins, you will never know which change did it. Test one change at a time, learn from the result, and then test the next change. It is slower, but every result teaches you something you can trust."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>A/B Testing Planner</h1>
+<p class="answer">This planner helps you run one fair test at a time: you describe version A and version B, and it estimates how many visitors each version needs and how long the test should run. It also gives you the steps to follow, so the result tells you something true instead of something you want to believe.</p>
+<div class="calc">
+<label for="ab-what">What do you want to test?</label>
+<select id="ab-what">
+<option value="headline">Headline</option>
+<option value="button">Button text</option>
+<option value="price">Price display</option>
+<option value="image">Main image</option>
+<option value="layout">Page layout</option>
+</select>
+<label for="ab-a">Version A — what you have now</label>
+<input id="ab-a" type="text" placeholder="Example: button says Submit" maxlength="120">
+<label for="ab-b">Version B — the one change to try</label>
+<input id="ab-b" type="text" placeholder="Example: button says Book my free lesson" maxlength="120">
+<label for="ab-rate">Current conversion rate (percent of visitors who act)</label>
+<input id="ab-rate" type="number" inputmode="decimal" min="0.1" max="90" step="0.1" value="5">
+<label for="ab-target">Target rate if version B works (percent)</label>
+<input id="ab-target" type="number" inputmode="decimal" min="0.2" max="95" step="0.1" value="7">
+<label for="ab-visitors">Visitors per day</label>
+<input id="ab-visitors" type="number" inputmode="numeric" min="1" max="10000000" step="1" value="100">
+<button id="ab-build" type="button">Plan my test</button>
+<div class="out" id="ab-out" style="display:none"></div>
+<button id="ab-copy" type="button" class="secondary" style="display:none" data-label="Copy my test plan">Copy my test plan</button>
+</div>
+<div class="warn">The sample-size numbers here are estimates for planning, not statistics software. They use a standard rule of thumb that is good enough to plan a test, but a real statistics tool should check the final result before you make a big decision based on it.</div>
+<h2>How to use this planner</h2>
+<p>First, choose what to test. The planner offers the four things that usually matter most — a headline, a button, a price, or an image — plus a page layout option. Then describe version A, which is what you have now, and version B, which is the one change you want to try. Write both descriptions in plain words, so anyone on your team can read the plan and know exactly what changed.</p>
+<p>Next, enter your current conversion rate: the percentage of visitors who do the thing you want, such as sign up or buy. If you do not know it, the planner starts with a typical small rate, but your own number is always better — check your last month of visitors and sign-ups and work it out. Then enter the smallest improvement that would matter to you, and how many visitors you get each day.</p>
+<p>Tap Plan my test and the planner estimates how many visitors each version needs, how many days the test will take, and gives you a step-by-step plan: how to split the visitors, when to check, and how to decide the winner. Tap Copy my test plan to keep it as plain text. Your inputs are saved on this device only, and nothing is sent anywhere.</p>
+<h2>What A/B testing is</h2>
+<p>A/B testing means showing two versions of the same thing to different visitors and seeing which one works better. Version A is the current version — the headline, button or page you already have. Version B is the same thing with one change. Half your visitors see A and half see B, and you count which group does more of what you want.</p>
+<p>The key word is one. If you change the headline, the button and the price all at once, and version B wins, you will never know which change did it. You might keep a change that hurt and drop a change that helped. Testing one change at a time is slower, but every result teaches you something you can trust, and the lessons add up into a page that keeps getting better.</p>
+<p>A/B testing is not guessing, and it is not a vote. Visitors do not tell you which version they like — they show you, by what they do. That is what makes it honest: the test measures behaviour, not opinions, and behaviour is what pays the bills.</p>
+<h2>What to test first</h2>
+<p>Test the thing closest to the action you want. If you want sign-ups, test the sign-up button first: its words, its colour, its position. If you want sales, test the price display or the buy button. If people leave your page in seconds, test the headline, because the headline is what decides whether they stay at all.</p>
+<p>Start with the change you can describe in one sentence. Change the button from "Submit" to "Get my free guide" is a good test, because the difference is clear. Redesign the whole page is not a test, it is a rebuild — and if it wins, you will not know why. Small, clear changes give clear answers, and clear answers are the whole point.</p>
+<p>Do not test things that cannot change your decision. If you would keep the new headline whatever the result, there is no point testing it — just change it and test something else. A test is only worth running if you are willing to accept either result, including the result that says your idea was wrong.</p>
+<h2>How to run a fair test</h2>
+<p>A fair test splits visitors at random, half to A and half to B, and keeps everything else the same. Same page, same traffic, same time of day, same offer — only the one thing you are testing is different. If version B runs on a weekend and version A runs on a weekday, the test is not comparing versions, it is comparing weekends with weekdays.</p>
+<p>Run both versions at the same time, for whole days, for at least one full week if you can. Traffic changes through the week — Monday visitors behave differently from Saturday visitors — so a test that runs for three days only tells you about those three days. A full week catches the whole pattern, and two weeks is better still if you have enough visitors.</p>
+<p>Do not peek and stop early. Checking the result every hour and stopping the moment your version is ahead is the easiest way to fool yourself, because early numbers jump around wildly. Decide the length of the test before you start — the planner suggests a number of days — and let it run to the end. Patience is part of the method.</p>
+<h2>How to read results</h2>
+<p>When the test ends, compare the conversion rate of each version, not just the raw counts. If version A had 1,000 visitors and 50 sign-ups, and version B had 1,000 visitors and 65 sign-ups, version B converted 6.5 percent against 5 percent — a real difference worth acting on. If the numbers are close, such as 52 against 50, the test is telling you the change made little difference, and that is a useful answer too.</p>
+<p>Ask whether the difference is big enough to matter. A tiny win — half a percent — might be real, but it might also be noise, and it is rarely worth rebuilding your page for. A clear win, where B beats A by a fifth or more, is worth keeping. And remember that a win is about this audience, at this time: the same change might not work the same way for a different group of visitors.</p>
+<p>Write the result down, whatever it is. A notebook of past tests — what you changed, what happened, what you decided — is worth more than any single test, because it stops you testing the same idea twice and shows you patterns over time. The copy button on this page gives you a plan you can paste into that notebook.</p>
+<h2>Why small samples lie</h2>
+<p>Small numbers lie because chance dominates them. If ten people visit each version, and two buy from A and three buy from B, version B looks half as good again — but one person changing their mind would flip the result. The same test with a thousand visitors each side would need a real difference to show a gap that big. That is why the planner asks for your visitor numbers before it suggests a test length.</p>
+<p>The rule is simple: the smaller the improvement you want to detect, the more visitors you need. Spotting a huge improvement takes only a few hundred visitors. Spotting a small one takes thousands. This is not a flaw in testing, it is how counting works — and it is why tests on small sites take longer, not because the site is doing anything wrong.</p>
+<p>If the planner says your test needs more visitors than you get in a month, do not force it. Either test a bigger change, so the difference is easier to see, or accept a longer test. A slow honest test beats a fast meaningless one, and a test that runs for six weeks and gives a true answer is better than a test that runs for three days and gives a false one.</p>
+<h2>Worked example: testing a signup button</h2>
+<p>A tutor runs a small website offering online lessons. Her sign-up page gets about 100 visitors a day, and about 5 of them sign up — a 5 percent conversion rate. She wonders whether the button text is the problem: it currently says "Submit". She plans a test with version B saying "Book my free lesson".</p>
+<p>She wants to detect an improvement to 7 percent, because that would mean two extra sign-ups a day, which matters to her. The planner estimates she needs about 2,256 visitors per version — 4,512 in total — which at 100 visitors a day means about 46 days. That is longer than she hoped, so she decides to run the test for eight weeks and to check the result only at the end.</p>
+<p>After eight weeks, version A has 2,800 visitors and 138 sign-ups (4.9 percent), and version B has 2,800 visitors and 196 sign-ups (7 percent). The improvement is real and clear, so she keeps the new button. The test took two months, but the new button will keep working every day after that — and she now knows, instead of guessing, that the words on a button matter.</p>
+<h2>Common mistakes</h2>
+<p>The first mistake is testing two things at once, which makes the result impossible to read. The second is stopping early, the moment your version pulls ahead — early leads are often just noise. The third is testing with too few visitors and believing the result anyway: a test with 50 visitors per side cannot tell you anything, however clean the numbers look.</p>
+<p>The fourth mistake is changing the test halfway through. If you edit version B in the middle of a test, you now have three versions, not two, and the result is meaningless. If you must change something, stop the test, note the result so far, and start a fresh test. The fifth mistake is testing something nobody will act on: if the result cannot change your decision, do not run the test.</p>
+<p>The sixth mistake is running test after test without writing anything down. Each test is a small lesson, and lessons you do not record are lessons you will pay to learn again. Keep a simple list: the date, what changed, the result, and what you decided. After a year, that list is the most valuable marketing document you own.</p>
+<h2>What this planner cannot do</h2>
+<p>This planner cannot run the test for you. It gives you the plan — how many visitors, how many days, what to watch — but splitting the visitors between two versions needs a tool on your website, and the planner is not that tool. It also cannot check your final result with real statistics: the sample-size estimate uses a standard rule of thumb, which is good enough for planning but not a substitute for a proper statistics check before a big decision.</p>
+<p>It cannot tell you what to test, either. It lists the usual suspects — headline, button, price, image — but only you know your page and your visitors. And it cannot make a bad offer good: if the product, the price or the promise is wrong, no button text will fix it. A/B testing improves a working page; it does not rescue a broken one.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is A/B testing?</h3><p>A/B testing means showing two versions of the same thing to different visitors and seeing which one works better. Version A is what you have now, version B is the same thing with one change. Half your visitors see each version, and you count which group does more of what you want.</p></div>
+<div class="faq"><h3>What should I test first?</h3><p>Test the thing closest to the action you want. For sign-ups, test the sign-up button first — its words, its position, or its colour. For sales, test the price display or the buy button. If people leave your page in seconds, test the headline, because that is what decides whether they stay at all.</p></div>
+<div class="faq"><h3>How long should a test run?</h3><p>At least one full week, so the test catches the whole weekly pattern of your visitors. The planner estimates the days you need from your daily visitors and the size of the improvement you want to detect — small improvements need more visitors and therefore more days. Decide the length before you start and let the test run to the end.</p></div>
+<div class="faq"><h3>How many visitors do I need?</h3><p>It depends on your current rate and the smallest improvement that matters to you. The planner estimates it with a standard rule of thumb: the smaller the improvement you want to detect, the more visitors each version needs. A huge improvement can show up in a few hundred visitors; a small one can take thousands per version.</p></div>
+<div class="faq"><h3>What if version B wins by a tiny amount?</h3><p>A tiny win might be real, but it might also be noise, and it is rarely worth rebuilding your page for. If the difference is small, treat the test as telling you the change made little difference, keep the version you prefer, and test a bigger change next time. A clear win — B beating A by a fifth or more — is worth acting on.</p></div>
+<div class="faq"><h3>Can I test two things at once?</h3><p>No — not in one test. If you change the headline and the button together and version B wins, you will never know which change did it. Test one change at a time, learn from the result, and then test the next change. It is slower, but every result teaches you something you can trust.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/marketing-campaign-planner/">Marketing Campaign Planner</a> · <a href="https://noryvello.github.io/marketing-funnel-builder/">Marketing Funnel Builder</a> · <a href="https://noryvello.github.io/customer-persona-generator/">Customer Persona Generator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function copyText(text, btn){
+  function done(){ if(btn){ var old=btn.getAttribute('data-label')||btn.textContent; btn.textContent='Copied!'; setTimeout(function(){ btn.textContent=old; },2000); } }
+  function fallback(){
+    var ta=document.createElement('textarea');
+    ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta); done();
+  }
+  if (typeof navigator!=='undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else { fallback(); }
+}
+function el(id){ return (typeof document!=='undefined' && document.getElementById) ? document.getElementById(id) : null; }
+function show(node){ if(node) node.style.display='block'; }
+function saveLS(key, val){ try{ if(typeof localStorage!=='undefined') localStorage.setItem(key, JSON.stringify(val)); }catch(e){} }
+function loadLS(key){ try{ if(typeof localStorage!=='undefined'){ var v=localStorage.getItem(key); return v ? JSON.parse(v) : null; } }catch(e){} return null; }
+function fmtDate(iso){
+  if(!iso) return '';
+  var p=iso.split('-'); if(p.length!==3) return iso;
+  var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var m=parseInt(p[1],10);
+  return p[2].replace(/^0/,'')+' '+months[m-1]+' '+p[0];
+}
+
+
+var AB_WHAT_NAMES = {headline:'Headline', button:'Button text', price:'Price display', image:'Main image', layout:'Page layout'};
+function abSampleSize(baselinePct, targetPct){
+  var p1 = baselinePct / 100, p2 = targetPct / 100;
+  if (!(p1 > 0 && p1 < 1 && p2 > 0 && p2 < 1)) return null;
+  var diff = p2 - p1;
+  if (diff <= 0) return null;
+  var pbar = (p1 + p2) / 2;
+  // Standard rule of thumb for planning (80% power, 5% significance):
+  // n per version = 16 * pbar * (1 - pbar) / diff^2.
+  return Math.ceil(16 * pbar * (1 - pbar) / (diff * diff));
+}
+function abDaysNeeded(perVersion, dailyVisitors){
+  if (!perVersion || !dailyVisitors || dailyVisitors <= 0) return null;
+  return Math.max(1, Math.ceil((perVersion * 2) / dailyVisitors));
+}
+function abBuildTest(inp){
+  var perVersion = abSampleSize(inp.baseline, inp.target);
+  var days = abDaysNeeded(perVersion, inp.dailyVisitors);
+  var steps = [
+    'Split visitors at random, half to version A and half to version B.',
+    'Run both versions at the same time, for whole days.',
+    'Do not change either version while the test is running.',
+    'Check the result only at the end — do not stop early.',
+    'Compare the conversion rate of each version, then keep the winner and write the result down.'
+  ];
+  var verdict;
+  if (days === null) {
+    verdict = 'Check your numbers: the target rate must be higher than the current rate, and both must be between 0 and 100.';
+  } else if (days > 90) {
+    verdict = 'This test would take a long time at your current traffic. Consider testing a bigger change, so the difference is easier to see, or accept a longer test.';
+  } else if (days < 7) {
+    verdict = 'The numbers say ' + days + ' days, but run the test for at least one full week so it catches the whole weekly pattern of your visitors.';
+  } else {
+    verdict = 'Run the test for the full ' + days + ' days and decide the winner at the end.';
+  }
+  return {what: inp.what, whatName: AB_WHAT_NAMES[inp.what] || inp.what,
+    versionA: inp.versionA, versionB: inp.versionB, baseline: inp.baseline,
+    target: inp.target, dailyVisitors: inp.dailyVisitors,
+    perVersion: perVersion, total: perVersion ? perVersion * 2 : null,
+    days: days, steps: steps, verdict: verdict};
+}
+function abTestText(t){
+  var lines = [];
+  lines.push('A/B test plan — ' + t.whatName);
+  lines.push('Version A: ' + t.versionA);
+  lines.push('Version B: ' + t.versionB);
+  lines.push('Current rate: ' + t.baseline + ' percent. Target rate: ' + t.target + ' percent.');
+  if (t.perVersion) {
+    lines.push('Visitors needed per version: about ' + t.perVersion + ' (' + t.total + ' in total).');
+    lines.push('Days needed at ' + t.dailyVisitors + ' visitors a day: about ' + t.days + '.');
+  }
+  lines.push('Steps:');
+  t.steps.forEach(function(s, i){ lines.push((i + 1) + '. ' + s); });
+  lines.push(t.verdict);
+  lines.push('Sample-size numbers are estimates for planning, not statistics software.');
+  return lines.join('\n');
+}
+function abValidate(inp){
+  var errs = [];
+  if (!inp.versionA || !inp.versionA.trim()) errs.push('Describe version A — what you have now.');
+  if (!inp.versionB || !inp.versionB.trim()) errs.push('Describe version B — the one change to try.');
+  if (isNaN(inp.baseline) || inp.baseline <= 0 || inp.baseline >= 100) errs.push('Enter a current rate between 0 and 100.');
+  if (isNaN(inp.target) || inp.target <= 0 || inp.target >= 100) errs.push('Enter a target rate between 0 and 100.');
+  if (!isNaN(inp.baseline) && !isNaN(inp.target) && inp.target <= inp.baseline) errs.push('The target rate must be higher than the current rate.');
+  if (isNaN(inp.dailyVisitors) || inp.dailyVisitors < 1) errs.push('Enter your visitors per day (at least 1).');
+  return errs;
+}
+window.NP = {WHAT_NAMES: AB_WHAT_NAMES, sampleSize: abSampleSize,
+  daysNeeded: abDaysNeeded, buildTest: abBuildTest, testText: abTestText,
+  validate: abValidate};
+if (typeof document !== 'undefined' && document.getElementById) {
+  var LS_KEY = 'np-ab-testing-planner';
+  var saved = loadLS(LS_KEY);
+  if (saved) {
+    if (saved.what && el('ab-what')) el('ab-what').value = saved.what;
+    if (saved.versionA && el('ab-a')) el('ab-a').value = saved.versionA;
+    if (saved.versionB && el('ab-b')) el('ab-b').value = saved.versionB;
+    if (saved.baseline !== undefined && el('ab-rate')) el('ab-rate').value = saved.baseline;
+    if (saved.target !== undefined && el('ab-target')) el('ab-target').value = saved.target;
+    if (saved.dailyVisitors !== undefined && el('ab-visitors')) el('ab-visitors').value = saved.dailyVisitors;
+  }
+  var buildBtn = el('ab-build');
+  if (buildBtn) buildBtn.addEventListener('click', function(){
+    var inp = {what: el('ab-what').value, versionA: el('ab-a').value, versionB: el('ab-b').value,
+      baseline: parseFloat(el('ab-rate').value), target: parseFloat(el('ab-target').value),
+      dailyVisitors: parseFloat(el('ab-visitors').value)};
+    var errs = abValidate(inp);
+    var out = el('ab-out');
+    var copyBtn = el('ab-copy');
+    if (errs.length) { out.textContent = errs.join('\n'); show(out); if (copyBtn) copyBtn.style.display = 'none'; return; }
+    saveLS(LS_KEY, inp);
+    var t = abBuildTest(inp);
+    var html = '<b>A/B test plan — ' + esc(t.whatName) + '</b>\n';
+    html += 'Version A: ' + esc(t.versionA) + '\n';
+    html += 'Version B: ' + esc(t.versionB) + '\n';
+    html += 'Current rate: ' + t.baseline + ' percent. Target rate: ' + t.target + ' percent.\n\n';
+    if (t.perVersion) {
+      html += '<b>Visitors needed per version: about ' + t.perVersion + '</b>\n';
+      html += 'Total visitors: about ' + t.total + '. Days at ' + t.dailyVisitors + ' visitors a day: about ' + t.days + '.\n\n';
+    }
+    html += '<b>Steps</b>\n';
+    t.steps.forEach(function(s, i){ html += (i + 1) + '. ' + esc(s) + '\n'; });
+    html += '\n' + esc(t.verdict);
+    out.innerHTML = html;
+    show(out);
+    if (copyBtn) {
+      show(copyBtn);
+      copyBtn.onclick = function(){ copyText(abTestText(t), copyBtn); };
+    }
+  });
+}
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

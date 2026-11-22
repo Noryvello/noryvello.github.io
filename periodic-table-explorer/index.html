@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Periodic Table Explorer — Explore Every Element Free | Noryvello</title>
+<meta name="description" content="Explore the periodic table free — every element, its symbol, number and uses, with a quiz to test yourself. Made for students, no signup.">
+<link rel="canonical" href="https://noryvello.github.io/periodic-table-explorer/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Periodic Table Explorer — Explore Every Element Free">
+<meta property="og:description" content="Explore every element free — symbol, number and uses — with a quiz to test yourself.">
+<meta property="og:url" content="https://noryvello.github.io/periodic-table-explorer/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;min-height:72px;margin-top:14px;padding:12px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#fff;color:#4338ca;border:2px solid #4338ca}
+.calc input,.calc select{min-height:72px}
+.calc textarea{width:100%;min-height:72px;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:15px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef2ff}
+</style>
+<style>
+.pt-wrap{overflow-x:auto;margin:10px 0}
+.pt-grid{display:grid;grid-template-columns:repeat(18,40px);grid-auto-rows:44px;gap:2px;min-width:738px}
+.cell{display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid #cbd5e1;border-radius:6px;cursor:pointer;background:#fff;line-height:1.2}
+.cell .n{font-size:9px;color:#64748b}
+.cell .s{font-size:14px;font-weight:700}
+.cell.sel{outline:3px solid #4338ca;outline-offset:1px}
+.cell.blank{border:0;background:transparent;cursor:default}
+.cat-alkali-metal{background:#fee2e2}
+.cat-alkaline-earth-metal{background:#ffedd5}
+.cat-transition-metal{background:#dbeafe}
+.cat-post-transition-metal{background:#cffafe}
+.cat-metalloid{background:#fef9c3}
+.cat-nonmetal{background:#dcfce7}
+.cat-halogen{background:#fce7f3}
+.cat-noble-gas{background:#e0e7ff}
+.cat-lanthanide{background:#ede9fe}
+.cat-actinide{background:#fae8ff}
+.detail{background:#fff;border:1px solid #cbd5e1;border-radius:12px;padding:14px 16px;margin-top:14px}
+.detail .dname{font-size:19px;font-weight:700;margin-bottom:6px}
+.detail p{margin:4px 0;font-size:15px}
+.qopt{margin-top:10px}
+.legend{font-size:13px;color:#64748b;margin:6px 0}
+</style></head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Periodic Table Explorer</h1>
+<p class="answer">Tap any element to see its symbol, atomic number, group and everyday uses — all 118 elements are here. Then test yourself with the 10-question symbol quiz at the bottom of the table.</p>
+<div class="calc">
+<label for="search">Find an element by name, symbol or number</label>
+<input id="search" type="text" placeholder="e.g. gold, Au, or 79" autocomplete="off" autocapitalize="off" spellcheck="false">
+<button type="button" id="find-btn">Find element</button>
+<p class="legend">Tap any cell in the table below to see that element. On a phone, slide the table sideways to see all 18 columns. Colours show the element families: red alkali metals, orange alkaline earth metals, blue transition metals, green nonmetals, pink halogens, indigo noble gases, yellow metalloids, violet lanthanides, purple actinides.</p>
+<div class="pt-wrap"><div class="pt-grid" id="grid"></div></div>
+<div class="detail" id="detail"><p class="dname">Tap an element to begin</p><p>Pick any cell above, or search for an element by name, symbol or atomic number.</p></div>
+<button type="button" id="copy-btn" class="secondary" style="display:none">Copy element facts</button>
+<p style="font-weight:700;font-size:18px;margin-top:22px">Symbol quiz</p>
+<p class="note">Ten questions. Each one asks for the symbol of a named element — pick one of four answers.</p>
+<button type="button" id="quiz-btn">Start the quiz</button>
+<div class="out" id="quiz-q"></div>
+<div id="quiz-opts"></div>
+<div class="steps" id="quiz-feedback"></div>
+<button type="button" id="quiz-next" class="secondary" style="display:none">Next question</button>
+</div>
+<div class="warn">This explorer covers all 118 elements known today, with the facts as scientists list them. New elements are extremely rare — the last four were officially named in 2016 — but if a 119th is ever confirmed, this page will be out of date. The uses shown are the common ones; some elements have specialist uses this page does not list.</div>
+<h2>How to use this explorer</h2>
+<p>The table at the top of the page shows all 118 elements in the usual layout: seven rows, eighteen columns, with the two extra rows for the lanthanides and actinides tucked underneath. Tap any cell to see that element's details below the table — its full name, its symbol, its atomic number, its group and period, its family, and what it is used for. If you know what you are looking for, type a name, a symbol or a number into the search box instead and press Find element.</p>
+<p>On a phone, the table is wider than the screen, so it slides sideways inside its own frame — the page itself never scrolls sideways. The colours are a guide to the families: red for the alkali metals down the left edge, orange for the alkaline earth metals next to them, blue across the middle for the transition metals, green for the nonmetals, pink for the halogens, indigo for the noble gases down the right edge, yellow for the metalloids, and violet and purple for the two rows underneath. Once you know the colours, you can read the table at a glance.</p>
+<p>When you have found an element you want to remember, press Copy element facts to copy its name, symbol, number, group and uses into your notes. And when you are ready to test yourself, press Start the quiz below the table: ten questions, each asking for the symbol of a named element, with four answers to choose from.</p>
+<h2>Reading the table — groups, periods, and numbers</h2>
+<p>The periodic table is arranged by atomic number: the number of protons in the nucleus of an atom. Hydrogen has 1 proton, so it is number 1. Helium has 2, lithium has 3, and so on all the way to oganesson with 118. The atomic number is the identity of an element — change the number of protons and you change the element itself. The number in each cell is the atomic number, and the letters are the symbol: usually one or two letters, often from the English name, sometimes from an older Latin name.</p>
+<p>The columns are called groups, numbered 1 to 18. Elements in the same group behave in similar ways because they have the same number of electrons in their outer shell. Group 1, the alkali metals, are all soft metals that react violently with water. Group 17, the halogens, are all reactive nonmetals. Group 18, the noble gases, barely react with anything at all. If you know the group, you can often predict how an element will behave without ever seeing it.</p>
+<p>The rows are called periods, numbered 1 to 7. A period tells you how many electron shells the atom has: elements in period 2 have two shells, elements in period 3 have three, and so on. Moving across a period, the atomic number rises by one at each step, and the character changes gradually from metal on the left to nonmetal on the right. The two rows at the bottom — the lanthanides and the actinides — belong inside periods 6 and 7, but they are shown separately to keep the table from becoming too wide to read.</p>
+<h2>The elements you meet every day</h2>
+<p><strong>Oxygen (O, number 8)</strong> is the element you use most: about a fifth of the air is oxygen, and your body uses it to release energy from food. It is also what makes things burn — a fire is oxygen joining rapidly with a fuel. <strong>Carbon (C, number 6)</strong> is the backbone of all living things: your body, your food, wood, plastic and coal are all built on carbon chains. Two of the most famous forms of pure carbon are diamond, the hardest natural material, and graphite, the soft grey stuff in pencils.</p>
+<p><strong>Iron (Fe, number 26)</strong> is the metal of buildings, bridges, cars and railways — more iron is used than all other metals put together, mostly as steel. Its symbol, Fe, comes from the Latin word ferrum, which is why it does not match the English name. <strong>Calcium (Ca, number 20)</strong> builds your bones and teeth, and is the main ingredient of cement, chalk and limestone. Milk is famous for calcium because growing bones need a steady supply of it.</p>
+<p>Look around any room and you will find a dozen more: aluminium in window frames and cans, copper in wires, silicon in phone screens and computer chips, sodium and chlorine as table salt, nitrogen in fertiliser bags, hydrogen in water, and gold and silver in jewellery. The table is not an abstract poster — it is the inventory of the physical world.</p>
+<h2>The quiz — how to test yourself</h2>
+<p>The quiz asks one question at a time: "What is the symbol for this element?" Four symbols appear as big buttons; tap the one you think is right. You get your answer at once — right or wrong, with the correct symbol shown — and then the Next question button takes you to the next one. After ten questions you get your score out of ten and a short message about how you did.</p>
+<p>The questions are picked at random from all 118 elements, so every round is different. That means you will sometimes meet an element you have never heard of, like thulium or dubnium. That is fine — the quiz is a learning tool, not an exam, and a wrong answer with the right one shown straight after is one of the fastest ways to learn. If you want a gentler start, spend a few minutes tapping through the table first, then try the quiz on the first 20 elements by learning them from the plan in the next section.</p>
+<p>A score of 10 out of 10 on a random draw is genuinely hard, because the heavy elements at the bottom of the table are rarely taught at school. Do not be discouraged by a low first score. Play again: the symbols you missed will start to stick, and within a few rounds you will find the common ones — H, O, C, N, Fe, Au, Ag, Na, Cl — coming to mind without thinking.</p>
+<h2>Learning the first 20 elements in a week</h2>
+<p>You do not need to memorise all 118 elements at once. School chemistry mostly uses the first 20, and a week is enough to learn them well. <strong>Day 1:</strong> learn hydrogen, helium, lithium, beryllium and boron — numbers 1 to 5. Say each name and symbol out loud, and write them down once. <strong>Day 2:</strong> add carbon, nitrogen, oxygen, fluorine and neon — numbers 6 to 10. Test yourself on all ten before you sleep.</p>
+<p><strong>Day 3:</strong> add sodium, magnesium, aluminium, silicon and phosphorus — numbers 11 to 15. Note the odd symbols: Na for sodium (from the Latin natrium) and the "ph" in phosphorus. <strong>Day 4:</strong> add sulfur, chlorine, argon, potassium and calcium — numbers 16 to 20. Potassium's symbol is K (from kalium), another Latin leftover. <strong>Day 5:</strong> test yourself on all 20 with the quiz and with a blank piece of paper. <strong>Day 6:</strong> learn the ones you missed, and learn one use for each element — a use is a hook that holds the symbol in memory. <strong>Day 7:</strong> test again. If you score 18 or better, you know the first 20.</p>
+<p>The trick that makes it work is testing, not re-reading. Reading the list ten times feels productive and teaches almost nothing. Covering the symbols and trying to recall them feels harder and teaches far more — every failed recall, corrected at once, strengthens the memory. The quiz on this page does exactly that: it asks, you answer, it corrects. Use it little and often rather than in one long session.</p>
+<h2>Common mistakes</h2>
+<p>The most common mistake is memorising without understanding: knowing that Fe is iron without knowing that iron sits in group 8, in period 4, and is a transition metal. The table's shape is the memory aid — group tells you the behaviour, period tells you the shells, and the position tells you the neighbours. Learn the shape and the symbols come with it.</p>
+<p>The second mistake is confusing a symbol with a name. Symbols are case-sensitive: Co is cobalt, a metal, while CO is carbon monoxide, a poisonous gas made of carbon and oxygen. One capital letter changes everything. The same trap catches "SI" (not an element — silicon is Si) and "FE" (not an element — iron is Fe). Always write symbols with exactly one capital letter, followed by a small letter if there is a second one.</p>
+<p>The third mistake is assuming the symbol always matches the English name. Most do — C for carbon, O for oxygen — but the famous exceptions come from Latin: Na for sodium, K for potassium, Fe for iron, Cu for copper, Ag for silver, Sn for tin, Sb for antimony, Au for gold, Hg for mercury, Pb for lead. These eleven are worth learning as a set, because they appear in almost every exam. The fourth mistake is treating the atomic number as a mass: the number counts protons, not weight, and the mass of an atom is roughly twice its atomic number only for light elements.</p>
+<h2>What it cannot do</h2>
+<p>This explorer shows the facts of each element — symbol, number, group, family and common uses — but it cannot teach chemistry on its own. It does not show electron arrangements, atomic masses, melting points or how elements react with each other; those need a textbook and a teacher. It cannot tell you which elements are in an unknown substance, and it cannot balance equations — the Chemistry Equation Balancer on this site does that job. The quiz tests symbol recall only, which is the first step, not the whole subject. Use this page to get familiar with the table's shape and its names, then build on it with the worked examples in your school book.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How many elements are there?</h3><p>118 elements are known today, from hydrogen (1) to oganesson (118). The first 94 occur in nature; the rest were made in laboratories. The last four were officially named in 2016.</p></div>
+<div class="faq"><h3>What is an atomic number?</h3><p>The atomic number is the number of protons in the nucleus of an atom. It is the identity of an element: hydrogen has 1 proton, carbon has 6, and gold has 79. Change the number of protons and you change the element.</p></div>
+<div class="faq"><h3>What is the difference between a group and a period?</h3><p>A group is a column of the table (1 to 18); elements in a group behave similarly because they have the same number of outer electrons. A period is a row (1 to 7); it tells you how many electron shells the atom has.</p></div>
+<div class="faq"><h3>Which element is the lightest?</h3><p>Hydrogen, number 1. A hydrogen atom has one proton and one electron, and it is the lightest of all elements. It is also the most common element in the universe.</p></div>
+<div class="faq"><h3>How can I remember the symbols?</h3><p>Learn them in small groups, test yourself instead of re-reading, and learn one use for each element as a memory hook. The quiz on this page asks, corrects and repeats — a few short rounds beat one long session.</p></div>
+<div class="faq"><h3>Can I test myself here?</h3><p>Yes. Press Start the quiz below the table: ten questions, each asking for the symbol of a named element, with four answers to choose from and your score at the end. Every round picks different elements.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/chemistry-equation-balancer/">Chemistry Equation Balancer</a> · <a href="https://noryvello.github.io/physics-formula-calculator/">Physics Formula Calculator</a> · <a href="https://noryvello.github.io/book-reading-tracker/">Book Reading Tracker</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many elements are there?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "118 elements are known today, from hydrogen (1) to oganesson (118). The first 94 occur in nature; the rest were made in laboratories. The last four were officially named in 2016."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an atomic number?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The atomic number is the number of protons in the nucleus of an atom. It is the identity of an element: hydrogen has 1 proton, carbon has 6, and gold has 79. Change the number of protons and you change the element."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a group and a period?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A group is a column of the table (1 to 18); elements in a group behave similarly because they have the same number of outer electrons. A period is a row (1 to 7); it tells you how many electron shells the atom has."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which element is the lightest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hydrogen, number 1. A hydrogen atom has one proton and one electron, and it is the lightest of all elements. It is also the most common element in the universe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I remember the symbols?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Learn them in small groups, test yourself instead of re-reading, and learn one use for each element as a memory hook. The quiz on this page asks, corrects and repeats — a few short rounds beat one long session."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I test myself here?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Press Start the quiz below the table: ten questions, each asking for the symbol of a named element, with four answers to choose from and your score at the end. Every round picks different elements."
+      }
+    }
+  ]
+}
+</script>
+<script>
+window.NP = (function () {
+  var RAW = [[1, "H", "Hydrogen", "1", 1, "nonmetal", "Fuel, water, and the lightest gas; used in refining and making ammonia."], [2, "He", "Helium", "18", 1, "noble gas", "Balloons and airships; cooling the magnets in MRI scanners."], [3, "Li", "Lithium", "1", 2, "alkali metal", "Rechargeable batteries in phones and electric cars."], [4, "Be", "Beryllium", "2", 2, "alkaline earth metal", "Light, stiff metal for aircraft parts and X-ray windows."], [5, "B", "Boron", "13", 2, "metalloid", "Borax cleaning products, heat-proof glass, and detergents."], [6, "C", "Carbon", "14", 2, "nonmetal", "The basis of all living things; pencils, diamonds, and steel-making."], [7, "N", "Nitrogen", "15", 2, "nonmetal", "Most of the air we breathe; fertilisers and food packaging gas."], [8, "O", "Oxygen", "16", 2, "nonmetal", "Breathing, burning, and steel-making; hospitals keep it for patients."], [9, "F", "Fluorine", "17", 2, "halogen", "Toothpaste fluoride and non-stick coatings."], [10, "Ne", "Neon", "18", 2, "noble gas", "Bright signs and lasers."], [11, "Na", "Sodium", "1", 3, "alkali metal", "Table salt (with chlorine) and street lights."], [12, "Mg", "Magnesium", "2", 3, "alkaline earth metal", "Light alloys for cars and planes; also in antacids."], [13, "Al", "Aluminium", "13", 3, "post-transition metal", "Cans, foil, window frames, and aircraft bodies."], [14, "Si", "Silicon", "14", 3, "metalloid", "Computer chips, glass, and solar panels."], [15, "P", "Phosphorus", "15", 3, "nonmetal", "Fertilisers, matches, and detergents."], [16, "S", "Sulfur", "16", 3, "nonmetal", "Sulfuric acid, fertilisers, and vulcanised rubber."], [17, "Cl", "Chlorine", "17", 3, "halogen", "Cleaning swimming pools and drinking water; table salt."], [18, "Ar", "Argon", "18", 3, "noble gas", "Filling light bulbs and protecting welds."], [19, "K", "Potassium", "1", 4, "alkali metal", "Fertilisers; the body needs it for nerves and muscles."], [20, "Ca", "Calcium", "2", 4, "alkaline earth metal", "Bones and teeth; cement, chalk, and milk."], [21, "Sc", "Scandium", "3", 4, "transition metal", "Light alloys for bicycle frames and aircraft parts."], [22, "Ti", "Titanium", "4", 4, "transition metal", "Strong, light metal for aircraft, implants, and bikes."], [23, "V", "Vanadium", "5", 4, "transition metal", "Hardening steel for tools and springs."], [24, "Cr", "Chromium", "6", 4, "transition metal", "Stainless steel and shiny chrome plating."], [25, "Mn", "Manganese", "7", 4, "transition metal", "Steel-making and batteries."], [26, "Fe", "Iron", "8", 4, "transition metal", "Steel for buildings, bridges, and vehicles; the most used metal."], [27, "Co", "Cobalt", "9", 4, "transition metal", "Batteries, blue glass, and strong magnets."], [28, "Ni", "Nickel", "10", 4, "transition metal", "Stainless steel, coins, and rechargeable batteries."], [29, "Cu", "Copper", "11", 4, "transition metal", "Electrical wires, pipes, and coins."], [30, "Zn", "Zinc", "12", 4, "transition metal", "Galvanising steel against rust; batteries and brass."], [31, "Ga", "Gallium", "13", 4, "post-transition metal", "LEDs, solar cells, and electronics."], [32, "Ge", "Germanium", "14", 4, "metalloid", "Fibre optics and infrared lenses."], [33, "As", "Arsenic", "15", 4, "metalloid", "Wood preservatives and semiconductors; poisonous in large amounts."], [34, "Se", "Selenium", "16", 4, "nonmetal", "Solar cells, photocopiers, and dietary supplements."], [35, "Br", "Bromine", "17", 4, "halogen", "Flame retardants and photographic chemicals."], [36, "Kr", "Krypton", "18", 4, "noble gas", "Bright lamps and lasers."], [37, "Rb", "Rubidium", "1", 5, "alkali metal", "Atomic clocks and research."], [38, "Sr", "Strontium", "2", 5, "alkaline earth metal", "Red fireworks and magnets."], [39, "Y", "Yttrium", "3", 5, "transition metal", "LED phosphors, lasers, and superconductors."], [40, "Zr", "Zirconium", "4", 5, "transition metal", "Heat-proof ceramics and nuclear reactor parts."], [41, "Nb", "Niobium", "5", 5, "transition metal", "Superconducting magnets and strong steel alloys."], [42, "Mo", "Molybdenum", "6", 5, "transition metal", "Hardening steel and lubricants."], [43, "Tc", "Technetium", "7", 5, "transition metal", "Medical scans; the first element made by people, not found in nature."], [44, "Ru", "Ruthenium", "8", 5, "transition metal", "Hard-wearing electrical contacts and catalysts."], [45, "Rh", "Rhodium", "9", 5, "transition metal", "Car catalytic converters and jewellery plating."], [46, "Pd", "Palladium", "10", 5, "transition metal", "Catalytic converters and electronics."], [47, "Ag", "Silver", "11", 5, "transition metal", "Jewellery, coins, mirrors, and the best electrical conductor."], [48, "Cd", "Cadmium", "12", 5, "transition metal", "Rechargeable batteries and yellow pigments; toxic, so use is falling."], [49, "In", "Indium", "13", 5, "post-transition metal", "Touchscreens and solders."], [50, "Sn", "Tin", "14", 5, "post-transition metal", "Tin cans (steel coated in tin) and solder."], [51, "Sb", "Antimony", "15", 5, "metalloid", "Flame retardants and lead alloys for batteries."], [52, "Te", "Tellurium", "16", 5, "metalloid", "Solar panels and alloys."], [53, "I", "Iodine", "17", 5, "halogen", "Antiseptic, iodised salt, and thyroid medicine."], [54, "Xe", "Xenon", "18", 5, "noble gas", "Bright headlights, camera flashes, and ion engines."], [55, "Cs", "Caesium", "1", 6, "alkali metal", "Atomic clocks — the most accurate timekeepers."], [56, "Ba", "Barium", "2", 6, "alkaline earth metal", "Green fireworks and medical X-ray meals."], [57, "La", "Lanthanum", "3", 6, "lanthanide", "Camera lenses and hybrid car batteries."], [58, "Ce", "Cerium", "Lanthanide series", 6, "lanthanide", "Lighter flints and glass polishing."], [59, "Pr", "Praseodymium", "Lanthanide series", 6, "lanthanide", "Yellow glass for welders' goggles and magnets."], [60, "Nd", "Neodymium", "Lanthanide series", 6, "lanthanide", "The strongest permanent magnets, in headphones and motors."], [61, "Pm", "Promethium", "Lanthanide series", 6, "lanthanide", "No everyday use; made in laboratories, used in research and specialist gauges."], [62, "Sm", "Samarium", "Lanthanide series", 6, "lanthanide", "Strong magnets that work when hot."], [63, "Eu", "Europium", "Lanthanide series", 6, "lanthanide", "Red and blue phosphors in screens and lamps."], [64, "Gd", "Gadolinium", "Lanthanide series", 6, "lanthanide", "MRI scan contrast and magnets."], [65, "Tb", "Terbium", "Lanthanide series", 6, "lanthanide", "Green phosphors in screens and lamps."], [66, "Dy", "Dysprosium", "Lanthanide series", 6, "lanthanide", "Magnets in electric car motors and wind turbines."], [67, "Ho", "Holmium", "Lanthanide series", 6, "lanthanide", "The most magnetic element; used in lasers and magnets."], [68, "Er", "Erbium", "Lanthanide series", 6, "lanthanide", "Fibre-optic amplifiers and pink glass."], [69, "Tm", "Thulium", "Lanthanide series", 6, "lanthanide", "Lasers and portable X-ray machines."], [70, "Yb", "Ytterbium", "Lanthanide series", 6, "lanthanide", "Lasers and atomic clocks."], [71, "Lu", "Lutetium", "Lanthanide series", 6, "lanthanide", "Cancer treatment and research; the rarest stable lanthanide."], [72, "Hf", "Hafnium", "4", 6, "transition metal", "Nuclear reactor control rods and computer chips."], [73, "Ta", "Tantalum", "5", 6, "transition metal", "Capacitors in phones and surgical implants."], [74, "W", "Tungsten", "6", 6, "transition metal", "Light bulb filaments and cutting tools; the highest melting point of any metal."], [75, "Re", "Rhenium", "7", 6, "transition metal", "Jet engine parts that must not melt."], [76, "Os", "Osmium", "8", 6, "transition metal", "The densest element; used in fountain pen tips and electrical contacts."], [77, "Ir", "Iridium", "9", 6, "transition metal", "The most corrosion-proof metal; spark plugs and pen tips."], [78, "Pt", "Platinum", "10", 6, "transition metal", "Jewellery, catalytic converters, and lab equipment."], [79, "Au", "Gold", "11", 6, "transition metal", "Jewellery, coins, and electronics; it never tarnishes."], [80, "Hg", "Mercury", "12", 6, "transition metal", "Old thermometers and fluorescent lamps; liquid at room temperature and poisonous."], [81, "Tl", "Thallium", "13", 6, "post-transition metal", "Specialist electronics and lenses; very poisonous."], [82, "Pb", "Lead", "14", 6, "post-transition metal", "Car batteries and radiation shielding; poisonous, so use is falling."], [83, "Bi", "Bismuth", "15", 6, "post-transition metal", "Stomach medicine, cosmetics, and low-melting alloys."], [84, "Po", "Polonium", "16", 6, "post-transition metal", "No everyday use; radioactive, used in specialist research."], [85, "At", "Astatine", "17", 6, "halogen", "No everyday use; extremely rare and radioactive, studied in research."], [86, "Rn", "Radon", "18", 6, "noble gas", "No everyday use; a radioactive gas that seeps from rocks."], [87, "Fr", "Francium", "1", 7, "alkali metal", "No everyday use; extremely rare and radioactive, studied in research."], [88, "Ra", "Radium", "2", 7, "alkaline earth metal", "Once used in glowing watch paint; now only research, because it is radioactive."], [89, "Ac", "Actinium", "3", 7, "actinide", "No everyday use; radioactive, used in cancer research."], [90, "Th", "Thorium", "Actinide series", 7, "actinide", "Possible nuclear fuel; studied as an alternative to uranium."], [91, "Pa", "Protactinium", "Actinide series", 7, "actinide", "No everyday use; radioactive, studied in research."], [92, "U", "Uranium", "Actinide series", 7, "actinide", "Nuclear power stations and submarines."], [93, "Np", "Neptunium", "Actinide series", 7, "actinide", "No everyday use; made in reactors, used in research."], [94, "Pu", "Plutonium", "Actinide series", 7, "actinide", "Nuclear power and spacecraft that travel far from the Sun."], [95, "Am", "Americium", "Actinide series", 7, "actinide", "Smoke detectors in many homes."], [96, "Cm", "Curium", "Actinide series", 7, "actinide", "No everyday use; radioactive, used in research and space heaters."], [97, "Bk", "Berkelium", "Actinide series", 7, "actinide", "No everyday use; made in laboratories for research."], [98, "Cf", "Californium", "Actinide series", 7, "actinide", "Neutron sources for scanners and research."], [99, "Es", "Einsteinium", "Actinide series", 7, "actinide", "No everyday use; made in laboratories for research."], [100, "Fm", "Fermium", "Actinide series", 7, "actinide", "No everyday use; made in laboratories for research."], [101, "Md", "Mendelevium", "Actinide series", 7, "actinide", "No everyday use; made in laboratories for research."], [102, "No", "Nobelium", "Actinide series", 7, "actinide", "No everyday use; made in laboratories for research."], [103, "Lr", "Lawrencium", "Actinide series", 7, "actinide", "No everyday use; made in laboratories for research."], [104, "Rf", "Rutherfordium", "4", 7, "transition metal", "No everyday use; made in laboratories, exists for seconds."], [105, "Db", "Dubnium", "5", 7, "transition metal", "No everyday use; made in laboratories, exists for seconds."], [106, "Sg", "Seaborgium", "6", 7, "transition metal", "No everyday use; made in laboratories, exists for seconds."], [107, "Bh", "Bohrium", "7", 7, "transition metal", "No everyday use; made in laboratories, exists for seconds."], [108, "Hs", "Hassium", "8", 7, "transition metal", "No everyday use; made in laboratories, exists for seconds."], [109, "Mt", "Meitnerium", "9", 7, "transition metal", "No everyday use; made in laboratories, exists for a fraction of a second."], [110, "Ds", "Darmstadtium", "10", 7, "transition metal", "No everyday use; made in laboratories, exists for a fraction of a second."], [111, "Rg", "Roentgenium", "11", 7, "transition metal", "No everyday use; made in laboratories, exists for a fraction of a second."], [112, "Cn", "Copernicium", "12", 7, "transition metal", "No everyday use; made in laboratories, exists for a fraction of a second."], [113, "Nh", "Nihonium", "13", 7, "post-transition metal", "No everyday use; made in laboratories, exists for a fraction of a second."], [114, "Fl", "Flerovium", "14", 7, "post-transition metal", "No everyday use; made in laboratories, exists for a fraction of a second."], [115, "Mc", "Moscovium", "15", 7, "post-transition metal", "No everyday use; made in laboratories, exists for a fraction of a second."], [116, "Lv", "Livermorium", "16", 7, "post-transition metal", "No everyday use; made in laboratories, exists for a fraction of a second."], [117, "Ts", "Tennessine", "17", 7, "halogen", "No everyday use; made in laboratories, exists for a fraction of a second."], [118, "Og", "Oganesson", "18", 7, "noble gas", "No everyday use; made in laboratories, exists for a fraction of a second."]];
+  var ELEMENTS = RAW.map(function (r) {
+    return { number: r[0], symbol: r[1], name: r[2], group: r[3], period: r[4], category: r[5], uses: r[6] };
+  });
+  var BY_SYMBOL = {}, BY_NAME = {}, BY_NUMBER = {};
+  ELEMENTS.forEach(function (e) {
+    BY_SYMBOL[e.symbol] = e;
+    BY_NAME[e.name.toLowerCase()] = e;
+    BY_NUMBER[e.number] = e;
+  });
+  function getElement(q) {
+    if (q === null || q === undefined) return null;
+    var s = String(q).trim();
+    if (!s) return null;
+    if (/^\d+$/.test(s)) return BY_NUMBER[parseInt(s, 10)] || null;
+    if (BY_SYMBOL[s]) return BY_SYMBOL[s];
+    var cap = s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+    if (BY_SYMBOL[cap]) return BY_SYMBOL[cap];
+    return BY_NAME[s.toLowerCase()] || null;
+  }
+  // Grid position: main table row = period, col = group number;
+  // lanthanides (57-71) row 8, actinides (89-103) row 9, cols 3-17.
+  function cellPosition(el) {
+    var n = el.number;
+    if (n >= 57 && n <= 71) return { row: 8, col: 3 + (n - 57) };
+    if (n >= 89 && n <= 103) return { row: 9, col: 3 + (n - 89) };
+    return { row: el.period, col: parseInt(el.group, 10) };
+  }
+  function shuffle(arr, rand) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(rand() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+  // Build a quiz: n questions, each {name, symbol, options[4 symbols]}.
+  // rand is an injectable random function (defaults to Math.random) for tests.
+  function makeQuiz(n, rand) {
+    rand = rand || Math.random;
+    var picked = shuffle(ELEMENTS, rand).slice(0, n);
+    return picked.map(function (el) {
+      var others = shuffle(ELEMENTS.filter(function (x) { return x.symbol !== el.symbol; }), rand).slice(0, 3);
+      var options = shuffle([el.symbol].concat(others.map(function (x) { return x.symbol; })), rand);
+      return { name: el.name, symbol: el.symbol, number: el.number, options: options };
+    });
+  }
+  function countCorrect(picks, questions) {
+    var c = 0;
+    for (var i = 0; i < questions.length; i++) if (picks[i] === questions[i].symbol) c++;
+    return c;
+  }
+  function factsText(el) {
+    return el.name + " (" + el.symbol + ") — atomic number " + el.number + ", group " + el.group +
+      ", period " + el.period + ", " + el.category + ". Uses: " + el.uses;
+  }
+  return { ELEMENTS: ELEMENTS, getElement: getElement, cellPosition: cellPosition,
+           makeQuiz: makeQuiz, countCorrect: countCorrect, factsText: factsText };
+})();
+// ==== DOM WIRING BELOW ====
+(function () {
+  var NP = window.NP;
+  var grid = document.getElementById("grid");
+  var detail = document.getElementById("detail");
+  var copyBtn = document.getElementById("copy-btn");
+  var selected = null, lastFacts = "";
+  // Build the grid: 9 rows x 18 cols, blanks where no element sits.
+  var cells = {};
+  NP.ELEMENTS.forEach(function (el) {
+    var p = NP.cellPosition(el);
+    cells[p.row + ":" + p.col] = el;
+  });
+  for (var row = 1; row <= 9; row++) {
+    for (var col = 1; col <= 18; col++) {
+      var el = cells[row + ":" + col];
+      var span = document.createElement("span");
+      if (!el) {
+        span.className = "cell blank";
+        span.setAttribute("aria-hidden", "true");
+      } else {
+        span.className = "cell cat-" + el.category.replace(/ /g, "-");
+        span.setAttribute("role", "button");
+        span.setAttribute("tabindex", "0");
+        span.setAttribute("aria-label", el.name);
+        span.setAttribute("data-symbol", el.symbol);
+        var nn = document.createElement("span"); nn.className = "n"; nn.textContent = el.number;
+        var ss = document.createElement("span"); ss.className = "s"; ss.textContent = el.symbol;
+        span.appendChild(nn); span.appendChild(ss);
+        span.addEventListener("click", function (e) { show(NP.getElement(e.currentTarget.getAttribute("data-symbol"))); });
+        span.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); show(NP.getElement(e.currentTarget.getAttribute("data-symbol"))); }
+        });
+      }
+      span.style.gridRow = row; span.style.gridColumn = col;
+      grid.appendChild(span);
+    }
+  }
+  function show(el) {
+    if (!el) {
+      detail.innerHTML = "<p class=\"dname\">Not found</p><p>No element matches that search. Try a name like gold, a symbol like Au, or a number from 1 to 118.</p>";
+      copyBtn.style.display = "none"; selected = null; lastFacts = "";
+      return;
+    }
+    selected = el; lastFacts = NP.factsText(el);
+    detail.innerHTML = "<p class=\"dname\">" + el.name + " (" + el.symbol + ")</p>" +
+      "<p><strong>Atomic number:</strong> " + el.number + "</p>" +
+      "<p><strong>Group:</strong> " + el.group + " &nbsp; <strong>Period:</strong> " + el.period + "</p>" +
+      "<p><strong>Family:</strong> " + el.category + "</p>" +
+      "<p><strong>Uses:</strong> " + el.uses + "</p>";
+    copyBtn.style.display = "block";
+    var prev = grid.querySelector(".cell.sel");
+    if (prev) prev.classList.remove("sel");
+    var cell = grid.querySelector('[data-symbol="' + el.symbol + '"]');
+    if (cell) cell.classList.add("sel");
+  }
+  document.getElementById("find-btn").addEventListener("click", function () {
+    show(NP.getElement(document.getElementById("search").value));
+  });
+  document.getElementById("search").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") { e.preventDefault(); show(NP.getElement(e.target.value)); }
+  });
+  copyBtn.addEventListener("click", function () {
+    if (!lastFacts) return;
+    function done() {
+      copyBtn.textContent = "Copied!";
+      setTimeout(function () { copyBtn.textContent = "Copy element facts"; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(lastFacts).then(done, function () { fallbackCopy(); });
+    } else { fallbackCopy(); }
+    function fallbackCopy() {
+      var ta = document.createElement("textarea");
+      ta.value = lastFacts; document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta); done();
+    }
+  });
+  // Quiz
+  var quizBtn = document.getElementById("quiz-btn");
+  var quizQ = document.getElementById("quiz-q");
+  var quizOpts = document.getElementById("quiz-opts");
+  var quizFb = document.getElementById("quiz-feedback");
+  var quizNext = document.getElementById("quiz-next");
+  var questions = [], qi = 0, picks = [], answered = false;
+  function renderQuestion() {
+    var q = questions[qi];
+    answered = false;
+    quizQ.textContent = "Question " + (qi + 1) + " of " + questions.length + ": What is the symbol for " + q.name + "?";
+    quizFb.textContent = "";
+    quizNext.style.display = "none";
+    quizOpts.innerHTML = "";
+    q.options.forEach(function (sym) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "qopt"; b.textContent = sym;
+      b.addEventListener("click", function () {
+        if (answered) return;
+        answered = true;
+        picks[qi] = sym;
+        if (sym === q.symbol) {
+          quizFb.textContent = "Correct! " + q.name + " is " + q.symbol + ".";
+        } else {
+          quizFb.textContent = "Not quite — " + q.name + " is " + q.symbol + ", not " + sym + ".";
+        }
+        quizNext.textContent = (qi === questions.length - 1) ? "See my score" : "Next question";
+        quizNext.style.display = "block";
+      });
+      quizOpts.appendChild(b);
+    });
+  }
+  quizBtn.addEventListener("click", function () {
+    questions = NP.makeQuiz(10);
+    qi = 0; picks = [];
+    quizBtn.textContent = "Start the quiz again";
+    renderQuestion();
+  });
+  quizNext.addEventListener("click", function () {
+    if (qi < questions.length - 1) { qi++; renderQuestion(); return; }
+    var score = NP.countCorrect(picks, questions);
+    quizQ.textContent = "Your score: " + score + " out of " + questions.length + ".";
+    quizOpts.innerHTML = "";
+    quizFb.textContent = score === 10 ? "A perfect round — you know your symbols!"
+      : score >= 7 ? "Well done — a strong round. Play again to push higher."
+      : score >= 4 ? "A good start. Tap through the table, then try again."
+      : "Every expert started somewhere — tap through the table and try again.";
+    quizNext.style.display = "none";
+  });
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

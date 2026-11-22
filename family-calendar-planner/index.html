@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Family Calendar Planner — One Calendar for the Whole Family | Noryvello</title>
+<meta name="description" content="Free family calendar planner — put school, work, meals and events in one place the whole family can follow. No signup, phone friendly.">
+<link rel="canonical" href="https://noryvello.github.io/family-calendar-planner/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Family Calendar Planner — One Calendar for the Whole Family">
+<meta property="og:description" content="Free family calendar planner — put school, work, meals and events in one place the whole family can follow. No signup, phone friendly.">
+<meta property="og:url" content="https://noryvello.github.io/family-calendar-planner/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{min-height:72px;padding:14px 18px;font-size:17px;font-weight:700;border:0;border-radius:10px;background:#4338ca;color:#fff;cursor:pointer;width:100%;margin-top:12px}
+.calc button.secondary{background:#e2e8f0;color:#1e293b}
+.calc button.small{width:auto;min-height:72px;padding:14px 18px;margin:8px 6px 0 0}
+.calc input,.calc select,.calc textarea{min-height:72px;font-size:17px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;background:#fff;font-family:inherit}
+.calc .opt{display:block;width:100%;text-align:left;background:#fff;border:2px solid #cbd5e1;color:#1e293b;border-radius:10px;padding:14px 16px;margin:8px 0;font-size:16px;font-weight:600;cursor:pointer;min-height:72px}
+.calc .opt.correct{border-color:#16a34a;background:#f0fdf4}
+.calc .opt.wrong{border-color:#dc2626;background:#fef2f2}
+.calc .opt:disabled{cursor:default;opacity:1}
+.calc .result{font-size:16px;margin-top:12px}
+.calc .passage{font-size:16.5px;line-height:1.7;margin:12px 0}
+.calc .tag{display:inline-block;background:#eef2ff;border-radius:999px;padding:4px 12px;font-size:13.5px;font-weight:600;margin:2px 4px 2px 0}
+.calc table{width:100%;border-collapse:collapse;font-size:15px;margin:10px 0}
+.calc th,.calc td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+.calc th{background:#eef2ff}
+
+.ev{border-left:8px solid #94a3b8;background:#f8fafc;border-radius:8px;padding:10px 12px;margin:8px 0;font-size:15.5px}
+.ev-school{border-left-color:#2563eb}
+.ev-work{border-left-color:#16a34a}
+.ev-meals{border-left-color:#ea580c}
+.ev-event{border-left-color:#9333ea}
+.ev-chores{border-left-color:#0d9488}
+.ev-other{border-left-color:#64748b}
+.dayblock{margin:16px 0}
+.dayblock .dhead{font-weight:800;font-size:17px;margin-bottom:4px}
+.ev .del{background:#fee2e2;color:#991b1b;width:auto;min-height:72px;padding:8px 14px;font-size:15px;margin-top:8px}
+@media print{.calc button{display:none!important}.calc input,.calc select{display:none!important}.calc label{display:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Family Calendar Planner</h1>
+<p class="answer">This planner puts school, work, meals and events into one weekly calendar that the whole family can follow. Add events by person and type, see them colour-coded, and print the week or copy it as text.</p>
+<div class="calc">
+
+<label for="fc-day">Day</label>
+<select id="fc-day">
+<option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option>
+</select>
+<label for="fc-time">Time</label>
+<input type="time" id="fc-time" value="08:00">
+<label for="fc-person">Person</label>
+<input type="text" id="fc-person" placeholder="Who is it for? (for example, Sara)">
+<label for="fc-type">Type</label>
+<select id="fc-type">
+<option value="school">School</option><option value="work">Work</option><option value="meals">Meals</option><option value="event">Event</option><option value="chores">Chores</option><option value="other">Other</option>
+</select>
+<label for="fc-title">What is happening?</label>
+<input type="text" id="fc-title" placeholder="For example: Football practice">
+<button type="button" id="fc-add">Add to the week</button>
+<p class="result" id="fc-msg"></p>
+<div id="fc-week"></div>
+<button type="button" id="fc-copy">Copy the week as text</button>
+<button type="button" class="secondary" id="fc-print">Print the week</button>
+<button type="button" class="secondary" id="fc-clear">Clear the week</button>
+
+</div>
+<div class="warn">Your calendar saves in this browser only, on this device. Use the print or copy button to keep a copy somewhere safe, and check the week together before it starts.</div>
+<h2>Why one calendar changes everything</h2>
+<p>Most family chaos is not caused by having too much to do. It is caused by plans living in too many heads. One parent knows about the dentist appointment, the other knows about the school trip, and the children know about a party that nobody else has heard of. When the week arrives, everything collides, and the family spends its time apologising and rearranging instead of doing the things it planned.</p><p>One shared calendar fixes this, not because it is clever, but because it is visible. When every plan sits in one place, anyone can see what the week holds before they agree to something new. A child can check whether Saturday is free before inviting a friend. A parent can see that Tuesday is already full before booking a meeting. The calendar does not make decisions for the family. It makes the information available so the family can decide well.</p><p>The calendar also ends the daily question of what is happening today. Instead of asking one person — usually the same person, every time — anyone can look at the week and see it. That small change matters more than it sounds. The person who holds the whole calendar in their head carries a heavy load, and sharing the calendar shares the load.</p>
+<h2>How to use this planner</h2>
+<p>Start by adding the fixed points of your week: school start and finish times, work hours, regular clubs and lessons. Pick a day, a time, a person and a type, then write a short title and tap Add to the week. Each event appears under its day, colour-coded by type so you can see at a glance whether the week is heavy on school, work, meals or events.</p><p>Then add the one-off events: appointments, birthdays, visits, deadlines. If something changes, delete the old event and add the new one. The planner saves everything in this browser, so your week is still there when you come back. Use the copy button to send the week as text to another family member, or the print button to put a copy on the fridge.</p><p>Keep titles short and clear. Football practice is better than FP, and Dentist — Sara is better than Appointment. The person who reads the calendar at seven in the morning should not have to decode it. If an event needs a note — what to bring, where to meet — put the key detail in the title itself.</p>
+<h2>The 10-minute weekly family meeting</h2>
+<p>A calendar only works if someone looks at it, and the simplest way to make that happen is a short weekly meeting. Pick a regular time — Sunday evening works for many families — and spend ten minutes on the week ahead. Ten minutes is enough. Longer meetings turn into arguments about the past instead of plans for the future.</p><p>Go through the week day by day. For each day, ask three questions: what is fixed, what needs preparing, and who is doing what. What needs preparing is the question most families skip. A school trip on Friday means a packed lunch on Thursday night and a permission slip signed by Wednesday. Naming the preparation in the meeting means it gets done, instead of turning into a panic on Friday morning.</p><p>Let children speak in the meeting. A child who says what they need — a lift, a costume, help with homework — is a child who is learning to plan. Write down what is agreed, even if it is only in this planner. The meeting is also the moment to spot an overloaded day and move something. Moving a playdate is easy on Sunday. It is much harder on the day itself.</p>
+<h2>Dividing chores and rides fairly</h2>
+<p>Calendars show work as well as fun, and that is one of their best uses. When every chore and every lift is on the calendar, everyone can see who is doing what. In many families, one person does most of the driving and most of the cooking, and nobody notices until that person is exhausted. A visible calendar makes the load visible.</p><p>Divide by week, not by day. One person can cook on Monday and Wednesday, another on Tuesday and Thursday, and the weekend can be shared. Rides work the same way: one parent takes the morning school run, the other takes the afternoon pickup. Put the names on the calendar so there is no argument about whose turn it is.</p><p>Children can take real jobs too, matched to their age. A seven-year-old can set the table and feed a pet. A twelve-year-old can cook a simple meal and do their own laundry. Put these jobs on the calendar as events, with the child's name on them. A chore on the calendar is a promise, and keeping promises is a skill worth learning early.</p>
+<h2>Planning around the school term</h2>
+<p>School terms set the rhythm of family life, and the calendar should follow that rhythm. At the start of each term, put in the fixed dates first: term start and end, half-term breaks, inset days, exam weeks, parents' evenings and school trips. These are the dates that everything else must fit around.</p><p>Exam weeks need special care. A child with exams needs quiet evenings, regular sleep and less pressure, not more. When an exam week is on the calendar, the family can plan around it: fewer social events, simpler meals, and no big trips. The calendar makes this possible because the whole family can see the exam week coming, not just the child.</p><p>Holidays need planning too, but in the opposite direction. A holiday with nothing planned can drift into boredom, while a holiday packed with activities can be more tiring than school. Aim for one planned thing a day and plenty of free time. Put the planned things on the calendar and leave the rest open. Children need empty days as much as busy ones.</p>
+<h2>A worked example: one full family week</h2>
+<p>Imagine a family of four: two parents, Sara aged twelve, and her brother Adam aged eight. Their week starts on Monday with school at eight, work at nine, and football practice for Adam at four. Tuesday has a dentist appointment for Sara at half past three, and their mother cooks. Wednesday is quiet, so it is the homework catch-up evening. Thursday has swimming for both children at five, and their father drives.</p><p>Friday is the busiest day: a school trip for Sara, a work deadline for their father, and a family meal in the evening. Because the trip is on the calendar, the packed lunch is made on Thursday night. Because the deadline is on the calendar, nobody plans anything else for Friday afternoon. Saturday has a birthday party for Adam in the afternoon and a free morning. Sunday is the weekly meeting, a walk, and an early night.</p><p>Nothing in this week is unusual, and that is the point. A normal week has about twenty moving parts, and a calendar is what keeps them from colliding. The family in this example is not unusually organised. They just write things down, look at the week together, and move things early when a day gets too full.</p>
+<h2>Common mistakes (and how to avoid them)</h2>
+<p>The first mistake is letting one person hold the whole calendar. If only one parent knows what is happening, the family stops working the moment that person is busy or ill. Share the calendar, share the meeting, and share the job of adding events. Everyone old enough to read can add an event.</p><p>The second mistake is no buffer time. A calendar that packs events back to back will break at the first delay. Leave gaps between events, especially when travel is involved. Fifteen minutes between the end of school and the start of football practice is not wasted time. It is the time that makes the practice possible.</p><p>The third mistake is over-scheduling children. A child with an activity every evening has no time to play, rest or be bored — and boredom is where imagination grows. Two or three regular activities a week is plenty for most children. If the calendar shows a full week every week, something needs to go. The calendar is there to serve the family, not to fill every hour of its life.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Why does a family need one calendar?</h3><p>Because plans live in too many heads. One shared calendar puts school, work, meals and events in one place, so anyone can see what the week holds before agreeing to something new, and nobody has to carry the whole week in their memory.</p></div>
+<div class="faq"><h3>How do I get children to follow it?</h3><p>Let them add their own events and speak in the weekly meeting. A child who helped build the plan is far more likely to follow it than a child who was only told about it. Keep the calendar visible, on a screen or printed on the fridge.</p></div>
+<div class="faq"><h3>What goes on a family calendar?</h3><p>Anything that affects more than one person: school and work times, appointments, clubs, meals that need planning, chores and rides, birthdays and trips. If only one person needs to know it, it can stay in their own diary.</p></div>
+<div class="faq"><h3>How often should we plan together?</h3><p>Once a week, for about ten minutes. Pick a regular time, go through the week day by day, and ask what is fixed, what needs preparing, and who is doing what. A short weekly meeting prevents most weekday surprises.</p></div>
+<div class="faq"><h3>Paper or digital — which is better?</h3><p>Both have strengths. Paper on the fridge is always visible; a digital planner is easy to change and share. This page gives you both: plan here, then print the week or copy it as text to share with the family.</p></div>
+<div class="faq"><h3>What if plans keep changing?</h3><p>Change is normal, and a calendar is a plan, not a promise. When something moves, delete the old event and add the new one, and tell the people it affects. The calendar still helps, because it shows what the change bumps into.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/family-tree-builder/">Family Tree Builder</a> · <a href="https://noryvello.github.io/marathon-training-planner/">Marathon Training Planner</a> · <a href="https://noryvello.github.io/sustainable-product-directory/">Sustainable Product Directory</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+</div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does a family need one calendar?", "acceptedAnswer": {"@type": "Answer", "text": "Because plans live in too many heads. One shared calendar puts school, work, meals and events in one place, so anyone can see what the week holds before agreeing to something new, and nobody has to carry the whole week in their memory."}}, {"@type": "Question", "name": "How do I get children to follow it?", "acceptedAnswer": {"@type": "Answer", "text": "Let them add their own events and speak in the weekly meeting. A child who helped build the plan is far more likely to follow it than a child who was only told about it. Keep the calendar visible, on a screen or printed on the fridge."}}, {"@type": "Question", "name": "What goes on a family calendar?", "acceptedAnswer": {"@type": "Answer", "text": "Anything that affects more than one person: school and work times, appointments, clubs, meals that need planning, chores and rides, birthdays and trips. If only one person needs to know it, it can stay in their own diary."}}, {"@type": "Question", "name": "How often should we plan together?", "acceptedAnswer": {"@type": "Answer", "text": "Once a week, for about ten minutes. Pick a regular time, go through the week day by day, and ask what is fixed, what needs preparing, and who is doing what. A short weekly meeting prevents most weekday surprises."}}, {"@type": "Question", "name": "Paper or digital — which is better?", "acceptedAnswer": {"@type": "Answer", "text": "Both have strengths. Paper on the fridge is always visible; a digital planner is easy to change and share. This page gives you both: plan here, then print the week or copy it as text to share with the family."}}, {"@type": "Question", "name": "What if plans keep changing?", "acceptedAnswer": {"@type": "Answer", "text": "Change is normal, and a calendar is a plan, not a promise. When something moves, delete the old event and add the new one, and tell the people it affects. The calendar still helps, because it shows what the change bumps into."}}]}</script>
+<script>
+
+(function(){
+  var KEY = "np-family-calendar-planner-events";
+  var DAYS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+  var TYPES = ["school","work","meals","event","chores","other"];
+  var NP = {};
+  NP.DAYS = DAYS;
+  NP.TYPES = TYPES;
+  NP.validTime = function(t){
+    return typeof t === "string" && /^([01][0-9]|2[0-3]):[0-5][0-9]$/.test(t);
+  };
+  NP.addEvent = function(events, ev){
+    if (!ev || typeof ev.title !== "string" || ev.title.trim() === ""){
+      return {ok: false, error: "Give the event a title."};
+    }
+    if (DAYS.indexOf(ev.day) < 0){
+      return {ok: false, error: "Pick a day of the week."};
+    }
+    if (!NP.validTime(ev.time)){
+      return {ok: false, error: "Pick a valid time."};
+    }
+    if (TYPES.indexOf(ev.type) < 0) ev.type = "other";
+    var list = (events || []).slice();
+    list.push({day: ev.day, time: ev.time, person: (ev.person || "").trim() || "Family",
+               type: ev.type, title: ev.title.trim()});
+    return {ok: true, events: NP.sortEvents(list)};
+  };
+  NP.sortEvents = function(events){
+    return (events || []).slice().sort(function(a, b){
+      var d = DAYS.indexOf(a.day) - DAYS.indexOf(b.day);
+      if (d !== 0) return d;
+      if (a.time < b.time) return -1;
+      if (a.time > b.time) return 1;
+      return 0;
+    });
+  };
+  NP.eventsForDay = function(events, day){
+    return NP.sortEvents(events).filter(function(e){ return e.day === day; });
+  };
+  NP.formatWeek = function(events){
+    var lines = ["Family week plan:"];
+    DAYS.forEach(function(day){
+      var list = NP.eventsForDay(events, day);
+      if (!list.length) return;
+      lines.push(day + ":");
+      list.forEach(function(e){
+        lines.push("  " + e.time + " - " + e.title + " (" + e.person + ", " + e.type + ")");
+      });
+    });
+    if (lines.length === 1) lines.push("No events yet.");
+    return lines.join("\n");
+  };
+  if (typeof window !== "undefined") { window.NP = NP; }
+  if (typeof document === "undefined") return;
+  var events = [];
+  try { events = JSON.parse(localStorage.getItem(KEY) || "[]") || []; } catch (e) { events = []; }
+  events = NP.sortEvents(events);
+  var weekEl = document.getElementById("fc-week");
+  var msgEl = document.getElementById("fc-msg");
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(events)); } catch (e) {} }
+  function render(){
+    weekEl.innerHTML = "";
+    DAYS.forEach(function(day){
+      var block = document.createElement("div");
+      block.className = "dayblock";
+      var head = document.createElement("p");
+      head.className = "dhead";
+      head.textContent = day;
+      block.appendChild(head);
+      var list = NP.eventsForDay(events, day);
+      if (!list.length){
+        var none = document.createElement("p");
+        none.className = "result";
+        none.textContent = "Nothing planned.";
+        block.appendChild(none);
+      }
+      list.forEach(function(e){
+        var div = document.createElement("div");
+        div.className = "ev ev-" + e.type;
+        var line = document.createElement("p");
+        line.textContent = e.time + " — " + e.title;
+        div.appendChild(line);
+        var sub = document.createElement("p");
+        sub.textContent = e.person + " · " + e.type;
+        div.appendChild(sub);
+        var del = document.createElement("button");
+        del.type = "button";
+        del.className = "del";
+        del.textContent = "Delete";
+        del.addEventListener("click", function(){
+          var idx = events.indexOf(e);
+          if (idx >= 0) events.splice(idx, 1);
+          save();
+          render();
+        });
+        div.appendChild(del);
+        block.appendChild(div);
+      });
+      weekEl.appendChild(block);
+    });
+  }
+  document.getElementById("fc-add").addEventListener("click", function(){
+    var ev = {
+      day: document.getElementById("fc-day").value,
+      time: document.getElementById("fc-time").value,
+      person: document.getElementById("fc-person").value,
+      type: document.getElementById("fc-type").value,
+      title: document.getElementById("fc-title").value
+    };
+    var res = NP.addEvent(events, ev);
+    if (!res.ok){ msgEl.textContent = res.error; return; }
+    events = res.events;
+    save();
+    msgEl.textContent = "Event added.";
+    document.getElementById("fc-title").value = "";
+    render();
+  });
+  function fallbackCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+    done();
+  }
+  document.getElementById("fc-copy").addEventListener("click", function(){
+    var btn = this;
+    var done = function(){ btn.textContent = "Copied!"; setTimeout(function(){ btn.textContent = "Copy the week as text"; }, 2000); };
+    var text = NP.formatWeek(events);
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done, function(){ fallbackCopy(text, done); });
+    } else { fallbackCopy(text, done); }
+  });
+  document.getElementById("fc-print").addEventListener("click", function(){ window.print(); });
+  document.getElementById("fc-clear").addEventListener("click", function(){
+    events = [];
+    save();
+    msgEl.textContent = "Week cleared.";
+    render();
+  });
+  render();
+})();
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

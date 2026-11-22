@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sustainable Product Directory — Everyday Products That Last Longer | Noryvello</title>
+<meta name="description" content="Free sustainable product directory — find longer-lasting, repairable and lower-waste alternatives for everyday things. No signup, phone friendly.">
+<link rel="canonical" href="https://noryvello.github.io/sustainable-product-directory/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sustainable Product Directory — Everyday Products That Last Longer">
+<meta property="og:description" content="A curated directory of 45 everyday product types that last longer — what to look for, what to avoid, and how long each should last.">
+<meta property="og:url" content="https://noryvello.github.io/sustainable-product-directory/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;min-height:72px;margin-top:14px;padding:12px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#fff;color:#4338ca;border:2px solid #4338ca}
+.calc input,.calc select{min-height:72px}
+.calc textarea{width:100%;min-height:72px;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:15px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef2ff}
+.tscroll{overflow-x:auto;margin:14px 0}
+.tscroll table{min-width:640px}
+.q{font-size:18px;font-weight:700;margin:12px 0 4px}
+.opt{display:block;width:100%;text-align:left;margin:8px 0}
+.small{font-size:14px;color:#64748b}
+.feedback{font-size:15px;margin:6px 0 14px;padding:10px 12px;border-radius:8px;background:#f1f5f9}
+.feedback.good{background:#dcfce7}
+.feedback.bad{background:#fee2e2}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Sustainable Product Directory</h1>
+<p class="answer">This directory lists everyday product types that last longer, can be repaired, and create less waste — from bottles and bags to bulbs and cleaning tools. Filter by room or search for one item, and each entry tells you what to look for, what to avoid, and how long it should last. It lists product types, not brands, and every claim is written as something to check, not a guarantee.</p>
+<div class="calc">
+<label for="room">Filter by room or use</label>
+<select id="room">
+<option value="all">All rooms</option>
+<option value="Kitchen">Kitchen</option>
+<option value="Bathroom">Bathroom</option>
+<option value="Bedroom and laundry">Bedroom and laundry</option>
+<option value="Cleaning">Cleaning</option>
+<option value="On the go">On the go</option>
+<option value="Home and garden">Home and garden</option>
+</select>
+<label for="q">Search for a product type</label>
+<input id="q" type="text" placeholder="Try bottle, razor, bulb or bag">
+<p class="out" id="count">Showing 45 of 45 product types.</p>
+<button id="copy-btn" type="button">Copy shown list</button>
+<p class="small">The list below filters as you type or pick a room. Copy gives you the shown entries as plain text.</p>
+</div>
+<div class="warn">This directory lists product types and what makes one sustainable — it does not sell products and does not name any brand as the best. How long something lasts depends on how it is made and how you use it, so treat every lifespan here as typical, not a promise.</div>
+<h2>The directory</h2>
+<p>Every entry below is a product type, not a brand. For each one you get the room it belongs to, what to look for when you buy it, what to avoid, and how long it should last with normal use. The lifespans are typical — a well-made item looked after properly often lasts longer, and a cheap one used hard may last less. Use the filter above to see one room at a time, or search for a single item.</p>
+<div class="tscroll"><table id="dir-table">
+<thead><tr><th>Product type</th><th>Room / use</th><th>Look for</th><th>Avoid</th><th>Should last</th></tr></thead>
+<tbody>
+<tr data-room="Kitchen"><td>Water bottle</td><td>Kitchen</td><td>Steel or thick glass, wide mouth, spare seals available</td><td>Thin single-wall plastic, glued parts you cannot open</td><td>5+ years</td></tr>
+<tr data-room="Kitchen"><td>Lunch box</td><td>Kitchen</td><td>Steel or glass with a tight lid, one piece or few parts</td><td>Lids that warp, boxes with glued dividers</td><td>5+ years</td></tr>
+<tr data-room="Kitchen"><td>Food storage containers</td><td>Kitchen</td><td>Glass or steel, stackable, lids sold separately</td><td>Thin plastic that stains and warps</td><td>5+ years</td></tr>
+<tr data-room="Kitchen"><td>Beeswax wraps</td><td>Kitchen</td><td>Cotton coated in beeswax, washable in cool water</td><td>Wraps that crack after a few uses</td><td>6-12 months</td></tr>
+<tr data-room="Kitchen"><td>Dish cloths</td><td>Kitchen</td><td>Cotton or linen, washable at high heat</td><td>Thin cloths that fall apart in weeks</td><td>1-2 years</td></tr>
+<tr data-room="Kitchen"><td>Dish brush</td><td>Kitchen</td><td>Wooden handle, a head you can replace</td><td>Glued heads, plastic handles that snap</td><td>2+ years (heads 3-6 months)</td></tr>
+<tr data-room="Kitchen"><td>Kitchen towels</td><td>Kitchen</td><td>Thick cotton or linen, hemmed edges</td><td>Thin towels that fray quickly</td><td>3+ years</td></tr>
+<tr data-room="Kitchen"><td>Reusable coffee filter</td><td>Kitchen</td><td>Fine steel mesh or washable cloth, fits your maker</td><td>Filters that tear or do not fit</td><td>2+ years</td></tr>
+<tr data-room="Kitchen"><td>Tea infuser</td><td>Kitchen</td><td>Steel mesh ball or basket, fine holes</td><td>Infusers that leak leaves everywhere</td><td>5+ years</td></tr>
+<tr data-room="Kitchen"><td>Shopping bags</td><td>Kitchen</td><td>Strong cotton or canvas, reinforced handles</td><td>Thin bags that tear at the seams</td><td>3+ years</td></tr>
+<tr data-room="Kitchen"><td>Produce bags</td><td>Kitchen</td><td>Light cotton mesh, a drawstring that holds</td><td>Bags that rip at the seam</td><td>2+ years</td></tr>
+<tr data-room="Kitchen"><td>Cutlery set</td><td>Kitchen</td><td>Steel fork, knife and spoon in a washable case</td><td>Light plastic that bends</td><td>10+ years</td></tr>
+<tr data-room="Bathroom"><td>Safety razor</td><td>Bathroom</td><td>Steel handle, standard blades, easy to open and clean</td><td>Razors with blades only one shop sells</td><td>10+ years (blades last weeks)</td></tr>
+<tr data-room="Bathroom"><td>Bamboo toothbrush</td><td>Bathroom</td><td>Smooth handle, bristles you can remove</td><td>Handles that split or splinter</td><td>2-3 months (as with any brush)</td></tr>
+<tr data-room="Bathroom"><td>Soap bar</td><td>Bathroom</td><td>Simple ingredients, no plastic wrap</td><td>Bars that melt away in days</td><td>A few weeks per bar</td></tr>
+<tr data-room="Bathroom"><td>Shampoo bar</td><td>Bathroom</td><td>A bar made for your hair type, stored dry</td><td>Bars kept sitting in water</td><td>2-3 months per bar</td></tr>
+<tr data-room="Bathroom"><td>Reusable cotton pads</td><td>Bathroom</td><td>Soft cotton, stitched edges, washable</td><td>Pads that lose shape after one wash</td><td>1-2 years</td></tr>
+<tr data-room="Bathroom"><td>Towels</td><td>Bathroom</td><td>Thick cotton, hemmed edges, quick to dry</td><td>Thin towels that go stiff</td><td>3-5 years</td></tr>
+<tr data-room="Bathroom"><td>Bath mat</td><td>Bathroom</td><td>Cotton or wood slats, washable or easy to dry</td><td>Mats that stay damp and smell</td><td>2-3 years</td></tr>
+<tr data-room="Bathroom"><td>Recycled toilet paper</td><td>Bathroom</td><td>Recycled paper, no plastic wrap, soft enough to use</td><td>Paper so thin you use twice as much</td><td>Used up (buy only what you need)</td></tr>
+<tr data-room="Bathroom"><td>Refillable deodorant</td><td>Bathroom</td><td>A case that opens, refills sold nearby</td><td>Cases that only fit one refill size</td><td>2+ years (the case)</td></tr>
+<tr data-room="Bathroom"><td>Menstrual cup</td><td>Bathroom</td><td>Medical-grade silicone, the right size for you</td><td>Cups that do not fit or are hard to clean</td><td>5-10 years</td></tr>
+<tr data-room="Bedroom and laundry"><td>Bed sheets</td><td>Bedroom and laundry</td><td>Long-staple cotton or linen, strong seams</td><td>Thin sheets that pill in weeks</td><td>5+ years</td></tr>
+<tr data-room="Bedroom and laundry"><td>Pillow</td><td>Bedroom and laundry</td><td>A filling you can wash or top up</td><td>Pillows that go flat and cannot be fixed</td><td>2-3 years</td></tr>
+<tr data-room="Bedroom and laundry"><td>Clothes hangers</td><td>Bedroom and laundry</td><td>Wood or steel, a strong hook</td><td>Thin wire that bends and rusts</td><td>10+ years</td></tr>
+<tr data-room="Bedroom and laundry"><td>Drying rack</td><td>Bedroom and laundry</td><td>Steel or wood, folds flat, strong joints</td><td>Racks that wobble or collapse</td><td>5+ years</td></tr>
+<tr data-room="Bedroom and laundry"><td>Wool dryer balls</td><td>Bedroom and laundry</td><td>Solid wool, tightly wound</td><td>Balls that fall apart in the dryer</td><td>1+ years</td></tr>
+<tr data-room="Bedroom and laundry"><td>Laundry bag</td><td>Bedroom and laundry</td><td>Strong cotton, drawstring, washable</td><td>Thin mesh that tears</td><td>3+ years</td></tr>
+<tr data-room="Bedroom and laundry"><td>Stain remover bar</td><td>Bedroom and laundry</td><td>A solid bar, simple ingredients</td><td>Sprays in bottles you cannot refill</td><td>Months per bar</td></tr>
+<tr data-room="Cleaning"><td>All-purpose cleaner</td><td>Cleaning</td><td>Concentrate or refill tablets, one bottle reused</td><td>A new spray bottle every time</td><td>Bottle lasts years</td></tr>
+<tr data-room="Cleaning"><td>Compostable sponge</td><td>Cleaning</td><td>Plant-based sponge, no plastic scrub layer</td><td>Sponges that shed plastic bits</td><td>1-2 months each</td></tr>
+<tr data-room="Cleaning"><td>Mop</td><td>Cleaning</td><td>A head you can wash or replace, strong handle</td><td>Mops with heads you cannot change</td><td>3+ years (heads 6-12 months)</td></tr>
+<tr data-room="Cleaning"><td>Broom</td><td>Cleaning</td><td>Wooden handle, stiff bristles, a head that screws off</td><td>Bristles that fall out in weeks</td><td>5+ years</td></tr>
+<tr data-room="Cleaning"><td>Glass spray bottle</td><td>Cleaning</td><td>Thick glass, a trigger that unscrews</td><td>Thin plastic that cracks</td><td>5+ years</td></tr>
+<tr data-room="Cleaning"><td>Microfibre cloths</td><td>Cleaning</td><td>Dense weave, stitched edges, washable</td><td>Cloths that leave lint everywhere</td><td>2+ years</td></tr>
+<tr data-room="Cleaning"><td>Bucket</td><td>Cleaning</td><td>Thick plastic or steel, a strong handle</td><td>Thin buckets that split</td><td>5+ years</td></tr>
+<tr data-room="On the go"><td>Travel mug</td><td>On the go</td><td>Steel, a leak-proof lid, parts you can take apart</td><td>Mugs with lids you cannot clean</td><td>5+ years</td></tr>
+<tr data-room="On the go"><td>Backpack</td><td>On the go</td><td>Strong fabric, metal zips, padded straps</td><td>Thin straps and plastic zips</td><td>5+ years</td></tr>
+<tr data-room="On the go"><td>Umbrella</td><td>On the go</td><td>Strong ribs, a handle you can grip, repairable</td><td>Umbrellas that flip in the first wind</td><td>3+ years</td></tr>
+<tr data-room="On the go"><td>Phone case</td><td>On the go</td><td>A case that covers the edges, fits well</td><td>Cases that crack in a month</td><td>1-2 years</td></tr>
+<tr data-room="On the go"><td>Refillable notebook</td><td>On the go</td><td>A cover that takes standard refills</td><td>Notebooks glued shut</td><td>Cover lasts years</td></tr>
+<tr data-room="Home and garden"><td>LED bulbs</td><td>Home and garden</td><td>Long rated life, warm light you like</td><td>The cheapest bulbs that flicker</td><td>10+ years</td></tr>
+<tr data-room="Home and garden"><td>Rechargeable batteries</td><td>Home and garden</td><td>Standard sizes, a charger that fits them</td><td>Batteries that lose charge in days</td><td>Hundreds of charges</td></tr>
+<tr data-room="Home and garden"><td>Plant pots</td><td>Home and garden</td><td>Terracotta or thick plastic, with drainage</td><td>Pots with no drainage hole</td><td>5+ years</td></tr>
+<tr data-room="Home and garden"><td>Compost bin</td><td>Home and garden</td><td>A lid that seals, easy to empty and clean</td><td>Bins that leak or let flies in</td><td>5+ years</td></tr>
+</tbody>
+</table></div>
+<h2>The 3 questions before buying anything</h2>
+<p>The most sustainable product is often the one you already own, so start with three questions. First, do I need it? A new item that sits in a drawer helps nobody, however green its label. Borrow it, rent it, or wait a week and see if you still want it. Second, will it last? Look at the material, the joints and the guarantee. Steel, glass, solid wood and thick cotton usually outlast thin plastic, and a product with a long guarantee tells you the maker trusts it. Third, can it be repaired? Check whether spare parts exist, whether the battery or the head comes out, and whether a local repairer could fix it. A product that fails one of these questions is rarely a good buy, however cheap it looks.</p>
+<p>Those three questions also protect your money. A bottle that costs more but lasts five years is cheaper per year than a bottle you replace every few months. The same is true of a razor, a mop or a backpack. Sustainable buying is mostly about buying less often, not about buying something with a leaf on the packet.</p>
+<h2>How to use this directory</h2>
+<p>Pick a room from the filter to plan one area at a time — the kitchen, for example, or the bathroom. Or type a word in the search box to jump straight to one item. The count line tells you how many entries match. The copy button copies the entries you are looking at as plain text, so you can paste them into a shopping list or a note. Nothing here is for sale and no entry is a paid recommendation.</p>
+<h2>Two worked examples</h2>
+<p>Example one: a kitchen swap. A household that buys bottled water every week switches to a steel bottle, a glass lunch box and a set of beeswax wraps. The bottle and box last years, the wraps last months and then compost. The household still buys food the same way, but the weekly pile of single-use packaging mostly disappears. Nothing about the change needs a new skill — the bottle gets washed like a glass, the wraps get rinsed in cool water.</p>
+<p>Example two: a bathroom swap. A safety razor replaces disposable razors, a soap bar replaces a pump bottle, and washable cotton pads replace single-use ones. The razor needs a new blade every few weeks, which costs little, and the pads go in with the laundry. The bathroom ends up with fewer bottles, and the routine takes the same few minutes it always did.</p>
+<h2>Common greenwashing tricks</h2>
+<p>Greenwashing is when a product looks greener than it is. Watch for vague words with no proof: eco, natural, green and clean mean nothing on their own unless the packet says what was actually done. Watch for green packaging on an unchanged product — a leaf on the box is not a change in the factory. Watch for one green feature hiding the rest: a bottle made from recycled plastic is still single-use if you throw it away after one drink. And watch for claims you cannot check, such as a percentage with no source. A genuine claim names the material, the standard or the test, and tells you where to check it.</p>
+<h2>How to make things last longer</h2>
+<p>Most products fail early for simple reasons. Wash things the way the label says, and dry them properly — dampness ruins wood, steel and fabric alike. Store items dry and out of direct sun. Fix small damage early: a loose screw, a fraying seam or a cracked seal is a five-minute job now and a dead product later. Buy spares when they exist — seals, heads, blades and lids are usually cheap and turn a short-lived item into a long-lived one. And keep the box or the manual for anything with a guarantee, so a real fault can be claimed.</p>
+<h2>What this directory cannot do</h2>
+<p>This directory does not test products, rank brands or promise that any single item will last as long as the table says. Lifespans are typical figures for a well-made example used normally; a badly made one will fail sooner. Prices and availability change by country and by shop, so the page does not quote either. If a product matters to you — a mattress, a pair of shoes, a phone — read a proper review and, where you can, handle the item before you buy it.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What makes a product sustainable?</h3><p>A sustainable product is one that lasts a long time, can be repaired, uses materials that can be reused or recycled, and does not waste much in making or using it. No product is perfect on every count, so the honest test is the three questions: do you need it, will it last, and can it be repaired.</p></div>
+<div class="faq"><h3>Is a sustainable product always more expensive?</h3><p>Not always, and often not in the long run. A sustainable version may cost more at first, but if it lasts five times longer it costs less per year. Some swaps cost almost nothing, such as a bar of soap instead of a pump bottle, or a drying rack instead of a dryer.</p></div>
+<div class="faq"><h3>What is greenwashing?</h3><p>Greenwashing is when a product is presented as greener than it really is — vague words like eco or natural, green packaging on an unchanged product, or one small green feature used to hide the rest. A genuine claim names the material, the standard or the test behind it.</p></div>
+<div class="faq"><h3>How do I know if something is repairable?</h3><p>Look for spare parts, screws instead of glue, a battery or head you can remove, and a guarantee of a year or more. If the maker sells seals, blades, lids or handles separately, that is a good sign. If the product is sealed shut with no way in, it probably cannot be repaired.</p></div>
+<div class="faq"><h3>Should I replace working things with greener ones?</h3><p>No. The greenest thing you own is usually the one you already have. Use it until it wears out, repair it if you can, and only then replace it with a longer-lasting version. Throwing away a working item to buy a greener one wastes the materials and energy already spent on it.</p></div>
+<div class="faq"><h3>What is the easiest sustainable swap?</h3><p>Start with something you use every day and throw away often: a reusable water bottle, shopping bags, or a soap bar instead of a pump bottle. Each one is cheap, needs no new skill, and removes a steady stream of single-use waste from your week.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/renewable-energy-learning-hub/">Renewable Energy Learning Hub</a> · <a href="https://noryvello.github.io/bird-species-explorer/">Bird Species Explorer</a> · <a href="https://noryvello.github.io/vehicle-identification-guide/">Vehicle Identification Guide</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What makes a product sustainable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A sustainable product is one that lasts a long time, can be repaired, uses materials that can be reused or recycled, and does not waste much in making or using it. No product is perfect on every count, so the honest test is the three questions: do you need it, will it last, and can it be repaired."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a sustainable product always more expensive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not always, and often not in the long run. A sustainable version may cost more at first, but if it lasts five times longer it costs less per year. Some swaps cost almost nothing, such as a bar of soap instead of a pump bottle, or a drying rack instead of a dryer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is greenwashing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Greenwashing is when a product is presented as greener than it really is — vague words like eco or natural, green packaging on an unchanged product, or one small green feature used to hide the rest. A genuine claim names the material, the standard or the test behind it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know if something is repairable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Look for spare parts, screws instead of glue, a battery or head you can remove, and a guarantee of a year or more. If the maker sells seals, blades, lids or handles separately, that is a good sign. If the product is sealed shut with no way in, it probably cannot be repaired."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I replace working things with greener ones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The greenest thing you own is usually the one you already have. Use it until it wears out, repair it if you can, and only then replace it with a longer-lasting version. Throwing away a working item to buy a greener one wastes the materials and energy already spent on it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the easiest sustainable swap?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with something you use every day and throw away often: a reusable water bottle, shopping bags, or a soap bar instead of a pump bottle. Each one is cheap, needs no new skill, and removes a steady stream of single-use waste from your week."
+      }
+    }
+  ]
+}
+</script>
+<script>
+window.NP = {
+  matchProduct: function (room, query, rowRoom, rowText) {
+    room = (room || "").toLowerCase();
+    query = (query || "").toLowerCase().trim();
+    if (room && room !== "all" && String(rowRoom).toLowerCase() !== room) return false;
+    if (query && String(rowText).toLowerCase().indexOf(query) === -1) return false;
+    return true;
+  },
+  productsText: function (rows) {
+    return rows.map(function (r) {
+      return r[0] + " (" + r[1] + ") - look for: " + r[2] + "; avoid: " + r[3] + "; should last: " + r[4] + ".";
+    }).join("\n");
+  }
+};
+if (typeof document !== "undefined" && document.getElementById) {
+  var roomEl = document.getElementById("room");
+  var qEl = document.getElementById("q");
+  var countEl = document.getElementById("count");
+  var copyBtn = document.getElementById("copy-btn");
+  var rows = Array.prototype.slice.call(document.querySelectorAll("#dir-table tbody tr"));
+  function visibleRows() {
+    var room = roomEl.value;
+    var q = qEl.value;
+    return rows.filter(function (tr) {
+      return NP.matchProduct(room, q, tr.getAttribute("data-room"), tr.textContent);
+    });
+  }
+  function render() {
+    var vis = visibleRows();
+    rows.forEach(function (tr) {
+      tr.style.display = vis.indexOf(tr) === -1 ? "none" : "";
+    });
+    countEl.textContent = "Showing " + vis.length + " of " + rows.length + " product types.";
+  }
+  function copyShown() {
+    var data = visibleRows().map(function (tr) {
+      var c = tr.querySelectorAll("td");
+      return [c[0].textContent, c[1].textContent, c[2].textContent, c[3].textContent, c[4].textContent];
+    });
+    var text = NP.productsText(data);
+    function done() {
+      copyBtn.textContent = "Copied!";
+      setTimeout(function () { copyBtn.textContent = "Copy shown list"; }, 2000);
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+    if (typeof navigator !== "undefined" && navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  }
+  roomEl.addEventListener("change", render);
+  qEl.addEventListener("input", render);
+  copyBtn.addEventListener("click", copyShown);
+  render();
+}
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics Formula Calculator — Motion, Force, Energy and More, Free | Noryvello</title>
+<meta name="description" content="Work out physics formulas free — speed, force, energy, power and pressure, with every step shown. Made for students, no signup.">
+<link rel="canonical" href="https://noryvello.github.io/physics-formula-calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Physics Formula Calculator — Motion, Force, Energy and More, Free">
+<meta property="og:description" content="Work out speed, force, energy, power and pressure free, with every step shown.">
+<meta property="og:url" content="https://noryvello.github.io/physics-formula-calculator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;min-height:72px;margin-top:14px;padding:12px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#fff;color:#4338ca;border:2px solid #4338ca}
+.calc input,.calc select{min-height:72px}
+.calc textarea{width:100%;min-height:72px;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:15px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef2ff}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Physics Formula Calculator</h1>
+<p class="answer">Pick a formula, enter the two values you know, and get the answer with every step shown. This calculator covers speed, force, energy, power and pressure — the five formulas students meet first.</p>
+<div class="calc">
+<label for="formula">Which formula do you want?</label>
+<select id="formula">
+<option value="speed">Speed — v = distance ÷ time</option>
+<option value="force">Force — F = mass × acceleration</option>
+<option value="energy">Kinetic energy — KE = ½ × mass × speed²</option>
+<option value="power">Power — P = energy ÷ time</option>
+<option value="pressure">Pressure — P = force ÷ area</option>
+</select>
+<label for="in1" id="lab1">Distance (metres)</label>
+<input id="in1" type="number" inputmode="decimal" placeholder="e.g. 100">
+<label for="in2" id="lab2">Time (seconds)</label>
+<input id="in2" type="number" inputmode="decimal" placeholder="e.g. 20">
+<p class="note" id="hint">Speed is how fast something moves: distance divided by time. Answer in metres per second (m/s).</p>
+<button type="button" id="calc-btn">Calculate</button>
+<div class="out" id="out"></div>
+<div class="steps" id="steps"></div>
+<button type="button" id="copy-btn" class="secondary" style="display:none">Copy result</button>
+</div>
+<div class="warn">This calculator works with the five formulas listed below and the units shown next to each box. It does not convert units for you — if you enter distance in kilometres and time in seconds, the answer will be wrong. Check your units first, and always show your working in class; this page is a study helper, not a substitute for it.</div>
+<h2>How to use this calculator</h2>
+<p>Choose one of the five formulas from the list at the top of the calculator, then type the two numbers you know into the two boxes. The labels change with the formula, so you always know which value goes where. Press Calculate and the answer appears below the button, together with the working: the formula, the numbers put into it, and the answer with its unit. If you want to keep the working, press Copy result and paste it into your notes.</p>
+<p>Every formula here needs exactly two numbers. Speed needs a distance and a time. Force needs a mass and an acceleration. Kinetic energy needs a mass and a speed. Power needs an amount of energy and a time. Pressure needs a force and an area. If you only know one of the two numbers, the calculator cannot help yet — look at the sections below to see which numbers you can measure or find first.</p>
+<p>The calculator shows the steps on purpose. In school physics the answer alone is worth very little: the marks are in the working. Copy the steps into your exercise book, then check each line against your own working. If a line looks wrong, it is usually the units — read the units section before you trust any answer.</p>
+<h2>Speed — distance divided by time</h2>
+<p>Speed tells you how fast something moves. The formula is simple: speed equals distance divided by time, written v = d ÷ t. If a student runs 100 metres in 20 seconds, the speed is 100 ÷ 20, which is 5 metres per second. The unit, metres per second, is often written m/s. It reads exactly as it sounds: how many metres the object covers in each second.</p>
+<p>Speeds in everyday life are usually given in kilometres per hour, written km/h. A car doing 60 km/h covers 60 kilometres in one hour. To change metres per second into kilometres per hour, multiply by 3.6. Our running student at 5 m/s is moving at 18 km/h — fast for a person, slow for a car. The calculator shows both units so you can compare with the speeds you already know.</p>
+<p>Notice what the formula does not say. It says nothing about direction: speed is just how fast, not which way. A car going around a roundabout at a steady 20 km/h has a steady speed even though its direction keeps changing. And the formula gives an average speed over the whole journey. If the student sprinted the first half and walked the second half, 5 m/s is the average — the real speed changed all the time.</p>
+<h2>Force — mass times acceleration</h2>
+<p>Force is a push or a pull. The formula is F = m × a: force equals mass times acceleration. The unit of force is the newton, written N, named after Isaac Newton. One newton is the force needed to give one kilogram of mass an acceleration of one metre per second squared. That sounds complicated until you try it: pushing a box is a force, gravity pulling you down is a force, and a stretched spring pulling back is a force.</p>
+<p>Take the pushing box example. A box has a mass of 10 kilograms. You push it so that it speeds up by 2 metres per second every second — that is an acceleration of 2 m/s². The force is 10 × 2, which is 20 newtons. If the box were twice as heavy, you would need twice the force for the same acceleration. If you wanted it to speed up twice as fast, you would need twice the force again. Force, mass and acceleration grow together in straight lines.</p>
+<p>Weight is a special case of force: it is the force of gravity on a mass. On Earth, gravity accelerates things at about 9.8 m/s², so a 1 kilogram bag of rice weighs about 9.8 newtons. People often say "it weighs 1 kilo", but kilograms measure mass and newtons measure force. The two are linked by gravity, and on the Moon the same bag would weigh much less while its mass stayed exactly the same.</p>
+<h2>Energy — what moving things carry</h2>
+<p>Energy is the ability to do work — to move things, warm things, or light things. The formula on this page is kinetic energy: the energy a moving object carries because it is moving. It is KE = ½ × m × v², where m is the mass and v is the speed. The unit is the joule, written J. A joule is a small unit: lifting an apple one metre takes about one joule.</p>
+<p>The squared speed is the interesting part. Double the speed and the kinetic energy does not double — it grows four times, because 2² is 4. That is why a car crash at twice the speed is far more than twice as bad: the car carries four times the energy. Double the mass instead, and the energy only doubles. Speed matters more than mass, and the square in the formula is the reason.</p>
+<p>Try a real number. A ball with a mass of 0.5 kilograms is thrown at 10 metres per second. Its kinetic energy is ½ × 0.5 × 10², which is ½ × 0.5 × 100, which is 25 joules. The same ball thrown at 20 metres per second would carry 100 joules. Energy is never created or destroyed, only moved around: when the ball hits a wall, its kinetic energy turns into heat and sound and a little dent.</p>
+<h2>Power — energy per second</h2>
+<p>Power tells you how fast energy is used or moved. The formula is P = E ÷ t: power equals energy divided by time. The unit is the watt, written W. One watt means one joule of energy every second. A 60 watt light bulb uses 60 joules every second it is on. A 1000 watt heater uses 1000 joules every second — that is why it warms a room and the bulb does not.</p>
+<p>The light bulb example is worth doing properly. A bulb uses 60 joules every second. How much energy does it use in one hour? One hour is 3600 seconds, so the energy is 60 × 3600, which is 216,000 joules. Electricity bills do not use joules — they use kilowatt-hours — but the physics is the same: energy is power multiplied by time, and power is energy divided by time. The two formulas are the same idea seen from opposite sides.</p>
+<p>People mix up power and energy all the time. Energy is the total amount, like the water in a tank. Power is how fast it flows, like the water coming out of the tap. A small battery and a large battery can both give the same power, but the large one keeps going longer because it holds more energy. When a question asks for power, look for a time in the question — power always involves time.</p>
+<h2>Pressure — force spread over an area</h2>
+<p>Pressure is force spread over an area. The formula is P = F ÷ A: pressure equals force divided by area. The unit is the pascal, written Pa. One pascal is one newton of force spread over one square metre. That is a tiny pressure — the air around you pushes at about 100,000 pascals — so pressures are often given in kilopascals (kPa) instead.</p>
+<p>The same force can make a very different pressure depending on the area. Stand on one foot and your weight presses on a small area, so the pressure under your foot is high. Lie down and the same weight spreads over a much bigger area, so the pressure is low. That is why a drawing pin hurts: the force of your thumb is tiny, but it is concentrated on a point so small that the pressure is enormous. Snowshoes work the opposite way — they spread your weight over a big area so the pressure drops and you do not sink.</p>
+<p>Try the numbers. A box weighing 200 newtons stands on a floor. Its base measures 0.5 square metres. The pressure is 200 ÷ 0.5, which is 400 pascals. Put the same box on its side, where the base is only 0.1 square metres, and the pressure becomes 200 ÷ 0.1, which is 2000 pascals — five times as much, from the same box, just by changing the area it stands on.</p>
+<h2>Units: what happens when you mix metres and kilometres</h2>
+<p>The single biggest cause of wrong answers in physics is mixed units. The formulas on this page expect standard units: metres for distance, seconds for time, kilograms for mass, newtons for force, joules for energy, watts for power, square metres for area, and pascals for pressure. If you feed in kilometres, minutes, grams or centimetres, the arithmetic will happily give you an answer — and it will be wrong.</p>
+<p>Here is the classic mistake. A car travels 72 kilometres in 1 hour. What is its speed in metres per second? The careless answer is 72 ÷ 1 = 72 m/s — which would make the car faster than a racing plane. The right way is to change the units first: 72 kilometres is 72,000 metres, and 1 hour is 3600 seconds, so the speed is 72,000 ÷ 3600 = 20 m/s. Same journey, same formula, completely different answer, all because of units.</p>
+<p>Area is the sneakiest unit of all, because it is squared. One square metre is not 100 square centimetres — it is 10,000 square centimetres, because a metre is 100 centimetres and the square applies to both directions: 100 × 100. Forgetting to square is the second most common mistake after mixing units. Whenever a formula has a square in it — speed squared in kinetic energy, or an area in pressure — slow down and check the units twice.</p>
+<p>A good habit is to write the unit next to every number as you work, and to check the final unit against what the question asks. If you are working out a speed and your answer comes out in kg/s, something went wrong two lines earlier. The unit is a free check on your arithmetic — use it.</p>
+<h2>Worked examples</h2>
+<p><strong>The running student (speed).</strong> A student runs 200 metres in 25 seconds. Speed = distance ÷ time = 200 ÷ 25 = 8 m/s. In kilometres per hour that is 8 × 3.6 = 28.8 km/h. That is very fast for a runner — world-class sprinters reach about 10 m/s over short distances — so if your answer for a school race comes out near 8 m/s, the numbers in the question were probably generous, not your arithmetic.</p>
+<p><strong>The pushing box (force).</strong> A box of mass 12 kilograms is pushed with an acceleration of 3 m/s². Force = mass × acceleration = 12 × 3 = 36 N. Now imagine the same push on a box of 24 kilograms: the acceleration would halve to 1.5 m/s², because the same force has twice the mass to move. Force, mass and acceleration are locked together — change one and at least one of the others must change too.</p>
+<p><strong>The light bulb (power).</strong> A light bulb uses 3600 joules of energy in 60 seconds. Power = energy ÷ time = 3600 ÷ 60 = 60 W. That is the ordinary bulb in many homes. A kettle rated at 2000 W uses 2000 joules every second, so in the same 60 seconds it would use 120,000 joules — more than thirty times as much. Power tells you how greedy an appliance is; energy tells you the total cost of running it.</p>
+<p><strong>The rolling ball (energy).</strong> A ball of mass 2 kilograms rolls at 3 metres per second. Kinetic energy = ½ × 2 × 3² = ½ × 2 × 9 = 9 J. If the ball doubled its speed to 6 m/s, the energy would be ½ × 2 × 36 = 36 J — four times as much, because of the square. <strong>The standing box (pressure).</strong> A 300 newton box stands on 0.25 square metres. Pressure = 300 ÷ 0.25 = 1200 Pa.</p>
+<h2>Common mistakes</h2>
+<p>The most common mistake is wrong units: kilometres with seconds, grams with kilograms, minutes with hours. Convert everything to metres, seconds and kilograms before you start. The second most common mistake is forgetting to square — in kinetic energy the speed is squared, and in pressure the area is already a squared quantity, so a side length must be squared first (a square of side 0.5 metres has an area of 0.25 square metres, not 0.5).</p>
+<p>The third mistake is copying the answer without the steps. The calculator gives you the steps for a reason: in an exam, the working carries the marks, and a bare answer with no working earns almost nothing even when it is right. Worse, without the steps you cannot find where you went wrong. Write the formula, put the numbers in, work it out, write the unit — every time.</p>
+<p>The fourth mistake is rounding too early. If you round an intermediate answer to one decimal place and then use it in the next step, the final answer drifts. Keep two or three extra digits while you work, and round only at the very end. And the fifth mistake is trusting a number that cannot be true: a person running at 40 m/s, a light bulb using a million watts, a pressure of a billion pascals from a school bag. Always ask whether the answer makes sense in the real world.</p>
+<h2>What it cannot do</h2>
+<p>This calculator works with the five formulas listed above, and only with the units shown next to each box. It does not convert units, it does not rearrange formulas for you (if you know the speed and the time and want the distance, use distance = speed × time by hand), and it does not handle motion with changing speed, friction, air resistance, or anything that needs more than two numbers. It cannot check whether your numbers describe a real situation — if you enter a mass of zero or a negative time, it will say so, but it cannot tell that a 500 metre tall student is unlikely. For anything beyond these five formulas — waves, electricity, moments, or graphs — use the worked examples and the method above, and ask your teacher when the question does not fit a formula you know.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is the formula for speed?</h3><p>Speed equals distance divided by time, written v = d ÷ t. If you travel 100 metres in 20 seconds, your speed is 100 ÷ 20 = 5 metres per second (m/s). To change m/s into km/h, multiply by 3.6.</p></div>
+<div class="faq"><h3>What is force?</h3><p>Force is a push or a pull. It is worked out with F = m × a: force equals mass times acceleration. The unit is the newton (N). One newton is the force needed to give 1 kilogram of mass an acceleration of 1 metre per second squared.</p></div>
+<div class="faq"><h3>How do I work out energy?</h3><p>For a moving object, use kinetic energy: KE = ½ × mass × speed². The unit is the joule (J). Double the speed and the energy grows four times, because the speed is squared. Energy is never created or destroyed, only moved from one form to another.</p></div>
+<div class="faq"><h3>Why do units matter?</h3><p>Because the formulas expect standard units — metres, seconds, kilograms. Mix kilometres with seconds and the arithmetic still gives an answer, but it will be wrong. Convert everything first, write the unit next to every number, and check the final unit against what the question asks.</p></div>
+<div class="faq"><h3>What is power?</h3><p>Power is how fast energy is used or moved: P = E ÷ t, energy divided by time. The unit is the watt (W). One watt means one joule every second. A 60 watt bulb uses 60 joules every second it is on.</p></div>
+<div class="faq"><h3>Can I use this for homework?</h3><p>Yes — that is what it is for. Use it to check your answers and to see the steps written out. But always show your own working in your book: in school physics the marks are in the working, and a bare answer with no steps earns almost nothing even when it is right.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/chemistry-equation-balancer/">Chemistry Equation Balancer</a> · <a href="https://noryvello.github.io/periodic-table-explorer/">Periodic Table Explorer</a> · <a href="https://noryvello.github.io/book-reading-tracker/">Book Reading Tracker</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the formula for speed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Speed equals distance divided by time, written v = d ÷ t. If you travel 100 metres in 20 seconds, your speed is 100 ÷ 20 = 5 metres per second (m/s). To change m/s into km/h, multiply by 3.6."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is force?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Force is a push or a pull. It is worked out with F = m × a: force equals mass times acceleration. The unit is the newton (N). One newton is the force needed to give 1 kilogram of mass an acceleration of 1 metre per second squared."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I work out energy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a moving object, use kinetic energy: KE = ½ × mass × speed². The unit is the joule (J). Double the speed and the energy grows four times, because the speed is squared. Energy is never created or destroyed, only moved from one form to another."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do units matter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the formulas expect standard units — metres, seconds, kilograms. Mix kilometres with seconds and the arithmetic still gives an answer, but it will be wrong. Convert everything first, write the unit next to every number, and check the final unit against what the question asks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is power?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Power is how fast energy is used or moved: P = E ÷ t, energy divided by time. The unit is the watt (W). One watt means one joule every second. A 60 watt bulb uses 60 joules every second it is on."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this for homework?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — that is what it is for. Use it to check your answers and to see the steps written out. But always show your own working in your book: in school physics the marks are in the working, and a bare answer with no steps earns almost nothing even when it is right."
+      }
+    }
+  ]
+}
+</script>
+<script>
+window.NP = (function () {
+  function fmt(n) {
+    if (!isFinite(n)) return String(n);
+    var r = Math.round(n * 10000) / 10000;
+    return String(r);
+  }
+  function bad(v) { return typeof v !== "number" || isNaN(v) || !isFinite(v); }
+  function pos(v, name) {
+    if (bad(v)) return "Enter a number for " + name + ".";
+    if (v <= 0) return name + " must be more than zero.";
+    return null;
+  }
+  function calcSpeed(d, t) {
+    var e = pos(d, "distance") || pos(t, "time");
+    if (e) return { error: e };
+    var v = d / t;
+    return { value: v, unit: "m/s", extra: v * 3.6, extraUnit: "km/h",
+      steps: ["Formula: v = d ÷ t", "v = " + fmt(d) + " ÷ " + fmt(t), "v = " + fmt(v) + " m/s",
+              "In kilometres per hour: " + fmt(v) + " × 3.6 = " + fmt(v * 3.6) + " km/h"] };
+  }
+  function calcForce(m, a) {
+    var e = pos(m, "mass") || pos(a, "acceleration");
+    if (e) return { error: e };
+    var f = m * a;
+    return { value: f, unit: "N",
+      steps: ["Formula: F = m × a", "F = " + fmt(m) + " × " + fmt(a), "F = " + fmt(f) + " N"] };
+  }
+  function calcEnergy(m, v) {
+    var e = pos(m, "mass") || pos(v, "speed");
+    if (e) return { error: e };
+    var ke = 0.5 * m * v * v;
+    return { value: ke, unit: "J",
+      steps: ["Formula: KE = ½ × m × v²", "KE = ½ × " + fmt(m) + " × " + fmt(v) + "²",
+              "KE = ½ × " + fmt(m) + " × " + fmt(v * v), "KE = " + fmt(ke) + " J"] };
+  }
+  function calcPower(en, t) {
+    var e = pos(en, "energy") || pos(t, "time");
+    if (e) return { error: e };
+    var p = en / t;
+    return { value: p, unit: "W",
+      steps: ["Formula: P = E ÷ t", "P = " + fmt(en) + " ÷ " + fmt(t), "P = " + fmt(p) + " W"] };
+  }
+  function calcPressure(f, a) {
+    var e = pos(f, "force") || pos(a, "area");
+    if (e) return { error: e };
+    var p = f / a;
+    return { value: p, unit: "Pa",
+      steps: ["Formula: P = F ÷ A", "P = " + fmt(f) + " ÷ " + fmt(a), "P = " + fmt(p) + " Pa"] };
+  }
+  return { fmt: fmt, calcSpeed: calcSpeed, calcForce: calcForce, calcEnergy: calcEnergy,
+           calcPower: calcPower, calcPressure: calcPressure };
+})();
+// ==== DOM WIRING BELOW ====
+(function () {
+  var FORMULAS = {
+    speed: { fn: "calcSpeed", lab1: "Distance (metres)", lab2: "Time (seconds)",
+             ph1: "e.g. 100", ph2: "e.g. 20",
+             hint: "Speed is how fast something moves: distance divided by time. Answer in metres per second (m/s)." },
+    force: { fn: "calcForce", lab1: "Mass (kilograms)", lab2: "Acceleration (m/s²)",
+             ph1: "e.g. 10", ph2: "e.g. 2",
+             hint: "Force is a push or a pull: mass times acceleration. Answer in newtons (N)." },
+    energy: { fn: "calcEnergy", lab1: "Mass (kilograms)", lab2: "Speed (m/s)",
+              ph1: "e.g. 0.5", ph2: "e.g. 10",
+              hint: "Kinetic energy is the energy a moving object carries: ½ × mass × speed². Answer in joules (J)." },
+    power: { fn: "calcPower", lab1: "Energy (joules)", lab2: "Time (seconds)",
+             ph1: "e.g. 3600", ph2: "e.g. 60",
+             hint: "Power is how fast energy is used: energy divided by time. Answer in watts (W)." },
+    pressure: { fn: "calcPressure", lab1: "Force (newtons)", lab2: "Area (square metres)",
+                ph1: "e.g. 200", ph2: "e.g. 0.5",
+                hint: "Pressure is force spread over an area: force divided by area. Answer in pascals (Pa)." }
+  };
+  var sel = document.getElementById("formula");
+  var lab1 = document.getElementById("lab1"), lab2 = document.getElementById("lab2");
+  var in1 = document.getElementById("in1"), in2 = document.getElementById("in2");
+  var hint = document.getElementById("hint"), out = document.getElementById("out");
+  var steps = document.getElementById("steps"), copyBtn = document.getElementById("copy-btn");
+  var lastText = "";
+  function applyFormula() {
+    var f = FORMULAS[sel.value];
+    lab1.textContent = f.lab1; lab2.textContent = f.lab2;
+    in1.placeholder = f.ph1; in2.placeholder = f.ph2;
+    hint.textContent = f.hint;
+    out.textContent = ""; steps.textContent = ""; copyBtn.style.display = "none";
+  }
+  sel.addEventListener("change", applyFormula);
+  document.getElementById("calc-btn").addEventListener("click", function () {
+    var f = FORMULAS[sel.value];
+    var r = window.NP[f.fn](parseFloat(in1.value), parseFloat(in2.value));
+    if (r.error) {
+      out.textContent = r.error; steps.textContent = "";
+      copyBtn.style.display = "none"; lastText = "";
+      return;
+    }
+    var line = "Answer: " + window.NP.fmt(r.value) + " " + r.unit;
+    if (r.extra !== undefined) line += " (" + window.NP.fmt(r.extra) + " " + r.extraUnit + ")";
+    out.textContent = line;
+    steps.textContent = r.steps.join("\n");
+    lastText = line + "\n" + r.steps.join("\n");
+    copyBtn.style.display = "block";
+  });
+  copyBtn.addEventListener("click", function () {
+    if (!lastText) return;
+    function done() {
+      copyBtn.textContent = "Copied!";
+      setTimeout(function () { copyBtn.textContent = "Copy result"; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(lastText).then(done, function () { fallbackCopy(); });
+    } else { fallbackCopy(); }
+    function fallbackCopy() {
+      var ta = document.createElement("textarea");
+      ta.value = lastText; document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta); done();
+    }
+  });
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

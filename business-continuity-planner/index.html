@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business Continuity Planner | Noryvello</title>
+<meta name="description" content="Plan for disruption before it happens — find your risks, back up your data, write a communication plan and build recovery steps that work.">
+<link rel="canonical" href="https://noryvello.github.io/business-continuity-planner/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Business Continuity Planner">
+<meta property="og:description" content="Plan for disruption before it happens — find your risks, back up your data, write a communication plan and build recovery steps that work.">
+<meta property="og:url" content="https://noryvello.github.io/business-continuity-planner/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is business continuity planning?", "acceptedAnswer": {"@type": "Answer", "text": "It is deciding in advance how your business will keep running when something disrupts it — a fire, a flood, a power cut, a cyberattack or a supplier failure. The plan names the risks, the first actions, who decides, who communicates and how you recover."}}, {"@type": "Question", "name": "How long should a continuity plan be?", "acceptedAnswer": {"@type": "Answer", "text": "A few pages is enough for most small businesses. If the plan is too long for anyone to read in a crisis, it is too long. Keep it short, practical and written in plain words, with a printed copy somewhere safe."}}, {"@type": "Question", "name": "What is the 3-2-1 rule for backups?", "acceptedAnswer": {"@type": "Answer", "text": "Keep three copies of important data, on two different kinds of storage, with one copy off-site. For most small businesses that means the working copy, a copy on an external drive or second device, and a copy in a cloud service you trust."}}, {"@type": "Question", "name": "How do I test a continuity plan?", "acceptedAnswer": {"@type": "Answer", "text": "Run a tabletop exercise: gather the key people, describe a scenario, and talk through what each person would do step by step. Write down every gap and fix it within a week. Also test the technical parts for real — restore a backup and try the backup connection."}}, {"@type": "Question", "name": "How often should I review the plan?", "acceptedAnswer": {"@type": "Answer", "text": "At least once a year, and after every change that matters: a new supplier, a new system, a new key member of staff, or a move. After any real disruption, review it immediately while the lessons are fresh and the fixes are cheapest."}}, {"@type": "Question", "name": "What should I do first when a disruption happens?", "acceptedAnswer": {"@type": "Answer", "text": "Follow the plan's immediate response: the named decision-maker decides, the spokesperson communicates, and the team works the first three actions for that risk. Tell customers early and honestly — silence makes people assume the worst."}}]}</script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Business Continuity Planner</h1>
+<p class="answer">Business continuity planning means deciding, before anything goes wrong, how your business will keep running when something does. This guide walks you through finding your risks, protecting your data, planning communications and writing recovery steps — with a plan template you can copy.</p>
+<div class="warn">A plan you never test is a guess, not a plan. Walk through yours at least once a year and after any real disruption — the gaps you find in practice are cheap, and the ones you find in a crisis are not.</div>
+<h2>What business continuity planning is</h2>
+<p>Business continuity planning is the work of deciding in advance how your business will cope with disruption — a fire, a flood, a power cut, a cyberattack, a key supplier failing, a pandemic. It is not about predicting which disaster will happen; it is about being ready for the kinds of disruption that would stop you working, whatever causes them.</p>
+<p>The plan itself is a short, practical document: what the risks are, what you will do first, who decides, who communicates, and how you will get back to normal. It is not a thick binder that sits on a shelf. The best continuity plans fit on a few pages, are understood by everyone who needs them, and are tested regularly. If your plan is too long for anyone to read in a crisis, it is too long.</p>
+<h2>Finding your risks</h2>
+<p>Start by listing what could stop your business, in plain words. Think in categories rather than trying to imagine every possible event: loss of premises, loss of power or internet, loss of data, loss of a key supplier, loss of key people, and loss of access to customers or markets. For each category, ask two questions: how likely is it, and how bad would it be?</p>
+<p>The risks that score high on both questions are your priorities. A small shop&#x27;s priorities will differ from a small factory&#x27;s, and that is fine — the plan must fit your business, not a template. Write the risks down, even the ones that feel unlikely: naming a risk is the first step to preparing for it, and the list itself often reveals gaps you had not noticed.</p>
+<ul>
+<li>Loss of premises: fire, flood, storm or a building you cannot enter</li>
+<li>Loss of power, internet or phone service for a day or more</li>
+<li>Loss of data: a failed drive, a ransomware attack, a deleted account</li>
+<li>Loss of a key supplier, a key customer or a key member of staff</li>
+<li>Loss of access to customers or markets, online or in person</li>
+</ul>
+<h2>Backups: your data and your tools</h2>
+<p>Data is the easiest part of continuity to fix and the most damaging part to lose. Follow the 3-2-1 rule: keep three copies of important data, on two different kinds of storage, with one copy off-site. For most small businesses that means the working copy, a copy on an external drive or a second device, and a copy in a cloud service you trust.</p>
+<p>Backups only count if they work, so test them. Once a quarter, pick a file at random and restore it from the backup — if you cannot, the backup is a comforting fiction. Back up more than files too: keep a list of the accounts, passwords and service providers the business depends on, stored securely where a second person can reach it if you cannot. A business that loses its data and its logins at once has lost far more than files.</p>
+<h2>The communication plan</h2>
+<p>In a disruption, communication matters as much as action. Customers, staff and suppliers all need to know what has happened, what it means for them, and when they will hear more. Silence is the worst response: people assume the worst and make their own plans. Decide in advance who speaks for the business, what they will say, and through which channels.</p>
+<p>Prepare the messages now, while you are calm. A short template for customers — what happened, what it affects, what you are doing, when you will update them — can be adapted in minutes during a real incident. Keep a contact list that works without your usual systems: phone numbers on paper, or on a phone that does not depend on the office network. And name one spokesperson, so the business speaks with one voice instead of several conflicting ones.</p>
+<h2>Recovery steps: getting back to work</h2>
+<p>Recovery means deciding what comes back first. Not everything needs to return at once: list your activities in order of importance, and plan to restore the most critical first. For most businesses that means the ability to take orders and communicate, then production or service delivery, then everything else. Write the order down now, because in a crisis everyone will argue for their own priority.</p>
+<p>For each critical activity, write the recovery steps in plain order: what to do, who does it, and what you need. Keep the steps short and practical — a recovery step that says restore the server from the backup is useful; one that says fix the IT is not. Assign a named owner to each step, and make sure the owner knows they own it before anything happens.</p>
+<h2>The plan template</h2>
+<p>Copy this outline and fill it in with your own details. One page per section is enough for most small businesses. Section one: the risks you identified, scored by likelihood and impact. Section two: the immediate response — who decides, who calls whom, and the first three actions for each risk. Section three: backups — what is backed up, where, and how often it is tested.</p>
+<p>Section four: communications — the spokesperson, the contact list, and the message templates. Section five: recovery — the order in which activities return, with steps and owners. Section six: the review schedule — when the plan is tested and updated, and who owns it. Keep a printed copy somewhere safe and a digital copy somewhere reachable, because a plan stored only on a system that has failed is no plan at all.</p>
+<h2>Testing the plan</h2>
+<p>Test the plan with a tabletop exercise: gather the key people, describe a scenario — the office is flooded, the server is down, the main supplier has failed — and talk through what each person would do, step by step. No acting is needed; the point is to find the gaps. The first exercise always finds several: a phone number that is out of date, a step that depends on someone who is on holiday, a backup nobody has tested.</p>
+<p>Write down every gap and fix it within a week, then run the exercise again in six months with a different scenario. Test the technical parts for real too: restore a backup, try the backup internet connection, call the numbers on the contact list. A plan tested twice a year is a plan you can trust; a plan never tested is a document, not a defence.</p>
+<h2>Keeping the plan current</h2>
+<p>A continuity plan goes stale faster than most documents, because the business it describes keeps changing. Review it once a year at minimum, and after every change that matters: a new supplier, a new system, a new member of staff in a key role, a move to new premises. After any real disruption, review it immediately — the lessons are freshest then, and the fixes are cheapest.</p>
+<p>Give the plan a named owner, and make the review a calendar event rather than a good intention. The owner checks the contact list, the backup tests, the risk scores and the recovery steps, and updates whatever has changed. If the review takes more than an hour, the plan has grown too complicated — simplify it back to the risks and steps that would actually matter in a crisis.</p>
+<h2>A worked example: a small shop&#x27;s plan</h2>
+<p>A small bakery with six staff and one shop writes a four-page plan. Its top risks are a power cut, a flood from the river nearby, and the loss of its flour supplier. For a power cut, the plan says: close for the day, call the power company, move perishables to the cold room at the owner&#x27;s home, and message customers through the shop&#x27;s social media page. For a flood, it says: move stock to the high shelves, call the insurer, and work from the owner&#x27;s home kitchen for orders already taken.</p>
+<p>For the flour supplier, the plan names a second supplier already tested with one order, and a note that the shop can switch within two days. The contact list is printed and kept in the shop and at the owner&#x27;s home. The plan is tested every six months with a tabletop exercise over coffee, and the owner updates it whenever a supplier or a phone number changes. Nothing about the plan is dramatic — and that is the point. Continuity planning is ordinary preparation, done in advance, so that a bad day stays a bad day instead of becoming the end of the business.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is business continuity planning?</h3><p>It is deciding in advance how your business will keep running when something disrupts it — a fire, a flood, a power cut, a cyberattack or a supplier failure. The plan names the risks, the first actions, who decides, who communicates and how you recover.</p></div>
+<div class="faq"><h3>How long should a continuity plan be?</h3><p>A few pages is enough for most small businesses. If the plan is too long for anyone to read in a crisis, it is too long. Keep it short, practical and written in plain words, with a printed copy somewhere safe.</p></div>
+<div class="faq"><h3>What is the 3-2-1 rule for backups?</h3><p>Keep three copies of important data, on two different kinds of storage, with one copy off-site. For most small businesses that means the working copy, a copy on an external drive or second device, and a copy in a cloud service you trust.</p></div>
+<div class="faq"><h3>How do I test a continuity plan?</h3><p>Run a tabletop exercise: gather the key people, describe a scenario, and talk through what each person would do step by step. Write down every gap and fix it within a week. Also test the technical parts for real — restore a backup and try the backup connection.</p></div>
+<div class="faq"><h3>How often should I review the plan?</h3><p>At least once a year, and after every change that matters: a new supplier, a new system, a new key member of staff, or a move. After any real disruption, review it immediately while the lessons are fresh and the fixes are cheapest.</p></div>
+<div class="faq"><h3>What should I do first when a disruption happens?</h3><p>Follow the plan&#x27;s immediate response: the named decision-maker decides, the spokesperson communicates, and the team works the first three actions for that risk. Tell customers early and honestly — silence makes people assume the worst.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/supply-chain-risk-checklist/">Supply Chain Risk Checklist</a> · <a href="https://noryvello.github.io/import-export-documentation-guide/">Import Export Documentation Guide</a> · <a href="https://noryvello.github.io/project-management-learning-hub/">Project Management Learning Hub</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+<script src="../ads-config.js"></script>
+</div>
+</body>
+</html>

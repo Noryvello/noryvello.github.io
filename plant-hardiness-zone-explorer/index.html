@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plant Hardiness Zone Explorer | Noryvello</title>
+<meta name="description" content="Hardiness zones explained: the USDA zone table, how to find your zone on the official maps, and plant lists for cold, mild and warm zones.">
+<link rel="canonical" href="https://noryvello.github.io/plant-hardiness-zone-explorer/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Plant Hardiness Zone Explorer">
+<meta property="og:description" content="Hardiness zones explained: the USDA zone table, how to find your zone on the official maps, and plant lists for cold, mild and warm zones.">
+<meta property="og:url" content="https://noryvello.github.io/plant-hardiness-zone-explorer/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14.5px}th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}th{background:#eef2ff}.scroll{overflow-x:auto;margin:12px 0}.scroll table{margin:0;min-width:520px}</style></head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Plant Hardiness Zone Explorer</h1>
+<p class="answer">A hardiness zone tells you how cold a place gets in winter, and which plants can survive there. This guide explains the USDA zone system, shows you how to find your zone on the official maps, and lists plants suited to cold, mild and warm zones.</p>
+<div class="warn">This page does no location lookup and cannot tell you your zone: check it on the official USDA map or the RHS website, linked below. Zones describe winter cold only, not heat, drought, rainfall or soil, so a plant that suits your zone can still fail for other reasons.</div>
+<h2>What a hardiness zone is</h2>
+<p>A hardiness zone is a band on a map that groups places by how cold their winters get. The system most widely used is the one from the United States Department of Agriculture, the USDA, which divides North America into zones numbered 1 to 13. Each zone is defined by a single number: the average annual extreme minimum temperature, which is the coldest temperature the place typically reaches in a year, averaged over many years. Zone 1 is the coldest, with winter lows below minus 50 degrees Fahrenheit; zone 13 is the warmest, where winter lows stay above 60 degrees Fahrenheit.</p>
+<p>The idea is simple: a plant labelled hardy to zone 5 should survive a typical zone 5 winter, and a plant labelled hardy to zone 9 will usually die in a zone 5 winter. The zone number on a plant label is the coldest zone the plant can normally survive in, not the only zone it can grow in. A plant hardy to zone 4 will usually grow happily in zones 5, 6 and 7 as well, because those winters are milder. Zones are a starting point for choosing plants, not a guarantee: a plant can fail in its own zone for many reasons, and the sections below explain which ones matter most.</p>
+<h2>The USDA zone table</h2>
+<p>The table below gives the standard USDA zone boundaries. Each zone covers a band of 10 degrees Fahrenheit. The Celsius figures are rounded to whole degrees.</p>
+<table>
+<tr><th>Zone</th><th>Average coldest winter temperature</th></tr>
+<tr><td>Zone 1</td><td>Below -50 F (below -46 C)</td></tr>
+<tr><td>Zone 2</td><td>-50 to -40 F (-46 to -40 C)</td></tr>
+<tr><td>Zone 3</td><td>-40 to -30 F (-40 to -34 C)</td></tr>
+<tr><td>Zone 4</td><td>-30 to -20 F (-34 to -29 C)</td></tr>
+<tr><td>Zone 5</td><td>-20 to -10 F (-29 to -23 C)</td></tr>
+<tr><td>Zone 6</td><td>-10 to 0 F (-23 to -18 C)</td></tr>
+<tr><td>Zone 7</td><td>0 to 10 F (-18 to -12 C)</td></tr>
+<tr><td>Zone 8</td><td>10 to 20 F (-12 to -7 C)</td></tr>
+<tr><td>Zone 9</td><td>20 to 30 F (-7 to -1 C)</td></tr>
+<tr><td>Zone 10</td><td>30 to 40 F (-1 to 4 C)</td></tr>
+<tr><td>Zone 11</td><td>40 to 50 F (4 to 10 C)</td></tr>
+<tr><td>Zone 12</td><td>50 to 60 F (10 to 16 C)</td></tr>
+<tr><td>Zone 13</td><td>Above 60 F (above 16 C)</td></tr>
+</table>
+<p>Many zones are also split into halves, written as 5a and 5b, where the "a" half is the colder 5 degrees and the "b" half is the warmer 5 degrees. The halves matter most at the edges of a plant's range: a plant hardy to zone 6b may struggle in zone 6a. For most gardeners, the whole zone number is enough, and the halves are a refinement to check when you are choosing a plant near the limit of what your garden can grow.</p>
+<h2>How to find your zone</h2>
+<p>The only reliable way to find your zone is to look it up on an official map. In the United States, the official source is the USDA Plant Hardiness Zone Map, which you can search by postcode: <a href="https://planthardiness.ars.usda.gov/">USDA Plant Hardiness Zone Map</a>. Type in your postcode and the map will show your zone. In the United Kingdom, the Royal Horticultural Society gives hardiness ratings for plants and guidance on finding your local conditions: <a href="https://www.rhs.org.uk/plants">RHS plant finder</a>.</p>
+<p>Be careful with unofficial zone maps and with phone apps that guess your zone from your location: they can be out of date or based on the wrong data. The USDA map was last updated using thirty years of weather records, and it is the standard that nurseries and plant labels use. If you live outside the United States and the United Kingdom, look for your own country's official hardiness map, or use the USDA temperature bands in the table above with your local climate records. This page does not look up your zone for you, because a lookup that guesses is worse than no lookup at all.</p>
+<h2>What zones do and do not tell you</h2>
+<p>Zones tell you one thing: how cold the winter gets. They say nothing about how hot the summer gets, how much rain falls, how long the growing season lasts, or what the soil is like, and all of those can decide whether a plant lives or dies. A plant that survives a zone 6 winter in a dry climate may rot in a zone 6 winter with wet soil. A plant that loves a hot zone 9 summer may sulk in a cool zone 9 summer by the sea. Zones are the first filter, not the last word.</p>
+<p>Your own garden has microclimates too: small pockets that are warmer or colder than the zone map suggests. A south-facing wall absorbs heat during the day and releases it at night, so the plants beside it may survive a winter that kills the same plants in the open garden. A low hollow collects cold air on still nights and becomes a frost pocket, where tender plants fail even though the zone says they should survive. A slope that faces north stays colder and wetter than a slope that faces south. Spend a winter watching where the frost lingers and where the snow melts first, and you will learn your garden's microclimates better than any map can tell you.</p>
+<h2>Plants for cold zones (zones 1 to 4)</h2>
+<p>Cold zones have short summers and long, bitter winters, but they still grow a wide range of beautiful plants. Hardy perennials for cold zones include Siberian iris, peonies, daylilies and hostas, all of which die back in winter and return in spring. Hardy shrubs include lilac, which flowers best after a cold winter, and many roses, especially the old shrub roses and rugosa roses bred for cold climates. Trees for cold zones include spruce, birch and rowan, and fruit trees such as apple and plum, which need a cold winter to set fruit properly.</p>
+<p>Gardening in a cold zone is mostly about working with the short season: start seeds indoors, choose early varieties, and protect tender growth from late frosts with fleece or cloches. Mulch matters more here than anywhere: a thick layer of mulch in autumn insulates the soil, keeps the frost from heaving small plants out of the ground, and stops the freeze-thaw cycle that damages roots. Snow is a friend, not an enemy: a deep snow cover insulates plants far better than bare frozen ground, so do not clear snow off your beds.</p>
+<h2>Plants for mild zones (zones 5 to 8)</h2>
+<p>Mild zones cover a huge range of the temperate world, and they grow the widest choice of plants of any zone band. Roses, lavender, hydrangeas, clematis and boxwood all thrive in zones 5 to 8, and so do most fruit trees, including apple, pear, cherry and plum. Lavender is generally hardy from zone 5 upwards, roses from zone 4 or 5 depending on the variety, and hydrangeas from zone 5 or 6. Camellias, which flower in late winter and early spring, are generally hardy from zone 7, and olive trees from zone 8.</p>
+<p>The main challenge in mild zones is not the depth of the cold but its timing. A late frost after a mild spell in spring can damage new growth and blossom, especially on fruit trees and early-flowering shrubs. A sudden freeze after rain can damage plants that would survive the same temperature in dry soil. Site tender plants in sheltered spots, avoid low frost pockets, and keep fleece handy for cold nights in spring. In zone 8 and the warmer parts of zone 7, you can also try plants from the warm list, given a sheltered wall and a mild winter.</p>
+<h2>Plants for warm zones (zones 9 to 13)</h2>
+<p>Warm zones have mild winters and long, hot summers, and they grow plants that would die in a single cold-zone winter. Citrus trees such as lemons, oranges and limes are generally hardy from zone 9, as are bougainvillea, tropical hibiscus and many palms. Bird of paradise, frangipani and banana grow in zones 10 and warmer, and in zones 12 and 13 the garden never really sleeps: plants grow all year, and the challenge is heat, drought and pests rather than cold.</p>
+<p>Gardening in a warm zone is about managing heat and water. Shade cloth, mulch and regular watering matter more than frost protection, although even warm zones can have a rare cold night that damages citrus and other tender plants. A single night below freezing can kill a bougainvillea that has grown happily for years, so keep frost cloth ready for unusual cold snaps, and plant the most tender plants near the house or under a tree canopy where the cold air cannot settle. In the warmest zones, choose plants that cope with humidity as well as heat, because fungal diseases thrive in warm, wet air.</p>
+<h2>Reading a plant label and pushing the limits</h2>
+<p>A plant label usually gives a zone range, such as "hardy to zone 5" or "zones 5 to 9". The first number is the coldest zone the plant should survive in; the second number, when given, is the warmest zone it tolerates, because some plants need winter cold and suffer in places that never freeze. A label that says only "hardy" without a zone number is not very useful: ask the nursery which zone it means, or look the plant up in a reference such as the RHS plant finder.</p>
+<p>Many gardeners enjoy pushing the limits by growing a plant one zone warmer than their garden should allow. It sometimes works, and the tricks are the same everywhere: plant against a south-facing wall, mulch deeply in autumn, wrap tender stems in fleece or straw for the winter, and grow the plant in a pot so you can move it under cover for the coldest nights. Treat it as an experiment, not a promise: a plant one zone out of its range may survive three mild winters and die in the fourth. If the plant matters to you, grow a spare in a pot as insurance.</p>
+<h2>Zones outside the United States</h2>
+<p>The USDA system was designed for North America, but its temperature bands are used as a rough guide all over the world. In the United Kingdom, the Royal Horticultural Society uses its own hardiness ratings, labelled H1 to H7. H1 plants need a heated greenhouse, H2 plants need an unheated greenhouse or shelter, H3 plants are half hardy and survive down to about minus 5 degrees Celsius, and H4 to H7 plants are hardy to very hardy, surviving down to minus 10, minus 15, minus 20 and below minus 20 degrees respectively.</p>
+<p>Other countries have their own systems, and some use the USDA zones directly. Whatever system your country uses, the principle is the same: find the coldest temperature your garden usually reaches in winter, and choose plants rated to survive it. When a plant label gives a USDA zone and you live outside the United States, use the temperature table on this page to translate the zone into a temperature, and compare it with your own winters. A zone number is only useful when you know what temperature it stands for.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is my hardiness zone?</h3><p>Look it up on an official map. In the United States, search your postcode on the USDA Plant Hardiness Zone Map, linked on this page. In the United Kingdom, the RHS website gives hardiness guidance. This page does not look up your zone, because a lookup that guesses is worse than none.</p></div>
+<div class="faq"><h3>Can I grow a plant rated for one zone warmer?</h3><p>Sometimes. Plant it against a south-facing wall, mulch deeply in autumn, and wrap it in fleece for the coldest nights. Treat it as an experiment: a plant one zone out of range may survive several mild winters and die in a hard one, so grow a spare in a pot if it matters to you.</p></div>
+<div class="faq"><h3>Do hardiness zones change over time?</h3><p>Yes. Zone maps are updated as new weather records accumulate, and warming winters have shifted some zone boundaries. The USDA map was last updated using thirty years of records. If your garden feels milder than it used to, check the current map rather than an old one.</p></div>
+<div class="faq"><h3>What if my garden is a frost pocket?</h3><p>Cold air sinks and pools in low spots on still nights, so a hollow can be several degrees colder than the rest of the garden. Avoid planting tender plants there, and site them on higher ground or on a slope where cold air drains away. Watch where the frost lingers in winter to find your frost pockets.</p></div>
+<div class="faq"><h3>Are zones the same all over the world?</h3><p>No. The USDA system covers North America, and the United Kingdom uses the RHS ratings from H1 to H7. Other countries have their own systems. The temperature bands are what matter: use the table on this page to translate any zone into a temperature and compare it with your own winters.</p></div>
+<div class="faq"><h3>What does hardy to zone 5 mean?</h3><p>It means the plant should survive a typical zone 5 winter, where the coldest temperature averages between minus 20 and minus 10 degrees Fahrenheit. It does not mean the plant only grows in zone 5: it will usually grow in warmer zones too, as long as it gets the cold it needs in winter.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/plant-identification-guide/">Plant Identification Guide</a> · <a href="https://noryvello.github.io/garden-layout-planner/">Garden Layout Planner</a> · <a href="https://noryvello.github.io/crop-yield-estimator/">Crop Yield Estimator</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+</div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is my hardiness zone?", "acceptedAnswer": {"@type": "Answer", "text": "Look it up on an official map. In the United States, search your postcode on the USDA Plant Hardiness Zone Map, linked on this page. In the United Kingdom, the RHS website gives hardiness guidance. This page does not look up your zone, because a lookup that guesses is worse than none."}}, {"@type": "Question", "name": "Can I grow a plant rated for one zone warmer?", "acceptedAnswer": {"@type": "Answer", "text": "Sometimes. Plant it against a south-facing wall, mulch deeply in autumn, and wrap it in fleece for the coldest nights. Treat it as an experiment: a plant one zone out of range may survive several mild winters and die in a hard one, so grow a spare in a pot if it matters to you."}}, {"@type": "Question", "name": "Do hardiness zones change over time?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Zone maps are updated as new weather records accumulate, and warming winters have shifted some zone boundaries. The USDA map was last updated using thirty years of records. If your garden feels milder than it used to, check the current map rather than an old one."}}, {"@type": "Question", "name": "What if my garden is a frost pocket?", "acceptedAnswer": {"@type": "Answer", "text": "Cold air sinks and pools in low spots on still nights, so a hollow can be several degrees colder than the rest of the garden. Avoid planting tender plants there, and site them on higher ground or on a slope where cold air drains away. Watch where the frost lingers in winter to find your frost pockets."}}, {"@type": "Question", "name": "Are zones the same all over the world?", "acceptedAnswer": {"@type": "Answer", "text": "No. The USDA system covers North America, and the United Kingdom uses the RHS ratings from H1 to H7. Other countries have their own systems. The temperature bands are what matter: use the table on this page to translate any zone into a temperature and compare it with your own winters."}}, {"@type": "Question", "name": "What does hardy to zone 5 mean?", "acceptedAnswer": {"@type": "Answer", "text": "It means the plant should survive a typical zone 5 winter, where the coldest temperature averages between minus 20 and minus 10 degrees Fahrenheit. It does not mean the plant only grows in zone 5: it will usually grow in warmer zones too, as long as it gets the cold it needs in winter."}}]}</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

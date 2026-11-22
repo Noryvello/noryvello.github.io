@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Job Description Analyzer — Check Any Job Ad Before You Apply | Noryvello</title>
+<meta name="description" content="Check a job description free — paste the ad and see what is missing, what is vague, and which red flags to watch for before you apply. No signup.">
+<link rel="canonical" href="https://noryvello.github.io/job-description-analyzer/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Job Description Analyzer — Check Any Job Ad Before You Apply">
+<meta property="og:description" content="Check a job description free before you apply.">
+<meta property="og:url" content="https://noryvello.github.io/job-description-analyzer/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc textarea{width:100%;min-height:150px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+.calc input,.calc select{width:100%;min-height:72px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc button{display:block;width:100%;min-height:72px;margin-top:12px;padding:12px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#fff;color:#4338ca;border:2px solid #4338ca}
+.calc button.danger{background:#fff;color:#991b1b;border:2px solid #991b1b}
+.calc .out{font-size:17px;font-weight:400;margin-top:14px;white-space:pre-line}
+.calc .out b{font-weight:700}
+.calc .row{margin:10px 0}
+.calc .checkrow{display:flex;gap:12px;align-items:flex-start;margin:0;padding:14px 0;border-bottom:1px solid #e2e8f0;cursor:pointer}
+.calc .checkrow input{width:30px;height:30px;min-height:30px;flex:none;margin:0;accent-color:#4338ca}
+.calc .checkrow span{font-size:16px;line-height:1.5}
+table.data{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+table.data th,table.data td{border:1px solid #cbd5e1;padding:8px;text-align:left;vertical-align:top}
+table.data th{background:#eef2ff}
+.tag{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:700}
+.tag.ok{background:#dcfce7;color:#166534}
+.tag.bad{background:#fee2e2;color:#991b1b}
+.tag.mid{background:#fef3c7;color:#92400e}
+.cardline{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin:10px 0}
+.cardline b{font-size:16.5px}
+.small{font-size:14px;color:#64748b}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a job description analyzer?", "acceptedAnswer": {"@type": "Answer", "text": "It is a free tool that reads a job ad and checks what the ad actually tells you. It looks for the salary, working hours, location, skills, experience and company details, and it flags vague lines and red flags so you can see what is missing before you apply."}}, {"@type": "Question", "name": "Should I apply if there is no salary listed?", "acceptedAnswer": {"@type": "Answer", "text": "You can, but ask about the pay early, before you spend hours on tests and interviews. A missing salary is common, and it does not always mean a bad job, but you should never accept an offer without knowing the exact pay, the hours, and whether the figure is before or after deductions."}}, {"@type": "Question", "name": "What are the red flags in a job ad?", "acceptedAnswer": {"@type": "Answer", "text": "The biggest ones are any fee asked from applicants, a promise of guaranteed income with no experience needed, a demand to be available all day and night, and no company name or address at all. A real employer never asks you to pay to apply, and a real company is easy to look up."}}, {"@type": "Question", "name": "Is it normal for an employer to ask for money?", "acceptedAnswer": {"@type": "Answer", "text": "No, never. A real employer pays you for your work. Any request for a registration fee, training fee, deposit, or charge to process your application is a serious warning sign, and you should not pay it or share your bank details."}}, {"@type": "Question", "name": "What skills should a job ad list?", "acceptedAnswer": {"@type": "Answer", "text": "A good ad lists the skills the job actually needs, with the must-haves separated from the nice-to-haves. Vague words like hardworking or flexible are not skills. Look for concrete things you can check against your own experience, such as driving, bookkeeping, or using a particular machine or program."}}, {"@type": "Question", "name": "Can this tool tell me if a job is real?", "acceptedAnswer": {"@type": "Answer", "text": "No. This tool reads the words in the ad and shows you what is missing or worrying, but it cannot verify the employer behind it. A clean report does not prove a job is real. Always check the company name, ask questions, and trust your own judgment before you share personal details."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Job Description Analyzer</h1>
+<p class="answer">Paste any job ad into the analyzer and it checks what the ad actually tells you: whether it names a salary, working hours, a location and the skills it wants. It also flags the red flags that matter most, including any fee asked from applicants, because a real employer never asks you to pay to apply.</p>
+<div class="calc">
+<label for="ad-text">Paste the job ad here</label>
+<textarea id="ad-text" placeholder="Paste the full job ad — title, description, requirements, everything."></textarea>
+<button id="ad-analyze" type="button">Analyze this job ad</button>
+<button id="ad-sample" type="button" class="secondary">Try a sample ad</button>
+<div class="out" id="ad-out" style="display:none"></div>
+<button id="ad-copy" type="button" class="secondary" style="display:none" data-label="Copy my report">Copy my report</button>
+</div>
+<div class="warn">This analyzer reads the words in the ad you paste — it cannot verify the employer behind it. A clean report does not prove a job is real, and a bad report does not prove it is fake; it only shows you what to check before you apply. Never pay a fee to apply for a job.</div>
+<h2>How to use this analyzer</h2>
+<p>Copy the whole job ad — the title, the description, the requirements, everything — and paste it into the box above. Then tap the Analyze button. The analyzer reads the text and gives you three things: a checklist of what the ad contains, a score out of eight, and a list of anything vague or worrying it found.</p>
+<p>The checklist covers salary, working hours, location, skills, experience, the company itself, how to apply, and the type of job. Each item is marked found or missing, so you can see at a glance what the ad forgot to say. Below the checklist you will see the exact lines that are vague — lines like competitive salary or must be flexible — and any red flags, such as a fee asked from applicants or a demand to be available all day and night.</p>
+<p>When you are done, tap Copy my report to keep the result as plain text you can paste into your notes or send to a friend. Your text never leaves your phone: everything happens in your browser, and nothing is sent to a server. If you want to see how it works before you paste a real ad, tap Try a sample ad and the analyzer will fill in a typical ad for you.</p>
+<h2>What a good job ad must contain</h2>
+<p>A good job ad answers eight questions before you even think about applying. First, what is the job — the title and the main duties in plain words, not a pile of grand phrases. Second, who is hiring — the company name and what the company does, so you can look it up. Third, where the work happens — a city, an area, or a clear statement that the work is remote. Fourth, when you work — the hours, the days, and whether weekends or nights are part of the job.</p>
+<p>Fifth, what it pays — a real number or a real range, not a vague promise. Sixth, what skills and experience are needed — the must-haves separated from the nice-to-haves. Seventh, what kind of job it is — full-time, part-time, contract, or internship. Eighth, how to apply — a clear next step with a deadline.</p>
+<p>An ad that answers all eight is not a guarantee of a good job, but it shows the employer has thought about the role and respects your time. An ad that answers only two or three is asking you to apply blind. The checklist in the analyzer follows exactly these eight points, so a low score means the ad is keeping you in the dark about something important.</p>
+<h2>The red flags that should stop you</h2>
+<p>Some things in a job ad should make you stop and think before you apply. The biggest one is money: if the ad asks you to pay anything — a registration fee, a training fee, a deposit for equipment, a charge to process your application — walk away. A real employer pays you; you never pay them.</p>
+<p>The second is a promise that sounds too easy: no experience needed plus high pay, or a guaranteed income for a few hours of work a day. Real jobs describe real work and real pay. The third is total availability: an ad that wants you available all day and night, every day, is describing a job with no boundaries, and you should believe it.</p>
+<p>The fourth is a missing company: no name, no website, no address, just a chat number to message. A genuine employer is easy to find. The fifth is pressure: urgent hiring, limited slots, apply today or lose the chance. Urgency is sometimes real, but combined with any of the other flags it is a reason to slow down, not speed up. The analyzer flags the first four automatically. The fifth is for your own judgment — read the ad twice, slowly, before you decide.</p>
+<h2>Reading the salary line</h2>
+<p>The salary line is where most job ads are least honest, so it deserves a close read. A good ad gives a number or a narrow range, and says whether it is monthly or yearly, and whether it is the full amount before deductions or the amount you take home. A vague ad says competitive salary, attractive package, or salary negotiable, which tells you nothing at all — every employer thinks its own pay is competitive.</p>
+<p>When you see those words, the analyzer marks the salary line as vague, and you should treat the pay as unknown until the employer says a number. Watch too for pay that is described only in the best case: up to a large number usually means most people earn far less. Watch for pay that depends on things you cannot control, like commission only, with no basic pay at all.</p>
+<p>And compare the pay with the hours: a monthly figure that looks fair for a normal week can be very thin if the job expects twelve-hour days. If the salary is missing entirely, you can still apply, but ask about pay early — before you spend hours on tests and interviews for a job that cannot pay what you need.</p>
+<h2>A worked example: one ad, analyzed line by line</h2>
+<p>Here is a typical ad, the kind you see every day. Wanted: shop assistant for a busy store. Must be hardworking and flexible. Competitive salary. Immediate start. Message us on chat to apply. The analyzer reads it like this.</p>
+<p>Job title: clear, it is a shop assistant. Company: missing — no name at all, so you cannot look the employer up. Location: missing — which store, in which area, is never said. Working hours: missing — busy store hints at long days but says nothing exact. Salary: vague — competitive salary is not a number. Skills: vague — hardworking and flexible describe almost anyone and tell you nothing about the actual work. Experience: missing. How to apply: a chat message only, with no name and no deadline.</p>
+<p>The score comes out low, and the report would list two vague lines and one red flag: no company details and a chat-only contact. Does that mean the job is fake? Not necessarily — small shops often write short ads. But it means you should ask questions before you apply: the shop name and address, the hours, and the actual pay. A good employer will answer happily. An employer who will not answer those questions has told you everything you need to know.</p>
+<h2>Common mistakes before you apply</h2>
+<p>The first mistake is applying without reading the whole ad. It is easy to see a job title you like and send your application in the same minute, but the details further down — the location, the hours, the shift pattern — are often the parts that matter most. The second mistake is ignoring the location. A job in a city two hours away is a different job from the same role near your home, and the travel time and cost come out of your day every single day.</p>
+<p>The third mistake is trusting the title alone: assistant manager, executive, coordinator — titles mean different things at different companies, and only the duties tell you what the job really is. The fourth mistake is applying to the same job twice through different channels, which looks careless. The fifth is sending the same application everywhere without changing a word. A short note that mentions the company and the role takes five minutes and shows you actually read the ad. The sixth is forgetting to keep a record of where you applied — after twenty applications, the names blur together, and you will not remember which one called you back.</p>
+<h2>What to ask before you apply</h2>
+<p>If the analyzer shows missing or vague items, the next step is simple: ask. A short message to the employer can clear up most of the gaps in a minute. Ask for the company name and the work address if they are missing. Ask for the working hours and the days of the week. Ask for the pay as a number, and whether it is before or after deductions. Ask what the first month actually looks like — the duties, the training, and who you report to. Ask about the contract: is it permanent, fixed-term, or a trial period, and what happens after the trial.</p>
+<p>You do not need to ask all of this in the first message; pick the two or three gaps that matter most to you. How the employer answers tells you as much as the answers themselves. Clear, direct answers are a good sign. Slow, evasive, or annoyed answers are a warning. And if the employer asks you for money at any point — for training, for a uniform, for processing — stop the conversation. No real job asks you to pay to start work.</p>
+<h2>What this analyzer cannot do</h2>
+<p>This analyzer reads words; it cannot check facts. It cannot tell you whether the company is real, whether the salary will actually be paid, or whether the workplace treats people well. It cannot read between the lines the way a person can — a polite ad can still hide a bad job, and a badly written ad can still come from a decent employer.</p>
+<p>It works best on ads written in plain English; ads full of abbreviations, mixed languages, or scanned images will score lower than they deserve, because the analyzer can only read the text you paste. It also cannot apply for you, write your application, or negotiate your pay — those are your jobs, and this tool is only here to help you see the ad clearly before you start. Use the report as a starting point for your own questions, not as a final verdict on the job.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is a job description analyzer?</h3><p>It is a free tool that reads a job ad and checks what the ad actually tells you. It looks for the salary, working hours, location, skills, experience and company details, and it flags vague lines and red flags so you can see what is missing before you apply.</p></div>
+<div class="faq"><h3>Should I apply if there is no salary listed?</h3><p>You can, but ask about the pay early, before you spend hours on tests and interviews. A missing salary is common, and it does not always mean a bad job, but you should never accept an offer without knowing the exact pay, the hours, and whether the figure is before or after deductions.</p></div>
+<div class="faq"><h3>What are the red flags in a job ad?</h3><p>The biggest ones are any fee asked from applicants, a promise of guaranteed income with no experience needed, a demand to be available all day and night, and no company name or address at all. A real employer never asks you to pay to apply, and a real company is easy to look up.</p></div>
+<div class="faq"><h3>Is it normal for an employer to ask for money?</h3><p>No, never. A real employer pays you for your work. Any request for a registration fee, training fee, deposit, or charge to process your application is a serious warning sign, and you should not pay it or share your bank details.</p></div>
+<div class="faq"><h3>What skills should a job ad list?</h3><p>A good ad lists the skills the job actually needs, with the must-haves separated from the nice-to-haves. Vague words like hardworking or flexible are not skills. Look for concrete things you can check against your own experience, such as driving, bookkeeping, or using a particular machine or program.</p></div>
+<div class="faq"><h3>Can this tool tell me if a job is real?</h3><p>No. This tool reads the words in the ad and shows you what is missing or worrying, but it cannot verify the employer behind it. A clean report does not prove a job is real. Always check the company name, ask questions, and trust your own judgment before you share personal details.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/skill-gap-analyzer/">Skill Gap Analyzer</a> · <a href="https://noryvello.github.io/job-application-tracker/">Job Application Tracker</a> · <a href="https://noryvello.github.io/career-path-explorer/">Career Path Explorer</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function copyText(text, btn){
+  function done(){ if(btn){ var old=btn.getAttribute('data-label')||btn.textContent; btn.textContent='Copied!'; setTimeout(function(){ btn.textContent=old; },2000); } }
+  function fallback(){
+    var ta=document.createElement('textarea');
+    ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta); done();
+  }
+  if (typeof navigator!=='undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else { fallback(); }
+}
+function show(el){ if(el) el.style.display='block'; }
+
+var SAMPLE_AD = "Wanted: Shop Assistant for a busy store.\nMust be hardworking and flexible. Competitive salary.\nImmediate start. Message us on chat to apply.";
+var CHECKS = [
+  {key:'salary', label:'Salary mentioned', re:/salary|pay|wage|remuneration|compensation|per month|monthly pay/i},
+  {key:'hours', label:'Working hours mentioned', re:/working hours|hours|shift|full-time|part-time|9\s*(am)?\s*(-|to)\s*5|8 hours/i},
+  {key:'location', label:'Location mentioned', re:/location|based in|office in|remote|work from home|on-site|hybrid|city|area/i},
+  {key:'skills', label:'Skills listed', re:/skill|must have|required|proficient|knowledge of|experience with|able to/i},
+  {key:'experience', label:'Experience asked about', re:/experience|years? of|fresher|entry level|fresh graduate/i},
+  {key:'company', label:'Company introduced', re:/company|we are|about us|our team|our store|our shop|our office/i},
+  {key:'apply', label:'How to apply is clear', re:/apply|send (your )?(cv|resume|application)|message us|call us|contact us/i},
+  {key:'jobtype', label:'Job type named', re:/full-time|part-time|contract|internship|temporary|permanent/i}
+];
+var VAGUE_RE = /competitive salary|attractive (salary|pay|package)|salary negotiable|dynamic|fast-paced|rockstar|ninja|guru|other duties as assigned|must be flexible|wear many hats|self-starter|go-getter|best in (the )?industry/i;
+function analyzeAd(text){
+  text = String(text || '');
+  var lines = text.split(/\n+/).map(function(l){ return l.trim(); }).filter(function(l){ return l.length > 0; });
+  var checks = CHECKS.map(function(c){ return {key:c.key, label:c.label, found:c.re.test(text)}; });
+  var found = checks.filter(function(c){ return c.found; }).length;
+  var vagueLines = lines.filter(function(l){ return VAGUE_RE.test(l); });
+  var redFlags = [];
+  if (/fee|deposit|registration (fee|charge)|pay (us|to apply|for (training|joining))|processing charge|investment/i.test(text)) {
+    redFlags.push('Asks for money from applicants — a real employer never asks for a fee.');
+  }
+  if (/24\/7|24x7|always available|any time,?\s*day or night/i.test(text)) {
+    redFlags.push('Demands you be available all day and night, every day.');
+  }
+  if (/guaranteed income|get rich|double your income|earn (up to )?[\d,]+ (a|per) (day|week)/i.test(text)) {
+    redFlags.push('Promises guaranteed income — real jobs describe real work and real pay.');
+  }
+  if (/no experience (needed|required)/i.test(text) && /salary|pay|earn|income/i.test(text)) {
+    redFlags.push('No experience needed but promises pay — check this one very carefully.');
+  }
+  var hasCompany = /company|we are|about us|our team|our store|our shop|our office/i.test(text);
+  if (!hasCompany && /message (us|me)|whatsapp|chat (us|me|to apply)/i.test(text)) {
+    redFlags.push('No company name at all, and contact is a chat message only.');
+  }
+  return {score: found, total: checks.length, checks: checks, redFlags: redFlags, vagueLines: vagueLines};
+}
+window.NP = { analyzeAd: analyzeAd, SAMPLE_AD: SAMPLE_AD };
+if (typeof document !== 'undefined' && document.querySelector('.calc')) {
+  var lastReport = '';
+  function renderReport(){
+    var text = document.getElementById('ad-text').value;
+    var r = analyzeAd(text);
+    if (!text.trim()) {
+      document.getElementById('ad-out').innerHTML = '<b>Paste a job ad first.</b> Copy the whole ad and paste it into the box above.';
+      show(document.getElementById('ad-out'));
+      document.getElementById('ad-copy').style.display = 'none';
+      return;
+    }
+    var h = '<b>Score: ' + r.score + ' out of ' + r.total + ' essentials found</b>\n\n';
+    var plain = 'Job ad report — score ' + r.score + ' out of ' + r.total + '\n';
+    r.checks.forEach(function(c){
+      h += (c.found ? '[Found] ' : '[Missing] ') + esc(c.label) + '\n';
+      plain += (c.found ? 'Found: ' : 'Missing: ') + c.label + '\n';
+    });
+    if (r.redFlags.length) {
+      h += '\n<b>Red flags:</b>\n';
+      plain += '\nRed flags:\n';
+      r.redFlags.forEach(function(f){ h += '- ' + esc(f) + '\n'; plain += '- ' + f + '\n'; });
+    } else {
+      h += '\n<b>No red flags found in the words of this ad.</b>\n';
+      plain += '\nNo red flags found in the words of this ad.\n';
+    }
+    if (r.vagueLines.length) {
+      h += '\n<b>Vague lines (ask the employer what these mean):</b>\n';
+      plain += '\nVague lines:\n';
+      r.vagueLines.forEach(function(l){ h += '- ' + esc(l) + '\n'; plain += '- ' + l + '\n'; });
+    }
+    h += '\n<span class="small">This report reads the words in the ad only. It cannot verify the employer behind it.</span>';
+    lastReport = plain;
+    var out = document.getElementById('ad-out');
+    out.innerHTML = h;
+    show(out);
+    show(document.getElementById('ad-copy'));
+  }
+  document.getElementById('ad-analyze').addEventListener('click', renderReport);
+  document.getElementById('ad-sample').addEventListener('click', function(){
+    document.getElementById('ad-text').value = SAMPLE_AD;
+    renderReport();
+  });
+  document.getElementById('ad-copy').addEventListener('click', function(){
+    copyText(lastReport, document.getElementById('ad-copy'));
+  });
+}
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

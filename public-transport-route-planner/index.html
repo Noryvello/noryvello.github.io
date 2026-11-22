@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Public Transport Route Planner — Plan Bus, Train and Metro Trips | Noryvello</title>
+<meta name="description" content="Plan public transport trips free — how to plan a bus, train or metro journey, what to check, and how to avoid getting lost. No signup.">
+<link rel="canonical" href="https://noryvello.github.io/public-transport-route-planner/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Public Transport Route Planner — Plan Bus, Train and Metro Trips">
+<meta property="og:description" content="Learn the five-step method for planning bus, train and metro trips, and write a plan you can carry with you.">
+<meta property="og:url" content="https://noryvello.github.io/public-transport-route-planner/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;min-height:72px;margin-top:14px;padding:16px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#e0e7ff;color:#1e293b}
+.calc input,.calc select{min-height:72px;font-size:17px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;min-height:120px;font-family:inherit}
+.tscroll{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef2ff}
+.opt{display:block;width:100%;text-align:left;margin:8px 0}
+.q{font-size:18px;font-weight:700;margin:12px 0}
+.small{font-size:14px;color:#64748b}
+.card{border:1px solid #cbd5e1;border-radius:12px;padding:12px 14px;margin:10px 0;background:rgba(255,255,255,.6)}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I plan a bus trip?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with the five steps: your starting stop, your destination and the time you must arrive, the bus lines that connect them, the places where you change, and some spare minutes at the end. Write the plan down, check the timetable for the day you travel, and keep one backup route in case the bus does not come."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a metro line?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A metro line is one named route on the underground or city rail network, usually shown in its own colour on the map. Each line runs between two end stations, stopping at the stations in between. Where two lines cross, you can change from one to the other."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much buffer time do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the trip. As a starting point, keep about fifteen minutes for a bus trip, twenty minutes for a train trip, ten minutes for a metro trip, and twenty minutes for a mixed trip. Add more on a first visit to a place, or when the trip has several changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I get on the wrong bus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Get off at the next stop and check the map. Find the stop for the opposite direction, or a stop where you can catch the right line. Do not stay on the bus hoping it will turn around: the sooner you get off, the shorter the way back."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I buy a day pass?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on how much you will travel. A day pass is often good value if you will take three or more rides in one day, and it removes the need to buy a ticket each time. For a single ride, a single ticket is usually the simpler and cheaper choice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can this page show live bus times?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This page is a static page: it does not connect to any transport system and it cannot show live times or live routes. For live times, use the display board at the stop, your city's official transport app, or the timetable at the station."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Public Transport Route Planner</h1>
+<p class="answer">A good trip plan is a short written list: where you start, where you end, which lines you take, where you change, and how much spare time you keep. This page teaches that method and gives you a planner to write your own plan, copy it, and carry it with you.</p>
+<div class="calc">
+<label for="from">From (starting place)</label>
+<input id="from" type="text" placeholder="Home, the station, or a street name">
+<label for="to">To (destination)</label>
+<input id="to" type="text" placeholder="Work, the airport, or a street name">
+<label for="mode">How are you travelling?</label>
+<select id="mode">
+<option>Bus</option>
+<option>Train</option>
+<option>Metro</option>
+<option>Mixed</option>
+</select>
+<label for="date">Day of travel</label>
+<input id="date" type="text" placeholder="Saturday">
+<label for="time">Departure time</label>
+<input id="time" type="text" placeholder="8:30 in the morning">
+<label for="lines">Lines or routes</label>
+<input id="lines" type="text" placeholder="Bus 12, then the Green Line">
+<label for="changes">Number of changes</label>
+<input id="changes" type="number" min="0" placeholder="0">
+<label for="buffer">Buffer in minutes</label>
+<input id="buffer" type="number" min="0" placeholder="15">
+<button id="build-btn" type="button">Build my plan</button>
+<div id="plan-out" class="out steps"></div>
+<button id="copy-btn" class="secondary" type="button">Copy plan</button>
+</div>
+<div class="warn">This page cannot show live bus times or live routes — it is a static page. It teaches the planning method and holds the plan you write, so bring the times and lines from a map, a timetable or your city's transport app.</div>
+<h2>How to use this planner</h2>
+<p>This page has two parts. The planner above is a worksheet: you write in your starting place, your destination, the way you will travel, and the lines you plan to take, and it turns those notes into a clean plan you can copy and carry on your phone. The sections below teach the method, so the plan you write is a good one.</p>
+<p>The planner does not know your city and it does not look up live times. You bring the facts from a map, a timetable, or a transport app, and the planner holds them in one place. That is the whole idea: a written plan beats a plan kept only in your head, especially in a city you do not know.</p>
+
+<h2>The 5-step planning method</h2>
+<p>Every public transport trip, from a ten-minute bus ride to a cross-city journey with three changes, follows the same five steps. Work through them in order before you leave.</p>
+<ol>
+<li><strong>Start:</strong> write down exactly where you begin. A station name is better than a neighbourhood name, and a bus stop name is better than a street name. If you are not sure of the nearest stop, check the map first.</li>
+<li><strong>End:</strong> write down exactly where you need to arrive, and the time you must be there. Working backwards from the arrival time is the safest way to choose when to leave.</li>
+<li><strong>Lines:</strong> find the lines that connect the two places. Note the line name or number and the direction, such as the last stop on that line. Direction matters: the same line in the wrong direction takes you away from where you want to go.</li>
+<li><strong>Changes:</strong> count the places where you switch from one line to another. For each change, note the station and the line you switch to. A trip with no changes is the simplest kind; a trip with two changes needs more care and more spare time.</li>
+<li><strong>Time buffer:</strong> add spare minutes at the end. Buses run late, trains get crowded, and a first-time traveller walks more slowly through a big station. The planner suggests a buffer for each way of travelling, and you can change it to suit your trip.</li>
+</ol>
+<p>Write all five steps down, even for a short trip. The written plan is what you read when your phone battery is low, when the station signs confuse you, or when you need to ask a stranger for help.</p>
+
+<h2>Reading maps and timetables</h2>
+<p>A metro map is a diagram, not a street map. The lines are straightened, the distances are not to scale, and two stations that look close together on the diagram may be a long walk apart in real life. Read the map for the order of the stations and the places where lines meet, not for real distances.</p>
+<p>Find your line by its colour and its name, then follow it to your destination. The stations where two or more lines cross are the change points, and they are usually marked with a larger dot or a circle. Count the stops between your start and your change point, and between the change point and your destination: the count tells you how long the ride will feel.</p>
+<p>A timetable lists departure times from each stop. Read down the column for your stop, and check which days the times apply to: weekday, Saturday and Sunday timetables are often different, and holiday timetables are different again. The last departure of the day matters most on a late trip: if you miss it, there may be no other way home.</p>
+<p>Learn the direction words before you travel. On a metro, the direction is usually the name of the last station on that line. On a bus, it is often the name of the area the bus is heading towards. If the sign on the front of the bus does not match your plan, do not board it.</p>
+
+<h2>Tickets and passes</h2>
+<p>Most cities offer a few ways to pay, and the cheapest one depends on how much you travel. A single ticket covers one ride, or one ride plus a change within a time limit. It is the simplest choice for a one-off trip, and the most expensive per ride if you travel all day.</p>
+<p>A day pass covers unlimited rides for one day, usually from the first use until the end of service that night. It is often good value on a day when you will take three or more rides, and it removes the worry of buying a ticket each time. A weekly or monthly pass works the same way over a longer period, and it suits a regular commuter.</p>
+<p>Many cities also use a rechargeable travel card, which you load with credit and tap each time you ride. The fare is often lower than a paper ticket, and the card can usually be topped up at a station machine or a shop. Keep the card in a safe place: a lost card is hard to replace, and the credit on it may be lost too.</p>
+<p>Whatever you buy, keep the ticket or the card with you for the whole trip. Inspectors can ask to see it at any time, and a valid ticket you left at home does not help. If your city needs you to tap in and tap out, do both: a missing tap can mean the highest fare, or a fine.</p>
+
+<h2>A worked example: a first metro trip in a new city</h2>
+<p>Imagine you are staying near Central Station and you need to reach the museum district by ten in the morning. You open the metro map and find the Blue Line, which runs from Central Station to the museum in six stops, with no change. The timetable says the ride takes about twenty minutes, and trains come every eight minutes in the morning.</p>
+<p>Working backwards, you plan to leave Central Station at nine fifteen, which gives you twenty minutes for the ride and twenty-five minutes of spare time for finding the platform, buying a ticket, and walking from the museum station to the museum door. You write the plan down: Blue Line, direction Riverside, six stops, get off at Museum Station, exit on the north side.</p>
+<p>You also write a backup: if the Blue Line is closed, the number 12 bus runs the same route from the stop outside Central Station, and it takes about thirty-five minutes. With the plan and the backup written down, the trip stops feeling like a risk and starts feeling like a routine.</p>
+
+<h2>What to do when the bus does not come</h2>
+<p>First, check the time and the timetable again. A bus that is five minutes late is normal in a busy city; a bus that is twenty minutes late may have been cancelled. Check whether the stop has a live display board, or whether a transport app shows the next bus.</p>
+<p>If the bus is clearly not coming, look for the next best option before you start walking. Is there another line from the same stop that goes near your destination? Is there a metro or train station within a short walk? A short walk to a faster line often beats a long wait at a quiet stop.</p>
+<p>If you have a deadline, decide early. Waiting ten more minutes for a bus that may not come is a worse choice than starting the backup plan now. This is what the backup route in your written plan is for: it turns a stressful moment into a simple switch.</p>
+<p>When the bus does arrive, check the destination sign before you board. A late bus is often crowded, and a crowded bus is where people make the mistake of boarding the wrong one. A quick look at the sign takes two seconds and saves a long ride in the wrong direction.</p>
+
+<h2>Common mistakes</h2>
+<ul>
+<li><strong>No buffer time:</strong> planning to arrive exactly on time means the first small delay makes you late. Always keep spare minutes, and keep more on a first visit to a place.</li>
+<li><strong>Wrong direction:</strong> boarding a train going the opposite way is the most common beginner mistake. Check the direction name on the platform sign and on the front of the train.</li>
+<li><strong>Trusting memory over the map:</strong> even a route you have taken before can change. Check the map and the timetable on the day you travel.</li>
+<li><strong>Forgetting the last service:</strong> a late night out needs a plan for getting home. Check the last departure before you leave, not after.</li>
+<li><strong>Standing at the wrong stop:</strong> many streets have two stops with the same name, one on each side, for opposite directions. Stand on the side that matches your direction.</li>
+<li><strong>No backup route:</strong> a plan with only one option fails the first time something goes wrong. Always write down one alternative.</li>
+</ul>
+
+<h2>What this page cannot do</h2>
+<p>This page cannot show live bus times, live train times, or live routes. It is a static page: it does not connect to any transport system, and it does not know where the buses are right now. For live times, use the display board at the stop, the city's official transport app, or the timetable posted at the station.</p>
+<p>It also cannot tell you which line serves your street, or how much a ticket costs in your city, because those facts are different in every city and they change often. The planner holds the plan you write; you bring the facts from a map or a timetable.</p>
+<p>What this page can do is teach you the planning method, give you a worksheet that turns your notes into a clean plan, and keep a copy of your draft on your own device so you can pick it up again later. The method works in any city, in any language, with any transport system.</p>
+
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>How do I plan a bus trip?</h3>
+<p>Start with the five steps: your starting stop, your destination and the time you must arrive, the bus lines that connect them, the places where you change, and some spare minutes at the end. Write the plan down, check the timetable for the day you travel, and keep one backup route in case the bus does not come.</p>
+</div>
+<div class="faq">
+<h3>What is a metro line?</h3>
+<p>A metro line is one named route on the underground or city rail network, usually shown in its own colour on the map. Each line runs between two end stations, stopping at the stations in between. Where two lines cross, you can change from one to the other.</p>
+</div>
+<div class="faq">
+<h3>How much buffer time do I need?</h3>
+<p>It depends on the trip. As a starting point, keep about fifteen minutes for a bus trip, twenty minutes for a train trip, ten minutes for a metro trip, and twenty minutes for a mixed trip. Add more on a first visit to a place, or when the trip has several changes.</p>
+</div>
+<div class="faq">
+<h3>What if I get on the wrong bus?</h3>
+<p>Get off at the next stop and check the map. Find the stop for the opposite direction, or a stop where you can catch the right line. Do not stay on the bus hoping it will turn around: the sooner you get off, the shorter the way back.</p>
+</div>
+<div class="faq">
+<h3>Should I buy a day pass?</h3>
+<p>It depends on how much you will travel. A day pass is often good value if you will take three or more rides in one day, and it removes the need to buy a ticket each time. For a single ride, a single ticket is usually the simpler and cheaper choice.</p>
+</div>
+<div class="faq">
+<h3>Can this page show live bus times?</h3>
+<p>No. This page is a static page: it does not connect to any transport system and it cannot show live times or live routes. For live times, use the display board at the stop, your city's official transport app, or the timetable at the station.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/airport-information-directory/">Airport Information Directory</a> · <a href="https://noryvello.github.io/world-landmark-explorer/">World Landmark Explorer</a> · <a href="https://noryvello.github.io/country-information-directory/">Country Information Directory</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+function suggestedBuffer(mode) {
+  if (mode === "Bus") return 15;
+  if (mode === "Train") return 20;
+  if (mode === "Metro") return 10;
+  return 20;
+}
+function buildPlan(input) {
+  var from = (input.from || "").trim();
+  var to = (input.to || "").trim();
+  var mode = input.mode || "Mixed";
+  var date = (input.date || "").trim();
+  var time = (input.time || "").trim();
+  var lines = (input.lines || "").trim();
+  var changes = input.changes;
+  var buffer = input.buffer;
+  if (buffer === "" || buffer === null || buffer === undefined) {
+    buffer = suggestedBuffer(mode);
+  }
+  var title = "My trip plan";
+  if (from && to) title += ": " + from + " to " + to;
+  var out = [];
+  out.push("Route: " + (from || "[start]") + " to " + (to || "[destination]") + " by " + mode.toLowerCase() + ".");
+  if (date) out.push("Day: " + date + ".");
+  else out.push("Day: not set yet - pick a day before you travel.");
+  if (time) out.push("Leave at: " + time + ".");
+  if (lines) out.push("Lines or routes: " + lines + ".");
+  if (changes === "" || changes === null || changes === undefined) {
+    out.push("Changes: not counted yet - check the map and count them.");
+  } else {
+    out.push("Changes: " + changes + ".");
+  }
+  out.push("Buffer: " + buffer + " minutes of spare time.");
+  out.push("");
+  out.push("Checklist:");
+  out.push("- Check the timetable again on the day you travel.");
+  out.push("- Keep the map saved offline on your phone.");
+  out.push("- Have a backup route in case the first one fails.");
+  return {title: title, text: out.join("\n")};
+}
+window.NP = {buildPlan: buildPlan, suggestedBuffer: suggestedBuffer};
+if (typeof document !== "undefined") {
+  var DRAFT_KEY = "np-public-transport-route-planner-draft";
+  var FIELDS = ["from", "to", "mode", "date", "time", "lines", "changes", "buffer"];
+  function readDraft() {
+    try {
+      var raw = localStorage.getItem(DRAFT_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+  function saveDraft(values) {
+    try {
+      localStorage.setItem(DRAFT_KEY, JSON.stringify(values));
+    } catch (e) {}
+  }
+  function gather() {
+    var values = {};
+    FIELDS.forEach(function (id) {
+      var el = document.getElementById(id);
+      values[id] = el ? el.value : "";
+    });
+    return values;
+  }
+  function fill(values) {
+    FIELDS.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el && values[id] !== undefined && values[id] !== null) {
+        el.value = values[id];
+      }
+    });
+  }
+  var modeEl = document.getElementById("mode");
+  var bufferEl = document.getElementById("buffer");
+  var outEl = document.getElementById("plan-out");
+  var buildBtn = document.getElementById("build-btn");
+  var copyBtn = document.getElementById("copy-btn");
+  var draft = readDraft();
+  if (draft) fill(draft);
+  if (modeEl && bufferEl && !bufferEl.value) {
+    bufferEl.value = suggestedBuffer(modeEl.value);
+  }
+  if (modeEl) {
+    modeEl.addEventListener("change", function () {
+      if (bufferEl) bufferEl.value = suggestedBuffer(modeEl.value);
+    });
+  }
+  if (buildBtn) {
+    buildBtn.addEventListener("click", function () {
+      var values = gather();
+      var plan = buildPlan(values);
+      if (outEl) outEl.textContent = plan.title + "\n\n" + plan.text;
+      saveDraft(values);
+    });
+  }
+  if (copyBtn) {
+    copyBtn.addEventListener("click", function () {
+      var text = outEl ? outEl.textContent : "";
+      if (!text) return;
+      function done() {
+        var old = copyBtn.textContent;
+        copyBtn.textContent = "Copied!";
+        setTimeout(function () { copyBtn.textContent = old; }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () {
+          fallbackCopy(text, done);
+        });
+      } else {
+        fallbackCopy(text, done);
+      }
+    });
+  }
+  function fallbackCopy(text, done) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand("copy");
+      done();
+    } catch (e) {}
+    document.body.removeChild(ta);
+  }
+}
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

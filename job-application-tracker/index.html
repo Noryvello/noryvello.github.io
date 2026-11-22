@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Job Application Tracker — Track Every Job You Apply For (Free) | Noryvello</title>
+<meta name="description" content="Track your job applications free — company, role, date, status and follow-ups, all in one place on your device. No signup.">
+<link rel="canonical" href="https://noryvello.github.io/job-application-tracker/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Job Application Tracker — Track Every Job You Apply For (Free)">
+<meta property="og:description" content="Track your job applications free, all in one place on your device.">
+<meta property="og:url" content="https://noryvello.github.io/job-application-tracker/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc textarea{width:100%;min-height:150px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+.calc input,.calc select{width:100%;min-height:72px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc button{display:block;width:100%;min-height:72px;margin-top:12px;padding:12px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#fff;color:#4338ca;border:2px solid #4338ca}
+.calc button.danger{background:#fff;color:#991b1b;border:2px solid #991b1b}
+.calc .out{font-size:17px;font-weight:400;margin-top:14px;white-space:pre-line}
+.calc .out b{font-weight:700}
+.calc .row{margin:10px 0}
+.calc .checkrow{display:flex;gap:12px;align-items:flex-start;margin:0;padding:14px 0;border-bottom:1px solid #e2e8f0;cursor:pointer}
+.calc .checkrow input{width:30px;height:30px;min-height:30px;flex:none;margin:0;accent-color:#4338ca}
+.calc .checkrow span{font-size:16px;line-height:1.5}
+table.data{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+table.data th,table.data td{border:1px solid #cbd5e1;padding:8px;text-align:left;vertical-align:top}
+table.data th{background:#eef2ff}
+.tag{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:700}
+.tag.ok{background:#dcfce7;color:#166534}
+.tag.bad{background:#fee2e2;color:#991b1b}
+.tag.mid{background:#fef3c7;color:#92400e}
+.cardline{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin:10px 0}
+.cardline b{font-size:16.5px}
+.small{font-size:14px;color:#64748b}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where is my data saved?", "acceptedAnswer": {"@type": "Answer", "text": "On this device only, in your browser's storage. Nothing is sent to a server, and nobody else can see your list. That keeps it private, but it also means clearing your browser data or losing your phone loses the list, so copy it to your notes from time to time."}}, {"@type": "Question", "name": "How many jobs should I apply for?", "acceptedAnswer": {"@type": "Answer", "text": "There is no magic number. A few careful applications to jobs that fit you well usually beat dozens of rushed ones. Aim for steady effort — a few each week — and spend the saved time tailoring each application and following up properly."}}, {"@type": "Question", "name": "When should I follow up?", "acceptedAnswer": {"@type": "Answer", "text": "Send one polite message seven days after you applied if you have heard nothing. Name the role and the date you applied, and ask about the next step. One follow-up a week is enough; if there is still no reply after a second message, move on."}}, {"@type": "Question", "name": "What if I lose my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Your list is saved on the device, so it goes with the phone. That is why the Copy my list button is there: copy your applications into your notes or send them to yourself regularly, so you always have a backup outside the browser."}}, {"@type": "Question", "name": "Can I track interviews too?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Change the status to interview when you are invited, and use the notes for the date, the place, and who you will meet. The counts at the top of the tracker show how many of your applications turned into interviews and offers."}}, {"@type": "Question", "name": "Should I apply to the same company twice?", "acceptedAnswer": {"@type": "Answer", "text": "Not for the same role — it looks careless. For a different role at the same company, it is fine, but mention your earlier application in your note. The tracker helps here: search the company name before you apply and you will see your history with them."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Job Application Tracker</h1>
+<p class="answer">Add every job you apply for — company, role, date, status and notes — and this tracker keeps them all in one place on your device. It counts your applications, lists the ones waiting for a reply, and reminds you when a follow-up is due after seven days.</p>
+<div class="calc">
+<label for="jt-company">Company</label>
+<input id="jt-company" type="text" placeholder="Company name">
+<label for="jt-role">Role</label>
+<input id="jt-role" type="text" placeholder="Job title">
+<label for="jt-date">Date applied</label>
+<input id="jt-date" type="date">
+<label for="jt-status">Status</label>
+<select id="jt-status">
+<option value="applied">Applied</option>
+<option value="waiting">Waiting for a reply</option>
+<option value="interview">Interview</option>
+<option value="offer">Offer</option>
+<option value="rejected">Rejected</option>
+</select>
+<label for="jt-notes">Notes (optional)</label>
+<input id="jt-notes" type="text" placeholder="Who you spoke to, next step, anything useful">
+<button id="jt-add" type="button">Add this application</button>
+<label for="jt-search">Search my applications</label>
+<input id="jt-search" type="text" placeholder="Type a company or role to filter">
+<div class="out" id="jt-counts"></div>
+<div id="jt-list"></div>
+<div class="out" id="jt-followups"></div>
+<label for="jt-remove">Remove one application</label>
+<select id="jt-remove"></select>
+<button id="jt-delete" type="button" class="danger">Delete selected</button>
+<button id="jt-copy" type="button" class="secondary" data-label="Copy my list">Copy my list</button>
+<button id="jt-clear" type="button" class="danger">Clear all applications</button>
+</div>
+<div class="warn">Your applications are saved only on this device, in your browser. Nothing is sent to a server, which keeps your data private — but it also means a cleared browser or a lost phone loses the list, so copy it to your notes now and then.</div>
+<h2>How to use this tracker</h2>
+<p>Fill in the form above: the company, the role, the date you applied, the status, and any notes. Tap Add this application and the job appears in your list below, with its status shown in colour. The counts at the top tell you how many applications you have, how many turned into interviews, and how many brought offers.</p>
+<p>Use the search box to filter the list — type a company or a role and only matching applications show. The follow-up list below the table shows applications with no reply after seven days, so you always know who to message next. To remove one application, pick it in the Remove list and tap Delete selected. To copy the whole list as plain text, tap Copy my list. Everything is saved on your device as you go, so you can close the page and come back later to find your list waiting.</p>
+<h2>Why tracking matters</h2>
+<p>You forget. After twenty applications, the company names blur together, the dates slip, and you cannot remember which role you applied for where — until one of them calls, and you have no idea what the job is. A tracker ends that problem in a minute a day. When a company calls, you search the name and see the role, the date, and your notes before you answer.</p>
+<p>Tracking also shows you your own pattern. If ten applications brought no interviews, something in the applications needs to change — the roles you pick, the way you present yourself, or the note you send. If interviews come mostly from one kind of role, that tells you where your strengths land best. Employers notice follow-ups too: a polite message a week after applying shows interest and care, and it is the tracked applicants who remember to send it. One list beats scraps of paper, chat messages to yourself, and memory — all of which fail exactly when you need them.</p>
+<p>There is a quieter benefit too: a tracker turns a lonely, uncertain search into something you can see. Job hunting can feel like shouting into an empty room, and the days blur together when nothing comes back. A list with real numbers — ten applications, two interviews, one offer — shows you that the work is happening, even on the weeks when it feels like nothing is. It also stops the two opposite mistakes: thinking you have done enough when you have only applied twice, and thinking you have done nothing when you have actually applied twenty times.</p>
+<h2>The follow-up rule</h2>
+<p>Send one polite message seven days after you applied, if you have heard nothing. Keep it short: your name, the role, the date you applied, and a simple question about the next step. Thank them for their time, and leave it there. One follow-up a week is enough — more than that feels like pressure, and pressure rarely helps.</p>
+<p>If there is still no reply after a second message, move on. Silence after two polite messages is an answer in itself, and your time is better spent on the next application than on chasing the last one. Follow-up is normal, not pushy: employers expect it, and many say it is the applicants who follow up that they remember. The tracker does the remembering for you — the follow-up list shows exactly which applications have waited seven days, so you never have to guess.</p>
+<h2>A worked example: 10 applications, one month</h2>
+<p>Take a job seeker who applies for ten jobs in a month. In the first week, three applications go out: two shop assistant roles and one office role. In the second week, four more: a driver role, two more shop roles, and a warehouse role. One interview invitation arrives, for the office role. In the third week, the follow-up list shows the three first-week applications with no reply, so three polite messages go out — and one of them gets a reply, leading to a second interview.</p>
+<p>In the fourth week, three more applications go out, and one offer arrives — for the office role. At the end of the month the tracker shows: ten applied, two interviews, one offer, three rejections, four still waiting. The pattern is clear: the office roles brought the interviews, the shop roles brought silence, and one follow-up produced an interview that would not have happened otherwise. Without the tracker, this person would only have had a vague feeling of having applied a lot. With it, they know exactly what worked, and where to aim next month.</p>
+<h2>What to write in the notes</h2>
+<p>Notes are for the details you will not remember in a week: the exact role and company, the date you applied, who you spoke to, what was promised, and the next step with its date. Add your own feeling about the job too — a few honest words about whether you actually want it, because enthusiasm fades and a note from the day you applied tells the truth.</p>
+<p>Keep notes short. One or two lines per application is enough; a paragraph per job is a chore you will stop doing. Write the note on the same day you apply, while the details are fresh — tomorrow you will already have forgotten the name of the person you spoke to. And update the note when something changes: a new status, a promised call, a changed date. A tracker with old notes is barely better than no tracker at all.</p>
+<p>One more thing worth noting is how you found the job: which website, which person, which notice board. Over a month, that note shows you where your interviews actually come from, and you can spend more time on the channels that work and less on the ones that do not. It also saves you from applying twice through different channels — the tracker search shows the company name before you apply, and the note shows where you first saw the role.</p>
+<h2>Common mistakes</h2>
+<p>The first mistake is applying to the same job twice. It looks careless, and it happens easily when you apply through different channels. Search the company name in your tracker before you apply — it takes five seconds and saves the embarrassment. The second mistake is no follow-up at all: most applicants never send one, which is exactly why the ones who do stand out.</p>
+<p>The third mistake is losing the company name — applying from a job board, closing the tab, and never knowing who you applied to. Write the name in the tracker the moment you apply. The fourth mistake is tracking only in your head. Memory is a poor filing system, and it fails under stress. The fifth mistake is giving up after rejections without learning from them: if nothing is turning into interviews, change the applications, not just the number of them. The sixth is applying to everything instead of the right jobs — ten careful applications beat fifty rushed ones.</p>
+<h2>What this tracker cannot do</h2>
+<p>This tracker cannot apply for you, and it cannot tell you whether a job is real — it only keeps the record you give it. It cannot send follow-up messages for you, and it cannot remind you when the browser is closed: there are no notifications, so the follow-up list only helps when you open the page and look at it. Make it a habit to check once a week.</p>
+<p>It also cannot keep your list safe by itself. Your data lives only on this device, in this browser, so a cleared browser or a lost phone loses it. Copy your list to your notes regularly with the Copy my list button — a backup outside the browser is the only safety net. What the tracker can do is simple and useful: keep every application in one place, show you the pattern of your search, and tell you who to follow up with next.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Where is my data saved?</h3><p>On this device only, in your browser&#x27;s storage. Nothing is sent to a server, and nobody else can see your list. That keeps it private, but it also means clearing your browser data or losing your phone loses the list, so copy it to your notes from time to time.</p></div>
+<div class="faq"><h3>How many jobs should I apply for?</h3><p>There is no magic number. A few careful applications to jobs that fit you well usually beat dozens of rushed ones. Aim for steady effort — a few each week — and spend the saved time tailoring each application and following up properly.</p></div>
+<div class="faq"><h3>When should I follow up?</h3><p>Send one polite message seven days after you applied if you have heard nothing. Name the role and the date you applied, and ask about the next step. One follow-up a week is enough; if there is still no reply after a second message, move on.</p></div>
+<div class="faq"><h3>What if I lose my phone?</h3><p>Your list is saved on the device, so it goes with the phone. That is why the Copy my list button is there: copy your applications into your notes or send them to yourself regularly, so you always have a backup outside the browser.</p></div>
+<div class="faq"><h3>Can I track interviews too?</h3><p>Yes. Change the status to interview when you are invited, and use the notes for the date, the place, and who you will meet. The counts at the top of the tracker show how many of your applications turned into interviews and offers.</p></div>
+<div class="faq"><h3>Should I apply to the same company twice?</h3><p>Not for the same role — it looks careless. For a different role at the same company, it is fine, but mention your earlier application in your note. The tracker helps here: search the company name before you apply and you will see your history with them.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/job-description-analyzer/">Job Description Analyzer</a> · <a href="https://noryvello.github.io/career-path-explorer/">Career Path Explorer</a> · <a href="https://noryvello.github.io/skill-gap-analyzer/">Skill Gap Analyzer</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function copyText(text, btn){
+  function done(){ if(btn){ var old=btn.getAttribute('data-label')||btn.textContent; btn.textContent='Copied!'; setTimeout(function(){ btn.textContent=old; },2000); } }
+  function fallback(){
+    var ta=document.createElement('textarea');
+    ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta); done();
+  }
+  if (typeof navigator!=='undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else { fallback(); }
+}
+function show(el){ if(el) el.style.display='block'; }
+
+var LS_KEY = 'np-job-application-tracker';
+function parseDay(iso){
+  var p = String(iso || '').split('-');
+  if (p.length !== 3) return null;
+  var d = Date.UTC(+p[0], +p[1] - 1, +p[2]);
+  return isNaN(d) ? null : d;
+}
+function daysSince(dateISO, todayISO){
+  var a = parseDay(dateISO), b = parseDay(todayISO);
+  if (a === null || b === null) return -1;
+  return Math.floor((b - a) / 86400000);
+}
+function addApplication(list, app){
+  list = list || [];
+  if (!app || !String(app.company || '').trim() || !String(app.role || '').trim()) {
+    return {error: 'Enter a company and a role.', list: list};
+  }
+  var item = {id: app.id || ('a' + Date.now().toString(36) + Math.floor(Math.random() * 1000)),
+    company: String(app.company).trim(), role: String(app.role).trim(),
+    date: app.date || '', status: app.status || 'applied', notes: String(app.notes || '').trim()};
+  return {list: list.concat([item]), item: item};
+}
+function removeApplication(list, id){
+  return (list || []).filter(function(a){ return a.id !== id; });
+}
+function counts(list){
+  var c = {total: 0, applied: 0, waiting: 0, interview: 0, offer: 0, rejected: 0};
+  (list || []).forEach(function(a){ c.total++; if (c[a.status] !== undefined) c[a.status]++; });
+  return c;
+}
+function followUps(list, todayISO){
+  return (list || []).filter(function(a){
+    if (a.status !== 'applied' && a.status !== 'waiting') return false;
+    return daysSince(a.date, todayISO) >= 7;
+  });
+}
+function searchApplications(list, q){
+  q = String(q || '').trim().toLowerCase();
+  if (!q) return (list || []).slice();
+  return (list || []).filter(function(a){
+    return (a.company + ' ' + a.role + ' ' + (a.notes || '')).toLowerCase().indexOf(q) >= 0;
+  });
+}
+function formatList(list){
+  if (!list || !list.length) return 'No applications saved yet.';
+  return list.map(function(a){
+    return a.company + ' — ' + a.role + ' (' + a.status + ', applied ' + (a.date || 'no date') + ')' + (a.notes ? ' — ' + a.notes : '');
+  }).join('\n');
+}
+function loadList(store){
+  try {
+    var raw = store.getItem(LS_KEY);
+    if (!raw) return [];
+    var v = JSON.parse(raw);
+    return Array.isArray(v) ? v : [];
+  } catch (e) { return []; }
+}
+function saveList(store, list){
+  try { store.setItem(LS_KEY, JSON.stringify(list)); return true; } catch (e) { return false; }
+}
+window.NP = {addApplication: addApplication, removeApplication: removeApplication, counts: counts,
+  followUps: followUps, searchApplications: searchApplications, formatList: formatList,
+  loadList: loadList, saveList: saveList, daysSince: daysSince, LS_KEY: LS_KEY};
+if (typeof document !== 'undefined' && document.querySelector('.calc')) {
+  var store = (typeof localStorage !== 'undefined') ? localStorage : null;
+  var apps = store ? loadList(store) : [];
+  var STATUS_LABEL = {applied: 'Applied', waiting: 'Waiting', interview: 'Interview', offer: 'Offer', rejected: 'Rejected'};
+  function todayISO(){ return new Date().toISOString().slice(0, 10); }
+  function persist(){ if (store) saveList(store, apps); }
+  function render(){
+    var q = document.getElementById('jt-search').value;
+    var shown = searchApplications(apps, q);
+    var c = counts(apps);
+    document.getElementById('jt-counts').innerHTML = '<b>' + c.total + ' applications</b> — ' + c.applied + ' applied, ' + c.waiting + ' waiting, ' + c.interview + ' interviews, ' + c.offer + ' offers, ' + c.rejected + ' rejected';
+    var lh = '';
+    if (!shown.length) {
+      lh = '<p class="small">' + (apps.length ? 'No applications match your search.' : 'No applications yet. Add your first one above.') + '</p>';
+    } else {
+      lh = '<table class="data"><tr><th>Application</th><th>Status</th></tr>';
+      shown.forEach(function(a){
+        lh += '<tr><td><b>' + esc(a.company) + '</b><br>' + esc(a.role) + (a.notes ? '<br><span class="small">' + esc(a.notes) + '</span>' : '') + '</td><td>' + esc(STATUS_LABEL[a.status] || a.status) + '<br><span class="small">' + esc(a.date || 'no date') + '</span></td></tr>';
+      });
+      lh += '</table>';
+    }
+    document.getElementById('jt-list').innerHTML = lh;
+    var fu = followUps(apps, todayISO());
+    var fh = '<b>Follow-ups due (no reply after 7 days): ' + fu.length + '</b>';
+    if (fu.length) {
+      fh += '\n';
+      fu.forEach(function(a){ fh += '- ' + a.company + ' — ' + a.role + ' (applied ' + (a.date || 'no date') + ')\n'; });
+      fh += 'Send one polite message to each. Name the role and the date you applied.';
+    } else {
+      fh += '\nNone right now. New follow-ups appear here automatically once an application has waited 7 days.';
+    }
+    document.getElementById('jt-followups').innerHTML = fh;
+    var rm = document.getElementById('jt-remove');
+    var opts = '<option value="">Choose an application to remove</option>';
+    apps.forEach(function(a){ opts += '<option value="' + esc(a.id) + '">' + esc(a.company) + ' — ' + esc(a.role) + '</option>'; });
+    rm.innerHTML = opts;
+  }
+  document.getElementById('jt-add').addEventListener('click', function(){
+    var r = addApplication(apps, {
+      company: document.getElementById('jt-company').value,
+      role: document.getElementById('jt-role').value,
+      date: document.getElementById('jt-date').value || todayISO(),
+      status: document.getElementById('jt-status').value,
+      notes: document.getElementById('jt-notes').value
+    });
+    if (r.error) { alert(r.error); return; }
+    apps = r.list;
+    persist();
+    document.getElementById('jt-company').value = '';
+    document.getElementById('jt-role').value = '';
+    document.getElementById('jt-notes').value = '';
+    render();
+  });
+  document.getElementById('jt-search').addEventListener('input', render);
+  document.getElementById('jt-delete').addEventListener('click', function(){
+    var id = document.getElementById('jt-remove').value;
+    if (!id) return;
+    apps = removeApplication(apps, id);
+    persist();
+    render();
+  });
+  document.getElementById('jt-clear').addEventListener('click', function(){
+    apps = [];
+    persist();
+    render();
+  });
+  document.getElementById('jt-copy').addEventListener('click', function(){
+    copyText(formatList(apps), document.getElementById('jt-copy'));
+  });
+  render();
+}
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crop Yield Estimator | Noryvello</title>
+<meta name="description" content="Estimate your vegetable harvest: enter your bed size and crop to get a typical yield range in kilograms, with the working shown. Estimates only.">
+<link rel="canonical" href="https://noryvello.github.io/crop-yield-estimator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Crop Yield Estimator">
+<meta property="og:description" content="Estimate your vegetable harvest: enter your bed size and crop to get a typical yield range in kilograms, with the working shown. Estimates only.">
+<meta property="og:url" content="https://noryvello.github.io/crop-yield-estimator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14.5px}th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}th{background:#eef2ff}.scroll{overflow-x:auto;margin:12px 0}.scroll table{margin:0;min-width:520px}</style><style>.calc button{display:block;width:100%;min-height:72px;margin-top:12px;border:0;border-radius:10px;background:#4338ca;color:#fff;font-size:17px;font-weight:700;cursor:pointer}.calc button.secondary{background:#0d9488}.calc input,.calc select{min-height:72px}</style></head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Crop Yield Estimator</h1>
+<p class="answer">Enter your bed size and a crop, and this tool estimates your harvest in kilograms from typical published yield rates. The result is a range, not a promise, because weather, soil and variety change every real harvest.</p>
+<div class="calc">
+<label for="cy-crop">Crop</label>
+<select id="cy-crop">
+<option value="tomatoes">Tomatoes</option>
+<option value="potatoes">Potatoes</option>
+<option value="carrots">Carrots</option>
+<option value="onions">Onions</option>
+<option value="lettuce">Lettuce</option>
+<option value="courgettes">Courgettes</option>
+<option value="runner-beans">Runner beans</option>
+<option value="peas">Peas</option>
+<option value="cabbage">Cabbage</option>
+<option value="sweetcorn">Sweetcorn</option>
+<option value="beetroot">Beetroot</option>
+<option value="peppers">Peppers</option>
+</select>
+<label for="cy-length">Bed length (metres)</label>
+<input id="cy-length" type="number" min="0.1" step="0.1" value="2">
+<label for="cy-width">Bed width (metres)</label>
+<input id="cy-width" type="number" min="0.1" step="0.1" value="1">
+<button id="calc-btn" type="button">Estimate my harvest</button>
+<div class="out" id="cy-out" hidden></div>
+<div class="steps" id="cy-steps" hidden></div>
+<button id="copy-btn" class="secondary" type="button" hidden>Copy result</button>
+</div>
+<div class="warn">Estimates only, never a guaranteed harvest. Yield rates here are typical ranges from standard gardening references, and your real harvest depends on weather, soil, variety, watering and pests. Use the estimate for planning, not as a promise.</div>
+<h2>How the estimate works</h2>
+<p>The estimate is simple arithmetic on two things you know: the size of your bed and the crop you want to grow. First, the tool works out the area of your bed in square metres by multiplying its length by its width. A bed 2 metres long and 1 metre wide has an area of 2 square metres. Then it multiplies that area by the crop's typical yield rate, which is how many kilograms of harvest a square metre of that crop usually produces. Because real harvests vary, every rate is a range, not a single number, so the tool gives you a low estimate and a high estimate, with a midpoint between them.</p>
+<p>The tool also works out how many plants fit in the bed, using the standard spacing for that crop. Tomatoes need about half a square metre each, so 2 plants fit per square metre; carrots need very little room, so about 100 fit per square metre. The plant count helps you plan how many seeds or seedlings to buy, and it stops the most common planning mistake, which is buying far more plants than the bed can hold. The working is shown step by step under the result, so you can check every number yourself.</p>
+<h2>Yield-rate table</h2>
+<p>The table below gives the typical yield ranges used by the tool, from standard gardening references. These are ranges for a home garden in ordinary conditions, not records from a trial ground. A skilled gardener in a good year can beat the high end, and a bad year with pests or drought can fall below the low end. Treat the numbers as planning guides, and compare them with your own records over time.</p>
+<table>
+<tr><th>Crop</th><th>Typical yield per square metre</th><th>Plants per square metre</th></tr>
+<tr><td>Tomatoes</td><td>4 to 6 kg</td><td>2</td></tr>
+<tr><td>Potatoes</td><td>2 to 4 kg</td><td>4</td></tr>
+<tr><td>Carrots</td><td>2 to 4 kg</td><td>100</td></tr>
+<tr><td>Onions</td><td>2 to 3 kg</td><td>16</td></tr>
+<tr><td>Lettuce</td><td>2 to 3 kg</td><td>9</td></tr>
+<tr><td>Courgettes</td><td>3 to 6 kg</td><td>1</td></tr>
+<tr><td>Runner beans</td><td>2 to 4 kg</td><td>9</td></tr>
+<tr><td>Peas</td><td>1 to 2 kg</td><td>25</td></tr>
+<tr><td>Cabbage</td><td>3 to 5 kg</td><td>4</td></tr>
+<tr><td>Sweetcorn</td><td>1 to 2 kg</td><td>4</td></tr>
+<tr><td>Beetroot</td><td>2 to 4 kg</td><td>16</td></tr>
+<tr><td>Peppers</td><td>2 to 4 kg</td><td>4</td></tr>
+</table>
+<p>Two notes on the table. Peas are weighed shelled, so the weight is the peas themselves, not the pods. Courgettes are weighed as whole fruits, and one plant can produce far more than the table suggests if you pick the fruits small and often, which is why the range is wide. For crops that are not in the table, use the closest similar crop as a rough guide, and keep your own records so next year's estimate is based on your garden rather than a book.</p>
+<h2>What changes a real harvest</h2>
+<p>The biggest factor is the weather. A warm, sunny summer with steady rain gives harvests at the top of the range; a cold, wet summer or a drought can halve them. You cannot control the weather, but you can soften its effects: water in dry spells, mulch to keep the soil moist, and protect tender crops from late frosts with fleece. The second factor is the soil. Rich, well-dug soil with plenty of compost grows bigger crops than thin, hungry soil, and feeding the soil over several years is the surest way to raise your yields.</p>
+<p>The third factor is the variety. Some varieties are bred for heavy cropping and will out-yield others in the same bed, so read the seed packet and choose varieties suited to your climate and your soil. The fourth is pests and diseases: slugs, aphids, blight and birds can all take a share of the harvest, and a bad attack can wipe out a crop entirely. The fifth is timing: seeds sown at the right time grow into strong plants, while seeds sown too early or too late struggle. The estimate assumes ordinary conditions and ordinary care, which is why it is a range and not a promise.</p>
+<h2>How to use the estimate for planning</h2>
+<p>The estimate is most useful before you sow a single seed. Start with how much of a crop your household actually eats. If you eat about 2 kilograms of tomatoes a week through the summer, and the season lasts about 10 weeks, you need about 20 kilograms, which at 4 to 6 kilograms per square metre means about 4 square metres of tomatoes. That is a concrete plan: two beds of 2 square metres each, or one bed of 4 square metres, with about 8 plants. Without the estimate, most gardeners either grow far too much of one thing or far too little.</p>
+<p>Use the plant count to plan your seed order. If the tool says 36 lettuce plants fit in your bed, and you sow lettuce every three weeks for a steady supply, you need about 12 plants per sowing, which is one small packet of seed, not three. Use the low end of the range when you are planning for a family that depends on the harvest, and the high end when you are planning what to do with a surplus. And remember succession: when one crop finishes, another takes its place, so the same square metre can produce two harvests in a year.</p>
+<h2>A worked example</h2>
+<p>Take a bed 2 metres long and 1 metre wide, planted with tomatoes. First, the area: 2 multiplied by 1 is 2 square metres. Second, the yield rate for tomatoes is 4 to 6 kilograms per square metre. Third, multiply: 2 square metres times 4 kilograms is 8 kilograms at the low end, and 2 square metres times 6 kilograms is 12 kilograms at the high end. The midpoint is 10 kilograms. Fourth, the plants: at 2 plants per square metre, 4 tomato plants fit in the bed. So the estimate is 8 to 12 kilograms of tomatoes from 4 plants in a 2 square metre bed.</p>
+<p>Now compare that with a bed of the same size planted with potatoes. The area is still 2 square metres, and the rate for potatoes is 2 to 4 kilograms per square metre, so the estimate is 4 to 8 kilograms, with 8 plants at 4 per square metre. The tomatoes give roughly twice the weight from the same bed, but the potatoes store far better and feed a family through the winter, while the tomatoes must be eaten or preserved within weeks. Weight is not the only measure of a harvest, and the best plan grows a mix of crops that suit how your household actually eats.</p>
+<h2>Growing more from the same bed</h2>
+<p>If the estimate is smaller than you hoped, there are honest ways to grow more from the same space. The first is succession planting: when the early peas finish in June, sow beans or salad leaves in the same bed, so one square metre produces two harvests in a year. The second is intercropping: grow fast crops such as radish or lettuce between slow crops such as cabbage or sweetcorn, and harvest the fast crop before the slow one needs the room.</p>
+<p>The third is feeding the soil. A bed that gets a thick layer of compost every year will out-yield the same bed left unfed, because the plants have more food and the soil holds more water. The fourth is choosing high-yielding varieties and growing them well: staking tomatoes, feeding courgettes, and watering in dry spells all push the harvest towards the high end of the range. The fifth is simply not wasting space: fill gaps, replace failures promptly, and keep the bed planted from spring to autumn instead of leaving it bare for months.</p>
+<h2>What the tool cannot do</h2>
+<p>This tool cannot predict your harvest, and it does not try to. It knows nothing about your weather, your soil, your variety or your pests, and it cannot see your garden. It does not know whether your summer will be wet or dry, whether the slugs will find your lettuce, or whether a late frost will catch your beans. What it gives you is a planning range based on typical rates, so you can decide how much to plant and how much space to give each crop.</p>
+<p>The tool also cannot help with crops that are not in its table, with very small containers where edge effects matter, or with fruit trees and bushes, which are measured per plant rather than per square metre. For those, use the closest crop as a rough guide and keep your own records. And the tool never guarantees a yield: a range is honest, a single number would be a guess dressed up as a fact. If a harvest falls outside the range, that is useful information, not a failure of the tool: it tells you something about your garden that the table does not know.</p>
+<h2>Keeping your own records</h2>
+<p>The best yield data for your garden is your own. Weigh your harvests with a kitchen scale, write down the crop, the bed size and the total weight, and keep the notes from year to year. After two or three seasons you will know what your soil actually produces, which is far more useful than any published table. You will also spot patterns: the bed that always out-yields the others, the crop that never does well, the variety that beats the rest.</p>
+<p>Records also make planning honest. If your tomatoes gave 3 kilograms per square metre last year, plan on 3 this year, not on the 4 to 6 in the table, and work on the soil and the watering to close the gap. Share your numbers with other gardeners nearby, because local knowledge beats national averages: a gardener two streets away with the same soil and the same weather is a better guide than any book. The tool gives you the starting point; your own records give you the truth.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How accurate is the estimate?</h3><p>It is a planning range, not a prediction. The tool multiplies your bed area by typical published yield rates, which are ranges from standard gardening references. Your real harvest depends on weather, soil, variety, watering and pests, so use the low end for careful planning and the high end for a good year.</p></div>
+<div class="faq"><h3>What does typical range mean?</h3><p>It means the harvest that home gardeners usually get from a square metre of that crop in ordinary conditions. The low end is a poor year or poor soil, and the high end is a good year with good soil and care. A skilled gardener can beat the high end, and a bad year can fall below the low end.</p></div>
+<div class="faq"><h3>Why is there a low and a high number?</h3><p>Because real harvests vary. Weather, soil, variety and pests all change the result, so a single number would pretend to know more than anyone can. A range is honest: it tells you what to expect in a poor year and in a good year, with a midpoint for planning.</p></div>
+<div class="faq"><h3>Can I use feet instead of metres?</h3><p>Yes. One square metre is about 10.76 square feet. Measure your bed in feet, multiply the length by the width to get square feet, then divide by 10.76 to get square metres, and enter the length and width in metres in the tool. The result is in kilograms.</p></div>
+<div class="faq"><h3>Which crop gives the most per square metre?</h3><p>Of the crops in this tool, tomatoes and courgettes have the highest typical rates, at 4 to 6 and 3 to 6 kilograms per square metre. Cabbage is next at 3 to 5. But weight is not the only measure: potatoes store for months, while tomatoes must be eaten or preserved within weeks.</p></div>
+<div class="faq"><h3>Does the tool work for containers?</h3><p>Yes. Enter the surface area of the container: for a round pot, measure the diameter in metres, halve it for the radius, and multiply 3.14 by the radius squared. A pot 50 centimetres across has a surface area of about 0.2 square metres. Edge effects matter more in small pots, so treat the result as a rough guide.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/garden-layout-planner/">Garden Layout Planner</a> · <a href="https://noryvello.github.io/plant-hardiness-zone-explorer/">Plant Hardiness Zone Explorer</a> · <a href="https://noryvello.github.io/hydroponics-planning-tool/">Hydroponics Planning Tool</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+</div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+<script>
+window.NP = window.NP || {};
+(function(NP){
+  NP.CROPS = {
+    "tomatoes": {name: "Tomatoes", low: 4, high: 6, perM2: 2},
+    "potatoes": {name: "Potatoes", low: 2, high: 4, perM2: 4},
+    "carrots": {name: "Carrots", low: 2, high: 4, perM2: 100},
+    "onions": {name: "Onions", low: 2, high: 3, perM2: 16},
+    "lettuce": {name: "Lettuce", low: 2, high: 3, perM2: 9},
+    "courgettes": {name: "Courgettes", low: 3, high: 6, perM2: 1},
+    "runner-beans": {name: "Runner beans", low: 2, high: 4, perM2: 9},
+    "peas": {name: "Peas", low: 1, high: 2, perM2: 25},
+    "cabbage": {name: "Cabbage", low: 3, high: 5, perM2: 4},
+    "sweetcorn": {name: "Sweetcorn", low: 1, high: 2, perM2: 4},
+    "beetroot": {name: "Beetroot", low: 2, high: 4, perM2: 16},
+    "peppers": {name: "Peppers", low: 2, high: 4, perM2: 4}
+  };
+  function round1(x){ return Math.round(x * 10) / 10; }
+  NP.estimateYield = function(cropKey, lengthM, widthM){
+    var c = NP.CROPS[cropKey];
+    if (!c) return null;
+    var l = Number(lengthM), w = Number(widthM);
+    if (!(l > 0) || !(w > 0) || !isFinite(l) || !isFinite(w)) return null;
+    var area = l * w;
+    var low = round1(area * c.low);
+    var high = round1(area * c.high);
+    return {crop: c.name, area: round1(area), plants: Math.floor(area * c.perM2),
+            low: low, high: high, mid: round1((low + high) / 2),
+            lowRate: c.low, highRate: c.high, perM2: c.perM2};
+  };
+  NP.yieldText = function(r){
+    if (!r) return "";
+    return "Crop yield estimate: " + r.crop + "\n" +
+      "Bed area: " + r.area + " square metres (" + r.plants + " plants)" + "\n" +
+      "Estimated harvest: " + r.low + " to " + r.high + " kg (about " + r.mid + " kg)" + "\n" +
+      "Typical rate: " + r.lowRate + " to " + r.highRate + " kg per square metre. Estimates only.";
+  };
+  if (typeof document !== "undefined") {
+    document.addEventListener("DOMContentLoaded", function(){
+      var btn = document.getElementById("calc-btn");
+      var copyBtn = document.getElementById("copy-btn");
+      var out = document.getElementById("cy-out");
+      var steps = document.getElementById("cy-steps");
+      var last = null;
+      function show(el){ el.removeAttribute("hidden"); }
+      function fallbackCopy(text){
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand("copy"); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+      function copyText(text){
+        function done(){ copyBtn.textContent = "Copied!"; setTimeout(function(){ copyBtn.textContent = "Copy result"; }, 2000); }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, function(){ fallbackCopy(text); done(); });
+        } else { fallbackCopy(text); done(); }
+      }
+      if (btn) btn.addEventListener("click", function(){
+        var crop = document.getElementById("cy-crop").value;
+        var l = document.getElementById("cy-length").value;
+        var w = document.getElementById("cy-width").value;
+        last = NP.estimateYield(crop, l, w);
+        if (!last) {
+          out.textContent = "Please enter a bed length and width above zero, and choose a crop.";
+          steps.textContent = "";
+          show(out);
+          return;
+        }
+        out.textContent = "Estimated harvest: " + last.low + " to " + last.high + " kg of " + last.crop.toLowerCase() + " (about " + last.mid + " kg).";
+        steps.textContent = "Working: " + l + " m x " + w + " m = " + last.area + " square metres. " +
+          last.area + " x " + last.lowRate + " kg = " + last.low + " kg (low). " +
+          last.area + " x " + last.highRate + " kg = " + last.high + " kg (high). " +
+          "Plants that fit: about " + last.plants + " (" + last.perM2 + " per square metre). " +
+          "Estimates only, never a guarantee.";
+        show(out); show(steps); show(copyBtn);
+      });
+      if (copyBtn) copyBtn.addEventListener("click", function(){
+        if (last) copyText(NP.yieldText(last));
+      });
+    });
+  }
+})(window.NP);
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How accurate is the estimate?", "acceptedAnswer": {"@type": "Answer", "text": "It is a planning range, not a prediction. The tool multiplies your bed area by typical published yield rates, which are ranges from standard gardening references. Your real harvest depends on weather, soil, variety, watering and pests, so use the low end for careful planning and the high end for a good year."}}, {"@type": "Question", "name": "What does typical range mean?", "acceptedAnswer": {"@type": "Answer", "text": "It means the harvest that home gardeners usually get from a square metre of that crop in ordinary conditions. The low end is a poor year or poor soil, and the high end is a good year with good soil and care. A skilled gardener can beat the high end, and a bad year can fall below the low end."}}, {"@type": "Question", "name": "Why is there a low and a high number?", "acceptedAnswer": {"@type": "Answer", "text": "Because real harvests vary. Weather, soil, variety and pests all change the result, so a single number would pretend to know more than anyone can. A range is honest: it tells you what to expect in a poor year and in a good year, with a midpoint for planning."}}, {"@type": "Question", "name": "Can I use feet instead of metres?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. One square metre is about 10.76 square feet. Measure your bed in feet, multiply the length by the width to get square feet, then divide by 10.76 to get square metres, and enter the length and width in metres in the tool. The result is in kilograms."}}, {"@type": "Question", "name": "Which crop gives the most per square metre?", "acceptedAnswer": {"@type": "Answer", "text": "Of the crops in this tool, tomatoes and courgettes have the highest typical rates, at 4 to 6 and 3 to 6 kilograms per square metre. Cabbage is next at 3 to 5. But weight is not the only measure: potatoes store for months, while tomatoes must be eaten or preserved within weeks."}}, {"@type": "Question", "name": "Does the tool work for containers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Enter the surface area of the container: for a round pot, measure the diameter in metres, halve it for the radius, and multiply 3.14 by the radius squared. A pot 50 centimetres across has a surface area of about 0.2 square metres. Edge effects matter more in small pots, so treat the result as a rough guide."}}]}</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading Comprehension Trainer — Read Better and Remember More | Noryvello</title>
+<meta name="description" content="Free reading comprehension trainer — read short passages, answer questions, and build your understanding step by step. No signup, phone friendly.">
+<link rel="canonical" href="https://noryvello.github.io/reading-comprehension-trainer/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reading Comprehension Trainer — Read Better and Remember More">
+<meta property="og:description" content="Free reading comprehension trainer — read short passages, answer questions, and build your understanding step by step. No signup, phone friendly.">
+<meta property="og:url" content="https://noryvello.github.io/reading-comprehension-trainer/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{min-height:72px;padding:14px 18px;font-size:17px;font-weight:700;border:0;border-radius:10px;background:#4338ca;color:#fff;cursor:pointer;width:100%;margin-top:12px}
+.calc button.secondary{background:#e2e8f0;color:#1e293b}
+.calc button.small{width:auto;min-height:72px;padding:14px 18px;margin:8px 6px 0 0}
+.calc input,.calc select,.calc textarea{min-height:72px;font-size:17px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;background:#fff;font-family:inherit}
+.calc .opt{display:block;width:100%;text-align:left;background:#fff;border:2px solid #cbd5e1;color:#1e293b;border-radius:10px;padding:14px 16px;margin:8px 0;font-size:16px;font-weight:600;cursor:pointer;min-height:72px}
+.calc .opt.correct{border-color:#16a34a;background:#f0fdf4}
+.calc .opt.wrong{border-color:#dc2626;background:#fef2f2}
+.calc .opt:disabled{cursor:default;opacity:1}
+.calc .result{font-size:16px;margin-top:12px}
+.calc .passage{font-size:16.5px;line-height:1.7;margin:12px 0}
+.calc .tag{display:inline-block;background:#eef2ff;border-radius:999px;padding:4px 12px;font-size:13.5px;font-weight:600;margin:2px 4px 2px 0}
+.calc table{width:100%;border-collapse:collapse;font-size:15px;margin:10px 0}
+.calc th,.calc td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+.calc th{background:#eef2ff}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Reading Comprehension Trainer</h1>
+<p class="answer">This trainer gives you six short passages to read, each with four questions that check what you understood. You get instant answers with explanations, a score at the end, and tips based on how you did.</p>
+<div class="calc">
+
+<p class="result">Pick a passage, read it, then answer its four questions. Your answers save on this device.</p>
+<div id="rc-picker"></div>
+<div id="rc-body"></div>
+<p class="out" id="rc-score"></p>
+<button type="button" id="rc-copy">Copy my score</button>
+<button type="button" class="secondary" id="rc-reset">Start again</button>
+
+</div>
+<div class="warn">The passages on this page are written for practice at intermediate level, so they use everyday words and clear sentences. If they feel too easy or too hard, the graded readers linked below cover easier and harder levels.</div>
+<h2>What reading comprehension really means</h2>
+<p>Reading comprehension is not the same as reading words. A person can read every word on a page out loud and still have no idea what the page was about. Comprehension means building a picture in your mind as you read: who is doing what, where it is happening, why it matters, and what might happen next. When you understand a passage, you can answer questions about it without looking back at every line, and you can explain it to someone else in your own words.</p><p>Most everyday reading works this way. A bus timetable, a letter from school, a news story, a set of instructions — all of them ask you to take in information and use it. The words are only the delivery system. The real skill is noticing the main idea, separating it from the details, and connecting one sentence to the next. That is why this trainer asks you questions after each passage instead of only asking you to read. Answering a question forces your brain to check what it actually took in.</p><p>Comprehension also grows with practice in a way that surprises many learners. People who read a little every day find that new words start to make sense from context, that long sentences become easier to follow, and that they remember more of what they read. None of this needs special talent. It needs regular, short, focused practice — exactly what the six passages on this page are built for.</p>
+<h2>How to use this trainer</h2>
+<p>Start with the first passage and read it all the way through before you look at the questions. Read at a normal speed, the way you would read a message from a friend. Then answer the four questions one by one. Each question has four options, and only one is correct. Tap an answer to see at once whether you were right, with a short explanation that points to the part of the passage that holds the answer.</p><p>Your answers save on this device, so you can stop after one passage and come back later — your score will still be there. Work through all six passages to get a score out of 24, and read the tip that comes with your score. The tip is different depending on how you did, and it tells you what to practise next. If you want to try again from the start, the Start again button clears your answers.</p><p>Do not worry about getting a perfect score. A missed question is useful: the explanation shows you the exact sentence you needed, and that sentence is the thing to study. Many strong readers get questions wrong the first time because they rushed. Slow, careful reading beats fast, careless reading every time.</p>
+<h2>The three-step method: preview, question, summarise</h2>
+<p>Good readers do three things, usually without thinking about them. First, they preview: before reading a passage properly, they glance at the title and the first sentence to get a sense of the topic. A title like A Rainy Saturday tells you the setting before you read a single line. Previewing takes five seconds and gives your brain a frame to hang the details on.</p><p>Second, they question: as they read, they ask themselves small questions. Who is this about? What changed? Why did that happen? You do not need to write these questions down. Just asking them keeps your attention on the meaning instead of letting your eyes slide over the words. If you cannot answer a small question, that is a signal to re-read the last few sentences.</p><p>Third, they summarise: when they finish, they try to say the main idea in one or two sentences of their own. If you can summarise a passage, you understood it. If you cannot, read it once more, more slowly. Try this method on the passages above. Read the title, ask yourself what the passage might be about, read it through, then cover it and say the main idea out loud before you answer the questions.</p>
+<h2>A worked example: one passage done slowly</h2>
+<p>Take the first passage, A Rainy Saturday. Before reading, the title tells us two things: the day is Saturday, and it rains. We can guess the family had outdoor plans that changed. That guess is the preview, and it takes only a moment.</p><p>Now read the first two sentences: it rained all Saturday morning, so the family changed their plans and stayed at home to cook a big lunch. Our guess was right. As we keep reading, we collect details: Sara made the salad, her father made the rice, her mother found a board game, Sara won the first game and her brother won the second. None of these details is the main idea on its own. The main idea is the change: a spoiled plan turned into a good day.</p><p>After reading, try the summary test. In your own words: A family stayed home because of rain, cooked and played games together, and Sara thought it was one of the best Saturdays she could remember. If you can say that without looking back, you understood the passage. Now the questions are easy, because each one asks about a detail you already noticed. That is the whole method: preview, question, summarise — then answer.</p>
+<h2>Common mistakes that slow readers down</h2>
+<p>The most common mistake is reading every word twice. Many learners go back over each sentence as soon as they finish it, because they do not trust themselves. This doubles the time and halves the understanding, because the brain never gets a smooth run at the meaning. Try to read a whole paragraph once, then ask yourself what it said. Go back only to the part you missed, not to the beginning.</p><p>The second mistake is never stopping to think. Reading is not a race, and the fastest readers are often the ones who pause most. A short pause at the end of a paragraph — two or three seconds to ask what just happened — does more for memory than re-reading the paragraph twice. The questions in this trainer are built to create those pauses.</p><p>The third mistake is stopping at every unknown word. If a word is new, keep reading first. The next sentence often explains it, and the general sense is usually clear without it. Look words up after you finish the passage, not in the middle. And the fourth mistake is reading only when you feel like it. Comprehension grows from short daily practice, not from one long session a month.</p>
+<h2>How to build a daily reading habit</h2>
+<p>Fifteen to twenty minutes a day is enough to make real progress. Pick a regular time — after breakfast, on the bus, before bed — and keep it small. One passage from this trainer, or one short article, is a full session. The goal is not to finish a book. The goal is to finish one thing and understand it.</p><p>Mix easy and hard reading. Easy reading builds speed and confidence; harder reading builds vocabulary. If every word is new, the text is too hard. If no word is new, it is too easy. The right level is the one where you understand most of it and guess the rest from context. The passages on this page sit at intermediate level, which suits a reader who can already follow everyday English but wants to get sharper.</p><p>Keep a small notebook, on paper or on your phone, and write down three things after each session: the main idea in one sentence, one new word with its meaning, and one question you still have. After a month you will have ninety new words and a clear record of how far you have come. That record matters, because progress in reading is slow and easy to miss.</p>
+<h2>Where to read next, and what level these passages are</h2>
+<p>The six passages on this page are written for practice at intermediate level. They use everyday words, clear sentences and familiar situations, and each one is about 130 words long. They are not a test of advanced English, and they are not meant to be. They are training material: short enough to finish in a few minutes, rich enough to ask real questions about.</p><p>If these passages feel too easy, the next step is graded readers — real books rewritten at set levels, so you can move up one level at a time. Two well-known series are <a href="https://elt.oup.com/">Oxford Bookworms from Oxford University Press</a> and <a href="https://www.penguinreaders.co.uk/">Penguin Readers</a>. Both publish the same stories at several levels, so you can read a book you already know at a harder level and notice how much more you understand.</p><p>If the passages feel too hard, start one level lower with the same series and work up. There is no shame in an easy book. Every strong reader started with simple stories, and the readers who improve fastest are usually the ones who read a lot of easy material before they push into hard material. The habit matters more than the level.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is reading comprehension?</h3><p>Reading comprehension is understanding what you read, not just recognising the words. It means you can say the main idea in your own words, answer questions about the details, and explain why things happened in the passage.</p></div>
+<div class="faq"><h3>How is this different from a reading test?</h3><p>A reading test measures you once and gives you a grade. This trainer teaches you while you practise: every answer comes with an explanation that points to the exact sentence, so a wrong answer shows you what to look for next time.</p></div>
+<div class="faq"><h3>How long should I practise each day?</h3><p>Fifteen to twenty minutes a day is enough. One passage and its four questions is a full session. Short daily practice builds comprehension far better than one long session a week.</p></div>
+<div class="faq"><h3>Why do I forget what I read?</h3><p>Usually because the reading was passive: your eyes moved over the words but your brain never stopped to think. Pausing to summarise each paragraph in your own words, and answering questions afterwards, is what turns reading into memory.</p></div>
+<div class="faq"><h3>Should I read slowly or quickly?</h3><p>Both, at different times. Read slowly the first time to understand a passage properly, then read it again more quickly to build speed. Slow reading without understanding is wasted time, and fast reading without understanding is just looking at words.</p></div>
+<div class="faq"><h3>What level are the passages?</h3><p>The passages are written for practice at intermediate level. They use everyday words and clear sentences. If they feel too easy or too hard, the graded readers linked on this page cover easier and harder levels.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/language-level-assessment/">Language Level Assessment</a> · <a href="https://noryvello.github.io/multilingual-dictionary/">Multilingual Dictionary</a> · <a href="https://noryvello.github.io/public-statistics-explorer/">Public Statistics Explorer</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+</div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is reading comprehension?", "acceptedAnswer": {"@type": "Answer", "text": "Reading comprehension is understanding what you read, not just recognising the words. It means you can say the main idea in your own words, answer questions about the details, and explain why things happened in the passage."}}, {"@type": "Question", "name": "How is this different from a reading test?", "acceptedAnswer": {"@type": "Answer", "text": "A reading test measures you once and gives you a grade. This trainer teaches you while you practise: every answer comes with an explanation that points to the exact sentence, so a wrong answer shows you what to look for next time."}}, {"@type": "Question", "name": "How long should I practise each day?", "acceptedAnswer": {"@type": "Answer", "text": "Fifteen to twenty minutes a day is enough. One passage and its four questions is a full session. Short daily practice builds comprehension far better than one long session a week."}}, {"@type": "Question", "name": "Why do I forget what I read?", "acceptedAnswer": {"@type": "Answer", "text": "Usually because the reading was passive: your eyes moved over the words but your brain never stopped to think. Pausing to summarise each paragraph in your own words, and answering questions afterwards, is what turns reading into memory."}}, {"@type": "Question", "name": "Should I read slowly or quickly?", "acceptedAnswer": {"@type": "Answer", "text": "Both, at different times. Read slowly the first time to understand a passage properly, then read it again more quickly to build speed. Slow reading without understanding is wasted time, and fast reading without understanding is just looking at words."}}, {"@type": "Question", "name": "What level are the passages?", "acceptedAnswer": {"@type": "Answer", "text": "The passages are written for practice at intermediate level. They use everyday words and clear sentences. If they feel too easy or too hard, the graded readers linked on this page cover easier and harder levels."}}]}</script>
+<script>
+
+(function(){
+  var PASSAGES = [{"title": "A Rainy Saturday", "text": "It rained all Saturday morning, so the Rahman family changed their plans. Instead of going to the park, they stayed at home and cooked a big lunch together. Sara, who is twelve, made the salad while her father prepared the rice. Her mother found an old board game in a cupboard, and after lunch they played for two hours. Sara won the first game, and her younger brother won the second. By late afternoon the rain had stopped, and the family walked to the small shop at the end of their street to buy bread for the next day. Sara said it was one of the best Saturdays she could remember, even though the weather had ruined their first plan.", "questions": [{"q": "Why did the family stay at home on Saturday?", "options": ["Because the park was closed", "Because it was raining", "Because Sara was ill", "Because the shop was shut"], "answer": 1, "why": "The passage says it rained all Saturday morning, so the family changed their plans and stayed at home."}, {"q": "Who made the salad?", "options": ["Sara's mother", "Sara's father", "Sara", "Sara's younger brother"], "answer": 2, "why": "The text says Sara, who is twelve, made the salad while her father prepared the rice."}, {"q": "What did the family do after lunch?", "options": ["They went to the park", "They watched television", "They played a board game", "They went shopping"], "answer": 2, "why": "After lunch they played an old board game that Sara's mother had found in a cupboard."}, {"q": "What does the passage suggest about Sara's day?", "options": ["She was bored all day", "She enjoyed it more than she expected", "She wanted to stay indoors", "She did not like the board game"], "answer": 1, "why": "Sara said it was one of the best Saturdays she could remember, even though the rain had ruined the first plan."}]}, {"title": "The New Library", "text": "When the town library opened last spring, nobody expected it to become so busy. The building has two floors: the ground floor holds novels, newspapers and a small cafe, while the upper floor is a quiet study area with twenty desks. In the first month, more than three thousand people joined, and the Saturday story hour for children now has a waiting list. The librarian, Mrs. Adeyemi, says the secret is simple. The library stays open until eight in the evening, so people can visit after work, and the staff help anyone who cannot find what they need. Next year the council plans to add a computer room, because many visitors have asked for one.", "questions": [{"q": "What is on the upper floor of the library?", "options": ["A cafe", "Newspapers", "A quiet study area", "A computer room"], "answer": 2, "why": "The passage says the upper floor is a quiet study area with twenty desks."}, {"q": "How many people joined in the first month?", "options": ["About three hundred", "More than three thousand", "About twenty", "More than eight thousand"], "answer": 1, "why": "The text says more than three thousand people joined in the first month."}, {"q": "Why does the library stay open until eight in the evening?", "options": ["Because the staff like late hours", "So people can visit after work", "Because the cafe needs it", "So children can study at night"], "answer": 1, "why": "Mrs. Adeyemi explains that the late opening lets people visit after work."}, {"q": "What does the council plan to add next year?", "options": ["A bigger cafe", "A computer room", "More desks", "A second library"], "answer": 1, "why": "The council plans to add a computer room because many visitors have asked for one."}]}, {"title": "Learning to Cook", "text": "Daniel had never cooked rice properly until his grandmother visited. She watched him make it once, then shook her head and showed him her way. First, she washed the rice in cold water three times, until the water ran clear. Then she used one and a half cups of water for every cup of rice, and she put a tight lid on the pot. Most important of all, she told him not to lift the lid while the rice was cooking. Daniel had always lifted it to check, and the steam escaped every time. He followed her steps that evening, and the rice came out soft and separate for the first time. He wrote the method on a card and stuck it on the fridge, so he would not forget.", "questions": [{"q": "How many times did Daniel's grandmother wash the rice?", "options": ["Once", "Twice", "Three times", "She did not wash it"], "answer": 2, "why": "She washed the rice in cold water three times, until the water ran clear."}, {"q": "How much water did she use for each cup of rice?", "options": ["Half a cup", "One cup", "One and a half cups", "Two cups"], "answer": 2, "why": "She used one and a half cups of water for every cup of rice."}, {"q": "What mistake had Daniel always made before?", "options": ["He used too much rice", "He lifted the lid while the rice cooked", "He forgot to wash the rice", "He cooked it too quickly"], "answer": 1, "why": "Daniel had always lifted the lid to check, and the steam escaped every time."}, {"q": "Why did Daniel write the method on a card?", "options": ["To give it to his grandmother", "So he would not forget it", "To share it online", "To cook for a party"], "answer": 1, "why": "He wrote the method on a card and stuck it on the fridge so he would not forget."}]}, {"title": "The Bus Ride", "text": "Every morning at seven fifteen, Maria catches the number 42 bus to work. The journey usually takes forty minutes, but on wet days it can take an hour because the traffic near the market slows to a crawl. Maria does not mind. She always sits by the window with a book, and she says the bus is the only quiet part of her day. Last Tuesday the bus was late, and she arrived at the office ten minutes after her meeting had started. Her manager smiled and said not to worry, because three other people had also been delayed by the same traffic. Maria now leaves home ten minutes earlier on rainy days, just in case.", "questions": [{"q": "What time does Maria usually catch the bus?", "options": ["At seven fifteen", "At eight fifteen", "At six forty-five", "At seven fifty"], "answer": 0, "why": "The passage says every morning at seven fifteen, Maria catches the number 42 bus to work."}, {"q": "Why can the journey take an hour on wet days?", "options": ["Because the bus breaks down", "Because Maria reads slowly", "Because traffic near the market is slow", "Because the bus takes a longer route"], "answer": 2, "why": "On wet days the journey can take an hour because the traffic near the market slows to a crawl."}, {"q": "Why does Maria not mind the long journey?", "options": ["She sleeps on the bus", "She talks to the driver", "She reads by the window in the quiet", "She works on her laptop"], "answer": 2, "why": "She sits by the window with a book and says the bus is the only quiet part of her day."}, {"q": "What did Maria change after last Tuesday?", "options": ["She takes a different bus", "She leaves home ten minutes earlier on rainy days", "She stopped reading on the bus", "She asked for a later start"], "answer": 1, "why": "Maria now leaves home ten minutes earlier on rainy days, just in case the bus is late again."}]}, {"title": "A Small Garden", "text": "When Lena moved into her flat, the balcony was empty except for two old chairs. She decided to grow vegetables there, even though she had never gardened before. She started with tomatoes, herbs and lettuce, because a friend told her they were the easiest plants for a beginner. The first tomatoes were small and sour, and Lena almost gave up. Then she learned that her pots were too small and the plants needed more sun, so she moved them to the brightest corner and bought bigger pots. By August she was picking fresh tomatoes every week, and she gave some to her neighbours. Now she plans to try beans next year, and she tells anyone who asks that a small space is no excuse for an empty balcony.", "questions": [{"q": "What did Lena grow first on her balcony?", "options": ["Beans and carrots", "Tomatoes, herbs and lettuce", "Flowers and herbs", "Only tomatoes"], "answer": 1, "why": "She started with tomatoes, herbs and lettuce, because a friend told her they were the easiest plants for a beginner."}, {"q": "Why were her first tomatoes small and sour?", "options": ["She watered them too much", "The pots were too small and the plants needed more sun", "She planted them too late", "The seeds were old"], "answer": 1, "why": "She learned that her pots were too small and the plants needed more sun."}, {"q": "What did Lena do with her extra tomatoes?", "options": ["She sold them", "She gave some to her neighbours", "She threw them away", "She made soup every day"], "answer": 1, "why": "By August she was picking fresh tomatoes every week, and she gave some to her neighbours."}, {"q": "What does Lena plan to grow next year?", "options": ["Lettuce", "Herbs", "Beans", "Carrots"], "answer": 2, "why": "The passage says she plans to try beans next year."}]}, {"title": "The Night Shift", "text": "Amara had worked in the hospital for three years before she took her first night shift. She was nervous, because the ward is quieter at night but the nurses on duty are fewer, so each person has more to do. Her first night began with a training session, where an experienced nurse showed her the night routine: check every patient once an hour, keep the lights low, and write clear notes for the morning team. At three in the morning a patient rang the bell, and Amara found that he only wanted a glass of water and someone to talk to for a few minutes. When her shift ended at seven, she was tired but proud. She had learned that night nursing is mostly about staying calm and paying attention.", "questions": [{"q": "How long had Amara worked in the hospital before her first night shift?", "options": ["One year", "Two years", "Three years", "Seven years"], "answer": 2, "why": "Amara had worked in the hospital for three years before she took her first night shift."}, {"q": "Why was Amara nervous about the night shift?", "options": ["She had never worked at night before", "There are fewer nurses on duty at night", "The ward is too noisy at night", "She did not know the patients"], "answer": 1, "why": "The ward is quieter at night but the nurses on duty are fewer, so each person has more to do."}, {"q": "What did the patient want at three in the morning?", "options": ["Medicine", "A glass of water and someone to talk to", "A different bed", "To go home"], "answer": 1, "why": "He only wanted a glass of water and someone to talk to for a few minutes."}, {"q": "What did Amara learn from her first night shift?", "options": ["That night nursing is mostly about staying calm and paying attention", "That night shifts are easy", "That patients sleep all night", "That she prefers day shifts"], "answer": 0, "why": "She had learned that night nursing is mostly about staying calm and paying attention."}]}];
+  var KEY = "np-reading-comprehension-trainer-answers";
+  var NP = {};
+  NP.passages = PASSAGES;
+  NP.totalQuestions = function(){ return PASSAGES.length * 4; };
+  NP.checkAnswer = function(p, q, choice){
+    if (p < 0 || p >= PASSAGES.length) return null;
+    var qu = PASSAGES[p].questions[q];
+    if (!qu) return null;
+    return {correct: choice === qu.answer, explanation: qu.why};
+  };
+  NP.tipFor = function(pct){
+    if (pct >= 90) return "Excellent reading. Try a harder passage next, or read a longer article and summarise it in your own words.";
+    if (pct >= 70) return "Good work. Re-read the questions you missed and find the exact sentence that answers each one.";
+    if (pct >= 50) return "A fair start. Slow down, read each passage twice, and underline the main idea before you answer.";
+    return "Keep practising. Read one passage a day, and use the three-step method in the guide below: preview, question, summarise.";
+  };
+  NP.scoreAll = function(answers){
+    var correct = 0, answered = 0;
+    for (var p = 0; p < PASSAGES.length; p++){
+      for (var q = 0; q < 4; q++){
+        var key = p + "-" + q;
+        if (answers && answers[key] !== undefined && answers[key] !== null){
+          answered++;
+          if (answers[key] === PASSAGES[p].questions[q].answer) correct++;
+        }
+      }
+    }
+    var total = NP.totalQuestions();
+    var pct = total ? Math.round(correct / total * 100) : 0;
+    return {correct: correct, answered: answered, total: total, percent: pct, tip: NP.tipFor(pct)};
+  };
+  NP.scoreText = function(answers){
+    var s = NP.scoreAll(answers);
+    return "Reading comprehension score: " + s.correct + " out of " + s.total + " (" + s.percent + "%). " + s.tip;
+  };
+  if (typeof window !== "undefined") { window.NP = NP; }
+  if (typeof document === "undefined") return;
+  var answers = {};
+  try { answers = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { answers = {}; }
+  var current = 0;
+  var pickerEl = document.getElementById("rc-picker");
+  var bodyEl = document.getElementById("rc-body");
+  var scoreEl = document.getElementById("rc-score");
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(answers)); } catch (e) {} }
+  function renderScore(){
+    var s = NP.scoreAll(answers);
+    var done = s.answered === s.total;
+    scoreEl.textContent = "Score: " + s.correct + " out of " + s.total + " answered (" + s.answered + " of " + s.total + " questions done). " + (done ? s.tip : "Answer all 24 questions to see your tip.");
+  }
+  function render(){
+    bodyEl.innerHTML = "";
+    var pass = PASSAGES[current];
+    var tp = document.createElement("p");
+    tp.className = "passage";
+    tp.textContent = pass.text;
+    bodyEl.appendChild(tp);
+    pass.questions.forEach(function(qu, qi){
+      var qp = document.createElement("p");
+      qp.className = "result";
+      qp.textContent = (qi + 1) + ". " + qu.q;
+      bodyEl.appendChild(qp);
+      var key = current + "-" + qi;
+      var picked = answers[key];
+      qu.options.forEach(function(opt, oi){
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "opt";
+        b.textContent = opt;
+        if (picked !== undefined && picked !== null){
+          b.disabled = true;
+          if (oi === qu.answer) b.className = "opt correct";
+          else if (oi === picked) b.className = "opt wrong";
+        }
+        b.addEventListener("click", function(){
+          answers[key] = oi;
+          save();
+          render();
+          renderScore();
+        });
+        bodyEl.appendChild(b);
+      });
+      if (picked !== undefined && picked !== null){
+        var ex = document.createElement("p");
+        ex.className = "result";
+        ex.textContent = (picked === qu.answer ? "Correct. " : "Not quite. ") + qu.why;
+        bodyEl.appendChild(ex);
+      }
+    });
+    var btns = pickerEl.querySelectorAll("button");
+    for (var i = 0; i < btns.length; i++){
+      btns[i].className = i === current ? "" : "secondary";
+    }
+    renderScore();
+  }
+  PASSAGES.forEach(function(pass, i){
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "small secondary";
+    b.textContent = (i + 1) + ". " + pass.title;
+    b.addEventListener("click", function(){ current = i; render(); });
+    pickerEl.appendChild(b);
+  });
+  document.getElementById("rc-copy").addEventListener("click", function(){
+    var btn = this;
+    var done = function(){ btn.textContent = "Copied!"; setTimeout(function(){ btn.textContent = "Copy my score"; }, 2000); };
+    var text = NP.scoreText(answers);
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done, function(){ fallbackCopy(text, done); });
+    } else { fallbackCopy(text, done); }
+  });
+  function fallbackCopy(text, done){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+    done();
+  }
+  document.getElementById("rc-reset").addEventListener("click", function(){
+    answers = {};
+    save();
+    render();
+  });
+  render();
+})();
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

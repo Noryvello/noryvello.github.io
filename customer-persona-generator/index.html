@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Customer Persona Generator — Know Exactly Who You Are Selling To | Noryvello</title>
+<meta name="description" content="Free customer persona generator — answer a few questions and get a clear picture of your ideal customer. No signup, phone friendly.">
+<link rel="canonical" href="https://noryvello.github.io/customer-persona-generator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Customer Persona Generator — Know Exactly Who You Are Selling To">
+<meta property="og:description" content="Free customer persona generator — answer a few questions and get a clear picture of your ideal customer. No signup, phone friendly.">
+<meta property="og:url" content="https://noryvello.github.io/customer-persona-generator/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc textarea{width:100%;min-height:150px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+.calc input,.calc select{width:100%;min-height:72px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc button{display:block;width:100%;min-height:72px;margin-top:12px;padding:12px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#fff;color:#4338ca;border:2px solid #4338ca}
+.calc button.danger{background:#fff;color:#991b1b;border:2px solid #991b1b}
+.calc .out{font-size:17px;font-weight:400;margin-top:14px;white-space:pre-line}
+.calc .out b{font-weight:700}
+.calc .row{margin:10px 0}
+.calc .checkrow{display:flex;gap:12px;align-items:center;margin:0;padding:20px 0;border-bottom:1px solid #e2e8f0;cursor:pointer;min-height:72px}
+.calc .checkrow input{width:30px;height:30px;min-height:30px;flex:none;margin:0;accent-color:#4338ca}
+.calc .checkrow span{font-size:16px;line-height:1.5}
+table.data{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+table.data th,table.data td{border:1px solid #cbd5e1;padding:8px;text-align:left;vertical-align:top}
+table.data th{background:#eef2ff}
+.tag{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:700}
+.tag.ok{background:#dcfce7;color:#166534}
+.tag.bad{background:#fee2e2;color:#991b1b}
+.tag.mid{background:#fef3c7;color:#92400e}
+.cardline{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin:10px 0}
+.cardline b{font-size:16.5px}
+.small{font-size:14px;color:#64748b}
+.funnelbar{background:#4338ca;color:#fff;border-radius:8px;padding:10px 12px;margin:6px 0;font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.funnelbar.alt{background:#0d9488}
+.outline-row{display:flex;gap:8px;align-items:stretch;margin:8px 0}
+.outline-row input{flex:1;min-width:0}
+.outline-row button{flex:none;width:58px;min-height:72px;margin-top:0;padding:8px 4px;border-radius:12px;font-size:18px}
+.blockbtns{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.blockbtns button{flex:1 1 40%;width:auto;min-height:72px;margin-top:0}
+.planweek{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin:10px 0}
+.planweek b{font-size:16.5px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a customer persona?", "acceptedAnswer": {"@type": "Answer", "text": "A customer persona is a short, written picture of one ideal buyer: a name, an age, a job, a goal, a problem, and a note about where to find them and what to say. It is not a real person — it is a summary of what your best buyers have in common, written as one person so your whole team can picture the same buyer."}}, {"@type": "Question", "name": "How many personas do I need?", "acceptedAnswer": {"@type": "Answer", "text": "Start with one. One clear persona forces a choice and makes decisions easier, while five vague personas cancel each other out. Use the first persona for a month, and only build a second one if you find a group of buyers who clearly need a different message, with real evidence behind it."}}, {"@type": "Question", "name": "What if I do not know my customers yet?", "acceptedAnswer": {"@type": "Answer", "text": "Write your best guess, and mark it as a guess. A persona built from what you think is still useful as a starting point — it gives you something to test. Then talk to your first buyers as soon as you can, and change the persona to match what they actually say. The buyers are always right and the persona is always a draft."}}, {"@type": "Question", "name": "How do I use a persona in real marketing?", "acceptedAnswer": {"@type": "Answer", "text": "Keep it in front of you while you work. When you write a post, ask whether your persona would stop and read it. When you choose a channel, ask where your persona spends time. When you set a price, ask what your persona can afford. The persona is a test for every decision: does this fit the person we serve?"}}, {"@type": "Question", "name": "Can a persona be wrong?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and most first personas are partly wrong. That is normal — a persona is a guess built from what you know today. Check it against real buyers by asking them what problem you solved, where they found you, and what almost stopped them buying. If their answers differ from the persona, change the persona."}}, {"@type": "Question", "name": "Should the persona be a real person?", "acceptedAnswer": {"@type": "Answer", "text": "No. A persona is a summary of what your best buyers have in common, not a description of one real customer. The name is only a label to make the persona easy to talk about. Never write a real customer's private details into a persona, and never share a persona that could identify a real person."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Customer Persona Generator</h1>
+<p class="answer">Answer five short questions about your product and the people who buy it, and this generator builds a full persona card: a name, an age and a job, a goal, a problem, where to reach them, and the message most likely to work. It turns what you already know about your buyers into one clear picture you can use.</p>
+<div class="calc">
+<label for="cp-product">What do you sell? (one line)</label>
+<input id="cp-product" type="text" placeholder="Example: celebration cakes made to order" maxlength="120">
+<label for="cp-buyer">Who buys it?</label>
+<input id="cp-buyer" type="text" placeholder="Example: parents ordering cakes for birthdays" maxlength="120">
+<label for="cp-age">Their age and life stage</label>
+<input id="cp-age" type="text" placeholder="Example: 30 to 55, busy, planning a party around work" maxlength="120">
+<label for="cp-problem">What problem does your product solve for them?</label>
+<input id="cp-problem" type="text" placeholder="Example: they want a special cake without spending a day baking" maxlength="140">
+<label for="cp-online">Where do they spend time online?</label>
+<select id="cp-online">
+<option value="a social app">A social app</option>
+<option value="search results">Search results</option>
+<option value="local online groups">Local online groups</option>
+<option value="photo and video apps">Photo and video apps</option>
+<option value="email and messaging">Email and messaging</option>
+</select>
+<button id="cp-build" type="button">Generate my persona</button>
+<div class="out" id="cp-out" style="display:none"></div>
+<button id="cp-copy" type="button" class="secondary" style="display:none" data-label="Copy my persona">Copy my persona</button>
+</div>
+<div class="warn">This persona is a starting guess built from your own answers — it must be checked against real buyers. If the persona says one thing and your real customers say another, trust your customers. A persona is a tool for thinking, not a fact about the world.</div>
+<h2>How to use this generator</h2>
+<p>Answer the five questions above, in your own words. Describe your product in one line, say who buys it, describe their age and life stage, name the problem your product solves for them, and say where they spend time online. You do not need perfect answers — short, honest ones are better than long, guessed ones. If you are not sure about an answer, write what you think and mark it in your mind as something to check later.</p>
+<p>Tap Generate my persona and the generator builds a persona card: a first name chosen from a fixed list so the persona feels like a real person, the age and life you described, the job or role you described, the goal that follows from the problem, where to reach them, and a suggested message. The name is only a label to make the persona easy to talk about — the useful parts are the goal, the problem and the message.</p>
+<p>Tap Copy my persona to keep the card as plain text you can paste into your notes or share with a teammate. Your answers are saved on this device only, so you can come back and adjust them. Nothing you type is sent anywhere — the card is built in your browser.</p>
+<h2>What a customer persona is</h2>
+<p>A customer persona is a short, written picture of one ideal buyer. It has a name, an age, a job, a goal, a problem, and a note about where to find them and what to say. It is not a real person — it is a summary of what your best buyers have in common, written as if it were one person, so that everyone on your team can picture the same buyer when they write a post or plan a product.</p>
+<p>The point of a persona is to make decisions easier. When you are choosing between two headlines, ask which one your persona would click. When you are choosing a channel, ask where your persona spends time. When you are setting a price, ask what your persona can afford and what they would compare it with. Without a persona, every decision is a guess. With one, every decision has a test: does this fit the person we serve?</p>
+<p>A persona is built from what you know, not from what you wish. The best personas come from real conversations with real buyers — the words they use, the problems they describe, the places they go. A persona built from imagination alone is still useful as a starting guess, but it must be checked against real people as soon as you can.</p>
+<h2>Why one persona beats five vague ones</h2>
+<p>It is tempting to build a persona for everyone who might buy: the young buyer, the old buyer, the rich buyer, the careful buyer, the buyer in a hurry. Five personas feel thorough, but in practice they cancel each other out — every decision fits one persona and breaks another, and you end up back where you started, guessing.</p>
+<p>One clear persona is stronger because it forces a choice. When you describe one person well, you describe the buyer who matters most, and the message that works for that buyer usually works for the people around them too. A bakery whose persona is a busy parent buying a birthday cake will write posts that also appeal to grandparents, colleagues and friends — because the message is about a real need, not about a demographic label.</p>
+<p>Start with one persona. Use it for a month. If you find a second group of buyers who clearly need a different message, build a second persona then, with real evidence behind it. One persona you use every day is worth ten personas sitting in a file nobody opens.</p>
+<h2>How to check a persona against real customers</h2>
+<p>A persona is a guess until real buyers confirm it. The simplest check is a conversation: ask five buyers what problem your product solved for them, where they first heard about you, and what almost stopped them buying. If their answers match the persona, the persona is good. If three out of five say something different, change the persona — the buyers are right and the persona is wrong.</p>
+<p>Watch what buyers do, not just what they say. If the persona says buyers find you through search, but your messages mostly come from a social app, the channel is wrong. If the persona says price is the main worry, but nobody asks about price and everyone asks about delivery time, the problem is wrong. Behaviour is the honest check, and it is usually easy to see.</p>
+<p>Review the persona every few months. Buyers change, products change, and a persona written a year ago may describe a buyer who no longer exists. A ten-minute review — does this still match the people who actually buy? — keeps the persona honest. A persona that never changes is usually a persona nobody looks at.</p>
+<h2>Worked example: a bakery</h2>
+<p>Sara runs a small bakery. Her product: celebration cakes made to order. Who buys them: parents and grandparents ordering cakes for birthdays. Their age and life: mostly 30 to 55, busy, planning a party around work and school. Their problem: they want a cake that looks special and tastes good, without spending a whole day baking or worrying it will arrive late. Where they spend time online: a local social group and photo sharing apps.</p>
+<p>The generator builds a persona: Maya, 38, a working parent planning her daughter's birthday. Her goal is a cake that makes the party feel special. Her problem is time — she has none to bake, and she worries about ordering from a stranger. The message that works is simple: order by Thursday, collect on Saturday, and see photos of the cakes other parents ordered.</p>
+<p>With this persona, Sara's decisions get easier. Her posts show cakes at real parties, not cakes on a white background. Her ordering page answers the two worries first: when to order, and when to collect. And she knows where to post — the local group where parents already talk about parties. The persona did not invent any of this; it organised what Sara already knew into one picture she could use.</p>
+<h2>Worked example: a tutor</h2>
+<p>David teaches maths online to school students. His product: one-to-one online lessons. Who buys them: parents of students aged 12 to 17 who are struggling with maths or preparing for an exam. Their age and life: mostly 35 to 50, working, worried about their child's grades. Their problem: they can see their child falling behind, they do not have time to help with homework themselves, and they are unsure which tutor to trust. Where they spend time online: search results and parent groups.</p>
+<p>The generator builds a persona: Arjun, 42, a working parent whose son is two grades behind in maths. His goal is to see his son confident again before the exam. His problem is trust — he has tried a tutor before who cancelled often. The message that works is plain: a free first lesson, a fixed weekly time, and a short progress note after every month.</p>
+<p>David uses this persona to fix his page. The first line now says what parents actually want to hear — a free first lesson and a fixed time — instead of listing his qualifications. He adds a short note about how he reports progress, because that is the worry the persona names. Nothing about his teaching changed; only the message did, and the message is what parents read first.</p>
+<h2>Common mistakes</h2>
+<p>The first mistake is building a persona from imagination alone and never checking it. A persona that has never met a real buyer is a story, not a tool. The second mistake is making the persona too detailed in the wrong places: a favourite colour, a pet's name, a dream holiday. Those details feel real but change no decision. What matters is the goal, the problem, the budget and where to reach them.</p>
+<p>The third mistake is describing the buyer you wish you had instead of the buyer you actually have. If your real buyers are careful with money, a persona that loves luxury will lead you to write messages nobody answers. The fourth mistake is one persona for everyone — a persona so broad it fits nobody. If your persona could describe half the population, it is not a persona, it is a crowd.</p>
+<p>The fifth mistake is building the persona and then never using it. A persona earns its keep only when it is in front of you while you write, while you choose a channel, while you set a price. Print it, pin it, keep it in your notes — and when a decision is hard, ask the persona. That is the whole job it exists to do.</p>
+<h2>What this generator cannot do</h2>
+<p>This generator cannot interview your buyers for you. It organises what you tell it, and the quality of the persona depends entirely on the quality of your answers. If your answers are guesses, the persona is a guess — an organised guess, but a guess all the same. The conversations that make a persona true are yours to have.</p>
+<p>It also cannot tell you how many buyers like this persona exist, or how much they will spend. It does not connect to any data about real people, and it does not predict sales. And it cannot choose your product or your price: those decisions need your own judgment, your own costs, and your own buyers. What it can do is take what you already know and turn it into one clear picture — and that picture, used honestly, makes every marketing decision that follows a little bit easier.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is a customer persona?</h3><p>A customer persona is a short, written picture of one ideal buyer: a name, an age, a job, a goal, a problem, and a note about where to find them and what to say. It is not a real person — it is a summary of what your best buyers have in common, written as one person so your whole team can picture the same buyer.</p></div>
+<div class="faq"><h3>How many personas do I need?</h3><p>Start with one. One clear persona forces a choice and makes decisions easier, while five vague personas cancel each other out. Use the first persona for a month, and only build a second one if you find a group of buyers who clearly need a different message, with real evidence behind it.</p></div>
+<div class="faq"><h3>What if I do not know my customers yet?</h3><p>Write your best guess, and mark it as a guess. A persona built from what you think is still useful as a starting point — it gives you something to test. Then talk to your first buyers as soon as you can, and change the persona to match what they actually say. The buyers are always right and the persona is always a draft.</p></div>
+<div class="faq"><h3>How do I use a persona in real marketing?</h3><p>Keep it in front of you while you work. When you write a post, ask whether your persona would stop and read it. When you choose a channel, ask where your persona spends time. When you set a price, ask what your persona can afford. The persona is a test for every decision: does this fit the person we serve?</p></div>
+<div class="faq"><h3>Can a persona be wrong?</h3><p>Yes, and most first personas are partly wrong. That is normal — a persona is a guess built from what you know today. Check it against real buyers by asking them what problem you solved, where they found you, and what almost stopped them buying. If their answers differ from the persona, change the persona.</p></div>
+<div class="faq"><h3>Should the persona be a real person?</h3><p>No. A persona is a summary of what your best buyers have in common, not a description of one real customer. The name is only a label to make the persona easy to talk about. Never write a real customer&#x27;s private details into a persona, and never share a persona that could identify a real person.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/marketing-campaign-planner/">Marketing Campaign Planner</a> · <a href="https://noryvello.github.io/marketing-funnel-builder/">Marketing Funnel Builder</a> · <a href="https://noryvello.github.io/ab-testing-planner/">A/B Testing Planner</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function copyText(text, btn){
+  function done(){ if(btn){ var old=btn.getAttribute('data-label')||btn.textContent; btn.textContent='Copied!'; setTimeout(function(){ btn.textContent=old; },2000); } }
+  function fallback(){
+    var ta=document.createElement('textarea');
+    ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta); done();
+  }
+  if (typeof navigator!=='undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else { fallback(); }
+}
+function el(id){ return (typeof document!=='undefined' && document.getElementById) ? document.getElementById(id) : null; }
+function show(node){ if(node) node.style.display='block'; }
+function saveLS(key, val){ try{ if(typeof localStorage!=='undefined') localStorage.setItem(key, JSON.stringify(val)); }catch(e){} }
+function loadLS(key){ try{ if(typeof localStorage!=='undefined'){ var v=localStorage.getItem(key); return v ? JSON.parse(v) : null; } }catch(e){} return null; }
+function fmtDate(iso){
+  if(!iso) return '';
+  var p=iso.split('-'); if(p.length!==3) return iso;
+  var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var m=parseInt(p[1],10);
+  return p[2].replace(/^0/,'')+' '+months[m-1]+' '+p[0];
+}
+
+
+var CP_NAMES = ['Maya','Arjun','Sara','Tom','Lena','Omar','Priya','Dan','Nina','Sam','Aisha','Leo'];
+function cpHash(s){
+  var h = 0;
+  for (var i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) % 1000003; }
+  return h;
+}
+function cpPickName(seed){
+  if (!seed) return CP_NAMES[0];
+  return CP_NAMES[cpHash(seed) % CP_NAMES.length];
+}
+function cpBuildPersona(inp){
+  var name = cpPickName((inp.product || '') + '|' + (inp.buyer || ''));
+  var goal = 'Find a simple way to solve this: ' + inp.problem;
+  var message = 'A clear message for ' + name + ' is: "' + inp.product +
+    ' — made for people like you, who need ' + inp.problem + '." Say it in plain words, and say where to start.';
+  return {name: name, product: inp.product, buyer: inp.buyer, ageLife: inp.ageLife,
+    problem: inp.problem, online: inp.online, goal: goal, message: message};
+}
+function cpPersonaText(p){
+  var lines = [];
+  lines.push('Customer persona — ' + p.name);
+  lines.push('Product: ' + p.product);
+  lines.push('Who buys it: ' + p.buyer);
+  lines.push('Age and life: ' + p.ageLife);
+  lines.push('Problem: ' + p.problem);
+  lines.push('Goal: ' + p.goal);
+  lines.push('Where to reach them: ' + p.online);
+  lines.push('Message that works: ' + p.message);
+  lines.push('This persona is a starting guess from your own answers — check it against real buyers.');
+  return lines.join('\n');
+}
+function cpValidate(inp){
+  var errs = [];
+  if (!inp.product || !inp.product.trim()) errs.push('Describe what you sell in one line.');
+  if (!inp.buyer || !inp.buyer.trim()) errs.push('Say who buys it.');
+  if (!inp.ageLife || !inp.ageLife.trim()) errs.push('Describe their age and life stage.');
+  if (!inp.problem || !inp.problem.trim()) errs.push('Name the problem your product solves for them.');
+  if (!inp.online) errs.push('Say where they spend time online.');
+  return errs;
+}
+window.NP = {NAMES: CP_NAMES, pickName: cpPickName, hash: cpHash,
+  buildPersona: cpBuildPersona, personaText: cpPersonaText, validate: cpValidate};
+if (typeof document !== 'undefined' && document.getElementById) {
+  var LS_KEY = 'np-customer-persona-generator';
+  var saved = loadLS(LS_KEY);
+  if (saved) {
+    if (saved.product && el('cp-product')) el('cp-product').value = saved.product;
+    if (saved.buyer && el('cp-buyer')) el('cp-buyer').value = saved.buyer;
+    if (saved.ageLife && el('cp-age')) el('cp-age').value = saved.ageLife;
+    if (saved.problem && el('cp-problem')) el('cp-problem').value = saved.problem;
+    if (saved.online && el('cp-online')) el('cp-online').value = saved.online;
+  }
+  var buildBtn = el('cp-build');
+  if (buildBtn) buildBtn.addEventListener('click', function(){
+    var inp = {product: el('cp-product').value, buyer: el('cp-buyer').value,
+      ageLife: el('cp-age').value, problem: el('cp-problem').value,
+      online: el('cp-online').value};
+    var errs = cpValidate(inp);
+    var out = el('cp-out');
+    var copyBtn = el('cp-copy');
+    if (errs.length) { out.textContent = errs.join('\n'); show(out); if (copyBtn) copyBtn.style.display = 'none'; return; }
+    saveLS(LS_KEY, inp);
+    var p = cpBuildPersona(inp);
+    var html = '<b>Customer persona — ' + esc(p.name) + '</b>\n';
+    html += 'Product: ' + esc(p.product) + '\n';
+    html += 'Who buys it: ' + esc(p.buyer) + '\n';
+    html += 'Age and life: ' + esc(p.ageLife) + '\n';
+    html += 'Problem: ' + esc(p.problem) + '\n';
+    html += 'Goal: ' + esc(p.goal) + '\n';
+    html += 'Where to reach them: ' + esc(p.online) + '\n\n';
+    html += '<b>Message that works</b>\n' + esc(p.message) + '\n\n';
+    html += 'This persona is a starting guess from your own answers — check it against real buyers.';
+    out.innerHTML = html;
+    show(out);
+    if (copyBtn) {
+      show(copyBtn);
+      copyBtn.onclick = function(){ copyText(cpPersonaText(p), copyBtn); };
+    }
+  });
+}
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

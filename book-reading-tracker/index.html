@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book Reading Tracker — Track Your Reading Free | Noryvello</title>
+<meta name="description" content="Track your reading free — books finished, pages read, reading goals and your next book, all on your device. No signup.">
+<link rel="canonical" href="https://noryvello.github.io/book-reading-tracker/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Book Reading Tracker — Track Your Reading Free">
+<meta property="og:description" content="Track your reading free — books finished, pages read, reading goals and your next book, all on your device.">
+<meta property="og:url" content="https://noryvello.github.io/book-reading-tracker/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;min-height:72px;margin-top:12px;padding:14px 20px;border:0;border-radius:12px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#fff;color:#4338ca;border:2px solid #4338ca}
+.calc input,.calc select,.calc textarea{min-height:56px;font-size:16px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-family:inherit;line-height:1.5}
+.calc table{width:100%;border-collapse:collapse;font-size:15px;margin-top:12px}
+.calc th,.calc td{padding:8px 6px;text-align:left;border-bottom:1px solid #e2e8f0;vertical-align:top}
+.calc th{font-size:14px;color:#475569}
+.calc .bar{height:14px;background:#e2e8f0;border-radius:7px;overflow:hidden;margin-top:6px}
+.calc .bar i{display:block;height:100%;background:#0d9488}
+.calc .row{display:flex;gap:10px;flex-wrap:wrap}
+.calc .row>*{flex:1 1 140px}
+.calc pre{white-space:pre-wrap;word-wrap:break-word;background:#fff;border:1px solid #cbd5e1;border-radius:8px;padding:12px;font-size:14.5px;line-height:1.55;max-height:420px;overflow:auto}
+.calc .small{font-size:14px;color:#64748b}
+table.guide{width:100%;border-collapse:collapse;font-size:15px;margin:10px 0}
+table.guide th,table.guide td{padding:8px 6px;text-align:left;border-bottom:1px solid #e2e8f0;vertical-align:top}
+table.guide th{font-size:14px;color:#475569}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where is my data saved?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In your browser, on this device only, using your browser's local storage. Nothing is sent to any server, there is no account, and nobody else can see your list. If you open this page in a different browser or on a different device, your list will not be there, because it never left the first device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many books should I aim for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start small: 12 books a year, one a month, is a strong goal for most readers, and it only takes about 10 pages a day. If you read very little last year, aim for 6 and enjoy beating it. You can raise the goal at any time once the habit is running — a finished goal builds confidence, while an impossible one builds a reason to quit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I track pages too?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every book has a pages-read number and a total, and the stats line adds up all your pages read across every book. Pages are often a better measure of progress than books, because a 600 page novel and a 150 page novella both count as one book, but they are very different amounts of reading."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I lose my phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your list is lost with it, because the list is saved on that device only and there is no cloud copy. That is why the Copy my list button matters: copy your list into your notes every now and then, and a lost phone costs you a list you can rebuild instead of a year of reading history you cannot."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I pick my next book?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Add books you want to read with the status want to read, and the tracker shows the first one as your read next. Pick by mood: a short easy book for a tired week, a long novel for a holiday. Keep a mix on the list — something light, something serious, something short — so there is always a book that fits the week you are in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I rate books?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is optional, but it helps. A quick star rating, given the day you finish, tells future you what past you loved, and it makes the list more useful when you recommend books to friends. Leave the rating at no rating for books you have not finished, or for books you simply do not want to judge."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Book Reading Tracker</h1>
+<p class="answer">Add the books you are reading, track pages and finished books, and set a yearly goal — everything is saved on your device, with no account and no sign-up. Your list stays private because it never leaves this browser.</p>
+<div class="calc">
+<label for="book-title">Book title</label>
+<input id="book-title" type="text" placeholder="The name of the book">
+<label for="book-author">Author</label>
+<input id="book-author" type="text" placeholder="Who wrote it">
+<div class="row">
+<div>
+<label for="book-total">Total pages</label>
+<input id="book-total" type="number" min="1" step="1" placeholder="300">
+</div>
+<div>
+<label for="book-read">Pages read</label>
+<input id="book-read" type="number" min="0" step="1" placeholder="0">
+</div>
+</div>
+<div class="row">
+<div>
+<label for="book-status">Status</label>
+<select id="book-status">
+<option value="reading">Reading</option>
+<option value="finished">Finished</option>
+<option value="want to read">Want to read</option>
+</select>
+</div>
+<div>
+<label for="book-rating">Rating</label>
+<select id="book-rating">
+<option value="0">No rating</option>
+<option value="1">1 star</option>
+<option value="2">2 stars</option>
+<option value="3">3 stars</option>
+<option value="4">4 stars</option>
+<option value="5">5 stars</option>
+</select>
+</div>
+</div>
+<button id="add-book" type="button">Add book</button>
+<p class="small" id="book-msg"></p>
+<label for="goal-books">Books goal this year</label>
+<input id="goal-books" type="number" min="0" step="1" placeholder="12">
+<button id="save-goal" class="secondary" type="button">Save goal</button>
+<div class="out" id="book-stats"></div>
+<div class="steps" id="read-next"></div>
+<div id="book-list"></div>
+<button id="copy-list" class="secondary" type="button">Copy my list</button>
+<p class="small">Your list is saved in this browser, on this device only. Nothing is sent anywhere and there is no account.</p>
+</div>
+<div class="warn">Your reading list is saved on this device only, in your browser. If you lose your phone, clear your browser data or switch devices, the list is gone — use the Copy my list button to keep a backup.</div>
+<h2>How to use the reading tracker</h2>
+<p>Start by adding a book you are reading now. Type the title and the author, then the total pages and how many pages you have read so far. Choose a status — reading, finished, or want to read — and add a rating if you like, from 1 to 5 stars, or leave it at no rating. Press Add book and the book joins your list with a progress bar showing how far through it you are. You can add as many books as you want, including ones you have not started yet.</p>
+<p>When you finish a reading session, update your progress. Each book in the list has its own pages-read box and an Update button: type the new page number and press Update, and the progress bar moves at once. If your pages read reach the total pages, the book is marked finished for you. If you typed a number by mistake, just update it again — the tracker always uses your latest number, and it never lets pages read go above the total.</p>
+<p>Set a yearly goal in the goal box: type how many books you want to finish this year and press Save goal. The stats line above your list shows your finished books, the books you are reading, your total pages read, and your goal progress as a percentage. The read-next line points to the first book on your want-to-read list, so you always know what to pick up when you finish a book. And the Copy my list button copies your whole list as plain text, which is handy for a backup — your list lives in this browser only, so a copied backup is the only copy outside this device.</p>
+<h2>Setting a reading goal that sticks</h2>
+<p>Most reading goals fail because they are set in books per year, which is a number you can only check at the end of December. A goal of 24 books sounds exciting in January and hopeless by June, because there is no daily step to follow. A pages-per-day goal works better: 10 pages a day is about 3,650 pages a year, which is roughly 12 average books, and it takes most people 15 to 20 minutes. Ten pages is small enough to do on a tired evening and big enough to add up to a real year of reading.</p>
+<p>Start smaller than you think you should. If you read nothing last year, a goal of 6 books beats a goal of 24, because finishing 6 feels like a win and missing 24 feels like a failure — and the feeling decides whether you try again next year. You can always raise the goal mid-year once the habit is running. The tracker shows your goal progress as a percentage, so a small goal also gives you the pleasure of watching the number climb early, which keeps you going.</p>
+<p>Tie reading to a moment that already exists in your day. Ten pages with morning tea, ten pages on the bus, or ten pages before bed all work, because the trigger is already there. Keep the book where the moment happens: on the pillow, in your bag, or beside the kettle. And if you miss a day, do not try to catch up by doubling the next day — just read the normal amount. A habit survives missed days; it dies from guilt and from catch-up sessions that feel like punishment.</p>
+<h2>How to pick your next book</h2>
+<p>The want-to-read status is the heart of this tracker. Whenever someone recommends a book, or you hear about one you like the sound of, add it with the status want to read, even if you will not start it for months. Your read-next list then becomes a shelf of your own choosing, and the read-next line at the top of the tracker always shows the first book on it. When you finish a book, you never face an empty evening wondering what to read next.</p>
+<p>Pick by mood, not by duty. A tired week calls for a short, easy book; a holiday calls for the long novel you have been saving. It helps to keep a mix on the list: something light, something serious, something short, something by an author you have never tried. If every book on your list feels like homework, the list is the problem, not you — add something fun and move it to the top by deleting and re-adding it, since the read-next line shows the first want-to-read book in your list.</p>
+<p>And give yourself permission to abandon a book. A book you hate at page 50 rarely becomes a book you love at page 300, and the hours spent finishing it are hours stolen from a book you would enjoy. Delete it from the list without guilt, or leave it at its last page and move on. The tracker counts finished books, not suffered ones, and your goal is better served by a book you love than by a book you endured.</p>
+<h2>A worked example: 12 books in a year, month by month</h2>
+<p>Here is a realistic plan for 12 books in a year — one a month, with room for real life. The plan assumes an average book of about 300 pages, which means roughly 3,500 pages across the year, or about 10 pages a day. Some months carry two shorter books, and one busy month carries none at all, because a plan that pretends every month is equal is a plan that breaks in the first busy month.</p>
+<table class="guide">
+<tr><th>Month</th><th>Books</th><th>Pages</th><th>Notes</th></tr>
+<tr><td>January</td><td>1</td><td>300</td><td>Start with a book you already own</td></tr>
+<tr><td>February</td><td>1</td><td>300</td><td>A short book for a short month</td></tr>
+<tr><td>March</td><td>1</td><td>300</td><td>Try a new author</td></tr>
+<tr><td>April</td><td>1</td><td>300</td><td>Something light for spring</td></tr>
+<tr><td>May</td><td>1</td><td>300</td><td>A book someone recommended</td></tr>
+<tr><td>June</td><td>1</td><td>300</td><td>A long novel for long evenings</td></tr>
+<tr><td>July</td><td>2</td><td>500</td><td>Holiday reading, two shorter books</td></tr>
+<tr><td>August</td><td>1</td><td>300</td><td>A book you have been meaning to read</td></tr>
+<tr><td>September</td><td>1</td><td>300</td><td>Back to routine, one steady book</td></tr>
+<tr><td>October</td><td>1</td><td>300</td><td>A book from your want-to-read list</td></tr>
+<tr><td>November</td><td>0</td><td>0</td><td>Busy month, no pressure</td></tr>
+<tr><td>December</td><td>1</td><td>300</td><td>A favourite to end the year</td></tr>
+<tr><td><strong>Whole year</strong></td><td><strong>12</strong></td><td><strong>3,500</strong></td><td><strong>About 10 pages a day</strong></td></tr>
+</table>
+<p>The table adds up to 12 books and 3,500 pages, which is about 10 pages a day on average — and that is the point. Ten pages a day is a bus ride, a lunch break, or twenty minutes before sleep. It is also forgiving: if you read 20 pages on a free Sunday, you have bought yourself a day off. The tracker makes this visible, because the stats line shows your total pages read growing week by week, long before the finished-books count moves.</p>
+<p>Notice what the plan does not do: it never asks for a heroic month, and it leaves November empty on purpose. A plan with slack in it survives real life; a plan without slack breaks at the first busy week, and a broken plan usually means a stopped habit. If you finish the year on 10 books instead of 12, the tracker still shows 10 finished books and thousands of pages read — a year of reading by any honest measure.</p>
+<h2>Common mistakes that break a reading habit</h2>
+<ul>
+<li><strong>A goal that is too big.</strong> A goal of 50 books sounds impressive and feels crushing by March. Start with a number you can beat, then raise it next year. A finished goal builds a habit; a missed goal builds a reason to quit.</li>
+<li><strong>Tracking every page.</strong> Updating the tracker after every chapter turns reading into admin. Update once a day, or once a week, and let the reading itself stay enjoyable. The tracker is a mirror, not a manager.</li>
+<li><strong>Quitting after one missed week.</strong> A missed week is not a failed year. Readers who miss a week and return finish far more books than readers who quit because the streak broke. The tracker has no streak to break — your books and pages are still there when you come back.</li>
+<li><strong>Comparing yourself with other readers.</strong> Someone else's 60 books a year says nothing about your life, your job, or your reading speed. Compare this year with your last year, and let the stats line show your own progress.</li>
+<li><strong>Forcing yourself through boring books.</strong> A book you dread is a book that trains you to avoid reading. Abandon it, pick something you want to read, and let the habit grow on books you enjoy.</li>
+<li><strong>Never backing up the list.</strong> The list lives in this browser only. Use the Copy my list button now and then and paste the text into your notes, so a lost phone or a cleared browser does not erase a year of reading history.</li>
+</ul>
+<h2>What this tracker cannot do</h2>
+<p>This tracker keeps your list on one device, in one browser. It does not sync to your other devices, it does not back itself up to the cloud, and it cannot recover your list if the browser data is cleared. That is the price of a tracker with no account and no sign-up: your data stays private because it never leaves your device, and keeping a backup is your job, not ours.</p>
+<p>It also cannot recommend books, sell books, or tell you what to read next beyond showing your own want-to-read list. There are no reviews, no star ratings from other readers, and no social features — the only ratings in the tracker are the ones you give. And it cannot make you read: it can show your progress, remind you of your goal, and keep your list tidy, but the ten pages a day are yours to do. What it does well is simple: a clear list, honest numbers, and a goal you can watch yourself reach.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Where is my data saved?</h3><p>In your browser, on this device only, using your browser's local storage. Nothing is sent to any server, there is no account, and nobody else can see your list. If you open this page in a different browser or on a different device, your list will not be there, because it never left the first device.</p></div>
+<div class="faq"><h3>How many books should I aim for?</h3><p>Start small: 12 books a year, one a month, is a strong goal for most readers, and it only takes about 10 pages a day. If you read very little last year, aim for 6 and enjoy beating it. You can raise the goal at any time once the habit is running — a finished goal builds confidence, while an impossible one builds a reason to quit.</p></div>
+<div class="faq"><h3>Can I track pages too?</h3><p>Yes. Every book has a pages-read number and a total, and the stats line adds up all your pages read across every book. Pages are often a better measure of progress than books, because a 600 page novel and a 150 page novella both count as one book, but they are very different amounts of reading.</p></div>
+<div class="faq"><h3>What if I lose my phone?</h3><p>Your list is lost with it, because the list is saved on that device only and there is no cloud copy. That is why the Copy my list button matters: copy your list into your notes every now and then, and a lost phone costs you a list you can rebuild instead of a year of reading history you cannot.</p></div>
+<div class="faq"><h3>How do I pick my next book?</h3><p>Add books you want to read with the status want to read, and the tracker shows the first one as your read next. Pick by mood: a short easy book for a tired week, a long novel for a holiday. Keep a mix on the list — something light, something serious, something short — so there is always a book that fits the week you are in.</p></div>
+<div class="faq"><h3>Should I rate books?</h3><p>It is optional, but it helps. A quick star rating, given the day you finish, tells future you what past you loved, and it makes the list more useful when you recommend books to friends. Leave the rating at no rating for books you have not finished, or for books you simply do not want to judge.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/food-nutrition-database/">Food Nutrition Database</a> · <a href="https://noryvello.github.io/real-estate-listing-directory/">Real Estate Listing Directory</a> · <a href="https://noryvello.github.io/periodic-table-explorer/">Periodic Table Explorer</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+(function(){
+var KEY = "np-book-reading-tracker";
+function validateBook(book){
+  if(!book || typeof book.title !== "string" || !book.title.trim()){
+    return "Please enter a book title.";
+  }
+  if(typeof book.totalPages !== "number" || !isFinite(book.totalPages) || book.totalPages <= 0){
+    return "Total pages must be a positive number.";
+  }
+  if(typeof book.pagesRead !== "number" || !isFinite(book.pagesRead) ||
+     book.pagesRead < 0 || book.pagesRead > book.totalPages){
+    return "Pages read must be between 0 and the total pages.";
+  }
+  if(typeof book.rating !== "number" || !isFinite(book.rating) || book.rating < 0 || book.rating > 5){
+    return "Rating must be between 0 and 5.";
+  }
+  return "";
+}
+function addBook(books, book){
+  return books.concat([book]);
+}
+function removeBook(books, id){
+  return books.filter(function(b){ return b.id !== id; });
+}
+function updateProgress(books, id, pagesRead){
+  return books.map(function(b){
+    if(b.id !== id) return b;
+    var total = b.totalPages;
+    var p = pagesRead;
+    if(typeof p !== "number" || !isFinite(p)) p = 0;
+    if(p < 0) p = 0;
+    if(p > total) p = total;
+    var next = {id: b.id, title: b.title, author: b.author, totalPages: b.totalPages,
+      pagesRead: p, status: b.status, rating: b.rating};
+    if(p >= total && total > 0) next.status = "finished";
+    return next;
+  });
+}
+function progressPct(book){
+  if(!book || typeof book.totalPages !== "number" || book.totalPages <= 0) return 0;
+  var pct = Math.round(book.pagesRead / book.totalPages * 100);
+  if(pct < 0) pct = 0;
+  if(pct > 100) pct = 100;
+  return pct;
+}
+function computeStats(books, goalBooks){
+  var finished = 0, reading = 0, wantToRead = 0, pagesRead = 0;
+  books.forEach(function(b){
+    if(b.status === "finished") finished++;
+    else if(b.status === "reading") reading++;
+    else if(b.status === "want to read") wantToRead++;
+    pagesRead += (typeof b.pagesRead === "number" ? b.pagesRead : 0);
+  });
+  var goal = (typeof goalBooks === "number" && isFinite(goalBooks)) ? goalBooks : 0;
+  var goalPct = goal > 0 ? Math.round(finished / goal * 100) : 0;
+  return {total: books.length, finished: finished, reading: reading,
+    wantToRead: wantToRead, pagesRead: pagesRead, goalBooks: goal, goalPct: goalPct};
+}
+function readNext(books){
+  for(var i = 0; i < books.length; i++){
+    if(books[i].status === "want to read") return books[i];
+  }
+  return null;
+}
+function listText(books){
+  return books.map(function(b){
+    return b.title + " by " + b.author + " \u2014 " + b.status + ", " +
+      b.pagesRead + "/" + b.totalPages + " pages";
+  }).join("\n");
+}
+window.NP = {KEY: KEY, validateBook: validateBook, addBook: addBook,
+  removeBook: removeBook, updateProgress: updateProgress, progressPct: progressPct,
+  computeStats: computeStats, readNext: readNext, listText: listText};
+if(typeof document !== "undefined" && document.addEventListener){
+  document.addEventListener("DOMContentLoaded", function(){
+    var state = {books: [], goalBooks: 0};
+    function load(){
+      try{
+        var raw = localStorage.getItem(KEY);
+        if(raw){
+          var parsed = JSON.parse(raw);
+          if(parsed && Array.isArray(parsed.books)) state.books = parsed.books;
+          if(parsed && typeof parsed.goalBooks === "number") state.goalBooks = parsed.goalBooks;
+        }
+      }catch(e){}
+    }
+    function save(){
+      try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){}
+    }
+    function newId(){
+      return "b" + Date.now().toString(36) + Math.floor(Math.random() * 1000);
+    }
+    var statsEl = document.getElementById("book-stats");
+    var nextEl = document.getElementById("read-next");
+    var listEl = document.getElementById("book-list");
+    var msgEl = document.getElementById("book-msg");
+    var goalEl = document.getElementById("goal-books");
+    function render(){
+      var stats = computeStats(state.books, state.goalBooks);
+      statsEl.textContent = stats.finished + " finished \u00b7 " + stats.reading +
+        " reading \u00b7 " + stats.pagesRead + " pages read \u00b7 Goal: " +
+        stats.finished + " of " + stats.goalBooks + " books (" + stats.goalPct + "%)";
+      var next = readNext(state.books);
+      nextEl.textContent = next
+        ? "Read next: " + next.title + " by " + next.author + "."
+        : "Your read-next list is empty. Add a book with the status Want to read.";
+      listEl.innerHTML = "";
+      state.books.forEach(function(b){
+        var row = document.createElement("div");
+        row.setAttribute("data-id", b.id);
+        row.style.borderTop = "1px solid #e2e8f0";
+        row.style.paddingTop = "12px";
+        row.style.marginTop = "12px";
+        var head = document.createElement("p");
+        var stars = b.rating > 0 ? " \u00b7 " + b.rating + "/5 stars" : "";
+        head.textContent = b.title + " by " + b.author + " \u2014 " + b.status + stars;
+        head.style.fontWeight = "700";
+        var prog = document.createElement("p");
+        prog.className = "small";
+        prog.textContent = b.pagesRead + " of " + b.totalPages + " pages (" + progressPct(b) + "%)";
+        var bar = document.createElement("div");
+        bar.className = "bar";
+        var fill = document.createElement("i");
+        fill.style.width = progressPct(b) + "%";
+        bar.appendChild(fill);
+        var lbl = document.createElement("label");
+        lbl.textContent = "Pages read";
+        var upd = document.createElement("input");
+        upd.type = "number";
+        upd.min = "0";
+        upd.className = "update-pages";
+        upd.value = b.pagesRead;
+        lbl.appendChild(upd);
+        var upBtn = document.createElement("button");
+        upBtn.type = "button";
+        upBtn.className = "update-btn secondary";
+        upBtn.textContent = "Update";
+        upBtn.addEventListener("click", function(){
+          state.books = updateProgress(state.books, b.id, parseInt(upd.value, 10));
+          save();
+          render();
+        });
+        var delBtn = document.createElement("button");
+        delBtn.type = "button";
+        delBtn.className = "delete-btn secondary";
+        delBtn.textContent = "Delete";
+        delBtn.addEventListener("click", function(){
+          state.books = removeBook(state.books, b.id);
+          save();
+          render();
+        });
+        row.appendChild(head);
+        row.appendChild(prog);
+        row.appendChild(bar);
+        row.appendChild(lbl);
+        row.appendChild(upBtn);
+        row.appendChild(delBtn);
+        listEl.appendChild(row);
+      });
+    }
+    document.getElementById("add-book").addEventListener("click", function(){
+      var book = {
+        id: newId(),
+        title: document.getElementById("book-title").value.trim(),
+        author: document.getElementById("book-author").value.trim(),
+        totalPages: Number(document.getElementById("book-total").value),
+        pagesRead: Number(document.getElementById("book-read").value || 0),
+        status: document.getElementById("book-status").value,
+        rating: Number(document.getElementById("book-rating").value)
+      };
+      var err = validateBook(book);
+      if(err){
+        msgEl.textContent = err;
+        return;
+      }
+      if(book.pagesRead >= book.totalPages && book.totalPages > 0) book.status = "finished";
+      state.books = addBook(state.books, book);
+      save();
+      msgEl.textContent = "Book added.";
+      document.getElementById("book-title").value = "";
+      document.getElementById("book-author").value = "";
+      document.getElementById("book-total").value = "";
+      document.getElementById("book-read").value = "";
+      render();
+    });
+    document.getElementById("save-goal").addEventListener("click", function(){
+      var g = parseInt(goalEl.value, 10);
+      state.goalBooks = (isNaN(g) || g < 0) ? 0 : g;
+      save();
+      render();
+    });
+    document.getElementById("copy-list").addEventListener("click", function(){
+      var btn = document.getElementById("copy-list");
+      var text = listText(state.books);
+      if(!text){ return; }
+      function done(){ btn.textContent = "Copied!"; }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done, done);
+      } else {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand("copy"); } catch(e) {}
+        document.body.removeChild(ta);
+        done();
+      }
+    });
+    load();
+    if(state.goalBooks > 0) goalEl.value = state.goalBooks;
+    render();
+  });
+}
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

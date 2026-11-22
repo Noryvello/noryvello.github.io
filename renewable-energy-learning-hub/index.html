@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Renewable Energy Learning Hub — Solar, Wind and Water Power Explained Simply | Noryvello</title>
+<meta name="description" content="Free renewable energy learning hub — solar, wind, hydro and more, explained in plain words with real examples. No signup, phone friendly.">
+<link rel="canonical" href="https://noryvello.github.io/renewable-energy-learning-hub/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Renewable Energy Learning Hub — Solar, Wind and Water Power Explained Simply">
+<meta property="og:description" content="Solar, wind, hydro, geothermal, biomass and tidal power explained in plain words, with a comparison table and a 10-question self-check quiz.">
+<meta property="og:url" content="https://noryvello.github.io/renewable-energy-learning-hub/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;min-height:72px;margin-top:14px;padding:12px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#fff;color:#4338ca;border:2px solid #4338ca}
+.calc input,.calc select{min-height:72px}
+.calc textarea{width:100%;min-height:72px;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:15px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef2ff}
+.tscroll{overflow-x:auto;margin:14px 0}
+.tscroll table{min-width:640px}
+.q{font-size:18px;font-weight:700;margin:12px 0 4px}
+.opt{display:block;width:100%;text-align:left;margin:8px 0}
+.small{font-size:14px;color:#64748b}
+.feedback{font-size:15px;margin:6px 0 14px;padding:10px 12px;border-radius:8px;background:#f1f5f9}
+.feedback.good{background:#dcfce7}
+.feedback.bad{background:#fee2e2}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Renewable Energy Learning Hub</h1>
+<p class="answer">Renewable energy comes from sources that nature replaces — sunlight, wind, flowing water, heat from the earth and plants. This hub explains each type in plain words, compares them side by side, and ends with a 10-question quiz to check what you learned. All costs and figures are typical ranges, and they change by country and year.</p>
+<div class="calc">
+<p class="out" id="score">Score: 0 of 10 correct, 0 of 10 answered.</p>
+<p>Answer all 10 questions to check what you learned. Tap an option to see at once whether it is right, and why.</p>
+<div id="quiz"></div>
+<button id="copy-btn" type="button">Copy my result</button>
+</div>
+<div class="warn">Costs and figures on this page are typical ranges, labelled as such — they change by country and year, so check a local source before you plan a real project. This hub teaches how renewable energy works; it is not advice on buying or installing any system.</div>
+<h2>Solar power — electricity from sunlight</h2>
+<p>A solar panel is made of cells that turn light into electricity. When sunlight hits a cell, it pushes tiny charged particles into motion, and that motion is an electric current. Panels sit on roofs or in open fields, and they feed either a home, a battery or the grid. A panel works best in strong direct sun, but it still works on cloudy days — it uses daylight, not only sunshine — so solar power is used in grey northern countries as well as sunny ones. The set-up cost is the main barrier: panels, wiring and fitting cost a medium amount up front, and the running cost after that is very low, since sunlight is free and panels have no moving parts. The limits are clear: panels make no power at night, make less in winter, and need roof space or land. A typical home system pays for itself over several years through lower bills, but the exact time depends on the country, the roof and the price of electricity, so check a local source before planning one.</p>
+<h2>Wind power — electricity from moving air</h2>
+<p>A wind turbine works like a fan in reverse. Moving air pushes the blades around, the blades turn a shaft, and the shaft drives a generator that makes electricity. Turbines stand on hills, plains and coasts, and many newer ones stand offshore, where the wind is stronger and steadier. A single large turbine can power hundreds of homes when the wind blows well. The set-up cost is medium to high, and the running cost is low. The limits are the weather itself: a turbine makes nothing on a calm day, and it shuts down in very strong winds to protect itself. Turbines also need space and planning permission, and some people dislike how they look or sound. Even so, wind is one of the cheapest ways to make electricity in many windy countries.</p>
+<h2>Hydropower — electricity from flowing water</h2>
+<p>Hydropower uses water that is already moving. A dam holds back a river and lets water fall through turbines, or a small plant sits in a flowing stream. The falling water spins the turbine, and the turbine makes electricity. Big dams can make a lot of power and can store energy by holding water back and releasing it when demand is high. The set-up cost of a dam is high, but the running cost is low and a dam can last for decades. The limits are serious, though: a dam floods land, changes how a river flows, and affects fish, farms and homes downstream. Small run-of-river plants avoid most of that damage but make less power. Hydropower suits hilly countries with steady rainfall, and it does not suit flat, dry land.</p>
+<h2>Geothermal, biomass and tidal power</h2>
+<p>Geothermal energy is heat from inside the earth. In volcanic regions the ground is hot close to the surface, and that heat can warm homes directly or make steam to drive a turbine. It works day and night in any weather, which makes it steady, but it is only practical in some places. Biomass energy comes from plant and animal matter — wood, crops, farm waste and even rubbish. It can be burned for heat or turned into gas and fuel. It is renewable only if the plants grow back as fast as they are used, and burning still makes smoke, so it needs care. Tidal and wave power use the sea: tides rise and fall on a timetable, which makes them predictable, and waves carry a lot of energy. Both are still expensive to build, and the sea is a harsh place for machines, so they are used in only a few places today.</p>
+<h2>Comparing the energy types</h2>
+<p>No single type wins everywhere. Solar is simple and works on any roof, wind is strong where the air moves, hydro is steady where rivers run, and geothermal is steady where the ground is hot. The table below compares them in plain words. Costs are given as rough levels, not figures, because prices change by country and year — a solar panel in one country can cost twice what it costs in another.</p>
+<div class="tscroll"><table>
+<thead><tr><th>Energy type</th><th>How it works</th><th>Works best</th><th>Typical cost</th><th>Main limit</th></tr></thead>
+<tbody>
+<tr><td>Solar</td><td>Panels turn sunlight into electricity</td><td>Sunny roofs and open land, but works under cloud too</td><td>Medium set-up cost, very low running cost</td><td>No power at night; output falls in winter</td></tr>
+<tr><td>Wind</td><td>Turbines turn moving air into electricity</td><td>Coasts, hills and open plains with steady wind</td><td>Medium to high set-up cost, low running cost</td><td>Needs wind; stops in storms and calm weather</td></tr>
+<tr><td>Hydropower</td><td>Flowing or falling water spins a turbine</td><td>Rivers and hilly country with steady rainfall</td><td>High set-up cost for dams, low running cost</td><td>Needs a river; dams change the land and water</td></tr>
+<tr><td>Geothermal</td><td>Heat from inside the earth warms buildings or makes power</td><td>Volcanic regions and hot underground rock</td><td>High set-up cost, low running cost</td><td>Only practical in some places</td></tr>
+<tr><td>Biomass</td><td>Plant and animal matter is burned or turned into gas</td><td>Farms and forests with steady waste material</td><td>Low to medium set-up cost, steady fuel cost</td><td>Needs land and fuel; burning still makes smoke</td></tr>
+<tr><td>Tidal and wave</td><td>Tides and waves move turbines in the sea</td><td>Coasts with strong tides or waves</td><td>High set-up cost, low running cost</td><td>Few good sites; sea conditions are harsh</td></tr>
+</tbody>
+</table></div>
+<h2>Storing renewable energy</h2>
+<p>The hardest problem with solar and wind power is not making it — it is keeping it for later. The sun shines in the day and the wind blows when it wants, but people need power in the evening and on calm days. Batteries are the most familiar answer: a home battery stores the afternoon sun for the evening, and large batteries beside wind farms smooth out the ups and downs. Pumped water storage is the oldest large-scale answer — spare electricity pumps water uphill into a reservoir, and the water runs back down through turbines when power is needed. A third answer is the grid itself: linking regions together lets a windy coast supply a calm city, and lets a sunny desert supply a cloudy north. None of these is perfect — batteries are expensive, reservoirs need the right hills, and grids need planning — but storage is the part of renewable energy that is improving fastest, and it is what turns sunshine and wind from a sometimes-power into an always-power.</p>
+<h2>Renewable energy around the world</h2>
+<p>Different countries use what their land gives them. China, the United States and India have built some of the world's largest solar farms, using open land and strong sun. Denmark gets a large share of its electricity from wind turbines, many of them standing offshore in the North Sea. Norway makes most of its electricity from hydropower, thanks to steep mountains and heavy rainfall. Iceland heats most of its homes with geothermal energy from volcanic ground, and its hot water comes straight from the earth. Brazil has used sugar-cane ethanol as a vehicle fuel for decades, and Kenya generates a large share of its electricity from geothermal power in the Rift Valley. The lesson is the same everywhere: the best renewable energy is the one that fits the local weather, land and needs.</p>
+<h2>Three myths, corrected</h2>
+<p>Myth one: solar panels need desert sun. They work best in strong sun, but they still make useful power under cloud, and Germany — not a sunny country — was one of the first to build solar power at a large scale. Myth two: wind turbines never stop. They do stop: in very strong winds they shut down to protect themselves, and on calm days they make nothing at all. That is why wind power is usually paired with storage or other sources. Myth three: hydropower is always clean. The electricity itself is clean, but building a dam floods land, changes a river and uses large amounts of concrete, and a flooded valley can release greenhouse gases as plants rot underwater. Every energy type has a cost; the honest question is which cost is smallest for the power you need.</p>
+<h2>What this hub cannot do</h2>
+<p>This hub teaches how renewable energy works. It cannot tell you which system to buy, what it will cost at your address, or whether your roof or land suits it — those answers need a local installer and a look at your own home. Costs and figures here are typical ranges, and they change by country and year. If you are planning a real project, get two local quotes and check the rules in your area before you spend anything.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is renewable energy?</h3><p>Renewable energy comes from sources that nature replaces: sunlight, wind, flowing water, heat from inside the earth, and plants. Unlike coal, oil and gas, these sources do not run out when we use them, and making power from them usually makes far less pollution.</p></div>
+<div class="faq"><h3>Does solar work on cloudy days?</h3><p>Yes, but with less power. Solar panels use daylight, not only direct sunshine, so they keep working under cloud — typically at a lower output than on a clear day. They make no power at night, which is why homes with solar panels usually stay connected to the grid or use a battery.</p></div>
+<div class="faq"><h3>Is wind power reliable?</h3><p>Wind power is reliable in the sense that turbines work well when the wind blows, but the wind itself comes and goes. Turbines shut down in very strong winds and make nothing on calm days, so wind power is usually used alongside storage, other energy sources or a grid connection.</p></div>
+<div class="faq"><h3>What is the cheapest renewable energy?</h3><p>There is no single cheapest answer — it depends on the place. In sunny countries solar is often cheapest, in windy countries wind is often cheapest, and where rivers run, hydropower can be very cheap to run. Set-up costs, running costs and local prices all change the answer.</p></div>
+<div class="faq"><h3>Can a home run on renewables alone?</h3><p>It can, but it takes planning. A home needs enough solar panels or another source, plus a battery or a grid connection for nights and cloudy days, and good insulation so less energy is wasted. Many homes run partly on renewables and take the rest from the grid.</p></div>
+<div class="faq"><h3>What is the difference between renewable and clean energy?</h3><p>Renewable means the source is replaced by nature — sunlight, wind, water. Clean means making the power causes little or no pollution. Most renewables are also clean, but not all clean energy is renewable: nuclear power, for example, makes little air pollution but uses fuel that is mined and runs out.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/sustainable-product-directory/">Sustainable Product Directory</a> · <a href="https://noryvello.github.io/bird-species-explorer/">Bird Species Explorer</a> · <a href="https://noryvello.github.io/public-statistics-explorer/">Public Statistics Explorer</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is renewable energy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Renewable energy comes from sources that nature replaces: sunlight, wind, flowing water, heat from inside the earth, and plants. Unlike coal, oil and gas, these sources do not run out when we use them, and making power from them usually makes far less pollution."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does solar work on cloudy days?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but with less power. Solar panels use daylight, not only direct sunshine, so they keep working under cloud — typically at a lower output than on a clear day. They make no power at night, which is why homes with solar panels usually stay connected to the grid or use a battery."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is wind power reliable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wind power is reliable in the sense that turbines work well when the wind blows, but the wind itself comes and goes. Turbines shut down in very strong winds and make nothing on calm days, so wind power is usually used alongside storage, other energy sources or a grid connection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the cheapest renewable energy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no single cheapest answer — it depends on the place. In sunny countries solar is often cheapest, in windy countries wind is often cheapest, and where rivers run, hydropower can be very cheap to run. Set-up costs, running costs and local prices all change the answer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a home run on renewables alone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can, but it takes planning. A home needs enough solar panels or another source, plus a battery or a grid connection for nights and cloudy days, and good insulation so less energy is wasted. Many homes run partly on renewables and take the rest from the grid."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between renewable and clean energy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Renewable means the source is replaced by nature — sunlight, wind, water. Clean means making the power causes little or no pollution. Most renewables are also clean, but not all clean energy is renewable: nuclear power, for example, makes little air pollution but uses fuel that is mined and runs out."
+      }
+    }
+  ]
+}
+</script>
+<script>
+window.NP = {
+  QUIZ: [{"q": "Which of these is a renewable energy source?", "options": ["Sunlight", "Coal", "Natural gas", "Petrol"], "answer": 0, "why": "Sunlight is replaced every day; coal, gas and petrol take millions of years to form."}, {"q": "Do solar panels work on cloudy days?", "options": ["No, they stop completely", "Yes, but they make less power", "Only in summer", "Only near the equator"], "answer": 1, "why": "Panels use daylight, not only direct sun, so they still work under cloud — just with lower output."}, {"q": "What does a wind turbine do?", "options": ["Burns wind to make heat", "Turns moving air into electricity", "Stores wind for later", "Pumps water uphill"], "answer": 1, "why": "The blades spin a generator, which turns motion into electricity."}, {"q": "What is hydropower?", "options": ["Power from ocean waves only", "Electricity from flowing or falling water", "Power from hot springs", "Electricity from the moon"], "answer": 1, "why": "Flowing or falling water spins a turbine, usually at a dam or in a river."}, {"q": "Which energy source can work at night?", "options": ["Solar panels", "Wind turbines, when the wind blows", "Both equally", "Neither"], "answer": 1, "why": "Solar panels need daylight, but wind, water and geothermal energy do not depend on the sun being up."}, {"q": "What is geothermal energy?", "options": ["Heat from inside the earth", "Energy from seaweed", "Power from lightning", "Heat from compost"], "answer": 0, "why": "The earth's core is hot, and that heat can warm buildings or make electricity near volcanic areas."}, {"q": "What is biomass energy?", "options": ["Energy from plant and animal matter", "Energy from tides", "Energy from the sun stored in batteries", "Energy from falling rain"], "answer": 0, "why": "Wood, crops and farm waste can be burned or turned into gas for heat and power."}, {"q": "Why do renewable systems often need batteries or a grid connection?", "options": ["Sun and wind come and go", "Batteries make power cheaper", "The grid is always full", "Turbines need charging"], "answer": 0, "why": "Solar and wind power vary with weather and time of day, so storage or a grid link keeps supply steady."}, {"q": "Which of these is a real limit of wind power?", "options": ["It never works in winter", "It needs wind, and turbines stop in very strong winds", "It only works on mountains", "It uses water to run"], "answer": 1, "why": "Turbines shut down in storms to protect themselves, and calm days mean little power."}, {"q": "What is the main environmental cost of a large dam?", "options": ["It uses up the river", "It changes the river and floods land", "It makes the water salty", "It stops the rain"], "answer": 1, "why": "Dams flood valleys and change how a river flows, which affects fish, farms and homes downstream."}],
+  checkAnswer: function (qi, oi) {
+    var item = NP.QUIZ[qi];
+    return {correct: oi === item.answer, why: item.why};
+  },
+  scoreQuiz: function (answers) {
+    var s = 0;
+    for (var i = 0; i < NP.QUIZ.length; i++) {
+      if (answers[i] === NP.QUIZ[i].answer) s++;
+    }
+    return s;
+  },
+  resultText: function (score, total) {
+    return "Renewable energy quiz: " + score + " out of " + total + " correct.";
+  }
+};
+if (typeof document !== "undefined" && document.getElementById) {
+  var quizEl = document.getElementById("quiz");
+  var scoreEl = document.getElementById("score");
+  var copyBtn = document.getElementById("copy-btn");
+  var answers = [];
+  for (var i = 0; i < NP.QUIZ.length; i++) answers.push(-1);
+  function updateScore() {
+    var done = 0;
+    for (var i = 0; i < answers.length; i++) if (answers[i] !== -1) done++;
+    scoreEl.textContent = "Score: " + NP.scoreQuiz(answers) + " of " + NP.QUIZ.length + " correct, " + done + " of " + NP.QUIZ.length + " answered.";
+  }
+  NP.QUIZ.forEach(function (item, qi) {
+    var wrap = document.createElement("div");
+    var qp = document.createElement("p");
+    qp.className = "q";
+    qp.textContent = "Question " + (qi + 1) + ". " + item.q;
+    wrap.appendChild(qp);
+    var fb = document.createElement("p");
+    fb.className = "feedback";
+    fb.style.display = "none";
+    item.options.forEach(function (opt, oi) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "opt secondary";
+      b.textContent = opt;
+      b.addEventListener("click", function () {
+        if (answers[qi] !== -1) return;
+        answers[qi] = oi;
+        var r = NP.checkAnswer(qi, oi);
+        fb.textContent = (r.correct ? "Correct. " : "Not quite. ") + r.why;
+        fb.className = "feedback " + (r.correct ? "good" : "bad");
+        fb.style.display = "block";
+        b.className = "opt" + (r.correct ? "" : " secondary");
+        updateScore();
+      });
+      wrap.appendChild(b);
+    });
+    wrap.appendChild(fb);
+    quizEl.appendChild(wrap);
+  });
+  copyBtn.addEventListener("click", function () {
+    var text = NP.resultText(NP.scoreQuiz(answers), NP.QUIZ.length);
+    function done() {
+      copyBtn.textContent = "Copied!";
+      setTimeout(function () { copyBtn.textContent = "Copy my result"; }, 2000);
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+    if (typeof navigator !== "undefined" && navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  });
+  updateScore();
+}
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

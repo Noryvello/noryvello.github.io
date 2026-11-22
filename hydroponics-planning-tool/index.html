@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hydroponics Planning Tool | Noryvello</title>
+<meta name="description" content="Plan your first hydroponic garden: compare NFT, DWC, drip and wick systems, learn nutrient and water basics, and pick beginner crops that forgive mistakes.">
+<link rel="canonical" href="https://noryvello.github.io/hydroponics-planning-tool/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hydroponics Planning Tool">
+<meta property="og:description" content="Plan your first hydroponic garden: compare NFT, DWC, drip and wick systems, learn nutrient and water basics, and pick beginner crops that forgive mistakes.">
+<meta property="og:url" content="https://noryvello.github.io/hydroponics-planning-tool/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+table{width:100%;border-collapse:collapse;font-size:15px;margin:10px 0}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef2ff}
+.tbl{overflow-x:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Hydroponics Planning Tool</h1>
+<p class="answer">Hydroponics grows plants in nutrient-rich water instead of soil, with the roots held in a growing medium or left in the flowing solution. This guide compares the four main systems, walks through setup and nutrients, and shows which beginner crops are the most forgiving.</p>
+<div class="warn">Hydroponics takes patience and regular checks. No system guarantees a harvest: results depend on light, temperature, nutrients and care, so start small, follow the nutrient label exactly, and keep water and electricity safely apart.</div>
+<h2>What hydroponics is and how it works</h2>
+<p>Hydroponics is a way of growing plants without soil. The roots sit in water that carries dissolved nutrients, or in a light growing medium such as clay pebbles, rockwool or coconut coir that is kept wet with that water. The plant gets everything it needs from the solution, the light and the air, and the grower controls each of those things directly.</p>
+<p>Because the roots do not have to search through soil for food and water, the plant can put more energy into leaves, flowers and fruit. Many growers find that leafy crops grow faster in a hydroponic system than in a garden bed, and that the plants use less water overall, because the solution is recirculated instead of draining away into the ground. Those are real advantages, but they are not magic: a hydroponic plant still needs the right light, the right temperature and steady care, and it will still fail if any of those is badly wrong.</p>
+<p>The word hydroponics covers many different systems, from a single lettuce in a bucket of nutrient water to a greenhouse full of pipes. What they all share is the same idea: feed the roots directly, keep the water moving or oxygenated, and watch the solution. This guide is about planning, not selling. It compares the four most common systems, explains the setup checklist and the nutrient basics, and helps you pick a first system and a first crop that suit your space and your time.</p>
+<h2>The four main systems compared</h2>
+<p>Most home systems fall into four types. NFT, or nutrient film technique, pumps a thin film of nutrient solution along a sloping channel past the roots. DWC, or deep water culture, floats the plants on a reservoir of oxygenated solution with an air pump and air stone. A drip system sends solution through small tubes to each plant on a timer. A wick system is the simplest of all: a wick draws solution up from a reservoir into the growing medium by capillary action, with no pump at all.</p>
+<div class="tbl"><table><tr><th>System</th><th>How it works</th><th>Best for</th><th>Watch out for</th></tr><tr><td>NFT</td><td>A thin film of solution flows past the roots in a channel</td><td>Leafy greens and herbs in a row</td><td>A pump failure dries the roots fast</td></tr><tr><td>DWC</td><td>Roots hang in an oxygenated reservoir</td><td>Fast leafy growth, simple builds</td><td>Water temperature and oxygen matter</td></tr><tr><td>Drip</td><td>A timer drips solution to each plant</td><td>Larger plants and mixed crops</td><td>Emitters can clog; check them often</td></tr><tr><td>Wick</td><td>A wick pulls solution up into the medium</td><td>Small herbs and a first try</td><td>Slow delivery; not for thirsty plants</td></tr></table></div>
+<p>There is no single best system. NFT is efficient and popular for lettuce, but it depends on the pump running all the time, so a power cut can hurt the plants within hours. DWC is cheap and forgiving for leafy crops, and a single bucket with an air pump is a genuine first system. Drip systems suit bigger plants such as tomatoes and peppers, because each plant gets its own feed, but they have more parts to check. Wick systems are the cheapest and quietest, and a good way to learn the basics, but they cannot keep up with a thirsty fruiting plant.</p>
+<p>When you compare systems, think about what you will actually do every week. A system you enjoy checking will do better than a clever one you ignore. If you travel often, a larger reservoir and a simple system will forgive a missed day better than a small, fast-moving one.</p>
+<h2>Choosing your first system</h2>
+<p>Start with one question: what do you want to grow? Leafy greens and herbs are the easiest first crops in almost every system, and they are happy in NFT or DWC. If you want tomatoes, peppers or cucumbers, plan for a drip system or a large DWC bucket, because fruiting plants drink more and grow heavier. If you only have a windowsill, a small wick system with a couple of herb pots is a sensible start.</p>
+<p>Then think about space, light and budget. Indoors, you will need a grow light unless you have a very bright window, and the light is often the biggest cost of the whole setup. Outdoors, a system needs shelter from heavy rain, which dilutes the solution, and from strong sun, which heats it. A shaded corner of a balcony or a covered patio works well in many climates.</p>
+<ul><li>Pick one system and one or two crops for your first run, so you can learn without juggling too many variables.</li></ul>
+<h2>Setting up step by step</h2>
+<p>A calm, orderly setup saves weeks of trouble later. Work through the list in order, and check each step before you move on. Do not add plants until the system has run with plain water for a day and you are sure there are no leaks and the pump, timer and air stone all work.</p>
+<ol><li>Choose the spot. It needs light, a level surface, and a power point kept dry and well away from any water.</li></ol>
+<p>That last step matters more than it looks. When something goes wrong a month later, the log tells you what changed. When something goes right, the log tells you how to repeat it.</p>
+<h2>Nutrients and water basics</h2>
+<p>A hydroponic nutrient is a balanced mix of the minerals plants need: nitrogen, phosphorus and potassium first, then calcium, magnesium, sulphur and a set of trace elements. You buy it as a liquid or powder and mix it with water. Never guess the strength. The label gives a dose for a reason, and more is not better: too much nutrient burns the roots, too little starves the plant.</p>
+<p>Two numbers matter most. The first is pH, which tells you how acid or alkaline the solution is. Most hydroponic crops do best in slightly acid water, typically around pH 5.5 to 6.5, and the range on your nutrient label is the one to follow. A simple pH test kit or meter is enough to start. The second is the strength of the solution, often measured as EC, or electrical conductivity, which rises as more mineral salts dissolve. Again, the nutrient label gives the target range for the crop and the growth stage.</p>
+<p>Change the solution on a schedule, not when it looks dirty. A common routine is to top the reservoir up with plain water during the week and replace the whole solution every one to two weeks. As the plants drink, the balance of minerals changes, and a fresh mix resets it. If the water gets warm, smells bad or turns cloudy, change it straight away and clean the reservoir.</p>
+<p>Tap water is fine in most places, but very hard water or heavily chlorinated water can cause trouble. If you are unsure, let tap water stand uncovered for a day before mixing, and check the pH after mixing, not before. Rainwater is soft and works well, but collect it cleanly and keep it covered.</p>
+<h2>Light, air and temperature</h2>
+<p>Light is the engine of the whole system. Leafy greens need about twelve to fourteen hours of good light a day, and fruiting crops need more. A bright, unshaded window can work for herbs and lettuce, but most indoor growers add a grow light, set on a timer so the plants get a steady day length. Keep the light close enough to be bright but far enough not to scorch the leaves, and raise it as the plants grow.</p>
+<p>Air movement matters more than beginners expect. A gentle fan keeps the air fresh, strengthens the stems and reduces mould on damp leaves. In a closed room, open a window or run a small fan for part of the day. Outdoors, wind does the job, but shelter the plants from storms.</p>
+<ul><li>Keep the nutrient solution cool, roughly room temperature. Warm water holds less oxygen and encourages root problems.</li></ul>
+<h2>Beginner crops that forgive mistakes</h2>
+<p>The best first crops are fast, leafy and tolerant. Lettuce is the classic beginner hydroponic crop: it grows quickly, it is happy in NFT and DWC, and you can harvest leaves a few at a time. Basil, mint, parsley and coriander are all good in small systems, and they are useful in the kitchen, which makes the whole project feel worthwhile.</p>
+<p>Strawberries grow well in hydroponics and are a favourite second crop, though they want more light than lettuce and a little patience. Cherry tomatoes and peppers can work in a drip system or a large DWC bucket, but they are a bigger commitment: they grow tall, they drink heavily, and they need support and steady feeding. Root vegetables such as carrots and potatoes are poor choices for hydroponics, because they need soil to form properly.</p>
+<ul><li>Lettuce and salad leaves: fast, easy, happy in NFT or DWC.</li></ul>
+<h2>Common problems and what to check first</h2>
+<p>Most hydroponic problems have a short list of usual causes. Work through them in order before you change anything else, and change one thing at a time so you can tell what helped.</p>
+<ul><li>Yellow leaves: check the nutrient strength and the pH first. Both too much and too little feed can yellow a plant.</li></ul>
+<p>If a plant is badly affected, it is sometimes kinder to remove it and protect the rest of the crop than to nurse it along. A clean system and a fresh start beat a long struggle with a sick plant.</p>
+<h2>A simple weekly routine</h2>
+<p>Hydroponics rewards a short, regular routine more than occasional big efforts. Fifteen minutes a few times a week is enough for a small system.</p>
+<ol><li>Every day, glance at the plants and the water level. Top up with plain water if the level has dropped.</li></ol>
+<p>That is the whole job. A hydroponic garden is a small, living system, and the routine above is what keeps it alive. Start with one system, one or two crops and a notebook, and let the first harvest teach you what to grow next.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is the cheapest hydroponic system to start with?</h3><p>A wick system is the cheapest way to start, because it needs no pump, no timer and no electricity: a container, a wick and a growing medium are enough. A single-bucket deep water culture system is the next step up and still cheap, needing only an air pump and an air stone. Start small and add parts as you learn.</p></div><div class="faq"><h3>Do hydroponic plants grow faster than soil plants?</h3><p>Leafy crops often grow faster in hydroponics, because the roots get water and nutrients directly and do not have to search for them. The difference is real but not dramatic, and it depends on light, temperature and care. A well-tended soil bed can beat a neglected hydroponic system, so the grower matters more than the method.</p></div><div class="faq"><h3>How often should I change the nutrient solution?</h3><p>A common routine is to replace the whole solution every one to two weeks, topping up with plain water in between. As plants drink, the balance of minerals changes, so a fresh mix resets it. Change it sooner if the water smells bad, turns cloudy or gets very warm.</p></div><div class="faq"><h3>What pH should hydroponic water be?</h3><p>Most hydroponic crops do best in slightly acid water, typically around pH 5.5 to 6.5. The range on your nutrient label is the one to follow, because it matches the mix you are using. Check the pH a couple of times a week with a test kit or a meter, and adjust it slowly.</p></div><div class="faq"><h3>Can I grow hydroponics indoors without sunlight?</h3><p>Yes, with a grow light on a timer. Leafy greens need about twelve to fourteen hours of good light a day, and fruiting crops need more. A bright window can work for herbs and lettuce, but a grow light gives steady light all year and is usually the biggest single cost of an indoor setup.</p></div><div class="faq"><h3>Is hydroponic food safe to eat?</h3><p>Yes, when the system is kept clean and the nutrients are mixed as the label says. Wash leafy crops before eating, as you would with soil-grown food. Change the solution on schedule, keep the reservoir covered so light cannot reach the water, and never add anything to the solution that is not meant for food plants.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/crop-yield-estimator/">Crop Yield Estimator</a> · <a href="https://noryvello.github.io/garden-layout-planner/">Garden Layout Planner</a> · <a href="https://noryvello.github.io/plant-identification-guide/">Plant Identification Guide</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+</div>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the cheapest hydroponic system to start with?", "acceptedAnswer": {"@type": "Answer", "text": "A wick system is the cheapest way to start, because it needs no pump, no timer and no electricity: a container, a wick and a growing medium are enough. A single-bucket deep water culture system is the next step up and still cheap, needing only an air pump and an air stone. Start small and add parts as you learn."}}, {"@type": "Question", "name": "Do hydroponic plants grow faster than soil plants?", "acceptedAnswer": {"@type": "Answer", "text": "Leafy crops often grow faster in hydroponics, because the roots get water and nutrients directly and do not have to search for them. The difference is real but not dramatic, and it depends on light, temperature and care. A well-tended soil bed can beat a neglected hydroponic system, so the grower matters more than the method."}}, {"@type": "Question", "name": "How often should I change the nutrient solution?", "acceptedAnswer": {"@type": "Answer", "text": "A common routine is to replace the whole solution every one to two weeks, topping up with plain water in between. As plants drink, the balance of minerals changes, so a fresh mix resets it. Change it sooner if the water smells bad, turns cloudy or gets very warm."}}, {"@type": "Question", "name": "What pH should hydroponic water be?", "acceptedAnswer": {"@type": "Answer", "text": "Most hydroponic crops do best in slightly acid water, typically around pH 5.5 to 6.5. The range on your nutrient label is the one to follow, because it matches the mix you are using. Check the pH a couple of times a week with a test kit or a meter, and adjust it slowly."}}, {"@type": "Question", "name": "Can I grow hydroponics indoors without sunlight?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with a grow light on a timer. Leafy greens need about twelve to fourteen hours of good light a day, and fruiting crops need more. A bright window can work for herbs and lettuce, but a grow light gives steady light all year and is usually the biggest single cost of an indoor setup."}}, {"@type": "Question", "name": "Is hydroponic food safe to eat?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, when the system is kept clean and the nutrients are mixed as the label says. Wash leafy crops before eating, as you would with soil-grown food. Change the solution on schedule, keep the reservoir covered so light cannot reach the water, and never add anything to the solution that is not meant for food plants."}}]}</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

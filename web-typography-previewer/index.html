@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Typography Previewer — See How Fonts Look on a Real Page | Noryvello</title>
+<meta name="description" content="Free web typography previewer — try font sizes, line heights and pairings on a real sample page. No signup, phone friendly.">
+<link rel="canonical" href="https://noryvello.github.io/web-typography-previewer/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web Typography Previewer — See How Fonts Look on a Real Page">
+<meta property="og:description" content="Free web typography previewer — try font sizes, line heights and pairings on a real sample page. No signup, phone friendly.">
+<meta property="og:url" content="https://noryvello.github.io/web-typography-previewer/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What font size should body text be?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Body text should be at least 16 pixels on the web, and 17 or 18 pixels is comfortable for long reading on a phone. Smaller text forces readers to zoom or squint, and most of them leave instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many fonts should a page use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two fonts at most: one for headings and one for body text. A third font adds clutter, and a fourth makes the page look patched together. Use weight and size for variety instead of extra fonts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is line height?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Line height is the vertical space between lines of text, measured as a multiple of the font size. A line height of 1.6 means each line gets 60 percent extra space, which makes long text much easier to read."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does text look different on phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Phones have narrower screens, different default fonts and different screen sizes, so the same page reflows and can look quite different. Always check your typography at phone width, not only on a desktop monitor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Serif or sans-serif for body text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both can work. Sans-serif fonts such as Arial are usually easier on screens, especially small ones, while serif fonts such as Georgia suit long formal reading. Pick the one that fits your site and test it on a phone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I pick a heading font?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pick a heading font that contrasts with your body font: a serif heading over a sans-serif body, or a bold sans-serif heading over a serif body. Keep it clearly larger and bolder than the body text."
+      }
+    }
+  ]
+}
+</script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;min-height:72px;margin-top:14px;padding:16px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#e0e7ff;color:#1e293b}
+.calc input,.calc select,.calc textarea{min-height:72px;font-size:17px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;background:#fff;font-family:inherit}
+.tscroll{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef2ff}
+.opt{display:block;width:100%;text-align:left;margin:8px 0}
+.q{font-size:18px;font-weight:700;margin:12px 0}
+.small{font-size:14px;color:#64748b}
+.card{border:1px solid #cbd5e1;border-radius:12px;padding:12px 14px;margin:10px 0;background:rgba(255,255,255,.6)}
+.chip{display:inline-block;background:#eef2ff;border-radius:999px;padding:4px 12px;margin:2px;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Web Typography Previewer</h1>
+<p class="answer">Try font sizes, line heights and pairings on a real sample page before you change your site. Pick a heading font and a body font, adjust the sizes, and copy the settings when you are happy.</p>
+<div class="calc">
+<label for="hf">Heading font</label>
+<select id="hf">
+<option value="Georgia, 'Times New Roman', serif">Georgia (serif)</option>
+<option value="Arial, Helvetica, sans-serif">Arial (sans-serif)</option>
+<option value="'Times New Roman', Times, serif">Times New Roman (serif)</option>
+<option value="Verdana, Geneva, sans-serif">Verdana (sans-serif)</option>
+<option value="'Trebuchet MS', Helvetica, sans-serif">Trebuchet MS (sans-serif)</option>
+<option value="'Courier New', Courier, monospace">Courier New (monospace)</option>
+</select>
+<label for="bf">Body font</label>
+<select id="bf">
+<option value="Arial, Helvetica, sans-serif">Arial (sans-serif)</option>
+<option value="Georgia, 'Times New Roman', serif">Georgia (serif)</option>
+<option value="'Times New Roman', Times, serif">Times New Roman (serif)</option>
+<option value="Verdana, Geneva, sans-serif">Verdana (sans-serif)</option>
+<option value="'Trebuchet MS', Helvetica, sans-serif">Trebuchet MS (sans-serif)</option>
+<option value="'Courier New', Courier, monospace">Courier New (monospace)</option>
+</select>
+<label for="bs">Body text size</label>
+<select id="bs">
+<option value="14">14 px — small</option>
+<option value="15">15 px</option>
+<option value="16" selected>16 px — standard</option>
+<option value="17">17 px</option>
+<option value="18">18 px — large</option>
+<option value="20">20 px — very large</option>
+</select>
+<label for="hs">Heading size</label>
+<select id="hs">
+<option value="24">24 px</option>
+<option value="28" selected>28 px</option>
+<option value="32">32 px</option>
+<option value="36">36 px</option>
+</select>
+<label for="lh">Line height</label>
+<select id="lh">
+<option value="1.4">1.4 — tight</option>
+<option value="1.5">1.5</option>
+<option value="1.6" selected>1.6 — comfortable</option>
+<option value="1.8">1.8 — airy</option>
+<option value="2">2.0 — very airy</option>
+</select>
+<label for="ls">Letter spacing (headings)</label>
+<select id="ls">
+<option value="0" selected>0 px — normal</option>
+<option value="0.5">0.5 px</option>
+<option value="1">1 px — spaced</option>
+</select>
+<button id="preset-blog" type="button" class="secondary">Blog preset</button>
+<button id="preset-shop" type="button" class="secondary">Shop preset</button>
+<button id="preset-formal" type="button" class="secondary">Formal preset</button>
+<div id="preview" class="card">
+<p id="pv-head" style="font-size:28px;font-weight:700;margin:0 0 8px">A headline that earns the click</p>
+<p id="pv-body" style="margin:0">This is a sample article page. Good typography is invisible: readers notice the words, not the letters. Body text should be large enough to read without effort, lines should have room to breathe, and headings should stand out clearly from the text below them. Change the controls above and watch this sample change with them.</p>
+</div>
+<button id="copy-btn" type="button">Copy my settings</button>
+<div id="copy-out" class="small"></div>
+</div>
+<div class="warn">Previews use fonts on the device or common web fonts. If a font is not installed on a visitor's device, the browser falls back to the next font in the list, so the same page can look slightly different from one device to another.</div>
+<h2>What typography is, and why it matters</h2>
+<p>Typography is the art of arranging type so that words are easy to read and pleasant to look at. On a website it means the fonts you choose, the sizes you set, the space between lines, and the way headings relate to body text. Visitors rarely think about typography directly, but they feel it at once: a page with clear, comfortable type feels trustworthy, while a page with tiny grey text on a white background feels hard work, and most readers leave before they finish the first paragraph.</p><p>Good typography does three jobs at the same time. First, it makes reading effortless, so visitors stay longer and understand more. Second, it builds a visual hierarchy, so readers can scan the page and find what matters: the headline first, then the subheadings, then the body text. Third, it sets a mood. A formal serif font feels serious and traditional; a clean sans-serif font feels modern and friendly. The words stay the same, but the feeling changes completely.</p><p>This previewer lets you try those choices on a real sample page before you change your own site. Pick a heading font and a body font, adjust the sizes and the line height, and watch the sample change. When the sample feels right, copy the settings and use them on your own pages. There is no sign-up, nothing is uploaded, and the preview works the same on a phone and on a desktop computer.</p>
+<h2>The 4 typography rules</h2>
+<p>Four rules cover most of what a small site needs. Learn them once and almost every page you make will look better.</p><ol><li><strong>Readable body size.</strong> Body text should be at least 16 pixels on the web. Smaller text forces readers to zoom or squint, and on a phone that means they leave. Larger text, up to 18 or 20 pixels, is comfortable for long articles.</li><li><strong>Clear hierarchy.</strong> Headings should be clearly bigger and bolder than body text, and each level should be visibly different from the next. If a reader cannot tell a heading from a paragraph at a glance, the hierarchy is too weak.</li><li><strong>Enough line height.</strong> Lines that sit too close together blur into a grey block. A line height of 1.5 to 1.8 times the font size gives each line room to breathe and makes it easier for the eye to find the start of the next line.</li><li><strong>Two fonts maximum.</strong> One font for headings and one for body text is enough for almost every site. A third font adds clutter, and a fourth makes the page look like a ransom note. If you want variety, use weight and size within the same family instead.</li></ol><p>These rules are starting points, not laws. A children's site can be bolder, a legal site can be more formal, and a fashion site can break a rule on purpose. But a site that breaks all four rules at once is almost always hard to read.</p>
+<h2>How to use this previewer</h2>
+<p>Start with the two font lists. The heading font is the voice of your headlines; the body font is the voice of everything else. Try a serif heading with a sans-serif body, then try the reverse, and notice how different the same words feel. The preview updates the moment you change a control, so you can compare pairings in seconds.</p><p>Next, set the body size. Sixteen pixels is the standard starting point. If your readers are mostly on phones, try 17 or 18 pixels and see how the sample feels. Then set the heading size: it should be clearly larger than the body size, usually about one and a half to two times as large. Finally, adjust the line height. A value of 1.6 is comfortable for most pages; 1.8 feels more relaxed, and 1.4 feels dense.</p><p>The three presets give you a starting point for common kinds of site. The blog preset uses a serif heading with a clean body font and generous line height, which suits long reading. The shop preset uses one sans-serif family throughout with a little letter spacing on headings, which suits short product pages. The formal preset uses a classic serif throughout with airy line height, which suits reports and official pages. Use a preset, then adjust it until it feels like your site.</p><p>When you are happy, tap the copy button. It copies your settings as plain text and as ready-to-use CSS, so you can paste them into your own stylesheet or hand them to whoever builds your site.</p>
+<h2>Worked examples: a blog, a shop and a formal site</h2>
+<p><strong>A blog.</strong> A food blogger writes long recipes and stories. Her readers stay for minutes at a time, mostly on phones. She picks Georgia for headings and Arial for body text, sets the body size to 17 pixels and the line height to 1.7, and keeps letter spacing at zero. The serif headings feel warm and personal, the sans-serif body stays crisp on small screens, and the generous line height makes long recipes easy to follow. Her bounce rate falls because readers can finally read without effort.</p><p><strong>A shop.</strong> A small online shop sells handmade soap. Its pages are short: a product name, a price, a few lines of description, and a button. The owner picks Arial for both headings and body, sets the body size to 16 pixels, the heading size to 28 pixels, and adds half a pixel of letter spacing to the headings. One font family keeps the page fast and consistent, and the spaced headings give the shop a clean, modern feel without any decoration.</p><p><strong>A formal site.</strong> A community association publishes meeting notes and reports. Its readers expect a serious, trustworthy look. The editor picks Times New Roman for both headings and body, sets the body size to 17 pixels and the line height to 1.8. The classic serif feels official, and the airy lines make long documents less tiring. Nothing on the page shouts; everything is calm and readable.</p><p>Notice that all three examples use at most two fonts, a body size of 16 pixels or more, and a line height of at least 1.6. The rules stay the same; only the mood changes.</p>
+<h2>Common mistakes</h2>
+<ul><li><strong>Tiny body text.</strong> Twelve or thirteen pixels may look elegant on a large desktop monitor, but on a phone it is unreadable. If your readers have to pinch to zoom, your body text is too small.</li><li><strong>All-caps paragraphs.</strong> Capital letters are fine for a short heading, but a whole paragraph in capitals is slow to read because every word has the same shape. Use capitals sparingly, and never for body text.</li><li><strong>Four fonts at once.</strong> A different font for the logo, the headings, the body and the buttons makes a page look patched together. Two fonts, used consistently, look far more professional.</li><li><strong>Grey text on a white background.</strong> Light grey text looks subtle in a design tool and invisible in sunlight. Body text should be dark — near-black is safest — with strong contrast against the background.</li><li><strong>Lines that are too long.</strong> A line of text that stretches across a wide screen is hard to read because the eye loses its place on the way back. Aim for lines of about 50 to 75 characters, and keep your content column narrow.</li><li><strong>Ignoring the phone.</strong> Most visitors read on a phone, where the screen is narrow and the light is often poor. Always check your typography at phone width before you publish.</li></ul>
+<h2>What this previewer cannot do</h2>
+<p>This previewer shows you how fonts look on a sample page. It does not design your site for you, and it cannot tell you which pairing your readers will like best — that takes real testing with real visitors. It also shows only the fonts on your device and a few common web fonts. If you choose a font that a visitor does not have installed, their browser falls back to the next font in the list, so the page can look slightly different from one device to another. That is normal on the web, and it is why every font choice here comes with a fallback stack.</p><p>The previewer also works with a short sample, not with your real content. A pairing that looks good on three paragraphs may feel different across a whole long article, so always test your chosen settings on a real page before you roll them out. Finally, this page does not host fonts or load them from anywhere: it uses only the fonts already on the device, which keeps it fast and private.</p>
+<h2>How to pick a pairing that works</h2>
+<p>Start with the body font, because readers spend most of their time with body text. Pick something plain and highly readable: a clean sans-serif such as Arial or Verdana, or a classic serif such as Georgia. Then pick a heading font that contrasts with it. Contrast is the key: a serif heading over a sans-serif body, or a bold sans-serif heading over a serif body, both work well. Two fonts that are too similar look like a mistake rather than a choice.</p><p>Test your pairing with real words, not with placeholder text. Headlines should be short and punchy; body text should be a real paragraph from your site. Read the sample out loud, scroll it on your phone, and show it to someone else. If they say the page looks clear and easy, the pairing works. If they say it looks fancy or unusual, it may be working against you.</p><p>Keep a note of the settings you choose. Typography is a system: once you pick a body size, a line height and a pair of fonts, use them the same way on every page. Consistency is what makes a site feel designed, even when the design itself is simple.</p>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>What font size should body text be?</h3>
+<p>Body text should be at least 16 pixels on the web, and 17 or 18 pixels is comfortable for long reading on a phone. Smaller text forces readers to zoom or squint, and most of them leave instead.</p>
+</div>
+<div class="faq">
+<h3>How many fonts should a page use?</h3>
+<p>Two fonts at most: one for headings and one for body text. A third font adds clutter, and a fourth makes the page look patched together. Use weight and size for variety instead of extra fonts.</p>
+</div>
+<div class="faq">
+<h3>What is line height?</h3>
+<p>Line height is the vertical space between lines of text, measured as a multiple of the font size. A line height of 1.6 means each line gets 60 percent extra space, which makes long text much easier to read.</p>
+</div>
+<div class="faq">
+<h3>Why does text look different on phone?</h3>
+<p>Phones have narrower screens, different default fonts and different screen sizes, so the same page reflows and can look quite different. Always check your typography at phone width, not only on a desktop monitor.</p>
+</div>
+<div class="faq">
+<h3>Serif or sans-serif for body text?</h3>
+<p>Both can work. Sans-serif fonts such as Arial are usually easier on screens, especially small ones, while serif fonts such as Georgia suit long formal reading. Pick the one that fits your site and test it on a phone.</p>
+</div>
+<div class="faq">
+<h3>How do I pick a heading font?</h3>
+<p>Pick a heading font that contrasts with your body font: a serif heading over a sans-serif body, or a bold sans-serif heading over a serif body. Keep it clearly larger and bolder than the body text.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/website-wireframe-builder/">Website Wireframe Builder</a> · <a href="https://noryvello.github.io/website-maintenance-planner/">Website Maintenance Planner</a> · <a href="https://noryvello.github.io/marketing-campaign-planner/">Marketing Campaign Planner</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+
+window.NP = window.NP || {};
+(function () {
+  var FONT_STACKS = {
+    georgia: "Georgia, 'Times New Roman', serif",
+    arial: "Arial, Helvetica, sans-serif",
+    times: "'Times New Roman', Times, serif",
+    verdana: "Verdana, Geneva, sans-serif",
+    trebuchet: "'Trebuchet MS', Helvetica, sans-serif",
+    courier: "'Courier New', Courier, monospace"
+  };
+  var PRESETS = {
+    blog: {headingFont: FONT_STACKS.georgia, bodyFont: FONT_STACKS.arial, bodySize: 17, headingSize: 32, lineHeight: 1.7, letterSpacing: 0},
+    shop: {headingFont: FONT_STACKS.arial, bodyFont: FONT_STACKS.arial, bodySize: 16, headingSize: 28, lineHeight: 1.6, letterSpacing: 0.5},
+    formal: {headingFont: FONT_STACKS.times, bodyFont: FONT_STACKS.times, bodySize: 17, headingSize: 28, lineHeight: 1.8, letterSpacing: 0}
+  };
+  function typographyCSS(s) {
+    return "h1, h2 { font-family: " + s.headingFont + "; font-size: " + s.headingSize +
+      "px; letter-spacing: " + s.letterSpacing + "px; }\nbody { font-family: " +
+      s.bodyFont + "; font-size: " + s.bodySize + "px; line-height: " + s.lineHeight + "; }";
+  }
+  function settingsText(s) {
+    return "Heading font: " + s.headingFont + "\nBody font: " + s.bodyFont +
+      "\nBody size: " + s.bodySize + "px\nHeading size: " + s.headingSize +
+      "px\nLine height: " + s.lineHeight + "\nLetter spacing: " + s.letterSpacing + "px";
+  }
+  function preset(name) {
+    var p = PRESETS[name];
+    return p ? {headingFont: p.headingFont, bodyFont: p.bodyFont, bodySize: p.bodySize,
+      headingSize: p.headingSize, lineHeight: p.lineHeight, letterSpacing: p.letterSpacing} : null;
+  }
+  window.NP.FONT_STACKS = FONT_STACKS;
+  window.NP.PRESETS = PRESETS;
+  window.NP.typographyCSS = typographyCSS;
+  window.NP.settingsText = settingsText;
+  window.NP.preset = preset;
+  if (typeof document === "undefined") return;
+  function current() {
+    return {
+      headingFont: document.getElementById("hf").value,
+      bodyFont: document.getElementById("bf").value,
+      bodySize: parseInt(document.getElementById("bs").value, 10),
+      headingSize: parseInt(document.getElementById("hs").value, 10),
+      lineHeight: parseFloat(document.getElementById("lh").value),
+      letterSpacing: parseFloat(document.getElementById("ls").value)
+    };
+  }
+  function apply(s) {
+    var h = document.getElementById("pv-head");
+    var b = document.getElementById("pv-body");
+    h.style.fontFamily = s.headingFont;
+    h.style.fontSize = s.headingSize + "px";
+    h.style.letterSpacing = s.letterSpacing + "px";
+    b.style.fontFamily = s.bodyFont;
+    b.style.fontSize = s.bodySize + "px";
+    b.style.lineHeight = s.lineHeight;
+  }
+  function setControls(s) {
+    document.getElementById("hf").value = s.headingFont;
+    document.getElementById("bf").value = s.bodyFont;
+    document.getElementById("bs").value = String(s.bodySize);
+    document.getElementById("hs").value = String(s.headingSize);
+    document.getElementById("lh").value = String(s.lineHeight);
+    document.getElementById("ls").value = String(s.letterSpacing);
+  }
+  ["hf", "bf", "bs", "hs", "lh", "ls"].forEach(function (id) {
+    document.getElementById(id).addEventListener("change", function () { apply(current()); });
+  });
+  ["blog", "shop", "formal"].forEach(function (name) {
+    document.getElementById("preset-" + name).addEventListener("click", function () {
+      var s = preset(name);
+      setControls(s);
+      apply(s);
+    });
+  });
+  document.getElementById("copy-btn").addEventListener("click", function () {
+    var btn = document.getElementById("copy-btn");
+    var text = settingsText(current()) + "\n\n" + typographyCSS(current());
+    function done(ok) {
+      btn.textContent = ok ? "Copied!" : "Copy failed — select the text by hand";
+      document.getElementById("copy-out").textContent = ok ? "Your settings are on the clipboard." : "";
+      setTimeout(function () { btn.textContent = "Copy my settings"; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+    } else {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      done(ok);
+    }
+  });
+  apply(current());
+})();
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

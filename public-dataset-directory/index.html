@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Public Dataset Directory — Free Data for Research, Study and Projects | Noryvello</title>
+<meta name="description" content="Free public dataset directory — find open datasets on health, climate, finance, sport and more, with official links. No signup, phone friendly.">
+<link rel="canonical" href="https://noryvello.github.io/public-dataset-directory/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Public Dataset Directory — Free Data for Research, Study and Projects">
+<meta property="og:description" content="A curated directory of 45 public dataset sources on health, climate, economy, education and more, with official links and formats.">
+<meta property="og:url" content="https://noryvello.github.io/public-dataset-directory/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;min-height:72px;margin-top:14px;padding:12px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#fff;color:#4338ca;border:2px solid #4338ca}
+.calc input,.calc select{min-height:72px}
+.calc textarea{width:100%;min-height:72px;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:15px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef2ff}
+.tscroll{overflow-x:auto;margin:14px 0}
+.tscroll table{min-width:640px}
+.q{font-size:18px;font-weight:700;margin:12px 0 4px}
+.opt{display:block;width:100%;text-align:left;margin:8px 0}
+.small{font-size:14px;color:#64748b}
+.feedback{font-size:15px;margin:6px 0 14px;padding:10px 12px;border-radius:8px;background:#f1f5f9}
+.feedback.good{background:#dcfce7}
+.feedback.bad{background:#fee2e2}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Public Dataset Directory</h1>
+<p class="answer">This directory lists 45 public dataset sources — governments, international organisations and open research collections — with what each one holds, its format and an official link. Use the filter to find a source by topic, then follow the link to the source itself. This page links to the sources; it does not host data.</p>
+<div class="calc">
+<label for="topic">Filter by topic</label>
+<select id="topic">
+<option value="all">All topics</option>
+<option value="Government">Government</option>
+<option value="Economy">Economy</option>
+<option value="Health & food">Health & food</option>
+<option value="Climate & environment">Climate & environment</option>
+<option value="Space & science">Space & science</option>
+<option value="Maps & geography">Maps & geography</option>
+<option value="Research & learning">Research & learning</option>
+<option value="Education">Education</option>
+</select>
+<label for="q">Search for a source</label>
+<input id="q" type="text" placeholder="Try health, climate, World Bank or Kaggle">
+<p class="out" id="count">Showing 46 of 46 sources.</p>
+<button id="copy-btn" type="button">Copy shown sources</button>
+<p class="small">The table below filters as you type or pick a topic. Copy gives you the shown sources as plain text, with their links.</p>
+</div>
+<div class="warn">This page links to dataset sources — it does not host data and does not republish any figures. Every source is a public, official or well-known open source. Always read the licence on the source's own site before you publish anything made from its data.</div>
+<h2>The directory</h2>
+<p>Every source below is a public, official or well-known open source of data. Each entry says what the source holds and what format its data comes in, and the name links straight to the source itself. This page links to the sources — it does not host data, and it does not republish any figures. Use the filter above to see one topic at a time, or search for a source by name or subject.</p>
+<div class="tscroll"><table id="dir-table">
+<thead><tr><th>Source</th><th>Topic</th><th>What it holds</th><th>Format</th></tr></thead>
+<tbody>
+<tr data-topic="Government"><td><a href="https://data.gov.au/">Australian Government Open Data</a></td><td>Government</td><td>Datasets from Australian federal and state governments</td><td>CSV, JSON, API</td></tr>
+<tr data-topic="Government"><td><a href="https://data.europa.eu/">EU Open Data</a></td><td>Government</td><td>Datasets from European Union institutions and member states</td><td>CSV, JSON, API</td></tr>
+<tr data-topic="Government"><td><a href="https://open.canada.ca/data/en">Open Government Canada</a></td><td>Government</td><td>Datasets from Canadian federal departments and agencies</td><td>CSV, Excel, API</td></tr>
+<tr data-topic="Government"><td><a href="https://data.gov.uk/">UK Government Open Data</a></td><td>Government</td><td>Datasets from UK government departments and local councils</td><td>CSV, Excel, API</td></tr>
+<tr data-topic="Government"><td><a href="https://data.un.org/">UN Data</a></td><td>Government</td><td>Statistics from United Nations agencies on population, health and development</td><td>CSV, API</td></tr>
+<tr data-topic="Government"><td><a href="https://population.un.org/">UN Population Division</a></td><td>Government</td><td>Population estimates and projections for every country</td><td>CSV, Excel</td></tr>
+<tr data-topic="Government"><td><a href="https://data.undp.org/">UNDP Data</a></td><td>Government</td><td>Development data from the UN Development Programme</td><td>CSV, API</td></tr>
+<tr data-topic="Government"><td><a href="https://data.unhcr.org/">UNHCR Data</a></td><td>Government</td><td>Data on refugees and displaced people from the UN Refugee Agency</td><td>CSV, Excel, API</td></tr>
+<tr data-topic="Government"><td><a href="https://www.unodc.org/">UNODC</a></td><td>Government</td><td>Data on crime, drugs and justice from the UN Office on Drugs and Crime</td><td>Excel, PDF</td></tr>
+<tr data-topic="Government"><td><a href="https://www.census.gov/">US Census Bureau</a></td><td>Government</td><td>US population and economic census data</td><td>CSV, API</td></tr>
+<tr data-topic="Government"><td><a href="https://data.gov/">US Government Open Data</a></td><td>Government</td><td>Datasets from US federal agencies on health, climate, finance and more</td><td>CSV, JSON, API</td></tr>
+<tr data-topic="Economy"><td><a href="https://ec.europa.eu/eurostat">Eurostat</a></td><td>Economy</td><td>Statistics for the European Union</td><td>CSV, Excel, API</td></tr>
+<tr data-topic="Economy"><td><a href="https://www.ilo.org/">ILO</a></td><td>Economy</td><td>Labour statistics from the International Labour Organization</td><td>CSV, Excel, API</td></tr>
+<tr data-topic="Economy"><td><a href="https://data.imf.org/">IMF Data</a></td><td>Economy</td><td>Economic and financial data from the International Monetary Fund</td><td>CSV, API</td></tr>
+<tr data-topic="Economy"><td><a href="https://data.oecd.org/">OECD Data</a></td><td>Economy</td><td>Economic and social statistics for OECD member countries</td><td>CSV, Excel, API</td></tr>
+<tr data-topic="Economy"><td><a href="https://www.statista.com/">Statista</a></td><td>Economy</td><td>Charts and statistics on markets, consumers and industries</td><td>Charts, tables (free and paid)</td></tr>
+<tr data-topic="Economy"><td><a href="https://www.ons.gov.uk/">UK Office for National Statistics</a></td><td>Economy</td><td>UK statistics on population, economy and society</td><td>CSV, Excel, API</td></tr>
+<tr data-topic="Economy"><td><a href="https://www.bls.gov/">US Bureau of Labor Statistics</a></td><td>Economy</td><td>US data on jobs, prices and pay</td><td>CSV, Excel, API</td></tr>
+<tr data-topic="Economy"><td><a href="https://www.wto.org/">WTO Statistics</a></td><td>Economy</td><td>Trade statistics from the World Trade Organization</td><td>Excel, CSV</td></tr>
+<tr data-topic="Economy"><td><a href="https://databank.worldbank.org/">World Bank DataBank</a></td><td>Economy</td><td>A tool for building custom tables from World Bank data</td><td>CSV, Excel, API</td></tr>
+<tr data-topic="Economy"><td><a href="https://data.worldbank.org/">World Bank Open Data</a></td><td>Economy</td><td>Development indicators for nearly every country: income, poverty, education, health</td><td>CSV, Excel, API</td></tr>
+<tr data-topic="Health & food"><td><a href="https://www.fao.org/faostat/en/">FAOSTAT</a></td><td>Health & food</td><td>Food and agriculture statistics from the FAO</td><td>CSV, Excel, API</td></tr>
+<tr data-topic="Health & food"><td><a href="https://data.unicef.org/">UNICEF Data</a></td><td>Health & food</td><td>Data on children: health, nutrition, education and protection</td><td>CSV, Excel, API</td></tr>
+<tr data-topic="Health & food"><td><a href="https://www.who.int/data">WHO Data</a></td><td>Health & food</td><td>Health statistics from the World Health Organization</td><td>CSV, API</td></tr>
+<tr data-topic="Climate & environment"><td><a href="https://www.iea.org/data-and-statistics">IEA Data</a></td><td>Climate & environment</td><td>Energy statistics from the International Energy Agency</td><td>CSV, Excel</td></tr>
+<tr data-topic="Climate & environment"><td><a href="https://www.irena.org/">IRENA</a></td><td>Climate & environment</td><td>Renewable energy statistics from the International Renewable Energy Agency</td><td>Excel, PDF</td></tr>
+<tr data-topic="Climate & environment"><td><a href="https://www.ncei.noaa.gov/">NOAA NCEI</a></td><td>Climate & environment</td><td>Weather and climate records from the US National Oceanic and Atmospheric Administration</td><td>CSV, API</td></tr>
+<tr data-topic="Climate & environment"><td><a href="https://www.epa.gov/">US EPA Data</a></td><td>Climate & environment</td><td>Environmental data from the US Environmental Protection Agency</td><td>CSV, API</td></tr>
+<tr data-topic="Space & science"><td><a href="https://api.nasa.gov/">NASA APIs</a></td><td>Space & science</td><td>Live data feeds from NASA: space, earth and Mars imagery</td><td>JSON, API</td></tr>
+<tr data-topic="Space & science"><td><a href="https://data.nasa.gov/">NASA Open Data</a></td><td>Space & science</td><td>Space, earth science and climate datasets from NASA</td><td>CSV, JSON, API</td></tr>
+<tr data-topic="Maps & geography"><td><a href="https://opendata.arcgis.com/">ArcGIS Open Data</a></td><td>Maps & geography</td><td>Geographic datasets shared by governments and organisations</td><td>Maps, CSV, API</td></tr>
+<tr data-topic="Maps & geography"><td><a href="https://www.openstreetmap.org/">OpenStreetMap</a></td><td>Maps & geography</td><td>Open map data for the whole world, made by volunteers</td><td>Maps, XML, API</td></tr>
+<tr data-topic="Research & learning"><td><a href="https://registry.opendata.aws/">AWS Open Data Registry</a></td><td>Research & learning</td><td>Large open datasets hosted for research</td><td>CSV, JSON, API</td></tr>
+<tr data-topic="Research & learning"><td><a href="https://datacommons.org/">Data Commons</a></td><td>Research & learning</td><td>Linked public data on health, economy and demography</td><td>JSON, API</td></tr>
+<tr data-topic="Research & learning"><td><a href="https://datahub.io/">DataHub</a></td><td>Research & learning</td><td>Curated open datasets on many topics</td><td>CSV, JSON</td></tr>
+<tr data-topic="Research & learning"><td><a href="https://www.gapminder.org/">Gapminder</a></td><td>Research & learning</td><td>Data and charts about world development</td><td>CSV, charts</td></tr>
+<tr data-topic="Research & learning"><td><a href="https://github.com/datasets">GitHub Datasets</a></td><td>Research & learning</td><td>Open datasets shared by researchers and developers</td><td>CSV, JSON</td></tr>
+<tr data-topic="Research & learning"><td><a href="https://datasetsearch.research.google.com/">Google Dataset Search</a></td><td>Research & learning</td><td>A search engine for datasets published across the web</td><td>Search links</td></tr>
+<tr data-topic="Research & learning"><td><a href="https://huggingface.co/datasets">Hugging Face Datasets</a></td><td>Research & learning</td><td>Datasets for language and machine learning research</td><td>JSON, CSV, API</td></tr>
+<tr data-topic="Research & learning"><td><a href="https://www.kaggle.com/datasets">Kaggle Datasets</a></td><td>Research & learning</td><td>Thousands of datasets for practice and machine learning</td><td>CSV, JSON</td></tr>
+<tr data-topic="Research & learning"><td><a href="https://ourworldindata.org/">Our World in Data</a></td><td>Research & learning</td><td>Charts and data on poverty, health, climate and more</td><td>CSV, charts</td></tr>
+<tr data-topic="Research & learning"><td><a href="https://www.pewresearch.org/">Pew Research Center</a></td><td>Research & learning</td><td>Survey data on society, politics and technology</td><td>Charts, Excel</td></tr>
+<tr data-topic="Research & learning"><td><a href="https://archive.ics.uci.edu/">UCI Machine Learning Repository</a></td><td>Research & learning</td><td>Classic datasets for machine learning research</td><td>CSV, text</td></tr>
+<tr data-topic="Research & learning"><td><a href="https://data.world/">data.world</a></td><td>Research & learning</td><td>Datasets shared by people and organisations</td><td>CSV, JSON, API</td></tr>
+<tr data-topic="Education"><td><a href="https://uis.unesco.org/">UNESCO Institute for Statistics</a></td><td>Education</td><td>Education, science and culture statistics</td><td>CSV, Excel, API</td></tr>
+<tr data-topic="Government"><td>data.gov.in (India)</td><td>Government</td><td>India's national open data portal</td><td>Named here only — see the note below</td></tr>
+</tbody>
+</table></div>
+<p>One well-known portal is listed by name only: India's national portal, data.gov.in, appears in the table without a link, because its address could not be confirmed when this page was written. Search for it by name to reach it. Every other source above was checked and links to its official home.</p>
+<h2>How to pick a dataset</h2>
+<p>Start with the question, not the data. Write down in one sentence what you want to find out — for example, how rainfall in one country has changed over ten years — and only then look for a dataset that answers it. Check five things before you download anything. First, the topic: does the source actually cover your subject? Second, the years: does it cover the period you need, and how recent is the latest year? Third, the licence: most public datasets are free to use with credit, but a few limit commercial use, so read the licence line. Fourth, the format: CSV and Excel open in a spreadsheet, JSON and APIs suit programmers, and PDF tables are the hardest to work with. Fifth, the size: a file of a few megabytes is easy to handle, while a file of several gigabytes needs a plan. If a dataset fails the first two checks, keep looking — the wrong data is worse than no data.</p>
+<p>The licence deserves a closer look, because it is the part people skip. Most public datasets use an open licence, which means you may use, share and build on the data as long as you credit the source. Some licences add conditions: no commercial use, or share your own work under the same licence. A few datasets are free to look at but not free to republish. The licence is usually one line on the source's download page, and reading it takes a minute. If you plan to publish your project — on a website, in a report or in a video — that minute protects you from a request to take the work down later.</p>
+<h2>How to use a dataset for a school or work project</h2>
+<p>A dataset becomes a project in five steps. First, state the question in one sentence. Second, pick the source from the table above and read its description page, which usually explains what each column means. Third, download the file and open it to check it looks right — the right country, the right years, no empty columns. Fourth, answer the question with a small table or chart, and write down what the data does and does not show. Fifth, credit the source: name it, give its address, and note the date you downloaded the data. That last step matters as much as the first — a project without a source cannot be checked, and a teacher or a colleague will ask where the numbers came from.</p>
+<h2>Finding one dataset, step by step</h2>
+<p>Suppose a student needs climate data for a school project on rainfall. She types climate in the search box above and sees several sources. She picks NOAA NCEI, the weather and climate records source, because it covers her country and her years. On the source's own site she reads the description, downloads a CSV file of monthly rainfall, and opens it in a spreadsheet. She checks the years run from 2010 to 2024, notes the source name and the download date, and then makes a simple chart of rainfall by year. Her project states the question, shows the chart, names the source, and says plainly that the data covers one weather station, not the whole country. That honesty is what makes the work trustworthy.</p>
+<h2>Common mistakes</h2>
+<p>The most common mistake is the wrong licence: using data in a published project without checking whether the licence allows it. The second is old data: a dataset from 2015 does not answer a question about today, so always check the latest year. The third is no source cited — numbers without a source are just claims. The fourth is a file too big to handle: download a sample first, or pick the smaller format, before you commit to a huge download. The fifth is mixing units: one source measures rainfall in millimetres and another in inches, and a chart that mixes them is wrong. Check the units column before you combine anything.</p>
+<p>A sixth mistake is trusting the first file you find. Search results favour popular datasets, not suitable ones, and a famous dataset about the wrong country or the wrong years is still the wrong dataset. Open the description page, read what the columns mean, and check the coverage before you download. A related mistake is never looking at the raw file: a quick scroll through the first rows shows missing values, strange codes and empty columns that a chart would hide. Ten minutes of looking saves hours of fixing later.</p>
+<h2>What this directory cannot do</h2>
+<p>This directory points to sources; it does not host data, check every file, or promise that a link will never change. Official sites do move pages, and a source can change its licence or its format. If a link fails, search for the source by name — official sources are easy to find. The page also cannot pick the right dataset for you: only your question can do that, which is why the checklist above starts with the question and not the download.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is a public dataset?</h3><p>A public dataset is a collection of data that anyone may use, usually published by a government, an international organisation or a research group. It might be a table of numbers, a list of places, or a set of measurements. Most are free to download and use, often with a licence that asks you to credit the source.</p></div>
+<div class="faq"><h3>Are these datasets really free?</h3><p>Almost all of the sources in this directory are free to use. A few, such as Statista, mix free material with paid material — the table says so where that is the case. Always read the licence line on the source's own site before you publish anything made from the data.</p></div>
+<div class="faq"><h3>Can I use them in my school project?</h3><p>Yes. Public datasets are made for exactly that: school projects, homework, university work and personal research. Credit the source by name, give its address, and note the date you downloaded the data, so a teacher can check your work.</p></div>
+<div class="faq"><h3>What format will the data be in?</h3><p>Most often CSV or Excel, which open in a spreadsheet. Some sources offer JSON or an API for programmers, and some offer PDF tables, which are the hardest to work with. The Format column in the table tells you what each source offers before you visit it.</p></div>
+<div class="faq"><h3>How do I know if data is trustworthy?</h3><p>Check three things: who published it, how recent it is, and whether it says how the data was collected. Official sources — governments, the UN, the World Bank — publish their methods, and that is what makes them trustworthy. Be careful with data that has no publisher, no date and no method.</p></div>
+<div class="faq"><h3>Do I need to credit the source?</h3><p>Yes, in almost every case. The licence usually asks for credit: name the source, give its address, and note the date you downloaded the data. Crediting the source is not only polite — it lets anyone check your work, which is what makes it trustworthy.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/public-statistics-explorer/">Public Statistics Explorer</a> · <a href="https://noryvello.github.io/renewable-energy-learning-hub/">Renewable Energy Learning Hub</a> · <a href="https://noryvello.github.io/website-maintenance-planner/">Website Maintenance Planner</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a public dataset?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A public dataset is a collection of data that anyone may use, usually published by a government, an international organisation or a research group. It might be a table of numbers, a list of places, or a set of measurements. Most are free to download and use, often with a licence that asks you to credit the source."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are these datasets really free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Almost all of the sources in this directory are free to use. A few, such as Statista, mix free material with paid material — the table says so where that is the case. Always read the licence line on the source's own site before you publish anything made from the data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use them in my school project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Public datasets are made for exactly that: school projects, homework, university work and personal research. Credit the source by name, give its address, and note the date you downloaded the data, so a teacher can check your work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What format will the data be in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most often CSV or Excel, which open in a spreadsheet. Some sources offer JSON or an API for programmers, and some offer PDF tables, which are the hardest to work with. The Format column in the table tells you what each source offers before you visit it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know if data is trustworthy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Check three things: who published it, how recent it is, and whether it says how the data was collected. Official sources — governments, the UN, the World Bank — publish their methods, and that is what makes them trustworthy. Be careful with data that has no publisher, no date and no method."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to credit the source?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, in almost every case. The licence usually asks for credit: name the source, give its address, and note the date you downloaded the data. Crediting the source is not only polite — it lets anyone check your work, which is what makes it trustworthy."
+      }
+    }
+  ]
+}
+</script>
+<script>
+window.NP = {
+  matchSource: function (topic, query, rowTopic, rowText) {
+    topic = (topic || "").toLowerCase();
+    query = (query || "").toLowerCase().trim();
+    if (topic && topic !== "all" && String(rowTopic).toLowerCase() !== topic) return false;
+    if (query && String(rowText).toLowerCase().indexOf(query) === -1) return false;
+    return true;
+  },
+  sourcesText: function (rows) {
+    return rows.map(function (r) {
+      return r[0] + " (" + r[1] + ") - " + r[2] + " - " + r[3] + (r[4] ? " - " + r[4] : "");
+    }).join("\n");
+  }
+};
+if (typeof document !== "undefined" && document.getElementById) {
+  var topicEl = document.getElementById("topic");
+  var qEl = document.getElementById("q");
+  var countEl = document.getElementById("count");
+  var copyBtn = document.getElementById("copy-btn");
+  var rows = Array.prototype.slice.call(document.querySelectorAll("#dir-table tbody tr"));
+  function visibleRows() {
+    var topic = topicEl.value;
+    var q = qEl.value;
+    return rows.filter(function (tr) {
+      return NP.matchSource(topic, q, tr.getAttribute("data-topic"), tr.textContent);
+    });
+  }
+  function render() {
+    var vis = visibleRows();
+    rows.forEach(function (tr) {
+      tr.style.display = vis.indexOf(tr) === -1 ? "none" : "";
+    });
+    countEl.textContent = "Showing " + vis.length + " of " + rows.length + " sources.";
+  }
+  function copyShown() {
+    var data = visibleRows().map(function (tr) {
+      var c = tr.querySelectorAll("td");
+      var a = tr.querySelector("a");
+      return [c[0].textContent, c[1].textContent, c[2].textContent, c[3].textContent, a ? a.href : ""];
+    });
+    var text = NP.sourcesText(data);
+    function done() {
+      copyBtn.textContent = "Copied!";
+      setTimeout(function () { copyBtn.textContent = "Copy shown sources"; }, 2000);
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+    if (typeof navigator !== "undefined" && navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  }
+  topicEl.addEventListener("change", render);
+  qEl.addEventListener("input", render);
+  copyBtn.addEventListener("click", copyShown);
+  render();
+}
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

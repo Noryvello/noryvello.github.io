@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Country Information Directory — Capitals, Languages, Currency and More | Noryvello</title>
+<meta name="description" content="Country facts free — capital, language, currency, time zone and calling code for countries around the world, in one searchable directory. No signup.">
+<link rel="canonical" href="https://noryvello.github.io/country-information-directory/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Country Information Directory — Capitals, Languages, Currency and More">
+<meta property="og:description" content="A searchable directory of country facts: capitals, languages, currencies, time zones and calling codes for sixty-two countries.">
+<meta property="og:url" content="https://noryvello.github.io/country-information-directory/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the capital of Australia?", "acceptedAnswer": {"@type": "Answer", "text": "Canberra is the capital of Australia. Sydney is the largest city, which is why many people guess it, but the capital has been Canberra since the city was built for that purpose in the early 1900s."}}, {"@type": "Question", "name": "Which countries use the euro?", "acceptedAnswer": {"@type": "Answer", "text": "In this directory, the euro countries are France, Germany, Italy, Spain, the Netherlands and Greece. The euro is the shared currency of many European countries, so the same money works across all of them when you travel between them."}}, {"@type": "Question", "name": "How do I find a country's calling code?", "acceptedAnswer": {"@type": "Answer", "text": "Type the country name in the search box above and read the Calling code column. To call, dial the plus sign and the code, then the local number without its leading zero. For example, Bangladesh is plus 880."}}, {"@type": "Question", "name": "What is the time difference?", "acceptedAnswer": {"@type": "Answer", "text": "Subtract one UTC offset from the other. Dhaka is UTC plus 6 and London is UTC plus 0, so Dhaka is 6 hours ahead of London. Remember that some countries move their clocks forward in summer for daylight saving, which changes the gap by one hour for part of the year."}}, {"@type": "Question", "name": "Is this information up to date?", "acceptedAnswer": {"@type": "Answer", "text": "The facts here, such as capitals, currencies and calling codes, change rarely and are checked against reliable public sources. Even so, always check the official source before you travel, because a country can rename its currency, change a capital or adjust its time zone."}}, {"@type": "Question", "name": "Can I search by language?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Type a language in the search box, for example Arabic or Spanish, and the table shows every country in the directory where that language is listed. You can also combine a language search with the continent filter."}}]}</script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;min-height:72px;margin-top:14px;padding:16px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#e0e7ff;color:#1e293b}
+.calc input,.calc select{min-height:72px;font-size:17px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;min-height:120px;font-family:inherit}
+.tscroll{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef2ff}
+.opt{display:block;width:100%;text-align:left;margin:8px 0}
+.q{font-size:18px;font-weight:700;margin:12px 0}
+.small{font-size:14px;color:#64748b}
+.card{border:1px solid #cbd5e1;border-radius:12px;padding:12px 14px;margin:10px 0;background:rgba(255,255,255,.6)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Country Information Directory</h1>
+<p class="answer">Look up any country in seconds: its capital, official language, currency, time zone and calling code, all in one searchable table. Type a country, a capital or a language, or filter by continent, and copy the results to use anywhere. The facts are checked and kept simple, with no sign-up and no cost.</p>
+<div class="calc">
+<label for="q">Search by country, capital or language</label>
+<input id="q" type="text" placeholder="Type a country, capital or language">
+<label for="cont">Continent</label>
+<select id="cont">
+<option>All continents</option>
+<option>Africa</option>
+<option>Asia</option>
+<option>Europe</option>
+<option>North America</option>
+<option>Oceania</option>
+<option>South America</option>
+</select>
+<p class="out" id="count">Showing 62 of 62 countries</p>
+<button id="copy-btn" type="button">Copy shown countries</button>
+</div>
+<div class="tscroll"><table>
+<thead><tr><th>Country</th><th>Capital</th><th>Language(s)</th><th>Currency</th><th>Time zone</th><th>Calling code</th><th>Continent</th></tr></thead>
+<tbody id="rows"></tbody>
+</table></div>
+<div class="warn">Facts like currency and calling codes are stable, but they can change, so always check the official source before you travel.</div>
+<h2>How to use the directory</h2>
+<p>Start by typing in the search box. You can search by country name, by capital city or by language, and the table narrows as you type, so you usually find what you need after a few letters. If you only remember part of a name, type that part: typing stan shows every country whose name contains those letters, and typing a capital such as Paris takes you straight to France.</p>
+<p>The continent filter beside the search box narrows the list further. Choose Asia, Europe, Africa, North America, South America or Oceania to browse one part of the world at a time, or leave it on all continents to search everywhere at once. The line under the search box tells you how many countries match, so you always know whether your search was too broad or too narrow.</p>
+<p>When the list shows what you need, press the copy button to copy the shown countries as plain text. You can paste the list into a note, a message or a document, which is handy when you are planning a trip, preparing homework or putting together a quiz. The copy button copies exactly what the table shows, so if you filter to one continent first, you copy only that continent's countries. Each copied line gives the country, its capital, its language, its currency, its time zone, its calling code and its continent, so the pasted list is useful on its own, without coming back to this page.</p>
+<p>The whole directory works in your browser, on a phone or a computer, with no sign-up and nothing to install. There is nothing to download and no account to create: open the page, search, and copy what you need. The directory is also a good study aid: search for a language such as Arabic or Spanish to see how far it reaches, or filter to a continent and read down the capitals to test yourself.</p>
+<h2>Reading the table — what each column means</h2>
+<p>The table has seven columns, and each one answers a different question about a country. Country is the name of the country itself. Capital is the city where the government sits, the seat of the country's leaders and its main government offices. Language or languages lists the official language or languages of the country, the ones used in government, schools and official documents. Some countries have one official language and others have several, so this column sometimes lists two, three or four.</p>
+<p>Currency is the money the country uses, written out in words, such as the Bangladeshi taka or the euro. Time zone shows the country's offset from Coordinated Universal Time, written as UTC plus or minus a number of hours. A country on UTC plus 6 is six hours ahead of the time at the prime meridian, and a country on UTC minus 5 is five hours behind it.</p>
+<p>The offsets shown are standard-time offsets. Some countries move their clocks forward by one hour in summer for daylight saving, so the real difference can change by an hour for part of the year. A few large countries span several time zones: the table shows the full range for them, for example Russia or the United States, so check which zone your city sits in before you plan around it.</p>
+<p>Calling code is the number you dial before the local number when you call from another country, starting with a plus sign. Continent tells you which part of the world the country sits in, which is useful for browsing and for schoolwork. A few entries deserve a second look. The language column lists official languages, which are not always the languages most people speak at home: Singapore lists four official languages, and South Africa lists several, including Zulu, Xhosa, Afrikaans and English.</p>
+<h2>The continents at a glance</h2>
+<p>This directory covers sixty-two countries across six continents. Asia has the most entries, with thirty countries, from large ones such as China and India to small island nations such as the Maldives. Asia is also where the time zones vary the most, from UTC plus 3 in the west to UTC plus 9 in the east, and where you will find some of the most unusual offsets in the world, such as Nepal on UTC plus 5 hours and 45 minutes.</p>
+<p>Europe has fourteen countries here, and it is the home of the euro: six of the European countries in this directory use the shared currency. Africa has seven countries, from Egypt in the north to South Africa in the south, with calling codes and currencies that are easy to mix up, so the table is worth a careful look before you dial.</p>
+<p>North America has three countries here, the United States, Canada and Mexico, and all three span several time zones, which is why their time-zone column shows a range rather than a single offset. South America has five countries, all of them west of the prime meridian, and Oceania has three, Australia, New Zealand and Fiji, on the far side of the world from Europe.</p>
+<p>The spread of languages is just as wide. Arabic is the official language of many countries in western Asia and northern Africa, Spanish covers most of South America and Mexico, and English appears on every continent in this directory, as an official language in countries from India to Nigeria to Fiji. The euro countries sit close together in Europe, which is why one currency works across a whole holiday that crosses several borders. If you are learning geography, try one continent at a time: pick it in the filter, read down the capitals, and test yourself by covering the capital column and guessing each one before you look.</p>
+<h2>A worked example — planning a call to three countries in three time zones</h2>
+<p>Suppose you live in Dhaka and you need to arrange a call with a colleague in London and a supplier in Tokyo. First, look up the three time zones in the table: Dhaka is UTC plus 6, London is UTC plus 0, and Tokyo is UTC plus 9. That tells you Tokyo is three hours ahead of Dhaka, and London is six hours behind Dhaka.</p>
+<p>Next, pick a time that suits everyone. If you call at 3 in the afternoon in Dhaka, it is 9 in the morning in London and 6 in the evening in Tokyo, working hours for all three of you. A call at 9 in the morning in Dhaka would be 3 in the morning in London, which is why the time-zone column matters more than it looks.</p>
+<p>Now check the calling codes: Bangladesh is plus 880, the United Kingdom is plus 44, and Japan is plus 81. When you dial from one country to another, dial the plus sign, then the code, then the local number without its leading zero.</p>
+<p>Finally, remember the daylight-saving warning. London moves its clocks forward by one hour in summer, so in the summer months the gap between Dhaka and London is five hours, not six. Tokyo does not observe daylight saving, so its gap stays the same all year. Before an important call, check the current local time in each city rather than trusting your memory of the offsets.</p>
+<h2>Common mistakes — capital versus biggest city, and old currencies</h2>
+<p>The most common mistake in geography is confusing a capital with the biggest city. Sydney is the largest city in Australia, but the capital is Canberra. Istanbul is the largest city in Turkey, but the capital is Ankara. Toronto is the largest city in Canada, but the capital is Ottawa. New York is the largest city in the United States, but the capital is Washington. Mumbai is the largest city in India, but the capital is New Delhi. Rio de Janeiro was once the capital of Brazil, but the capital today is Brasilia, a city built for the purpose in the middle of the country. The pattern is easy to see once you know it: capitals are chosen for government, not for size, and many were picked to sit between rival cities or in the centre of the country.</p>
+<p>The second common mistake is using an old currency. Currencies change: countries rename them, replace them, or join a shared currency such as the euro. Six countries in this directory now use the euro, and their old national currencies are history. If you are travelling, check the currency column here and then check the official source before you go, so you arrive with the right money in mind.</p>
+<p>The third mistake is dialling a calling code from memory. Codes look alike — plus 1 covers both the United States and Canada, for example — so look the code up in the table instead of guessing. A fourth mistake is treating a time-zone range as a single time. The United States spans from UTC minus 5 to UTC minus 10, so the time in New York and the time in Hawaii are five hours apart. If you plan a call with someone in a large country, find out which part of the country they are in before you work out the time difference.</p>
+<h2>Capital cities that surprise people</h2>
+<p>A few capitals in this directory need a little extra explanation, because the simple answer hides an interesting story. Colombo is the capital listed for Sri Lanka, and it is the country's commercial capital, where business and government offices sit. The legislative capital, where parliament meets, is Sri Jayawardenepura Kotte, a city just outside Colombo.</p>
+<p>South Africa is even more unusual: it has three capitals in practice. Pretoria is the administrative capital, where the president and the government work. Cape Town holds the legislature, where parliament sits, and Bloemfontein holds the courts. The table lists Pretoria, the administrative capital, because that is the answer most references give.</p>
+<p>Switzerland has no official capital at all in law. Bern is the de facto capital, the city where the federal government and parliament sit, and it is the answer every atlas gives. Myanmar moved its capital to Naypyidaw, a purpose-built city, in the mid-2000s, leaving the old capital Yangon as the largest city. Australia's capital, Canberra, was also purpose-built, chosen as a compromise between Sydney and Melbourne, the two cities that both wanted the honour. These stories are worth knowing because they explain why a quick search sometimes gives you two different answers: both can be right, for different parts of the government.</p>
+<h2>What this page cannot do</h2>
+<p>This directory gives you the stable facts about a country, but it is not a travel service and it does not try to be one. It does not show live exchange rates, so check a current rate before you change money. It does not give visa advice: whether you need a visa depends on your nationality and your trip, so check the embassy or the official site of the country you plan to visit.</p>
+<p>It does not show live local times, and it cannot adjust for daylight saving on its own, so check the current time in a city before an important call or flight. The facts here change rarely, but they can change — a country can rename its currency, move its capital or change its time zone — so for anything that matters, check the official source before you travel.</p>
+<p>It also does not list every country in the world: sixty-two countries are here, chosen to cover every continent and the places people most often look up. If the country you need is missing, check an atlas or an official source for the same facts. What the page does well is the simple job: one searchable table of capitals, languages, currencies, time zones and calling codes, checked and kept in one place, free to use with no sign-up.</p>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>What is the capital of Australia?</h3>
+<p>Canberra is the capital of Australia. Sydney is the largest city, which is why many people guess it, but the capital has been Canberra since the city was built for that purpose in the early 1900s.</p>
+</div>
+<div class="faq">
+<h3>Which countries use the euro?</h3>
+<p>In this directory, the euro countries are France, Germany, Italy, Spain, the Netherlands and Greece. The euro is the shared currency of many European countries, so the same money works across all of them when you travel between them.</p>
+</div>
+<div class="faq">
+<h3>How do I find a country's calling code?</h3>
+<p>Type the country name in the search box above and read the Calling code column. To call, dial the plus sign and the code, then the local number without its leading zero. For example, Bangladesh is plus 880.</p>
+</div>
+<div class="faq">
+<h3>What is the time difference?</h3>
+<p>Subtract one UTC offset from the other. Dhaka is UTC plus 6 and London is UTC plus 0, so Dhaka is 6 hours ahead of London. Remember that some countries move their clocks forward in summer for daylight saving, which changes the gap by one hour for part of the year.</p>
+</div>
+<div class="faq">
+<h3>Is this information up to date?</h3>
+<p>The facts here, such as capitals, currencies and calling codes, change rarely and are checked against reliable public sources. Even so, always check the official source before you travel, because a country can rename its currency, change a capital or adjust its time zone.</p>
+</div>
+<div class="faq">
+<h3>Can I search by language?</h3>
+<p>Yes. Type a language in the search box, for example Arabic or Spanish, and the table shows every country in the directory where that language is listed. You can also combine a language search with the continent filter.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/world-capitals-explorer/">World Capitals Explorer</a> · <a href="https://noryvello.github.io/travel-visa-information-directory/">Travel Visa Information Directory</a> · <a href="https://noryvello.github.io/airport-information-directory/">Airport Information Directory</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+window.NP = (function () {
+var COUNTRIES = [{"capital": "Dhaka", "code": "+880", "continent": "Asia", "currency": "Bangladeshi taka", "lang": "Bengali", "name": "Bangladesh", "tz": "UTC+6"}, {"capital": "New Delhi", "code": "+91", "continent": "Asia", "currency": "Indian rupee", "lang": "Hindi, English", "name": "India", "tz": "UTC+5:30"}, {"capital": "Islamabad", "code": "+92", "continent": "Asia", "currency": "Pakistani rupee", "lang": "Urdu, English", "name": "Pakistan", "tz": "UTC+5"}, {"capital": "Kathmandu", "code": "+977", "continent": "Asia", "currency": "Nepalese rupee", "lang": "Nepali", "name": "Nepal", "tz": "UTC+5:45"}, {"capital": "Colombo", "code": "+94", "continent": "Asia", "currency": "Sri Lankan rupee", "lang": "Sinhala, Tamil", "name": "Sri Lanka", "tz": "UTC+5:30"}, {"capital": "Thimphu", "code": "+975", "continent": "Asia", "currency": "Bhutanese ngultrum", "lang": "Dzongkha", "name": "Bhutan", "tz": "UTC+6"}, {"capital": "Male", "code": "+960", "continent": "Asia", "currency": "Maldivian rufiyaa", "lang": "Dhivehi", "name": "Maldives", "tz": "UTC+5"}, {"capital": "Beijing", "code": "+86", "continent": "Asia", "currency": "Chinese yuan", "lang": "Mandarin Chinese", "name": "China", "tz": "UTC+8"}, {"capital": "Tokyo", "code": "+81", "continent": "Asia", "currency": "Japanese yen", "lang": "Japanese", "name": "Japan", "tz": "UTC+9"}, {"capital": "Seoul", "code": "+82", "continent": "Asia", "currency": "South Korean won", "lang": "Korean", "name": "South Korea", "tz": "UTC+9"}, {"capital": "Ulaanbaatar", "code": "+976", "continent": "Asia", "currency": "Mongolian tugrik", "lang": "Mongolian", "name": "Mongolia", "tz": "UTC+8"}, {"capital": "Bangkok", "code": "+66", "continent": "Asia", "currency": "Thai baht", "lang": "Thai", "name": "Thailand", "tz": "UTC+7"}, {"capital": "Hanoi", "code": "+84", "continent": "Asia", "currency": "Vietnamese dong", "lang": "Vietnamese", "name": "Vietnam", "tz": "UTC+7"}, {"capital": "Kuala Lumpur", "code": "+60", "continent": "Asia", "currency": "Malaysian ringgit", "lang": "Malay", "name": "Malaysia", "tz": "UTC+8"}, {"capital": "Singapore", "code": "+65", "continent": "Asia", "currency": "Singapore dollar", "lang": "English, Malay, Mandarin, Tamil", "name": "Singapore", "tz": "UTC+8"}, {"capital": "Jakarta", "code": "+62", "continent": "Asia", "currency": "Indonesian rupiah", "lang": "Indonesian", "name": "Indonesia", "tz": "UTC+7 to +9"}, {"capital": "Manila", "code": "+63", "continent": "Asia", "currency": "Philippine peso", "lang": "Filipino, English", "name": "Philippines", "tz": "UTC+8"}, {"capital": "Naypyidaw", "code": "+95", "continent": "Asia", "currency": "Myanmar kyat", "lang": "Burmese", "name": "Myanmar", "tz": "UTC+6:30"}, {"capital": "Phnom Penh", "code": "+855", "continent": "Asia", "currency": "Cambodian riel", "lang": "Khmer", "name": "Cambodia", "tz": "UTC+7"}, {"capital": "Vientiane", "code": "+856", "continent": "Asia", "currency": "Lao kip", "lang": "Lao", "name": "Laos", "tz": "UTC+7"}, {"capital": "Abu Dhabi", "code": "+971", "continent": "Asia", "currency": "UAE dirham", "lang": "Arabic", "name": "United Arab Emirates", "tz": "UTC+4"}, {"capital": "Riyadh", "code": "+966", "continent": "Asia", "currency": "Saudi riyal", "lang": "Arabic", "name": "Saudi Arabia", "tz": "UTC+3"}, {"capital": "Doha", "code": "+974", "continent": "Asia", "currency": "Qatari riyal", "lang": "Arabic", "name": "Qatar", "tz": "UTC+3"}, {"capital": "Kuwait City", "code": "+965", "continent": "Asia", "currency": "Kuwaiti dinar", "lang": "Arabic", "name": "Kuwait", "tz": "UTC+3"}, {"capital": "Muscat", "code": "+968", "continent": "Asia", "currency": "Omani rial", "lang": "Arabic", "name": "Oman", "tz": "UTC+4"}, {"capital": "Manama", "code": "+973", "continent": "Asia", "currency": "Bahraini dinar", "lang": "Arabic", "name": "Bahrain", "tz": "UTC+3"}, {"capital": "Amman", "code": "+962", "continent": "Asia", "currency": "Jordanian dinar", "lang": "Arabic", "name": "Jordan", "tz": "UTC+3"}, {"capital": "Ankara", "code": "+90", "continent": "Asia", "currency": "Turkish lira", "lang": "Turkish", "name": "Turkey", "tz": "UTC+3"}, {"capital": "Tehran", "code": "+98", "continent": "Asia", "currency": "Iranian rial", "lang": "Persian", "name": "Iran", "tz": "UTC+3:30"}, {"capital": "Baghdad", "code": "+964", "continent": "Asia", "currency": "Iraqi dinar", "lang": "Arabic, Kurdish", "name": "Iraq", "tz": "UTC+3"}, {"capital": "London", "code": "+44", "continent": "Europe", "currency": "British pound", "lang": "English", "name": "United Kingdom", "tz": "UTC+0"}, {"capital": "Paris", "code": "+33", "continent": "Europe", "currency": "euro", "lang": "French", "name": "France", "tz": "UTC+1"}, {"capital": "Berlin", "code": "+49", "continent": "Europe", "currency": "euro", "lang": "German", "name": "Germany", "tz": "UTC+1"}, {"capital": "Rome", "code": "+39", "continent": "Europe", "currency": "euro", "lang": "Italian", "name": "Italy", "tz": "UTC+1"}, {"capital": "Madrid", "code": "+34", "continent": "Europe", "currency": "euro", "lang": "Spanish", "name": "Spain", "tz": "UTC+1"}, {"capital": "Amsterdam", "code": "+31", "continent": "Europe", "currency": "euro", "lang": "Dutch", "name": "Netherlands", "tz": "UTC+1"}, {"capital": "Bern", "code": "+41", "continent": "Europe", "currency": "Swiss franc", "lang": "German, French, Italian, Romansh", "name": "Switzerland", "tz": "UTC+1"}, {"capital": "Stockholm", "code": "+46", "continent": "Europe", "currency": "Swedish krona", "lang": "Swedish", "name": "Sweden", "tz": "UTC+1"}, {"capital": "Oslo", "code": "+47", "continent": "Europe", "currency": "Norwegian krone", "lang": "Norwegian", "name": "Norway", "tz": "UTC+1"}, {"capital": "Copenhagen", "code": "+45", "continent": "Europe", "currency": "Danish krone", "lang": "Danish", "name": "Denmark", "tz": "UTC+1"}, {"capital": "Warsaw", "code": "+48", "continent": "Europe", "currency": "Polish zloty", "lang": "Polish", "name": "Poland", "tz": "UTC+1"}, {"capital": "Athens", "code": "+30", "continent": "Europe", "currency": "euro", "lang": "Greek", "name": "Greece", "tz": "UTC+2"}, {"capital": "Moscow", "code": "+7", "continent": "Europe", "currency": "Russian ruble", "lang": "Russian", "name": "Russia", "tz": "UTC+2 to +12"}, {"capital": "Kyiv", "code": "+380", "continent": "Europe", "currency": "Ukrainian hryvnia", "lang": "Ukrainian", "name": "Ukraine", "tz": "UTC+2"}, {"capital": "Cairo", "code": "+20", "continent": "Africa", "currency": "Egyptian pound", "lang": "Arabic", "name": "Egypt", "tz": "UTC+2"}, {"capital": "Abuja", "code": "+234", "continent": "Africa", "currency": "Nigerian naira", "lang": "English", "name": "Nigeria", "tz": "UTC+1"}, {"capital": "Nairobi", "code": "+254", "continent": "Africa", "currency": "Kenyan shilling", "lang": "Swahili, English", "name": "Kenya", "tz": "UTC+3"}, {"capital": "Pretoria", "code": "+27", "continent": "Africa", "currency": "South African rand", "lang": "Zulu, Xhosa, Afrikaans, English and others", "name": "South Africa", "tz": "UTC+2"}, {"capital": "Addis Ababa", "code": "+251", "continent": "Africa", "currency": "Ethiopian birr", "lang": "Amharic", "name": "Ethiopia", "tz": "UTC+3"}, {"capital": "Rabat", "code": "+212", "continent": "Africa", "currency": "Moroccan dirham", "lang": "Arabic, Amazigh", "name": "Morocco", "tz": "UTC+1"}, {"capital": "Accra", "code": "+233", "continent": "Africa", "currency": "Ghanaian cedi", "lang": "English", "name": "Ghana", "tz": "UTC+0"}, {"capital": "Washington, D.C.", "code": "+1", "continent": "North America", "currency": "US dollar", "lang": "English", "name": "United States", "tz": "UTC-5 to -10"}, {"capital": "Ottawa", "code": "+1", "continent": "North America", "currency": "Canadian dollar", "lang": "English, French", "name": "Canada", "tz": "UTC-3:30 to -8"}, {"capital": "Mexico City", "code": "+52", "continent": "North America", "currency": "Mexican peso", "lang": "Spanish", "name": "Mexico", "tz": "UTC-6 to -8"}, {"capital": "Brasilia", "code": "+55", "continent": "South America", "currency": "Brazilian real", "lang": "Portuguese", "name": "Brazil", "tz": "UTC-2 to -5"}, {"capital": "Buenos Aires", "code": "+54", "continent": "South America", "currency": "Argentine peso", "lang": "Spanish", "name": "Argentina", "tz": "UTC-3"}, {"capital": "Santiago", "code": "+56", "continent": "South America", "currency": "Chilean peso", "lang": "Spanish", "name": "Chile", "tz": "UTC-4"}, {"capital": "Lima", "code": "+51", "continent": "South America", "currency": "Peruvian sol", "lang": "Spanish, Quechua, Aymara", "name": "Peru", "tz": "UTC-5"}, {"capital": "Bogota", "code": "+57", "continent": "South America", "currency": "Colombian peso", "lang": "Spanish", "name": "Colombia", "tz": "UTC-5"}, {"capital": "Canberra", "code": "+61", "continent": "Oceania", "currency": "Australian dollar", "lang": "English", "name": "Australia", "tz": "UTC+8 to +10"}, {"capital": "Wellington", "code": "+64", "continent": "Oceania", "currency": "New Zealand dollar", "lang": "English, Maori", "name": "New Zealand", "tz": "UTC+12"}, {"capital": "Suva", "code": "+679", "continent": "Oceania", "currency": "Fijian dollar", "lang": "English, Fijian, Hindi", "name": "Fiji", "tz": "UTC+12"}];
+function norm(s) { return String(s == null ? "" : s).toLowerCase(); }
+function filterCountries(query, continent) {
+  var q = norm(query).trim();
+  var c = norm(continent).trim();
+  return COUNTRIES.filter(function (x) {
+    if (c && c !== "all" && c !== "all continents" && norm(x.continent) !== c) return false;
+    if (!q) return true;
+    return norm(x.name).indexOf(q) >= 0 || norm(x.capital).indexOf(q) >= 0 || norm(x.lang).indexOf(q) >= 0;
+  });
+}
+function getCountry(name) {
+  var q = norm(name).trim();
+  for (var i = 0; i < COUNTRIES.length; i++) { if (norm(COUNTRIES[i].name) === q) return COUNTRIES[i]; }
+  return null;
+}
+function countriesText(list) {
+  return list.map(function (x) {
+    return x.name + " \u2014 Capital: " + x.capital + "; Language: " + x.lang + "; Currency: " + x.currency + "; Time zone: " + x.tz + "; Calling code: " + x.code + "; Continent: " + x.continent;
+  }).join("\n");
+}
+return { COUNTRIES: COUNTRIES, filterCountries: filterCountries, getCountry: getCountry, countriesText: countriesText };
+})();
+if (typeof document !== "undefined") {
+  var NP = window.NP;
+  var tbody = document.getElementById("rows");
+  var countEl = document.getElementById("count");
+  var qEl = document.getElementById("q");
+  var contEl = document.getElementById("cont");
+  var copyBtn = document.getElementById("copy-btn");
+  var shown = NP.COUNTRIES;
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function render() {
+    var list = NP.filterCountries(qEl.value, contEl.value);
+    shown = list;
+    countEl.textContent = "Showing " + list.length + " of " + NP.COUNTRIES.length + " countries";
+    var html = "";
+    for (var i = 0; i < list.length; i++) {
+      var c = list[i];
+      html += "<tr><td>" + esc(c.name) + "</td><td>" + esc(c.capital) + "</td><td>" + esc(c.lang) + "</td><td>" + esc(c.currency) + "</td><td>" + esc(c.tz) + "</td><td>" + esc(c.code) + "</td><td>" + esc(c.continent) + "</td></tr>";
+    }
+    tbody.innerHTML = html;
+  }
+  function copyShown() {
+    var text = NP.countriesText(shown);
+    function done() {
+      copyBtn.textContent = "Copied!";
+      setTimeout(function () { copyBtn.textContent = "Copy shown countries"; }, 2000);
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+    if (typeof navigator !== "undefined" && navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  }
+  qEl.addEventListener("input", render);
+  contEl.addEventListener("change", render);
+  copyBtn.addEventListener("click", copyShown);
+  render();
+}
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

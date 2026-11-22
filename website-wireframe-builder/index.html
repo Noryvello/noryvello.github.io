@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website Wireframe Builder — Sketch Your Page Layout Free | Noryvello</title>
+<meta name="description" content="Free website wireframe builder — drag blocks into a page layout and see your site structure before you build it. No signup, phone friendly.">
+<link rel="canonical" href="https://noryvello.github.io/website-wireframe-builder/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Website Wireframe Builder — Sketch Your Page Layout Free">
+<meta property="og:description" content="Free website wireframe builder — drag blocks into a page layout and see your site structure before you build it. No signup, phone friendly.">
+<meta property="og:url" content="https://noryvello.github.io/website-wireframe-builder/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc textarea{width:100%;min-height:150px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+.calc input,.calc select{width:100%;min-height:72px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc button{display:block;width:100%;min-height:72px;margin-top:12px;padding:12px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#fff;color:#4338ca;border:2px solid #4338ca}
+.calc button.danger{background:#fff;color:#991b1b;border:2px solid #991b1b}
+.calc .out{font-size:17px;font-weight:400;margin-top:14px;white-space:pre-line}
+.calc .out b{font-weight:700}
+.calc .row{margin:10px 0}
+.calc .checkrow{display:flex;gap:12px;align-items:center;margin:0;padding:20px 0;border-bottom:1px solid #e2e8f0;cursor:pointer;min-height:72px}
+.calc .checkrow input{width:30px;height:30px;min-height:30px;flex:none;margin:0;accent-color:#4338ca}
+.calc .checkrow span{font-size:16px;line-height:1.5}
+table.data{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+table.data th,table.data td{border:1px solid #cbd5e1;padding:8px;text-align:left;vertical-align:top}
+table.data th{background:#eef2ff}
+.tag{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:700}
+.tag.ok{background:#dcfce7;color:#166534}
+.tag.bad{background:#fee2e2;color:#991b1b}
+.tag.mid{background:#fef3c7;color:#92400e}
+.cardline{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin:10px 0}
+.cardline b{font-size:16.5px}
+.small{font-size:14px;color:#64748b}
+.funnelbar{background:#4338ca;color:#fff;border-radius:8px;padding:10px 12px;margin:6px 0;font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.funnelbar.alt{background:#0d9488}
+.outline-row{display:flex;gap:8px;align-items:stretch;margin:8px 0}
+.outline-row input{flex:1;min-width:0}
+.outline-row button{flex:none;width:58px;min-height:72px;margin-top:0;padding:8px 4px;border-radius:12px;font-size:18px}
+.blockbtns{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.blockbtns button{flex:1 1 40%;width:auto;min-height:72px;margin-top:0}
+.planweek{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin:10px 0}
+.planweek b{font-size:16.5px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a wireframe?", "acceptedAnswer": {"@type": "Answer", "text": "A wireframe is a simple sketch of a page's layout: boxes that show where things go, and labels that say what each box holds. It has no colours, no real photos and no final words — just the structure. Its job is to answer one question before you build anything: what goes where, and in what order?"}}, {"@type": "Question", "name": "Do I need design skill to make one?", "acceptedAnswer": {"@type": "Answer", "text": "No. A wireframe is about structure, not design. You need to know what the page should do and what it should contain — the rest is arranging boxes in an order that makes sense. If you can list what goes on the page, you can make a wireframe. Design skill helps later, when the page is built, but not at the sketch stage."}}, {"@type": "Question", "name": "How detailed should a wireframe be?", "acceptedAnswer": {"@type": "Answer", "text": "Detailed enough that someone else could build the page from it, and no more. Each block needs a label saying what it holds, and the blocks need to be in the right order. Real words and real photos come later. A wireframe with twelve blocks and clear labels is better than a wireframe with thirty blocks and none."}}, {"@type": "Question", "name": "What blocks does every page need?", "acceptedAnswer": {"@type": "Answer", "text": "Five: a header with the site name and main links, a hero with one clear message and one clear action, a text block that explains the offer, buttons where a visitor who has read enough can act, and a footer with contact details and the small print. Everything else — images, forms, prices, reviews — is optional and depends on the page."}}, {"@type": "Question", "name": "Can I build a website from a wireframe?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — that is what a wireframe is for. Use the outline as a checklist in your website builder, adding each block in order, or send it to a developer and talk through it together. The wireframe is the plan; the build is the work that follows it. But the wireframe itself is not a website, and it cannot be published as one."}}, {"@type": "Question", "name": "Should the wireframe show colours?", "acceptedAnswer": {"@type": "Answer", "text": "No. Colours, fonts and pictures belong to the design stage, which comes after the structure is settled. Leaving them out forces you to think about the order and the content, which is the part that decides whether visitors find what they came for. A wireframe that tries to show colours usually ends up hiding the structure."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Website Wireframe Builder</h1>
+<p class="answer">This builder turns a page idea into a layout plan: tap to add blocks — header, hero, text, image, buttons, form, footer — reorder them, label each one, and copy the outline as a list. You see the structure of your page before you build it, when changes are still free.</p>
+<div class="calc">
+<label>Tap a block to add it to your outline</label>
+<div class="blockbtns">
+<button id="wb-add-header" type="button" class="secondary">+ Header</button>
+<button id="wb-add-hero" type="button" class="secondary">+ Hero</button>
+<button id="wb-add-text" type="button" class="secondary">+ Text</button>
+<button id="wb-add-image" type="button" class="secondary">+ Image</button>
+<button id="wb-add-buttons" type="button" class="secondary">+ Buttons</button>
+<button id="wb-add-form" type="button" class="secondary">+ Form</button>
+<button id="wb-add-footer" type="button" class="secondary">+ Footer</button>
+</div>
+<p class="small" id="wb-hint">Your outline starts with the five blocks every page needs. Edit the labels, move blocks with the arrows, and remove any block with the cross.</p>
+<div id="wb-list"></div>
+<p class="small" id="wb-warn"></p>
+<button id="wb-copy" type="button" class="secondary" data-label="Copy my outline">Copy my outline</button>
+<button id="wb-reset" type="button" class="danger">Start over</button>
+</div>
+<div class="warn">This builder makes a layout plan, not a finished website. The outline it produces is a sketch to hand to a builder or a developer — or to follow yourself when you build the real page. It does not publish anything, and it does not write the real page for you.</div>
+<h2>How to use this builder</h2>
+<p>Tap a block button to add that block to your outline. Each block appears as a row with a label you can edit — write what the block will contain, in your own words, such as "Hero: photo of the shop and the main offer". Use the up and down arrows to move a block, and the cross button to remove one. The order of the rows is the order of the page, from top to bottom.</p>
+<p>When the outline looks right, tap Copy my outline to keep it as a numbered list you can paste into your notes or send to the person who will build the page. The outline is saved on this device only, so you can come back and change it later. Nothing you type is sent anywhere — everything happens in your browser.</p>
+<p>Start with the blocks every page needs (the guide below lists five), then add the extras your page needs. If the outline grows past ten blocks, stop and ask whether each one earns its place — a long page is not a better page, and most visitors never reach the bottom.</p>
+<h2>What a wireframe is</h2>
+<p>A wireframe is a simple sketch of a page's layout: boxes that show where things go, and labels that say what each box holds. It has no colours, no real photos and no final words — just the structure. Its job is to answer one question before you build anything: what goes where, and in what order?</p>
+<p>A wireframe is useful because it is cheap to change. Moving a box on a sketch takes seconds; moving a finished section of a website takes hours. Sketching first lets you try three layouts in the time it takes to build one, and lets you show the plan to someone else before any real work begins. A client, a teammate or a friend can look at a wireframe and say "the button should be higher" — a comment that is easy to act on at sketch stage and expensive to act on later.</p>
+<p>A wireframe is not a design. It does not say what the page will look like, only how it will be organised. That is its strength: by leaving out colours and pictures, it forces you to think about the structure, which is the part that decides whether visitors find what they came for.</p>
+<h2>The 5 blocks every page needs</h2>
+<p>First, a header: the name of the site or the business, and the way to get around — the main links. Visitors decide in seconds whether they are in the right place, and the header is what tells them. Second, a hero: the first thing visitors see, with one clear message and one clear action. The hero is the most important block on the page, because most visitors will only read this far before deciding to stay or leave.</p>
+<p>Third, a text block that explains the offer in plain words: what it is, who it is for, and why it matters. Fourth, buttons — the calls to action — placed where a visitor who has read enough can act without scrolling back. And fifth, a footer: the contact details, the small print, and the links that matter less but must still be findable.</p>
+<p>Everything else is optional. An image block, a form, a list of prices, a section of reviews — all of these can help, but none of them is required on every page. If your outline has the five blocks above, in the right order, you have a page that works. Add extras only when they answer a question your visitors actually ask.</p>
+<h2>Worked example: a shop page</h2>
+<p>A baker wants a page for her shop. Her outline has eight blocks. Header: the bakery name and links to cakes, orders and contact. Hero: a photo of the shop and the words "Fresh cakes, made this morning", with a button to order. Text: what the bakery makes and where it is. Image: three photos of the most popular cakes.</p>
+<p>Buttons: a row with "Order a cake" and "See the menu". Text: how ordering works — order by Thursday, collect on Saturday. Form: a simple order form asking for the cake, the date and a phone number. Footer: the address, opening hours and phone number. The order is deliberate: the visitor sees the offer first, the details second, and the way to act appears twice — once early, once after the details.</p>
+<p>Notice what the outline does not have: no long story about the bakery's history, no list of every cake ever made, no photo gallery of twenty pictures. Those things can live on other pages. This page has one job — get the visitor to order a cake — and every block serves that job.</p>
+<h2>Worked example: a blog page</h2>
+<p>A teacher wants a page for his blog about learning English. His outline has seven blocks. Header: the blog name and links to lessons, practice and about. Hero: the latest lesson, with its title and a button to read it. Text: a short introduction to what the blog teaches and who it is for.</p>
+<p>Text: a list of the three most-read lessons, each with one line about what it covers. Image: a photo of the teacher, so readers know who is writing. Form: a small box to get new lessons by email. Footer: links to older lessons and contact details. The hero shows the newest lesson first, because returning readers come for what is new, and the most-read list helps new readers find where to start.</p>
+<p>The outline also shows what he left out: no long list of every lesson ever written — that belongs on a separate archive page — and no advertising blocks, because the page is about reading, not selling. The wireframe made those choices visible before he built anything, when removing a block was still free.</p>
+<h2>Worked example: a landing page</h2>
+<p>A tutor wants a landing page for her new online course. Her outline has seven blocks. Header: just the course name and a single link to enrol — no other links, because a landing page has one job. Hero: the course title, one sentence about who it is for, and a button to enrol.</p>
+<p>Text: what the course covers, in three short points. Image: a photo of the tutor teaching. Text: what students say, in two short quotes with permission. Buttons: a second enrol button, for visitors who have read this far. Footer: contact details and the small print about refunds.</p>
+<p>The landing page outline is shorter than the shop page outline on purpose. A landing page asks for one action, so it needs fewer blocks — every extra block is another chance for the visitor to wander away. The wireframe shows this clearly: if the outline for a landing page has twelve blocks, something is wrong, and the sketch is the place to find out.</p>
+<h2>Common mistakes</h2>
+<p>The first mistake is too many blocks. A page with fifteen blocks is not thorough, it is tiring — most visitors will never reach the bottom, and the important blocks get buried. If your outline has more than ten blocks, remove the ones that do not serve the page's one job. The second mistake is no clear first action: the hero says something vague, and there is no button until the bottom of the page. A visitor who cannot see what to do next will do nothing.</p>
+<p>The third mistake is putting the details before the offer. Visitors need to know what the page is about before they care about the details — the hero comes first, the fine print comes last. The fourth mistake is three different offers on one page: buy this, sign up for that, read this other thing. One page, one job, one main action. The fifth mistake is sketching without labels: boxes with no words in them cannot be checked, because nobody knows what each box is supposed to hold.</p>
+<p>The sixth mistake is treating the wireframe as the finished page. A wireframe is a plan, not a product — it needs real words, real photos and a real build before anyone can use it. Sketch it, check it, then build it.</p>
+<h2>What comes after the wireframe</h2>
+<p>When the outline looks right, the next step depends on how you will build the page. If you use a website builder, open the builder and add the blocks in the order of your outline — the outline is now your checklist, and you can tick each block off as you build it. If a developer is building the page, send them the copied outline and talk through it together: the outline tells them what goes where, and the conversation fills in the details the outline cannot hold.</p>
+<p>Write the real words next. Replace each label with the actual text the visitor will read — the real headline, the real button words, the real description. Short and plain beats long and clever: a headline that says what the page does is better than a headline that sounds impressive but says nothing.</p>
+<p>Then gather the real images: photos of the product, the shop, the people. Real photos beat stock photos, because visitors can tell the difference, and a real photo of your own work is worth more than a perfect photo of someone else's. Finally, build the page, check it on a phone, and ask one person who has never seen it to find the main action. If they can, the wireframe did its job.</p>
+<h2>What this builder cannot do</h2>
+<p>This builder cannot design your page. It does not choose colours, fonts or pictures, and it does not know what looks good — it only organises the structure. The look of the page is a separate job, and a page with a good structure and a plain design will still work, while a beautiful page with a confused structure will not.</p>
+<p>It also cannot write your words or take your photos, and it cannot publish the page. The outline it produces is a sketch to follow or to hand to someone else. And it cannot tell you whether the page will work — only real visitors can do that, by using the finished page. What it can do is make sure the structure is right before you spend time on the rest, and that is the cheapest improvement any page can get.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is a wireframe?</h3><p>A wireframe is a simple sketch of a page&#x27;s layout: boxes that show where things go, and labels that say what each box holds. It has no colours, no real photos and no final words — just the structure. Its job is to answer one question before you build anything: what goes where, and in what order?</p></div>
+<div class="faq"><h3>Do I need design skill to make one?</h3><p>No. A wireframe is about structure, not design. You need to know what the page should do and what it should contain — the rest is arranging boxes in an order that makes sense. If you can list what goes on the page, you can make a wireframe. Design skill helps later, when the page is built, but not at the sketch stage.</p></div>
+<div class="faq"><h3>How detailed should a wireframe be?</h3><p>Detailed enough that someone else could build the page from it, and no more. Each block needs a label saying what it holds, and the blocks need to be in the right order. Real words and real photos come later. A wireframe with twelve blocks and clear labels is better than a wireframe with thirty blocks and none.</p></div>
+<div class="faq"><h3>What blocks does every page need?</h3><p>Five: a header with the site name and main links, a hero with one clear message and one clear action, a text block that explains the offer, buttons where a visitor who has read enough can act, and a footer with contact details and the small print. Everything else — images, forms, prices, reviews — is optional and depends on the page.</p></div>
+<div class="faq"><h3>Can I build a website from a wireframe?</h3><p>Yes — that is what a wireframe is for. Use the outline as a checklist in your website builder, adding each block in order, or send it to a developer and talk through it together. The wireframe is the plan; the build is the work that follows it. But the wireframe itself is not a website, and it cannot be published as one.</p></div>
+<div class="faq"><h3>Should the wireframe show colours?</h3><p>No. Colours, fonts and pictures belong to the design stage, which comes after the structure is settled. Leaving them out forces you to think about the order and the content, which is the part that decides whether visitors find what they came for. A wireframe that tries to show colours usually ends up hiding the structure.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/web-typography-previewer/">Web Typography Previewer</a> · <a href="https://noryvello.github.io/website-maintenance-planner/">Website Maintenance Planner</a> · <a href="https://noryvello.github.io/marketing-campaign-planner/">Marketing Campaign Planner</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function copyText(text, btn){
+  function done(){ if(btn){ var old=btn.getAttribute('data-label')||btn.textContent; btn.textContent='Copied!'; setTimeout(function(){ btn.textContent=old; },2000); } }
+  function fallback(){
+    var ta=document.createElement('textarea');
+    ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta); done();
+  }
+  if (typeof navigator!=='undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else { fallback(); }
+}
+function el(id){ return (typeof document!=='undefined' && document.getElementById) ? document.getElementById(id) : null; }
+function show(node){ if(node) node.style.display='block'; }
+function saveLS(key, val){ try{ if(typeof localStorage!=='undefined') localStorage.setItem(key, JSON.stringify(val)); }catch(e){} }
+function loadLS(key){ try{ if(typeof localStorage!=='undefined'){ var v=localStorage.getItem(key); return v ? JSON.parse(v) : null; } }catch(e){} return null; }
+function fmtDate(iso){
+  if(!iso) return '';
+  var p=iso.split('-'); if(p.length!==3) return iso;
+  var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var m=parseInt(p[1],10);
+  return p[2].replace(/^0/,'')+' '+months[m-1]+' '+p[0];
+}
+
+
+var WB_TYPES = [
+  {id: 'header', label: 'Header', def: 'Header: site name and main links'},
+  {id: 'hero', label: 'Hero', def: 'Hero: one clear message and one clear action'},
+  {id: 'text', label: 'Text', def: 'Text: explain the offer in plain words'},
+  {id: 'image', label: 'Image', def: 'Image: a photo that shows the offer'},
+  {id: 'buttons', label: 'Buttons', def: 'Buttons: the main action, where readers can act'},
+  {id: 'form', label: 'Form', def: 'Form: ask only for what you need'},
+  {id: 'footer', label: 'Footer', def: 'Footer: contact details and small print'}
+];
+function wbType(id){
+  for (var i = 0; i < WB_TYPES.length; i++) if (WB_TYPES[i].id === id) return WB_TYPES[i];
+  return null;
+}
+function wbDefaultList(){
+  return [
+    {type: 'header', label: 'Header: site name and main links'},
+    {type: 'hero', label: 'Hero: one clear message and one clear action'},
+    {type: 'text', label: 'Text: explain the offer in plain words'},
+    {type: 'buttons', label: 'Buttons: the main action, where readers can act'},
+    {type: 'footer', label: 'Footer: contact details and small print'}
+  ];
+}
+function wbAddBlock(list, type){
+  var t = wbType(type);
+  if (!t) return list.slice();
+  var out = list.slice();
+  out.push({type: type, label: t.def});
+  return out;
+}
+function wbMoveBlock(list, index, dir){
+  var out = list.slice();
+  var j = index + dir;
+  if (index < 0 || index >= out.length || j < 0 || j >= out.length) return out;
+  var tmp = out[index]; out[index] = out[j]; out[j] = tmp;
+  return out;
+}
+function wbRemoveBlock(list, index){
+  var out = list.slice();
+  if (index < 0 || index >= out.length) return out;
+  out.splice(index, 1);
+  return out;
+}
+function wbRenameBlock(list, index, label){
+  var out = list.slice();
+  if (index < 0 || index >= out.length) return out;
+  out[index] = {type: out[index].type, label: label};
+  return out;
+}
+function wbOutlineText(list){
+  var lines = ['Page outline:'];
+  list.forEach(function(b, i){ lines.push((i + 1) + '. ' + b.label); });
+  lines.push('This outline is a layout plan, not a finished website.');
+  return lines.join('\n');
+}
+function wbValidateList(list){
+  var warns = [];
+  var types = list.map(function(b){ return b.type; });
+  if (types.indexOf('header') === -1) warns.push('No header block — every page needs one.');
+  if (types.indexOf('hero') === -1) warns.push('No hero block — visitors need one clear message first.');
+  if (types.indexOf('buttons') === -1) warns.push('No buttons block — visitors need a clear action.');
+  if (types.indexOf('footer') === -1) warns.push('No footer block — contact details need a home.');
+  if (list.length > 10) warns.push('More than 10 blocks — consider removing the ones that do not serve the page\'s one job.');
+  if (list.length === 0) warns.push('The outline is empty — add the five blocks every page needs.');
+  return warns;
+}
+window.NP = {TYPES: WB_TYPES, type: wbType, defaultList: wbDefaultList,
+  addBlock: wbAddBlock, moveBlock: wbMoveBlock, removeBlock: wbRemoveBlock,
+  renameBlock: wbRenameBlock, outlineText: wbOutlineText, validateList: wbValidateList};
+if (typeof document !== 'undefined' && document.getElementById) {
+  var LS_KEY = 'np-website-wireframe-builder';
+  var blocks = loadLS(LS_KEY) || wbDefaultList();
+  var listEl = el('wb-list');
+  var warnEl = el('wb-warn');
+  function render(){
+    if (!listEl) return;
+    listEl.innerHTML = '';
+    blocks.forEach(function(b, i){
+      var row = document.createElement('div');
+      row.className = 'outline-row';
+      var input = document.createElement('input');
+      input.type = 'text';
+      input.value = b.label;
+      input.setAttribute('aria-label', 'Label for block ' + (i + 1) + ' (' + b.type + ')');
+      input.addEventListener('input', function(){
+        blocks = wbRenameBlock(blocks, i, input.value);
+        saveLS(LS_KEY, blocks);
+        updateWarn();
+      });
+      var up = document.createElement('button');
+      up.type = 'button'; up.textContent = '↑'; up.setAttribute('aria-label', 'Move block up');
+      up.addEventListener('click', function(){ blocks = wbMoveBlock(blocks, i, -1); saveLS(LS_KEY, blocks); render(); });
+      var down = document.createElement('button');
+      down.type = 'button'; down.textContent = '↓'; down.setAttribute('aria-label', 'Move block down');
+      down.addEventListener('click', function(){ blocks = wbMoveBlock(blocks, i, 1); saveLS(LS_KEY, blocks); render(); });
+      var del = document.createElement('button');
+      del.type = 'button'; del.textContent = '×'; del.setAttribute('aria-label', 'Remove block');
+      del.addEventListener('click', function(){ blocks = wbRemoveBlock(blocks, i); saveLS(LS_KEY, blocks); render(); });
+      row.appendChild(input); row.appendChild(up); row.appendChild(down); row.appendChild(del);
+      listEl.appendChild(row);
+    });
+    updateWarn();
+  }
+  function updateWarn(){
+    if (!warnEl) return;
+    warnEl.textContent = wbValidateList(blocks).join(' ');
+  }
+  WB_TYPES.forEach(function(t){
+    var btn = el('wb-add-' + t.id);
+    if (btn) btn.addEventListener('click', function(){
+      blocks = wbAddBlock(blocks, t.id);
+      saveLS(LS_KEY, blocks);
+      render();
+    });
+  });
+  var copyBtn = el('wb-copy');
+  if (copyBtn) copyBtn.addEventListener('click', function(){
+    copyText(wbOutlineText(blocks), copyBtn);
+  });
+  var resetBtn = el('wb-reset');
+  if (resetBtn) resetBtn.addEventListener('click', function(){
+    blocks = wbDefaultList();
+    saveLS(LS_KEY, blocks);
+    render();
+  });
+  render();
+}
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

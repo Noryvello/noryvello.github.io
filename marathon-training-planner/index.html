@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marathon Training Planner — Your Week-by-Week Plan to 42K | Noryvello</title>
+<meta name="description" content="Free marathon training planner — build a week-by-week plan for your first marathon, with rest built in. No signup, phone friendly.">
+<link rel="canonical" href="https://noryvello.github.io/marathon-training-planner/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Marathon Training Planner — Your Week-by-Week Plan to 42K">
+<meta property="og:description" content="Build a week-by-week marathon training plan with long runs, rest days and a taper — general guidance for first-time marathon runners.">
+<meta property="og:url" content="https://noryvello.github.io/marathon-training-planner/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;min-height:72px;margin-top:14px;padding:12px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#fff;color:#4338ca;border:2px solid #4338ca}
+.calc input,.calc select{min-height:72px}
+.calc textarea{width:100%;min-height:72px;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:15px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef2ff}
+.tscroll{overflow-x:auto;margin:14px 0}
+.tscroll table{min-width:640px}
+.q{font-size:18px;font-weight:700;margin:12px 0 4px}
+.opt{display:block;width:100%;text-align:left;margin:8px 0}
+.small{font-size:14px;color:#64748b}
+.feedback{font-size:15px;margin:6px 0 14px;padding:10px 12px;border-radius:8px;background:#f1f5f9}
+.feedback.good{background:#dcfce7}
+.feedback.bad{background:#fee2e2}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Marathon Training Planner</h1>
+<p class="answer">Tell this planner your race date, your current longest run and how many times a week you run, and it builds a week-by-week marathon plan with long runs, rest days and a taper. The plan follows the 10% rule, so your long run never jumps by more than about a tenth in a week. This is general guidance, not medical advice.</p>
+<div class="calc">
+<label for="race">Race date</label>
+<input id="race" type="date">
+<label for="longest">Your current longest run (kilometres)</label>
+<input id="longest" type="number" min="5" max="32" step="0.5" placeholder="For example 10">
+<label for="runs">Runs per week</label>
+<select id="runs">
+<option value="3">3 runs a week</option>
+<option value="4" selected>4 runs a week</option>
+<option value="5">5 runs a week</option>
+</select>
+<button id="build-btn" type="button">Build my plan</button>
+<div id="plan-out" class="steps"><p>Your week-by-week plan will appear here. Your entries are saved on this device so you can come back to the plan later.</p></div>
+<button id="copy-btn" type="button" style="display:none">Copy my plan</button>
+</div>
+<div class="warn">This planner gives general training guidance, not medical advice. Check with a doctor before you start if you have a health condition, and stop running and rest if something hurts — pain that changes how you run is a signal, not something to push through.</div>
+<h2>How marathon training works</h2>
+<p>A marathon is 42.195 kilometres — usually just called 42K — and nobody runs one well without months of steady training. Training works by asking your body for a little more each week, then giving it time to adapt. The week has a shape: one long run at the weekend, a few shorter runs in the week, and rest days in between. The long run teaches your legs and your energy systems to keep going; the shorter runs add fitness without wearing you out; the rest days are when the improvement actually happens. Most first-timers need 16 to 20 weeks, starting from a base of regular running. If you already run three times a week and your longest run is around 10 kilometres, 16 weeks is a realistic plan. If you are starting from very little running, give yourself longer and build the base first.</p>
+<h2>The 10% rule</h2>
+<p>The 10% rule is simple: never raise your weekly distance or your long run by more than about 10% in one week. The planner on this page follows it — your long run grows by at most 10%, and never by more than 2 kilometres in a week. Every fourth week is a cut-back week, when the long run drops to about 70% of its peak so far. That step back feels like losing progress, but it is part of the plan: muscles, tendons and bones adapt during easier weeks, and skipping the cut-back is one of the most common ways beginners get injured. The rule also caps the long run at 32 kilometres. Running further in training adds tiredness without adding much fitness, and race day itself carries you through the last 10 kilometres.</p>
+<h2>Rest, sleep and recovery</h2>
+<p>Rest is training, not the absence of it. Muscles repair and grow stronger on rest days, not during the run itself, which is why every plan in this planner keeps at least two rest days a week. Sleep matters just as much: most of the body's repair work happens overnight, and a week of short nights will show up as heavy legs and slow runs. Aim for a regular sleep pattern through the training block, especially in the last two weeks before the race. Easy recovery also helps — a gentle walk, light stretching, and enough water through the day. What does not help is filling rest days with hard exercise in disguise: a long bike ride or a heavy gym session on a rest day is still training load, and it still needs recovery. If you feel tired for three days in a row, take an extra rest day and repeat the previous week rather than pushing on. Missing one run costs nothing; running through deep tiredness costs weeks.</p>
+<h2>A 16-week beginner plan, worked out</h2>
+<p>Here is what the planner makes for a runner whose longest run is 10 kilometres, running 4 times a week, with 16 weeks to race day. The long run grows week by week, drops back every fourth week, peaks at week 13, and then tapers down to race day. Midweek runs stay shorter — roughly a third of the long run — and there are 3 rest days every week.</p>
+<div class="tscroll"><table>
+<thead><tr><th>Week</th><th>Long run</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>Week 1</td><td>10 km</td><td></td></tr>
+<tr><td>Week 2</td><td>11 km</td><td></td></tr>
+<tr><td>Week 3</td><td>12 km</td><td></td></tr>
+<tr><td>Week 4</td><td>8.5 km</td><td>Cut-back week</td></tr>
+<tr><td>Week 5</td><td>13 km</td><td></td></tr>
+<tr><td>Week 6</td><td>14.5 km</td><td></td></tr>
+<tr><td>Week 7</td><td>16 km</td><td></td></tr>
+<tr><td>Week 8</td><td>11 km</td><td>Cut-back week</td></tr>
+<tr><td>Week 9</td><td>17.5 km</td><td></td></tr>
+<tr><td>Week 10</td><td>19.5 km</td><td></td></tr>
+<tr><td>Week 11</td><td>21.5 km</td><td></td></tr>
+<tr><td>Week 12</td><td>15 km</td><td>Cut-back week</td></tr>
+<tr><td>Week 13</td><td>23.5 km</td><td>Peak long run</td></tr>
+<tr><td>Week 14</td><td>17.5 km</td><td>Taper — less running, more rest</td></tr>
+<tr><td>Week 15</td><td>12 km</td><td>Taper — short and easy</td></tr>
+<tr><td>Week 16</td><td>Race day — 42 km</td><td>Short easy runs, then the marathon</td></tr>
+</tbody>
+</table></div>
+<h2>What to eat and drink</h2>
+<p>Food is part of training, not an afterthought. Eat a normal balanced meal the night before a long run, and eat something familiar 2 to 3 hours before you run — porridge, toast or rice, something your stomach knows. Practise your race-day food on long runs, never on race day itself: gels, dried fruit or whatever you plan to carry, taken little and often from about an hour in. Drink to thirst on most runs, and carry water on any run longer than about 75 minutes. After a long run, eat within an hour — a mix of carbohydrate and protein, such as a meal with rice or bread and eggs, beans or meat — and keep drinking through the day. If you feel dizzy, unusually tired or unable to finish runs you used to manage, eat more and rest more before you run more.</p>
+<p>Water is enough for most runs, but on long runs in warm weather a sports drink helps replace the salts lost in sweat. You do not need a special product — a pinch of salt in water, or salty food after the run, does the same job for most people. The key is to practise: drink on long runs exactly what you plan to drink on race day, in the same amounts and at the same times, so your stomach knows what to expect. Never try a new drink or gel on race day itself. And remember that drinking too much is also a problem — drink to thirst, not to a schedule, and do not force water when you are not thirsty.</p>
+<h2>Shoes and kit</h2>
+<p>One good pair of running shoes matters more than any other kit. Buy them from a shop that watches you run if you can, and break them in over two or three weeks — never race in brand-new shoes. Most runners replace shoes after roughly 500 to 800 kilometres, or when the cushioning feels flat. Wear clothes that wick sweat away rather than cotton, which stays wet and chafes. For long runs, carry water and a little food, and take sun protection or a light layer depending on the weather. Keep the kit simple: the training matters far more than the gadgets.</p>
+<p>Two small items earn their place on long runs. A watch or a phone app that shows distance and pace helps you hold back early, when every run feels easy and the temptation is to go too fast. And a small bag or belt for water and food means you can practise eating and drinking on the move, exactly as you will on race day. Neither needs to be expensive, and both should be tested on training runs long before the race.</p>
+<h2>Injury warning signs</h2>
+<p>Some soreness is normal when training load rises, but pain is different from soreness. Stop and rest if a pain changes how you run, if it is sharp or in one exact spot, if it gets worse during a run, or if it is still there the next morning. The most common beginner injuries — sore knees, sore shins and sore Achilles tendons — usually come from doing too much too soon, which is exactly what the 10% rule and the cut-back weeks are for. Rest, ice and a few easy days fix most niggles; running through real pain turns a small problem into a long layoff. If a pain does not improve in a week, or if you are unsure, see a doctor or a physiotherapist.</p>
+<h2>Race-day plan</h2>
+<p>Race day rewards the runner who does nothing new. Eat the breakfast you practised, wear the shoes and clothes you trained in, and carry the food and drink you tested on long runs. Start slower than you think you should — the first 10 kilometres should feel easy. Walk through drink stations if you need to; a few seconds there costs nothing. The hard part of a marathon usually starts after 30 kilometres, so save your effort for then and run the second half by feel rather than by the clock. If something hurts badly, stop: there will be another race, and finishing injured is not worth it.</p>
+<h2>What this planner cannot do</h2>
+<p>This planner gives general training guidance, not medical advice and not a coach. It does not know your health, your history or how your body responds to training. The plan it builds is a starting shape — if a week feels too hard, repeat the previous week instead of pushing on, and if life gets in the way, miss a run rather than doubling up later. Check with a doctor before you start if you have a health condition, and stop running and rest if something hurts.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How long does it take to train for a marathon?</h3><p>Most first-timers need 16 to 20 weeks of steady training, starting from a base of running three times a week. If you already run regularly and your longest run is around 10 kilometres, 16 weeks is realistic. If you are starting from very little running, allow longer and build the base first.</p></div>
+<div class="faq"><h3>How many runs a week do I need?</h3><p>Three runs a week is enough to finish a marathon, four is the usual balance for most beginners, and five suits runners who already have a strong base. More runs are not automatically better — rest days are part of the plan, and the planner always keeps at least two rest days a week.</p></div>
+<div class="faq"><h3>What is a long run?</h3><p>The long run is the longest run of the week, usually at the weekend, run slowly. It teaches your body to keep going for hours and to use energy well. It grows a little each week, drops back every fourth week, and peaks at about 32 kilometres three weeks before race day.</p></div>
+<div class="faq"><h3>What is tapering?</h3><p>Tapering means running less in the last two to three weeks before the race so your body arrives fresh. The long run drops to about three quarters, then about half of its peak, and race week has only short easy runs. It feels strange to run less, but a rested body runs far better than a tired one.</p></div>
+<div class="faq"><h3>What should I eat before a long run?</h3><p>Eat something familiar 2 to 3 hours before a long run — porridge, toast or rice — and practise your race-day food on long runs, never on race day. Take small amounts of food from about an hour in, drink to thirst, and eat a proper meal within an hour of finishing.</p></div>
+<div class="faq"><h3>How do I avoid injury?</h3><p>Follow the 10% rule, keep the cut-back weeks, and never run through real pain. Build up slowly, wear shoes that fit and are not worn out, and rest when your body asks for it. Most beginner injuries come from doing too much too soon, and a few easy days now save weeks of layoff later.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/family-calendar-planner/">Family Calendar Planner</a> · <a href="https://noryvello.github.io/sustainable-product-directory/">Sustainable Product Directory</a> · <a href="https://noryvello.github.io/public-statistics-explorer/">Public Statistics Explorer</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does it take to train for a marathon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most first-timers need 16 to 20 weeks of steady training, starting from a base of running three times a week. If you already run regularly and your longest run is around 10 kilometres, 16 weeks is realistic. If you are starting from very little running, allow longer and build the base first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many runs a week do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three runs a week is enough to finish a marathon, four is the usual balance for most beginners, and five suits runners who already have a strong base. More runs are not automatically better — rest days are part of the plan, and the planner always keeps at least two rest days a week."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a long run?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The long run is the longest run of the week, usually at the weekend, run slowly. It teaches your body to keep going for hours and to use energy well. It grows a little each week, drops back every fourth week, and peaks at about 32 kilometres three weeks before race day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is tapering?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tapering means running less in the last two to three weeks before the race so your body arrives fresh. The long run drops to about three quarters, then about half of its peak, and race week has only short easy runs. It feels strange to run less, but a rested body runs far better than a tired one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I eat before a long run?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eat something familiar 2 to 3 hours before a long run — porridge, toast or rice — and practise your race-day food on long runs, never on race day. Take small amounts of food from about an hour in, drink to thirst, and eat a proper meal within an hour of finishing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I avoid injury?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Follow the 10% rule, keep the cut-back weeks, and never run through real pain. Build up slowly, wear shoes that fit and are not worn out, and rest when your body asks for it. Most beginner injuries come from doing too much too soon, and a few easy days now save weeks of layoff later."
+      }
+    }
+  ]
+}
+</script>
+<script>
+window.NP = {
+  roundHalf: function (x) { return Math.round(x * 2) / 2; },
+  parseDate: function (iso) {
+    var parts = String(iso).split("-");
+    if (parts.length !== 3) return null;
+    var d = new Date(+parts[0], +parts[1] - 1, +parts[2]);
+    return isNaN(d.getTime()) ? null : d;
+  },
+  formatDate: function (iso) {
+    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var d = NP.parseDate(iso);
+    if (!d) return iso;
+    return d.getDate() + " " + months[d.getMonth()] + " " + d.getFullYear();
+  },
+  addDaysISO: function (iso, days) {
+    var d = NP.parseDate(iso);
+    d.setDate(d.getDate() + days);
+    var m = "" + (d.getMonth() + 1);
+    var day = "" + d.getDate();
+    return d.getFullYear() + "-" + (m.length < 2 ? "0" + m : m) + "-" + (day.length < 2 ? "0" + day : day);
+  },
+  weeksUntil: function (raceISO, todayISO) {
+    var r = NP.parseDate(raceISO);
+    var t = NP.parseDate(todayISO);
+    if (!r || !t) return 0;
+    var ms = r.getTime() - t.getTime();
+    if (ms <= 0) return 0;
+    return Math.floor(ms / (7 * 24 * 3600 * 1000));
+  },
+  buildPlan: function (opts) {
+    var weeks = NP.weeksUntil(opts.raceISO, opts.todayISO);
+    var start = Math.max(5, Math.min(32, opts.longestKm));
+    var runs = opts.runsPerWeek;
+    if (weeks < 4) {
+      return {error: "That race is less than 4 weeks away, which is too soon for a safe first-marathon plan. Most first-timers need 16 to 20 weeks. Pick a later race date and try again."};
+    }
+    var tight = weeks < 8;
+    var total = weeks > 20 ? 20 : weeks;
+    var nProg = total - 3;
+    var peak = start;
+    var longs = [];
+    for (var w = 1; w <= nProg; w++) {
+      var lk;
+      if (w === 1) lk = start;
+      else if (w % 4 === 0) lk = NP.roundHalf(peak * 0.7);
+      else { lk = Math.min(32, NP.roundHalf(peak + Math.min(2, peak * 0.1))); peak = Math.max(peak, lk); }
+      longs.push(lk);
+    }
+    var taper1 = NP.roundHalf(peak * 0.75);
+    var taper2 = NP.roundHalf(peak * 0.5);
+    var planWeeks = [];
+    for (var i = 1; i <= total; i++) {
+      var longKm, note;
+      if (i <= nProg) {
+        longKm = longs[i - 1];
+        note = (i % 4 === 0) ? "Cut-back week - a shorter long run lets your body recover." : (i === nProg ? "Peak long run - practise your race-day food and drink." : (i === 1 ? "Start easy - the first week should feel comfortable." : ""));
+      } else if (i === total - 2) {
+        longKm = taper1;
+        note = "Taper - less running, more rest.";
+      } else if (i === total - 1) {
+        longKm = taper2;
+        note = "Taper - short and easy.";
+      } else {
+        longKm = 0;
+        note = "Race week - short easy runs only, then race day.";
+      }
+      var mid = (i === total) ? 4 : Math.max(3, NP.roundHalf((longKm || taper2) * 0.35));
+      var midweek = [];
+      for (var m = 0; m < runs - 1; m++) midweek.push(mid);
+      var totalKm = (i === total) ? NP.roundHalf(mid * (runs - 1) + 42) : NP.roundHalf(longKm + mid * (runs - 1));
+      planWeeks.push({
+        week: i,
+        weekOf: NP.addDaysISO(opts.raceISO, -7 * (total - i)),
+        longKm: longKm,
+        midweek: midweek,
+        totalKm: totalKm,
+        restDays: 7 - runs,
+        note: note
+      });
+    }
+    return {weeks: planWeeks, totalWeeks: total, peakKm: peak, raceISO: opts.raceISO,
+            tight: tight, baseWeeks: weeks > 20 ? weeks - 20 : 0};
+  },
+  planText: function (plan) {
+    var lines = ["Marathon training plan - race day " + NP.formatDate(plan.raceISO) + ", " + plan.totalWeeks + " weeks, peak long run " + plan.peakKm + " km."];
+    plan.weeks.forEach(function (wk) {
+      var long = wk.longKm === 0 ? "Race day - 42 km" : ("long run " + wk.longKm + " km");
+      lines.push("Week " + wk.week + " (week of " + NP.formatDate(wk.weekOf) + "): " + long + ", midweek " + wk.midweek.join(" + ") + " km, total about " + wk.totalKm + " km, " + wk.restDays + " rest days.");
+    });
+    return lines.join("\n");
+  }
+};
+if (typeof document !== "undefined" && document.getElementById) {
+  var KEY = "np-marathon-training-planner-inputs";
+  var raceEl = document.getElementById("race");
+  var longEl = document.getElementById("longest");
+  var runsEl = document.getElementById("runs");
+  var buildBtn = document.getElementById("build-btn");
+  var outEl = document.getElementById("plan-out");
+  var copyBtn = document.getElementById("copy-btn");
+  var currentPlan = null;
+  function todayISO() {
+    var d = new Date();
+    var m = "" + (d.getMonth() + 1);
+    var day = "" + d.getDate();
+    return d.getFullYear() + "-" + (m.length < 2 ? "0" + m : m) + "-" + (day.length < 2 ? "0" + day : day);
+  }
+  function render(plan) {
+    var html = "";
+    if (plan.tight) {
+      html += "<p><strong>Short plan:</strong> this is under 8 weeks, so it only suits a runner who already runs regularly. A first marathon usually needs 16 to 20 weeks.</p>";
+    }
+    if (plan.baseWeeks) {
+      html += "<p>You have " + (plan.baseWeeks + plan.totalWeeks) + " weeks. Use the first " + plan.baseWeeks + " weeks for easy base running, then start this 20-week plan.</p>";
+    }
+    html += "<p><strong>Peak long run:</strong> " + plan.peakKm + " km. <strong>Race day:</strong> " + NP.formatDate(plan.raceISO) + ".</p>";
+    html += '<div class="tscroll"><table><thead><tr><th>Week</th><th>Week of</th><th>Long run</th><th>Midweek runs</th><th>Total</th><th>Rest days</th></tr></thead><tbody>';
+    plan.weeks.forEach(function (wk) {
+      var long = wk.longKm === 0 ? "Race day - 42 km" : wk.longKm + " km";
+      var mid = wk.midweek.map(function (x) { return x + " km"; }).join(", ");
+      html += "<tr><td>" + wk.week + "</td><td>" + NP.formatDate(wk.weekOf) + "</td><td>" + long + "</td><td>" + mid + "</td><td>about " + wk.totalKm + " km</td><td>" + wk.restDays + "</td></tr>";
+      if (wk.note) html += '<tr><td colspan="6" class="small">' + wk.note + "</td></tr>";
+    });
+    html += "</tbody></table></div>";
+    outEl.innerHTML = html;
+    copyBtn.style.display = "block";
+  }
+  function build() {
+    var race = raceEl.value;
+    var longest = parseFloat(longEl.value);
+    var runs = parseInt(runsEl.value, 10);
+    if (!race) { outEl.innerHTML = "<p>Pick your race date first.</p>"; return; }
+    if (!longest || longest < 5) { outEl.innerHTML = "<p>Enter your current longest run in kilometres (at least 5).</p>"; return; }
+    if (!runs || runs < 3 || runs > 5) { outEl.innerHTML = "<p>Pick 3, 4 or 5 runs a week.</p>"; return; }
+    var plan = NP.buildPlan({raceISO: race, todayISO: todayISO(), longestKm: longest, runsPerWeek: runs});
+    if (plan.error) {
+      outEl.innerHTML = "<p>" + plan.error + "</p>";
+      copyBtn.style.display = "none";
+      currentPlan = null;
+      return;
+    }
+    currentPlan = plan;
+    try { localStorage.setItem(KEY, JSON.stringify({race: race, longest: longest, runs: runs})); } catch (e) {}
+    render(plan);
+  }
+  function copyPlan() {
+    if (!currentPlan) return;
+    var text = NP.planText(currentPlan);
+    function done() {
+      copyBtn.textContent = "Copied!";
+      setTimeout(function () { copyBtn.textContent = "Copy my plan"; }, 2000);
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+    if (typeof navigator !== "undefined" && navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  }
+  buildBtn.addEventListener("click", build);
+  copyBtn.addEventListener("click", copyPlan);
+  try {
+    var saved = localStorage.getItem(KEY);
+    if (saved) {
+      var s = JSON.parse(saved);
+      if (s.race) raceEl.value = s.race;
+      if (s.longest) longEl.value = s.longest;
+      if (s.runs) runsEl.value = s.runs;
+      if (s.race && s.longest) build();
+    }
+  } catch (e) {}
+}
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

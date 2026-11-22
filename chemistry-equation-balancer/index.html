@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chemistry Equation Balancer — Balance Chemical Equations Free | Noryvello</title>
+<meta name="description" content="Balance chemical equations free — enter an equation and get it balanced step by step, with the method explained. Made for students, no signup.">
+<link rel="canonical" href="https://noryvello.github.io/chemistry-equation-balancer/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chemistry Equation Balancer — Balance Chemical Equations Free">
+<meta property="og:description" content="Balance chemical equations free, step by step, with the method explained.">
+<meta property="og:url" content="https://noryvello.github.io/chemistry-equation-balancer/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;min-height:72px;margin-top:14px;padding:12px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#fff;color:#4338ca;border:2px solid #4338ca}
+.calc input,.calc select{min-height:72px}
+.calc textarea{width:100%;min-height:72px;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:15px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef2ff}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Chemistry Equation Balancer</h1>
+<p class="answer">Type a chemical equation and get it balanced with the steps shown — the atom counts on each side, the coefficients, and the final check. This balancer handles common simple equations and never changes a subscript.</p>
+<div class="calc">
+<label for="eq">Your equation</label>
+<input id="eq" type="text" placeholder="e.g. H2 + O2 -> H2O" autocomplete="off" autocapitalize="characters" spellcheck="false">
+<label for="example">Or pick an example</label>
+<select id="example">
+<option value="">Choose an example…</option>
+<option value="H2 + O2 -> H2O">Easy — hydrogen and oxygen make water</option>
+<option value="CH4 + O2 -> CO2 + H2O">Medium — methane burns in oxygen</option>
+<option value="C3H8 + O2 -> CO2 + H2O">Harder — propane burns in oxygen</option>
+<option value="Fe + O2 -> Fe2O3">Iron rusts — iron and oxygen</option>
+<option value="Ca(OH)2 + HCl -> CaCl2 + H2O">Brackets — calcium hydroxide and acid</option>
+</select>
+<button type="button" id="balance-btn">Balance this equation</button>
+<div class="out" id="out"></div>
+<div class="steps" id="steps"></div>
+<button type="button" id="copy-btn" class="secondary" style="display:none">Copy result</button>
+</div>
+<div class="warn">This balancer handles common simple equations: up to 8 compounds, brackets like Ca(OH)2, and whole-number coefficients. It does not handle ions, charges, or redox half-equations. If an equation is very complex, or cannot be balanced at all, it will say so plainly instead of guessing an answer.</div>
+<h2>How to use this balancer</h2>
+<p>Type your equation into the box, using plain letters and numbers: H2 + O2 -&gt; H2O. Use a plus sign between compounds and an arrow (-&gt; or =) between the two sides. Then press Balance this equation. The balanced equation appears below the button, together with the steps: the atom counts before balancing, the coefficients the balancer found, and the final check that both sides match. Press Copy result to copy the balanced equation and its steps into your notes.</p>
+<p>Write formulas the way they appear in your textbook, but without subscripts: H2O, CO2, Ca(OH)2, CH4. Brackets work — Ca(OH)2 means one calcium, two oxygens and two hydrogens. You can leave out state symbols like (g), (l), (s) and (aq); the balancer ignores them and does not show them in the answer, because they do not change the balancing. If you type a coefficient in front of a compound, the balancer reads it and tells you whether the equation is already balanced with those numbers.</p>
+<p>The balancer handles common simple equations: up to eight compounds, the elements you meet at school, and brackets. It does not handle ions or charges — anything with a plus or minus charge on it, like a sulfate ion — and it does not handle redox half-equations. If your equation is too complex, or cannot be balanced at all, the page will say so and explain why, instead of inventing an answer. That honesty is a feature, not a failure: a wrong balanced equation is worse than no answer at all.</p>
+<h2>Why equations must balance</h2>
+<p>A chemical equation is a record of what happens in a reaction: the starting materials on the left, the products on the right, and an arrow in between. Balancing means making sure the same number of atoms of each element appears on both sides. This is not a school rule invented to make homework harder. It is the law of conservation of mass: atoms are not created or destroyed in a chemical reaction, they are only rearranged.</p>
+<p>Think of it as a set of building blocks. If you start with two hydrogen atoms and two oxygen atoms, you must end with two hydrogen atoms and two oxygen atoms — they may be joined together differently, but none may appear from nowhere and none may vanish. An unbalanced equation claims that atoms appeared or disappeared, which never happens. That is why every equation in chemistry must balance, from the simplest school example to the equations engineers use to design a chemical plant.</p>
+<p>The numbers that do the balancing are called coefficients: the numbers in front of a formula. In 2H2O, the 2 is a coefficient — it means two whole water molecules. The small 2 inside H2O is a subscript — it is part of the formula and says each water molecule has two hydrogen atoms. Balancing changes coefficients only. Change a subscript and you change the substance itself: H2O is water, but H2O2 is hydrogen peroxide, a completely different chemical that you would not want to drink.</p>
+<h2>The 4-step method</h2>
+<p><strong>Step 1: Write the equation and count.</strong> Write the reactants on the left and the products on the right. Count how many atoms of each element sit on each side. Write the counts down — do not trust your memory, especially when brackets are involved. A quick table with one row per element and two columns (left, right) makes the whole job easier.</p>
+<p><strong>Step 2: Balance one element at a time.</strong> Pick the element that appears in only one compound on each side, and change the coefficient in front of one of those compounds until the counts match. Work through the elements one by one. Leave hydrogen and oxygen until last when you can — they often appear in several compounds, so balancing them early usually means doing them twice.</p>
+<p><strong>Step 3: Use fractions if they help, then clear them.</strong> Sometimes the numbers only work out with a half, as in Fe + O2 -&gt; Fe2O3, where balancing oxygen seems to need one and a half O2 molecules. That is fine as a working step: write the half, then multiply every coefficient by 2 to clear it. Coefficients must be whole numbers in the final answer, but fractions are a legitimate tool on the way there.</p>
+<p><strong>Step 4: Check everything again.</strong> Count every element on both sides with the final coefficients. Every count must match exactly. If one element is out, go back to step 2 — do not adjust a subscript to force it. The check is not optional: it is the step that catches the mistake you made in step 2 while you were looking at a different element.</p>
+<h2>Worked example 1 — easy: hydrogen and oxygen</h2>
+<p>Hydrogen gas burns in oxygen to make water: H2 + O2 -&gt; H2O. Count first. Left: 2 hydrogens, 2 oxygens. Right: 2 hydrogens, 1 oxygen. Hydrogen already matches, so balance oxygen: put a 2 in front of H2O, giving H2 + O2 -&gt; 2H2O. Now count again. Right: 4 hydrogens, 2 oxygens. Oxygen matches, but hydrogen is now 2 on the left and 4 on the right. Balance hydrogen: put a 2 in front of H2, giving 2H2 + O2 -&gt; 2H2O. Final check: left has 4 hydrogens and 2 oxygens; right has 4 hydrogens and 2 oxygens. Balanced.</p>
+<p>This is the most famous balanced equation in school chemistry, and it teaches the central lesson: balancing one element can unbalance another, so you always count again after each change. The balancer on this page does the same counting for you, but you should still be able to do this one by hand — it is the first equation most students meet, and it appears in exams more than any other.</p>
+<h2>Worked example 2 — medium: methane burns</h2>
+<p>Methane is the gas in many kitchens. When it burns, it reacts with oxygen to make carbon dioxide and water: CH4 + O2 -&gt; CO2 + H2O. Count first. Left: 1 carbon, 4 hydrogens, 2 oxygens. Right: 1 carbon, 2 hydrogens, 3 oxygens (2 in CO2, 1 in H2O). Carbon matches. Balance hydrogen: put a 2 in front of H2O, giving CH4 + O2 -&gt; CO2 + 2H2O. Now the right has 4 hydrogens and 4 oxygens. Balance oxygen: put a 2 in front of O2, giving CH4 + 2O2 -&gt; CO2 + 2H2O. Final check: left has 1 carbon, 4 hydrogens, 4 oxygens; right has 1 carbon, 4 hydrogens, 4 oxygens. Balanced.</p>
+<p>Notice the order: carbon first (it was already balanced), then hydrogen, then oxygen last. Oxygen appears in two products, so balancing it early would have meant doing it again after the hydrogen changed. "Leave oxygen until last" is a good habit for burning reactions, and it works for most equations where oxygen appears in more than one compound.</p>
+<h2>Worked example 3 — harder: propane burns</h2>
+<p>Propane is the gas in camping cylinders and some heaters. It burns the same way as methane, but with bigger numbers: C3H8 + O2 -&gt; CO2 + H2O. Count first. Left: 3 carbons, 8 hydrogens, 2 oxygens. Right: 1 carbon, 2 hydrogens, 3 oxygens. Balance carbon: put a 3 in front of CO2, giving C3H8 + O2 -&gt; 3CO2 + H2O. Balance hydrogen: put a 4 in front of H2O, giving C3H8 + O2 -&gt; 3CO2 + 4H2O. Now count oxygen on the right: 3 × 2 from the carbon dioxide is 6, plus 4 × 1 from the water is 4, making 10 oxygens. Balance oxygen: put a 5 in front of O2, giving C3H8 + 5O2 -&gt; 3CO2 + 4H2O. Final check: left has 3 carbons, 8 hydrogens, 10 oxygens; right has 3 carbons, 8 hydrogens, 10 oxygens. Balanced.</p>
+<p>The only thing that makes this one harder is the size of the numbers — the method is exactly the same. That is true of most "hard" balancing: the difficulty is careful counting, not new ideas. Write the table, go element by element, leave oxygen until last, and check at the end. If the numbers get big, slow down rather than speeding up; a single miscounted atom costs more time than a careful count ever will.</p>
+<h2>Common mistakes</h2>
+<p>The most common mistake is changing a subscript instead of a coefficient. Faced with H2 + O2 -&gt; H2O, a student might write H2 + O2 -&gt; H2O2 to make the oxygens match. That balances the numbers but changes the product from water to hydrogen peroxide — a different substance. Subscripts belong to the formula; only the numbers in front may change. If you ever catch yourself editing a number inside a formula, stop and start the count again.</p>
+<p>The second mistake is forgetting diatomic elements. Hydrogen, nitrogen, oxygen, fluorine, chlorine, bromine and iodine travel in pairs as gases: H2, N2, O2, F2, Cl2, Br2, I2. Writing "H + O -&gt; H2O" is wrong before you even start counting, because hydrogen and oxygen do not exist as single atoms in these reactions. Always write the pair.</p>
+<p>The third mistake is stopping before the final check. Balancing the last element often unbalances an earlier one — that is normal, and the check is how you catch it. The fourth mistake is forgetting to multiply through brackets: in Ca(OH)2 the bracket means everything inside is doubled, so there are 2 oxygens and 2 hydrogens, not 1 of each. And the fifth mistake is giving up when a half appears: fractions are fine as a working step, as long as you multiply everything through at the end to clear them.</p>
+<h2>What it cannot do</h2>
+<p>This balancer works with common simple equations: neutral compounds, up to eight of them, with brackets and whole-number coefficients. It cannot balance equations with ions or charges, redox half-equations, or equations where an element appears on one side only — those are not mistakes in the balancer, they are equations that cannot be balanced as written, and the page will tell you which element is the problem. It cannot balance very complex equations with many compounds, and it cannot tell you whether a reaction really happens in the laboratory — a balanced equation says the atoms add up, not that the chemicals will actually react. For those jobs, use the 4-step method above and your textbook. The balancer is a checking tool and a learning aid: use it to verify the working you did by hand, not to replace it.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What does it mean to balance an equation?</h3><p>It means making sure the same number of atoms of each element appears on both sides of the arrow. Atoms are not created or destroyed in a reaction, only rearranged, so a correct equation must show the same atoms before and after.</p></div>
+<div class="faq"><h3>Why can't I change subscripts?</h3><p>Because a subscript is part of a chemical formula — it says how many atoms of an element are in one molecule of that substance. Change it and you change the substance itself: H2O is water, but H2O2 is hydrogen peroxide. Only the coefficients (the numbers in front) may change.</p></div>
+<div class="faq"><h3>What is a coefficient?</h3><p>A coefficient is the number written in front of a formula in an equation. In 2H2O, the 2 is a coefficient and means two whole water molecules. Balancing an equation means choosing coefficients so that the atom counts match on both sides.</p></div>
+<div class="faq"><h3>Which equations can this tool balance?</h3><p>Common simple equations: up to 8 compounds, neutral substances, brackets like Ca(OH)2, and whole-number coefficients. It does not handle ions, charges, or redox half-equations, and it will say so plainly if an equation is too complex or cannot be balanced at all.</p></div>
+<div class="faq"><h3>How do I balance H2 + O2?</h3><p>H2 + O2 gives H2O. Balance oxygen first by putting 2 in front of H2O, then balance hydrogen by putting 2 in front of H2. The balanced equation is 2H2 + O2 -> 2H2O: 4 hydrogens and 2 oxygens on each side.</p></div>
+<div class="faq"><h3>What if the equation is very complex?</h3><p>Use the 4-step method on this page: count atoms on each side, balance one element at a time, use fractions as a working step and clear them at the end, then check everything again. For ions, charges and redox equations, your textbook method is the right tool — this page will not guess an answer.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/periodic-table-explorer/">Periodic Table Explorer</a> · <a href="https://noryvello.github.io/physics-formula-calculator/">Physics Formula Calculator</a> · <a href="https://noryvello.github.io/book-reading-tracker/">Book Reading Tracker</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does it mean to balance an equation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It means making sure the same number of atoms of each element appears on both sides of the arrow. Atoms are not created or destroyed in a reaction, only rearranged, so a correct equation must show the same atoms before and after."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can't I change subscripts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because a subscript is part of a chemical formula — it says how many atoms of an element are in one molecule of that substance. Change it and you change the substance itself: H2O is water, but H2O2 is hydrogen peroxide. Only the coefficients (the numbers in front) may change."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a coefficient?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A coefficient is the number written in front of a formula in an equation. In 2H2O, the 2 is a coefficient and means two whole water molecules. Balancing an equation means choosing coefficients so that the atom counts match on both sides."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which equations can this tool balance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common simple equations: up to 8 compounds, neutral substances, brackets like Ca(OH)2, and whole-number coefficients. It does not handle ions, charges, or redox half-equations, and it will say so plainly if an equation is too complex or cannot be balanced at all."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I balance H2 + O2?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "H2 + O2 gives H2O. Balance oxygen first by putting 2 in front of H2O, then balance hydrogen by putting 2 in front of H2. The balanced equation is 2H2 + O2 -> 2H2O: 4 hydrogens and 2 oxygens on each side."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the equation is very complex?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the 4-step method on this page: count atoms on each side, balance one element at a time, use fractions as a working step and clear them at the end, then check everything again. For ions, charges and redox equations, your textbook method is the right tool — this page will not guess an answer."
+      }
+    }
+  ]
+}
+</script>
+<script>
+window.NP = (function () {
+  var ELEMENTS = ("H He Li Be B C N O F Ne Na Mg Al Si P S Cl Ar K Ca Sc Ti V Cr Mn Fe Co Ni Cu Zn " +
+    "Ga Ge As Se Br Kr Rb Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe Cs Ba La Ce Pr Nd Pm " +
+    "Sm Eu Gd Tb Dy Ho Er Tm Yb Lu Hf Ta W Re Os Ir Pt Au Hg Tl Pb Bi Po At Rn Fr Ra Ac Th Pa U " +
+    "Np Pu Am Cm Bk Cf Es Fm Md No Lr Rf Db Sg Bh Hs Mt Ds Rg Cn Nh Fl Mc Lv Ts Og").split(" ");
+  var ESET = {};
+  ELEMENTS.forEach(function (e) { ESET[e] = true; });
+  function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b) { var t = a % b; a = b; b = t; } return a || 1; }
+  function lcm(a, b) { return Math.abs(a * b) / gcd(a, b); }
+  // Rationals as {n, d}, d > 0, reduced.
+  function R(n, d) {
+    d = d || 1;
+    if (d < 0) { n = -n; d = -d; }
+    var g = gcd(n, d);
+    return { n: n / g, d: d / g };
+  }
+  function rAdd(a, b) { return R(a.n * b.d + b.n * a.d, a.d * b.d); }
+  function rSub(a, b) { return R(a.n * b.d - b.n * a.d, a.d * b.d); }
+  function rMul(a, b) { return R(a.n * b.n, a.d * b.d); }
+  function rDiv(a, b) { return R(a.n * b.d, a.d * b.n); }
+  function rZero(a) { return a.n === 0; }
+  function readNumber(s, i) {
+    var j = i;
+    while (j < s.length && s[j] >= "0" && s[j] <= "9") j++;
+    if (j === i) return { value: 0, next: i };
+    return { value: parseInt(s.slice(i, j), 10), next: j };
+  }
+  // Parse one formula (no leading coefficient, no state symbols) -> {counts} or {error}
+  function parseFormula(f) {
+    var stack = [{}], i = 0, n = f.length;
+    while (i < n) {
+      var ch = f[i];
+      if (ch === "(") { stack.push({}); i++; }
+      else if (ch === ")") {
+        if (stack.length === 1) return { error: "Unmatched closing bracket in " + f + "." };
+        i++;
+        var num = readNumber(f, i); i = num.next;
+        var mult = num.value || 1;
+        var group = stack.pop(), top = stack[stack.length - 1];
+        for (var el in group) top[el] = (top[el] || 0) + group[el] * mult;
+      } else if (ch >= "A" && ch <= "Z") {
+        var sym = ch; i++;
+        if (i < n && f[i] >= "a" && f[i] <= "z") { sym += f[i]; i++; }
+        if (!ESET[sym]) return { error: "Unknown element symbol '" + sym + "'." };
+        var num2 = readNumber(f, i); i = num2.next;
+        var top2 = stack[stack.length - 1];
+        top2[sym] = (top2[sym] || 0) + (num2.value || 1);
+      } else if (ch === " " || ch === "\t") { i++; }
+      else {
+        return { error: "Could not read '" + ch + "' in " + f + ". Use element symbols, numbers and brackets only — charges are not supported." };
+      }
+    }
+    if (stack.length !== 1) return { error: "Unmatched opening bracket in " + f + "." };
+    if (Object.keys(stack[0]).length === 0) return { error: "Empty formula '" + f + "'." };
+    return { counts: stack[0] };
+  }
+  // Parse one compound: optional leading coefficient + formula. Strips state symbols.
+  function parseCompound(raw) {
+    var s = raw.replace(/\((s|l|g|aq)\)/g, "").trim();
+    if (!s) return { error: "Empty compound." };
+    var m = s.match(/^(\d+)\s*(.*)$/);
+    var coef = 1, formula = s;
+    if (m) { coef = parseInt(m[1], 10); formula = m[2].trim(); }
+    if (!formula) return { error: "Missing formula in '" + raw + "'." };
+    var p = parseFormula(formula);
+    if (p.error) return p;
+    return { coef: coef, formula: formula, counts: p.counts };
+  }
+  function parseEquation(eq) {
+    var s = String(eq || "").replace(/→/g, "->").replace(/=/g, "->").trim();
+    var parts = s.split("->");
+    if (parts.length !== 2) return { error: "Write the equation with one arrow, like H2 + O2 -> H2O." };
+    function side(text) {
+      var out = [];
+      var bits = text.split("+");
+      for (var i = 0; i < bits.length; i++) {
+        var c = parseCompound(bits[i]);
+        if (c.error) return { error: c.error };
+        out.push(c);
+      }
+      return { compounds: out };
+    }
+    var left = side(parts[0]), right = side(parts[1]);
+    if (left.error) return left;
+    if (right.error) return right;
+    if (left.compounds.length + right.compounds.length > 8)
+      return { error: "That equation has more than 8 compounds — too complex for this tool. Use the 4-step method on this page instead." };
+    var els = {};
+    left.compounds.concat(right.compounds).forEach(function (c) {
+      for (var el in c.counts) els[el] = true;
+    });
+    return { reactants: left.compounds, products: right.compounds, elements: Object.keys(els).sort() };
+  }
+  // RREF over rationals. Returns {mat, pivots} where mat is rows x cols of rationals.
+  function rref(mat, rows, cols) {
+    var pivots = [], r = 0;
+    for (var c = 0; c < cols && r < rows; c++) {
+      var piv = -1;
+      for (var i = r; i < rows; i++) { if (!rZero(mat[i][c])) { piv = i; break; } }
+      if (piv < 0) continue;
+      var tmp = mat[r]; mat[r] = mat[piv]; mat[piv] = tmp;
+      var inv = rDiv(R(1), mat[r][c]);
+      for (var j = 0; j < cols; j++) mat[r][j] = rMul(mat[r][j], inv);
+      for (var k = 0; k < rows; k++) {
+        if (k !== r && !rZero(mat[k][c])) {
+          var f = mat[k][c];
+          for (var j2 = 0; j2 < cols; j2++) mat[k][j2] = rSub(mat[k][j2], rMul(f, mat[r][j2]));
+        }
+      }
+      pivots.push(c);
+      r++;
+    }
+    return { mat: mat, pivots: pivots };
+  }
+  function countsLine(counts) {
+    return Object.keys(counts).sort().map(function (el) { return el + " " + counts[el]; }).join(", ");
+  }
+  function sideCounts(compounds, coefs) {
+    var total = {};
+    compounds.forEach(function (c, i) {
+      for (var el in c.counts) total[el] = (total[el] || 0) + c.counts[el] * coefs[i];
+    });
+    return total;
+  }
+  function formatSide(compounds, coefs) {
+    return compounds.map(function (c, i) {
+      return (coefs[i] === 1 ? "" : coefs[i]) + c.formula;
+    }).join(" + ");
+  }
+  function balanceEquation(eq) {
+    var p = parseEquation(eq);
+    if (p.error) return { error: p.error };
+    var all = p.reactants.concat(p.products);
+    var nR = p.reactants.length, nC = all.length;
+    // Every element must appear on both sides.
+    var leftEls = {}, rightEls = {};
+    p.reactants.forEach(function (c) { for (var e in c.counts) leftEls[e] = true; });
+    p.products.forEach(function (c) { for (var e in c.counts) rightEls[e] = true; });
+    for (var i = 0; i < p.elements.length; i++) {
+      var el = p.elements[i];
+      if (!leftEls[el]) return { error: "This equation cannot be balanced: " + el + " appears on the right side only. Atoms cannot appear from nowhere — check the products." };
+      if (!rightEls[el]) return { error: "This equation cannot be balanced: " + el + " appears on the left side only. Atoms cannot vanish — check the reactants." };
+    }
+    // Build matrix: rows = elements, cols = compounds (reactants +, products -).
+    var rows = p.elements.length;
+    var mat = [];
+    for (var ri = 0; ri < rows; ri++) {
+      var row = [];
+      for (var ci = 0; ci < nC; ci++) {
+        var v = all[ci].counts[p.elements[ri]] || 0;
+        row.push(R(ci < nR ? v : -v));
+      }
+      mat.push(row);
+    }
+    var red = rref(mat, rows, nC);
+    var pivotSet = {};
+    red.pivots.forEach(function (c) { pivotSet[c] = true; });
+    var free = [];
+    for (var fc = 0; fc < nC; fc++) if (!pivotSet[fc]) free.push(fc);
+    if (free.length !== 1)
+      return { error: "This equation does not have a single clear balance — it needs the textbook method on this page instead of a one-click answer." };
+    var fcol = free[0];
+    var sol = [];
+    for (var k = 0; k < nC; k++) sol.push(R(0));
+    sol[fcol] = R(1);
+    for (var pi = 0; pi < red.pivots.length; pi++) {
+      var pc = red.pivots[pi];
+      sol[pc] = R(-red.mat[pi][fcol].n, red.mat[pi][fcol].d);
+    }
+    var scale = 1;
+    sol.forEach(function (v) { scale = lcm(scale, v.d); });
+    var ints = sol.map(function (v) { return v.n * (scale / v.d); });
+    var g = 0;
+    ints.forEach(function (v) { g = gcd(g, v); });
+    ints = ints.map(function (v) { return v / g; });
+    if (ints[0] < 0) ints = ints.map(function (v) { return -v; });
+    for (var zi = 0; zi < ints.length; zi++) {
+      if (ints[zi] <= 0)
+        return { error: "This equation cannot be balanced with whole positive numbers — check that every compound is written correctly." };
+    }
+    var inCoefs = all.map(function (c) { return c.coef; });
+    var already = ints.every(function (v, idx) { return v === inCoefs[idx]; });
+    var beforeL = sideCounts(p.reactants, inCoefs.slice(0, nR));
+    var beforeR = sideCounts(p.products, inCoefs.slice(nR));
+    var afterL = sideCounts(p.reactants, ints.slice(0, nR));
+    var afterR = sideCounts(p.products, ints.slice(nR));
+    var balanced = formatSide(p.reactants, ints.slice(0, nR)) + " -> " + formatSide(p.products, ints.slice(nR));
+    var steps = [];
+    steps.push("Count atoms as written — left: " + countsLine(beforeL) + ". Right: " + countsLine(beforeR) + ".");
+    if (already) {
+      steps.push("The counts already match, so this equation is already balanced.");
+    } else {
+      steps.push("Adjust the coefficients only — the numbers in front. Subscripts never change.");
+      steps.push("Coefficients found: " + ints.join(", ") + ".");
+    }
+    steps.push("Balanced equation: " + balanced + ".");
+    steps.push("Check — left: " + countsLine(afterL) + ". Right: " + countsLine(afterR) + ". Every element matches.");
+    return { balanced: balanced, coefficients: ints, alreadyBalanced: already, steps: steps };
+  }
+  return { parseFormula: parseFormula, parseEquation: parseEquation, balanceEquation: balanceEquation,
+           formatSide: formatSide, sideCounts: sideCounts };
+})();
+// ==== DOM WIRING BELOW ====
+(function () {
+  var input = document.getElementById("eq");
+  var example = document.getElementById("example");
+  var out = document.getElementById("out");
+  var steps = document.getElementById("steps");
+  var copyBtn = document.getElementById("copy-btn");
+  var lastText = "";
+  function subscripts(s) {
+    return s.replace(/([A-Za-z\)\]])(\d+)/g, "$1<sub>$2</sub>");
+  }
+  example.addEventListener("change", function () {
+    if (example.value) { input.value = example.value; }
+  });
+  document.getElementById("balance-btn").addEventListener("click", function () {
+    var r = window.NP.balanceEquation(input.value);
+    if (r.error) {
+      out.textContent = r.error; steps.textContent = "";
+      copyBtn.style.display = "none"; lastText = "";
+      return;
+    }
+    out.innerHTML = "Balanced: " + subscripts(r.balanced);
+    steps.textContent = r.steps.join("\n");
+    lastText = "Balanced: " + r.balanced + "\n" + r.steps.join("\n");
+    copyBtn.style.display = "block";
+  });
+  copyBtn.addEventListener("click", function () {
+    if (!lastText) return;
+    function done() {
+      copyBtn.textContent = "Copied!";
+      setTimeout(function () { copyBtn.textContent = "Copy result"; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(lastText).then(done, function () { fallbackCopy(); });
+    } else { fallbackCopy(); }
+    function fallbackCopy() {
+      var ta = document.createElement("textarea");
+      ta.value = lastText; document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta); done();
+    }
+  });
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

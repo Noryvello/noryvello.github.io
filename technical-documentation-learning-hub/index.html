@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Documentation Learning Hub | Noryvello</title>
+<meta name="description" content="Learn to write technical documentation people can actually use — structure, style rules, worked examples and templates you can copy.">
+<link rel="canonical" href="https://noryvello.github.io/technical-documentation-learning-hub/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Technical Documentation Learning Hub">
+<meta property="og:description" content="Learn to write technical documentation people can actually use — structure, style rules, worked examples and templates you can copy.">
+<meta property="og:url" content="https://noryvello.github.io/technical-documentation-learning-hub/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the most important part of a technical document?", "acceptedAnswer": {"@type": "Answer", "text": "The steps, in order, written so the reader can follow them. A clear title and a short opening help, but the test of the page is whether the reader finishes the task — and that depends on accurate, complete, ordered steps."}}, {"@type": "Question", "name": "How long should a documentation page be?", "acceptedAnswer": {"@type": "Answer", "text": "As long as the topic needs and no longer. One topic per page is the rule: if a page is getting long, it is probably covering two topics, and splitting it will help readers find what they need faster."}}, {"@type": "Question", "name": "Should I use screenshots in my documentation?", "acceptedAnswer": {"@type": "Answer", "text": "Use them where the reader needs to recognise something, such as a button or a layout, and keep them few and simple. Remember that screenshots go out of date when the product changes, so review them whenever the product does."}}, {"@type": "Question", "name": "How do I know if my documentation is clear enough?", "acceptedAnswer": {"@type": "Answer", "text": "Watch a real reader use it. Sit beside someone who does not know the system, say nothing, and note every place they pause or guess. Those are the places your page needs to be clearer or more complete."}}, {"@type": "Question", "name": "What is the difference between a how-to guide and a reference page?", "acceptedAnswer": {"@type": "Answer", "text": "A how-to guide walks the reader through a task in order, from goal to finished result. A reference page lists options, commands or settings with what each one does, for readers who already know what they want to look up."}}, {"@type": "Question", "name": "How often should documentation be reviewed?", "acceptedAnswer": {"@type": "Answer", "text": "Give every page a named owner and a review date, and tie reviews to product changes: when a release changes behaviour, update the affected pages before it ships. A page no one owns will quietly go out of date."}}]}</script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Technical Documentation Learning Hub</h1>
+<p class="answer">Good technical documentation is the difference between a product people can use and a product people give up on. This hub teaches you how to write it: the structure every doc needs, style rules that keep it clear, worked examples showing the difference, and templates you can copy.</p>
+<div class="warn">Documentation is never finished — a page that no one updates slowly becomes wrong. Treat every doc as a living page with an owner and a review date, and fix it the moment you spot an error.</div>
+<h2>What good technical documentation does</h2>
+<p>Technical documentation exists for one reason: to help someone do something. A user reads it to finish a task, a developer reads it to use a tool, a new employee reads it to understand a system. If the reader finishes the task, the documentation worked. If they give up and ask a colleague, it did not — no matter how polished it looked.</p>
+<p>That simple test shapes everything in this hub. Good documentation starts from the reader&#x27;s goal, not from the writer&#x27;s knowledge. It uses the reader&#x27;s words, not the team&#x27;s jargon. It shows the steps in order, gives an example, and says what to do when something goes wrong. Everything else — formatting, diagrams, search — exists to serve that purpose.</p>
+<h2>Structure: the shape every doc needs</h2>
+<p>Every technical document, from a one-page guide to a full manual, follows the same shape. It opens with a title that says what the page is about and a short paragraph saying who it is for and what it will help them do. Then it gives the steps in order, with an example. Then it covers what can go wrong. A reader who finds that shape on every page learns to trust your docs, because they always know where to look.</p>
+<p>Keep the structure visible. Use headings that say what the section does — installing, configuring, troubleshooting — rather than clever headings that hide the content. Put the most common task first and the rare cases later. And keep each page to one topic: a page that tries to explain everything explains nothing well, and a reader who lands on it will leave confused.</p>
+<ul>
+<li>Title that says what the page is about</li>
+<li>Opening lines: who it is for and what it helps them do</li>
+<li>Steps in order, with an example</li>
+<li>Troubleshooting: what can go wrong and what to do</li>
+<li>One topic per page — split long pages rather than stuffing them</li>
+</ul>
+<h2>Writing clearly: style rules that work</h2>
+<p>Clear technical writing is plain writing. Use short sentences, one idea per sentence, and the active voice: write the system saves your work, not your work is saved by the system. Use the second person — you — because the reader is doing the task, not watching it. And define every term the first time you use it; the word that is obvious to you is the word that stops a new reader.</p>
+<p>Cut ruthlessly. If a sentence does not help the reader do the task, delete it. If a paragraph can be a list, make it a list — readers scan for steps, and a list is easier to follow than a paragraph. Read your draft out loud: anywhere you stumble, the reader will stumble too. And test every instruction by following it yourself, on a fresh setup, exactly as written.</p>
+<h2>Worked examples: before and after</h2>
+<p>Here is a muddy paragraph, the kind that appears in real documentation: Utilisation of the configuration interface facilitates the customisation of system parameters in accordance with organisational requirements. It is not wrong, but it is hard to read, and a new user would have no idea what to do next.</p>
+<p>Here is the same idea rewritten: Open Settings, then choose Preferences. Change the options to match how your team works, then save. The rewrite is shorter, it tells the reader exactly what to do, and it uses words the reader already knows. That is the whole skill of technical writing: say what to do, in the order to do it, in words the reader already understands.</p>
+<p>Notice what the rewrite changed. It replaced abstract nouns with verbs, it named the actual screens, and it gave the steps in order. Apply the same three changes to your own drafts and most of them will improve immediately. When you are unsure whether a sentence is clear, ask a colleague who does not know the system to read it and tell you what they would do next.</p>
+<h2>Templates you can copy</h2>
+<p>Templates save time and keep quality steady, because they carry the structure so the writer can focus on the content. A how-to template needs only five parts: the goal in one line, what the reader needs before starting, the numbered steps, an example of the finished result, and what to do if it fails. Fill in those five parts and you have a usable page.</p>
+<p>A reference template is different: it lists each option or command with its name, what it does, what values it accepts and what happens by default. Keep each entry short and consistent, and give one example per entry. A troubleshooting template lists symptoms first — what the reader sees — then the cause and the fix, because a reader in trouble searches by symptom, not by cause.</p>
+<ul>
+<li>How-to template: goal, prerequisites, numbered steps, example result, what to do if it fails</li>
+<li>Reference template: name, what it does, accepted values, default, one example</li>
+<li>Troubleshooting template: symptom first, then cause, then fix</li>
+</ul>
+<h2>Diagrams and screenshots: when words are not enough</h2>
+<p>Some ideas are easier to show than to tell. A diagram of how parts connect, a screenshot of the screen the reader should see, or a short sequence of steps with images can save a page of explanation. Use visuals where the reader needs to recognise something — a button, a layout, a flow — and keep them simple: one idea per image, with a caption saying what to notice.</p>
+<p>But visuals have a cost: every screenshot goes out of date when the product changes, and an outdated screenshot is worse than none, because it teaches the reader to distrust the page. Keep the number of images low, prefer diagrams of stable ideas over screenshots of changing screens, and review images whenever the product changes. When in doubt, words that stay true beat pictures that go stale.</p>
+<h2>Keeping docs up to date</h2>
+<p>Documentation rots faster than code. A feature changes, a screen moves, a default value shifts — and the page that described the old behaviour quietly becomes wrong. The only defence is ownership and rhythm: every page needs a named owner, and every owner needs a review date. When the date comes, the owner reads the page, tests the steps, and fixes or deletes what is wrong.</p>
+<p>Tie reviews to product changes, not just to the calendar. Whenever a release changes behaviour, the release checklist should include updating the affected pages — before the release ships, not after. And make it easy for readers to report errors: a simple way to flag a mistake, answered quickly, turns every reader into a reviewer. The best documentation teams treat a reader&#x27;s correction as a gift, not a complaint.</p>
+<h2>Self-check: test what you learned</h2>
+<p>Answer each question in your head, then read the answer. If you get one wrong, read the lesson again — the answer is always in the lesson above.</p>
+<ul>
+<li>Question: What is the one test of good documentation? Answer: whether the reader finishes the task. If they give up and ask a colleague, the documentation failed, no matter how polished it looked.</li>
+<li>Question: What shape should every technical document follow? Answer: title, who it is for and what it helps them do, steps in order with an example, then troubleshooting for what can go wrong.</li>
+<li>Question: Why should you write in the second person? Answer: because the reader is doing the task. You speaks directly to them and makes instructions easier to follow than passive descriptions.</li>
+<li>Question: What is the best way to test your own instructions? Answer: follow them yourself, on a fresh setup, exactly as written. Anywhere you stumble, the reader will stumble too.</li>
+<li>Question: Why should troubleshooting entries start with the symptom? Answer: because a reader in trouble searches by what they see — the error message or the strange behaviour — not by the cause, which they do not know yet.</li>
+<li>Question: What keeps documentation from going out of date? Answer: a named owner for every page and a review date, plus a rule that product changes update the affected pages before release.</li>
+</ul>
+<h2>Common mistakes in technical writing</h2>
+<p>The most common mistake is writing for yourself instead of for the reader. The writer knows the system, so they skip steps that feel obvious, use jargon without defining it, and describe the system instead of the task. The cure is to watch a real reader use your page: sit beside them, say nothing, and note every place they pause or guess. Those places are where your page failed.</p>
+<p>Other mistakes follow the same pattern: pages that try to cover everything, instructions that assume a step the reader has not done, and examples that use unreal data a reader cannot copy. Fix them with the same habits — one topic per page, steps in order with nothing skipped, and examples a reader can actually follow.</p>
+<ul>
+<li>Skipping steps that feel obvious to the writer but not to the reader</li>
+<li>Using jargon without defining it the first time</li>
+<li>Covering several topics on one page instead of splitting them</li>
+<li>Examples with unreal data that a reader cannot copy and try</li>
+</ul>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is the most important part of a technical document?</h3><p>The steps, in order, written so the reader can follow them. A clear title and a short opening help, but the test of the page is whether the reader finishes the task — and that depends on accurate, complete, ordered steps.</p></div>
+<div class="faq"><h3>How long should a documentation page be?</h3><p>As long as the topic needs and no longer. One topic per page is the rule: if a page is getting long, it is probably covering two topics, and splitting it will help readers find what they need faster.</p></div>
+<div class="faq"><h3>Should I use screenshots in my documentation?</h3><p>Use them where the reader needs to recognise something, such as a button or a layout, and keep them few and simple. Remember that screenshots go out of date when the product changes, so review them whenever the product does.</p></div>
+<div class="faq"><h3>How do I know if my documentation is clear enough?</h3><p>Watch a real reader use it. Sit beside someone who does not know the system, say nothing, and note every place they pause or guess. Those are the places your page needs to be clearer or more complete.</p></div>
+<div class="faq"><h3>What is the difference between a how-to guide and a reference page?</h3><p>A how-to guide walks the reader through a task in order, from goal to finished result. A reference page lists options, commands or settings with what each one does, for readers who already know what they want to look up.</p></div>
+<div class="faq"><h3>How often should documentation be reviewed?</h3><p>Give every page a named owner and a review date, and tie reviews to product changes: when a release changes behaviour, update the affected pages before it ships. A page no one owns will quietly go out of date.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/project-management-learning-hub/">Project Management Learning Hub</a> · <a href="https://noryvello.github.io/team-knowledge-base-builder/">Team Knowledge Base Builder</a> · <a href="https://noryvello.github.io/cloud-certification-study-hub/">Cloud Certification Study Hub</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+<script src="../ads-config.js"></script>
+</div>
+</body>
+</html>

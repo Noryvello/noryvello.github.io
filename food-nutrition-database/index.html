@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Food Nutrition Database — Calories, Protein and More for Everyday Foods | Noryvello</title>
+<meta name="description" content="Look up food nutrition free — calories, protein, carbs and fat for everyday foods, in one searchable database. No signup.">
+<link rel="canonical" href="https://noryvello.github.io/food-nutrition-database/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Food Nutrition Database — Calories, Protein and More for Everyday Foods">
+<meta property="og:description" content="Look up food nutrition free — calories, protein, carbs and fat for everyday foods, in one searchable database.">
+<meta property="og:url" content="https://noryvello.github.io/food-nutrition-database/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;min-height:72px;margin-top:12px;padding:14px 20px;border:0;border-radius:12px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#fff;color:#4338ca;border:2px solid #4338ca}
+.calc input,.calc select,.calc textarea{min-height:56px;font-size:16px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-family:inherit;line-height:1.5}
+.calc table{width:100%;border-collapse:collapse;font-size:15px;margin-top:12px}
+.calc th,.calc td{padding:8px 6px;text-align:left;border-bottom:1px solid #e2e8f0;vertical-align:top}
+.calc th{font-size:14px;color:#475569}
+.calc .bar{height:14px;background:#e2e8f0;border-radius:7px;overflow:hidden;margin-top:6px}
+.calc .bar i{display:block;height:100%;background:#0d9488}
+.calc .row{display:flex;gap:10px;flex-wrap:wrap}
+.calc .row>*{flex:1 1 140px}
+.calc pre{white-space:pre-wrap;word-wrap:break-word;background:#fff;border:1px solid #cbd5e1;border-radius:8px;padding:12px;font-size:14.5px;line-height:1.55;max-height:420px;overflow:auto}
+.calc .small{font-size:14px;color:#64748b}
+table.guide{width:100%;border-collapse:collapse;font-size:15px;margin:10px 0}
+table.guide th,table.guide td{padding:8px 6px;text-align:left;border-bottom:1px solid #e2e8f0;vertical-align:top}
+table.guide th{font-size:14px;color:#475569}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many calories do I need a day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your age, size, sex and how active you are. As a rough guide, many adults need around 2,000 to 2,500 calories a day, with smaller or less active people needing less and taller or very active people needing more. The best guide is your own weight over several weeks: steady weight means you are eating about the right amount. For a personal number, ask a doctor or a qualified dietitian."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which food has the most protein?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Per 100 grams, chicken breast tops this database at 31 grams of protein, followed by tuna, lean beef and peanuts at 26 grams each. Remember that portion size matters too: a 150 gram serving of chicken gives about 47 grams of protein, while a small handful of peanuts gives far less even though the per 100 gram numbers look close."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are these numbers exact?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. They are typical values from public nutrition data, and the same food can vary by brand, variety, season and cooking method. A banana can be a little bigger or smaller, and a chicken breast can be leaner or fattier. Use the numbers as a reliable guide for comparing foods and planning meals, not as an exact measurement of any single serving."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good breakfast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A good breakfast mixes protein, slow carbs and something fresh: oats with milk and a banana, or wholemeal bread with an egg and a tomato, will keep you full far longer than a sugary cereal on its own. Aim for something you enjoy enough to repeat, because a breakfast you actually eat beats a perfect one you skip."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I count calories?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weigh or estimate each food, look it up in the table or the portion calculator, and add the numbers up for the day. Count cooking oil, sugar in drinks and snacks too, because they are the calories people most often forget. Be consistent rather than perfect: an honest estimate every day teaches you far more than one exact day followed by none."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this medical advice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This page is general information about food and nutrition, and it is not medical advice. It cannot diagnose, treat or advise on any health condition, and it cannot replace a doctor or a qualified dietitian. If you have a health condition or need a diet plan, please talk to a health professional."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Food Nutrition Database</h1>
+<p class="answer">Search 68 everyday foods for calories, protein, carbs and fat per 100 grams, then work out any portion in grams. Values are typical figures from public nutrition data, and the page is general information, not medical advice.</p>
+<div class="calc">
+<label for="food-search">Search foods</label>
+<input id="food-search" type="search" placeholder="Type a food name, for example chicken">
+<p class="small" id="food-count"></p>
+<div style="overflow-x:auto">
+<table id="food-table">
+<thead><tr><th>Food</th><th>Group</th><th>Calories</th><th>Protein (g)</th><th>Carbs (g)</th><th>Fat (g)</th></tr></thead>
+<tbody id="food-rows"></tbody>
+</table>
+</div>
+<label for="portion-food">Choose a food</label>
+<select id="portion-food"></select>
+<label for="portion-grams">Grams</label>
+<input id="portion-grams" type="number" min="1" step="any" value="100">
+<button id="portion-btn" type="button">Work out portion</button>
+<div class="out" id="portion-out"></div>
+<button id="portion-copy" class="secondary" type="button">Copy result</button>
+<p class="small">All values in the table are per 100 grams. Use the portion calculator for any other amount.</p>
+</div>
+<div class="warn">These numbers are typical values, not exact figures — the same food can vary by brand, recipe and cooking method. This page is general information only and is not medical advice; for a diet plan or a health condition, talk to a doctor or a qualified dietitian.</div>
+<h2>How to use this database</h2>
+<p>Type any food name into the search box and the table filters at once. Try chicken, rice, or banana, and you will see the matching foods with four numbers each: calories, protein, carbs and fat, all per 100 grams. The group column tells you which family the food belongs to, such as grains, vegetables, fruits, meat and fish, beans and nuts, or dairy and fats. There are 68 foods in the table, chosen because they are the ones people actually eat most days: rice and bread, potatoes and carrots, chicken and fish, eggs and milk, lentils and nuts, oil and sugar.</p>
+<p>Pay attention to the words in brackets after a food name, because they tell you the basis of the numbers. Rice, pasta, noodles and couscous are listed cooked, which is how you eat them, while oats and flour are listed raw, because that is how they are weighed before cooking. A food changes weight when it cooks — rice roughly triples as it absorbs water — so the same food can look very different raw and cooked. Always match the state on the page to the state on your plate: if you weigh cooked rice, use the cooked row; if you weigh dry oats, use the raw row.</p>
+<p>Below the table sits the portion calculator. Choose a food, type the weight in grams, and press the Work out portion button. The result shows the calories, protein, carbs and fat for exactly that amount, scaled from the per 100 gram values. The Copy result button copies the answer so you can paste it into your notes. If you do not own kitchen scales, a rough guide is that a medium fist is about 150 grams of cooked rice, a palm-sized piece of chicken is about 120 grams, and a medium banana weighs about 100 grams once peeled.</p>
+<h2>Reading a nutrition label: the 4 numbers that matter</h2>
+<p>Almost every packet carries a nutrition label, and it can look like a wall of small print. Start with just four numbers, the same four this database lists: energy in calories, protein, carbohydrates and fat. Everything else on the label is useful, but these four decide most of what a food does for your day. Energy tells you how much fuel the food gives. Protein builds and repairs the body. Carbohydrates are the body's quickest fuel. Fat carries flavour, keeps you full, and helps the body absorb some vitamins.</p>
+<p>The first thing to check on any label is the column the numbers belong to. Labels usually show values per 100 grams and values per serving, and the two can be far apart. A small bag of crisps might list 150 calories per serving but 500 calories per 100 grams, because the serving is only 30 grams. Always compare foods using the per 100 gram column, because serving sizes are chosen by the maker and are not always realistic. This database uses per 100 grams for every food, so any two rows can be compared fairly.</p>
+<p>Next, look at the traffic-light colours if the packet has them. In the United Kingdom, labels use red, amber and green for fat, saturated fat, sugar and salt, and the cut-off points are fixed. For fat, more than 17.5 grams per 100 grams counts as high, and 3 grams or less counts as low. For sugar, more than 22.5 grams per 100 grams is high, and 5 grams or less is low. For salt, more than 1.5 grams per 100 grams is high, and 0.3 grams or less is low. A red light does not mean a food is forbidden — nuts are high in fat and still a good food — but it tells you to keep the portion modest.</p>
+<p>Finally, read the ingredients list, which is printed in order of weight. If sugar, syrup or oil appears in the first three ingredients, the food is mostly made of it, whatever the front of the packet claims. A short ingredients list usually means a simpler food. And remember that claims on the front of the packet, such as light or natural, are marketing words with loose meanings; the numbers on the back are the part that has to be true.</p>
+<h2>Protein, carbs and fat in plain words</h2>
+<p>Protein is the builder. It repairs muscle after work or exercise, and it keeps you feeling full for longer than carbs or fat do. The richest sources in this database are animal foods: chicken breast gives 31 grams of protein per 100 grams, tuna and lean beef give 26 grams, and an egg gives 13 grams. Plant foods can be strong too — lentils give 9 grams, chickpeas 9 grams and tofu 8 grams per 100 grams cooked — and they bring fibre with them. Most adults do well with some protein at every meal rather than one huge protein-heavy dinner, because the body uses a steady supply better than a single flood.</p>
+<p>Carbohydrates are fuel. They break down into sugar in the blood and power everything from walking to thinking. The difference between carb foods is how fast that fuel arrives and what comes with it. Wholemeal bread, oats, lentils and sweet potato release their energy slowly and bring fibre, which feeds the gut and steadies hunger. White sugar, honey and white flour give fast energy with almost nothing else. Neither kind is evil, but a day built mostly on fast carbs tends to end with energy crashes and more snacking, while a day with slower carbs tends to feel steadier.</p>
+<p>Fat is the most concentrated fuel of the three: one gram of fat gives about 9 calories, while a gram of protein or carbs gives about 4. That is why oil sits at 884 calories per 100 grams — it is pure fat — and why a spoonful of oil in the pan adds up fast. But fat is not the enemy. Olive oil, nuts, avocado and oily fish like salmon carry fats the body needs, and a meal with no fat at all rarely satisfies. The foods to keep small are the ones that combine fat with sugar or salt and invite overeating: biscuits, chocolate and fried snacks are built to be hard to stop at one.</p>
+<p>The three nutrients work as a team, and the balance matters more than any single number. A meal of grilled chicken, rice and vegetables covers all three in sensible amounts. A meal of only rice covers one. When you look at a food in this database, read all four numbers together: high protein with low fat is a lean choice, high carbs with high fat is an energy-dense choice, and low numbers across the board usually means a vegetable or fruit that you can eat freely.</p>
+<h2>Building a balanced plate</h2>
+<p>A simple way to use these numbers at mealtimes is the plate method. Fill half the plate with vegetables or salad, a quarter with a protein food, and a quarter with a grain or starchy food. A plate of broccoli and carrots, chicken breast and brown rice follows the method, and the numbers back it up: plenty of protein, slow carbs, and a large volume of low-calorie vegetables that fill you up without filling up your day. You do not need to weigh anything to eat this way; the plate itself does the measuring.</p>
+<p>Variety across the week matters as much as any single meal. Different vegetables bring different vitamins, different protein foods bring different minerals, and eating the same three meals on repeat makes it easy to miss something. Use the database to find swaps: if you eat chicken every day, try lentils or fish twice a week; if every breakfast is white bread, try oats or wholemeal bread on some days. Small swaps like these change the numbers more than any single superfood ever will.</p>
+<p>Drinks deserve a line of their own, because they are the easiest calories to forget. Water has no calories at all, and it is the best everyday drink. Sweet drinks, fruit juice and milky coffees with sugar can carry as many calories as a small meal, and they do not fill you up the way food does. If you drink tea or coffee with sugar, the two spoonfuls in each cup add about 32 calories — small on its own, but across four cups a day it is 128 calories that never made you feel full.</p>
+<h2>A worked example: one day of meals, added up</h2>
+<p>Here is a full day of eating, worked out with the numbers from this database. Breakfast is 40 grams of oats with 150 grams of whole milk and a 100 gram banana. Lunch is 200 grams of cooked white rice, 150 grams of cooked chicken breast and 100 grams of broccoli. Dinner is 200 grams of cooked pasta with 100 grams of tomato and 10 grams of olive oil. The snack is a 150 gram apple and 20 grams of almonds.</p>
+<table class="guide">
+<tr><th>Meal</th><th>Calories</th><th>Protein (g)</th><th>Carbs (g)</th><th>Fat (g)</th></tr>
+<tr><td>Breakfast: oats, milk, banana</td><td>336</td><td>13</td><td>57</td><td>8</td></tr>
+<tr><td>Lunch: rice, chicken, broccoli</td><td>542</td><td>55</td><td>63</td><td>6</td></tr>
+<tr><td>Dinner: pasta, tomato, olive oil</td><td>422</td><td>13</td><td>66</td><td>12</td></tr>
+<tr><td>Snack: apple, almonds</td><td>194</td><td>5</td><td>25</td><td>10</td></tr>
+<tr><td><strong>Whole day</strong></td><td><strong>1,494</strong></td><td><strong>85</strong></td><td><strong>211</strong></td><td><strong>37</strong></td></tr>
+</table>
+<p>The day comes to about 1,494 calories, with 85 grams of protein, 211 grams of carbs and 37 grams of fat. Notice where the numbers come from: lunch carries most of the protein because of the chicken, the grains carry most of the carbs, and the fat is spread across the milk, the olive oil and the almonds. Nothing in the day is extreme, and nothing was forbidden — the total stays moderate because the portions are ordinary and the vegetables take up real space on the plate.</p>
+<p>Try changing one thing and watch the total move. Swap the 10 grams of olive oil for 30 grams and dinner gains about 177 calories. Leave out the almonds and the snack drops by about 116 calories. Add a spoonful of sugar to four cups of tea and the day gains about 128 calories. This is the real power of a nutrition database: it turns vague feelings about food into numbers you can see, so a small change becomes a decision instead of a guess.</p>
+<h2>Common mistakes when counting calories</h2>
+<ul>
+<li><strong>Forgetting oil and sugar in cooking.</strong> Oil is the most common hidden calorie in home cooking. One tablespoon is about 120 calories, and it goes into the pan without ever appearing on the plate. Sugar in tea, honey in porridge and sauces on the side add up the same way. Count them, or at least remember they are there.</li>
+<li><strong>Trusting low fat on the packet.</strong> A low fat product often has extra sugar to replace the flavour the fat carried, so the calories barely change. Always check the calories per 100 grams, not the claim on the front.</li>
+<li><strong>Mixing up raw and cooked weights.</strong> Rice, pasta and lentils gain water as they cook, so 100 grams dry becomes roughly 250 to 300 grams cooked. Weighing cooked rice against a raw number can triple your count by accident.</li>
+<li><strong>Guessing portions by eye.</strong> Most people underestimate portions, especially for calorie-dense foods like nuts, cheese and oil. A kitchen scale costs little and removes the guesswork; even a week of weighing teaches your eye what 100 grams really looks like.</li>
+<li><strong>Counting only meals.</strong> Snacks, drinks and tastes while cooking are real calories. A handful of biscuits at work and a sweet drink with lunch can add 300 calories to a day without ever feeling like a meal.</li>
+<li><strong>Quitting after one bad day.</strong> One big meal does not ruin a week, and one light day does not fix one. What matters is the average across weeks, not the number on any single day.</li>
+</ul>
+<h2>What this database cannot do</h2>
+<p>This database lists typical values for plain, everyday foods. It does not know the exact recipe of the bread you bought, the oil your restaurant used, or the size of the portion on your plate, so its numbers are a guide, not a measurement. Branded products, ready meals and restaurant dishes are not listed, because their recipes change and vary too much to give a single honest number — for those, read the label on the packet or ask the restaurant.</p>
+<p>The page also cannot tell you how many calories you personally need, because that depends on your age, size, sex and how active you are, and it cannot give medical or diet advice. If you have a health condition, take medicine that affects your appetite or weight, or want a plan for losing or gaining weight, a doctor or a qualified dietitian is the right person to ask. Use this database for what it is good at: quick, honest numbers for everyday foods, so your food choices are based on facts instead of guesses.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How many calories do I need a day?</h3><p>It depends on your age, size, sex and how active you are. As a rough guide, many adults need around 2,000 to 2,500 calories a day, with smaller or less active people needing less and taller or very active people needing more. The best guide is your own weight over several weeks: steady weight means you are eating about the right amount. For a personal number, ask a doctor or a qualified dietitian.</p></div>
+<div class="faq"><h3>Which food has the most protein?</h3><p>Per 100 grams, chicken breast tops this database at 31 grams of protein, followed by tuna, lean beef and peanuts at 26 grams each. Remember that portion size matters too: a 150 gram serving of chicken gives about 47 grams of protein, while a small handful of peanuts gives far less even though the per 100 gram numbers look close.</p></div>
+<div class="faq"><h3>Are these numbers exact?</h3><p>No. They are typical values from public nutrition data, and the same food can vary by brand, variety, season and cooking method. A banana can be a little bigger or smaller, and a chicken breast can be leaner or fattier. Use the numbers as a reliable guide for comparing foods and planning meals, not as an exact measurement of any single serving.</p></div>
+<div class="faq"><h3>What is a good breakfast?</h3><p>A good breakfast mixes protein, slow carbs and something fresh: oats with milk and a banana, or wholemeal bread with an egg and a tomato, will keep you full far longer than a sugary cereal on its own. Aim for something you enjoy enough to repeat, because a breakfast you actually eat beats a perfect one you skip.</p></div>
+<div class="faq"><h3>How do I count calories?</h3><p>Weigh or estimate each food, look it up in the table or the portion calculator, and add the numbers up for the day. Count cooking oil, sugar in drinks and snacks too, because they are the calories people most often forget. Be consistent rather than perfect: an honest estimate every day teaches you far more than one exact day followed by none.</p></div>
+<div class="faq"><h3>Is this medical advice?</h3><p>No. This page is general information about food and nutrition, and it is not medical advice. It cannot diagnose, treat or advise on any health condition, and it cannot replace a doctor or a qualified dietitian. If you have a health condition or need a diet plan, please talk to a health professional.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/book-reading-tracker/">Book Reading Tracker</a> · <a href="https://noryvello.github.io/real-estate-listing-directory/">Real Estate Listing Directory</a> · <a href="https://noryvello.github.io/public-transport-route-planner/">Public Transport Route Planner</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+(function(){
+var FOODS = [{"name": "White rice (cooked)", "group": "Grains", "kcal": 130, "protein": 2.7, "carbs": 28, "fat": 0.3}, {"name": "Brown rice (cooked)", "group": "Grains", "kcal": 112, "protein": 2.6, "carbs": 23, "fat": 0.9}, {"name": "White bread", "group": "Grains", "kcal": 265, "protein": 9, "carbs": 49, "fat": 3.2}, {"name": "Wholemeal bread", "group": "Grains", "kcal": 247, "protein": 13, "carbs": 41, "fat": 4.2}, {"name": "Oats (raw)", "group": "Grains", "kcal": 389, "protein": 16.9, "carbs": 66, "fat": 6.9}, {"name": "Pasta (cooked)", "group": "Grains", "kcal": 158, "protein": 5.8, "carbs": 31, "fat": 0.9}, {"name": "Egg noodles (cooked)", "group": "Grains", "kcal": 138, "protein": 4.5, "carbs": 25, "fat": 2.1}, {"name": "White flour", "group": "Grains", "kcal": 364, "protein": 10, "carbs": 76, "fat": 1}, {"name": "Cornflakes", "group": "Grains", "kcal": 357, "protein": 7, "carbs": 84, "fat": 0.4}, {"name": "Couscous (cooked)", "group": "Grains", "kcal": 112, "protein": 3.8, "carbs": 23, "fat": 0.2}, {"name": "Potato (boiled)", "group": "Vegetables", "kcal": 87, "protein": 1.9, "carbs": 20, "fat": 0.1}, {"name": "Sweet potato (boiled)", "group": "Vegetables", "kcal": 76, "protein": 1.4, "carbs": 18, "fat": 0.1}, {"name": "Carrot (raw)", "group": "Vegetables", "kcal": 41, "protein": 0.9, "carbs": 10, "fat": 0.2}, {"name": "Broccoli (raw)", "group": "Vegetables", "kcal": 34, "protein": 2.8, "carbs": 6.6, "fat": 0.4}, {"name": "Cauliflower (raw)", "group": "Vegetables", "kcal": 25, "protein": 1.9, "carbs": 5, "fat": 0.3}, {"name": "Cabbage (raw)", "group": "Vegetables", "kcal": 25, "protein": 1.3, "carbs": 5.8, "fat": 0.1}, {"name": "Spinach (raw)", "group": "Vegetables", "kcal": 23, "protein": 2.9, "carbs": 3.6, "fat": 0.4}, {"name": "Tomato (raw)", "group": "Vegetables", "kcal": 18, "protein": 0.9, "carbs": 3.9, "fat": 0.2}, {"name": "Onion (raw)", "group": "Vegetables", "kcal": 40, "protein": 1.1, "carbs": 9.3, "fat": 0.1}, {"name": "Cucumber", "group": "Vegetables", "kcal": 15, "protein": 0.7, "carbs": 3.6, "fat": 0.1}, {"name": "Green beans (boiled)", "group": "Vegetables", "kcal": 35, "protein": 1.9, "carbs": 7.9, "fat": 0.2}, {"name": "Peas (boiled)", "group": "Vegetables", "kcal": 84, "protein": 5.4, "carbs": 15, "fat": 0.4}, {"name": "Sweetcorn (boiled)", "group": "Vegetables", "kcal": 96, "protein": 3.4, "carbs": 21, "fat": 1.5}, {"name": "Aubergine (raw)", "group": "Vegetables", "kcal": 25, "protein": 1, "carbs": 6, "fat": 0.2}, {"name": "Pumpkin (boiled)", "group": "Vegetables", "kcal": 20, "protein": 1, "carbs": 4.6, "fat": 0.1}, {"name": "Okra (raw)", "group": "Vegetables", "kcal": 33, "protein": 1.9, "carbs": 7.5, "fat": 0.2}, {"name": "Mushrooms (raw)", "group": "Vegetables", "kcal": 22, "protein": 3.1, "carbs": 3.3, "fat": 0.3}, {"name": "Lettuce", "group": "Vegetables", "kcal": 15, "protein": 1.4, "carbs": 2.9, "fat": 0.2}, {"name": "Bell pepper (raw)", "group": "Vegetables", "kcal": 31, "protein": 1, "carbs": 6, "fat": 0.3}, {"name": "Banana", "group": "Fruits", "kcal": 89, "protein": 1.1, "carbs": 23, "fat": 0.3}, {"name": "Apple", "group": "Fruits", "kcal": 52, "protein": 0.3, "carbs": 14, "fat": 0.2}, {"name": "Orange", "group": "Fruits", "kcal": 47, "protein": 0.9, "carbs": 12, "fat": 0.1}, {"name": "Mango", "group": "Fruits", "kcal": 60, "protein": 0.8, "carbs": 15, "fat": 0.4}, {"name": "Grapes", "group": "Fruits", "kcal": 69, "protein": 0.7, "carbs": 18, "fat": 0.2}, {"name": "Strawberries", "group": "Fruits", "kcal": 32, "protein": 0.7, "carbs": 7.7, "fat": 0.3}, {"name": "Watermelon", "group": "Fruits", "kcal": 30, "protein": 0.6, "carbs": 7.6, "fat": 0.2}, {"name": "Papaya", "group": "Fruits", "kcal": 43, "protein": 0.5, "carbs": 11, "fat": 0.3}, {"name": "Pineapple", "group": "Fruits", "kcal": 50, "protein": 0.5, "carbs": 13, "fat": 0.1}, {"name": "Lemon", "group": "Fruits", "kcal": 29, "protein": 1.1, "carbs": 9.3, "fat": 0.3}, {"name": "Avocado", "group": "Fruits", "kcal": 160, "protein": 2, "carbs": 9, "fat": 15}, {"name": "Dates", "group": "Fruits", "kcal": 282, "protein": 2.5, "carbs": 75, "fat": 0.4}, {"name": "Raisins", "group": "Fruits", "kcal": 299, "protein": 3.1, "carbs": 79, "fat": 0.5}, {"name": "Chicken breast (cooked)", "group": "Meat and Fish", "kcal": 165, "protein": 31, "carbs": 0, "fat": 3.6}, {"name": "Chicken thigh (cooked)", "group": "Meat and Fish", "kcal": 209, "protein": 26, "carbs": 0, "fat": 11}, {"name": "Beef (cooked, lean)", "group": "Meat and Fish", "kcal": 250, "protein": 26, "carbs": 0, "fat": 15}, {"name": "Lamb (cooked)", "group": "Meat and Fish", "kcal": 294, "protein": 25, "carbs": 0, "fat": 21}, {"name": "Salmon (cooked)", "group": "Meat and Fish", "kcal": 208, "protein": 20, "carbs": 0, "fat": 13}, {"name": "Tuna (canned in water)", "group": "Meat and Fish", "kcal": 116, "protein": 26, "carbs": 0, "fat": 1}, {"name": "Cod (cooked)", "group": "Meat and Fish", "kcal": 105, "protein": 23, "carbs": 0, "fat": 0.9}, {"name": "Prawns (cooked)", "group": "Meat and Fish", "kcal": 99, "protein": 24, "carbs": 0.2, "fat": 0.3}, {"name": "Egg (boiled)", "group": "Meat and Fish", "kcal": 155, "protein": 13, "carbs": 1.1, "fat": 11}, {"name": "Lentils (cooked)", "group": "Beans and Nuts", "kcal": 116, "protein": 9, "carbs": 20, "fat": 0.4}, {"name": "Chickpeas (cooked)", "group": "Beans and Nuts", "kcal": 164, "protein": 9, "carbs": 27, "fat": 2.6}, {"name": "Kidney beans (cooked)", "group": "Beans and Nuts", "kcal": 132, "protein": 8.9, "carbs": 24, "fat": 0.5}, {"name": "Tofu", "group": "Beans and Nuts", "kcal": 76, "protein": 8, "carbs": 1.9, "fat": 4.8}, {"name": "Peanuts", "group": "Beans and Nuts", "kcal": 567, "protein": 26, "carbs": 16, "fat": 49}, {"name": "Almonds", "group": "Beans and Nuts", "kcal": 579, "protein": 21, "carbs": 22, "fat": 50}, {"name": "Walnuts", "group": "Beans and Nuts", "kcal": 654, "protein": 15, "carbs": 14, "fat": 65}, {"name": "Whole milk", "group": "Dairy and Fats", "kcal": 61, "protein": 3.2, "carbs": 4.8, "fat": 3.3}, {"name": "Yoghurt (plain)", "group": "Dairy and Fats", "kcal": 61, "protein": 3.5, "carbs": 4.7, "fat": 3.3}, {"name": "Cheddar cheese", "group": "Dairy and Fats", "kcal": 403, "protein": 25, "carbs": 0.1, "fat": 33}, {"name": "Butter", "group": "Dairy and Fats", "kcal": 717, "protein": 0.9, "carbs": 0.1, "fat": 81}, {"name": "Olive oil", "group": "Dairy and Fats", "kcal": 884, "protein": 0, "carbs": 0, "fat": 100}, {"name": "Vegetable oil", "group": "Dairy and Fats", "kcal": 884, "protein": 0, "carbs": 0, "fat": 100}, {"name": "Honey", "group": "Dairy and Fats", "kcal": 304, "protein": 0.3, "carbs": 82, "fat": 0}, {"name": "White sugar", "group": "Dairy and Fats", "kcal": 387, "protein": 0, "carbs": 100, "fat": 0}, {"name": "Dark chocolate", "group": "Dairy and Fats", "kcal": 546, "protein": 4.9, "carbs": 61, "fat": 31}, {"name": "Plain biscuits", "group": "Dairy and Fats", "kcal": 480, "protein": 6, "carbs": 68, "fat": 20}];
+function searchFoods(query){
+  var q = (query || "").toString().trim().toLowerCase();
+  if(!q) return FOODS.slice();
+  return FOODS.filter(function(f){ return f.name.toLowerCase().indexOf(q) !== -1; });
+}
+function foodByName(name){
+  var n = (name || "").toString().trim().toLowerCase();
+  for(var i = 0; i < FOODS.length; i++){
+    if(FOODS[i].name.toLowerCase() === n) return FOODS[i];
+  }
+  return null;
+}
+function round1(x){ return Math.round(x * 10) / 10; }
+function portion(name, grams){
+  var f = foodByName(name);
+  if(!f) return null;
+  if(typeof grams !== "number" || !isFinite(grams) || grams <= 0) return null;
+  var k = grams / 100;
+  return {name: f.name, grams: grams, kcal: round1(f.kcal * k),
+    protein: round1(f.protein * k), carbs: round1(f.carbs * k), fat: round1(f.fat * k)};
+}
+window.NP = {FOODS: FOODS, searchFoods: searchFoods, foodByName: foodByName, portion: portion};
+if(typeof document !== "undefined" && document.addEventListener){
+  document.addEventListener("DOMContentLoaded", function(){
+    var rows = document.getElementById("food-rows");
+    var count = document.getElementById("food-count");
+    var search = document.getElementById("food-search");
+    var sel = document.getElementById("portion-food");
+    var gramsEl = document.getElementById("portion-grams");
+    var out = document.getElementById("portion-out");
+    var copyBtn = document.getElementById("portion-copy");
+    function render(list){
+      rows.innerHTML = "";
+      list.forEach(function(f){
+        var tr = document.createElement("tr");
+        [f.name, f.group, f.kcal, f.protein, f.carbs, f.fat].forEach(function(v){
+          var td = document.createElement("td");
+          td.textContent = v;
+          tr.appendChild(td);
+        });
+        rows.appendChild(tr);
+      });
+      count.textContent = "Showing " + list.length + " of " + FOODS.length + " foods.";
+    }
+    FOODS.forEach(function(f){
+      var opt = document.createElement("option");
+      opt.value = f.name;
+      opt.textContent = f.name;
+      sel.appendChild(opt);
+    });
+    render(FOODS);
+    search.addEventListener("input", function(){ render(searchFoods(search.value)); });
+    function showPortion(){
+      var p = portion(sel.value, parseFloat(gramsEl.value));
+      if(!p){
+        out.textContent = "Please choose a food and enter grams above zero.";
+        return;
+      }
+      out.textContent = p.grams + " g " + p.name + ": " + p.kcal + " kcal, " +
+        p.protein + " g protein, " + p.carbs + " g carbs, " + p.fat + " g fat.";
+    }
+    document.getElementById("portion-btn").addEventListener("click", showPortion);
+    copyBtn.addEventListener("click", function(){
+      var text = out.textContent;
+      if(!text){ return; }
+      function done(){ copyBtn.textContent = "Copied!"; }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done, done);
+      } else {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand("copy"); } catch(e) {}
+        document.body.removeChild(ta);
+        done();
+      }
+    });
+  });
+}
+})();
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skill Gap Analyzer — Find the Skills You Are Missing | Noryvello</title>
+<meta name="description" content="Find your skill gaps free — pick a job you want, tick the skills you already have, and see exactly what to learn next. No signup.">
+<link rel="canonical" href="https://noryvello.github.io/skill-gap-analyzer/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Skill Gap Analyzer — Find the Skills You Are Missing">
+<meta property="og:description" content="Find your skill gaps free and see exactly what to learn next.">
+<meta property="og:url" content="https://noryvello.github.io/skill-gap-analyzer/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc textarea{width:100%;min-height:150px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;font-family:inherit}
+.calc input,.calc select{width:100%;min-height:72px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc button{display:block;width:100%;min-height:72px;margin-top:12px;padding:12px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#fff;color:#4338ca;border:2px solid #4338ca}
+.calc button.danger{background:#fff;color:#991b1b;border:2px solid #991b1b}
+.calc .out{font-size:17px;font-weight:400;margin-top:14px;white-space:pre-line}
+.calc .out b{font-weight:700}
+.calc .row{margin:10px 0}
+.calc .checkrow{display:flex;gap:12px;align-items:flex-start;margin:0;padding:14px 0;border-bottom:1px solid #e2e8f0;cursor:pointer}
+.calc .checkrow input{width:30px;height:30px;min-height:30px;flex:none;margin:0;accent-color:#4338ca}
+.calc .checkrow span{font-size:16px;line-height:1.5}
+table.data{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+table.data th,table.data td{border:1px solid #cbd5e1;padding:8px;text-align:left;vertical-align:top}
+table.data th{background:#eef2ff}
+.tag{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:700}
+.tag.ok{background:#dcfce7;color:#166534}
+.tag.bad{background:#fee2e2;color:#991b1b}
+.tag.mid{background:#fef3c7;color:#92400e}
+.cardline{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin:10px 0}
+.cardline b{font-size:16.5px}
+.small{font-size:14px;color:#64748b}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a skill gap?", "acceptedAnswer": {"@type": "Answer", "text": "A skill gap is the distance between what you can do now and what a job needs. It is not a judgment — everyone has gaps. Knowing yours means you can learn in the right order instead of guessing or learning everything at once."}}, {"@type": "Question", "name": "How do I know which skills a job needs?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the job ad: it usually lists the must-haves and the nice-to-haves. This analyzer gives you a plain list for eight common jobs, in learning order. For other jobs, read several ads for the same role and note the skills that appear in all of them."}}, {"@type": "Question", "name": "Which skill should I learn first?", "acceptedAnswer": {"@type": "Answer", "text": "The first missing skill in your report, because the lists are in learning order with basics first. Learn one skill at a time, practise it on something real, and only then move to the next one."}}, {"@type": "Question", "name": "Can I learn these skills free?", "acceptedAnswer": {"@type": "Answer", "text": "Most of them, yes. The learning plan on this page suggests a free way to learn each skill, such as free lessons, free guides, or practice on real tasks. Some skills, like driving or electrical work, need supervised practice or a licence, which may cost money."}}, {"@type": "Question", "name": "How long does it take to close a gap?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the skill and how much time you give it. A small skill can take a week of steady practice; a big one can take months. A little practice every day beats a long burst once a month, and finishing one skill before starting the next keeps you moving."}}, {"@type": "Question", "name": "Is a certificate enough?", "acceptedAnswer": {"@type": "Answer", "text": "No, not on its own. A certificate shows you finished a course, but employers want to see what you can do. Pair every certificate with something real: a project, a piece of work, or a task you completed for someone."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Skill Gap Analyzer</h1>
+<p class="answer">Pick the job you want, tick the skills you already have, and this analyzer shows you exactly what is missing — in learning order, basics first. It also gives you a simple learning plan with free ways to learn each missing skill.</p>
+<div class="calc">
+<label for="sg-job">The job you want</label>
+<select id="sg-job">
+<option value="developer">Developer</option>
+<option value="designer">Designer</option>
+<option value="teacher">Teacher</option>
+<option value="accountant">Accountant</option>
+<option value="digital-marketer">Digital marketer</option>
+<option value="electrician">Electrician</option>
+<option value="nurse">Nurse</option>
+<option value="driver">Driver</option>
+</select>
+<p><b>Tick the skills you already have</b></p>
+<div id="sg-skills"></div>
+<button id="sg-check" type="button">Check my gaps</button>
+<div class="out" id="sg-out" style="display:none"></div>
+<button id="sg-copy" type="button" class="secondary" style="display:none" data-label="Copy my gap report">Copy my gap report</button>
+</div>
+<div class="warn">This analyzer compares your ticks against a plain list of skills for each job — it is a guide, not a test and not a certificate. Real job ads differ, so always check the actual ad for the job you want.</div>
+<h2>How to use this analyzer</h2>
+<p>Pick the job you want from the list above. The analyzer shows the skills that job usually needs, in learning order, with the basics first. Tick every skill you honestly already have — be strict with yourself, because ticking a skill you do not really have only hides a gap you need to close. Then tap Check my gaps.</p>
+<p>Your report shows two lists. The first is the skills you have, marked in green. The second is the missing skills, marked in red, in the order you should learn them. Below that comes a simple learning plan: each missing skill with a free way to learn it, starting with the first one. Tap Copy my gap report to keep the plan as plain text. Nothing you tick leaves your phone, and nothing is saved unless you copy it yourself.</p>
+<h2>What a skill gap actually is</h2>
+<p>A skill gap is the distance between what you can do now and what a job needs. It is not a judgment and it is not a failure — everyone has gaps, including people already doing the job. The gap is simply the list of things to learn, and knowing the list is what turns a vague worry into a plan.</p>
+<p>Gaps close one at a time. A person who wants to be a designer does not need to learn everything about design before starting; they need to learn the first missing skill, practise it on something real, and then move to the next one. Each skill you close makes the next one easier, because skills build on each other. The analyzer exists to show you the list in the right order, so your effort goes where it counts instead of scattering in every direction.</p>
+<p>A gap list also protects you from the most common learning mistake: starting with the exciting advanced work and discovering too late that the basics are missing. The designer who cannot yet make a clean layout will struggle with a portfolio; the developer who cannot yet read code will struggle in a team. The analyzer puts the foundation first for exactly that reason — the order is part of the advice, not just a list.</p>
+<h2>The jobs and their skill lists</h2>
+<p>The analyzer covers eight common jobs, each with six skills in learning order. A developer starts with how computers and the internet work, then one programming language, then small projects, then reading other people's code, then working with data, then team tools. A designer starts with colour, shape, and layout, then one design tool, then real pieces for real people, then listening to clients, then a portfolio, then presenting work clearly.</p>
+<p>A teacher starts with explaining one idea plainly, then planning a short lesson, then keeping a room interested, then checking understanding, then managing a classroom, then marking fairly. An accountant starts with adding and checking totals, then keeping simple books, then reading a bank statement, then spreadsheets, then a monthly summary, then basic tax and record rules. A digital marketer starts with clear writing, then knowing the customer, then planning a week of posts, then reading simple numbers, then simple images, then running a small paid test.</p>
+<p>An electrician starts with safety rules — always first — then basic circuits, then hand tools, then reading a wiring plan, then installing a light and a socket, then testing and finding faults. A nurse starts with how the body works, then basic measurements, then clear notes, then staying calm under pressure, then kind communication, then infection control. A driver starts with road rules, then safe driving habits, then route planning, then basic vehicle checks, then staying calm in traffic, then handling a breakdown.</p>
+<h2>Learning in the right order</h2>
+<p>Order matters because skills rest on each other. Trying to build a portfolio before you can make a real design is frustrating; trying to read a wiring plan before you know how a circuit works is confusing and unsafe. The lists in this analyzer put the foundation first, so each new skill has something solid to stand on.</p>
+<p>Learn one skill at a time, and practise it on something real before moving on. Reading about a skill is not the same as having it: you learn bookkeeping by keeping real books, you learn design by making real pieces, you learn driving by driving. A little practice every day beats a long burst once a month, because skills grow through repetition. And use the free ways first — free lessons, free guides, and practice on real tasks will take you further than you might expect before you need to spend anything.</p>
+<p>It also helps to set a small, visible goal for each skill: not learn bookkeeping, but keep one month of books for a real shop; not learn design, but finish one poster a real person will use. A concrete goal tells you when the skill is done, and finishing it gives you something to show. If a skill feels too big, split it: the first half this week, the second half next week. And if you get stuck, ask someone who has the skill — most people are happy to explain the first step, because they remember being stuck there themselves.</p>
+<h2>A worked example: want to be a designer</h2>
+<p>Take someone who wants to be a designer and ticks two skills: colour, shape, and layout basics, and one design tool learned well. The report shows four gaps, in order. First, making real pieces for real people — the plan suggests redesigning a menu, a poster, or a shop sign, because a real piece teaches more than ten exercises. Second, listening to what a client wants — the plan suggests asking three people what they would change about the redesign, and really listening to the answers.</p>
+<p>Third, building a small portfolio — the plan suggests keeping the best six pieces in one place, because six strong pieces beat sixty weak ones. Fourth, presenting your work clearly — the plan suggests practising explaining one design in one minute. Notice the order: the portfolio comes after the real pieces, because a portfolio needs pieces to hold. If this person had started with the portfolio, they would have had nothing to put in it. That is what learning in order means in practice.</p>
+<h2>Common mistakes</h2>
+<p>The first mistake is learning everything at once. Ten half-learned skills are worth less than three solid ones, and trying to learn them all together usually ends in giving up. The second mistake is skipping the basics. Basics feel slow, but they are what make the advanced work possible — and the gaps they leave show up later, at the worst moment.</p>
+<p>The third mistake is collecting certificates without practice. A certificate shows you finished a course; it does not show you can do the work. Pair every certificate with something real: a project, a piece of work, or a task completed for someone. The fourth mistake is comparing yourself with experts. Experts have years of practice behind them; comparing your first month with their tenth year only discourages you. Compare yourself with where you were last month instead. The fifth mistake is never starting at all — waiting until you feel ready. You become ready by starting, not by waiting.</p>
+<h2>What this analyzer cannot do</h2>
+<p>This analyzer cannot test you. It only knows what you tick, so an honest tick gives an honest report and a generous tick gives a flattering one. It cannot see how well you do a skill — ticking a skill means you have used it, not that you have mastered it. The lists are general guides for eight common jobs; a real job ad for a real employer may ask for different skills, or the same skills in a different order.</p>
+<p>It also cannot guarantee a job. Closing a gap improves your chances, but hiring depends on the employer, the market, and many things outside your control. Use the analyzer to plan your learning, check real job ads for the role you want, and keep building real work you can show. The plan is a starting point — the learning is yours to do.</p>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is a skill gap?</h3><p>A skill gap is the distance between what you can do now and what a job needs. It is not a judgment — everyone has gaps. Knowing yours means you can learn in the right order instead of guessing or learning everything at once.</p></div>
+<div class="faq"><h3>How do I know which skills a job needs?</h3><p>Start with the job ad: it usually lists the must-haves and the nice-to-haves. This analyzer gives you a plain list for eight common jobs, in learning order. For other jobs, read several ads for the same role and note the skills that appear in all of them.</p></div>
+<div class="faq"><h3>Which skill should I learn first?</h3><p>The first missing skill in your report, because the lists are in learning order with basics first. Learn one skill at a time, practise it on something real, and only then move to the next one.</p></div>
+<div class="faq"><h3>Can I learn these skills free?</h3><p>Most of them, yes. The learning plan on this page suggests a free way to learn each skill, such as free lessons, free guides, or practice on real tasks. Some skills, like driving or electrical work, need supervised practice or a licence, which may cost money.</p></div>
+<div class="faq"><h3>How long does it take to close a gap?</h3><p>It depends on the skill and how much time you give it. A small skill can take a week of steady practice; a big one can take months. A little practice every day beats a long burst once a month, and finishing one skill before starting the next keeps you moving.</p></div>
+<div class="faq"><h3>Is a certificate enough?</h3><p>No, not on its own. A certificate shows you finished a course, but employers want to see what you can do. Pair every certificate with something real: a project, a piece of work, or a task you completed for someone.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/career-path-explorer/">Career Path Explorer</a> · <a href="https://noryvello.github.io/job-description-analyzer/">Job Description Analyzer</a> · <a href="https://noryvello.github.io/job-application-tracker/">Job Application Tracker</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function copyText(text, btn){
+  function done(){ if(btn){ var old=btn.getAttribute('data-label')||btn.textContent; btn.textContent='Copied!'; setTimeout(function(){ btn.textContent=old; },2000); } }
+  function fallback(){
+    var ta=document.createElement('textarea');
+    ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta); done();
+  }
+  if (typeof navigator!=='undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else { fallback(); }
+}
+function show(el){ if(el) el.style.display='block'; }
+
+var JOB_LABELS = {developer:'Developer', designer:'Designer', teacher:'Teacher', accountant:'Accountant', 'digital-marketer':'Digital marketer', electrician:'Electrician', nurse:'Nurse', driver:'Driver'};
+var SKILLS = {
+  developer: [
+    {name:'How computers and the internet work', learn:'Free beginner guides and videos online.'},
+    {name:'One programming language, learned well', learn:'Free interactive coding lessons.'},
+    {name:'Building small working projects', learn:'Build a to-do list, a calculator, a small page.'},
+    {name:'Reading and fixing other people\u2019s code', learn:'Fix one small bug in a public project.'},
+    {name:'Working with data', learn:'Free lessons on tables, lists, and simple databases.'},
+    {name:'Team tools and version control', learn:'Free guides to saving and sharing code safely.'}
+  ],
+  designer: [
+    {name:'Colour, shape, and layout basics', learn:'Free design basics lessons and posters to study.'},
+    {name:'One design tool, learned well', learn:'Free lessons for a free design program.'},
+    {name:'Making real pieces for real people', learn:'Redesign a menu, a poster, or a shop sign.'},
+    {name:'Listening to what a client wants', learn:'Ask three people what they would change.'},
+    {name:'Building a small portfolio', learn:'Keep your best six pieces in one place.'},
+    {name:'Presenting your work clearly', learn:'Practise explaining one design in one minute.'}
+  ],
+  teacher: [
+    {name:'Explaining one idea in plain words', learn:'Practise explaining to a friend.'},
+    {name:'Planning a short lesson', learn:'Write a 20-minute plan for one topic.'},
+    {name:'Keeping a room interested', learn:'Watch a good teacher and note what they do.'},
+    {name:'Checking what learners understood', learn:'Ask three questions at the end of a lesson.'},
+    {name:'Managing a classroom calmly', learn:'Free classroom management guides.'},
+    {name:'Marking and giving useful feedback', learn:'Practise marking one piece of work fairly.'}
+  ],
+  accountant: [
+    {name:'Adding, subtracting, and checking totals', learn:'Practise with a household budget.'},
+    {name:'Keeping a simple set of books', learn:'Free bookkeeping lessons for beginners.'},
+    {name:'Reading a bank statement', learn:'Go through one real statement line by line.'},
+    {name:'Using a spreadsheet well', learn:'Free spreadsheet lessons and practice sheets.'},
+    {name:'Preparing a monthly summary', learn:'Summarise one month of a small shop\u2019s money.'},
+    {name:'Basic tax and record rules', learn:'Read the free official guide where you live.'}
+  ],
+  'digital-marketer': [
+    {name:'Writing clearly for readers', learn:'Write one short post every day.'},
+    {name:'Knowing who the customer is', learn:'Describe one real customer in detail.'},
+    {name:'Planning a week of posts', learn:'Plan seven posts for a small shop.'},
+    {name:'Reading simple numbers: views and clicks', learn:'Free analytics lessons for beginners.'},
+    {name:'Making simple images for posts', learn:'Free design lessons for non-designers.'},
+    {name:'Running a small paid test', learn:'Study one free guide before spending anything.'}
+  ],
+  electrician: [
+    {name:'Electrical safety rules', learn:'Free safety guides — learn these first, always.'},
+    {name:'Basic circuits: how power flows', learn:'Free beginner circuit lessons.'},
+    {name:'Using hand tools safely', learn:'Practise with guidance from a qualified person.'},
+    {name:'Reading a simple wiring plan', learn:'Study one real plan with a mentor.'},
+    {name:'Installing a light and a socket', learn:'Practise only with supervision.'},
+    {name:'Testing and finding faults', learn:'Learn to test before you touch anything live.'}
+  ],
+  nurse: [
+    {name:'How the human body works, in plain terms', learn:'Free beginner health lessons.'},
+    {name:'Taking basic measurements', learn:'Practise temperature, pulse, and blood pressure.'},
+    {name:'Keeping clear patient notes', learn:'Practise writing one clear, complete note.'},
+    {name:'Staying calm under pressure', learn:'Learn one breathing routine and use it.'},
+    {name:'Communicating with patients kindly', learn:'Practise explaining one procedure simply.'},
+    {name:'Infection control basics', learn:'Free hygiene and safety lessons.'}
+  ],
+  driver: [
+    {name:'Road rules where you live', learn:'Read the free official road rules guide.'},
+    {name:'Safe driving habits', learn:'Practise with a licensed instructor.'},
+    {name:'Planning a route', learn:'Plan three real routes before you drive them.'},
+    {name:'Basic vehicle checks', learn:'Learn the daily checks: tyres, lights, oil, water.'},
+    {name:'Staying calm in traffic', learn:'Practise slow breathing at red lights.'},
+    {name:'Handling a breakdown', learn:'Learn the safe steps before it happens.'}
+  ]
+};
+function gapReport(job, have){
+  var list = SKILLS[job];
+  if (!list) return {error:'Pick a target job.'};
+  have = have || [];
+  var haveList = list.filter(function(s){ return have.indexOf(s.name) >= 0; });
+  var missing = list.filter(function(s){ return have.indexOf(s.name) < 0; });
+  var plan = missing.map(function(s, i){ return {step: i + 1, name: s.name, learn: s.learn}; });
+  return {job: job, jobLabel: JOB_LABELS[job], total: list.length,
+          have: haveList.map(function(s){ return s.name; }),
+          missing: missing.map(function(s){ return s.name; }),
+          plan: plan, pct: Math.round(haveList.length / list.length * 100)};
+}
+window.NP = { gapReport: gapReport, SKILLS: SKILLS, JOB_LABELS: JOB_LABELS };
+if (typeof document !== 'undefined' && document.querySelector('.calc')) {
+  var lastText = '';
+  var jobSel = document.getElementById('sg-job');
+  var skillsBox = document.getElementById('sg-skills');
+  function renderSkills(){
+    var list = SKILLS[jobSel.value] || [];
+    var h = '';
+    list.forEach(function(s, i){
+      h += '<label class="checkrow" for="sg-s' + i + '"><input type="checkbox" id="sg-s' + i + '" value="' + esc(s.name) + '"><span>' + esc(s.name) + '</span></label>';
+    });
+    skillsBox.innerHTML = h;
+    document.getElementById('sg-out').style.display = 'none';
+    document.getElementById('sg-copy').style.display = 'none';
+  }
+  jobSel.addEventListener('change', renderSkills);
+  renderSkills();
+  document.getElementById('sg-check').addEventListener('click', function(){
+    var have = [];
+    skillsBox.querySelectorAll('input[type=checkbox]:checked').forEach(function(cb){ have.push(cb.value); });
+    var r = gapReport(jobSel.value, have);
+    var h = '<b>' + esc(r.jobLabel) + ' — you have ' + r.have.length + ' of ' + r.total + ' skills (' + r.pct + '%)</b>\n';
+    var plain = r.jobLabel + ' — skills I have: ' + r.have.length + ' of ' + r.total + ' (' + r.pct + '%)\n';
+    if (r.have.length) {
+      h += '\n<b>Skills you have:</b>\n';
+      plain += '\nSkills I have:\n';
+      r.have.forEach(function(n){ h += '- ' + esc(n) + '\n'; plain += '- ' + n + '\n'; });
+    }
+    if (r.missing.length) {
+      h += '\n<b>Missing skills, in learning order:</b>\n';
+      plain += '\nMissing skills, in learning order:\n';
+      r.plan.forEach(function(p){
+        h += p.step + '. ' + esc(p.name) + ' — learn it free: ' + esc(p.learn) + '\n';
+        plain += p.step + '. ' + p.name + ' — learn it free: ' + p.learn + '\n';
+      });
+      h += '\nLearn one at a time, starting with number 1.';
+      plain += '\nLearn one at a time, starting with number 1.';
+    } else {
+      h += '\n<b>No gaps on this list.</b> Check real job ads for the role you want — employers may ask for more.';
+      plain += '\nNo gaps on this list.';
+    }
+    lastText = plain;
+    var out = document.getElementById('sg-out');
+    out.innerHTML = h;
+    show(out);
+    show(document.getElementById('sg-copy'));
+  });
+  document.getElementById('sg-copy').addEventListener('click', function(){
+    copyText(lastText, document.getElementById('sg-copy'));
+  });
+}
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>

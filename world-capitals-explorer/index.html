@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World Capitals Explorer — Learn Every Capital City | Noryvello</title>
+<meta name="description" content="Explore world capitals free — every capital city, with a quiz to test yourself and facts that make them easy to remember. No signup.">
+<link rel="canonical" href="https://noryvello.github.io/world-capitals-explorer/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="World Capitals Explorer — Learn Every Capital City">
+<meta property="og:description" content="Explore world capitals free, with a quiz to test yourself and facts that make them easy to remember.">
+<meta property="og:url" content="https://noryvello.github.io/world-capitals-explorer/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Sydney the capital of Australia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — the capital of Australia is Canberra. Sydney is the biggest city and the best known, which is why so many people get it wrong, but the national government sits in Canberra, a planned city built between Sydney and Melbourne."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the capital of Canada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The capital of Canada is Ottawa. Toronto is the biggest city in Canada, and Montreal is famous too, but Ottawa is where the national government sits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many capitals are there?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There are about 195 countries in the world, so there are about 195 capitals — and a few countries have more than one seat of government, so the exact count depends on how you count them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I remember capitals?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Learn a few at a time, grouped by continent, and test yourself often instead of only reading the list. Link each capital to something you already know, and learn the story behind the tricky ones — knowing why the capital moved makes it far easier to remember."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the smallest capital city?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One of the smallest is Ngerulmud, the capital of Palau, with only a few hundred people. Small island nations often have very small capitals, while the largest capitals are home to millions of people."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I test myself here?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — use the quiz on this page. It asks 10 questions, gives you a score at the end, and remembers your best score on this device."
+      }
+    }
+  ]
+}
+</script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button{display:block;width:100%;min-height:72px;margin-top:14px;padding:16px 20px;border:0;border-radius:999px;font-size:17px;font-weight:700;background:#4338ca;color:#fff;cursor:pointer}
+.calc button.secondary{background:#e0e7ff;color:#1e293b}
+.calc input,.calc select{min-height:72px;font-size:17px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;min-height:120px;font-family:inherit}
+.tscroll{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
+th,td{border:1px solid #cbd5e1;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef2ff}
+.opt{display:block;width:100%;text-align:left;margin:8px 0}
+.q{font-size:18px;font-weight:700;margin:12px 0}
+.small{font-size:14px;color:#64748b}
+.card{border:1px solid #cbd5e1;border-radius:12px;padding:12px 14px;margin:10px 0;background:rgba(255,255,255,.6)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>World Capitals Explorer</h1>
+<p class="answer">This page lists the capital of every country in the explorer below, grouped by continent, and tests you with a ten-question quiz. It also explains the tricky capitals — Canberra, Ankara, Ottawa — and why so many people get them wrong. Everything is free, and there is no signup.</p>
+<div class="calc">
+<button id="start-btn" type="button">Start the quiz</button>
+<div id="q-text" class="q">Press Start the quiz to begin.</div>
+<div id="options"></div>
+<div id="feedback"></div>
+<button id="next-btn" type="button" class="secondary" style="display:none">Next question</button>
+<div id="score" class="out"></div>
+<div id="best" class="small"></div>
+<button id="copy-btn" type="button" class="secondary" style="display:none">Copy my score</button>
+</div>
+<div id="browse"></div>
+<div class="warn">Capitals can change — countries do move them — and this page lists the capitals as they stand now. Check a current atlas or an official source before an exam or a trip.</div>
+<h2>How to use this page</h2>
+<p>This page does two things, and both are free. Below the quiz you will find a list of capital cities grouped by continent, so you can browse a whole region at a glance and look up any capital in seconds. Above the list, the quiz turns the same facts into a game: ten questions, four choices for each one, and a score at the end.</p>
+<p>Start with the list. Read one continent at a time, and say each capital out loud as you go — hearing a name makes it stick far better than reading it silently. Then take the quiz and see how many you remember. Your best score is saved in your browser, so you can come back tomorrow and try to beat it.</p>
+<p>Nothing on this page asks you to sign up, download anything, or pay. The quiz runs entirely in your browser, your score never leaves your device, and the page works just as well on a phone as on a computer. If you are a student, a teacher, or just curious about the world, this is a good place to start.</p>
+<h2>The capitals that confuse everyone (and why)</h2>
+<p>Most capitals are easy: Paris belongs to France, Tokyo belongs to Japan, and nobody mixes them up. The trouble starts with a small group of countries where the capital is not the city you would guess. Every one of them has a story, and knowing the story is the best way to remember the answer.</p>
+<ul>
+<li><strong>Canberra, not Sydney.</strong> Sydney is Australia's biggest and oldest city, famous for its harbour and its opera house, so it feels like the capital. But when Australia's states joined together in 1901, Sydney and Melbourne both wanted the honour, and neither would give way. The compromise was a brand-new planned city built between them: Canberra. The government moved there, and Sydney stayed the biggest city.</li>
+<li><strong>Ankara, not Istanbul.</strong> Istanbul was the capital of empires for more than a thousand years and is still Turkey's biggest city by far. But when the modern republic was founded in 1923, its leaders moved the seat of government to Ankara, a smaller city in the middle of the country, as a fresh start away from the old imperial capital.</li>
+<li><strong>Ottawa, not Toronto.</strong> Toronto is Canada's biggest city and its business centre, and Montreal is famous around the world, so Ottawa surprises many people. It was chosen in the 1850s as a compromise between Toronto and Montreal, the two rivals that both wanted to be the capital, and it has been the seat of government ever since.</li>
+<li><strong>Brasilia, not Rio.</strong> Rio de Janeiro was Brazil's capital for almost two hundred years and is still its most famous city. But in 1960 the government moved inland to Brasilia, a city built from nothing in the middle of the country, to open up the interior and give the capital a fresh start.</li>
+<li><strong>Bern, not Zurich.</strong> Zurich is Switzerland's biggest city and its financial centre, so it is the name most people reach for. The national government, though, meets in Bern. Switzerland's constitution does not name an official capital at all — Bern is the seat of government, which is why some lists call it the de facto capital.</li>
+<li><strong>Wellington, not Auckland.</strong> Auckland is New Zealand's biggest city, but the capital moved to Wellington in 1865 because Wellington sits in the middle of the country, close to the South Island, while Auckland sits far to the north. The government wanted a capital the whole country could reach.</li>
+<li><strong>Abuja, not Lagos.</strong> Lagos was Nigeria's capital and is still its biggest city, a huge port on the coast. But in 1991 the government moved to Abuja, a planned city built in the centre of the country, so that the capital would belong to no single region and would have room to grow.</li>
+<li><strong>Naypyidaw, not Yangon.</strong> Yangon was Myanmar's capital for decades and is still its biggest and best-known city. In 2005 the government moved to Naypyidaw, a newly built city inland, and Yangon stayed behind as the commercial centre.</li>
+</ul>
+<p>Notice the pattern: in almost every case, the capital moved on purpose — to settle a rivalry, to open up the middle of a country, or to start fresh. Once you know the reason, the answer stops feeling random, and it stops slipping out of your memory.</p>
+<h2>The quiz explained</h2>
+<p>The quiz asks ten questions. Each one names a country and offers four capital cities; only one is right. The questions are picked at random from all 62 countries on this page, so every round is different and you cannot memorise the order.</p>
+<p>When you pick an answer, the quiz tells you straight away whether you were right. If you were wrong, it shows you the correct capital, so every mistake is also a lesson. There is no timer, so take your time — this is learning, not a race.</p>
+<p>At the end you get your score out of ten, and the page remembers your best score in your browser. You can copy your score and share it with a friend, or just play again for a fresh set of ten questions. Most people find their score climbs quickly after a few rounds, because the quiz keeps showing them the capitals they missed.</p>
+<h2>Learning by continent, one at a time</h2>
+<p>Sixty-two capitals is a lot to learn in one sitting, so do not try. The list on this page is grouped by continent for a reason: small groups are easier to learn than one long list, and each continent has its own flavour.</p>
+<p>Start with the small groups and get a quick win. Oceania has three capitals here — Canberra, Wellington and Suva — and North America has three more: Washington, Ottawa and Mexico City. Learn those six first and you already have a foothold.</p>
+<p>South America has five and Africa has seven, and both are friendly groups: most of their capitals are also the biggest or best-known city, so they feel natural. Europe has fourteen, and most of them are familiar names from news and travel.</p>
+<p>Asia is the biggest group, with thirty capitals, so split it up: South Asia one day, East Asia the next, then Southeast Asia, then the Gulf and West Asia. The worked example below shows exactly how to do that in a week.</p>
+<p>As you learn each group, link every capital to something you already know. Bangkok goes with Thailand's temples, Tokyo with Japan's trains, Cairo with the pyramids. A capital tied to a picture is far easier to recall than a capital tied to nothing.</p>
+<h2>A worked example: learning Asia's capitals in a week</h2>
+<p>Here is a plan that really works. It takes about fifteen minutes a day, and by the end of the week you will know all thirty of Asia's capitals on this page.</p>
+<ul>
+<li><strong>Day 1 — South Asia, seven capitals:</strong> Dhaka, New Delhi, Islamabad, Kathmandu, Colombo, Thimphu and Male. Read them aloud, cover the list, and write them down from memory. Repeat until you get all seven.</li>
+<li><strong>Day 2 — East Asia, four capitals:</strong> Beijing, Tokyo, Seoul and Ulaanbaatar. These are short and famous, so they go quickly. Then test yourself on South Asia again, so yesterday's work does not fade.</li>
+<li><strong>Day 3 — Southeast Asia, nine capitals:</strong> Bangkok, Hanoi, Kuala Lumpur, Singapore, Jakarta, Manila, Naypyidaw, Phnom Penh and Vientiane. This is the biggest day, so split it into two short sessions if you need to.</li>
+<li><strong>Day 4 — the Gulf and West Asia, ten capitals:</strong> Abu Dhabi, Riyadh, Doha, Kuwait City, Muscat, Manama, Amman, Ankara, Tehran and Baghdad. Group them by region — the Gulf states together, then the rest — and they are easier to hold.</li>
+<li><strong>Day 5 — review day.</strong> Test yourself on all thirty, in any order, and write down the ones you missed. Those are the only ones you need to study again.</li>
+<li><strong>Day 6 — take the quiz on this page three times.</strong> The random questions will find your weak spots for you.</li>
+<li><strong>Day 7 — rest, then one final quiz.</strong> If you score eight or more out of ten, you know Asia's capitals well. If not, repeat the review day — a second week is normal, not a failure.</li>
+</ul>
+<p>The secret is the same every day: short sessions, saying the names out loud, and testing yourself instead of only reading. Reading feels easy and teaches little; testing feels hard and teaches a lot.</p>
+<h2>Common mistakes when learning capitals</h2>
+<ul>
+<li><strong>Assuming the biggest city is the capital.</strong> This is the most common mistake of all, and it is wrong in Australia, Turkey, Canada, Brazil, Switzerland, New Zealand, Nigeria and Myanmar — eight countries on this page alone.</li>
+<li><strong>Guessing from the country's name.</strong> Mexico City is the capital of Mexico, which makes the guess feel safe — but the capital of Brazil is Brasilia, not a city named after the country, and the capital of New Zealand is Wellington, which sounds nothing like the country's name.</li>
+<li><strong>Learning all 62 at once.</strong> A long list learned in one evening is mostly forgotten by morning. Small groups, learned on different days, last far longer.</li>
+<li><strong>Reading without testing.</strong> Reading a list feels like learning, but it is mostly recognition. Cover the answers and try to recall them — that is the part that builds memory.</li>
+<li><strong>Ignoring the small countries.</strong> Everyone learns Paris and Tokyo; the marks in a quiz are won and lost on Thimphu, Suva and Naypyidaw. Give the small ones the same attention as the famous ones.</li>
+<li><strong>Forgetting that capitals can change.</strong> Countries do move their capitals, as Myanmar did in 2005, so an old atlas or an old memory can be out of date. Check a current source before an exam or a trip.</li>
+</ul>
+<h2>What this page cannot do</h2>
+<p>This page lists 62 countries — a good start, but not the whole world. There are about 195 countries, so a complete atlas would have three times as many capitals. If you need a capital that is not here, a current atlas or an encyclopedia is the place to look.</p>
+<p>The quiz tests recognition, not recall: it shows you four choices and asks you to pick one. That is easier than naming a capital from a blank page, which is what an exam usually asks. Use the quiz to find your weak spots, then practise writing the capitals from memory as well.</p>
+<p>Finally, this page is a learning tool, not a travel guide. It does not give live travel information, visa rules or safety advice, and its facts are a snapshot of the world as it stands now. For a real trip, check official sources before you go.</p>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>Is Sydney the capital of Australia?</h3>
+<p>No — the capital of Australia is Canberra. Sydney is the biggest city and the best known, which is why so many people get it wrong, but the national government sits in Canberra, a planned city built between Sydney and Melbourne.</p>
+</div>
+<div class="faq">
+<h3>What is the capital of Canada?</h3>
+<p>The capital of Canada is Ottawa. Toronto is the biggest city in Canada, and Montreal is famous too, but Ottawa is where the national government sits.</p>
+</div>
+<div class="faq">
+<h3>How many capitals are there?</h3>
+<p>There are about 195 countries in the world, so there are about 195 capitals — and a few countries have more than one seat of government, so the exact count depends on how you count them.</p>
+</div>
+<div class="faq">
+<h3>How can I remember capitals?</h3>
+<p>Learn a few at a time, grouped by continent, and test yourself often instead of only reading the list. Link each capital to something you already know, and learn the story behind the tricky ones — knowing why the capital moved makes it far easier to remember.</p>
+</div>
+<div class="faq">
+<h3>What is the smallest capital city?</h3>
+<p>One of the smallest is Ngerulmud, the capital of Palau, with only a few hundred people. Small island nations often have very small capitals, while the largest capitals are home to millions of people.</p>
+</div>
+<div class="faq">
+<h3>Can I test myself here?</h3>
+<p>Yes — use the quiz on this page. It asks 10 questions, gives you a score at the end, and remembers your best score on this device.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/country-information-directory/">Country Information Directory</a> · <a href="https://noryvello.github.io/world-landmark-explorer/">World Landmark Explorer</a> · <a href="https://noryvello.github.io/travel-visa-information-directory/">Travel Visa Information Directory</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script>
+
+var CAPITALS = [{"country": "Bangladesh", "capital": "Dhaka", "continent": "Asia"}, {"country": "India", "capital": "New Delhi", "continent": "Asia"}, {"country": "Pakistan", "capital": "Islamabad", "continent": "Asia"}, {"country": "Nepal", "capital": "Kathmandu", "continent": "Asia"}, {"country": "Sri Lanka", "capital": "Colombo", "continent": "Asia"}, {"country": "Bhutan", "capital": "Thimphu", "continent": "Asia"}, {"country": "Maldives", "capital": "Male", "continent": "Asia"}, {"country": "China", "capital": "Beijing", "continent": "Asia"}, {"country": "Japan", "capital": "Tokyo", "continent": "Asia"}, {"country": "South Korea", "capital": "Seoul", "continent": "Asia"}, {"country": "Mongolia", "capital": "Ulaanbaatar", "continent": "Asia"}, {"country": "Thailand", "capital": "Bangkok", "continent": "Asia"}, {"country": "Vietnam", "capital": "Hanoi", "continent": "Asia"}, {"country": "Malaysia", "capital": "Kuala Lumpur", "continent": "Asia"}, {"country": "Singapore", "capital": "Singapore", "continent": "Asia"}, {"country": "Indonesia", "capital": "Jakarta", "continent": "Asia"}, {"country": "Philippines", "capital": "Manila", "continent": "Asia"}, {"country": "Myanmar", "capital": "Naypyidaw", "continent": "Asia"}, {"country": "Cambodia", "capital": "Phnom Penh", "continent": "Asia"}, {"country": "Laos", "capital": "Vientiane", "continent": "Asia"}, {"country": "United Arab Emirates", "capital": "Abu Dhabi", "continent": "Asia"}, {"country": "Saudi Arabia", "capital": "Riyadh", "continent": "Asia"}, {"country": "Qatar", "capital": "Doha", "continent": "Asia"}, {"country": "Kuwait", "capital": "Kuwait City", "continent": "Asia"}, {"country": "Oman", "capital": "Muscat", "continent": "Asia"}, {"country": "Bahrain", "capital": "Manama", "continent": "Asia"}, {"country": "Jordan", "capital": "Amman", "continent": "Asia"}, {"country": "Turkey", "capital": "Ankara", "continent": "Asia"}, {"country": "Iran", "capital": "Tehran", "continent": "Asia"}, {"country": "Iraq", "capital": "Baghdad", "continent": "Asia"}, {"country": "United Kingdom", "capital": "London", "continent": "Europe"}, {"country": "France", "capital": "Paris", "continent": "Europe"}, {"country": "Germany", "capital": "Berlin", "continent": "Europe"}, {"country": "Italy", "capital": "Rome", "continent": "Europe"}, {"country": "Spain", "capital": "Madrid", "continent": "Europe"}, {"country": "Netherlands", "capital": "Amsterdam", "continent": "Europe"}, {"country": "Switzerland", "capital": "Bern", "continent": "Europe"}, {"country": "Sweden", "capital": "Stockholm", "continent": "Europe"}, {"country": "Norway", "capital": "Oslo", "continent": "Europe"}, {"country": "Denmark", "capital": "Copenhagen", "continent": "Europe"}, {"country": "Poland", "capital": "Warsaw", "continent": "Europe"}, {"country": "Greece", "capital": "Athens", "continent": "Europe"}, {"country": "Russia", "capital": "Moscow", "continent": "Europe"}, {"country": "Ukraine", "capital": "Kyiv", "continent": "Europe"}, {"country": "Egypt", "capital": "Cairo", "continent": "Africa"}, {"country": "Nigeria", "capital": "Abuja", "continent": "Africa"}, {"country": "Kenya", "capital": "Nairobi", "continent": "Africa"}, {"country": "South Africa", "capital": "Pretoria", "continent": "Africa"}, {"country": "Ethiopia", "capital": "Addis Ababa", "continent": "Africa"}, {"country": "Morocco", "capital": "Rabat", "continent": "Africa"}, {"country": "Ghana", "capital": "Accra", "continent": "Africa"}, {"country": "United States", "capital": "Washington, D.C.", "continent": "North America"}, {"country": "Canada", "capital": "Ottawa", "continent": "North America"}, {"country": "Mexico", "capital": "Mexico City", "continent": "North America"}, {"country": "Brazil", "capital": "Brasilia", "continent": "South America"}, {"country": "Argentina", "capital": "Buenos Aires", "continent": "South America"}, {"country": "Chile", "capital": "Santiago", "continent": "South America"}, {"country": "Peru", "capital": "Lima", "continent": "South America"}, {"country": "Colombia", "capital": "Bogota", "continent": "South America"}, {"country": "Australia", "capital": "Canberra", "continent": "Oceania"}, {"country": "New Zealand", "capital": "Wellington", "continent": "Oceania"}, {"country": "Fiji", "capital": "Suva", "continent": "Oceania"}];
+function shuffleInPlace(arr, rand) {
+  for (var i = arr.length - 1; i > 0; i--) {
+    var j = Math.floor(rand() * (i + 1));
+    var t = arr[i];
+    arr[i] = arr[j];
+    arr[j] = t;
+  }
+  return arr;
+}
+function makeOptions(correct, pool, rand) {
+  rand = rand || Math.random;
+  var values = pool.map(function (x) { return typeof x === "string" ? x : x.capital; });
+  var others = [];
+  values.forEach(function (v) {
+    if (v !== correct && others.indexOf(v) < 0) { others.push(v); }
+  });
+  shuffleInPlace(others, rand);
+  var opts = others.slice(0, 3);
+  opts.push(correct);
+  shuffleInPlace(opts, rand);
+  return opts;
+}
+function buildQuiz(pool, count, rand) {
+  rand = rand || Math.random;
+  var items = shuffleInPlace(pool.slice(), rand);
+  var capitals = pool.map(function (c) { return c.capital; });
+  return items.slice(0, Math.min(count, items.length)).map(function (c) {
+    return { country: c.country, capital: c.capital,
+             options: makeOptions(c.capital, capitals, rand) };
+  });
+}
+function scoreQuiz(answers) {
+  var correct = 0;
+  answers.forEach(function (a) { if (a) { correct += 1; } });
+  return { correct: correct, total: answers.length };
+}
+var NP = { CAPITALS: CAPITALS, buildQuiz: buildQuiz,
+           makeOptions: makeOptions, scoreQuiz: scoreQuiz };
+if (typeof window !== "undefined") { window.NP = NP; }
+if (typeof document !== "undefined") {
+  (function () {
+    var CONTINENTS = ["Asia", "Europe", "Africa", "North America",
+                      "South America", "Oceania"];
+    var browse = document.getElementById("browse");
+    if (browse) {
+      var out = "";
+      CONTINENTS.forEach(function (cont) {
+        var list = CAPITALS.filter(function (c) { return c.continent === cont; });
+        if (!list.length) { return; }
+        out += '<p class="q">' + cont + "</p><ul>";
+        list.forEach(function (c) {
+          out += "<li>" + c.country + " — " + c.capital + "</li>";
+        });
+        out += "</ul>";
+      });
+      browse.innerHTML = out;
+    }
+    var BEST_KEY = "np-world-capitals-explorer-best";
+    var startBtn = document.getElementById("start-btn");
+    var nextBtn = document.getElementById("next-btn");
+    var copyBtn = document.getElementById("copy-btn");
+    var qText = document.getElementById("q-text");
+    var optionsBox = document.getElementById("options");
+    var feedback = document.getElementById("feedback");
+    var scoreBox = document.getElementById("score");
+    var bestBox = document.getElementById("best");
+    var questions = [];
+    var index = 0;
+    var answers = [];
+    function loadBest() {
+      try {
+        var v = window.localStorage.getItem(BEST_KEY);
+        return v ? parseInt(v, 10) : 0;
+      } catch (e) { return 0; }
+    }
+    function saveBest(n) {
+      try { window.localStorage.setItem(BEST_KEY, String(n)); } catch (e) {}
+    }
+    function showBest() {
+      var b = loadBest();
+      bestBox.textContent = b > 0 ? "Best score: " + b + " out of 10"
+                                  : "Best score: not set yet — take the quiz!";
+    }
+    showBest();
+    function showQuestion() {
+      var q = questions[index];
+      qText.textContent = "What is the capital of " + q.country + "?";
+      feedback.textContent = "";
+      nextBtn.style.display = "none";
+      scoreBox.textContent = "Question " + (index + 1) + " of " + questions.length;
+      optionsBox.innerHTML = "";
+      q.options.forEach(function (opt) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "opt";
+        b.textContent = opt;
+        b.addEventListener("click", function () { answer(opt); });
+        optionsBox.appendChild(b);
+      });
+    }
+    function answer(picked) {
+      var q = questions[index];
+      var right = picked === q.capital;
+      answers.push(right);
+      var btns = optionsBox.querySelectorAll("button");
+      btns.forEach(function (b) { b.disabled = true; });
+      feedback.textContent = right ? "Correct!"
+        : "Not quite — the answer is " + q.capital + ".";
+      nextBtn.style.display = "block";
+    }
+    function finish() {
+      var result = scoreQuiz(answers);
+      qText.textContent = "Quiz finished — well done!";
+      optionsBox.innerHTML = "";
+      feedback.textContent = "";
+      nextBtn.style.display = "none";
+      scoreBox.textContent = "You scored " + result.correct + " out of "
+        + result.total + ".";
+      var best = loadBest();
+      if (result.correct > best) { saveBest(result.correct); best = result.correct; }
+      bestBox.textContent = "Best score: " + best + " out of 10";
+      copyBtn.style.display = "block";
+      startBtn.textContent = "Play again";
+      startBtn.style.display = "block";
+    }
+    startBtn.addEventListener("click", function () {
+      questions = buildQuiz(CAPITALS, 10);
+      index = 0;
+      answers = [];
+      copyBtn.style.display = "none";
+      startBtn.style.display = "none";
+      showQuestion();
+    });
+    nextBtn.addEventListener("click", function () {
+      index += 1;
+      if (index >= questions.length) { finish(); } else { showQuestion(); }
+    });
+    function fallbackCopy(text, done) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+    copyBtn.addEventListener("click", function () {
+      var result = scoreQuiz(answers);
+      var text = "I scored " + result.correct + " out of " + result.total
+        + " on the World Capitals Quiz on Noryvello.";
+      function done() {
+        var old = copyBtn.textContent;
+        copyBtn.textContent = "Copied!";
+        setTimeout(function () { copyBtn.textContent = old; }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () {
+          fallbackCopy(text, done);
+        });
+      } else {
+        fallbackCopy(text, done);
+      }
+    });
+  })();
+}
+
+</script>
+<script src="../ads-config.js"></script>
+</body>
+</html>
