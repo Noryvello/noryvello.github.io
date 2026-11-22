@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pet Medical Record Organizer — Keep Your Pet's Health Records in Order | Noryvello</title>
+<meta name="description" content="Organize your pet's medical records free — vaccinations, visits and medicines in one tidy place. Stored only on your device.">
+<link rel="canonical" href="https://noryvello.github.io/pet-medical-record-organizer/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pet Medical Record Organizer — Keep Your Pet's Health Records in Order">
+<meta property="og:description" content="Organize your pet's medical records free — vaccinations, visits and medicines in one tidy place. Stored only on your device.">
+<meta property="og:url" content="https://noryvello.github.io/pet-medical-record-organizer/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{display:block;width:100%;min-height:72px;background:#4338ca;color:#fff;border:0;border-radius:10px;font-size:17px;font-weight:700;padding:12px 14px;margin:12px 0;cursor:pointer}
+.calc button.secondary{background:#0d9488}
+.calc button.danger{background:#fff;color:#b91c1c;border:2px solid #fecaca}
+.calc input,.calc select,.calc textarea{width:100%;min-height:72px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc textarea{min-height:120px;resize:vertical}
+.calc input[type=checkbox]{width:30px;height:30px;min-height:0;flex:0 0 auto}
+.calc .checkrow{display:flex;gap:12px;align-items:center;min-height:72px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:10px 14px;margin:8px 0;font-size:16px}
+.calc .item{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin:10px 0}
+.calc .item p{margin:4px 0}
+.calc .hint{font-size:14px;color:#64748b;margin-top:6px}
+.calc .group{font-weight:700;margin:18px 0 6px;font-size:16.5px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What records should I keep for my pet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Keep vet visit notes, vaccination dates with the next due date, medicines with doses and dates, test results, and any allergies or conditions. A complete record helps any vet — including an emergency vet who has never met your pet — treat them safely."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this medical advice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This page organizes records; it does not diagnose, prescribe or advise on treatment. Decisions about your pet's health belong to you and your vet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I track vaccinations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Add each vaccination with its date and the next due date your vet gives you, and this page will flag the ones coming due. Always follow your vet's schedule — this page reminds you of dates you entered, it does not set them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I take to the vet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Take your pet's vaccination record, a list of current medicines, notes on any symptoms with dates, and this timeline if it helps. A vet who can see the history in one place can help faster."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data uploaded anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Your pet's records are stored only in this browser on this device, and this page has no account, no server and no upload of any kind."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I track more than one pet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Add the pet's name to every record, and the timeline keeps each pet's records together under their name. The reminders box shows upcoming vaccinations for all your pets at once."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Pet Medical Record Organizer</h1>
+<p class="answer">A pet medical record organizer keeps your pet&#x27;s vet visits, vaccinations and medicines in one tidy timeline, so the dates and names are there when the vet asks for them. This page gives you a working organizer in your browser — add records, see what is coming due, and copy the timeline to take with you, all stored only on your device.</p>
+<div class="calc">
+<label for="pet-name">Pet's name</label>
+<input id="pet-name" type="text" placeholder="Your pet's name">
+<label for="record-type">Record type</label>
+<select id="record-type">
+<option>Vet visit</option>
+<option>Vaccination</option>
+<option>Medicine</option>
+</select>
+<label for="record-date">Date</label>
+<input id="record-date" type="date">
+<label for="record-due">Next due date (optional, for vaccinations)</label>
+<input id="record-due" type="date">
+<label for="record-notes">Notes</label>
+<input id="record-notes" type="text" placeholder="What happened, which medicine, what the vet said">
+<p class="hint" id="record-msg"></p>
+<button type="button" id="add-record">Add record</button>
+<p class="out">Vaccination reminders</p>
+<div id="reminders"></div>
+<p class="out">Timeline</p>
+<div id="timeline"></div>
+<button type="button" id="copy-timeline" class="secondary">Copy the timeline</button>
+<p class="hint">Records are stored only in this browser on this device. This organizer keeps records — it is not medical advice and it does not replace your vet.</p>
+</div>
+<h2>What this is</h2>
+<p>A pet medical record organizer keeps your pet&#x27;s health history in one tidy timeline: vet visits, vaccinations and medicines, each with a date and a note, in the order they happened. When the vet asks when the last vaccine was given, or which medicine helped last time, the answer is there in seconds instead of in a drawer full of papers.</p>
+<p>The problem it solves is memory. Most owners remember the big events — the operation, the bad illness — and forget the small ones: the date of a booster, the name of an ear drop, the weight recorded at the last check-up. Those small facts are the ones a vet needs, and they are the ones that slip away first.</p>
+<p>This page gives you a working organizer in your browser. Add a record each time something happens, see the timeline newest first, and get a reminder when a vaccination is coming due. Everything is stored only on this device — no account, no upload, no server. And one thing to be clear about from the start: this page organizes records. It is not medical advice, it does not diagnose anything, and it does not replace your vet.</p>
+<h2>How to use the organizer</h2>
+<p>Add a record right after it happens, while the details are fresh. Type your pet&#x27;s name, pick the record type — vet visit, vaccination or medicine — set the date, and write a short note: what happened, what was given, what the vet said. For a vaccination, add the next due date your vet gives you, and the reminders box will flag it when it approaches.</p>
+<p>The timeline shows your records newest first, so the latest visit is always at the top. Each record can be deleted with its own button if you make a mistake. If you have more than one pet, put the pet&#x27;s name on every record — the timeline keeps each pet&#x27;s records together under their name, and the reminders cover all your pets at once.</p>
+<p>Before a vet visit, use the copy button to get the whole timeline as plain text. You can paste it into a message, print it, or read it from your phone in the waiting room. A vet who can see the history in one place — dates, medicines, past visits — can help your pet faster than one working from memory and guesswork.</p>
+<h2>The records to keep</h2>
+<p>Keep a record of every vet visit, even a routine one: the date, the reason, what was found, and what was advised. A note that says &#x27;annual check, all fine, weight steady&#x27; is worth keeping, because next year&#x27;s vet will want to know what &#x27;steady&#x27; means in numbers.</p>
+<p>Keep every vaccination with its date and the next due date. Vaccination schedules vary by pet, by age and by region, and the only schedule that matters is the one your vet sets for your pet — this page reminds you of dates you entered, it never sets them.</p>
+<p>Keep every medicine: the name, the dose, the dates it was given, and why. Medicine names from memory are unreliable — two drops with similar names can do very different things — so write the name exactly as it appears on the packet, and note when the course finished.</p>
+<p>Keep test results, allergies, and any ongoing conditions, with dates. And keep the small things too: a limp that lasted two days, a day off food, a new lump you noticed. Patterns only show up when the small entries are there, and a vet reading a good timeline can spot a pattern you would never notice.</p>
+<h2>Vaccination dates that matter</h2>
+<p>Vaccinations protect against diseases that are far easier to prevent than to treat, and the protection depends on timing: the first course, the boosters, and the regular repeats your vet schedules. Miss a date by a little and the vet can usually catch up; miss it by a lot and the course may need to start again.</p>
+<p>The dates that matter most are the ones your vet gives you in person, because they are set for your pet&#x27;s age, health and history. This page does not know your pet&#x27;s schedule and never guesses one. When the vet says a booster is due in a year&#x27;s time, add that date here the same day, while it is fresh.</p>
+<p>The reminders box watches the next-due dates you entered and flags vaccinations due in the next sixty days, plus any that have passed their date. An overdue flag is not a scolding — it is a nudge to call the vet and ask what to do next. Do not guess at catch-up doses yourself; the vet decides that.</p>
+<p>One habit makes the whole system work: add the next due date at the same moment you add the vaccination. If you add the vaccine and mean to add the due date later, later usually never comes, and the reminder that would have saved the date never fires.</p>
+<h2>What to take to the vet</h2>
+<p>Take the vaccination record — the vet will ask for it, and a missing record can mean a repeat vaccine your pet did not need. Take a list of current medicines with doses and dates, and the name of any medicine your pet has reacted to before.</p>
+<p>Take notes on symptoms with dates: when it started, how often it happens, what makes it better or worse. &#x27;She has been limping since Tuesday, worse after walks&#x27; helps a vet far more than &#x27;she has been limping.&#x27; If you have the timeline on this page, copy it and bring it — it is the history in one place.</p>
+<p>Take the pet&#x27;s usual food details if the visit is about weight or digestion, and take a fresh sample if the vet asked for one — the clinic will tell you what they need and how to collect it. And take your questions written down: in the consulting room, the question you meant to ask is the first thing you forget.</p>
+<p>For an emergency visit to a vet who has never met your pet, the timeline matters most of all. An emergency vet with no history has to guess; one with your records can see the allergies, the medicines and the past problems in a minute, and treat your pet safely from the start.</p>
+<h2>A worked example</h2>
+<p>Bella is a young dog, and her owner starts the organizer on the day of her first vet visit. The first record reads: &#x27;Bella — Vet visit — first check-up, all healthy, weight recorded.&#x27; The second, a week later: &#x27;Bella — Vaccination — first vaccine, next due in four weeks,&#x27; with the due date filled in the day the vet gave it.</p>
+<p>Over the next months, the timeline fills in: a second vaccine, a worming medicine with its dates, a visit for a sore paw with the treatment noted. Each entry takes under a minute, added on the phone in the car park after the visit, while the details are fresh.</p>
+<p>A year later, Bella sees a different vet while her usual clinic is closed. Her owner copies the timeline and hands the phone over. The new vet sees the full history in one place — the vaccines, the medicines, the sore paw — and treats Bella without repeating a single test. That is what the organizer is for: not the entries themselves, but the moment someone needs them.</p>
+<h2>Common mistakes</h2>
+<p>The first mistake is no record of the last vaccine. Without a date, nobody knows whether the protection has lapsed, and the answer is usually a repeat vaccine your pet did not need. Write the date down the day it happens.</p>
+<p>The second is medicine names from memory. Two medicines with similar names can do very different things, and a vet working from a guessed name can make a wrong call. Copy the name exactly from the packet, with the dose and the dates.</p>
+<p>The third is adding the vaccine but not the next due date. The reminder system only works on dates you entered — a vaccination with no due date is invisible to it, and the booster quietly goes missing.</p>
+<p>The fourth is keeping records only on paper, in one place. Paper gets lost, damaged and left at home. The timeline on this page lives on your phone, which is the thing you actually take to the vet — but copy it somewhere safe too, because clearing your browser data erases it.</p>
+<p>The fifth is using the organizer to decide treatment. The timeline tells you what happened; it cannot tell you what to do next. If your pet is ill, injured, or behaving strangely, the answer is the vet, not the records page.</p>
+<div class="warn">This page organizes your pet&#x27;s health records — it is not medical advice, it does not diagnose anything, and it does not replace your vet. If your pet is ill or injured, contact your vet straight away.</div>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>What records should I keep for my pet?</h3>
+<p>Keep vet visit notes, vaccination dates with the next due date, medicines with doses and dates, test results, and any allergies or conditions. A complete record helps any vet — including an emergency vet who has never met your pet — treat them safely.</p>
+</div>
+<div class="faq">
+<h3>Is this medical advice?</h3>
+<p>No. This page organizes records; it does not diagnose, prescribe or advise on treatment. Decisions about your pet&#x27;s health belong to you and your vet.</p>
+</div>
+<div class="faq">
+<h3>How do I track vaccinations?</h3>
+<p>Add each vaccination with its date and the next due date your vet gives you, and this page will flag the ones coming due. Always follow your vet&#x27;s schedule — this page reminds you of dates you entered, it does not set them.</p>
+</div>
+<div class="faq">
+<h3>What should I take to the vet?</h3>
+<p>Take your pet&#x27;s vaccination record, a list of current medicines, notes on any symptoms with dates, and this timeline if it helps. A vet who can see the history in one place can help faster.</p>
+</div>
+<div class="faq">
+<h3>Is my data uploaded anywhere?</h3>
+<p>No. Your pet&#x27;s records are stored only in this browser on this device, and this page has no account, no server and no upload of any kind.</p>
+</div>
+<div class="faq">
+<h3>Can I track more than one pet?</h3>
+<p>Yes. Add the pet&#x27;s name to every record, and the timeline keeps each pet&#x27;s records together under their name. The reminders box shows upcoming vaccinations for all your pets at once.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/pet-lost-found-directory/">Pet Lost &amp; Found Directory</a> · <a href="https://noryvello.github.io/contractor-directory-platform/">Contractor Directory Platform</a> · <a href="https://noryvello.github.io/construction-project-handover-checklist/">Construction Project Handover Checklist</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<script>
+window.NP = window.NP || {};
+(function (NP) {
+  var KEY = "np-pet-medical-record-organizer-v1";
+  var TYPES = ["Vet visit", "Vaccination", "Medicine"];
+  function parseDate(s) {
+    if (typeof s !== "string") return null;
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s.trim());
+    if (!m) return null;
+    var d = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+    if (d.getFullYear() !== Number(m[1]) || d.getMonth() !== Number(m[2]) - 1 || d.getDate() !== Number(m[3])) return null;
+    return d;
+  }
+  function addRecord(records, rec) {
+    var pet = (rec.pet || "").trim();
+    var type = rec.type || "";
+    var notes = (rec.notes || "").trim();
+    if (!pet || TYPES.indexOf(type) < 0 || !notes) return null;
+    if (!parseDate(rec.date || "")) return null;
+    if (rec.nextDue && !parseDate(rec.nextDue)) return null;
+    var next = records.slice();
+    next.push({ pet: pet, type: type, date: rec.date, nextDue: rec.nextDue || "", notes: notes });
+    return next;
+  }
+  function sortRecords(records) {
+    return records.slice().sort(function (a, b) {
+      if (a.date < b.date) return 1;
+      if (a.date > b.date) return -1;
+      return 0;
+    });
+  }
+  function upcomingVaccinations(records, todayStr, days) {
+    var today = parseDate(todayStr);
+    if (!today) return { overdue: [], upcoming: [] };
+    var limit = new Date(today.getTime() + days * 24 * 60 * 60 * 1000);
+    var overdue = [], upcoming = [];
+    records.forEach(function (r) {
+      if (r.type !== "Vaccination" || !r.nextDue) return;
+      var due = parseDate(r.nextDue);
+      if (!due) return;
+      if (due < today) overdue.push(r);
+      else if (due <= limit) upcoming.push(r);
+    });
+    return { overdue: overdue, upcoming: upcoming };
+  }
+  function formatTimeline(records) {
+    var sorted = sortRecords(records);
+    var lines = ["Pet medical records"];
+    lines.push("");
+    if (sorted.length === 0) lines.push("(no records yet)");
+    sorted.forEach(function (r) {
+      var line = r.date + " — " + r.pet + " — " + r.type + ": " + r.notes;
+      if (r.nextDue) line += " (next due " + r.nextDue + ")";
+      lines.push(line);
+    });
+    return lines.join("\n");
+  }
+  function removeAt(list, i) {
+    if (i < 0 || i >= list.length) return list.slice();
+    var next = list.slice();
+    next.splice(i, 1);
+    return next;
+  }
+  function loadState(storage) {
+    try {
+      var raw = storage.getItem(KEY);
+      if (!raw) return [];
+      var data = JSON.parse(raw);
+      return Array.isArray(data) ? data : [];
+    } catch (e) {
+      return [];
+    }
+  }
+  function saveState(storage, records) {
+    try { storage.setItem(KEY, JSON.stringify(records)); } catch (e) {}
+  }
+  NP.parseDate = parseDate;
+  NP.addRecord = addRecord;
+  NP.sortRecords = sortRecords;
+  NP.upcomingVaccinations = upcomingVaccinations;
+  NP.formatTimeline = formatTimeline;
+  NP.removeAt = removeAt;
+  NP.loadState = loadState;
+  NP.saveState = saveState;
+  NP.KEY = KEY;
+  if (typeof document === "undefined") return;
+  var records = loadState(window.localStorage);
+  var petInput = document.getElementById("pet-name");
+  var typeInput = document.getElementById("record-type");
+  var dateInput = document.getElementById("record-date");
+  var dueInput = document.getElementById("record-due");
+  var notesInput = document.getElementById("record-notes");
+  var msg = document.getElementById("record-msg");
+  var remindersEl = document.getElementById("reminders");
+  var timelineEl = document.getElementById("timeline");
+  function todayStr() {
+    var d = new Date();
+    var m = String(d.getMonth() + 1);
+    var day = String(d.getDate());
+    return d.getFullYear() + "-" + (m.length < 2 ? "0" + m : m) + "-" + (day.length < 2 ? "0" + day : day);
+  }
+  function render() {
+    remindersEl.innerHTML = "";
+    var res = upcomingVaccinations(records, todayStr(), 60);
+    if (res.overdue.length === 0 && res.upcoming.length === 0) {
+      var none = document.createElement("p");
+      none.className = "hint";
+      none.textContent = "No vaccinations due in the next 60 days.";
+      remindersEl.appendChild(none);
+    }
+    res.overdue.forEach(function (r) {
+      var p = document.createElement("p");
+      p.textContent = "Overdue: " + r.pet + " — " + r.notes + " (was due " + r.nextDue + "). Contact your vet.";
+      remindersEl.appendChild(p);
+    });
+    res.upcoming.forEach(function (r) {
+      var p = document.createElement("p");
+      p.textContent = "Coming up: " + r.pet + " — " + r.notes + " (due " + r.nextDue + ").";
+      remindersEl.appendChild(p);
+    });
+    timelineEl.innerHTML = "";
+    var sorted = sortRecords(records);
+    if (sorted.length === 0) {
+      var empty = document.createElement("p");
+      empty.className = "hint";
+      empty.textContent = "No records yet. Add your pet's first record above.";
+      timelineEl.appendChild(empty);
+      return;
+    }
+    sorted.forEach(function (r) {
+      var idx = records.indexOf(r);
+      var item = document.createElement("div");
+      item.className = "item";
+      var head = document.createElement("p");
+      var strong = document.createElement("strong");
+      strong.textContent = r.date + " — " + r.pet + " — " + r.type;
+      head.appendChild(strong);
+      item.appendChild(head);
+      var body = document.createElement("p");
+      body.textContent = r.notes + (r.nextDue ? " (next due " + r.nextDue + ")" : "");
+      item.appendChild(body);
+      var del = document.createElement("button");
+      del.type = "button";
+      del.className = "danger";
+      del.textContent = "Delete this record";
+      del.addEventListener("click", function () {
+        records = removeAt(records, idx);
+        saveState(window.localStorage, records);
+        render();
+      });
+      item.appendChild(del);
+      timelineEl.appendChild(item);
+    });
+  }
+  document.getElementById("add-record").addEventListener("click", function () {
+    var next = addRecord(records, {
+      pet: petInput.value,
+      type: typeInput.value,
+      date: dateInput.value,
+      nextDue: dueInput.value,
+      notes: notesInput.value
+    });
+    if (!next) { msg.textContent = "Fill in your pet's name, a valid date and a note about the record."; return; }
+    msg.textContent = "";
+    records = next;
+    notesInput.value = "";
+    dueInput.value = "";
+    saveState(window.localStorage, records);
+    render();
+  });
+  var copyBtn = document.getElementById("copy-timeline");
+  copyBtn.addEventListener("click", function () {
+    var text = formatTimeline(records);
+    function done() {
+      copyBtn.textContent = "Copied!";
+      setTimeout(function () { copyBtn.textContent = "Copy the timeline"; }, 2000);
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  });
+  render();
+})(window.NP);
+
+</script>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

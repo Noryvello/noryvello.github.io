@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Earth Observation Data Directory — Where to Find Satellite Data of Earth | Noryvello</title>
+<meta name="description" content="Find Earth observation data free — what the datasets are, what they show, and where to get them officially. Plain-English guide.">
+<link rel="canonical" href="https://noryvello.github.io/earth-observation-data-directory/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Earth Observation Data Directory — Where to Find Satellite Data of Earth">
+<meta property="og:description" content="Find Earth observation data free — what the datasets are, what they show, and where to get them officially. Plain-English guide.">
+<meta property="og:url" content="https://noryvello.github.io/earth-observation-data-directory/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Earth observation data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Earth observation data is information about our planet collected from above, almost always by satellites. It includes pictures of land, sea and cloud, and measurements such as sea temperature, rainfall, vegetation health and ice cover. Scientists, farmers, planners and emergency teams use it to watch weather, crops, forests, cities and disasters, often over many years."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I get satellite images of Earth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The official public archives are the right place: the United States Geological Survey archive for Landsat, the Copernicus Data Space Ecosystem for Sentinel data, and the NASA Earthdata search for MODIS and many other missions. Search for the archive name on the official agency site. Most archives ask you to make a free account before you download, and they let you preview images first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do the datasets show?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Different datasets show different things. Landsat and Sentinel-2 show land in detail, such as fields, forests, rivers and towns. MODIS and weather satellites show the big picture, such as storms, fires and clouds. Radar satellites show shape and wetness through cloud and at night. Ocean and air datasets show temperature, rainfall and ice as coloured maps rather than photographs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the data free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most of the big public datasets are free to download and use, including Landsat, Sentinel and MODIS. Governments publish the measurements so anyone can use them, and the usual condition is that you credit the source. Some commercial satellites sell very detailed images, and those are paid. Always read the licence note on the archive page for the dataset you download, because terms can differ between programmes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I read satellite data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with the ready-made images and web viewers in the official archives, which let you look before you download anything. A satellite file usually holds several bands, one per wavelength, and a common format is GeoTIFF, which stores the image with its position on Earth. Free mapping tools such as QGIS can open these files, show the bands, and measure distances and areas. Always check the date, the satellite name and the resolution before you trust what you see."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is it used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is used for weather forecasting, watching storms and floods, monitoring crops and forests, mapping cities and coasts, tracking ice and sea level, and responding to disasters. Farmers check crop health, planners watch how cities grow, and emergency teams map floods and fires. Climate scientists use the long records, some going back to 1972, to measure how the planet is changing."
+      }
+    }
+  ]
+}
+</script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style></head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Earth Observation Data Directory</h1>
+<p class="answer">Earth observation data is information collected by satellites looking down at our planet, from weather pictures to maps of forests, oceans and cities. This guide explains what the main datasets are, what each one shows, and how to get them from the official public sources, all in plain English.</p>
+<h2>How to use this guide</h2>
+<p>This guide is a starting point, not a data portal. It will not show you a live picture of Earth, because a single web page cannot fetch one, and any page that pretends to show live satellite data is showing you a picture taken earlier. What this guide does instead is explain, in plain words, what Earth observation data is, which public datasets exist, what each one is good for, and where to get them from the official sources that publish them.</p>
+<p>Work through the sections in order if you are new to the subject. The first section explains the idea, the second names the main datasets, and the later sections explain how to get the data and how to read it once you have it. If you already know what you need, jump to the section that answers your question. Each section stands on its own, so you can read one part now and come back for the rest later.</p>
+<p>Keep one habit in mind as you read: always check the official source. This guide names the organisations that publish the data, and it tells you what to search for, but it never links to a dataset or claims to hold one. The official archives are the only place to get the real files, and they are also the place to check the date, the licence and the quality of anything you download.</p>
+<h2>What Earth observation data is</h2>
+<p>Earth observation data is information about our planet collected from above, almost always by satellites. A satellite carries instruments that measure light reflected from the ground, heat given off by the surface, the height of the sea, or the thickness of clouds. Those measurements are turned into images and numbers that describe what Earth looks like, how it is changing, and what is happening in the air and the oceans.</p>
+<p>The most familiar kind is the satellite image: a picture of land, sea or cloud taken from orbit. But much of the data is not a picture at all. Some datasets are measurements, such as the temperature of the sea surface, the height of waves, the amount of rain that fell, or the greenness of crops across a whole region. Scientists, farmers, planners and emergency teams use these numbers to make decisions, often without ever looking at a picture.</p>
+<p>One idea makes all of this easier to understand: a satellite does not see the world the way your eyes do. Your eyes see visible light, the narrow band of colours from violet to red. Many satellite instruments also measure light your eyes cannot see, such as infrared light, which shows heat, or microwaves, which can see through clouds and work at night. That is why satellite images often look strange, with bright red fields or glowing blue seas: the colours stand for measurements, not for what you would see from an aeroplane window.</p>
+<p>Another idea is the difference between a picture and a dataset. A picture is one view at one moment. A dataset is a long record of measurements from the same instrument over months, years or decades, taken the same way each time so that changes can be compared. The long record is what makes the data useful for studying climate, forests, cities and oceans, because a single picture can only show one day.</p>
+<h2>The main datasets</h2>
+<p>The public datasets that matter most come from a small number of long-running programmes. Each one was built for a different job, so each one sees the world in a different way. Learning which programme does what is the fastest way to find the data you need, and it stops you downloading the wrong dataset for your question.</p>
+<ul><li>Landsat, a programme run by NASA and the United States Geological Survey, has watched Earth's land from space since 1972, making it the longest continuous record of the planet's surface. It sees detail down to about 30 metres, and it passes over the same place about every two weeks, so it is the standard choice for studying forests, farms, cities and water over long periods.</li><li>Sentinel, part of the European Copernicus programme run by ESA, is a family of satellites that watch land, oceans and air. Sentinel-2 photographs land in visible detail down to about 10 metres and revisits each place every few days, which makes it a strong choice for farming, mapping and watching change. Sentinel-1 uses radar, so it can see through cloud and at night.</li><li>MODIS, an instrument on the NASA Terra and Aqua satellites, sees the whole Earth every one to two days. Its pictures are coarser than Landsat or Sentinel, but it is excellent for watching big, fast-moving things: fires, floods, dust storms, clouds and the greenness of vegetation across whole countries.</li><li>GOES, the weather satellites run by the United States National Oceanic and Atmospheric Administration, watch the Americas from a fixed position high above the equator. They send new pictures every few minutes, which is why weather forecasts and storm warnings depend on them.</li><li>Other public datasets cover the oceans, the ice and the air: sea surface temperature, sea level, ice cover, air quality and rainfall. Most of these come from the same agencies, NASA, ESA and NOAA, and from national weather and space agencies around the world.</li></ul>
+<p>These programmes are public, and their data is free to download and use. That is the result of deliberate policy: governments that pay for the satellites publish the measurements so that anyone, from a student to a farmer to a disaster team, can use them. Commercial satellites also exist, and they sell very detailed images, but for most questions the free public datasets are the right place to start.</p>
+<h2>What each dataset shows</h2>
+<p>Every dataset shows some things well and others badly, and knowing the difference saves a lot of wasted time. A weather satellite that photographs clouds every few minutes cannot show a single tree, and a land satellite that shows a single field cannot photograph the whole planet every day. The choice is always a trade between detail, coverage and how often the picture is taken.</p>
+<p>Landsat and Sentinel-2 show the land in detail: fields, forests, rivers, lakes, roads and towns. They are the right choice for questions about one place over time, such as whether a forest has shrunk, whether a lake has grown, or how a city has spread. Their images are detailed enough to see a large building, but not a person or a car.</p>
+<p>MODIS and the weather satellites show the big picture: cloud systems, storms, dust, smoke from fires, and the greenness of whole regions. They are the right choice for questions about a country or a continent on one day, such as where a storm is heading or how far a fire has spread. Their pictures are coarse, but they are fresh, often only hours old.</p>
+<p>Radar satellites such as Sentinel-1 show shape and wetness rather than colour. Radar can see through cloud and in darkness, so it is the right choice for watching floods during a storm, tracking ships at night, or measuring how the ground moves after an earthquake. Radar images look strange to a beginner, with bright and dark patches that stand for rough and smooth surfaces, but they carry information no ordinary camera can give.</p>
+<p>Ocean and atmosphere datasets show things your eyes cannot see at all: the temperature of the sea surface, the height of waves, the amount of rain in the air, or the dust blowing off a desert. These are usually shown as coloured maps rather than photographs, and they are the working tools of weather forecasters, climate scientists and ship captains.</p>
+<h2>Getting the data</h2>
+<p>Every public dataset lives in an official archive run by the agency that owns the satellite. The archive is where you search, preview and download, and it is the only place that can promise you the real file with the right date and the right licence. This guide names the archives in words; search for the name on the official agency site to reach them.</p>
+<p>For Landsat, the official archive is run by the United States Geological Survey, and its search tool is called EarthExplorer. You pick an area on a map, choose a date range, and see which images exist. For Sentinel data, the official archive is the Copernicus Data Space Ecosystem, run for the European programme. For MODIS and many other NASA datasets, the official starting point is the NASA Earthdata search, which covers many missions in one place.</p>
+<p>Most archives ask you to make a free account before you download. The account costs nothing and exists so the archive can manage demand, not to charge you. You will usually need to accept the licence terms, which for the big public datasets allow free use for research, education and most other purposes, as long as you credit the source. Always read the licence note on the archive page for the dataset you download, because terms can differ between programmes.</p>
+<p>Before you download anything, check three things on the archive page: the date the image was taken, the cloud cover, and the processing level. A picture taken on a cloudy day may hide the very ground you want to see, and a raw file may need more work than a ready-made image. Most archives let you preview a small version first, which saves downloading a large file that turns out to be useless for your question.</p>
+<h2>Reading satellite data</h2>
+<p>A satellite file is not an ordinary photograph, and opening it like one is the most common beginner mistake. The file usually holds several bands, one for each wavelength the instrument measured, and the bands are combined to make the coloured picture you see. A true-colour image uses the red, green and blue bands, so it looks roughly like a photograph. A false-colour image uses other bands, often infrared, so healthy plants glow bright red and water looks almost black. Both are real data; they simply show different things.</p>
+<p>The second idea to learn is resolution, which comes in three kinds. Spatial resolution is the size of one pixel on the ground: 10 metres for Sentinel-2, 30 metres for Landsat, hundreds of metres for MODIS. Temporal resolution is how often the satellite passes over the same place: days for Sentinel-2, about two weeks for Landsat, minutes for a weather satellite. Spectral resolution is how many wavelengths the instrument measures. No satellite is best at all three, so the right choice depends on your question.</p>
+<p>To read a satellite file properly you need a tool that understands geographic data. A common file format is GeoTIFF, which stores the image together with its position on Earth. Free mapping tools such as QGIS can open GeoTIFF files, show the bands, measure distances and areas, and export the result as an ordinary picture. If that sounds like too much work, start with the ready-made images and web viewers in the official archives, which let you look before you download anything.</p>
+<p>Learn to read the scale and the date before you trust what you see. A satellite picture without a scale bar can make a small pond look like a lake, and a picture without a date can make a flood look like a permanent river. Good archives put the date, the satellite name and the resolution on every product, and a careful reader checks those three facts before drawing any conclusion.</p>
+<h2>Common mistakes</h2>
+<p>The most common mistake is downloading raw data with no tool to read it. A raw satellite file is a set of numbers, not a picture, and it will not open in an ordinary photo viewer. Always start with the preview image in the archive, and only download the full file when you have a tool that can open it and a clear reason to do so.</p>
+<p>The second mistake is trusting an unofficial copy. Satellite images are copied and reposted all over the internet, often with the date removed, the colours changed, or the location wrong. A picture of a flood in one country can be reposted as a flood in another, and a picture from one year can be presented as news from this year. If the date and the source are missing, treat the picture as unverified and check the official archive before you believe it or share it.</p>
+<p>The third mistake is choosing the wrong dataset for the question. Do not use a weather satellite to count trees, and do not use a land satellite to track a storm. Match the dataset to the size of the thing you are studying and the speed at which it changes: big and fast means weather and MODIS data, small and slow means Landsat and Sentinel-2.</p>
+<p>The fourth mistake is forgetting that a satellite image is a record of one moment. A river in flood looks different from the same river in the dry season, a field looks different before and after harvest, and a forest looks different in summer and winter. Compare images from the same season when you study change, and always note the date of every image you use.</p>
+<div class="warn">This guide names official public sources only, and it never links to or hosts any dataset itself. Satellite data changes often as new satellites launch and old ones retire, so always check the official source for the latest version before you use any dataset for an important decision.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is Earth observation data?</h3><p>Earth observation data is information about our planet collected from above, almost always by satellites. It includes pictures of land, sea and cloud, and measurements such as sea temperature, rainfall, vegetation health and ice cover. Scientists, farmers, planners and emergency teams use it to watch weather, crops, forests, cities and disasters, often over many years.</p></div><div class="faq"><h3>Where can I get satellite images of Earth?</h3><p>The official public archives are the right place: the United States Geological Survey archive for Landsat, the Copernicus Data Space Ecosystem for Sentinel data, and the NASA Earthdata search for MODIS and many other missions. Search for the archive name on the official agency site. Most archives ask you to make a free account before you download, and they let you preview images first.</p></div><div class="faq"><h3>What do the datasets show?</h3><p>Different datasets show different things. Landsat and Sentinel-2 show land in detail, such as fields, forests, rivers and towns. MODIS and weather satellites show the big picture, such as storms, fires and clouds. Radar satellites show shape and wetness through cloud and at night. Ocean and air datasets show temperature, rainfall and ice as coloured maps rather than photographs.</p></div><div class="faq"><h3>Is the data free?</h3><p>Most of the big public datasets are free to download and use, including Landsat, Sentinel and MODIS. Governments publish the measurements so anyone can use them, and the usual condition is that you credit the source. Some commercial satellites sell very detailed images, and those are paid. Always read the licence note on the archive page for the dataset you download, because terms can differ between programmes.</p></div><div class="faq"><h3>How do I read satellite data?</h3><p>Start with the ready-made images and web viewers in the official archives, which let you look before you download anything. A satellite file usually holds several bands, one per wavelength, and a common format is GeoTIFF, which stores the image with its position on Earth. Free mapping tools such as QGIS can open these files, show the bands, and measure distances and areas. Always check the date, the satellite name and the resolution before you trust what you see.</p></div><div class="faq"><h3>What is it used for?</h3><p>It is used for weather forecasting, watching storms and floods, monitoring crops and forests, mapping cities and coasts, tracking ice and sea level, and responding to disasters. Farmers check crop health, planners watch how cities grow, and emergency teams map floods and fires. Climate scientists use the long records, some going back to 1972, to measure how the planet is changing.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/space-weather-information-dashboard/">Space Weather Information Dashboard</a> · <a href="https://noryvello.github.io/satellite-orbit-information-explorer/">Satellite Orbit Information Explorer</a> · <a href="https://noryvello.github.io/astronomy-image-archive/">Astronomy Image Archive</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

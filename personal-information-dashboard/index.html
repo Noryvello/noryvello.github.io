@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personal Information Dashboard — Your Important Details in One Place | Noryvello</title>
+<meta name="description" content="Keep your important details organized free — a simple dashboard for the notes and links you need every day. Stored only on your device.">
+<link rel="canonical" href="https://noryvello.github.io/personal-information-dashboard/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Personal Information Dashboard — Your Important Details in One Place">
+<meta property="og:description" content="Keep your important details organized free — a simple dashboard for the notes and links you need every day. Stored only on your device.">
+<meta property="og:url" content="https://noryvello.github.io/personal-information-dashboard/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{display:block;width:100%;min-height:72px;background:#4338ca;color:#fff;border:0;border-radius:10px;font-size:17px;font-weight:700;padding:12px 14px;margin:12px 0;cursor:pointer}
+.calc button.secondary{background:#0d9488}
+.calc button.danger{background:#fff;color:#b91c1c;border:2px solid #fecaca}
+.calc input,.calc select,.calc textarea{width:100%;min-height:72px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc textarea{min-height:120px;resize:vertical}
+.calc input[type=checkbox]{width:30px;height:30px;min-height:0;flex:0 0 auto}
+.calc .checkrow{display:flex;gap:12px;align-items:center;min-height:72px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:10px 14px;margin:8px 0;font-size:16px}
+.calc .item{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin:10px 0}
+.calc .item p{margin:4px 0}
+.calc .hint{font-size:14px;color:#64748b;margin-top:6px}
+.calc .group{font-weight:700;margin:18px 0 6px;font-size:16.5px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a personal information dashboard?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is one tidy page that holds the notes and links you reach for every day, so you can find them in seconds instead of hunting through apps and papers. This page gives you a working dashboard in your browser, with quick notes and important links stored only on your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I put on it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Put short notes you re-read often, links you open every week, and dates you keep looking up, such as bin day or a booking date. If you have searched for the same fact twice this month, it belongs on the dashboard."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I never put on it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Never put passwords, ID numbers, bank details, card numbers or one-time codes on a dashboard. A dashboard is for convenience, not secrets — anything that would hurt you if someone else read it belongs in a password manager or a locked drawer, not here."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data uploaded anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Everything you add is stored only in this browser on this device, and this page has no account, no server and no upload of any kind. Nobody else can see your dashboard unless they are holding your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this on my phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The dashboard is built for touch: big buttons, large text fields and no sideways scrolling at a phone-sized screen. Add a note or a link with a few taps, and open any saved link with one more."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my dashboard survive if I clear my browser data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Clearing your browser data erases everything stored in the browser, including this dashboard, and there is no copy anywhere else. Use the copy button to save your dashboard as text somewhere safe if it holds anything important."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Personal Information Dashboard</h1>
+<p class="answer">A personal information dashboard is one tidy page for the notes and links you reach for every day, so you stop hunting through apps, papers and bookmarks. This page gives you a working dashboard in your browser — quick notes and important links, stored only on this device, with no sign-up and nothing uploaded anywhere.</p>
+<div class="calc">
+<label for="note-text">Quick note</label>
+<input id="note-text" type="text" placeholder="Type a short note">
+<p class="hint" id="note-msg"></p>
+<button type="button" id="add-note">Add note</button>
+<div id="notes-list"></div>
+<label for="link-title">Link title</label>
+<input id="link-title" type="text" placeholder="What is this link?">
+<label for="link-url">Link address</label>
+<input id="link-url" type="url" placeholder="https://example.com">
+<p class="hint" id="link-msg"></p>
+<button type="button" id="add-link">Add link</button>
+<div id="links-list"></div>
+<button type="button" id="copy-dashboard" class="secondary">Copy my dashboard</button>
+<p class="hint">Your notes and links are stored only in this browser on this device. Never add passwords, ID numbers or bank details here.</p>
+</div>
+<h2>What this is</h2>
+<p>A personal information dashboard is a single page that holds the small facts you reach for all day: the day the bins go out, the link to the school calendar, the date of your next appointment, the name of the plumber who fixed the leak last year. Instead of hunting through apps, papers, messages and bookmarks every time you need one of these facts, you keep them in one tidy place and find them in seconds.</p>
+<p>The idea is older than the web. People have always kept a corkboard by the phone, a notebook by the kettle, or a list stuck to the fridge. A dashboard is the same habit with a better memory: it holds more, it never falls off the fridge, and you can search it. What it is not is a filing cabinet. A dashboard holds the ten or twenty facts you actually use, not everything you own.</p>
+<p>This page gives you a working dashboard right here in your browser. You can add quick notes and important links, open a link with one tap, delete what you no longer need, and copy the whole dashboard as plain text. There is no account, no sign-up and no server: everything you add stays in this browser on this device, and nothing is uploaded anywhere.</p>
+<h2>How to use the dashboard</h2>
+<p>Start with one note. Type something short in the quick-note box — a date, a reminder, a name — and tap Add note. The note appears in your list straight away, and it is saved in this browser, so it will still be there when you come back tomorrow on the same device and the same browser.</p>
+<p>To save a link, type a title that tells you what it is and paste the full address, starting with https://, then tap Add link. The title matters more than the address: in a month&#x27;s time, &#x27;School term dates&#x27; will mean something to you, while a bare web address will not. Tap any saved link to open it in a new tab.</p>
+<p>Delete anything you no longer need with the delete button under it, and use the copy button to get your whole dashboard as plain text — handy for pasting into a message, a document, or a safe place of your own. On a phone, everything works by touch: the buttons are large, the text fields are tall, and nothing needs sideways scrolling.</p>
+<h2>What belongs on it</h2>
+<p>A good rule is simple: if you have looked the same fact up twice this month, it belongs on the dashboard. That covers a surprising amount of daily life, and it is the test that keeps the dashboard short. Anything you look up once and never again does not earn a place.</p>
+<ul>
+<li>Short notes you re-read often: bin day, a gate code for a building you visit, the name of a book someone recommended, the date a subscription renews.</li>
+<li>Links you open every week: timetables, calendars, class bookings, the library catalogue, the council recycling page.</li>
+<li>Dates you keep checking: appointments, deadlines, birthdays, the day the car is due for its service.</li>
+<li>Small lists: a packing list, a shopping list, the jobs to do before a trip.</li>
+<li>Reference details for bookings: a booking reference, a confirmation number, the name of the person you spoke to.</li>
+</ul>
+<p>Notice what these have in common: each one is short, each one is looked up again and again, and none of them is a secret. A dashboard is a convenience, not a vault. The next section covers what must never go on it, and the line between the two is the most important thing on this page.</p>
+<h2>What NEVER belongs on it</h2>
+<p>Never put passwords on a dashboard. Not the short ones, not the ones you think nobody would guess, not the one for the account you barely use. Passwords belong in a password manager — a tool built to lock them away — or in your own memory. A dashboard is designed to be read at a glance, which is exactly the wrong design for a secret.</p>
+<p>Never put ID numbers on it either: no passport numbers, no national ID numbers, no driving licence numbers, no account numbers of any kind. The same goes for bank details, card numbers, PINs and one-time codes. If someone picks up your phone while the dashboard is open, everything on it is readable in seconds, and there is no undo for a leaked bank detail.</p>
+<p>Two more things to leave off: medical records and anyone else&#x27;s private details. Your own health notes deserve a safer home than a browser page, and other people&#x27;s phone numbers, addresses and dates of birth are not yours to leave lying around. The test is simple: if it would hurt you — or someone else — if a stranger read it, it does not belong on a dashboard.</p>
+<h2>The starter layout — a worked example</h2>
+<p>Maya builds her dashboard in ten minutes on a Sunday evening. She starts with four notes: &#x27;Bins go out Tuesday night&#x27;, &#x27;Library card renews in March&#x27;, &#x27;Car service booked for the 14th&#x27;, and &#x27;Mum&#x27;s birthday is the 22nd&#x27;. Each one is a fact she has looked up more than once, and each one is short enough to read at a glance.</p>
+<p>Then she adds six links: the school calendar, the bus timetable, the council recycling page, the gym class booking page, the local library catalogue, and the weather forecast. She gives each one a plain title — &#x27;Bus timetable&#x27;, not the web address — so she can find it without thinking.</p>
+<p>That is the whole starter layout: four notes and six links. It took ten minutes, it covers most of her week, and it is small enough to scan in a second. The mistake would have been to add forty links on day one. A dashboard grows by use, not by ambition: add a fact when you catch yourself looking it up, and the dashboard will shape itself around your real life.</p>
+<h2>The weekly tidy-up</h2>
+<p>A dashboard only stays useful if it stays small, and staying small takes two minutes a week. Pick a regular moment — Sunday evening, or the first coffee on Monday — and run through the list. Delete every note that has done its job: the appointment that passed, the reminder for the trip that happened, the date that no longer matters.</p>
+<p>Then check the links. Tap the ones you have not opened in a while: does the page still exist, and is it still the page you meant to save? A dead link is worse than no link, because it wastes the tap and the wait. Fix the title if it no longer makes sense to you, or delete the link if the need has gone.</p>
+<p>Keep the total under about twenty items. Past that point, the dashboard stops being a quick glance and starts being a list you have to search — which is the problem it was meant to solve. If it keeps growing past twenty, the answer is not a bigger dashboard, it is a harder delete. Most weeks, the tidy-up will remove more than it adds, and that is a sign it is working.</p>
+<h2>Common mistakes</h2>
+<p>The first mistake is putting passwords on a dashboard. It feels convenient for a week, right up until the moment someone else looks at your screen. Passwords belong in a password manager, full stop — no dashboard, however tidy, is a safe home for them.</p>
+<p>The second is forty links and no order. A dashboard with forty links is not a dashboard, it is a junk drawer. If you cannot see what you want in a second, the dashboard has failed, and the fix is deletion, not a better layout.</p>
+<p>The third is one giant note instead of small ones. A note that holds a whole paragraph is hard to scan and hard to delete in part. Split it: one fact per note, each short enough to read in a breath.</p>
+<p>The fourth is saving a link with no title, or with a title that made sense at the time and means nothing now. A link you cannot identify is a link you will never tap. Give every link a title your future self will understand.</p>
+<p>The fifth is treating the dashboard as a backup. It is not one. Clearing your browser data erases it completely, and there is no copy anywhere else. If the dashboard holds anything important, use the copy button and keep the text somewhere safe.</p>
+<div class="warn">This dashboard stores your notes and links only in this browser — it never uploads them, and it never syncs them. Never add passwords, ID numbers or bank details, and copy anything important somewhere safe, because clearing your browser data erases the dashboard.</div>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>What is a personal information dashboard?</h3>
+<p>It is one tidy page that holds the notes and links you reach for every day, so you can find them in seconds instead of hunting through apps and papers. This page gives you a working dashboard in your browser, with quick notes and important links stored only on your device.</p>
+</div>
+<div class="faq">
+<h3>What should I put on it?</h3>
+<p>Put short notes you re-read often, links you open every week, and dates you keep looking up, such as bin day or a booking date. If you have searched for the same fact twice this month, it belongs on the dashboard.</p>
+</div>
+<div class="faq">
+<h3>What should I never put on it?</h3>
+<p>Never put passwords, ID numbers, bank details, card numbers or one-time codes on a dashboard. A dashboard is for convenience, not secrets — anything that would hurt you if someone else read it belongs in a password manager or a locked drawer, not here.</p>
+</div>
+<div class="faq">
+<h3>Is my data uploaded anywhere?</h3>
+<p>No. Everything you add is stored only in this browser on this device, and this page has no account, no server and no upload of any kind. Nobody else can see your dashboard unless they are holding your device.</p>
+</div>
+<div class="faq">
+<h3>Can I use this on my phone?</h3>
+<p>Yes. The dashboard is built for touch: big buttons, large text fields and no sideways scrolling at a phone-sized screen. Add a note or a link with a few taps, and open any saved link with one more.</p>
+</div>
+<div class="faq">
+<h3>Will my dashboard survive if I clear my browser data?</h3>
+<p>No. Clearing your browser data erases everything stored in the browser, including this dashboard, and there is no copy anywhere else. Use the copy button to save your dashboard as text somewhere safe if it holds anything important.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/personal-knowledge-management-platform/">Personal Knowledge Management Platform</a> · <a href="https://noryvello.github.io/reading-highlight-manager/">Reading Highlight Manager</a> · <a href="https://noryvello.github.io/reference-collection-manager/">Reference Collection Manager</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<script>
+window.NP = window.NP || {};
+(function (NP) {
+  var KEY = "np-personal-information-dashboard-v1";
+  function isValidUrl(u) {
+    return typeof u === "string" && /^https?:\/\/\S+$/.test(u.trim());
+  }
+  function addNote(notes, text) {
+    var t = (text || "").trim();
+    if (!t) return null;
+    var next = notes.slice();
+    next.push(t);
+    return next;
+  }
+  function addLink(links, title, url) {
+    var t = (title || "").trim();
+    var u = (url || "").trim();
+    if (!t || !isValidUrl(u)) return null;
+    var next = links.slice();
+    next.push({ title: t, url: u });
+    return next;
+  }
+  function removeAt(list, i) {
+    if (i < 0 || i >= list.length) return list.slice();
+    var next = list.slice();
+    next.splice(i, 1);
+    return next;
+  }
+  function formatDashboard(notes, links) {
+    var lines = ["My dashboard"];
+    lines.push("");
+    lines.push("Notes:");
+    if (notes.length === 0) lines.push("- (none)");
+    for (var i = 0; i < notes.length; i++) lines.push("- " + notes[i]);
+    lines.push("");
+    lines.push("Links:");
+    if (links.length === 0) lines.push("- (none)");
+    for (var j = 0; j < links.length; j++) lines.push("- " + links[j].title + ": " + links[j].url);
+    return lines.join("\n");
+  }
+  function loadState(storage) {
+    try {
+      var raw = storage.getItem(KEY);
+      if (!raw) return { notes: [], links: [] };
+      var data = JSON.parse(raw);
+      if (!data || !Array.isArray(data.notes) || !Array.isArray(data.links)) return { notes: [], links: [] };
+      return data;
+    } catch (e) {
+      return { notes: [], links: [] };
+    }
+  }
+  function saveState(storage, state) {
+    try { storage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  }
+  NP.isValidUrl = isValidUrl;
+  NP.addNote = addNote;
+  NP.addLink = addLink;
+  NP.removeAt = removeAt;
+  NP.formatDashboard = formatDashboard;
+  NP.loadState = loadState;
+  NP.saveState = saveState;
+  NP.KEY = KEY;
+  if (typeof document === "undefined") return;
+  var state = loadState(window.localStorage);
+  var notesList = document.getElementById("notes-list");
+  var linksList = document.getElementById("links-list");
+  var noteInput = document.getElementById("note-text");
+  var linkTitle = document.getElementById("link-title");
+  var linkUrl = document.getElementById("link-url");
+  var noteMsg = document.getElementById("note-msg");
+  var linkMsg = document.getElementById("link-msg");
+  function render() {
+    notesList.innerHTML = "";
+    linksList.innerHTML = "";
+    if (state.notes.length === 0) {
+      var emptyN = document.createElement("p");
+      emptyN.className = "hint";
+      emptyN.textContent = "No notes yet. Add your first note above.";
+      notesList.appendChild(emptyN);
+    }
+    state.notes.forEach(function (note, i) {
+      var item = document.createElement("div");
+      item.className = "item";
+      var p = document.createElement("p");
+      p.textContent = note;
+      item.appendChild(p);
+      var del = document.createElement("button");
+      del.type = "button";
+      del.className = "danger";
+      del.textContent = "Delete this note";
+      del.addEventListener("click", function () {
+        state.notes = removeAt(state.notes, i);
+        saveState(window.localStorage, state);
+        render();
+      });
+      item.appendChild(del);
+      notesList.appendChild(item);
+    });
+    if (state.links.length === 0) {
+      var emptyL = document.createElement("p");
+      emptyL.className = "hint";
+      emptyL.textContent = "No links yet. Add your first link above.";
+      linksList.appendChild(emptyL);
+    }
+    state.links.forEach(function (link, i) {
+      var item = document.createElement("div");
+      item.className = "item";
+      var a = document.createElement("a");
+      a.href = link.url;
+      a.textContent = link.title;
+      a.target = "_blank";
+      a.rel = "noopener";
+      item.appendChild(a);
+      var p = document.createElement("p");
+      p.className = "hint";
+      p.textContent = link.url;
+      item.appendChild(p);
+      var del = document.createElement("button");
+      del.type = "button";
+      del.className = "danger";
+      del.textContent = "Delete this link";
+      del.addEventListener("click", function () {
+        state.links = removeAt(state.links, i);
+        saveState(window.localStorage, state);
+        render();
+      });
+      item.appendChild(del);
+      linksList.appendChild(item);
+    });
+  }
+  document.getElementById("add-note").addEventListener("click", function () {
+    var next = addNote(state.notes, noteInput.value);
+    if (!next) { noteMsg.textContent = "Type a note first."; return; }
+    noteMsg.textContent = "";
+    state.notes = next;
+    noteInput.value = "";
+    saveState(window.localStorage, state);
+    render();
+  });
+  document.getElementById("add-link").addEventListener("click", function () {
+    var next = addLink(state.links, linkTitle.value, linkUrl.value);
+    if (!next) { linkMsg.textContent = "Enter a title and a full link starting with https://"; return; }
+    linkMsg.textContent = "";
+    state.links = next;
+    linkTitle.value = "";
+    linkUrl.value = "";
+    saveState(window.localStorage, state);
+    render();
+  });
+  var copyBtn = document.getElementById("copy-dashboard");
+  copyBtn.addEventListener("click", function () {
+    var text = formatDashboard(state.notes, state.links);
+    function done() {
+      copyBtn.textContent = "Copied!";
+      setTimeout(function () { copyBtn.textContent = "Copy my dashboard"; }, 2000);
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  });
+  render();
+})(window.NP);
+
+</script>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

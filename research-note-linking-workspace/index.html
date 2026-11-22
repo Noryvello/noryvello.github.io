@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research Note Linking Workspace — Link Your Research Notes Together | Noryvello</title>
+<meta name="description" content="Link your research notes free — connect notes so ideas find each other. A simple workspace in your browser, no signup.">
+<link rel="canonical" href="https://noryvello.github.io/research-note-linking-workspace/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Research Note Linking Workspace — Link Your Research Notes Together">
+<meta property="og:description" content="Link your research notes free — connect notes so ideas find each other. A simple workspace in your browser, no signup.">
+<meta property="og:url" content="https://noryvello.github.io/research-note-linking-workspace/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why link notes instead of filing them?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Filing puts each note in one place only, and two notes in different folders never meet. Linking lets a note connect to as many others as it relates to, so ideas find each other. Filing is for finding a note again; linking is for thinking with your notes, and research needs both."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I write a linkable note?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Write one idea per note, in your own words, as a claim rather than a topic. Give it a short, specific title, such as Sleep affects focus, rather than a vague one such as Notes. A note written as a claim can be supported, contradicted or built on, and the links follow naturally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the 3 link types?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Supports means one note gives evidence or a reason for another. Contradicts means one note argues against another, which is the most valuable kind because it keeps you honest. Builds on means one note extends another or applies it somewhere new. Pick the type that describes how the two notes really relate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my work uploaded anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Your notes and links are stored only in this browser, on this device, using the browser's own storage. Nothing is uploaded, nothing is synced, and nobody else can see your work. Clearing your browser data deletes it, so copy out anything that matters to you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this on my phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The workspace works by touch alone: the buttons and fields are large enough to tap, and the list scrolls like any page. Notes saved on your phone stay on your phone, so copy the workspace out if you want the same notes on another device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many notes can I link?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no fixed limit in the workspace itself; the limit is your browser's storage, which holds far more notes than most people will ever write. Keep notes short and the workspace stays fast. If it ever feels slow, copy the workspace out and start a fresh one."
+      }
+    }
+  ]
+}
+</script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button,.copy-btn,.clear-btn{min-height:72px;padding:14px 18px;font-size:16px;font-weight:700;border:1px solid #4338ca;border-radius:10px;background:#4338ca;color:#fff;cursor:pointer;width:100%;margin-top:12px}
+.calc button.secondary,.clear-btn{background:#fff;color:#4338ca}
+.calc input,.calc select{min-height:72px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;min-height:72px;font-family:inherit}
+.calc .out{white-space:pre-line}
+.calc .msg{font-size:15px;margin-top:10px}
+.calc .bk{border:1px solid #cbd5e1;border-radius:10px;padding:12px;margin-top:10px;overflow-wrap:break-word}
+.calc .bk p{margin:2px 0;font-size:15px}
+.calc .bk button{margin-top:10px}
+.calc .hint{font-size:14px;color:#64748b;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Research Note Linking Workspace</h1>
+<p class="answer">Linking research notes means connecting one note to another so that ideas find each other, and this page teaches you how to write linkable notes and gives you a working workspace to try it in. Notes with links beat notes in folders, because a folder hides connections and a link shows them. Everything you save stays in this browser only, on this device, and nothing is uploaded anywhere.</p>
+<div class="calc">
+<label for="rn-title">Note title (short, so you can find it again)</label>
+<input id="rn-title" type="text" placeholder="Title of the note">
+<label for="rn-text">Note text (one idea, in your own words)</label>
+<textarea id="rn-text" rows="3" placeholder="Write the idea as you would explain it to a friend"></textarea>
+<button type="button" id="rn-add">Add note</button>
+<p class="msg" id="rn-msg"></p>
+<label for="rn-from">Link from this note</label>
+<select id="rn-from"></select>
+<label for="rn-type">Link type</label>
+<select id="rn-type"><option value="supports">supports</option><option value="contradicts">contradicts</option><option value="builds on">builds on</option></select>
+<label for="rn-to">To this note</label>
+<select id="rn-to"></select>
+<button type="button" id="rn-addlink">Add link</button>
+<p class="out" id="rn-count"></p>
+<div id="rn-list"></div>
+<button type="button" id="rn-copy">Copy workspace</button>
+<button type="button" class="secondary" id="rn-clear">Clear workspace</button>
+<p class="hint">Your notes and links are stored only in this browser, on this device. Clearing your browser data deletes them, so copy out any work that matters to you.</p>
+</div>
+<h2>How to use the workspace</h2>
+<p>Add a note for each idea: a short title and the idea itself, in your own words. Then link notes together: pick the note the link starts from, pick the link type, and pick the note it points to. Each note shows its links underneath it, so you can see at a glance what supports it, what contradicts it, and what builds on it. Everything saves in this browser only, on this device, and the copy button turns the whole workspace into plain text you can keep anywhere.</p>
+<p>Start small. Two or three notes and one link are enough to feel how the workspace works. Add notes as you read or research, and add links when you notice a connection — usually while reviewing, when two notes sit side by side and the link becomes obvious. Do not link everything to everything: a link means something only when you chose it deliberately, and a workspace full of meaningless links is worse than a workspace with none.</p>
+<p>Use the workspace on your phone as well as on your computer: the buttons and fields are large enough to tap, and the list scrolls like any page. Your notes stay on the device you saved them on, so a note saved on your phone will not appear on your computer. Copy the workspace out regularly if the work matters to you.</p>
+<h2>Writing notes that link well</h2>
+<p>A linkable note holds one idea. Not a chapter, not a page, not a list of five thoughts: one idea, in your own words, short enough to read in a few seconds. A note that holds one idea can link cleanly to another note; a note that holds five ideas cannot link to anything, because nobody can say which of the five the link is about. If a note grows past a short paragraph, split it.</p>
+<p>Give every note a short title that says what it is about. The title is what you see in the link lists, and it is what you search for later, so make it specific: "Sleep affects focus" is a title you can find again, and "Notes" is not. Write the title first, then the idea, and keep both in your own words. A copied sentence is hard to link, because you have not yet decided what it means to you.</p>
+<p>Write notes as claims, not as topics. "Sleep affects focus" is a claim: it can be supported, contradicted or built on. "Sleep" is a topic: it cannot link to anything, because it says nothing. The link types in this workspace — supports, contradicts, builds on — only make sense between claims, so write your notes as claims and the links will follow naturally.</p>
+<h2>The 3 link types</h2>
+<p>The first link type is supports: one note gives evidence or a reason for another. A note that says sleep improves memory supports a note that says students should sleep before an exam. Supports links build the case for an idea, and a note with several supports behind it is a note you can trust more than a note with none. When you read a note and think "this backs that up", the link type is supports.</p>
+<p>The second link type is contradicts: one note argues against another. A note that says a study found no link between sleep and memory contradicts the note that says sleep improves memory. Contradicts links are the most valuable kind, because they stop you believing something just because you wrote it down. A workspace with no contradicts links is a workspace that agrees with itself too easily, and the honest researcher welcomes the contradiction.</p>
+<p>The third link type is builds on: one note extends another, adds a next step, or applies an idea somewhere new. A note about a study technique builds on a note about how memory works. Builds-on links turn a collection of notes into an argument: each note stands on the ones before it, and the chain shows how far an idea has travelled. Use builds on when the second note would not make sense without the first.</p>
+<h2>A worked example</h2>
+<p>Imagine you are researching whether walking helps thinking. You save a first note: "Walking improves creative thinking." You save a second: "A study found people produced more ideas while walking than while sitting." The second note supports the first, so you link them: study supports claim. Then you save a third note: "The same study found no gain for focused problem-solving." That note contradicts the simple version of the first, so you link it as contradicts, and you adjust the first note to say what the claim really is: walking helps creative thinking, not all thinking.</p>
+<p>Then you save a fourth note: "Walking meetings work best for brainstorming, not for decisions." That note builds on the first, because it applies the idea to a real situation. Now the workspace shows a small web: one claim, one support, one contradiction and one application. Reading the web tells you more than reading any single note, because the shape of the links is the shape of the argument.</p>
+<p>Notice what the links did. They forced you to be precise: the claim changed when the contradiction arrived. They kept the evidence attached to the claim, so you can see what supports it. And they showed you what is missing: there is no note yet about how long a walk needs to be, or whether the effect lasts. A linked workspace shows you its own gaps, and that is one of its best features.</p>
+<h2>Keeping it tidy</h2>
+<p>A tidy workspace is a small one. Delete notes that no longer matter, merge notes that say the same thing, and rename titles that no longer describe the note. A weekly tidy-up of a few minutes keeps the workspace usable: read the notes from the week, delete the dead ones, and look for links you missed. A workspace with fifty good notes beats one with five hundred forgotten ones.</p>
+<p>Watch for orphan notes: notes with no links at all. A few orphans are normal, especially new notes, but a workspace full of orphans is a workspace that is not linking. When you find an orphan, ask what it reminds you of. If nothing, the note may not matter; if something, add the link. Orphans are also a sign that a note is too vague to link: rewrite it as a claim and the links usually appear.</p>
+<p>Watch for notes that are too long. A note that runs to several paragraphs is usually several notes hiding in one, and it cannot link cleanly to anything. Split it: one idea per note, each with its own title, and link the pieces together. Splitting feels like extra work, but it is the work that makes the workspace useful.</p>
+<h2>Why linking beats filing</h2>
+<p>Filing puts each note in one place, and one place only. A note about sleep and memory goes in the sleep folder or the memory folder, and whichever you choose, you lose the other. Linking puts a note in as many places as it belongs, because a note can have as many links as it needs. The question changes from "where does this go?" to "what does this connect to?", and that is a far better question.</p>
+<p>Filing also hides connections. Two notes in different folders never meet, even when one supports the other. Links make the meeting happen: when you open a note and see its links, you see the notes it relates to, including ones you had forgotten. The workspace becomes a place where ideas find each other, instead of a set of drawers where ideas go to be forgotten.</p>
+<p>None of this means folders are useless. Areas and tags still help you find a note quickly, and this workspace sits happily alongside a simple filing habit. But filing is for finding, and linking is for thinking. A system that only files is a storehouse; a system that links is a workshop. Research needs the workshop.</p>
+<h2>Common mistakes</h2>
+<p>The first mistake is links with no meaning. A link you add because two notes mention the same word is not a link, it is a coincidence, and a workspace full of coincidences teaches you to ignore the links that matter. Every link should answer the question of how the two notes relate: does one support the other, contradict it, or build on it? If you cannot answer, do not link.</p>
+<p>The second mistake is notes so long nobody links to them. A note that runs to several paragraphs is a wall, not a brick, and other notes cannot connect to it cleanly. Keep notes short, one idea each, and split anything that grows. Short notes link; long notes sit alone.</p>
+<p>The third mistake is linking everything to everything. A note with twenty links has no links that matter, because the reader cannot tell which ones count. Link sparingly and deliberately: a handful of strong links beats a web of weak ones. The fourth mistake is never reviewing. Links are usually made during review, when notes sit side by side, so a workspace that is never reviewed is a workspace that never links. Review weekly, and the links will come.</p>
+<div class="warn">This workspace stores your notes and links in this browser only, on this device. Clearing your browser data deletes them, so copy out any work that matters. Links only mean something if you choose them honestly: a link with no meaning is worse than no link at all.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>Why link notes instead of filing them?</h3><p>Filing puts each note in one place only, and two notes in different folders never meet. Linking lets a note connect to as many others as it relates to, so ideas find each other. Filing is for finding a note again; linking is for thinking with your notes, and research needs both.</p></div>
+<div class="faq"><h3>How do I write a linkable note?</h3><p>Write one idea per note, in your own words, as a claim rather than a topic. Give it a short, specific title, such as Sleep affects focus, rather than a vague one such as Notes. A note written as a claim can be supported, contradicted or built on, and the links follow naturally.</p></div>
+<div class="faq"><h3>What are the 3 link types?</h3><p>Supports means one note gives evidence or a reason for another. Contradicts means one note argues against another, which is the most valuable kind because it keeps you honest. Builds on means one note extends another or applies it somewhere new. Pick the type that describes how the two notes really relate.</p></div>
+<div class="faq"><h3>Is my work uploaded anywhere?</h3><p>No. Your notes and links are stored only in this browser, on this device, using the browser&#x27;s own storage. Nothing is uploaded, nothing is synced, and nobody else can see your work. Clearing your browser data deletes it, so copy out anything that matters to you.</p></div>
+<div class="faq"><h3>Can I use this on my phone?</h3><p>Yes. The workspace works by touch alone: the buttons and fields are large enough to tap, and the list scrolls like any page. Notes saved on your phone stay on your phone, so copy the workspace out if you want the same notes on another device.</p></div>
+<div class="faq"><h3>How many notes can I link?</h3><p>There is no fixed limit in the workspace itself; the limit is your browser&#x27;s storage, which holds far more notes than most people will ever write. Keep notes short and the workspace stays fast. If it ever feels slow, copy the workspace out and start a fresh one.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/personal-knowledge-management-platform/">Personal Knowledge Management Platform</a> · <a href="https://noryvello.github.io/reference-collection-manager/">Reference Collection Manager</a> · <a href="https://noryvello.github.io/digital-brainstorming-workspace/">Digital Brainstorming Workspace</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<script>
+
+window.NP = window.NP || {};
+(function (NP) {
+  var KEY = "np-research-notes";
+  var LKEY = "np-research-links";
+  function addNote(notes, title, text) {
+    if (!title || !title.trim()) return { notes: notes, error: "Give the note a short title first." };
+    if (!text || !text.trim()) return { notes: notes, error: "Write the note text — one idea, in your own words." };
+    var next = notes.slice();
+    next.push({ title: title.trim(), text: text.trim() });
+    return { notes: next, error: null };
+  }
+  function deleteNote(notes, links, index) {
+    var n2 = notes.slice();
+    if (index < 0 || index >= n2.length) return { notes: n2, links: links.slice() };
+    n2.splice(index, 1);
+    var l2 = [];
+    for (var i = 0; i < links.length; i++) {
+      var l = links[i];
+      if (l.from === index || l.to === index) continue;
+      l2.push({ from: l.from > index ? l.from - 1 : l.from, type: l.type, to: l.to > index ? l.to - 1 : l.to });
+    }
+    return { notes: n2, links: l2 };
+  }
+  function addLink(links, notes, from, type, to) {
+    if (notes.length < 2) return { links: links, error: "Add at least two notes before linking." };
+    if (from < 0 || from >= notes.length || to < 0 || to >= notes.length) return { links: links, error: "Pick two notes to link." };
+    if (from === to) return { links: links, error: "A note cannot link to itself. Pick two different notes." };
+    if (type !== "supports" && type !== "contradicts" && type !== "builds on") return { links: links, error: "Pick a link type." };
+    for (var i = 0; i < links.length; i++) {
+      if (links[i].from === from && links[i].type === type && links[i].to === to) return { links: links, error: "That link already exists." };
+    }
+    var next = links.slice();
+    next.push({ from: from, type: type, to: to });
+    return { links: next, error: null };
+  }
+  function deleteLink(links, index) {
+    var next = links.slice();
+    if (index >= 0 && index < next.length) next.splice(index, 1);
+    return next;
+  }
+  function linksFor(notes, links, index) {
+    var out = [], inn = [];
+    for (var i = 0; i < links.length; i++) {
+      var l = links[i];
+      if (l.from === index) out.push({ type: l.type, other: notes[l.to].title, index: i });
+      if (l.to === index) inn.push({ type: l.type, other: notes[l.from].title, index: i });
+    }
+    return { out: out, inn: inn };
+  }
+  function formatWorkspace(notes, links) {
+    if (!notes.length) return "No notes saved yet.";
+    var lines = ["Research notes:"];
+    for (var i = 0; i < notes.length; i++) lines.push((i + 1) + ". " + notes[i].title + " — " + notes[i].text);
+    if (links.length) {
+      lines.push("Links:");
+      for (var j = 0; j < links.length; j++) {
+        var l = links[j];
+        lines.push("- \"" + notes[l.from].title + "\" " + l.type + " \"" + notes[l.to].title + "\"");
+      }
+    }
+    return lines.join("\n");
+  }
+  NP.rnKey = KEY;
+  NP.rnAddNote = addNote;
+  NP.rnDeleteNote = deleteNote;
+  NP.rnAddLink = addLink;
+  NP.rnDeleteLink = deleteLink;
+  NP.rnLinksFor = linksFor;
+  NP.rnFormatWorkspace = formatWorkspace;
+  if (typeof document === "undefined") return;
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function load(k) {
+    try { var raw = window.localStorage.getItem(k); return raw ? JSON.parse(raw) : []; }
+    catch (e) { return []; }
+  }
+  function save(k, v) {
+    try { window.localStorage.setItem(k, JSON.stringify(v)); } catch (e) {}
+  }
+  var notes = load(KEY);
+  var links = load(LKEY);
+  var titleEl = document.getElementById("rn-title");
+  var textEl = document.getElementById("rn-text");
+  var msgEl = document.getElementById("rn-msg");
+  var fromEl = document.getElementById("rn-from");
+  var typeEl = document.getElementById("rn-type");
+  var toEl = document.getElementById("rn-to");
+  var countEl = document.getElementById("rn-count");
+  var listEl = document.getElementById("rn-list");
+  function fillSelect(sel, keep) {
+    var opts = "";
+    for (var i = 0; i < notes.length; i++) opts += '<option value="' + i + '"' + (i === keep ? " selected" : "") + ">" + esc(notes[i].title) + "</option>";
+    sel.innerHTML = opts;
+  }
+  function render() {
+    countEl.textContent = notes.length + " note" + (notes.length === 1 ? "" : "s") + ", " + links.length + " link" + (links.length === 1 ? "" : "s") + ".";
+    var fk = fromEl.selectedIndex, tk = toEl.selectedIndex;
+    fillSelect(fromEl, fk >= 0 ? fk : 0);
+    fillSelect(toEl, tk >= 0 ? tk : (notes.length > 1 ? 1 : 0));
+    if (notes.length > 1 && fromEl.selectedIndex === toEl.selectedIndex) {
+      toEl.selectedIndex = (fromEl.selectedIndex + 1) % notes.length;
+    }
+    if (!notes.length) {
+      listEl.innerHTML = "<p>No notes saved yet. Add your first note above.</p>";
+      return;
+    }
+    var out = "";
+    for (var i = 0; i < notes.length; i++) {
+      var n = notes[i];
+      var lf = linksFor(notes, links, i);
+      out += '<div class="bk"><p><strong>' + esc(n.title) + "</strong></p>";
+      out += "<p>" + esc(n.text) + "</p>";
+      if (lf.out.length || lf.inn.length) {
+        out += "<p>Links: ";
+        var parts = [];
+        for (var a = 0; a < lf.out.length; a++) parts.push("this " + lf.out[a].type + " \"" + esc(lf.out[a].other) + "\"");
+        for (var b = 0; b < lf.inn.length; b++) parts.push("\"" + esc(lf.inn[b].other) + "\" " + lf.inn[b].type + " this");
+        out += parts.join("; ") + ".</p>";
+      }
+      out += '<button type="button" data-del="' + i + '">Delete this note</button></div>';
+    }
+    if (links.length) {
+      out += '<div class="bk"><p><strong>All links</strong></p>';
+      for (var j = 0; j < links.length; j++) {
+        var l = links[j];
+        out += "<p>\"" + esc(notes[l.from].title) + "\" " + l.type + " \"" + esc(notes[l.to].title) + "\" ";
+        out += '<button type="button" data-dellink="' + j + '">Delete link</button></p>';
+      }
+      out += "</div>";
+    }
+    listEl.innerHTML = out;
+    var dels = listEl.querySelectorAll("[data-del]");
+    for (var d = 0; d < dels.length; d++) {
+      (function (btn) {
+        btn.addEventListener("click", function () {
+          var res = deleteNote(notes, links, parseInt(btn.getAttribute("data-del"), 10));
+          notes = res.notes; links = res.links;
+          save(KEY, notes); save(LKEY, links);
+          msgEl.textContent = "Note deleted, with its links.";
+          render();
+        });
+      })(dels[d]);
+    }
+    var dell = listEl.querySelectorAll("[data-dellink]");
+    for (var e = 0; e < dell.length; e++) {
+      (function (btn) {
+        btn.addEventListener("click", function () {
+          links = deleteLink(links, parseInt(btn.getAttribute("data-dellink"), 10));
+          save(LKEY, links);
+          msgEl.textContent = "Link deleted.";
+          render();
+        });
+      })(dell[e]);
+    }
+  }
+  document.getElementById("rn-add").addEventListener("click", function () {
+    var res = addNote(notes, titleEl.value, textEl.value);
+    if (res.error) { msgEl.textContent = res.error; return; }
+    notes = res.notes;
+    save(KEY, notes);
+    msgEl.textContent = "Note saved.";
+    titleEl.value = "";
+    textEl.value = "";
+    render();
+  });
+  document.getElementById("rn-addlink").addEventListener("click", function () {
+    var res = addLink(links, notes, parseInt(fromEl.value, 10), typeEl.value, parseInt(toEl.value, 10));
+    if (res.error) { msgEl.textContent = res.error; return; }
+    links = res.links;
+    save(LKEY, links);
+    msgEl.textContent = "Link saved.";
+    render();
+  });
+  document.getElementById("rn-copy").addEventListener("click", function () {
+    var btn = this;
+    var text = formatWorkspace(notes, links);
+    function done() {
+      var old = btn.textContent;
+      btn.textContent = "Copied!";
+      setTimeout(function () { btn.textContent = old; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallback(); });
+    } else { fallback(); }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+  });
+  document.getElementById("rn-clear").addEventListener("click", function () {
+    notes = []; links = [];
+    try { window.localStorage.removeItem(KEY); window.localStorage.removeItem(LKEY); } catch (e) {}
+    msgEl.textContent = "Workspace cleared.";
+    render();
+  });
+  render();
+})(window.NP);
+
+</script>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

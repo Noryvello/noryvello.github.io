@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digital Brainstorming Workspace — Brainstorm Freely in Your Browser | Noryvello</title>
+<meta name="description" content="Brainstorm free in your browser — add idea cards, group them, and find the best one. No signup, your board stays on your device.">
+<link rel="canonical" href="https://noryvello.github.io/digital-brainstorming-workspace/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Digital Brainstorming Workspace — Brainstorm Freely in Your Browser">
+<meta property="og:description" content="Brainstorm free in your browser — add idea cards, group them, and find the best one. No signup, your board stays on your device.">
+<meta property="og:url" content="https://noryvello.github.io/digital-brainstorming-workspace/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I brainstorm well?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aim for quantity first: twenty ideas in ten minutes is a good target, because the best idea is often a late one. Do not judge ideas while you are still adding them, keep one idea per card, and judge only after the session, when the board is full and the ideas can be compared calmly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my board uploaded anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Your board is stored only in this browser, on this device, using the browser's own storage. Nothing is uploaded, nothing is synced, and nobody else can see your ideas. Clearing your browser data deletes the board, so copy out anything that matters to you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I group my ideas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every card belongs to a group — New ideas, Problems, Wild cards or Next steps — and you can move any card to a different group at any time. The filter lets you look at one group at a time, or at your starred ideas only, which makes comparing and choosing easy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many ideas should I aim for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Twenty ideas in ten minutes is a good target for one person. The first ideas are the obvious ones, and the interesting ones come after those are used up, so keep going until the timer ends. A session that stops at ten ideas has usually stopped too soon."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this alone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The board is built for one person: add cards as fast as you think them, group them when you pause, and star the best ones when you are done. Solo brainstorming has no one to judge your ideas, and the best idea is often one you would not have said out loud in a group."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my board survive if I clear my browser data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Clearing your browser data deletes the board, because it lives only in this browser, on this device. Use the copy button to keep a plain-text copy of your board somewhere safe, and copy it out regularly if the ideas matter to you."
+      }
+    }
+  ]
+}
+</script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button,.copy-btn,.clear-btn{min-height:72px;padding:14px 18px;font-size:16px;font-weight:700;border:1px solid #4338ca;border-radius:10px;background:#4338ca;color:#fff;cursor:pointer;width:100%;margin-top:12px}
+.calc button.secondary,.clear-btn{background:#fff;color:#4338ca}
+.calc input,.calc select{min-height:72px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;min-height:72px;font-family:inherit}
+.calc .out{white-space:pre-line}
+.calc .msg{font-size:15px;margin-top:10px}
+.calc .bk{border:1px solid #cbd5e1;border-radius:10px;padding:12px;margin-top:10px;overflow-wrap:break-word}
+.calc .bk p{margin:2px 0;font-size:15px}
+.calc .bk button{margin-top:10px}
+.calc .hint{font-size:14px;color:#64748b;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Digital Brainstorming Workspace</h1>
+<p class="answer">A digital brainstorming workspace is a board where you add idea cards, group them, and find the best one — and this page gives you a working board in your browser, plus a guide to brainstorming well. This is a workspace you brainstorm in yourself, not a guide about AI brainstorming. Your board stays on your device only, and nothing is uploaded anywhere.</p>
+<div class="calc">
+<label for="db-text">Idea (one card, one idea)</label>
+<textarea id="db-text" rows="2" placeholder="Write one idea"></textarea>
+<label for="db-group">Group</label>
+<select id="db-group"><option value="New ideas">New ideas</option><option value="Problems">Problems</option><option value="Wild cards">Wild cards</option><option value="Next steps">Next steps</option></select>
+<button type="button" id="db-add">Add idea card</button>
+<p class="msg" id="db-msg"></p>
+<label for="db-filter">Show</label>
+<select id="db-filter"><option value="">All groups</option><option value="starred">Starred only</option><option value="New ideas">New ideas</option><option value="Problems">Problems</option><option value="Wild cards">Wild cards</option><option value="Next steps">Next steps</option></select>
+<p class="out" id="db-count"></p>
+<div id="db-list"></div>
+<button type="button" id="db-copy">Copy board</button>
+<button type="button" class="secondary" id="db-clear">Clear board</button>
+<p class="hint">Your board is stored only in this browser, on this device. Clearing your browser data deletes it, so copy out any ideas that matter to you.</p>
+</div>
+<h2>How to use the brainstorm board</h2>
+<p>Write one idea per card, pick a group for it, and add it to the board. Four groups are offered — New ideas, Problems, Wild cards and Next steps — and you can move any card to a different group later, when you see where it really belongs. Star the ideas that feel promising, delete the ones that do not, and use the filter to look at one group at a time or at your starred ideas only. Everything saves in this browser only, on this device, and the copy button turns the whole board into plain text, grouped, so you can keep it anywhere.</p>
+<p>Work fast. A brainstorm session is ten or fifteen minutes, not an hour, and the board is built for speed: one box for the idea, one group to pick, one button to add it. Do not stop to tidy the board while you are still adding ideas — grouping and judging come after the ideas, not during them. The board works by touch alone on a phone, so you can brainstorm wherever the ideas arrive.</p>
+<p>This is a workspace you brainstorm in yourself. It does not generate ideas for you, and it does not judge them: the ideas are yours, the groups are yours, and the choice of the best idea is yours. That is the point of brainstorming — to think freely first, and to choose carefully afterwards.</p>
+<h2>The rules of good brainstorming</h2>
+<p>The first rule is quantity before quality. Aim for many ideas, not good ones, because the best idea is often the twentieth, not the first. The first ideas are the obvious ones — the ones everyone would think of — and the interesting ones come after you have used those up. Twenty ideas in ten minutes is a good target for one person, and the board counts them for you.</p>
+<p>The second rule is no judging during the session. Do not reject an idea while you are still adding them, and do not stop to argue with yourself about whether an idea is practical. Judging kills ideas before they are finished, and the wild idea you almost deleted may be the one that leads somewhere. Judge after the session, when the board is full and the ideas can be compared calmly.</p>
+<p>The third rule is one idea per card. A card that holds three ideas cannot be grouped, starred or moved cleanly, because nobody can say which of the three the group is about. Split combined ideas into separate cards, and let each one stand on its own. Short cards also keep the board readable: a card you can read in a second is a card you can compare with the others.</p>
+<h2>Grouping your ideas</h2>
+<p>Grouping is the step that turns a pile of cards into something you can think with. Start with the four groups on the board: New ideas for the fresh ones, Problems for the difficulties the session must solve, Wild cards for the unlikely ones that might just work, and Next steps for the actions the session suggests. Move each card to the group it fits best, and do not worry about getting it right first time — a card can move as often as you like.</p>
+<p>Look for cards that belong together. Two cards that say nearly the same thing can be merged into one, and a group of cards that share a theme can be read as one bigger idea. The themes are often the real result of a brainstorm: the session was about naming a product, but the cards show that the real question is who the product is for. Grouping makes those themes visible.</p>
+<p>Wild cards deserve their own group, because they are the easiest ideas to lose. A wild idea looks silly next to a sensible one, and the temptation is to delete it. Keep it in its own group instead: the wild card that cannot work may still contain a piece that can, and the group keeps it safe until you have had time to look at it properly.</p>
+<h2>Picking the best idea</h2>
+<p>Picking starts after the ideas stop. Read the whole board, star the cards that feel promising, and then ask three questions about each starred card. First, does it solve the problem? An idea that does not solve the problem is not a good idea, however clever it is. Second, can you actually do it? An idea that needs resources you do not have is a wish, not a plan. Third, what is the smallest version of it? An idea you can try in a day beats an idea that needs a month, because trying teaches you what planning cannot.</p>
+<p>Star generously at first, then narrow down. Star every card that might work, then read the starred cards together and star the best of them in your head. The board's starred filter shows only the starred cards, which makes the comparison easy. If two ideas both look good, ask which one you would try first, and try that one: a decision made is better than a choice postponed.</p>
+<p>Keep the cards you did not pick. An idea that is wrong today may be right next month, when the situation has changed, and a board full of rejected ideas is a useful record of what you considered and why you passed. Delete only the cards that are truly dead — the duplicates, the jokes, the ones that made no sense even to you.</p>
+<h2>Brainstorming alone</h2>
+<p>Brainstorming alone works well, and it has advantages a group session does not. There is nobody to judge your ideas, nobody to interrupt, and no need to wait your turn. The board is built for one person: add cards as fast as you think them, group them when you pause, and star the best ones when you are done. A solo session of ten minutes can produce twenty ideas, and the best of them is often one you would not have said out loud in a group.</p>
+<p>The risk of solo brainstorming is that you judge too early, because there is nobody to stop you. The rule still applies: no judging during the session. Write the idea down even if it feels silly, and judge it later. If you find yourself stopping to argue with an idea, write the argument on a card too, in the Problems group, and carry on adding ideas.</p>
+<p>Take a break between adding and picking. Five minutes away from the board — a walk, a glass of water — lets you come back to the cards with fresh eyes, and the best ideas often stand out more clearly after the break. The board will still be there when you return: it saves in your browser, on your device, and nothing is lost by stepping away.</p>
+<h2>A worked example</h2>
+<p>Imagine you need a name for a small bakery. You set a timer for ten minutes and start adding cards. The first ideas are the obvious ones: "Fresh Bakes", "The Bread Shop", "Daily Loaf". You keep going, and the ideas get stranger: "Crumb and Craft", "The Rising Oven", "Flour Power", "The Early Bird Bakery". By the end of ten minutes you have twenty cards, and the board looks like a mess. That is exactly right.</p>
+<p>Now you group them. "Fresh Bakes" and "Daily Loaf" go to New ideas. "Flour Power" and "The Rising Oven" go to Wild cards. A card that says "the name must be easy to say on the phone" goes to Problems, because it is a difficulty the name must solve. A card that says "check whether the name is already taken" goes to Next steps, because it is an action the session suggests.</p>
+<p>Then you star the promising ones: "Crumb and Craft" for its sound, "The Early Bird Bakery" for its story. You ask the three questions: does the name fit a bakery, can you use it, what is the smallest version? "Crumb and Craft" wins, and the Next steps card tells you what to do first. The session took fifteen minutes, and the board holds the record of every idea you considered.</p>
+<h2>Common mistakes</h2>
+<p>The first mistake is judging during the session. An idea rejected in the first minute may have been the seed of the best idea in the tenth, and a session that judges as it goes produces only safe ideas. Add first, judge after, and keep the two steps apart. The second mistake is stopping too soon. Ten ideas feel like plenty, but the interesting ideas come after the obvious ones are used up, so aim for twenty and keep going until the timer ends.</p>
+<p>The third mistake is one card holding three ideas. A card that says "a bakery name, a logo idea and a shop layout" cannot be grouped or starred, because nobody can say which part the star is for. Split it into three cards and let each one stand alone. The fourth mistake is never picking. A board full of unstarred ideas is a session without a result: star the promising cards, ask the three questions, and choose. A decision made is better than a choice postponed, and the board keeps the rest for another day.</p>
+<div class="warn">This board stores your ideas in this browser only, on this device. Clearing your browser data deletes them, so copy out any ideas that matter. Brainstorming produces ideas, not decisions: judge the ideas after the session, not during it.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>How do I brainstorm well?</h3><p>Aim for quantity first: twenty ideas in ten minutes is a good target, because the best idea is often a late one. Do not judge ideas while you are still adding them, keep one idea per card, and judge only after the session, when the board is full and the ideas can be compared calmly.</p></div>
+<div class="faq"><h3>Is my board uploaded anywhere?</h3><p>No. Your board is stored only in this browser, on this device, using the browser&#x27;s own storage. Nothing is uploaded, nothing is synced, and nobody else can see your ideas. Clearing your browser data deletes the board, so copy out anything that matters to you.</p></div>
+<div class="faq"><h3>Can I group my ideas?</h3><p>Yes. Every card belongs to a group — New ideas, Problems, Wild cards or Next steps — and you can move any card to a different group at any time. The filter lets you look at one group at a time, or at your starred ideas only, which makes comparing and choosing easy.</p></div>
+<div class="faq"><h3>How many ideas should I aim for?</h3><p>Twenty ideas in ten minutes is a good target for one person. The first ideas are the obvious ones, and the interesting ones come after those are used up, so keep going until the timer ends. A session that stops at ten ideas has usually stopped too soon.</p></div>
+<div class="faq"><h3>Can I use this alone?</h3><p>Yes. The board is built for one person: add cards as fast as you think them, group them when you pause, and star the best ones when you are done. Solo brainstorming has no one to judge your ideas, and the best idea is often one you would not have said out loud in a group.</p></div>
+<div class="faq"><h3>Will my board survive if I clear my browser data?</h3><p>No. Clearing your browser data deletes the board, because it lives only in this browser, on this device. Use the copy button to keep a plain-text copy of your board somewhere safe, and copy it out regularly if the ideas matter to you.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/personal-knowledge-management-platform/">Personal Knowledge Management Platform</a> · <a href="https://noryvello.github.io/research-note-linking-workspace/">Research Note Linking Workspace</a> · <a href="https://noryvello.github.io/reference-collection-manager/">Reference Collection Manager</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<script>
+
+window.NP = window.NP || {};
+(function (NP) {
+  var KEY = "np-brainstorm-board";
+  var GROUPS = ["New ideas", "Problems", "Wild cards", "Next steps"];
+  function addCard(cards, text, group) {
+    if (!text || !text.trim()) return { cards: cards, error: "Write the idea first — one card, one idea." };
+    if (GROUPS.indexOf(group) < 0) group = "New ideas";
+    var next = cards.slice();
+    next.push({ text: text.trim(), group: group, star: false });
+    return { cards: next, error: null };
+  }
+  function setGroup(cards, index, group) {
+    if (GROUPS.indexOf(group) < 0) return cards;
+    var next = cards.slice();
+    if (index >= 0 && index < next.length) next[index] = { text: next[index].text, group: group, star: next[index].star };
+    return next;
+  }
+  function toggleStar(cards, index) {
+    var next = cards.slice();
+    if (index >= 0 && index < next.length) next[index] = { text: next[index].text, group: next[index].group, star: !next[index].star };
+    return next;
+  }
+  function deleteCard(cards, index) {
+    var next = cards.slice();
+    if (index >= 0 && index < next.length) next.splice(index, 1);
+    return next;
+  }
+  function filterCards(cards, filter) {
+    if (!filter) return cards.slice();
+    if (filter === "starred") return cards.filter(function (c) { return c.star; });
+    return cards.filter(function (c) { return c.group === filter; });
+  }
+  function formatBoard(cards) {
+    if (!cards.length) return "No ideas on the board yet.";
+    var lines = ["Brainstorm board:"];
+    for (var g = 0; g < GROUPS.length; g++) {
+      var inGroup = cards.filter(function (c) { return c.group === GROUPS[g]; });
+      if (!inGroup.length) continue;
+      lines.push(GROUPS[g] + ":");
+      for (var i = 0; i < inGroup.length; i++) lines.push("- " + (inGroup[i].star ? "[starred] " : "") + inGroup[i].text);
+    }
+    return lines.join("\n");
+  }
+  NP.dbKey = KEY;
+  NP.dbGroups = GROUPS;
+  NP.dbAddCard = addCard;
+  NP.dbSetGroup = setGroup;
+  NP.dbToggleStar = toggleStar;
+  NP.dbDeleteCard = deleteCard;
+  NP.dbFilterCards = filterCards;
+  NP.dbFormatBoard = formatBoard;
+  if (typeof document === "undefined") return;
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function load() {
+    try { var raw = window.localStorage.getItem(KEY); return raw ? JSON.parse(raw) : []; }
+    catch (e) { return []; }
+  }
+  function save(list) {
+    try { window.localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+  }
+  var cards = load();
+  var textEl = document.getElementById("db-text");
+  var groupEl = document.getElementById("db-group");
+  var msgEl = document.getElementById("db-msg");
+  var filterEl = document.getElementById("db-filter");
+  var countEl = document.getElementById("db-count");
+  var listEl = document.getElementById("db-list");
+  function groupOptions(selected) {
+    var opts = "";
+    for (var g = 0; g < GROUPS.length; g++) opts += '<option value="' + esc(GROUPS[g]) + '"' + (GROUPS[g] === selected ? " selected" : "") + ">" + esc(GROUPS[g]) + "</option>";
+    return opts;
+  }
+  function render() {
+    var shown = filterCards(cards, filterEl.value);
+    var starred = cards.filter(function (c) { return c.star; }).length;
+    countEl.textContent = cards.length + " idea" + (cards.length === 1 ? "" : "s") + " on the board" + (starred ? ", " + starred + " starred" : "") + (shown.length !== cards.length ? " — showing " + shown.length : "") + ".";
+    if (!shown.length) {
+      listEl.innerHTML = "<p>" + (cards.length ? "No cards match this view." : "No ideas on the board yet. Add your first idea above.") + "</p>";
+      return;
+    }
+    var out = "";
+    for (var i = 0; i < shown.length; i++) {
+      var c = shown[i];
+      var realIndex = cards.indexOf(c);
+      out += '<div class="bk"><p><strong>' + esc(c.group) + "</strong>" + (c.star ? " — starred" : "") + "</p>";
+      out += "<p>" + esc(c.text) + "</p>";
+      out += '<label for="db-move-' + realIndex + '">Move to group</label>';
+      out += '<select id="db-move-' + realIndex + '" data-move="' + realIndex + '">' + groupOptions(c.group) + "</select>";
+      out += '<button type="button" data-star="' + realIndex + '">' + (c.star ? "Unstar this idea" : "Star this idea") + "</button>";
+      out += '<button type="button" data-del="' + realIndex + '">Delete this idea</button></div>';
+    }
+    listEl.innerHTML = out;
+    var moves = listEl.querySelectorAll("[data-move]");
+    for (var m = 0; m < moves.length; m++) {
+      (function (sel) {
+        sel.addEventListener("change", function () {
+          cards = setGroup(cards, parseInt(sel.getAttribute("data-move"), 10), sel.value);
+          save(cards);
+          msgEl.textContent = "Idea moved.";
+          render();
+        });
+      })(moves[m]);
+    }
+    var stars = listEl.querySelectorAll("[data-star]");
+    for (var s = 0; s < stars.length; s++) {
+      (function (btn) {
+        btn.addEventListener("click", function () {
+          cards = toggleStar(cards, parseInt(btn.getAttribute("data-star"), 10));
+          save(cards);
+          render();
+        });
+      })(stars[s]);
+    }
+    var dels = listEl.querySelectorAll("[data-del]");
+    for (var j = 0; j < dels.length; j++) {
+      (function (btn) {
+        btn.addEventListener("click", function () {
+          cards = deleteCard(cards, parseInt(btn.getAttribute("data-del"), 10));
+          save(cards);
+          msgEl.textContent = "Idea deleted.";
+          render();
+        });
+      })(dels[j]);
+    }
+  }
+  document.getElementById("db-add").addEventListener("click", function () {
+    var res = addCard(cards, textEl.value, groupEl.value);
+    if (res.error) { msgEl.textContent = res.error; return; }
+    cards = res.cards;
+    save(cards);
+    msgEl.textContent = "Idea added.";
+    textEl.value = "";
+    render();
+  });
+  filterEl.addEventListener("change", render);
+  document.getElementById("db-copy").addEventListener("click", function () {
+    var btn = this;
+    var text = formatBoard(cards);
+    function done() {
+      var old = btn.textContent;
+      btn.textContent = "Copied!";
+      setTimeout(function () { btn.textContent = old; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallback(); });
+    } else { fallback(); }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+  });
+  document.getElementById("db-clear").addEventListener("click", function () {
+    cards = [];
+    try { window.localStorage.removeItem(KEY); } catch (e) {}
+    msgEl.textContent = "Board cleared.";
+    render();
+  });
+  render();
+})(window.NP);
+
+</script>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

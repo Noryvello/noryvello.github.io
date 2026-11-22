@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference Collection Manager — Keep All Your References in One Place | Noryvello</title>
+<meta name="description" content="Manage your references free — save books, articles and links with notes, and find any source in seconds. Stored only on your device.">
+<link rel="canonical" href="https://noryvello.github.io/reference-collection-manager/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reference Collection Manager — Keep All Your References in One Place">
+<meta property="og:description" content="Manage your references free — save books, articles and links with notes, and find any source in seconds. Stored only on your device.">
+<meta property="og:url" content="https://noryvello.github.io/reference-collection-manager/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a reference collection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is one place for all the sources you rely on — books, articles and links — each with a note saying why it matters. This page gives you a working manager in your browser: save a reference with its title, type, author and note, find it again in seconds, and copy the whole collection out as plain text."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data uploaded anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Your references are stored only in this browser, on this device, using the browser's own storage. Nothing is uploaded, nothing is synced, and nobody else can see your collection. Clearing your browser data deletes it, so copy out anything that matters to you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find an old reference?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the search box to find any word in your titles, authors, notes and projects, or use the type filter to see only books, only articles, or only the type you need. The two work together: filter by type, then search within it. A consistent title and project name make finding even faster."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I save with each reference?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Save the title, the type, and the author when you know it. Most important is the note: what the source said, in your own words, and why you are keeping it. Add a link only if the source lives online, and a project name when the reference belongs to one piece of work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I organize by project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Give each reference a project name, using the same name every time, and searching for the project finds all of its references together. A reference belongs to one project at a time on this page, so name the project you are working on now if a source serves more than one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my collection survive if I clear my browser data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Clearing your browser data deletes the collection, because it lives only in this browser, on this device. Use the copy button to keep a plain-text copy of your references somewhere safe, and copy them out regularly if they matter to you."
+      }
+    }
+  ]
+}
+</script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button,.copy-btn,.clear-btn{min-height:72px;padding:14px 18px;font-size:16px;font-weight:700;border:1px solid #4338ca;border-radius:10px;background:#4338ca;color:#fff;cursor:pointer;width:100%;margin-top:12px}
+.calc button.secondary,.clear-btn{background:#fff;color:#4338ca}
+.calc input,.calc select{min-height:72px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;min-height:72px;font-family:inherit}
+.calc .out{white-space:pre-line}
+.calc .msg{font-size:15px;margin-top:10px}
+.calc .bk{border:1px solid #cbd5e1;border-radius:10px;padding:12px;margin-top:10px;overflow-wrap:break-word}
+.calc .bk p{margin:2px 0;font-size:15px}
+.calc .bk button{margin-top:10px}
+.calc .hint{font-size:14px;color:#64748b;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Reference Collection Manager</h1>
+<p class="answer">A reference collection manager keeps all your references in one place — books, articles and links, each with a note saying why it matters — and finds any source in seconds. This page gives you a working manager in your browser, plus a guide to building a collection you can trust. Everything you save stays on your device only, and nothing is uploaded anywhere.</p>
+<div class="calc">
+<label for="rc-title">Title</label>
+<input id="rc-title" type="text" placeholder="Title of the book, article or page">
+<label for="rc-type">Type</label>
+<select id="rc-type"><option value="Book">Book</option><option value="Article">Article</option><option value="Website">Website</option><option value="Video">Video</option><option value="Other">Other</option></select>
+<label for="rc-author">Author (optional)</label>
+<input id="rc-author" type="text" placeholder="Author or organization">
+<label for="rc-note">Note (why this source matters)</label>
+<textarea id="rc-note" rows="2" placeholder="What did it say, and why are you keeping it?"></textarea>
+<label for="rc-link">Link (optional, shown as plain text only)</label>
+<input id="rc-link" type="text" placeholder="Web address, if any">
+<label for="rc-project">Project (optional)</label>
+<input id="rc-project" type="text" placeholder="Project this reference belongs to">
+<button type="button" id="rc-add">Save reference</button>
+<p class="msg" id="rc-msg"></p>
+<label for="rc-search">Search your references</label>
+<input id="rc-search" type="text" placeholder="Search titles, authors, notes and projects">
+<label for="rc-typefilter">Filter by type</label>
+<select id="rc-typefilter"><option value="">All types</option><option value="Book">Book</option><option value="Article">Article</option><option value="Website">Website</option><option value="Video">Video</option><option value="Other">Other</option></select>
+<p class="out" id="rc-count"></p>
+<div id="rc-list"></div>
+<button type="button" id="rc-copy">Copy all references</button>
+<button type="button" class="secondary" id="rc-clear">Clear all references</button>
+<p class="hint">Your references are stored only in this browser, on this device. Clearing your browser data deletes them, so copy out any collection that matters to you.</p>
+</div>
+<h2>How to use the reference manager</h2>
+<p>When you find a source worth keeping, save it here: the title, the type, the author if you know it, and a note saying what it said and why you are keeping it. A link is optional, and it is shown as plain text only — this page never opens a link for you, and never pretends a saved link is a trusted source. A project name is optional too, and it lets you gather all the references for one piece of work in one place. Each reference saves in this browser only, on this device.</p>
+<p>Finding a reference is the whole point of keeping one. Use the search box to find any word in your titles, authors, notes and projects, or use the type filter to see only books, only articles, or only the type you need. The two work together: filter by type, then search within it. The copy button turns the whole collection into plain text, one reference per line, so you can keep a copy anywhere you like.</p>
+<p>This page is about keeping your own collection of sources. It is not about writing a reference letter, and it is not a lookup table of keyboard shortcuts or port numbers — those are different pages, with different jobs. Keep the jobs apart, and each page stays simple.</p>
+<h2>What to save with each reference</h2>
+<p>Save the title first, because the title is how you will find the reference again. Write it the same way every time — the same spelling, the same short form — or one source will appear twice under two spellings. The type comes next: book, article, website, video or other. The type matters because you use sources differently: a book is a long argument, an article is a single claim, and a website is a page that may change.</p>
+<p>Save the author when you know it, because the author tells you how much to trust the source. A claim from an organization that studies the subject is worth more than the same claim from a stranger, and a reference without an author cannot be checked. Save a note too, and make it the most useful part of the reference: what did the source say, in your own words, and why are you keeping it? A reference without a note is a title you will not remember, and a note that says why is worth more than the title itself.</p>
+<p>Save the link only if the source lives online, and save it as text you can read, not as a button you press. Links change and pages disappear, which is why the note matters more than the link: the note keeps the idea even when the page is gone. Save the project when the reference belongs to one piece of work, so that the references for that work can be found together.</p>
+<h2>Types of reference</h2>
+<p>Books are the slowest references and often the most trustworthy: a book has been written, edited and checked, and it argues a case at length. Save books with their full title and author, and note which chapter or idea you are keeping. A book reference that says only the title is a reminder to re-read the whole book, which is rarely what you need.</p>
+<p>Articles are the most common references for research: a single claim, a single study, a single argument. Save the title, the author, and the claim that matters, in your own words. Articles are also the references most likely to be superseded, so note the date when you know it, and check whether newer work has changed the picture before you rely on an old article.</p>
+<p>Websites and videos are the least stable references: a page can change overnight, and a video can be taken down without warning. Save them with a note that captures the idea, so that the reference survives even if the page does not. A website reference without a note is a link to a page that may no longer say what it said when you saved it.</p>
+<h2>Organizing by project</h2>
+<p>A project is a piece of work — an essay, a report, a talk, a course — and the project field on this page gathers the references that belong to it. Give each project one name, and use that name the same way every time, so that searching for the project finds all of its references. A reference can belong to one project at a time on this page, so if a source serves two projects, save it once and name the project you are working on now.</p>
+<p>Organizing by project beats organizing by topic, because a project has a deadline and a purpose, and a topic does not. When you sit down to write, you need the references for this piece of work, not every reference you have ever saved about the subject. The project search gives you exactly that: the sources for the work in front of you, and nothing else.</p>
+<p>When a project is finished, its references stay in the collection, and that is a good thing. A finished project's references are a record of what you read and relied on, and they save time when a new project touches the same ground. Delete only the references that proved useless: the rest are the raw material of your future work.</p>
+<h2>Finding an old reference</h2>
+<p>The fastest way to find a reference is to search for a word in it. Search looks through titles, authors, notes and projects, so any word you remember will find it. Search for the word you would use to describe the source, and the reference will usually appear at once. If it does not, try the project name, or the author's name, or a word from your note.</p>
+<p>The type filter is the second way in. When you need a book rather than an article, filter by type and scan the books. Most collections will have only a handful of references of each type for each project, so scanning takes seconds. The two tools work together: filter by type, then search within it, and even a large collection gives up its references quickly.</p>
+<p>Regular review is the third way, and it is the one that keeps a collection honest. Once a month, read through your recent references and ask which ones still matter. The ones that do are worth keeping; the ones that do not can be deleted. A collection that is reviewed stays useful; a collection that is only added to becomes a drawer full of titles.</p>
+<h2>Citing your sources honestly</h2>
+<p>A reference collection exists so that you can say where an idea came from. When you use an idea in your own work, name the source: the title, the author, and what the source said. Citing honestly is not a formality, it is the difference between building on someone's work and taking it. Your notes make citing easy, because they already say, in your own words, what each source contributed.</p>
+<p>Do not cite a source you have not read. A reference saved from someone else's list, or from a search result you never opened, is a reference you cannot vouch for. Read the source before you cite it, or do not cite it at all. The same rule applies to links: a saved link is not a read source, and a collection full of unread links is a collection of intentions, not of knowledge.</p>
+<p>Check the source before you rely on it. Ask who wrote it, when, and why, and whether newer work has changed the picture. A single source is rarely enough for an important claim: look for a second source that agrees, and note the disagreement if the sources conflict. A collection that holds both sides of an argument is more useful than one that holds only the side you agree with.</p>
+<h2>Common mistakes</h2>
+<p>The first mistake is saving a title with no note. A reference without a note is a title you will not remember, and a collection of bare titles is a list of books you once meant to read. Always add a note: what the source said, in your own words, and why you are keeping it. The note is the reference; the title is only its name.</p>
+<p>The second mistake is trusting a saved link. A link is not a source you have read, and a page can change or disappear after you save it. Read the source, capture the idea in your note, and treat the link as a convenience, not as evidence. The third mistake is never reviewing the collection. A collection that is only added to becomes a drawer full of titles: review it monthly, delete the references that proved useless, and keep the ones that still matter.</p>
+<p>The fourth mistake is citing what you have not read. A reference from someone else's list is not your reference until you have read it, and citing it as if you had is dishonest. Read before you cite, or do not cite at all. A small collection of sources you have actually read beats a large collection of titles you have not.</p>
+<div class="warn">This page stores your references in this browser only, on this device. Clearing your browser data deletes them, so copy out any collection that matters. Links you save are shown as plain text, never opened automatically: check a link before you visit it, and never trust a source just because it is saved here.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is a reference collection?</h3><p>It is one place for all the sources you rely on — books, articles and links — each with a note saying why it matters. This page gives you a working manager in your browser: save a reference with its title, type, author and note, find it again in seconds, and copy the whole collection out as plain text.</p></div>
+<div class="faq"><h3>Is my data uploaded anywhere?</h3><p>No. Your references are stored only in this browser, on this device, using the browser&#x27;s own storage. Nothing is uploaded, nothing is synced, and nobody else can see your collection. Clearing your browser data deletes it, so copy out anything that matters to you.</p></div>
+<div class="faq"><h3>How do I find an old reference?</h3><p>Use the search box to find any word in your titles, authors, notes and projects, or use the type filter to see only books, only articles, or only the type you need. The two work together: filter by type, then search within it. A consistent title and project name make finding even faster.</p></div>
+<div class="faq"><h3>What should I save with each reference?</h3><p>Save the title, the type, and the author when you know it. Most important is the note: what the source said, in your own words, and why you are keeping it. Add a link only if the source lives online, and a project name when the reference belongs to one piece of work.</p></div>
+<div class="faq"><h3>Can I organize by project?</h3><p>Yes. Give each reference a project name, using the same name every time, and searching for the project finds all of its references together. A reference belongs to one project at a time on this page, so name the project you are working on now if a source serves more than one.</p></div>
+<div class="faq"><h3>Will my collection survive if I clear my browser data?</h3><p>No. Clearing your browser data deletes the collection, because it lives only in this browser, on this device. Use the copy button to keep a plain-text copy of your references somewhere safe, and copy them out regularly if they matter to you.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/research-note-linking-workspace/">Research Note Linking Workspace</a> · <a href="https://noryvello.github.io/reading-highlight-manager/">Reading Highlight Manager</a> · <a href="https://noryvello.github.io/personal-information-dashboard/">Personal Information Dashboard</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<script>
+
+window.NP = window.NP || {};
+(function (NP) {
+  var KEY = "np-reference-collection";
+  var TYPES = ["Book", "Article", "Website", "Video", "Other"];
+  function addReference(refs, title, type, author, note, link, project) {
+    if (!title || !title.trim()) return { refs: refs, error: "Add the title first — the title of the book, article or page." };
+    if (TYPES.indexOf(type) < 0) type = "Other";
+    var next = refs.slice();
+    next.push({ title: title.trim(), type: type, author: (author || "").trim(), note: (note || "").trim(), link: (link || "").trim(), project: (project || "").trim() });
+    return { refs: next, error: null };
+  }
+  function deleteReference(refs, index) {
+    var next = refs.slice();
+    if (index >= 0 && index < next.length) next.splice(index, 1);
+    return next;
+  }
+  function filterReferences(refs, query, type) {
+    var q = (query || "").trim().toLowerCase();
+    return refs.filter(function (r) {
+      if (type && r.type !== type) return false;
+      if (!q) return true;
+      return (r.title + " " + (r.author || "") + " " + (r.note || "") + " " + (r.project || "")).toLowerCase().indexOf(q) >= 0;
+    });
+  }
+  function formatReferences(refs) {
+    if (!refs.length) return "No references saved yet.";
+    var lines = ["My references:"];
+    for (var i = 0; i < refs.length; i++) {
+      var r = refs[i];
+      lines.push((i + 1) + ". [" + r.type + "] " + r.title + (r.author ? " — " + r.author : "") + (r.project ? " (project: " + r.project + ")" : "") + (r.note ? " — " + r.note : "") + (r.link ? " Link: " + r.link : ""));
+    }
+    return lines.join("\n");
+  }
+  NP.rcKey = KEY;
+  NP.rcTypes = TYPES;
+  NP.rcAddReference = addReference;
+  NP.rcDeleteReference = deleteReference;
+  NP.rcFilterReferences = filterReferences;
+  NP.rcFormatReferences = formatReferences;
+  if (typeof document === "undefined") return;
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function load() {
+    try { var raw = window.localStorage.getItem(KEY); return raw ? JSON.parse(raw) : []; }
+    catch (e) { return []; }
+  }
+  function save(list) {
+    try { window.localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+  }
+  var refs = load();
+  var titleEl = document.getElementById("rc-title");
+  var typeEl = document.getElementById("rc-type");
+  var authorEl = document.getElementById("rc-author");
+  var noteEl = document.getElementById("rc-note");
+  var linkEl = document.getElementById("rc-link");
+  var projectEl = document.getElementById("rc-project");
+  var msgEl = document.getElementById("rc-msg");
+  var searchEl = document.getElementById("rc-search");
+  var typeFilterEl = document.getElementById("rc-typefilter");
+  var countEl = document.getElementById("rc-count");
+  var listEl = document.getElementById("rc-list");
+  function render() {
+    var shown = filterReferences(refs, searchEl.value, typeFilterEl.value);
+    countEl.textContent = refs.length + " reference" + (refs.length === 1 ? "" : "s") + " saved" + (shown.length !== refs.length ? " — showing " + shown.length : "") + ".";
+    if (!shown.length) {
+      listEl.innerHTML = "<p>" + (refs.length ? "No references match your search." : "No references saved yet. Save your first reference above.") + "</p>";
+      return;
+    }
+    var out = "";
+    for (var i = 0; i < shown.length; i++) {
+      var r = shown[i];
+      var realIndex = refs.indexOf(r);
+      out += '<div class="bk"><p><strong>[' + esc(r.type) + "] " + esc(r.title) + "</strong>" + (r.author ? " — " + esc(r.author) : "") + (r.project ? " (project: " + esc(r.project) + ")" : "") + "</p>";
+      if (r.note) out += "<p>" + esc(r.note) + "</p>";
+      if (r.link) out += "<p>Link: " + esc(r.link) + "</p>";
+      out += '<button type="button" data-del="' + realIndex + '">Delete this reference</button></div>';
+    }
+    listEl.innerHTML = out;
+    var dels = listEl.querySelectorAll("[data-del]");
+    for (var j = 0; j < dels.length; j++) {
+      (function (btn) {
+        btn.addEventListener("click", function () {
+          refs = deleteReference(refs, parseInt(btn.getAttribute("data-del"), 10));
+          save(refs);
+          msgEl.textContent = "Reference deleted.";
+          render();
+        });
+      })(dels[j]);
+    }
+  }
+  document.getElementById("rc-add").addEventListener("click", function () {
+    var res = addReference(refs, titleEl.value, typeEl.value, authorEl.value, noteEl.value, linkEl.value, projectEl.value);
+    if (res.error) { msgEl.textContent = res.error; return; }
+    refs = res.refs;
+    save(refs);
+    msgEl.textContent = "Reference saved.";
+    titleEl.value = "";
+    authorEl.value = "";
+    noteEl.value = "";
+    linkEl.value = "";
+    projectEl.value = "";
+    render();
+  });
+  searchEl.addEventListener("input", render);
+  typeFilterEl.addEventListener("change", render);
+  document.getElementById("rc-copy").addEventListener("click", function () {
+    var btn = this;
+    var text = formatReferences(refs);
+    function done() {
+      var old = btn.textContent;
+      btn.textContent = "Copied!";
+      setTimeout(function () { btn.textContent = old; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallback(); });
+    } else { fallback(); }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+  });
+  document.getElementById("rc-clear").addEventListener("click", function () {
+    refs = [];
+    try { window.localStorage.removeItem(KEY); } catch (e) {}
+    msgEl.textContent = "All references cleared.";
+    render();
+  });
+  render();
+})(window.NP);
+
+</script>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

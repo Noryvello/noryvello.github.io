@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading Highlight Manager — Save and Find Your Highlights Free | Noryvello</title>
+<meta name="description" content="Manage your reading highlights free — save the lines that matter, tag them by book, and find any quote in seconds. Stored only on your device.">
+<link rel="canonical" href="https://noryvello.github.io/reading-highlight-manager/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reading Highlight Manager — Save and Find Your Highlights Free">
+<meta property="og:description" content="Manage your reading highlights free — save the lines that matter, tag them by book, and find any quote in seconds. Stored only on your device.">
+<meta property="og:url" content="https://noryvello.github.io/reading-highlight-manager/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a highlight manager?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a place to save the lines that matter from the books you read, tagged by book, so you can find any quote in seconds. This page gives you a working manager in your browser: save a highlight with its book and page, search it later, and copy the whole collection out as plain text."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data uploaded anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Your highlights are stored only in this browser, on this device, using the browser's own storage. Nothing is uploaded, nothing is synced, and nobody else can see your highlights. Clearing your browser data deletes them, so copy out anything that matters to you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find an old highlight?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the search box to find any word in your highlights, or use the book filter to see everything you saved from one book. The two work together: filter by the book, then search within it. A consistent book title and a few reused tags make finding even faster."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I highlight?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Highlight ideas that change your mind, sentences you would quote, and passages you want to revisit. Surprise is the best test: if a line surprises you, save it. Aim for a handful of highlights per book, the lines that still matter a week later, and let the rest go."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I organize by book?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The book filter is built from the books you have saved, so each book appears in the list on its own. Add a tag as well, such as idea or quote, to gather highlights across books by kind. Book plus tag plus search is enough for any collection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my highlights survive if I clear my browser data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Clearing your browser data deletes everything saved on this page, because the highlights live only in this browser, on this device. Use the copy button to keep a plain-text copy of your highlights somewhere safe, and copy them out regularly if they matter to you."
+      }
+    }
+  ]
+}
+</script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button,.copy-btn,.clear-btn{min-height:72px;padding:14px 18px;font-size:16px;font-weight:700;border:1px solid #4338ca;border-radius:10px;background:#4338ca;color:#fff;cursor:pointer;width:100%;margin-top:12px}
+.calc button.secondary,.clear-btn{background:#fff;color:#4338ca}
+.calc input,.calc select{min-height:72px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;min-height:72px;font-family:inherit}
+.calc .out{white-space:pre-line}
+.calc .msg{font-size:15px;margin-top:10px}
+.calc .bk{border:1px solid #cbd5e1;border-radius:10px;padding:12px;margin-top:10px;overflow-wrap:break-word}
+.calc .bk p{margin:2px 0;font-size:15px}
+.calc .bk button{margin-top:10px}
+.calc .hint{font-size:14px;color:#64748b;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Reading Highlight Manager</h1>
+<p class="answer">A reading highlight manager saves the lines that matter from the books you read, tags them by book, and finds any quote in seconds. This page gives you a working manager in your browser, plus a guide to what is worth highlighting and how to use your highlights afterwards. Everything you save stays on your device only, and nothing is uploaded anywhere.</p>
+<div class="calc">
+<label for="rh-text">Highlight (the line, or the idea in your own words)</label>
+<textarea id="rh-text" rows="3" placeholder="Write the line you want to keep"></textarea>
+<label for="rh-book">Book</label>
+<input id="rh-book" type="text" placeholder="Book title">
+<label for="rh-page">Page or chapter (optional)</label>
+<input id="rh-page" type="text" placeholder="Page or chapter">
+<label for="rh-tag">Tag (optional, such as idea, quote, fact)</label>
+<input id="rh-tag" type="text" placeholder="Tag">
+<button type="button" id="rh-add">Save highlight</button>
+<p class="msg" id="rh-msg"></p>
+<label for="rh-search">Search your highlights</label>
+<input id="rh-search" type="text" placeholder="Search words in your highlights">
+<label for="rh-bookfilter">Filter by book</label>
+<select id="rh-bookfilter"><option value="">All books</option></select>
+<p class="out" id="rh-count"></p>
+<div id="rh-list"></div>
+<button type="button" id="rh-copy">Copy all highlights</button>
+<button type="button" class="secondary" id="rh-clear">Clear all highlights</button>
+<p class="hint">Your highlights are stored only in this browser, on this device. Clearing your browser data deletes them, so copy out any highlights that matter to you.</p>
+</div>
+<h2>How to use the highlight manager</h2>
+<p>When a line in a book stops you, save it here: type the line, or the idea in your own words, add the book title, and add the page or chapter if you want to find it again. A tag is optional, and one short word is enough — idea, quote, fact, or whatever fits. Each highlight saves in this browser only, on this device, and the list below shows everything you have saved, newest last, with a delete button on each one.</p>
+<p>Finding a highlight is the whole point of keeping one. Use the search box to find any word in your highlights, or use the book filter to see everything you saved from one book. The two work together: search inside one book, or search across them all. The copy button turns every highlight into plain text, one per line, with its book and page, so you can keep a copy anywhere you like.</p>
+<p>This page saves what you highlighted, not how much you read. It does not track pages or reading time — that is a different job, and a reading progress tracker does it. This page answers a different question: what was the line that mattered, and where did I read it? Keep the two jobs apart, and both stay simple.</p>
+<h2>What to highlight</h2>
+<p>Highlight ideas that change your mind. When a sentence makes you think differently about something, that is the line to keep, because it marks the moment your thinking moved. A highlight that only confirms what you already knew is worth less than one that surprises you. Surprise is the best test of a highlight: if a line surprises you, save it.</p>
+<p>Highlight sentences you would quote. If you can imagine saying a line to a friend, or using it in an essay, a talk or a piece of writing, it earns a place in your collection. A quotable sentence is usually a well-made one, and keeping it gives you both the idea and the wording. Highlight passages you want to revisit: a method you want to try, a fact you want to check, a story you want to remember.</p>
+<p>Do not highlight everything. A book with every line marked is a book with nothing marked, and a collection of a thousand highlights is a collection nobody reads. Aim for a handful of highlights per book — the lines that still matter a week later. If you cannot remember why you highlighted a line, the line was probably not worth keeping.</p>
+<h2>How to write a useful highlight</h2>
+<p>Write the line, or write the idea in your own words. Both work, and the best highlights often do both: the line itself, followed by a short note in your own words saying why it matters. A highlight without a reason is a puzzle you left for your future self, and your future self will not thank you. A few words of context — why this line, what it connects to — turn a quote into a note.</p>
+<p>Keep highlights short. A highlight that runs to a whole paragraph is hard to read again, and hard to search. One or two sentences is the sweet spot: long enough to hold the idea, short enough to scan. If a passage is longer than that, save the sentence that carries the idea and note the page, so you can go back to the full passage when you need it.</p>
+<p>Always add the book. A highlight without a book is a line without a home: you cannot check it, you cannot quote it properly, and you cannot find it by book later. The page or chapter is optional but useful, especially for books you will return to. The tag is the lightest way to sort: one word that says what kind of highlight it is.</p>
+<h2>Organizing by book and tag</h2>
+<p>Books organize themselves: the book filter on this page is built from the books you have saved, so each new book appears in the list on its own. Use the book title the same way every time — the same spelling, the same short form — or one book will appear twice under two spellings. A consistent title is a small habit that keeps the filter tidy.</p>
+<p>Tags organize across books. A tag like "habits" can gather highlights from five different books, and reading them together shows you what several authors said about one idea. Keep tags few and plain: idea, quote, fact, method, story. A tag you used once is not a tag, it is a label on a single highlight, so reuse the same few tags until they become useful.</p>
+<p>Do not build a complicated system of folders and categories. Book plus tag plus search is enough for any collection, and it stays fast because there is nothing to maintain. The time you save by not organizing is time you can spend reading, and reading is what produces highlights in the first place.</p>
+<h2>Finding an old highlight in seconds</h2>
+<p>The fastest way to find a highlight is to search for a word in it. Search looks through the highlight text, the book title and the tag, so any word you remember will find it. Search for the word you would use to describe the idea, and the highlight will usually appear at once. If it does not, try a different word: the idea may be stored under a word you would not have chosen.</p>
+<p>The book filter is the second way in. When you remember the book but not the line, filter by the book and scan the highlights from it. Most books will have only a handful of highlights, so scanning takes seconds. The two tools work together: filter by the book, then search within it, and even a large collection gives up its highlights quickly.</p>
+<p>Regular review is the third way, and it is the one that turns highlights into knowledge. Once a month, read through your recent highlights and ask which ones still matter. The ones that do are worth keeping and worth acting on; the ones that do not can be deleted. A collection that is reviewed stays useful; a collection that is only added to becomes a drawer full of paper.</p>
+<h2>Turning highlights into knowledge</h2>
+<p>A highlight you never read again is a line you saved and forgot. The value of a highlight is not in saving it, it is in using it: quoting it, acting on it, or connecting it to another idea. Review your highlights regularly, and when one suggests an action — a habit to try, a book to read next, a person to write to — act on it. A highlight that changes what you do is worth ten that only change what you know.</p>
+<p>Connect highlights to each other. When two highlights from different books say the same thing, the idea is probably important. When two highlights disagree, the disagreement is worth thinking about. Reading highlights together, by tag, is the easiest way to see these connections, and it is where a collection starts to teach you things no single book did.</p>
+<p>Write about your highlights. A short note — what this line means, why it matters, what you will do with it — turns a saved line into your own thinking. You do not need to publish the note; the writing is the point. The highlight manager keeps the lines; your notes keep the meaning. Together they are a record of what you read and what it did to you.</p>
+<h2>Common mistakes</h2>
+<p>The first mistake is highlighting everything. A book with every line marked has nothing marked, and a collection of a thousand highlights is a collection nobody reads. Highlight a handful of lines per book, the ones that surprise you or change your mind, and let the rest go. Selectivity is what makes a collection useful.</p>
+<p>The second mistake is saving a line with no book and no context. A highlight without a book cannot be checked or quoted properly, and a highlight without a reason is a puzzle for your future self. Always add the book, and add a few words saying why the line matters. The third mistake is never reading highlights again. A collection that is never reviewed is a drawer full of paper: set a monthly habit of reading your recent highlights and deleting the ones that no longer matter.</p>
+<p>The fourth mistake is treating highlights as a substitute for thinking. Saving a line is not understanding it, and a collection of other people's sentences is not your own knowledge. Write your own words alongside the lines you save, connect them to other ideas, and act on the ones that suggest an action. Highlights are raw material; the thinking is yours to do.</p>
+<div class="warn">This page saves your highlights in this browser only, on this device. Clearing your browser data deletes them, so copy out any highlights that matter. It does not store books or copy passages for you: type the lines you want to keep, in your own words where you can.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is a highlight manager?</h3><p>It is a place to save the lines that matter from the books you read, tagged by book, so you can find any quote in seconds. This page gives you a working manager in your browser: save a highlight with its book and page, search it later, and copy the whole collection out as plain text.</p></div>
+<div class="faq"><h3>Is my data uploaded anywhere?</h3><p>No. Your highlights are stored only in this browser, on this device, using the browser&#x27;s own storage. Nothing is uploaded, nothing is synced, and nobody else can see your highlights. Clearing your browser data deletes them, so copy out anything that matters to you.</p></div>
+<div class="faq"><h3>How do I find an old highlight?</h3><p>Use the search box to find any word in your highlights, or use the book filter to see everything you saved from one book. The two work together: filter by the book, then search within it. A consistent book title and a few reused tags make finding even faster.</p></div>
+<div class="faq"><h3>What should I highlight?</h3><p>Highlight ideas that change your mind, sentences you would quote, and passages you want to revisit. Surprise is the best test: if a line surprises you, save it. Aim for a handful of highlights per book, the lines that still matter a week later, and let the rest go.</p></div>
+<div class="faq"><h3>Can I organize by book?</h3><p>Yes. The book filter is built from the books you have saved, so each book appears in the list on its own. Add a tag as well, such as idea or quote, to gather highlights across books by kind. Book plus tag plus search is enough for any collection.</p></div>
+<div class="faq"><h3>Will my highlights survive if I clear my browser data?</h3><p>No. Clearing your browser data deletes everything saved on this page, because the highlights live only in this browser, on this device. Use the copy button to keep a plain-text copy of your highlights somewhere safe, and copy them out regularly if they matter to you.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/personal-knowledge-management-platform/">Personal Knowledge Management Platform</a> · <a href="https://noryvello.github.io/reference-collection-manager/">Reference Collection Manager</a> · <a href="https://noryvello.github.io/personal-information-dashboard/">Personal Information Dashboard</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<script>
+
+window.NP = window.NP || {};
+(function (NP) {
+  var KEY = "np-reading-highlights";
+  function addHighlight(highlights, text, book, page, tag) {
+    if (!text || !text.trim()) return { highlights: highlights, error: "Write the highlight first — the line, or the idea in your own words." };
+    if (!book || !book.trim()) return { highlights: highlights, error: "Add the book title, so you can find this highlight again." };
+    var next = highlights.slice();
+    next.push({ text: text.trim(), book: book.trim(), page: (page || "").trim(), tag: (tag || "").trim() });
+    return { highlights: next, error: null };
+  }
+  function deleteHighlight(highlights, index) {
+    var next = highlights.slice();
+    if (index >= 0 && index < next.length) next.splice(index, 1);
+    return next;
+  }
+  function filterHighlights(highlights, query, book) {
+    var q = (query || "").trim().toLowerCase();
+    return highlights.filter(function (h) {
+      if (book && h.book !== book) return false;
+      if (!q) return true;
+      return (h.text + " " + h.book + " " + (h.tag || "")).toLowerCase().indexOf(q) >= 0;
+    });
+  }
+  function booksOf(highlights) {
+    var seen = {}, out = [];
+    for (var i = 0; i < highlights.length; i++) {
+      var b = highlights[i].book;
+      if (b && !seen[b]) { seen[b] = true; out.push(b); }
+    }
+    return out.sort();
+  }
+  function formatHighlights(highlights) {
+    if (!highlights.length) return "No highlights saved yet.";
+    var lines = ["My reading highlights:"];
+    for (var i = 0; i < highlights.length; i++) {
+      var h = highlights[i];
+      lines.push((i + 1) + ". \"" + h.text + "\" — " + h.book + (h.page ? ", " + h.page : "") + (h.tag ? " (" + h.tag + ")" : ""));
+    }
+    return lines.join("\n");
+  }
+  NP.rhKey = KEY;
+  NP.rhAddHighlight = addHighlight;
+  NP.rhDeleteHighlight = deleteHighlight;
+  NP.rhFilterHighlights = filterHighlights;
+  NP.rhBooksOf = booksOf;
+  NP.rhFormatHighlights = formatHighlights;
+  if (typeof document === "undefined") return;
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function load() {
+    try { var raw = window.localStorage.getItem(KEY); return raw ? JSON.parse(raw) : []; }
+    catch (e) { return []; }
+  }
+  function save(list) {
+    try { window.localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+  }
+  var highlights = load();
+  var textEl = document.getElementById("rh-text");
+  var bookEl = document.getElementById("rh-book");
+  var pageEl = document.getElementById("rh-page");
+  var tagEl = document.getElementById("rh-tag");
+  var msgEl = document.getElementById("rh-msg");
+  var searchEl = document.getElementById("rh-search");
+  var bookFilterEl = document.getElementById("rh-bookfilter");
+  var countEl = document.getElementById("rh-count");
+  var listEl = document.getElementById("rh-list");
+  function render() {
+    var shown = filterHighlights(highlights, searchEl.value, bookFilterEl.value);
+    countEl.textContent = highlights.length + " highlight" + (highlights.length === 1 ? "" : "s") + " saved" + (shown.length !== highlights.length ? " — showing " + shown.length : "") + ".";
+    var books = booksOf(highlights);
+    var cur = bookFilterEl.value;
+    var opts = '<option value="">All books</option>';
+    for (var b = 0; b < books.length; b++) opts += '<option value="' + esc(books[b]) + '"' + (books[b] === cur ? " selected" : "") + ">" + esc(books[b]) + "</option>";
+    bookFilterEl.innerHTML = opts;
+    if (!shown.length) {
+      listEl.innerHTML = "<p>" + (highlights.length ? "No highlights match your search." : "No highlights saved yet. Save your first highlight above.") + "</p>";
+      return;
+    }
+    var out = "";
+    for (var i = 0; i < shown.length; i++) {
+      var h = shown[i];
+      var realIndex = highlights.indexOf(h);
+      out += '<div class="bk"><p><strong>' + esc(h.book) + "</strong>" + (h.page ? " — " + esc(h.page) : "") + (h.tag ? " (" + esc(h.tag) + ")" : "") + "</p>";
+      out += "<p>" + esc(h.text) + "</p>";
+      out += '<button type="button" data-del="' + realIndex + '">Delete this highlight</button></div>';
+    }
+    listEl.innerHTML = out;
+    var dels = listEl.querySelectorAll("[data-del]");
+    for (var j = 0; j < dels.length; j++) {
+      (function (btn) {
+        btn.addEventListener("click", function () {
+          highlights = deleteHighlight(highlights, parseInt(btn.getAttribute("data-del"), 10));
+          save(highlights);
+          msgEl.textContent = "Highlight deleted.";
+          render();
+        });
+      })(dels[j]);
+    }
+  }
+  document.getElementById("rh-add").addEventListener("click", function () {
+    var res = addHighlight(highlights, textEl.value, bookEl.value, pageEl.value, tagEl.value);
+    if (res.error) { msgEl.textContent = res.error; return; }
+    highlights = res.highlights;
+    save(highlights);
+    msgEl.textContent = "Highlight saved.";
+    textEl.value = "";
+    pageEl.value = "";
+    tagEl.value = "";
+    render();
+  });
+  searchEl.addEventListener("input", render);
+  bookFilterEl.addEventListener("change", render);
+  document.getElementById("rh-copy").addEventListener("click", function () {
+    var btn = this;
+    var text = formatHighlights(highlights);
+    function done() {
+      var old = btn.textContent;
+      btn.textContent = "Copied!";
+      setTimeout(function () { btn.textContent = old; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallback(); });
+    } else { fallback(); }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+  });
+  document.getElementById("rh-clear").addEventListener("click", function () {
+    highlights = [];
+    try { window.localStorage.removeItem(KEY); } catch (e) {}
+    msgEl.textContent = "All highlights cleared.";
+    render();
+  });
+  render();
+})(window.NP);
+
+</script>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

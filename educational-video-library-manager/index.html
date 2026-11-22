@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Educational Video Library Manager — Organize Your Learning Videos Free | Noryvello</title>
+<meta name="description" content="Organize learning videos free — save video links with notes, tag them by topic, and find any lesson in seconds. Stored only on your device.">
+<link rel="canonical" href="https://noryvello.github.io/educational-video-library-manager/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Educational Video Library Manager — Organize Your Learning Videos Free">
+<meta property="og:description" content="Organize learning videos free — save video links with notes, tag them by topic, and find any lesson in seconds. Stored only on your device.">
+<meta property="og:url" content="https://noryvello.github.io/educational-video-library-manager/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{display:block;width:100%;min-height:72px;background:#4338ca;color:#fff;border:0;border-radius:10px;font-size:17px;font-weight:700;padding:12px 14px;margin:12px 0;cursor:pointer}
+.calc button.secondary{background:#0d9488}
+.calc button.danger{background:#fff;color:#b91c1c;border:2px solid #fecaca}
+.calc input,.calc select,.calc textarea{width:100%;min-height:72px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc textarea{min-height:120px;resize:vertical}
+.calc input[type=checkbox]{width:30px;height:30px;min-height:0;flex:0 0 auto}
+.calc .checkrow{display:flex;gap:12px;align-items:center;min-height:72px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:10px 14px;margin:8px 0;font-size:16px}
+.calc .item{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin:10px 0}
+.calc .item p{margin:4px 0}
+.calc .hint{font-size:14px;color:#64748b;margin-top:6px}
+.calc .group{font-weight:700;margin:18px 0 6px;font-size:16.5px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does this host videos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This page saves video links with your own titles, topics and notes — the videos themselves stay on the site that hosts them. If a video is removed there, the link here will stop working too."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data uploaded anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Your library is stored only in this browser on this device, and this page has no account, no server and no upload of any kind."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find a lesson fast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Type a word from the title or your note in the search box, or pick a topic from the filter. A video saved with a clear title and a topic takes seconds to find; one saved with no title takes forever."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I note with each video?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Note what the video taught you, or what you want to remember from it, in one or two lines. A note turns a saved link into a lesson you can revisit — without one, you will rewatch the whole video to find the one idea."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I organize by topic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Give each video a topic when you save it, and the filter will list every topic you have used. A few broad topics beat many narrow ones — five topics you reuse are better than fifty you use once."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my library survive if I clear my browser data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Clearing your browser data erases the library, and there is no copy anywhere else. Use the copy button to save your library as text somewhere safe if it holds videos you want to keep."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Educational Video Library Manager</h1>
+<p class="answer">A video library manager keeps the learning videos you save — with a title, a link, a topic and a note — so any lesson is a search away instead of lost in a browser history. This page gives you a working library in your browser: save videos, filter by topic, search in seconds, all stored only on your device.</p>
+<div class="calc">
+<label for="video-title">Video title</label>
+<input id="video-title" type="text" placeholder="What is this video?">
+<label for="video-url">Video link</label>
+<input id="video-url" type="url" placeholder="https://example.com/video">
+<label for="video-topic">Topic</label>
+<input id="video-topic" type="text" placeholder="Language, coding, cooking...">
+<label for="video-note">Note (optional)</label>
+<input id="video-note" type="text" placeholder="What did it teach you?">
+<p class="hint" id="video-msg"></p>
+<button type="button" id="add-video">Add video</button>
+<label for="video-search">Search my library</label>
+<input id="video-search" type="text" placeholder="Search titles, topics and notes">
+<label for="topic-filter">Filter by topic</label>
+<select id="topic-filter">
+<option>All topics</option>
+</select>
+<div id="video-list"></div>
+<button type="button" id="copy-library" class="secondary">Copy my library</button>
+<p class="hint">Your library is stored only in this browser on this device. This page does not host videos and does not fetch video data.</p>
+</div>
+<h2>What this is</h2>
+<p>An educational video library manager keeps the learning videos you save — each with a title, a link, a topic and a note — so any lesson is a search away instead of lost in a browser history. If you have ever spent twenty minutes hunting for a video you know you watched, you already know the problem this page solves.</p>
+<p>Video is a leaky way to learn. You watch, you understand, you move on — and a week later the idea is gone, along with the video that taught it. A library does not fix the forgetting, but it fixes the finding: the video is there, with your own note about what it taught you, ready to revisit in seconds.</p>
+<p>This page gives you a working library in your browser. Save a video with a title, a link, a topic and a note; search across titles, topics and notes; filter by topic; delete what no longer helps. Everything is stored only on this device — no account, no upload, no server. And one honest limit: this page does not host videos and does not fetch video data. If a video is removed from the site that hosts it, this page cannot bring it back.</p>
+<h2>How to use the manager</h2>
+<p>Save a video the moment you finish watching it, while you still know what it taught you. Type a title that tells your future self what it is — &#x27;How verb tenses work&#x27; beats &#x27;Interesting video&#x27; — paste the full link, add a topic, and write a note in one or two lines: what you learned, or what you want to remember.</p>
+<p>To find a lesson, type a word from the title or your note in the search box, or pick a topic from the filter. The list updates as you type, so a video saved with a clear title and a topic takes seconds to find. Tap a video&#x27;s title to open it in a new tab, and delete any video that no longer helps with its own button.</p>
+<p>Use the copy button to get your whole library as plain text — handy for keeping a backup outside the browser, or for sharing a reading list with someone. Your library is saved in this browser automatically, so it will still be there when you come back on the same device.</p>
+<p>On a phone, everything works by touch: large fields, large buttons, no sideways scrolling. Saving a video takes under a minute — which is the whole point, because a tool that takes longer than the lesson is a tool you will stop using.</p>
+<h2>Tagging by topic</h2>
+<p>Topics are how a library stays findable. A few broad topics you reuse beat many narrow ones you use once: five topics — language, coding, cooking, music, fitness — will organise a hundred videos better than fifty topics used once each. When you hesitate between two topics, pick the broader one.</p>
+<p>Keep your topic names consistent. &#x27;Spanish&#x27; and &#x27;spanish&#x27; and &#x27;Learn Spanish&#x27; are three topics to a filter, and one topic to you. Pick one spelling, one capitalisation, and stick to it. The filter lists every topic you have used, so a tidy list of topics is a sign the system is working.</p>
+<p>Resist the urge to tag everything twice. One topic per video is enough — the search box covers the rest, because it searches titles and notes too. A video tagged &#x27;language&#x27; with a note saying &#x27;verb tenses&#x27; is findable by topic and by word, with no second tag needed.</p>
+<p>Review your topics now and then. If one topic holds half your library, split it; if a topic holds one video, fold it into a broader one. Topics are a tool for finding things, not a filing system to admire — if they stop helping you find videos, change them.</p>
+<h2>The watch-next list</h2>
+<p>A library is not just a record of what you watched — it is a list of what to watch next. When someone recommends a video, or you find one you have no time for right now, save it with a note saying why: &#x27;recommended by Sara, about bread starters&#x27;. The note is what turns a saved link into a plan.</p>
+<p>Keep the watch-next list short. A list of two hundred unwatched videos is not a plan, it is a guilt pile, and guilt piles get ignored. Ten videos, each with a reason, is a list you will actually work through. When the list grows past twenty, delete the ones whose reason you no longer remember.</p>
+<p>Watch in the order that serves your goal, not the order you saved them. If you are learning a language, the grammar video you need today beats the documentary you saved last month. The topic filter helps here: filter to the topic you are studying, and the watch-next list narrows to what matters now.</p>
+<p>When you finish a video, update the note. A note written before watching says why you saved it; a note written after says what it taught you. The second note is the one that makes the video worth revisiting — and the one that tells you, months later, whether it was worth watching at all.</p>
+<h2>Revisiting old lessons</h2>
+<p>The value of a video library is not in the saving, it is in the revisiting. A lesson watched once fades; a lesson revisited after a week, then after a month, sticks. The library makes revisiting cheap: search the topic, open the video, skip to the part your note points to.</p>
+<p>Make revisiting a habit. Once a week, open the library, pick a topic you studied recently, and rewatch one video from it — not the whole thing, just the part your note flagged. Ten minutes of revisiting beats an hour of new watching, because it strengthens what is already half-learned instead of adding more half-learned things.</p>
+<p>Notes are what make revisiting work. A video saved with no note has to be rewatched from the start to find the one idea you wanted; a video saved with a note saying &#x27;the part about chord changes, halfway through&#x27; gives you the idea in a minute. Write the note for your future self, who will not remember the video at all.</p>
+<p>Delete without mercy. A video that no longer helps — the topic moved on, the advice went stale, a better video covers it — is clutter, and clutter slows every search. The library is a working shelf, not an archive: what stays should earn its place by being useful.</p>
+<h2>A worked example</h2>
+<p>Ana is learning Spanish and saves every useful video she watches. Her first entry is a grammar video: title &#x27;Present tense verbs explained&#x27;, topic &#x27;Spanish&#x27;, note &#x27;The -ar verb endings, with examples&#x27;. Her second is a listening video: &#x27;Slow Spanish news, 10 minutes&#x27;, topic &#x27;Spanish&#x27;, note &#x27;Good for listening practice, clear speaker&#x27;.</p>
+<p>After a month, Ana has twenty videos under &#x27;Spanish&#x27; and a handful under &#x27;Cooking&#x27; — she is learning to cook too. She searches &#x27;verbs&#x27; and the grammar video appears in a second. She filters by &#x27;Cooking&#x27; when she wants a recipe, and by &#x27;Spanish&#x27; when she sits down to study.</p>
+<p>Every Sunday, Ana revisits one Spanish video from the month before, using her notes to jump to the part that mattered. The habit takes ten minutes, and her Spanish improves faster than it did when she watched a new video every day and remembered none of them. The library did not teach her Spanish — it made the teaching stick.</p>
+<h2>Common mistakes</h2>
+<p>The first mistake is two hundred saved videos and no tags. A library with no topics and no notes is a browser history with extra steps — nothing is findable, and the saving was wasted. Tag every video with a topic, and write a note, or do not save it at all.</p>
+<p>The second is links with no title. A bare web address tells your future self nothing, and a list of bare addresses is a list you will never open. Give every video a title that says what it teaches.</p>
+<p>The third is saving without watching. A watch-next list of fifty videos is a plan nobody follows. Save what you will watch this week, watch it, and save the next one when you are done.</p>
+<p>The fourth is never deleting. Videos go stale, advice goes out of date, and a better video comes along. A library that only grows becomes a warehouse. Delete the videos that no longer help, and the ones that remain get found faster.</p>
+<p>The fifth is treating the library as a backup. It is not one — clearing your browser data erases it completely, and a removed video is gone from the web too. Copy the library as text now and then, and keep the copy somewhere safe.</p>
+<div class="warn">This page does not host videos and does not fetch video data — it saves the links and notes YOU enter, in this browser only. If a video is removed from the site that hosts it, this page cannot bring it back.</div>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>Does this host videos?</h3>
+<p>No. This page saves video links with your own titles, topics and notes — the videos themselves stay on the site that hosts them. If a video is removed there, the link here will stop working too.</p>
+</div>
+<div class="faq">
+<h3>Is my data uploaded anywhere?</h3>
+<p>No. Your library is stored only in this browser on this device, and this page has no account, no server and no upload of any kind.</p>
+</div>
+<div class="faq">
+<h3>How do I find a lesson fast?</h3>
+<p>Type a word from the title or your note in the search box, or pick a topic from the filter. A video saved with a clear title and a topic takes seconds to find; one saved with no title takes forever.</p>
+</div>
+<div class="faq">
+<h3>What should I note with each video?</h3>
+<p>Note what the video taught you, or what you want to remember from it, in one or two lines. A note turns a saved link into a lesson you can revisit — without one, you will rewatch the whole video to find the one idea.</p>
+</div>
+<div class="faq">
+<h3>Can I organize by topic?</h3>
+<p>Yes. Give each video a topic when you save it, and the filter will list every topic you have used. A few broad topics beat many narrow ones — five topics you reuse are better than fifty you use once.</p>
+</div>
+<div class="faq">
+<h3>Will my library survive if I clear my browser data?</h3>
+<p>No. Clearing your browser data erases the library, and there is no copy anywhere else. Use the copy button to save your library as text somewhere safe if it holds videos you want to keep.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/online-course-review-directory/">Online Course Review Directory</a> · <a href="https://noryvello.github.io/course-curriculum-comparison-portal/">Course Curriculum Comparison Portal</a> · <a href="https://noryvello.github.io/learning-path-recommendation-tool/">Learning Path Recommendation Tool</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<script>
+window.NP = window.NP || {};
+(function (NP) {
+  var KEY = "np-educational-video-library-manager-v1";
+  function isValidUrl(u) {
+    return typeof u === "string" && /^https?:\/\/\S+$/.test(u.trim());
+  }
+  function addVideo(videos, v) {
+    var title = (v.title || "").trim();
+    var url = (v.url || "").trim();
+    if (!title || !isValidUrl(url)) return null;
+    var topic = (v.topic || "").trim() || "General";
+    var note = (v.note || "").trim();
+    var next = videos.slice();
+    next.push({ title: title, url: url, topic: topic, note: note });
+    return next;
+  }
+  function filterVideos(videos, query, topic) {
+    var q = (query || "").trim().toLowerCase();
+    return videos.filter(function (v) {
+      if (topic && topic !== "All topics" && v.topic !== topic) return false;
+      if (!q) return true;
+      return (v.title + " " + v.note + " " + v.topic).toLowerCase().indexOf(q) >= 0;
+    });
+  }
+  function topicsOf(videos) {
+    var seen = {};
+    var out = [];
+    videos.forEach(function (v) {
+      if (!seen[v.topic]) { seen[v.topic] = true; out.push(v.topic); }
+    });
+    return out.sort();
+  }
+  function formatLibrary(videos) {
+    var lines = ["My learning video library"];
+    lines.push("");
+    if (videos.length === 0) lines.push("(no videos saved yet)");
+    videos.forEach(function (v) {
+      var line = "- " + v.title + " [" + v.topic + "]: " + v.url;
+      if (v.note) line += " — " + v.note;
+      lines.push(line);
+    });
+    return lines.join("\n");
+  }
+  function removeAt(list, i) {
+    if (i < 0 || i >= list.length) return list.slice();
+    var next = list.slice();
+    next.splice(i, 1);
+    return next;
+  }
+  function loadState(storage) {
+    try {
+      var raw = storage.getItem(KEY);
+      if (!raw) return [];
+      var data = JSON.parse(raw);
+      return Array.isArray(data) ? data : [];
+    } catch (e) {
+      return [];
+    }
+  }
+  function saveState(storage, videos) {
+    try { storage.setItem(KEY, JSON.stringify(videos)); } catch (e) {}
+  }
+  NP.isValidUrl = isValidUrl;
+  NP.addVideo = addVideo;
+  NP.filterVideos = filterVideos;
+  NP.topicsOf = topicsOf;
+  NP.formatLibrary = formatLibrary;
+  NP.removeAt = removeAt;
+  NP.loadState = loadState;
+  NP.saveState = saveState;
+  NP.KEY = KEY;
+  if (typeof document === "undefined") return;
+  var videos = loadState(window.localStorage);
+  var titleInput = document.getElementById("video-title");
+  var urlInput = document.getElementById("video-url");
+  var topicInput = document.getElementById("video-topic");
+  var noteInput = document.getElementById("video-note");
+  var searchInput = document.getElementById("video-search");
+  var topicFilter = document.getElementById("topic-filter");
+  var listEl = document.getElementById("video-list");
+  var msg = document.getElementById("video-msg");
+  function render() {
+    var selected = topicFilter.value;
+    topicFilter.innerHTML = "";
+    var allOpt = document.createElement("option");
+    allOpt.textContent = "All topics";
+    topicFilter.appendChild(allOpt);
+    topicsOf(videos).forEach(function (t) {
+      var opt = document.createElement("option");
+      opt.textContent = t;
+      topicFilter.appendChild(opt);
+    });
+    topicFilter.value = selected;
+    if (topicFilter.value !== selected) topicFilter.value = "All topics";
+    var shown = filterVideos(videos, searchInput.value, topicFilter.value);
+    listEl.innerHTML = "";
+    if (shown.length === 0) {
+      var empty = document.createElement("p");
+      empty.className = "hint";
+      empty.textContent = videos.length === 0 ? "No videos saved yet. Add your first video above." : "No videos match your search.";
+      listEl.appendChild(empty);
+      return;
+    }
+    shown.forEach(function (v) {
+      var idx = videos.indexOf(v);
+      var item = document.createElement("div");
+      item.className = "item";
+      var a = document.createElement("a");
+      a.href = v.url;
+      a.textContent = v.title;
+      a.target = "_blank";
+      a.rel = "noopener";
+      item.appendChild(a);
+      var meta = document.createElement("p");
+      meta.className = "hint";
+      meta.textContent = v.topic + (v.note ? " — " + v.note : "");
+      item.appendChild(meta);
+      var del = document.createElement("button");
+      del.type = "button";
+      del.className = "danger";
+      del.textContent = "Delete this video";
+      del.addEventListener("click", function () {
+        videos = removeAt(videos, idx);
+        saveState(window.localStorage, videos);
+        render();
+      });
+      item.appendChild(del);
+      listEl.appendChild(item);
+    });
+  }
+  document.getElementById("add-video").addEventListener("click", function () {
+    var next = addVideo(videos, {
+      title: titleInput.value,
+      url: urlInput.value,
+      topic: topicInput.value,
+      note: noteInput.value
+    });
+    if (!next) { msg.textContent = "Enter a title and a full link starting with https://"; return; }
+    msg.textContent = "";
+    videos = next;
+    titleInput.value = "";
+    urlInput.value = "";
+    topicInput.value = "";
+    noteInput.value = "";
+    saveState(window.localStorage, videos);
+    render();
+  });
+  searchInput.addEventListener("input", render);
+  topicFilter.addEventListener("change", render);
+  var copyBtn = document.getElementById("copy-library");
+  copyBtn.addEventListener("click", function () {
+    var text = formatLibrary(videos);
+    function done() {
+      copyBtn.textContent = "Copied!";
+      setTimeout(function () { copyBtn.textContent = "Copy my library"; }, 2000);
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  });
+  render();
+})(window.NP);
+
+</script>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

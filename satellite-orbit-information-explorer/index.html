@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Satellite Orbit Information Explorer — How Satellite Orbits Work | Noryvello</title>
+<meta name="description" content="Understand satellite orbits free — LEO, MEO, GEO and more, explained in plain English. No signup.">
+<link rel="canonical" href="https://noryvello.github.io/satellite-orbit-information-explorer/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Satellite Orbit Information Explorer — How Satellite Orbits Work">
+<meta property="og:description" content="Understand satellite orbits free — LEO, MEO, GEO and more, explained in plain English. No signup.">
+<meta property="og:url" content="https://noryvello.github.io/satellite-orbit-information-explorer/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a satellite orbit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A satellite orbit is a curved path around Earth, held in balance by two things: gravity pulling the satellite down and the satellite moving sideways fast enough to keep missing the ground. The satellite is always falling, but it falls around Earth instead of onto it. The height and the shape of the path decide what the satellite can see and how fast it moves."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is LEO, MEO and GEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LEO, low Earth orbit, runs up to about 2,000 kilometres above Earth and holds the space station and most Earth-observation satellites. MEO, medium Earth orbit, sits between LEO and GEO and holds navigation satellites at about 20,200 kilometres. GEO, geostationary orbit, is a ring 35,786 kilometres above the equator where a satellite circles Earth in exactly 24 hours and appears fixed in the sky."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do satellites stay in orbit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A satellite stays up because it is falling toward Earth and moving sideways at the same time. In low orbit it travels at about 8 kilometres per second, fast enough that by the time it has fallen a little, the curved surface of Earth has dropped away by the same amount. It keeps falling and keeps missing, and that endless falling is what an orbit is. The same idea keeps the Moon around Earth and Earth around the Sun."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a polar orbit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A polar orbit passes over or near the poles, at about 90 degrees to the equator. As Earth turns beneath the satellite, each pass covers a different strip of ground, so a polar satellite can map the whole planet over time. Earth-observation satellites such as Landsat and Sentinel use polar orbits, often sun-synchronous ones timed so the satellite passes over each place at the same local solar time every day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I read orbit data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The four numbers that matter most are altitude, the height above Earth; inclination, the tilt of the orbit compared with the equator; period, the time one full orbit takes; and eccentricity, how circular or stretched the path is. The standard format for sharing orbit data is the two-line element set, known as a TLE, which official tracking organisations publish for the satellites they track."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I check a satellite's orbit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The official trackers are the right place: the official catalogue published by the United States Space Force through its Space-Track service, and the tracking pages the space agencies publish for their own missions. Search for the name on the official site. Always check when the orbit data was last updated, because a satellite in low orbit circles Earth every 90 minutes and a position goes stale quickly."
+      }
+    }
+  ]
+}
+</script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style></head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Satellite Orbit Information Explorer</h1>
+<p class="answer">A satellite orbit is a path around Earth, and where a satellite sits decides what it can see, how fast it moves, and what it is used for. This guide explains the main orbit types, what each one is for, how to read orbit data, and why satellites stay up without falling.</p>
+<h2>How to use this guide</h2>
+<p>This guide explains satellite orbits in plain words, with no mathematics beyond a few simple numbers. It will not tell you where any satellite is right now, because a static page cannot track a moving satellite, and any page that claims to show live positions is showing you old data or invented data. What this guide gives you instead is the understanding to read orbit information properly, to know what the orbit types mean, and to use an official tracker with confidence.</p>
+<p>Read the sections in order if the subject is new to you. The first part names the orbit types and explains what each one is for. The middle part teaches you to read orbit data, which is the skill that turns a list of numbers into a picture of where a satellite goes. The last part explains why satellites stay up at all, which is the idea that makes the whole subject click.</p>
+<p>Keep one habit in mind as you read: always check the official source for anything current. Orbits change, satellites move to new positions, and new satellites launch all the time. The general facts in this guide, the heights, the periods, the shapes of the orbits, do not change, but the position of any single satellite is a fact that is true only for a moment, and only an official tracker can give it to you.</p>
+<h2>The orbit types</h2>
+<p>Satellite orbits are grouped by height, and each height gives the satellite a different view and a different speed. The three main groups are low Earth orbit, medium Earth orbit and geostationary orbit, known by their short names LEO, MEO and GEO. Two more shapes matter as well: polar orbits and sun-synchronous orbits, which are defined by their direction rather than by their height.</p>
+<p>Low Earth orbit, LEO, runs from just above the atmosphere up to about 2,000 kilometres above Earth. The International Space Station flies in LEO, at about 400 kilometres, and it circles the planet in about 90 minutes, travelling at about 8 kilometres per second. Most Earth-observation satellites, space telescopes and crewed spacecraft use LEO, because it is close enough to see the ground in detail and cheap enough to reach.</p>
+<p>Medium Earth orbit, MEO, sits between LEO and GEO, roughly from 2,000 kilometres up to about 35,000 kilometres. The navigation satellites that run global positioning systems fly in MEO, at about 20,200 kilometres, where each one can see a large part of Earth and a small number of them can cover the whole planet. A satellite in MEO takes several hours to circle Earth, much slower than one in LEO.</p>
+<p>Geostationary orbit, GEO, is a single special ring 35,786 kilometres above the equator. A satellite in GEO circles Earth in exactly 24 hours, the same time Earth takes to turn once, so from the ground it appears to hang in one fixed place in the sky. That is why television dishes point at one spot and never move: the satellite they watch is always in the same place. GEO only works above the equator, and only a limited number of satellites can share the ring.</p>
+<p>Polar orbits pass over or near the poles, at about 90 degrees to the equator, and sun-synchronous orbits are a special kind of polar orbit timed so that the satellite passes over each place at the same local solar time every day. Earth-observation satellites such as Landsat and Sentinel use sun-synchronous orbits, because the same lighting each time makes it easy to compare pictures taken weeks or months apart.</p>
+<h2>What each orbit is for</h2>
+<p>The choice of orbit is a choice of job, and each orbit suits a different kind of work. A satellite that must photograph the ground in detail needs to be close, so it flies in LEO. A satellite that must watch a whole continent at once needs to be far away, so it flies in GEO. A satellite that must be available everywhere on Earth needs a fleet spread across MEO. The orbit is the job description.</p>
+<p>LEO is the orbit of detail and of speed. Earth-observation satellites photograph fields, forests and cities from LEO, because closeness gives sharp pictures. The International Space Station and most crewed spacecraft fly in LEO, because it is the easiest orbit to reach and to return from. The price of LEO is that a satellite sees only a small patch of Earth at a time, and it passes over each place only for a few minutes before moving on.</p>
+<p>MEO is the orbit of navigation. A navigation satellite must be visible from a large area and must be in a stable, predictable orbit, and MEO gives both. A fleet of about two dozen satellites in MEO, spread around the planet, lets a receiver on the ground always see several of them at once, which is what makes positioning work. MEO is also used by some communication satellites and by satellites that watch the radiation belts around Earth.</p>
+<p>GEO is the orbit of constant watching. A weather satellite in GEO sees the same half of the planet all the time, sending a new picture every few minutes, which is why storm warnings depend on it. A television satellite in GEO beams its signal to dishes that never move. The price of GEO is distance: the satellite is so far away that its pictures are coarse and its signals take a noticeable fraction of a second to arrive.</p>
+<p>Polar and sun-synchronous orbits are the orbits of mapping. A satellite in a polar orbit sees a different strip of Earth on each pass, and as Earth turns beneath it, the strips add up to a complete picture of the whole planet. That is how Landsat and Sentinel map the entire land surface every few days, and how weather satellites build their daily picture of clouds, ice and oceans.</p>
+<h2>Reading orbit data</h2>
+<p>Orbit data looks like a list of numbers, but each number describes one part of the path, and together they draw the orbit in your mind. The four numbers that matter most are altitude, inclination, period and eccentricity. Learn what each one means and you can read any orbit description you meet.</p>
+<p>Altitude is the height of the satellite above Earth's surface, usually given in kilometres. It tells you which group the orbit belongs to: hundreds of kilometres means LEO, about 20,000 means MEO, and 35,786 means GEO. Altitude also tells you how fast the satellite moves, because lower orbits are faster: the space station at 400 kilometres takes about 90 minutes per orbit, while a GEO satellite takes 24 hours.</p>
+<p>Inclination is the tilt of the orbit compared with the equator, given in degrees. An inclination of zero means the satellite travels around the equator, which is the GEO case. An inclination near 90 degrees means the satellite passes over the poles. The space station has an inclination of about 51.6 degrees, which is why it passes over most of the places where people live but never over the far north or the far south.</p>
+<p>Period is the time one full orbit takes, and eccentricity describes the shape: zero means a perfect circle, and a higher number means a stretched oval. Most working satellites have a low eccentricity, close to a circle, because a circular orbit keeps the height and the speed steady. A few special orbits are deliberately stretched, so that the satellite spends most of its time high over one part of the world.</p>
+<p>The standard format for sharing orbit data is the two-line element set, known as a TLE, which packs the numbers for one satellite into two lines of text. Official tracking organisations publish TLE data for the satellites they track, and every satellite tracking tool reads it. You do not need to decode a TLE by hand, but knowing that it exists explains how trackers work: they take the TLE, do the mathematics, and show you where the satellite will be.</p>
+<h2>Why satellites do not fall</h2>
+<p>A satellite stays up because it is falling and moving sideways at the same time. Gravity pulls it toward Earth, just as it pulls a thrown ball toward the ground, but the satellite is moving sideways so fast, about 8 kilometres per second in low orbit, that by the time it has fallen a little, the curved surface of Earth has dropped away beneath it by the same amount. The satellite keeps falling and keeps missing, and that endless falling is what an orbit is.</p>
+<p>The speed matters more than the height. A satellite that moves too slowly will fall back to Earth, however high it starts, and a satellite that moves too fast will escape into space. Each height has one speed that gives a stable circular orbit, and the lower the orbit, the faster that speed must be. That is why the space station, at 400 kilometres, must travel at about 8 kilometres per second, while a GEO satellite, at 35,786 kilometres, travels at about 3 kilometres per second.</p>
+<p>Nothing in orbit is perfectly stable. In low orbit, the air is extremely thin but not absent, and the faint drag slows a satellite down a little on every orbit. Over months and years the satellite loses height, and without a boost it will eventually fall back and burn up. The space station is pushed back up to its working height from time to time, and satellites that can no longer be boosted are deliberately brought down over empty ocean at the end of their lives.</p>
+<p>The same idea explains why the Moon stays up and why Earth stays around the Sun. The Moon is falling toward Earth and moving sideways fast enough to keep missing it, and Earth is falling toward the Sun in the same way. An orbit is not a shelf that holds a satellite still; it is a continuous fall, perfectly balanced by speed, and once you see that, every orbit makes sense.</p>
+<h2>Checking a satellite's orbit</h2>
+<p>To check a satellite's orbit, start with the official trackers, not with a random app. The official catalogue of tracked objects is published by the United States Space Force through its Space-Track service, and the space agencies publish tracking pages for their own missions. These are the sources that professionals use, and they are the only ones that can promise the data is current. Search for the name on the official site to reach them.</p>
+<p>Before you trust a tracker, check what it shows and when its data was last updated. A good tracker shows the satellite's current position, its path over the ground, and the time of its next pass over your area, and it says when the orbit data was published. A tracker that hides its data date, or that shows a position with no way to check it, should not be trusted for anything important.</p>
+<p>If you want to see a satellite with your own eyes, the space station is the best first target. It is the brightest object in orbit, it crosses the sky in a few minutes, and official trackers will tell you the exact time and direction for your area. Go outside a few minutes early, look in the direction the tracker says, and watch for a steady, bright point moving across the sky without blinking. An aeroplane blinks; a satellite does not.</p>
+<p>Remember that orbit data goes stale quickly. A satellite in low orbit circles Earth every 90 minutes, so a position that was right an hour ago is now on the other side of the planet. Always refresh the tracker just before you look, and never trust a position printed in a book or an old article. The orbit is permanent; the position is true only for a moment.</p>
+<h2>Common mistakes</h2>
+<p>The most common mistake is thinking all satellites are in the same orbit. A weather satellite in GEO and an Earth-observation satellite in LEO are in completely different places, moving at completely different speeds, and they cannot do each other's jobs. Always ask which orbit a satellite uses before you judge what it can see or do.</p>
+<p>The second mistake is thinking that GEO means fixed in the sky in every sense. A geostationary satellite appears fixed from the ground, but it is still moving, circling Earth once every 24 hours, and it only appears fixed because Earth turns at the same rate. It also only works above the equator: a satellite above any other latitude cannot stay geostationary.</p>
+<p>The third mistake is trusting a live position from an unofficial source. Satellite positions are easy to fake and hard to check, and a website or an app that shows a satellite over your house may be showing old data, wrong data or invented data. Use the official trackers, check the data date, and confirm a bright pass by looking at the sky yourself.</p>
+<p>The fourth mistake is forgetting that orbits decay. A satellite does not stay in its orbit forever, and the lower the orbit, the faster it falls. A satellite that was in a working orbit last year may have been moved, retired or brought down since. If a satellite you follow disappears from the tracker, check the official source before assuming anything: the answer is usually a planned move or a planned retirement, not a mystery.</p>
+<div class="warn">This page explains orbits in general terms — it does not show live satellite positions, and no static page can. Satellites move constantly, so always check an official tracker for the current position of any satellite you want to see.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is a satellite orbit?</h3><p>A satellite orbit is a curved path around Earth, held in balance by two things: gravity pulling the satellite down and the satellite moving sideways fast enough to keep missing the ground. The satellite is always falling, but it falls around Earth instead of onto it. The height and the shape of the path decide what the satellite can see and how fast it moves.</p></div><div class="faq"><h3>What is LEO, MEO and GEO?</h3><p>LEO, low Earth orbit, runs up to about 2,000 kilometres above Earth and holds the space station and most Earth-observation satellites. MEO, medium Earth orbit, sits between LEO and GEO and holds navigation satellites at about 20,200 kilometres. GEO, geostationary orbit, is a ring 35,786 kilometres above the equator where a satellite circles Earth in exactly 24 hours and appears fixed in the sky.</p></div><div class="faq"><h3>Why do satellites stay in orbit?</h3><p>A satellite stays up because it is falling toward Earth and moving sideways at the same time. In low orbit it travels at about 8 kilometres per second, fast enough that by the time it has fallen a little, the curved surface of Earth has dropped away by the same amount. It keeps falling and keeps missing, and that endless falling is what an orbit is. The same idea keeps the Moon around Earth and Earth around the Sun.</p></div><div class="faq"><h3>What is a polar orbit?</h3><p>A polar orbit passes over or near the poles, at about 90 degrees to the equator. As Earth turns beneath the satellite, each pass covers a different strip of ground, so a polar satellite can map the whole planet over time. Earth-observation satellites such as Landsat and Sentinel use polar orbits, often sun-synchronous ones timed so the satellite passes over each place at the same local solar time every day.</p></div><div class="faq"><h3>How do I read orbit data?</h3><p>The four numbers that matter most are altitude, the height above Earth; inclination, the tilt of the orbit compared with the equator; period, the time one full orbit takes; and eccentricity, how circular or stretched the path is. The standard format for sharing orbit data is the two-line element set, known as a TLE, which official tracking organisations publish for the satellites they track.</p></div><div class="faq"><h3>Where can I check a satellite's orbit?</h3><p>The official trackers are the right place: the official catalogue published by the United States Space Force through its Space-Track service, and the tracking pages the space agencies publish for their own missions. Search for the name on the official site. Always check when the orbit data was last updated, because a satellite in low orbit circles Earth every 90 minutes and a position goes stale quickly.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/satellite-tracking-information-portal/">Satellite Tracking Information Portal</a> · <a href="https://noryvello.github.io/satellite-launch-calendar/">Satellite Launch Calendar</a> · <a href="https://noryvello.github.io/earth-observation-data-directory/">Earth Observation Data Directory</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Course Curriculum Comparison Portal — Compare Two Courses Side by Side | Noryvello</title>
+<meta name="description" content="Compare course curriculums free — enter two courses side by side and see which one really teaches more. No signup.">
+<link rel="canonical" href="https://noryvello.github.io/course-curriculum-comparison-portal/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Course Curriculum Comparison Portal — Compare Two Courses Side by Side">
+<meta property="og:description" content="Compare course curriculums free — enter two courses side by side and see which one really teaches more. No signup.">
+<meta property="og:url" content="https://noryvello.github.io/course-curriculum-comparison-portal/">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>.calc button{display:block;width:100%;min-height:72px;background:#4338ca;color:#fff;border:0;border-radius:10px;font-size:17px;font-weight:700;padding:12px 14px;margin:12px 0;cursor:pointer}
+.calc button.secondary{background:#0d9488}
+.calc button.danger{background:#fff;color:#b91c1c;border:2px solid #fecaca}
+.calc input,.calc select,.calc textarea{width:100%;min-height:72px;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc textarea{min-height:120px;resize:vertical}
+.calc input[type=checkbox]{width:30px;height:30px;min-height:0;flex:0 0 auto}
+.calc .checkrow{display:flex;gap:12px;align-items:center;min-height:72px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:10px 14px;margin:8px 0;font-size:16px}
+.calc .item{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin:10px 0}
+.calc .item p{margin:4px 0}
+.calc .hint{font-size:14px;color:#64748b;margin-top:6px}
+.calc .group{font-weight:700;margin:18px 0 6px;font-size:16.5px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I compare two courses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enter each course's topics, one per line, add the topics you need, and compare: the tool shows what each course covers, what only one covers, and which covers more of your list. Read the verdict as a starting point, not a final answer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should a good curriculum include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A good curriculum lists specific topics in a sensible order, names the projects you will complete, and says what you will be able to do at the end. Vague promises such as 'master the subject' with no topic list are a warning sign."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a longer course mean a better course?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Length measures time, not content: a short course that teaches ten solid topics beats a long course that repeats three. Compare what is taught, not how long it takes to teach it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are projects in a course?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Projects are the work you produce during the course — a website, a report, a design, a presentation — and they are where the learning sticks. A course with real projects and feedback is worth more than one with video alone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I pick between two courses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compare the curriculums against what you need, then check the teacher, the format, the support and the price. If the curriculums are close, the deciding factor is usually the teaching — and that is what reviews and trial lessons are for."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this fetch course data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This page compares only the topics you type in, and it never connects to a course platform or any other site. That is deliberate: it keeps your comparison private, and it means the results depend on what you entered."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Course Curriculum Comparison Portal</h1>
+<p class="answer">Two courses can have the same title and teach very different things — the only honest way to compare them is side by side, topic by topic, against what you actually need to learn. This page gives you a working comparator in your browser: enter two curriculums, see what each one covers, and find out which one covers more of what you need.</p>
+<div class="calc">
+<label for="course-a-name">Course A name</label>
+<input id="course-a-name" type="text" placeholder="First course">
+<label for="course-a-topics">Course A topics (one per line)</label>
+<textarea id="course-a-topics" placeholder="One topic per line"></textarea>
+<label for="course-b-name">Course B name</label>
+<input id="course-b-name" type="text" placeholder="Second course">
+<label for="course-b-topics">Course B topics (one per line)</label>
+<textarea id="course-b-topics" placeholder="One topic per line"></textarea>
+<label for="needed-topics">Topics I need (one per line)</label>
+<textarea id="needed-topics" placeholder="The topics that matter to you"></textarea>
+<p class="hint" id="compare-msg"></p>
+<button type="button" id="compare-btn">Compare the two courses</button>
+<p class="out" id="compare-verdict"></p>
+<div class="steps" id="compare-detail"></div>
+<button type="button" id="copy-compare" class="secondary">Copy the comparison</button>
+<p class="hint">This compares the curriculums YOU enter — it does not fetch course data and it does not rank course quality. Your entries are stored only in this browser.</p>
+</div>
+<h2>What this is</h2>
+<p>Two courses can share a title and teach very different things. One &#x27;photography course&#x27; teaches camera settings and composition; another with the same name teaches photo editing and nothing else. The only honest way to compare them is side by side, topic by topic, against what you actually need to learn — and that is what this page does.</p>
+<p>This page gives you a working comparator in your browser. Enter two curriculums — the topic lists from the course pages — add the topics you need, and the tool shows you what each course covers, what only one of them covers, and which one covers more of your list. It does not fetch course data, it does not check that a curriculum is real, and it does not rank course quality. It compares what you entered, nothing more.</p>
+<p>The comparison is only as good as the topic lists you enter, so take them from the course syllabus, not the sales page. A sales page lists promises; a syllabus lists topics. If a course has no detailed syllabus to copy from, that fact alone tells you something — and this guide&#x27;s section on thin curriculums explains what.</p>
+<h2>How to use the comparator</h2>
+<p>Start by naming the two courses, then paste or type each course&#x27;s topics, one per line, in the two big boxes. Copy them from the syllabus if you can — the fuller the list, the fairer the comparison. A course with twelve topics listed will always look thinner than a course with thirty, so compare lists of similar honesty: if one syllabus is detailed and the other is vague, the comparison will show it.</p>
+<p>Then add the topics you need, one per line. These are the things you want to be able to do when the course ends — not the course&#x27;s promises, but your goals. The tool counts how many of your needed topics each course covers, and the verdict names the course that covers more of them.</p>
+<p>Tap Compare, and read the result in three parts: the counts, the topics only one course covers, and the verdict. The counts tell you the size; the only-in-one lists tell you the difference; the verdict answers the question you actually asked. Copy the comparison to keep it, and your entries are saved in this browser so you can come back and adjust them.</p>
+<p>One tip for fair matching: write the same topic the same way in both lists. The tool matches topics that say the same thing — &#x27;portrait lighting&#x27; in one list and &#x27;portrait lighting&#x27; in the other — so keep your wording consistent and the comparison stays honest.</p>
+<h2>Reading a curriculum honestly</h2>
+<p>A curriculum is a promise in list form, and like all promises it needs reading with care. Start with the verbs: a topic that says &#x27;build a website&#x27; promises a skill, while a topic that says &#x27;understanding the web&#x27; promises a feeling. The first can be tested; the second cannot. Count the topics that name something you will make or do.</p>
+<p>Look at the order. A good curriculum builds: basics first, then practice, then a project that pulls it together. A curriculum that jumps from topic to topic with no thread is usually a collection of videos, not a course — and a collection of videos is worth far less than a course.</p>
+<p>Check the depth. A topic list with thirty items can still be shallow if each item is a ten-minute video, and a list with eight items can be deep if each one is a week of guided practice. Where the syllabus gives times or project details, use them; where it gives nothing but topic names, treat the list as a minimum, not a description.</p>
+<p>Finally, look for what is missing. A programming course with no debugging, a language course with no speaking practice, a photography course with no editing — the missing topic is often the one you needed most. Compare against your own list, not against the course&#x27;s claims.</p>
+<h2>The topics that matter</h2>
+<p>Not all topics are equal, and the topics that matter are yours, not the course&#x27;s. Before you compare anything, write down what you want to be able to do when the course ends — in verbs, not nouns. &#x27;Build a simple website&#x27; is a goal; &#x27;web development&#x27; is a shelf label.</p>
+<p>Split your list into three kinds. The must-haves are the topics without which the course is useless to you — if a photography course has no composition, it fails whatever else it covers. The nice-to-haves are topics you would enjoy but could learn elsewhere. The deal-breakers are topics whose absence tells you the course is not serious — a business course with no pricing, for example.</p>
+<p>Weight the must-haves heaviest in your judgement. A course that covers all five of your must-haves and nothing else beats a course that covers twenty topics and misses two of them. The comparator counts your needed topics for exactly this reason — but you decide which ones are must-haves, and the verdict cannot know that.</p>
+<p>One more thing to weigh: projects. A topic you practise in a project stays with you; a topic you only watch fades within days. When two courses cover the same topics, the one with real projects and feedback is the better course, whatever the topic count says.</p>
+<h2>What a thin curriculum looks like</h2>
+<p>A thin curriculum hides in plain sight. The signs are consistent: topic names that are vague (&#x27;Introduction to everything&#x27;, &#x27;Advanced techniques&#x27;), a list that is short for the price, no projects named anywhere, and no order you can follow. If you cannot tell from the syllabus what you will be able to do at the end, the syllabus is telling you the course has no answer.</p>
+<p>Another sign is padding: a topic list inflated with items that are not topics at all — &#x27;Welcome&#x27;, &#x27;How to use this course&#x27;, &#x27;Final thoughts&#x27;, &#x27;Bonus material&#x27;. Strip those out and count what is left. A thirty-topic course can shrink to twelve real topics in a minute, and twelve real topics is a fairer number to compare.</p>
+<p>Watch too for the course that teaches one thing under many names. Five topics that all mean &#x27;the basics, again&#x27; are one topic, not five. Read the list as a whole and ask: how many genuinely different things will I learn? That number is the course&#x27;s real size.</p>
+<p>A thin curriculum is not always a bad course — a short, focused course can be excellent. But a thin curriculum sold as a complete one is a mismatch between promise and product, and the comparison on this page is designed to make that mismatch visible.</p>
+<h2>A worked example</h2>
+<p>Sara wants to learn photography and is choosing between two courses. Course A lists twelve topics: camera settings, composition, portrait lighting, landscape shooting, editing basics, and seven more. Course B lists nine: camera settings, composition, street photography, editing basics, printing, and four more. On counts alone, Course A looks bigger.</p>
+<p>Sara&#x27;s needed topics are five: composition, portrait lighting, editing basics, printing, and building a portfolio. She enters all three lists and compares. Course A covers three of her five — composition, portrait lighting, editing basics. Course B covers four — composition, editing basics, printing, and portfolio building, which Course A never mentions.</p>
+<p>The verdict names Course B, and the only-in-one lists explain why: Course B alone covers printing and portfolios, the two topics Sara needs for her goal of exhibiting her work. Course A&#x27;s extra topics are real, but they are not Sara&#x27;s topics. She picks Course B — and the comparison took five minutes, against an evening of reading sales pages.</p>
+<h2>Common mistakes</h2>
+<p>The first mistake is comparing course length instead of content. A forty-hour course and a ten-hour course can teach the same ten topics; the longer one just takes longer to say them. Compare what is taught, not how long it takes.</p>
+<p>The second is ignoring the projects. Two courses can list identical topics and differ completely in what you produce. A course with real projects and feedback teaches more than one with video alone, whatever the topic lists say.</p>
+<p>The third is trusting the sales page instead of the syllabus. Sales pages list promises; syllabuses list topics. If you compare promises, the best copywriter wins. Compare the topic lists, taken from the syllabus, and the comparison stays honest.</p>
+<p>The fourth is writing the same topic differently in each list. &#x27;Photo editing&#x27; in one list and &#x27;editing photos&#x27; in the other will not match, and the comparison will undercount both courses. Keep your wording consistent across all three boxes.</p>
+<p>The fifth is treating the verdict as the final answer. The verdict counts your needed topics; it cannot judge teaching quality, support, or whether the course is up to date. Use it as a starting point, then check the teacher, the reviews and the refund terms before you pay.</p>
+<div class="warn">This page compares the curriculums YOU enter — it does not fetch course data, it does not check that a curriculum is real, and it does not rank course quality. A course can cover every topic on your list and still teach them badly.</div>
+<h2>Questions people ask</h2>
+<div class="faq">
+<h3>How do I compare two courses?</h3>
+<p>Enter each course&#x27;s topics, one per line, add the topics you need, and compare: the tool shows what each course covers, what only one covers, and which covers more of your list. Read the verdict as a starting point, not a final answer.</p>
+</div>
+<div class="faq">
+<h3>What should a good curriculum include?</h3>
+<p>A good curriculum lists specific topics in a sensible order, names the projects you will complete, and says what you will be able to do at the end. Vague promises such as &#x27;master the subject&#x27; with no topic list are a warning sign.</p>
+</div>
+<div class="faq">
+<h3>Does a longer course mean a better course?</h3>
+<p>No. Length measures time, not content: a short course that teaches ten solid topics beats a long course that repeats three. Compare what is taught, not how long it takes to teach it.</p>
+</div>
+<div class="faq">
+<h3>What are projects in a course?</h3>
+<p>Projects are the work you produce during the course — a website, a report, a design, a presentation — and they are where the learning sticks. A course with real projects and feedback is worth more than one with video alone.</p>
+</div>
+<div class="faq">
+<h3>How do I pick between two courses?</h3>
+<p>Compare the curriculums against what you need, then check the teacher, the format, the support and the price. If the curriculums are close, the deciding factor is usually the teaching — and that is what reviews and trial lessons are for.</p>
+</div>
+<div class="faq">
+<h3>Does this fetch course data?</h3>
+<p>No. This page compares only the topics you type in, and it never connects to a course platform or any other site. That is deliberate: it keeps your comparison private, and it means the results depend on what you entered.</p>
+</div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/online-course-review-directory/">Online Course Review Directory</a> · <a href="https://noryvello.github.io/learning-path-recommendation-tool/">Learning Path Recommendation Tool</a> · <a href="https://noryvello.github.io/educational-video-library-manager/">Educational Video Library Manager</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<script>
+window.NP = window.NP || {};
+(function (NP) {
+  var KEY = "np-course-curriculum-comparison-portal-v1";
+  function norm(s) { return (s || "").trim().toLowerCase(); }
+  function parseTopics(text) {
+    var seen = {};
+    var out = [];
+    (text || "").split("\n").forEach(function (line) {
+      var t = line.trim();
+      if (!t) return;
+      var n = t.toLowerCase();
+      if (seen[n]) return;
+      seen[n] = true;
+      out.push(t);
+    });
+    return out;
+  }
+  function compareCurricula(aTopics, bTopics, needed) {
+    var aSet = {}, bSet = {};
+    aTopics.forEach(function (t) { aSet[norm(t)] = t; });
+    bTopics.forEach(function (t) { bSet[norm(t)] = t; });
+    var onlyA = [], onlyB = [], both = [];
+    aTopics.forEach(function (t) {
+      if (bSet[norm(t)] !== undefined) both.push(t); else onlyA.push(t);
+    });
+    bTopics.forEach(function (t) {
+      if (aSet[norm(t)] === undefined) onlyB.push(t);
+    });
+    var aNeeded = [], bNeeded = [];
+    needed.forEach(function (t) {
+      if (aSet[norm(t)] !== undefined) aNeeded.push(t);
+      if (bSet[norm(t)] !== undefined) bNeeded.push(t);
+    });
+    var verdict = "";
+    if (needed.length === 0) {
+      verdict = "Add the topics you need above to see which course covers more of them.";
+    } else if (aNeeded.length === bNeeded.length) {
+      verdict = "Both courses cover the same number of your needed topics (" + aNeeded.length + " of " + needed.length + ") — look at the topics only one covers, and at the projects, to decide.";
+    } else if (aNeeded.length > bNeeded.length) {
+      verdict = "Course A covers more of the topics you listed (" + aNeeded.length + " of " + needed.length + ", against Course B's " + bNeeded.length + ").";
+    } else {
+      verdict = "Course B covers more of the topics you listed (" + bNeeded.length + " of " + needed.length + ", against Course A's " + aNeeded.length + ").";
+    }
+    return { onlyA: onlyA, onlyB: onlyB, both: both, aNeeded: aNeeded, bNeeded: bNeeded, verdict: verdict };
+  }
+  function formatComparison(aName, bName, result, aCount, bCount, neededCount) {
+    var lines = ["Curriculum comparison: " + aName + " vs " + bName];
+    lines.push("");
+    lines.push(aName + ": " + aCount + " topics. " + bName + ": " + bCount + " topics.");
+    lines.push("Topics in both: " + result.both.length + ". Only in " + aName + ": " + result.onlyA.length + ". Only in " + bName + ": " + result.onlyB.length + ".");
+    lines.push("");
+    lines.push("Only in " + aName + ":");
+    if (result.onlyA.length === 0) lines.push("- (none)");
+    result.onlyA.forEach(function (t) { lines.push("- " + t); });
+    lines.push("");
+    lines.push("Only in " + bName + ":");
+    if (result.onlyB.length === 0) lines.push("- (none)");
+    result.onlyB.forEach(function (t) { lines.push("- " + t); });
+    lines.push("");
+    lines.push("Needed topics covered: " + aName + " " + result.aNeeded.length + " of " + neededCount + ", " + bName + " " + result.bNeeded.length + " of " + neededCount + ".");
+    lines.push("");
+    lines.push(result.verdict);
+    return lines.join("\n");
+  }
+  function loadState(storage) {
+    try {
+      var raw = storage.getItem(KEY);
+      if (!raw) return null;
+      var data = JSON.parse(raw);
+      return data && typeof data === "object" ? data : null;
+    } catch (e) {
+      return null;
+    }
+  }
+  function saveState(storage, state) {
+    try { storage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  }
+  NP.parseTopics = parseTopics;
+  NP.compareCurricula = compareCurricula;
+  NP.formatComparison = formatComparison;
+  NP.loadState = loadState;
+  NP.saveState = saveState;
+  NP.KEY = KEY;
+  if (typeof document === "undefined") return;
+  var nameA = document.getElementById("course-a-name");
+  var topicsA = document.getElementById("course-a-topics");
+  var nameB = document.getElementById("course-b-name");
+  var topicsB = document.getElementById("course-b-topics");
+  var neededEl = document.getElementById("needed-topics");
+  var verdictEl = document.getElementById("compare-verdict");
+  var detailEl = document.getElementById("compare-detail");
+  var msg = document.getElementById("compare-msg");
+  var last = null;
+  var saved = loadState(window.localStorage);
+  if (saved) {
+    if (saved.nameA) nameA.value = saved.nameA;
+    if (saved.topicsA) topicsA.value = saved.topicsA;
+    if (saved.nameB) nameB.value = saved.nameB;
+    if (saved.topicsB) topicsB.value = saved.topicsB;
+    if (saved.needed) neededEl.value = saved.needed;
+  }
+  function persist() {
+    saveState(window.localStorage, {
+      nameA: nameA.value, topicsA: topicsA.value,
+      nameB: nameB.value, topicsB: topicsB.value,
+      needed: neededEl.value
+    });
+  }
+  [nameA, topicsA, nameB, topicsB, neededEl].forEach(function (el) {
+    el.addEventListener("input", persist);
+  });
+  document.getElementById("compare-btn").addEventListener("click", function () {
+    var aName = nameA.value.trim() || "Course A";
+    var bName = nameB.value.trim() || "Course B";
+    var aTopics = parseTopics(topicsA.value);
+    var bTopics = parseTopics(topicsB.value);
+    var needed = parseTopics(neededEl.value);
+    if (aTopics.length === 0 || bTopics.length === 0) {
+      msg.textContent = "Enter at least one topic for each course.";
+      return;
+    }
+    msg.textContent = "";
+    var result = compareCurricula(aTopics, bTopics, needed);
+    last = { aName: aName, bName: bName, result: result, aCount: aTopics.length, bCount: bTopics.length, neededCount: needed.length };
+    var v = result.verdict.replace(/Course A/g, aName).replace(/Course B/g, bName);
+    verdictEl.textContent = v;
+    var lines = [];
+    lines.push(aName + ": " + aTopics.length + " topics. " + bName + ": " + bTopics.length + " topics. In both: " + result.both.length + ".");
+    lines.push("");
+    lines.push("Only in " + aName + " (" + result.onlyA.length + "): " + (result.onlyA.length ? result.onlyA.join("; ") : "none"));
+    lines.push("");
+    lines.push("Only in " + bName + " (" + result.onlyB.length + "): " + (result.onlyB.length ? result.onlyB.join("; ") : "none"));
+    lines.push("");
+    lines.push("Needed topics covered: " + aName + " " + result.aNeeded.length + " of " + needed.length + ", " + bName + " " + result.bNeeded.length + " of " + needed.length + ".");
+    detailEl.textContent = lines.join("\n");
+    persist();
+  });
+  var copyBtn = document.getElementById("copy-compare");
+  copyBtn.addEventListener("click", function () {
+    if (!last) { msg.textContent = "Compare two courses first, then copy the result."; return; }
+    var text = formatComparison(last.aName, last.bName, last.result, last.aCount, last.bCount, last.neededCount);
+    function done() {
+      copyBtn.textContent = "Copied!";
+      setTimeout(function () { copyBtn.textContent = "Copy the comparison"; }, 2000);
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  });
+})(window.NP);
+
+</script>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>

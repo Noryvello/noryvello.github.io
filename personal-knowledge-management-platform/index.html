@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personal Knowledge Management — A Simple System That Actually Works | Noryvello</title>
+<meta name="description" content="Manage what you know free — a simple personal knowledge system: capture, organize, connect and find anything. Plain-English guide.">
+<link rel="canonical" href="https://noryvello.github.io/personal-knowledge-management-platform/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Personal Knowledge Management — A Simple System That Actually Works">
+<meta property="og:description" content="Manage what you know free — a simple personal knowledge system: capture, organize, connect and find anything. Plain-English guide.">
+<meta property="og:url" content="https://noryvello.github.io/personal-knowledge-management-platform/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is personal knowledge management?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a simple system for catching what you learn, keeping it where you can find it, and turning it into something useful. The system on this page has four steps: capture an idea when it arrives, organize it with an area and a tag, connect it to related notes, and review your notes once a week."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with two habits: capture and review. Capture every idea in your own words, one note per idea, using the tool on this page or a notebook. Then review your notes once a week for twenty minutes, asking what still matters, what connects, and what to act on. Add organizing and connecting once those two habits are set."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best system?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best system is the one you actually use. A simple system used every day beats a clever system abandoned after a week. Keep your areas few, your tags few, and your notes in your own words, and the system will serve you for years. No app can replace the habit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I organize my notes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Give each note an area, such as work, study or personal, and one short tag, such as reading or sleep. Keep the number of areas and tags small, and use search for the rest. The point of organizing is finding a note again in seconds, not filing it perfectly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should I review?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Once a week is enough, for about twenty minutes. Read the week's notes and ask what still matters, what connects to older notes, and what you should act on. If you skip a week, just review the latest week and carry on: the habit matters more than the backlog."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a special app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. You need a habit, not an app. A notebook works, and the capture tool on this page works too: it saves notes in your browser only, with nothing uploaded. Start simple, build the habit, and only consider another tool if the simple one stops serving you."
+      }
+    }
+  ]
+}
+</script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,#e0e7ff,#f5f3ff 45%,#dbeafe) fixed;color:#1e293b;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.4px}
+.brand a{text-decoration:none}
+.brand .n{color:#4338ca}.brand .v{color:#0d9488}
+h1{font-size:28px;line-height:1.3;margin:14px 0 10px;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.answer{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;font-size:16.5px;margin:14px 0}
+h2{font-size:21px;margin:26px 0 8px}
+ol,ul{margin:8px 0 8px 22px}
+li{margin:5px 0}
+.faq{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq h3{font-size:16.5px;margin-bottom:4px}
+.note{font-size:14px;color:#64748b}
+.links a{color:#4338ca}
+footer{margin-top:36px;font-size:13.5px;color:#64748b}
+.calc{background:rgba(255,255,255,.78);backdrop-filter:blur(8px);box-shadow:0 12px 26px rgba(30,41,59,.12),inset 0 1px 0 #fff;border:1px solid rgba(255,255,255,.85);border-radius:12px;padding:16px;margin:14px 0}
+.calc label{display:block;font-weight:600;margin:10px 0 4px;font-size:14.5px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff}
+.calc .out{font-size:19px;font-weight:700;margin-top:14px}
+.calc .steps{font-size:15px;color:#334155;margin-top:6px;white-space:pre-line}
+.warn{background:rgba(255,251,235,.9);border:1px solid #fde68a;border-radius:12px;padding:14px 16px;margin:14px 0;font-size:15px}
+code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+</style>
+<style>
+.calc button,.copy-btn,.clear-btn{min-height:72px;padding:14px 18px;font-size:16px;font-weight:700;border:1px solid #4338ca;border-radius:10px;background:#4338ca;color:#fff;cursor:pointer;width:100%;margin-top:12px}
+.calc button.secondary,.clear-btn{background:#fff;color:#4338ca}
+.calc input,.calc select{min-height:72px}
+.calc textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;min-height:72px;font-family:inherit}
+.calc .out{white-space:pre-line}
+.calc .msg{font-size:15px;margin-top:10px}
+.calc .bk{border:1px solid #cbd5e1;border-radius:10px;padding:12px;margin-top:10px;overflow-wrap:break-word}
+.calc .bk p{margin:2px 0;font-size:15px}
+.calc .bk button{margin-top:10px}
+.calc .hint{font-size:14px;color:#64748b;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><a href="../"><span class="n">Nory</span><span class="v">vello</span></a></div>
+<h1>Personal Knowledge Management Platform</h1>
+<p class="answer">Personal knowledge management is a simple system for catching what you learn, keeping it where you can find it, and turning it into something useful. This page teaches a four-step system — capture, organize, connect, review — and gives you a small local capture tool to try it with. It is not a cloud app: your notes stay in this browser only, on this device, and nothing is uploaded.</p>
+<div class="calc">
+<label for="pkm-text">Note (one idea, in your own words)</label>
+<textarea id="pkm-text" rows="3" placeholder="Write the idea as you would explain it to a friend"></textarea>
+<label for="pkm-tag">Tag (one short word, such as reading, work, health)</label>
+<input id="pkm-tag" type="text" placeholder="Tag">
+<label for="pkm-area">Area</label>
+<select id="pkm-area"><option value="Work">Work</option><option value="Study">Study</option><option value="Personal">Personal</option><option value="Ideas">Ideas</option><option value="Other">Other</option></select>
+<button type="button" id="pkm-add">Save note</button>
+<p class="msg" id="pkm-msg"></p>
+<label for="pkm-search">Search your notes</label>
+<input id="pkm-search" type="text" placeholder="Search words in your notes">
+<label for="pkm-tagfilter">Filter by tag</label>
+<select id="pkm-tagfilter"><option value="">All tags</option></select>
+<p class="out" id="pkm-count"></p>
+<div id="pkm-list"></div>
+<button type="button" id="pkm-copy">Copy all notes</button>
+<button type="button" class="secondary" id="pkm-clear">Clear all notes</button>
+<p class="hint">Your notes are stored only in this browser, on this device. Clearing your browser data deletes them, so copy out any notes that matter to you.</p>
+</div>
+<h2>How to use this guide</h2>
+<p>Start with the four steps, because the whole system fits in four words: capture, organize, connect, review. Each step has a section of its own, and each section explains the step with examples you can copy. Then try the capture tool on this page: save a few notes, tag them, search them, and see how the system feels in practice. The tool is small on purpose. It does one job — catching notes and finding them again — and it does it in your browser only, with nothing uploaded anywhere.</p>
+<p>This guide is for anyone who reads, watches and listens to a great deal and remembers too little of it: students, writers, researchers, and anyone whose work depends on what they know. It is also for people who have tried complicated systems and given up on them. The system here is deliberately simple, because a simple system you use beats a clever system you abandon. You do not need a special app, and you do not need to buy anything. You need a habit, and this guide builds it step by step.</p>
+<p>If you are short on time, read the sections on capture and on the weekly review, and start there. Capture is the step that feeds everything else, and review is the step that makes it all pay off. The organizing and connecting steps matter, but they matter less than those two, and they can wait until the habit is set.</p>
+<h2>The 4 steps: capture, organize, connect, review</h2>
+<p>Capture means writing an idea down the moment it arrives, in your own words, before it disappears. An idea you do not capture is an idea you will forget: memory is a poor storehouse, and the ideas that feel unforgettable in the moment are the ones that vanish fastest. Capture is fast — ten seconds, one note, one idea — and it is the only step that cannot be done later. Organize, connect and review can all wait. Capture cannot.</p>
+<p>Organize means putting each note where you can find it again. In this system that means two things only: an area, such as work, study or personal, and a tag, a single short word that describes what the note is about. Few areas and few tags beat many: five areas and a dozen tags will serve most people for years. The point of organizing is finding, not filing, and a system that takes longer to file than to capture has the balance wrong.</p>
+<p>Connect means linking a note to the notes it relates to, so that ideas find each other. A note about sleep connects to a note about focus; a note about a book connects to a note about a project. Connections turn a pile of notes into a web of knowledge, and they are where new ideas come from: the interesting thought is usually the link between two notes, not either note alone. Review means looking back over your notes regularly — once a week is enough — and asking what still matters, what connects, and what you should act on.</p>
+<h2>Capture in 10 seconds</h2>
+<p>The capture habit is simple: when an idea arrives, write it down at once, in your own words, in one sentence if you can. Do not copy the sentence you read: copying feels like learning, but it stores the author's words, not your understanding. Write what the idea means to you, as you would explain it to a friend. A note in your own words is a note you will understand in six months; a copied sentence is a note you will have to read twice.</p>
+<p>Keep capture fast. Ten seconds is the target, and anything that takes longer will be skipped when you are busy, which is when the best ideas arrive. One idea per note, one tag, one area, and move on. You can tidy a note later, during the weekly review, but you cannot capture an idea you let go. The capture tool on this page is built for speed: one box for the idea, one box for the tag, one area to pick, and a save button.</p>
+<p>Capture everywhere, not just at your desk. Ideas arrive while walking, while reading, while talking, and the habit is the same in each case: stop, write it down, carry on. A phone is the usual tool, and this page works on a phone as well as on a computer. The place you capture matters far less than the habit of capturing at all.</p>
+<h2>Organizing so you can find it</h2>
+<p>Organizing starts with areas: a small number of broad boxes that cover your life. Work, study, personal and ideas cover most people, and this page's capture tool offers exactly those. An area answers the question of where a note belongs in your life, and it is the first filter when you search. Keep the number of areas small: five is plenty, and ten is too many. If you cannot remember your areas without looking, you have too many.</p>
+<p>Tags answer a different question: what is this note about? A tag is one short word — reading, sleep, money, gardening — and a note usually needs only one. Tags work best when they are few and used every time: a tag you used once is not a tag, it is a label on a single note. When you save a note, ask yourself what word you would search for when you want it again, and use that word as the tag.</p>
+<p>Search is the third way to find things, and it is the one that saves a system when areas and tags fail. A good search finds a note by any word in it, which is why writing notes in your own words matters: you search for the words you would use, and a note written in your words contains them. Use all three — area, tag and search — and a note is never more than a few seconds away. Use only one, and the system will frustrate you the day you need it most.</p>
+<h2>Connecting ideas</h2>
+<p>Connection is the step most systems skip, and it is the step that turns notes into knowledge. A pile of notes is a record; a web of notes is a mind. To connect notes, ask one question when you save or review a note: what does this remind me of? The answer is usually another note, and the link between them is worth writing down, even as a single sentence: this idea supports that one, or contradicts it, or builds on it.</p>
+<p>Connections grow slowly, and that is fine. A new note may connect to nothing, and an old note may gain a connection months later when a new idea arrives. The weekly review is the time to make connections, because it is when you see notes side by side and the links become visible. Do not force connections: a link that means nothing is worse than no link, because it teaches you to ignore the links that do matter.</p>
+<p>The worked example is simple. Suppose you save a note that sleep affects focus, and a week later you save a note that focus matters for deep work. The connection is obvious: sleep affects deep work through focus. Write that connection down, and you have a small insight that neither note held alone. Do this for a year, and your notes become a map of what you know, with the interesting places marked by the densest connections.</p>
+<h2>The weekly review</h2>
+<p>The weekly review is twenty minutes, once a week, and it is the step that makes the whole system pay off. Sit down with your notes from the week, read them, and ask three questions. First, what still matters? Delete or archive what does not: a system full of dead notes is a system you will stop trusting. Second, what connects? Look for links between this week's notes and older ones, and write them down. Third, what should I act on? A note that suggests an action — a book to read, a person to call, a project to start — is worth more than ten notes that suggest nothing.</p>
+<p>Keep the review short and regular. Twenty minutes on the same day each week beats two hours once a month, because the habit matters more than the length. Pick a time you can keep: Sunday evening, Monday morning, whenever your week has a quiet corner. Put it in your calendar if that helps, and treat it as an appointment with yourself. The review is the difference between a collection and a system.</p>
+<p>If you skip a week, do not try to catch up by reviewing two weeks at once. Just review the latest week and carry on: the older notes will still be there, and the habit matters more than the backlog. A system that punishes a missed week is a system that gets abandoned, and this one is built to survive real life.</p>
+<h2>Common mistakes</h2>
+<p>The first mistake is collecting a thousand notes and never reading one. Capture without review is hoarding, and a pile of unread notes is no better than no notes at all. The weekly review exists to stop this: twenty minutes a week turns a pile into a system, and a system without review is just a pile with a nicer name.</p>
+<p>The second mistake is fifty folders for twenty notes. Too many areas, too many tags, and a filing system that takes longer to use than the notes are worth. Keep it small: a few areas, a dozen tags, and search for the rest. If organizing takes longer than capturing, simplify until it does not.</p>
+<p>The third mistake is copying instead of thinking. A note that copies a sentence from a book stores the author's words, not your understanding, and you will not understand it in six months. Write in your own words, even if the words are clumsy: clumsy words you understand beat elegant words you do not.</p>
+<p>The fourth mistake is buying a new app instead of building a habit. No app will capture ideas for you, and no app will review them for you. The best system is the one you use, and a simple tool used every day beats a powerful tool used once a month. Start with this page, build the habit, and only then decide whether you need anything more.</p>
+<div class="warn">This page teaches a system and gives you a small local capture tool. It is not a cloud app: your notes stay in this browser only, on this device, and clearing your browser data deletes them. Copy out any notes that matter to you. No system works without the weekly review, so build the habit before you build the collection.</div>
+<h2>Questions people ask</h2>
+<div class="faq"><h3>What is personal knowledge management?</h3><p>It is a simple system for catching what you learn, keeping it where you can find it, and turning it into something useful. The system on this page has four steps: capture an idea when it arrives, organize it with an area and a tag, connect it to related notes, and review your notes once a week.</p></div>
+<div class="faq"><h3>How do I start?</h3><p>Start with two habits: capture and review. Capture every idea in your own words, one note per idea, using the tool on this page or a notebook. Then review your notes once a week for twenty minutes, asking what still matters, what connects, and what to act on. Add organizing and connecting once those two habits are set.</p></div>
+<div class="faq"><h3>What is the best system?</h3><p>The best system is the one you actually use. A simple system used every day beats a clever system abandoned after a week. Keep your areas few, your tags few, and your notes in your own words, and the system will serve you for years. No app can replace the habit.</p></div>
+<div class="faq"><h3>How do I organize my notes?</h3><p>Give each note an area, such as work, study or personal, and one short tag, such as reading or sleep. Keep the number of areas and tags small, and use search for the rest. The point of organizing is finding a note again in seconds, not filing it perfectly.</p></div>
+<div class="faq"><h3>How often should I review?</h3><p>Once a week is enough, for about twenty minutes. Read the week&#x27;s notes and ask what still matters, what connects to older notes, and what you should act on. If you skip a week, just review the latest week and carry on: the habit matters more than the backlog.</p></div>
+<div class="faq"><h3>Do I need a special app?</h3><p>No. You need a habit, not an app. A notebook works, and the capture tool on this page works too: it saves notes in your browser only, with nothing uploaded. Start simple, build the habit, and only consider another tool if the simple one stops serving you.</p></div>
+<h2>More free tools on Noryvello</h2>
+<div class="links"><a href="https://noryvello.github.io/research-note-linking-workspace/">Research Note Linking Workspace</a> · <a href="https://noryvello.github.io/reading-highlight-manager/">Reading Highlight Manager</a> · <a href="https://noryvello.github.io/personal-information-dashboard/">Personal Information Dashboard</a></div>
+<p class="note">Noryvello is a free tools hub — every tool works in your browser with no sign-up.</p>
+<script>
+
+window.NP = window.NP || {};
+(function (NP) {
+  var KEY = "np-pkm-notes";
+  function addNote(notes, text, tag, area, date) {
+    if (!text || !text.trim()) return { notes: notes, error: "Write the note first — one idea, in your own words." };
+    var next = notes.slice();
+    next.push({ text: text.trim(), tag: (tag || "").trim(), area: area || "Other", date: date || "" });
+    return { notes: next, error: null };
+  }
+  function deleteNote(notes, index) {
+    var next = notes.slice();
+    if (index >= 0 && index < next.length) next.splice(index, 1);
+    return next;
+  }
+  function filterNotes(notes, query, tag) {
+    var q = (query || "").trim().toLowerCase();
+    return notes.filter(function (n) {
+      if (tag && (n.tag || "") !== tag) return false;
+      if (!q) return true;
+      return (n.text + " " + (n.tag || "") + " " + (n.area || "")).toLowerCase().indexOf(q) >= 0;
+    });
+  }
+  function tagsOf(notes) {
+    var seen = {}, out = [];
+    for (var i = 0; i < notes.length; i++) {
+      var t = (notes[i].tag || "").trim();
+      if (t && !seen[t]) { seen[t] = true; out.push(t); }
+    }
+    return out.sort();
+  }
+  function formatNotes(notes) {
+    if (!notes.length) return "No notes saved yet.";
+    var lines = ["My notes:"];
+    for (var i = 0; i < notes.length; i++) {
+      var n = notes[i];
+      lines.push((i + 1) + ". [" + n.area + "]" + (n.tag ? " (" + n.tag + ")" : "") + " " + n.text + (n.date ? " — " + n.date : ""));
+    }
+    return lines.join("\n");
+  }
+  NP.pkmKey = KEY;
+  NP.pkmAddNote = addNote;
+  NP.pkmDeleteNote = deleteNote;
+  NP.pkmFilterNotes = filterNotes;
+  NP.pkmTagsOf = tagsOf;
+  NP.pkmFormatNotes = formatNotes;
+  if (typeof document === "undefined") return;
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function load() {
+    try { var raw = window.localStorage.getItem(KEY); return raw ? JSON.parse(raw) : []; }
+    catch (e) { return []; }
+  }
+  function save(list) {
+    try { window.localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+  }
+  var notes = load();
+  var textEl = document.getElementById("pkm-text");
+  var tagEl = document.getElementById("pkm-tag");
+  var areaEl = document.getElementById("pkm-area");
+  var msgEl = document.getElementById("pkm-msg");
+  var searchEl = document.getElementById("pkm-search");
+  var tagFilterEl = document.getElementById("pkm-tagfilter");
+  var countEl = document.getElementById("pkm-count");
+  var listEl = document.getElementById("pkm-list");
+  function render() {
+    var shown = filterNotes(notes, searchEl.value, tagFilterEl.value);
+    countEl.textContent = notes.length + " note" + (notes.length === 1 ? "" : "s") + " saved" + (shown.length !== notes.length ? " — showing " + shown.length : "") + ".";
+    var tags = tagsOf(notes);
+    var cur = tagFilterEl.value;
+    var opts = '<option value="">All tags</option>';
+    for (var t = 0; t < tags.length; t++) opts += '<option value="' + esc(tags[t]) + '"' + (tags[t] === cur ? " selected" : "") + ">" + esc(tags[t]) + "</option>";
+    tagFilterEl.innerHTML = opts;
+    if (!shown.length) {
+      listEl.innerHTML = "<p>" + (notes.length ? "No notes match your search." : "No notes saved yet. Capture your first note above.") + "</p>";
+      return;
+    }
+    var out = "";
+    for (var i = 0; i < shown.length; i++) {
+      var n = shown[i];
+      var realIndex = notes.indexOf(n);
+      out += '<div class="bk"><p><strong>[' + esc(n.area) + "]" + (n.tag ? " (" + esc(n.tag) + ")" : "") + "</strong>" + (n.date ? " — " + esc(n.date) : "") + "</p>";
+      out += "<p>" + esc(n.text) + "</p>";
+      out += '<button type="button" data-del="' + realIndex + '">Delete this note</button></div>';
+    }
+    listEl.innerHTML = out;
+    var dels = listEl.querySelectorAll("[data-del]");
+    for (var j = 0; j < dels.length; j++) {
+      (function (btn) {
+        btn.addEventListener("click", function () {
+          notes = deleteNote(notes, parseInt(btn.getAttribute("data-del"), 10));
+          save(notes);
+          msgEl.textContent = "Note deleted.";
+          render();
+        });
+      })(dels[j]);
+    }
+  }
+  document.getElementById("pkm-add").addEventListener("click", function () {
+    var date = new Date().toISOString().slice(0, 10);
+    var res = addNote(notes, textEl.value, tagEl.value, areaEl.value, date);
+    if (res.error) { msgEl.textContent = res.error; return; }
+    notes = res.notes;
+    save(notes);
+    msgEl.textContent = "Note saved.";
+    textEl.value = "";
+    tagEl.value = "";
+    render();
+  });
+  searchEl.addEventListener("input", render);
+  tagFilterEl.addEventListener("change", render);
+  document.getElementById("pkm-copy").addEventListener("click", function () {
+    var btn = this;
+    var text = formatNotes(notes);
+    function done() {
+      var old = btn.textContent;
+      btn.textContent = "Copied!";
+      setTimeout(function () { btn.textContent = old; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallback(); });
+    } else { fallback(); }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+  });
+  document.getElementById("pkm-clear").addEventListener("click", function () {
+    notes = [];
+    try { window.localStorage.removeItem(KEY); } catch (e) {}
+    msgEl.textContent = "All notes cleared.";
+    render();
+  });
+  render();
+})(window.NP);
+
+</script>
+<div style="margin:28px auto 4px;text-align:center;max-width:100%;overflow:hidden">
+<div id="container-d3643148ad0d192d49387f5ff33bfbab"></div>
+<div id="noryvello-ad-banner-slot"></div>
+</div>
+<footer>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a> · <a href="https://noryvello.github.io/about/">About</a> · <a href="https://noryvello.github.io/contact/">Contact</a> · <a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a> · <a href="https://noryvello.github.io/disclaimer/">Disclaimer</a> · <a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></footer>
+</div>
+<script src="../ads-config.js"></script>
+</body>
+</html>
