@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark" />
+<title>Quran Reader — কুরআন পড়ুন | Noryvello</title>
+<meta name="description" content="পবিত্র কুরআন আরবি পাঠসহ বাংলা ও ইংরেজি অনুবাদে পড়ুন — ১১৪টি সূরার তালিকা, সার্চসহ।">
+<link rel="canonical" href="https://noryvello.github.io/quran/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quran Reader — কুরআন পড়ুন">
+<meta property="og:description" content="পবিত্র কুরআন আরবি পাঠসহ বাংলা ও ইংরেজি অনুবাদে পড়ুন — ১১৪টি সূরার তালিকা, সার্চসহ।">
+<meta property="og:url" content="https://noryvello.github.io/quran/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --bg:#060f0a; --bg2:#08160e; --panel:#0b1c12; --panel2:#0d2417;
+    --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.06);
+    --text:#f2f5f1; --muted:#9fb3a6; --muted2:#7d9486;
+    --green:#34e89a; --green2:#1fd67f; --green-dark:#0f3d26;
+    --amber:#ffb020;
+    --radius:24px;
+    --wrap:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:"Manrope",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  button,[role="button"]{min-height:2rem}
+  .mono{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px;position:relative;z-index:2}
+
+  /* ---------- background art: diagonal green line + glow, same as reference ---------- */
+  .bg-art{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+  .bg-art::before{content:"";position:absolute;top:-320px;right:-180px;width:760px;height:760px;background:radial-gradient(circle,rgba(28,120,70,.5),transparent 65%)}
+  .bg-art::after{content:"";position:absolute;bottom:-420px;left:-220px;width:700px;height:700px;background:radial-gradient(circle,rgba(20,90,55,.28),transparent 65%)}
+  .diag{position:absolute;top:-140px;right:16%;width:9px;height:1250px;background:linear-gradient(180deg,rgba(52,232,154,.0),rgba(52,232,154,.85) 18%,rgba(52,232,154,.85) 82%,rgba(52,232,154,0));transform:rotate(19deg);transform-origin:top center;box-shadow:0 0 44px rgba(52,232,154,.35);opacity:.75}
+  .diag.thin{right:calc(16% + 22px);width:2px;opacity:.35;height:1100px}
+  .dot{position:absolute;width:5px;height:5px;background:var(--amber);opacity:.75}
+  .star{position:absolute;width:2px;height:2px;border-radius:50%;background:#cfe8d8;opacity:.5}
+
+  /* ---------- pill nav: same size / shape as reference ---------- */
+  .nav-shell{position:sticky;top:12px;z-index:50;padding:12px 24px 0}
+  .nav{max-width:var(--wrap);margin:0 auto;height:62px;display:flex;align-items:center;gap:34px;padding:7px 7px 7px 14px;border-radius:999px;background:rgba(10,26,17,.78);border:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:-.02em;white-space:nowrap}
+  .logo-mark{width:32px;height:32px;border-radius:9px;background:#0e2e1c;border:1px solid rgba(52,232,154,.35);display:grid;place-items:center;flex:none}
+  .logo-mark::after{content:"";width:15px;height:3px;border-radius:99px;background:var(--green)}
+  .nav-links{display:flex;gap:30px;margin-left:8px}
+  .nav-links a{font-size:14.5px;font-weight:600;color:#c6d4c9;padding:10px 2px}
+  .nav-links a:hover{color:#fff}
+  .nav-cta{margin-left:auto;background:linear-gradient(180deg,#46f2a6,#22cf82);color:#04160c;font-weight:800;font-size:14.5px;padding:0 22px;height:46px;display:inline-flex;align-items:center;border-radius:999px;white-space:nowrap;box-shadow:0 8px 24px rgba(34,207,130,.35)}
+  .burger{display:none;margin-left:auto;width:46px;height:46px;border-radius:999px;border:1px solid var(--line);background:transparent;color:#fff;font-size:19px;cursor:pointer}
+  .mobile-menu{display:none;max-width:var(--wrap);margin:8px auto 0;background:rgba(10,26,17,.96);border:1px solid var(--line);border-radius:20px;padding:10px}
+  .mobile-menu a{display:block;padding:13px 14px;font-weight:700;border-radius:12px}
+  .mobile-menu.open{display:block}
+
+  /* ---------- hero: same proportions ---------- */
+  .hero{position:relative;padding:118px 0 84px}
+  .hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:44px;align-items:start}
+  .eyebrow{display:flex;align-items:center;gap:10px;color:var(--green);font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
+  .eyebrow::before{content:"";width:20px;height:2px;background:var(--green);border-radius:99px;flex:none}
+  h1{font-size:clamp(58px,7.6vw,106px);line-height:.98;letter-spacing:-.045em;font-weight:800;margin:26px 0 0}
+  h1 .u{position:relative;display:inline-block}
+  h1 .u::after{content:"";position:absolute;left:2px;right:2px;bottom:2px;height:9px;border-radius:99px;background:var(--green)}
+  .hero-sub{margin:30px 0 0;font-size:19.5px;line-height:1.55;color:#b9c9bd;max-width:560px;font-weight:500}
+  .hero-btns{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:12px;height:54px;padding:0 28px;border-radius:999px;font-weight:800;font-size:15.5px}
+  .btn-green{background:linear-gradient(180deg,#46f2a6,#22cf82);color:#04160c;box-shadow:0 14px 34px rgba(34,207,130,.32)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.22);color:#fff;background:rgba(255,255,255,.03)}
+  .btn .dash{width:18px;height:2.5px;background:currentColor;border-radius:99px;display:inline-block}
+
+  .hero-cards{display:flex;flex-direction:column;gap:18px;padding-top:118px}
+  .stat-card{border-radius:var(--radius);padding:26px 28px 22px;border:1px solid rgba(52,232,154,.28);background:linear-gradient(150deg,#11452a 0%,#0a2717 58%,#081b10 100%);box-shadow:0 24px 50px rgba(0,0,0,.35)}
+  .stat-card .lbl{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;color:var(--green);text-transform:uppercase}
+  .stat-big{font-size:74px;font-weight:800;letter-spacing:-.04em;line-height:1;margin:14px 0 8px}
+  .stat-big .x{color:var(--amber);font-size:52px;vertical-align:top}
+  .stat-card p{margin:0;color:#a9bfae;font-size:14.5px;font-weight:600}
+  .spark{margin-top:20px;width:100%;height:44px;display:block}
+  .live-card{border-radius:var(--radius);padding:22px 24px;border:1px solid var(--line);background:rgba(13,30,20,.82);backdrop-filter:blur(8px)}
+  .live-card .lbl{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;color:var(--green);text-transform:uppercase;display:flex;align-items:center;gap:8px}
+  .live-card .lbl i{width:7px;height:7px;border-radius:50%;background:var(--amber);display:inline-block}
+  .live-card h3{margin:12px 0 14px;font-size:19px;letter-spacing:-.01em}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:#d7e4da;font-weight:700}
+
+  /* ---------- trusted / platforms strips ---------- */
+  .strip{border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);padding:30px 0}
+  .strip .lbl{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.22em;color:var(--muted2);text-transform:uppercase;text-align:center}
+  .brands{display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap;margin-top:20px}
+  .brands span{font-size:21px;font-weight:800;letter-spacing:-.02em;color:rgba(235,244,237,.62);white-space:nowrap}
+  .platforms{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .platforms span{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.06em;padding:9px 16px;border:1px solid var(--line);border-radius:999px;color:#cfe0d3;font-weight:600}
+
+  /* ---------- generic section ---------- */
+  section{padding:92px 0 0}
+  .sec-head{max-width:640px}
+  .sec-head.center{margin:0 auto;text-align:center}
+  .sec-head.center .eyebrow{justify-content:center}
+  .sec-head.center .eyebrow::after{content:"";width:20px;height:2px;background:var(--green);border-radius:99px}
+  h2{font-size:clamp(34px,4.2vw,50px);line-height:1.08;letter-spacing:-.035em;font-weight:800;margin:20px 0 0}
+  .sec-sub{margin:18px 0 0;font-size:17.5px;line-height:1.6;color:var(--muted);font-weight:500}
+
+  /* ---------- why: 5 items, same count as reference ---------- */
+  .why-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+  .why-list{display:flex;flex-direction:column}
+  .why-item{display:flex;gap:18px;padding:24px 4px;border-bottom:1px solid var(--line2)}
+  .why-item:first-child{padding-top:6px}
+  .why-item .n{width:38px;height:38px;flex:none;border-radius:12px;background:var(--panel2);border:1px solid rgba(52,232,154,.25);display:grid;place-items:center;color:var(--green);font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:700}
+  .why-item h3{margin:2px 0 6px;font-size:18.5px;letter-spacing:-.01em}
+  .why-item p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.55}
+
+  /* ---------- services: 10 cards, same count as reference ---------- */
+  .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:46px}
+  .svc{border:1px solid var(--line2);background:linear-gradient(160deg,#0c1f13,#08160d);border-radius:20px;padding:28px;transition:border-color .2s, transform .2s}
+  .svc:hover{border-color:rgba(52,232,154,.4);transform:translateY(-2px)}
+  .svc .tag{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+  .svc h3{margin:14px 0 8px;font-size:23px;letter-spacing:-.02em}
+  .svc p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6;min-height:50px}
+  .svc a{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-weight:800;font-size:14.5px;color:#fff}
+  .svc a i{font-style:normal;color:var(--green)}
+  .full-link{margin-top:22px;border:1px dashed rgba(52,232,154,.35);border-radius:20px;padding:22px 28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .full-link b{font-size:17px}
+  .full-link span{color:var(--muted);font-size:14.5px;display:block;margin-top:3px}
+
+  /* ---------- stats bar: 4 stats, same as reference ---------- */
+  .stats{margin-top:92px;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);padding:44px 0}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:26px}
+  .stat b{font-size:54px;letter-spacing:-.04em;font-weight:800;display:block;line-height:1}
+  .stat b em{font-style:normal;color:var(--green)}
+  .stat span{display:block;margin-top:10px;color:var(--muted);font-size:14.5px;font-weight:600}
+
+  /* ---------- work: 3 projects, same as reference ---------- */
+  .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:46px}
+  .work{border:1px solid var(--line2);border-radius:22px;overflow:hidden;background:var(--panel)}
+  .work.wide{grid-column:1 / -1;display:grid;grid-template-columns:1.05fr .95fr}
+  .work-art{min-height:230px;position:relative;overflow:hidden}
+  .work.wide .work-art{min-height:300px}
+  .art1{background:radial-gradient(600px 300px at 20% 0%,rgba(52,232,154,.4),transparent 60%),linear-gradient(140deg,#123d24,#081a0f)}
+  .art2{background:radial-gradient(500px 260px at 80% 0%,rgba(255,176,32,.32),transparent 60%),linear-gradient(140deg,#2b2410,#12100a)}
+  .art3{background:radial-gradient(500px 260px at 20% 0%,rgba(80,180,255,.3),transparent 60%),linear-gradient(140deg,#12283d,#0a141f)}
+  .work-art .glyph{position:absolute;inset:0;display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-size:13px;letter-spacing:.3em;color:rgba(255,255,255,.55);text-transform:uppercase;text-align:center;padding:20px}
+  .work-art .ring{position:absolute;width:280px;height:280px;border:1.5px solid rgba(255,255,255,.16);border-radius:50%;right:-70px;bottom:-120px}
+  .work-art .ring2{position:absolute;width:180px;height:180px;border:1.5px solid rgba(255,255,255,.12);border-radius:50%;right:-20px;bottom:-70px}
+  .work-body{padding:28px}
+  .work-body .tags{display:flex;gap:8px;flex-wrap:wrap}
+  .work-body h3{margin:16px 0 8px;font-size:27px;letter-spacing:-.02em}
+  .work-body p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6}
+  .metrics{display:flex;gap:30px;margin-top:22px;flex-wrap:wrap}
+  .metrics div b{font-size:25px;letter-spacing:-.02em;display:block}
+  .metrics div span{font-size:12.5px;color:var(--muted2);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+
+  /* ---------- process: 4 steps, same as reference ---------- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:46px;position:relative}
+  .steps::before{content:"";position:absolute;top:27px;left:4%;right:4%;height:2px;background:linear-gradient(90deg,transparent,rgba(52,232,154,.5),rgba(52,232,154,.5),transparent)}
+  .step{padding:0 6px;position:relative}
+  .step .num{width:54px;height:54px;border-radius:50%;background:var(--bg);border:1.5px solid rgba(52,232,154,.55);display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-weight:700;font-size:14px;color:var(--green);position:relative;z-index:1}
+  .step h3{margin:20px 0 8px;font-size:20px}
+  .step p{margin:0;color:var(--muted);font-size:15px;line-height:1.6}
+
+  /* ---------- CTA + footer ---------- */
+  .cta{margin:100px 0 0;border:1px solid rgba(52,232,154,.25);border-radius:28px;padding:64px 40px;text-align:center;background:radial-gradient(700px 320px at 50% -10%,rgba(52,232,154,.22),transparent 65%),linear-gradient(160deg,#0d2718,#08160d);position:relative;overflow:hidden}
+  .cta h2{font-size:clamp(36px,5vw,58px)}
+  .cta p{margin:18px auto 0;color:var(--muted);font-size:17.5px;max-width:520px;line-height:1.6}
+  .cta .btn{margin-top:32px}
+  footer{margin-top:80px;border-top:1px solid var(--line2);padding:38px 0 44px}
+  .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+  .foot nav{display:flex;gap:26px;flex-wrap:wrap}
+  .foot nav a{font-size:14px;font-weight:600;color:var(--muted);padding:8px 0}
+  .foot small{color:var(--muted2);font-size:13px}
+
+  @media (max-width:900px){
+    .diag{right:-30px;opacity:.32}
+    .diag.thin{display:none}
+    .nav-links{display:none}
+    .nav-cta{display:none}
+    .burger{display:grid;place-items:center}
+    .hero{padding:64px 0 56px}
+    .hero-grid{grid-template-columns:1fr}
+    .hero-cards{padding-top:6px}
+    .why-grid{grid-template-columns:1fr;gap:28px}
+    .svc-grid{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:1fr 1fr}
+    .work-grid{grid-template-columns:1fr}
+    .work.wide{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr 1fr;gap:34px 16px}
+    .steps::before{display:none}
+    .brands{justify-content:center}
+    section{padding:64px 0 0}
+    .cta{padding:48px 24px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* =====================================================================
+   Noryvello theme — extension (part 2 of theme.css)
+   Part 1 above is Suraiya's demo CSS, verbatim, byte for byte — the
+   Greenline-style dark premium theme: same tokens, same components,
+   same sizes and proportions.
+   This part adapts those same tokens to the live site's two page types:
+   - body.hub     — the homepage (1120px, sections, cards)
+   - body.content — every article/tool page (760px reading width)
+   Nothing here changes any page's content — only its look. Page-specific
+   rules from a page's own extra <style> block (buttons, countdowns)
+   keep working: they come after this block and only their colours were
+   remapped to these tokens.
+   ===================================================================== */
+
+/* ---------- shared content components (every page) ---------- */
+.answer{background:linear-gradient(160deg,#0c1f13,#08160d);border:1px solid var(--line2);border-radius:20px;padding:18px 20px;font-size:17px;line-height:1.6;margin:16px 0}
+.byline{font-size:14px;color:var(--muted);margin:6px 0 0}
+.calc{background:linear-gradient(160deg,#0c1f13,#08160d);border:1px solid var(--line2);border-radius:20px;padding:20px;margin:16px 0}
+.calc label{display:block;font-weight:600;margin:12px 0 6px;font-size:14.5px}
+.calc input,.calc select,.calc textarea{width:100%;min-height:56px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font-size:16px;background:#08160e;color:var(--text)}
+.calc input:focus,.calc select:focus,.calc textarea:focus{outline:none;border-color:rgba(52,232,154,.55);box-shadow:0 0 0 3px rgba(52,232,154,.18)}
+.calc button,.copy-btn{min-height:56px;padding:14px 20px;font-size:16px;font-weight:800;border:0;border-radius:999px;background:linear-gradient(180deg,#46f2a6,#22cf82);color:#04160c;cursor:pointer;width:100%;margin-top:14px;box-shadow:0 8px 24px rgba(34,207,130,.3)}
+.calc button.secondary,.clear-btn{background:rgba(255,255,255,.04);color:var(--green);border:1px solid rgba(52,232,154,.4);box-shadow:none}
+.calc .out{font-size:20px;font-weight:800;margin-top:16px}
+.calc .steps{font-size:15px;color:var(--muted);margin-top:8px;white-space:pre-line}
+.calc .msg{font-size:15px;margin-top:10px;color:var(--muted)}
+.warn{background:rgba(255,176,32,.07);border:1px solid rgba(255,176,32,.35);border-radius:20px;padding:16px 20px;margin:16px 0;font-size:15.5px;line-height:1.6}
+.faq{background:linear-gradient(160deg,#0c1f13,#08160d);border:1px solid var(--line2);border-radius:20px;padding:18px 20px;margin:12px 0}
+.faq h3{font-size:17.5px;margin-bottom:6px;letter-spacing:-.01em}
+.faq p{color:var(--muted);font-size:15.5px;line-height:1.6}
+.links{margin-top:20px}
+.links a{color:var(--green);font-weight:600}
+.note{font-size:14px;color:var(--muted2)}
+.countdown{font-size:26px;font-weight:800;text-align:center;margin:8px 0}
+code{background:rgba(52,232,154,.12);color:#b7f5d3;padding:1px 6px;border-radius:6px;font-family:"JetBrains Mono",monospace;font-size:.9em}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{border:1px solid var(--line2);padding:10px 12px;text-align:left}
+th{background:var(--panel2);color:var(--green);font-weight:700}
+ol,ul{margin:10px 0 10px 22px}
+li{margin:6px 0}
+li::marker{color:var(--green)}
+input[type="checkbox"]{width:22px;height:22px;accent-color:var(--green2)}
+p a,li a,td a,h2 a,h3 a{color:var(--green)}
+.hide{display:none!important}
+
+/* ---------- content pages (articles + tools) ---------- */
+body.content{--wrap:760px}
+body.content .wrap{padding:24px 16px 48px}
+body.content section{padding:0}
+body.content h1{font-size:clamp(34px,4.6vw,48px);line-height:1.12;letter-spacing:-.035em;margin:18px 0 12px}
+body.content h2{font-size:24px;line-height:1.3;letter-spacing:-.02em;margin:28px 0 10px}
+body.content footer{margin-top:40px;padding:32px 0 0}
+
+/* ---------- hub ---------- */
+body.hub .wrap{padding:0 24px 48px}
+body.hub .hero{background:linear-gradient(150deg,#11452a 0%,#0a2717 58%,#081b10 100%);border:1px solid rgba(52,232,154,.28);border-radius:var(--radius);padding:32px 28px 28px;margin:26px 0 18px;box-shadow:0 24px 50px rgba(0,0,0,.35)}
+body.hub .hero h1{font-size:clamp(34px,4.6vw,48px);line-height:1.1;letter-spacing:-.035em;margin:0 0 10px}
+body.hub .hero .tag{font-size:17.5px;line-height:1.6;color:#b9c9bd;max-width:640px}
+body.hub .hero .chips{margin-top:16px}
+body.hub .search{margin-top:18px}
+body.hub .search label{display:block;font-size:14px;font-weight:600;color:var(--muted);margin-bottom:6px}
+body.hub .search input{width:100%;padding:14px 20px;border:1px solid var(--line);border-radius:999px;font-size:16px;background:rgba(255,255,255,.06);color:var(--text);outline:0}
+body.hub .search input::placeholder{color:var(--muted2)}
+body.hub .search input:focus{border-color:rgba(52,232,154,.55);box-shadow:0 0 0 3px rgba(52,232,154,.18)}
+body.hub #resultCount{font-size:13.5px;color:var(--muted);margin-top:8px;min-height:18px}
+body.hub #noResults{background:linear-gradient(160deg,#0c1f13,#08160d);border:1px solid var(--line2);border-radius:20px;padding:20px;text-align:center;margin-top:22px;font-size:16px;color:var(--muted)}
+body.hub .note{margin-top:22px}
+body.hub .cats{position:sticky;top:86px;z-index:40;display:flex;gap:8px;overflow-x:auto;padding:10px 2px;margin-bottom:6px;scrollbar-width:none;background:rgba(10,26,17,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:999px}
+body.hub .cats::-webkit-scrollbar{display:none}
+body.hub .cats a{white-space:nowrap;text-decoration:none;font-size:14px;font-weight:600;color:#c6d4c9;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+body.hub .cats a:hover{background:rgba(52,232,154,.14);color:#fff;border-color:rgba(52,232,154,.4)}
+body.hub section.toolsec{padding:0;margin-top:28px;scroll-margin-top:160px}
+body.hub #faqsec{padding:0;margin-top:40px;scroll-margin-top:160px}
+body.hub section.toolsec h2,body.hub #faqsec h2{font-size:26px;line-height:1.25;letter-spacing:-.02em;margin:0 0 4px}
+body.hub .cnt{display:inline-block;vertical-align:middle;background:rgba(52,232,154,.14);color:var(--green);border-radius:999px;font-size:12.5px;font-weight:700;padding:2px 9px;margin-left:8px}
+body.hub .secdesc{font-size:14.5px;color:var(--muted);margin-bottom:12px}
+body.hub .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+body.hub .card{background:linear-gradient(160deg,#0c1f13,#08160d);border:1px solid var(--line2);border-top:3px solid rgba(52,232,154,.45);border-radius:20px;padding:16px;transition:border-color .2s,transform .2s}
+body.hub .card:hover{transform:translateY(-2px);border-color:rgba(52,232,154,.4);border-top-color:var(--green)}
+body.hub .card h3{font-size:17px;line-height:1.35}
+body.hub .card h3 a{color:#fff;text-decoration:none}
+body.hub .card h3 a:hover{color:var(--green)}
+body.hub .card p{font-size:14.5px;color:var(--muted);margin-top:5px}
+body.hub footer{margin-top:48px;padding:32px 0 0}
+
+</style>
+<style>
+.byline{font-size:14px;color:var(--muted);margin:6px 0 0}
+.surah-arabic{font-family:'Amiri','Scheherazade New','Noto Naskh Arabic',serif;font-size:.62em;line-height:1.5;display:block;margin-top:12px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0}
+.facts div{background:linear-gradient(160deg,#0c1f13,#08160d);border:1px solid var(--line2);border-radius:16px;padding:14px 16px;text-align:center}
+.facts span{display:block;font-size:13px;color:var(--muted);font-weight:600}
+.facts b{display:block;font-size:19px;margin-top:4px}
+.lang-toggle{display:flex;gap:10px;margin:20px 0 6px}
+.lang-toggle button{min-height:48px;padding:10px 26px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);font-size:15px;font-weight:700;cursor:pointer}
+.lang-toggle button.active{background:linear-gradient(180deg,#46f2a6,#22cf82);color:#04160c;border-color:transparent}
+.verse{border:1px solid var(--line2);border-radius:20px;padding:18px 20px;margin:14px 0;background:linear-gradient(160deg,#0c1f13,#08160d)}
+.verse-no{font-family:"JetBrains Mono",monospace;color:var(--green);font-size:13px;font-weight:700}
+.arabic{font-family:'Amiri','Scheherazade New','Noto Naskh Arabic',serif;font-size:30px;line-height:2;direction:rtl;text-align:right;margin:10px 0}
+.bn-trans{font-size:16.5px;line-height:1.7;color:var(--text);margin:8px 0 0}
+.en-trans{display:none;font-size:15.5px;line-height:1.6;color:var(--muted);margin:8px 0 0}
+.verses.show-en .en-trans{display:block}
+.verses.show-en .bn-trans{display:none}
+.gold-card{border:2px solid var(--amber);background:linear-gradient(160deg,rgba(255,176,32,.16),rgba(255,176,32,.05))}
+.kursi-intro{background:rgba(255,176,32,.07);border:1px solid rgba(255,176,32,.35);border-radius:20px;padding:16px 20px;margin:22px 0 0}
+.kursi-intro h2{margin:0 0 8px}
+.kursi-link{margin-top:14px}
+.prevnext{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:28px}
+.prevnext a{color:var(--green);font-weight:700}
+.quran-credits{margin-top:18px;line-height:1.7}
+.surah-list{margin-top:18px}
+.surah-row{display:grid;grid-template-columns:44px 1fr 1.4fr 110px;gap:10px;align-items:center;border:1px solid var(--line2);border-radius:14px;padding:12px 14px;margin:8px 0;background:linear-gradient(160deg,#0c1f13,#08160d)}
+.surah-row .s-num{font-family:"JetBrains Mono",monospace;color:var(--green);font-weight:700}
+.surah-row .s-ar{font-family:'Amiri','Scheherazade New','Noto Naskh Arabic',serif;font-size:22px;direction:rtl;text-align:right}
+.surah-row .s-name a{color:#fff;font-weight:700}
+.surah-row .s-name a:hover{color:var(--green)}
+.surah-row .s-meta{font-size:13.5px;color:var(--muted);text-align:right}
+.surah-row .coming{display:block;font-size:12.5px;color:var(--amber);font-weight:600}
+@media (max-width:640px){
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .surah-row{grid-template-columns:36px 1fr 1.2fr;gap:8px}
+  .surah-row .s-meta{grid-column:1 / -1;text-align:left}
+  .arabic{font-size:26px}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": "Quran Reader — কুরআন পড়ুন", "url": "https://noryvello.github.io/quran/", "description": "পবিত্র কুরআন আরবি পাঠসহ বাংলা ও ইংরেজি অনুবাদে পড়ুন — ১১৪টি সূরার তালিকা, সার্চসহ।"}, {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "সূরা সূচনা (Al-Fatihah)", "url": "https://noryvello.github.io/quran/surah-al-fatiha.html"}, {"@type": "ListItem", "position": 2, "name": "সূরা বকনা-বাছুর (Al-Baqarah)", "url": "https://noryvello.github.io/quran/surah-al-baqarah.html"}, {"@type": "ListItem", "position": 3, "name": "সূরা গুহা (Al-Kahf)", "url": "https://noryvello.github.io/quran/surah-al-kahf.html"}, {"@type": "ListItem", "position": 4, "name": "সূরা ইয়াসীন (Ya-Sin)", "url": "https://noryvello.github.io/quran/surah-ya-sin.html"}, {"@type": "ListItem", "position": 5, "name": "সূরা পরম করুণাময় (Ar-Rahman)", "url": "https://noryvello.github.io/quran/surah-ar-rahman.html"}, {"@type": "ListItem", "position": 6, "name": "সূরা সার্বভৌম কর্তৃত্ব (Al-Mulk)", "url": "https://noryvello.github.io/quran/surah-al-mulk.html"}, {"@type": "ListItem", "position": 7, "name": "সূরা আন্তরিকতা (Al-Ikhlas)", "url": "https://noryvello.github.io/quran/surah-al-ikhlas.html"}, {"@type": "ListItem", "position": 8, "name": "সূরা নিশিভোর (Al-Falaq)", "url": "https://noryvello.github.io/quran/surah-al-falaq.html"}, {"@type": "ListItem", "position": 9, "name": "সূরা মানুষ জাতি (An-Nas)", "url": "https://noryvello.github.io/quran/surah-an-nas.html"}]}]}</script>
+</head>
+<body class="hub">
+
+<div class="bg-art" aria-hidden="true">
+  <div class="diag"></div><div class="diag thin"></div>
+  <span class="dot" style="top:120px;left:52%"></span>
+  <span class="dot" style="top:330px;right:12%"></span>
+  <span class="dot" style="top:520px;right:22%"></span>
+  <span class="star" style="top:180px;left:12%"></span>
+  <span class="star" style="top:420px;left:6%"></span>
+  <span class="star" style="top:260px;right:30%"></span>
+  <span class="star" style="top:640px;left:20%"></span>
+</div>
+
+<div class="nav-shell">
+  <header class="nav">
+    <a class="logo" href="../"><span class="logo-mark"></span>noryvello</a>
+    <nav class="nav-links">
+      <a href="../#calculators">Tools</a>
+      <a href="../#everyday-guides-checklists">Guides</a>
+      <a href="../#ai-guides">AI Guides</a>
+      <a href="../#new-guides">New</a>
+    </nav>
+    <a class="nav-cta" href="../#calculators">Explore tools</a>
+    <button class="burger" id="burger" aria-label="Open menu">☰</button>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../#calculators">Tools</a><a href="../#everyday-guides-checklists">Guides</a><a href="../#ai-guides">AI Guides</a><a href="../#new-guides">New</a><a href="../#calculators">Explore tools</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+<div class="hero">
+<h1>Quran Reader — কুরআন পড়ুন</h1>
+<p class="tag">কুরআন রিডার — পবিত্র কুরআন আরবি পাঠসহ বাংলা অনুবাদে পড়ার সহজ একটি মাধ্যম। এখানে কুরআনের সূরাগুলো সাজানো আছে ক্রমানুসারে, সঙ্গে আছে আরবি নাম, বাংলা নাম ও আয়াত সংখ্যা। প্রতিটি সূরার পাতায় আরবি আয়াতের নিচে বাংলা অনুবাদ দেওয়া আছে; চাইলে ইংরেজি অনুবাদও দেখা যায়।</p>
+</div>
+<p>উপরের সার্চ বাক্সে সূরার বাংলা নাম, উচ্চারণ বা নম্বর লিখে খুঁজে নিন। এই পর্যায়ে ৯টি সূরা পড়া যাচ্ছে — ফাতিহা, বাকারা, কাহফ, ইয়াসিন, আর-রহমান, মুলক, ইখলাস, ফালাক ও নাস। বাকি সূরাগুলো পর্যায়ক্রমে যোগ হচ্ছে।</p>
+<p>তিলাওয়াতের সময় ধীরে ধীরে, অর্থ বুঝে পড়ার চেষ্টা করুন — এতে উপকার বেশি।</p>
+<div class="search"><label for="surahSearch">সূরা খুঁজুন — বাংলা নাম, উচ্চারণ বা নম্বর লিখুন</label><input id="surahSearch" type="search" placeholder="যেমন: ইয়াসিন, Ya-Sin, ৩৬…" autocomplete="off"><p id="resultCount"></p></div>
+<p id="noResults" class="hide">পাওয়া যায়নি — অন্য নাম বা নম্বর দিয়ে চেষ্টা করুন।</p>
+<div class="surah-list" id="surahList">
+<div class="surah-row" data-bn="সূচনা" data-tr="al-fatihah" data-num="1"><span class="s-num">১</span><span class="s-ar" dir="rtl" lang="ar">الفاتحة</span><span class="s-name"><a href="https://noryvello.github.io/quran/surah-al-fatiha.html">সূচনা (Al-Fatihah)</a></span><span class="s-meta">মক্কী · ৭ আয়াত</span></div>
+<div class="surah-row" data-bn="বকনা-বাছুর" data-tr="al-baqarah" data-num="2"><span class="s-num">২</span><span class="s-ar" dir="rtl" lang="ar">البقرة</span><span class="s-name"><a href="https://noryvello.github.io/quran/surah-al-baqarah.html">বকনা-বাছুর (Al-Baqarah)</a></span><span class="s-meta">মাদানী · ২৮৬ আয়াত</span></div>
+<div class="surah-row" data-bn="ইমরানের পরিবার" data-tr="ali &#x27;imran" data-num="3"><span class="s-num">৩</span><span class="s-ar" dir="rtl" lang="ar">آل عمران</span><span class="s-name">ইমরানের পরিবার (Ali &#x27;Imran)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ২০০ আয়াত</span></div>
+<div class="surah-row" data-bn="নারী" data-tr="an-nisa" data-num="4"><span class="s-num">৪</span><span class="s-ar" dir="rtl" lang="ar">النساء</span><span class="s-name">নারী (An-Nisa)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ১৭৬ আয়াত</span></div>
+<div class="surah-row" data-bn="খাদ্য পরিবেশিত টেবিল" data-tr="al-ma&#x27;idah" data-num="5"><span class="s-num">৫</span><span class="s-ar" dir="rtl" lang="ar">المائدة</span><span class="s-name">খাদ্য পরিবেশিত টেবিল (Al-Ma&#x27;idah)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ১২০ আয়াত</span></div>
+<div class="surah-row" data-bn="গৃহপালিত পশু" data-tr="al-an&#x27;am" data-num="6"><span class="s-num">৬</span><span class="s-ar" dir="rtl" lang="ar">الأنعام</span><span class="s-name">গৃহপালিত পশু (Al-An&#x27;am)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ১৬৫ আয়াত</span></div>
+<div class="surah-row" data-bn="উচু স্থান" data-tr="al-a&#x27;raf" data-num="7"><span class="s-num">৭</span><span class="s-ar" dir="rtl" lang="ar">الأعراف</span><span class="s-name">উচু স্থান (Al-A&#x27;raf)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ২০৬ আয়াত</span></div>
+<div class="surah-row" data-bn="যুদ্ধ-লব্ধ ধনসম্পদ" data-tr="al-anfal" data-num="8"><span class="s-num">৮</span><span class="s-ar" dir="rtl" lang="ar">الأنفال</span><span class="s-name">যুদ্ধ-লব্ধ ধনসম্পদ (Al-Anfal)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ৭৫ আয়াত</span></div>
+<div class="surah-row" data-bn="অনুশোচনা" data-tr="at-tawbah" data-num="9"><span class="s-num">৯</span><span class="s-ar" dir="rtl" lang="ar">التوبة</span><span class="s-name">অনুশোচনা (At-Tawbah)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ১২৯ আয়াত</span></div>
+<div class="surah-row" data-bn="নবী ইউনুস" data-tr="yunus" data-num="10"><span class="s-num">১০</span><span class="s-ar" dir="rtl" lang="ar">يونس</span><span class="s-name">নবী ইউনুস (Yunus)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ১০৯ আয়াত</span></div>
+<div class="surah-row" data-bn="নবী হুদ" data-tr="hud" data-num="11"><span class="s-num">১১</span><span class="s-ar" dir="rtl" lang="ar">هود</span><span class="s-name">নবী হুদ (Hud)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ১২৩ আয়াত</span></div>
+<div class="surah-row" data-bn="নবী ইউসুফ" data-tr="yusuf" data-num="12"><span class="s-num">১২</span><span class="s-ar" dir="rtl" lang="ar">يوسف</span><span class="s-name">নবী ইউসুফ (Yusuf)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ১১১ আয়াত</span></div>
+<div class="surah-row" data-bn="বজ্রপাত" data-tr="ar-ra&#x27;d" data-num="13"><span class="s-num">১৩</span><span class="s-ar" dir="rtl" lang="ar">الرعد</span><span class="s-name">বজ্রপাত (Ar-Ra&#x27;d)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ৪৩ আয়াত</span></div>
+<div class="surah-row" data-bn="নবী ইবরাহীম" data-tr="ibrahim" data-num="14"><span class="s-num">১৪</span><span class="s-ar" dir="rtl" lang="ar">ابراهيم</span><span class="s-name">নবী ইবরাহীম (Ibrahim)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৫২ আয়াত</span></div>
+<div class="surah-row" data-bn="পাথুরে পাহাড়" data-tr="al-hijr" data-num="15"><span class="s-num">১৫</span><span class="s-ar" dir="rtl" lang="ar">الحجر</span><span class="s-name">পাথুরে পাহাড় (Al-Hijr)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৯৯ আয়াত</span></div>
+<div class="surah-row" data-bn="মৌমাছি" data-tr="an-nahl" data-num="16"><span class="s-num">১৬</span><span class="s-ar" dir="rtl" lang="ar">النحل</span><span class="s-name">মৌমাছি (An-Nahl)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ১২৮ আয়াত</span></div>
+<div class="surah-row" data-bn="ইহুদি জাতি" data-tr="al-isra" data-num="17"><span class="s-num">১৭</span><span class="s-ar" dir="rtl" lang="ar">الإسراء</span><span class="s-name">ইহুদি জাতি (Al-Isra)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ১১১ আয়াত</span></div>
+<div class="surah-row" data-bn="গুহা" data-tr="al-kahf" data-num="18"><span class="s-num">১৮</span><span class="s-ar" dir="rtl" lang="ar">الكهف</span><span class="s-name"><a href="https://noryvello.github.io/quran/surah-al-kahf.html">গুহা (Al-Kahf)</a></span><span class="s-meta">মক্কী · ১১০ আয়াত</span></div>
+<div class="surah-row" data-bn="মারইয়াম (ঈসা নবীর মা)" data-tr="maryam" data-num="19"><span class="s-num">১৯</span><span class="s-ar" dir="rtl" lang="ar">مريم</span><span class="s-name">মারইয়াম (ঈসা নবীর মা) (Maryam)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৯৮ আয়াত</span></div>
+<div class="surah-row" data-bn="ত়া হা" data-tr="taha" data-num="20"><span class="s-num">২০</span><span class="s-ar" dir="rtl" lang="ar">طه</span><span class="s-name">ত়া হা (Taha)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ১৩৫ আয়াত</span></div>
+<div class="surah-row" data-bn="নবীগণ" data-tr="al-anbya" data-num="21"><span class="s-num">২১</span><span class="s-ar" dir="rtl" lang="ar">الأنبياء</span><span class="s-name">নবীগণ (Al-Anbya)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ১১২ আয়াত</span></div>
+<div class="surah-row" data-bn="হ়াজ্জ" data-tr="al-hajj" data-num="22"><span class="s-num">২২</span><span class="s-ar" dir="rtl" lang="ar">الحج</span><span class="s-name">হ়াজ্জ (Al-Hajj)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ৭৮ আয়াত</span></div>
+<div class="surah-row" data-bn="বিশ্বাসী" data-tr="al-mu&#x27;minun" data-num="23"><span class="s-num">২৩</span><span class="s-ar" dir="rtl" lang="ar">المؤمنون</span><span class="s-name">বিশ্বাসী (Al-Mu&#x27;minun)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ১১৮ আয়াত</span></div>
+<div class="surah-row" data-bn="আলো" data-tr="an-nur" data-num="24"><span class="s-num">২৪</span><span class="s-ar" dir="rtl" lang="ar">النور</span><span class="s-name">আলো (An-Nur)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ৬৪ আয়াত</span></div>
+<div class="surah-row" data-bn="মানদণ্ড" data-tr="al-furqan" data-num="25"><span class="s-num">২৫</span><span class="s-ar" dir="rtl" lang="ar">الفرقان</span><span class="s-name">মানদণ্ড (Al-Furqan)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৭৭ আয়াত</span></div>
+<div class="surah-row" data-bn="কবি" data-tr="ash-shu&#x27;ara" data-num="26"><span class="s-num">২৬</span><span class="s-ar" dir="rtl" lang="ar">الشعراء</span><span class="s-name">কবি (Ash-Shu&#x27;ara)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ২২৭ আয়াত</span></div>
+<div class="surah-row" data-bn="পিঁপড়া" data-tr="an-naml" data-num="27"><span class="s-num">২৭</span><span class="s-ar" dir="rtl" lang="ar">النمل</span><span class="s-name">পিঁপড়া (An-Naml)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৯৩ আয়াত</span></div>
+<div class="surah-row" data-bn="কাহিনি" data-tr="al-qasas" data-num="28"><span class="s-num">২৮</span><span class="s-ar" dir="rtl" lang="ar">القصص</span><span class="s-name">কাহিনি (Al-Qasas)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৮৮ আয়াত</span></div>
+<div class="surah-row" data-bn="মাকড়শা" data-tr="al-&#x27;ankabut" data-num="29"><span class="s-num">২৯</span><span class="s-ar" dir="rtl" lang="ar">العنكبوت</span><span class="s-name">মাকড়শা (Al-&#x27;Ankabut)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৬৯ আয়াত</span></div>
+<div class="surah-row" data-bn="রোমান জাতি" data-tr="ar-rum" data-num="30"><span class="s-num">৩০</span><span class="s-ar" dir="rtl" lang="ar">الروم</span><span class="s-name">রোমান জাতি (Ar-Rum)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৬০ আয়াত</span></div>
+<div class="surah-row" data-bn="এক জ্ঞানী ব্যাক্তি" data-tr="luqman" data-num="31"><span class="s-num">৩১</span><span class="s-ar" dir="rtl" lang="ar">لقمان</span><span class="s-name">এক জ্ঞানী ব্যাক্তি (Luqman)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৩৪ আয়াত</span></div>
+<div class="surah-row" data-bn="সিজদা" data-tr="as-sajdah" data-num="32"><span class="s-num">৩২</span><span class="s-ar" dir="rtl" lang="ar">السجدة</span><span class="s-name">সিজদা (As-Sajdah)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৩০ আয়াত</span></div>
+<div class="surah-row" data-bn="জোট" data-tr="al-ahzab" data-num="33"><span class="s-num">৩৩</span><span class="s-ar" dir="rtl" lang="ar">الأحزاب</span><span class="s-name">জোট (Al-Ahzab)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ৭৩ আয়াত</span></div>
+<div class="surah-row" data-bn="রানী সাবা/শেবা" data-tr="saba" data-num="34"><span class="s-num">৩৪</span><span class="s-ar" dir="rtl" lang="ar">سبإ</span><span class="s-name">রানী সাবা/শেবা (Saba)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৫৪ আয়াত</span></div>
+<div class="surah-row" data-bn="আদি স্রষ্টা" data-tr="fatir" data-num="35"><span class="s-num">৩৫</span><span class="s-ar" dir="rtl" lang="ar">فاطر</span><span class="s-name">আদি স্রষ্টা (Fatir)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৪৫ আয়াত</span></div>
+<div class="surah-row" data-bn="ইয়াসীন" data-tr="ya-sin" data-num="36"><span class="s-num">৩৬</span><span class="s-ar" dir="rtl" lang="ar">يس</span><span class="s-name"><a href="https://noryvello.github.io/quran/surah-ya-sin.html">ইয়াসীন (Ya-Sin)</a></span><span class="s-meta">মক্কী · ৮৩ আয়াত</span></div>
+<div class="surah-row" data-bn="সারিবদ্ধভাবে দাঁড়ানো" data-tr="as-saffat" data-num="37"><span class="s-num">৩৭</span><span class="s-ar" dir="rtl" lang="ar">الصافات</span><span class="s-name">সারিবদ্ধভাবে দাঁড়ানো (As-Saffat)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ১৮২ আয়াত</span></div>
+<div class="surah-row" data-bn="আরবি বর্ণ সাদ" data-tr="sad" data-num="38"><span class="s-num">৩৮</span><span class="s-ar" dir="rtl" lang="ar">ص</span><span class="s-name">আরবি বর্ণ সাদ (Sad)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৮৮ আয়াত</span></div>
+<div class="surah-row" data-bn="দলবদ্ধ জনতা" data-tr="az-zumar" data-num="39"><span class="s-num">৩৯</span><span class="s-ar" dir="rtl" lang="ar">الزمر</span><span class="s-name">দলবদ্ধ জনতা (Az-Zumar)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৭৫ আয়াত</span></div>
+<div class="surah-row" data-bn="ক্ষমাকারী" data-tr="ghafir" data-num="40"><span class="s-num">৪০</span><span class="s-ar" dir="rtl" lang="ar">غافر</span><span class="s-name">ক্ষমাকারী (Ghafir)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৮৫ আয়াত</span></div>
+<div class="surah-row" data-bn="সুস্পষ্ট বিবরণ" data-tr="fussilat" data-num="41"><span class="s-num">৪১</span><span class="s-ar" dir="rtl" lang="ar">فصلت</span><span class="s-name">সুস্পষ্ট বিবরণ (Fussilat)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৫৪ আয়াত</span></div>
+<div class="surah-row" data-bn="পরামর্শ" data-tr="ash-shuraa" data-num="42"><span class="s-num">৪২</span><span class="s-ar" dir="rtl" lang="ar">الشورى</span><span class="s-name">পরামর্শ (Ash-Shuraa)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৫৩ আয়াত</span></div>
+<div class="surah-row" data-bn="সোনাদানা" data-tr="az-zukhruf" data-num="43"><span class="s-num">৪৩</span><span class="s-ar" dir="rtl" lang="ar">الزخرف</span><span class="s-name">সোনাদানা (Az-Zukhruf)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৮৯ আয়াত</span></div>
+<div class="surah-row" data-bn="ধোঁয়া" data-tr="ad-dukhan" data-num="44"><span class="s-num">৪৪</span><span class="s-ar" dir="rtl" lang="ar">الدخان</span><span class="s-name">ধোঁয়া (Ad-Dukhan)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৫৯ আয়াত</span></div>
+<div class="surah-row" data-bn="নতজানু" data-tr="al-jathiyah" data-num="45"><span class="s-num">৪৫</span><span class="s-ar" dir="rtl" lang="ar">الجاثية</span><span class="s-name">নতজানু (Al-Jathiyah)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৩৭ আয়াত</span></div>
+<div class="surah-row" data-bn="বালুর পাহাড়" data-tr="al-ahqaf" data-num="46"><span class="s-num">৪৬</span><span class="s-ar" dir="rtl" lang="ar">الأحقاف</span><span class="s-name">বালুর পাহাড় (Al-Ahqaf)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৩৫ আয়াত</span></div>
+<div class="surah-row" data-bn="নবী মুহাম্মদ" data-tr="muhammad" data-num="47"><span class="s-num">৪৭</span><span class="s-ar" dir="rtl" lang="ar">محمد</span><span class="s-name">নবী মুহাম্মদ (Muhammad)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ৩৮ আয়াত</span></div>
+<div class="surah-row" data-bn="বিজয়" data-tr="al-fath" data-num="48"><span class="s-num">৪৮</span><span class="s-ar" dir="rtl" lang="ar">الفتح</span><span class="s-name">বিজয় (Al-Fath)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ২৯ আয়াত</span></div>
+<div class="surah-row" data-bn="আবাস" data-tr="al-hujurat" data-num="49"><span class="s-num">৪৯</span><span class="s-ar" dir="rtl" lang="ar">الحجرات</span><span class="s-name">আবাস (Al-Hujurat)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ১৮ আয়াত</span></div>
+<div class="surah-row" data-bn="কাফ" data-tr="qaf" data-num="50"><span class="s-num">৫০</span><span class="s-ar" dir="rtl" lang="ar">ق</span><span class="s-name">কাফ (Qaf)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৪৫ আয়াত</span></div>
+<div class="surah-row" data-bn="বিক্ষেপকারী বাতাস" data-tr="adh-dhariyat" data-num="51"><span class="s-num">৫১</span><span class="s-ar" dir="rtl" lang="ar">الذاريات</span><span class="s-name">বিক্ষেপকারী বাতাস (Adh-Dhariyat)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৬০ আয়াত</span></div>
+<div class="surah-row" data-bn="পাহাড়" data-tr="at-tur" data-num="52"><span class="s-num">৫২</span><span class="s-ar" dir="rtl" lang="ar">الطور</span><span class="s-name">পাহাড় (At-Tur)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৪৯ আয়াত</span></div>
+<div class="surah-row" data-bn="তারা" data-tr="an-najm" data-num="53"><span class="s-num">৫৩</span><span class="s-ar" dir="rtl" lang="ar">النجم</span><span class="s-name">তারা (An-Najm)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৬২ আয়াত</span></div>
+<div class="surah-row" data-bn="চাঁদ" data-tr="al-qamar" data-num="54"><span class="s-num">৫৪</span><span class="s-ar" dir="rtl" lang="ar">القمر</span><span class="s-name">চাঁদ (Al-Qamar)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৫৫ আয়াত</span></div>
+<div class="surah-row" data-bn="পরম করুণাময়" data-tr="ar-rahman" data-num="55"><span class="s-num">৫৫</span><span class="s-ar" dir="rtl" lang="ar">الرحمن</span><span class="s-name"><a href="https://noryvello.github.io/quran/surah-ar-rahman.html">পরম করুণাময় (Ar-Rahman)</a></span><span class="s-meta">মাদানী · ৭৮ আয়াত</span></div>
+<div class="surah-row" data-bn="নিশ্চিত ঘটনা" data-tr="al-waqi&#x27;ah" data-num="56"><span class="s-num">৫৬</span><span class="s-ar" dir="rtl" lang="ar">الواقعة</span><span class="s-name">নিশ্চিত ঘটনা (Al-Waqi&#x27;ah)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৯৬ আয়াত</span></div>
+<div class="surah-row" data-bn="লোহা" data-tr="al-hadid" data-num="57"><span class="s-num">৫৭</span><span class="s-ar" dir="rtl" lang="ar">الحديد</span><span class="s-name">লোহা (Al-Hadid)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ২৯ আয়াত</span></div>
+<div class="surah-row" data-bn="অনুযোগকারিণী" data-tr="al-mujadila" data-num="58"><span class="s-num">৫৮</span><span class="s-ar" dir="rtl" lang="ar">المجادلة</span><span class="s-name">অনুযোগকারিণী (Al-Mujadila)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ২২ আয়াত</span></div>
+<div class="surah-row" data-bn="সমাবেশ" data-tr="al-hashr" data-num="59"><span class="s-num">৫৯</span><span class="s-ar" dir="rtl" lang="ar">الحشر</span><span class="s-name">সমাবেশ (Al-Hashr)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ২৪ আয়াত</span></div>
+<div class="surah-row" data-bn="নারী, যাকে পরীক্ষা করা হবে" data-tr="al-mumtahanah" data-num="60"><span class="s-num">৬০</span><span class="s-ar" dir="rtl" lang="ar">الممتحنة</span><span class="s-name">নারী, যাকে পরীক্ষা করা হবে (Al-Mumtahanah)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ১৩ আয়াত</span></div>
+<div class="surah-row" data-bn="সারিবদ্ধ সৈন্যদল" data-tr="as-saf" data-num="61"><span class="s-num">৬১</span><span class="s-ar" dir="rtl" lang="ar">الصف</span><span class="s-name">সারিবদ্ধ সৈন্যদল (As-Saf)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ১৪ আয়াত</span></div>
+<div class="surah-row" data-bn="সম্মেলন/শুক্রবার" data-tr="al-jumu&#x27;ah" data-num="62"><span class="s-num">৬২</span><span class="s-ar" dir="rtl" lang="ar">الجمعة</span><span class="s-name">সম্মেলন/শুক্রবার (Al-Jumu&#x27;ah)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ১১ আয়াত</span></div>
+<div class="surah-row" data-bn="ভণ্ড বিশ্বাসী" data-tr="al-munafiqun" data-num="63"><span class="s-num">৬৩</span><span class="s-ar" dir="rtl" lang="ar">المنافقون</span><span class="s-name">ভণ্ড বিশ্বাসী (Al-Munafiqun)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ১১ আয়াত</span></div>
+<div class="surah-row" data-bn="মোহ অপসারণ" data-tr="at-taghabun" data-num="64"><span class="s-num">৬৪</span><span class="s-ar" dir="rtl" lang="ar">التغابن</span><span class="s-name">মোহ অপসারণ (At-Taghabun)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ১৮ আয়াত</span></div>
+<div class="surah-row" data-bn="তালাক" data-tr="at-talaq" data-num="65"><span class="s-num">৬৫</span><span class="s-ar" dir="rtl" lang="ar">الطلاق</span><span class="s-name">তালাক (At-Talaq)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ১২ আয়াত</span></div>
+<div class="surah-row" data-bn="নিষিদ্ধকরণ" data-tr="at-tahrim" data-num="66"><span class="s-num">৬৬</span><span class="s-ar" dir="rtl" lang="ar">التحريم</span><span class="s-name">নিষিদ্ধকরণ (At-Tahrim)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ১২ আয়াত</span></div>
+<div class="surah-row" data-bn="সার্বভৌম কর্তৃত্ব" data-tr="al-mulk" data-num="67"><span class="s-num">৬৭</span><span class="s-ar" dir="rtl" lang="ar">الملك</span><span class="s-name"><a href="https://noryvello.github.io/quran/surah-al-mulk.html">সার্বভৌম কর্তৃত্ব (Al-Mulk)</a></span><span class="s-meta">মক্কী · ৩০ আয়াত</span></div>
+<div class="surah-row" data-bn="কলম" data-tr="al-qalam" data-num="68"><span class="s-num">৬৮</span><span class="s-ar" dir="rtl" lang="ar">القلم</span><span class="s-name">কলম (Al-Qalam)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৫২ আয়াত</span></div>
+<div class="surah-row" data-bn="নিশ্চিত সত্য" data-tr="al-haqqah" data-num="69"><span class="s-num">৬৯</span><span class="s-ar" dir="rtl" lang="ar">الحاقة</span><span class="s-name">নিশ্চিত সত্য (Al-Haqqah)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৫২ আয়াত</span></div>
+<div class="surah-row" data-bn="উন্নয়নের সোপান" data-tr="al-ma&#x27;arij" data-num="70"><span class="s-num">৭০</span><span class="s-ar" dir="rtl" lang="ar">المعارج</span><span class="s-name">উন্নয়নের সোপান (Al-Ma&#x27;arij)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৪৪ আয়াত</span></div>
+<div class="surah-row" data-bn="নবী নূহ" data-tr="nuh" data-num="71"><span class="s-num">৭১</span><span class="s-ar" dir="rtl" lang="ar">نوح</span><span class="s-name">নবী নূহ (Nuh)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ২৮ আয়াত</span></div>
+<div class="surah-row" data-bn="জিন সম্প্রদায়" data-tr="al-jinn" data-num="72"><span class="s-num">৭২</span><span class="s-ar" dir="rtl" lang="ar">الجن</span><span class="s-name">জিন সম্প্রদায় (Al-Jinn)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ২৮ আয়াত</span></div>
+<div class="surah-row" data-bn="বস্ত্রাচ্ছাদনকারী" data-tr="al-muzzammil" data-num="73"><span class="s-num">৭৩</span><span class="s-ar" dir="rtl" lang="ar">المزمل</span><span class="s-name">বস্ত্রাচ্ছাদনকারী (Al-Muzzammil)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ২০ আয়াত</span></div>
+<div class="surah-row" data-bn="পোশাক পরিহিত" data-tr="al-muddaththir" data-num="74"><span class="s-num">৭৪</span><span class="s-ar" dir="rtl" lang="ar">المدثر</span><span class="s-name">পোশাক পরিহিত (Al-Muddaththir)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৫৬ আয়াত</span></div>
+<div class="surah-row" data-bn="পুনরুত্থান" data-tr="al-qiyamah" data-num="75"><span class="s-num">৭৫</span><span class="s-ar" dir="rtl" lang="ar">القيامة</span><span class="s-name">পুনরুত্থান (Al-Qiyamah)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৪০ আয়াত</span></div>
+<div class="surah-row" data-bn="মানবজাতি" data-tr="al-insan" data-num="76"><span class="s-num">৭৬</span><span class="s-ar" dir="rtl" lang="ar">الانسان</span><span class="s-name">মানবজাতি (Al-Insan)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ৩১ আয়াত</span></div>
+<div class="surah-row" data-bn="প্রেরিত পুরুষ" data-tr="al-mursalat" data-num="77"><span class="s-num">৭৭</span><span class="s-ar" dir="rtl" lang="ar">المرسلات</span><span class="s-name">প্রেরিত পুরুষ (Al-Mursalat)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৫০ আয়াত</span></div>
+<div class="surah-row" data-bn="মহাসংবাদ" data-tr="an-naba" data-num="78"><span class="s-num">৭৮</span><span class="s-ar" dir="rtl" lang="ar">النبإ</span><span class="s-name">মহাসংবাদ (An-Naba)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৪০ আয়াত</span></div>
+<div class="surah-row" data-bn="প্রচেষ্টাকারী" data-tr="an-nazi&#x27;at" data-num="79"><span class="s-num">৭৯</span><span class="s-ar" dir="rtl" lang="ar">النازعات</span><span class="s-name">প্রচেষ্টাকারী (An-Nazi&#x27;at)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৪৬ আয়াত</span></div>
+<div class="surah-row" data-bn="সে ভ্রু কুঁচকালো" data-tr="&#x27;abasa" data-num="80"><span class="s-num">৮০</span><span class="s-ar" dir="rtl" lang="ar">عبس</span><span class="s-name">সে ভ্রু কুঁচকালো (&#x27;Abasa)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৪২ আয়াত</span></div>
+<div class="surah-row" data-bn="অন্ধকারাচ্ছন্ন" data-tr="at-takwir" data-num="81"><span class="s-num">৮১</span><span class="s-ar" dir="rtl" lang="ar">التكوير</span><span class="s-name">অন্ধকারাচ্ছন্ন (At-Takwir)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ২৯ আয়াত</span></div>
+<div class="surah-row" data-bn="বিদীর্ণ করা" data-tr="al-infitar" data-num="82"><span class="s-num">৮২</span><span class="s-ar" dir="rtl" lang="ar">الإنفطار</span><span class="s-name">বিদীর্ণ করা (Al-Infitar)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ১৯ আয়াত</span></div>
+<div class="surah-row" data-bn="প্রতারণা করা" data-tr="al-mutaffifin" data-num="83"><span class="s-num">৮৩</span><span class="s-ar" dir="rtl" lang="ar">المطففين</span><span class="s-name">প্রতারণা করা (Al-Mutaffifin)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৩৬ আয়াত</span></div>
+<div class="surah-row" data-bn="খণ্ড-বিখণ্ডকরণ" data-tr="al-inshiqaq" data-num="84"><span class="s-num">৮৪</span><span class="s-ar" dir="rtl" lang="ar">الإنشقاق</span><span class="s-name">খণ্ড-বিখণ্ডকরণ (Al-Inshiqaq)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ২৫ আয়াত</span></div>
+<div class="surah-row" data-bn="নক্ষত্রপুঞ্জ" data-tr="al-buruj" data-num="85"><span class="s-num">৮৫</span><span class="s-ar" dir="rtl" lang="ar">البروج</span><span class="s-name">নক্ষত্রপুঞ্জ (Al-Buruj)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ২২ আয়াত</span></div>
+<div class="surah-row" data-bn="রাতের আগন্তুক" data-tr="at-tariq" data-num="86"><span class="s-num">৮৬</span><span class="s-ar" dir="rtl" lang="ar">الطارق</span><span class="s-name">রাতের আগন্তুক (At-Tariq)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ১৭ আয়াত</span></div>
+<div class="surah-row" data-bn="সর্বোন্নত" data-tr="al-a&#x27;la" data-num="87"><span class="s-num">৮৭</span><span class="s-ar" dir="rtl" lang="ar">الأعلى</span><span class="s-name">সর্বোন্নত (Al-A&#x27;la)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ১৯ আয়াত</span></div>
+<div class="surah-row" data-bn="বিহ্বলকর ঘটনা" data-tr="al-ghashiyah" data-num="88"><span class="s-num">৮৮</span><span class="s-ar" dir="rtl" lang="ar">الغاشية</span><span class="s-name">বিহ্বলকর ঘটনা (Al-Ghashiyah)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ২৬ আয়াত</span></div>
+<div class="surah-row" data-bn="ভোরবেলা" data-tr="al-fajr" data-num="89"><span class="s-num">৮৯</span><span class="s-ar" dir="rtl" lang="ar">الفجر</span><span class="s-name">ভোরবেলা (Al-Fajr)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৩০ আয়াত</span></div>
+<div class="surah-row" data-bn="নগর" data-tr="al-balad" data-num="90"><span class="s-num">৯০</span><span class="s-ar" dir="rtl" lang="ar">البلد</span><span class="s-name">নগর (Al-Balad)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ২০ আয়াত</span></div>
+<div class="surah-row" data-bn="সূর্য" data-tr="ash-shams" data-num="91"><span class="s-num">৯১</span><span class="s-ar" dir="rtl" lang="ar">الشمس</span><span class="s-name">সূর্য (Ash-Shams)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ১৫ আয়াত</span></div>
+<div class="surah-row" data-bn="রাত" data-tr="al-layl" data-num="92"><span class="s-num">৯২</span><span class="s-ar" dir="rtl" lang="ar">الليل</span><span class="s-name">রাত (Al-Layl)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ২১ আয়াত</span></div>
+<div class="surah-row" data-bn="পূর্বাহ্নের সুর্যকিরণ" data-tr="ad-duhaa" data-num="93"><span class="s-num">৯৩</span><span class="s-ar" dir="rtl" lang="ar">الضحى</span><span class="s-name">পূর্বাহ্নের সুর্যকিরণ (Ad-Duhaa)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ১১ আয়াত</span></div>
+<div class="surah-row" data-bn="বক্ষ প্রশস্তকরণ" data-tr="ash-sharh" data-num="94"><span class="s-num">৯৪</span><span class="s-ar" dir="rtl" lang="ar">الشرح</span><span class="s-name">বক্ষ প্রশস্তকরণ (Ash-Sharh)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৮ আয়াত</span></div>
+<div class="surah-row" data-bn="ডুমুর" data-tr="at-tin" data-num="95"><span class="s-num">৯৫</span><span class="s-ar" dir="rtl" lang="ar">التين</span><span class="s-name">ডুমুর (At-Tin)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৮ আয়াত</span></div>
+<div class="surah-row" data-bn="রক্তপিণ্ড" data-tr="al-&#x27;alaq" data-num="96"><span class="s-num">৯৬</span><span class="s-ar" dir="rtl" lang="ar">العلق</span><span class="s-name">রক্তপিণ্ড (Al-&#x27;Alaq)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ১৯ আয়াত</span></div>
+<div class="surah-row" data-bn="মহিমান্বিত" data-tr="al-qadr" data-num="97"><span class="s-num">৯৭</span><span class="s-ar" dir="rtl" lang="ar">القدر</span><span class="s-name">মহিমান্বিত (Al-Qadr)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৫ আয়াত</span></div>
+<div class="surah-row" data-bn="প্রমাণ" data-tr="al-bayyinah" data-num="98"><span class="s-num">৯৮</span><span class="s-ar" dir="rtl" lang="ar">البينة</span><span class="s-name">প্রমাণ (Al-Bayyinah)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ৮ আয়াত</span></div>
+<div class="surah-row" data-bn="ভূমিকম্প" data-tr="az-zalzalah" data-num="99"><span class="s-num">৯৯</span><span class="s-ar" dir="rtl" lang="ar">الزلزلة</span><span class="s-name">ভূমিকম্প (Az-Zalzalah)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ৮ আয়াত</span></div>
+<div class="surah-row" data-bn="অভিযানকারী" data-tr="al-&#x27;adiyat" data-num="100"><span class="s-num">১০০</span><span class="s-ar" dir="rtl" lang="ar">العاديات</span><span class="s-name">অভিযানকারী (Al-&#x27;Adiyat)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ১১ আয়াত</span></div>
+<div class="surah-row" data-bn="মহাসংকট" data-tr="al-qari&#x27;ah" data-num="101"><span class="s-num">১০১</span><span class="s-ar" dir="rtl" lang="ar">القارعة</span><span class="s-name">মহাসংকট (Al-Qari&#x27;ah)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ১১ আয়াত</span></div>
+<div class="surah-row" data-bn="প্রাচুর্যের প্রতিযোগিতা" data-tr="at-takathur" data-num="102"><span class="s-num">১০২</span><span class="s-ar" dir="rtl" lang="ar">التكاثر</span><span class="s-name">প্রাচুর্যের প্রতিযোগিতা (At-Takathur)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৮ আয়াত</span></div>
+<div class="surah-row" data-bn="সময়" data-tr="al-&#x27;asr" data-num="103"><span class="s-num">১০৩</span><span class="s-ar" dir="rtl" lang="ar">العصر</span><span class="s-name">সময় (Al-&#x27;Asr)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৩ আয়াত</span></div>
+<div class="surah-row" data-bn="পরনিন্দাকারী" data-tr="al-humazah" data-num="104"><span class="s-num">১০৪</span><span class="s-ar" dir="rtl" lang="ar">الهمزة</span><span class="s-name">পরনিন্দাকারী (Al-Humazah)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৯ আয়াত</span></div>
+<div class="surah-row" data-bn="হাতি" data-tr="al-fil" data-num="105"><span class="s-num">১০৫</span><span class="s-ar" dir="rtl" lang="ar">الفيل</span><span class="s-name">হাতি (Al-Fil)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৫ আয়াত</span></div>
+<div class="surah-row" data-bn="কুরাইশ গোত্র" data-tr="quraysh" data-num="106"><span class="s-num">১০৬</span><span class="s-ar" dir="rtl" lang="ar">قريش</span><span class="s-name">কুরাইশ গোত্র (Quraysh)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৪ আয়াত</span></div>
+<div class="surah-row" data-bn="সাহায্য সহায়তা" data-tr="al-ma&#x27;un" data-num="107"><span class="s-num">১০৭</span><span class="s-ar" dir="rtl" lang="ar">الماعون</span><span class="s-name">সাহায্য সহায়তা (Al-Ma&#x27;un)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৭ আয়াত</span></div>
+<div class="surah-row" data-bn="কাউসার/প্রাচুর্য" data-tr="al-kawthar" data-num="108"><span class="s-num">১০৮</span><span class="s-ar" dir="rtl" lang="ar">الكوثر</span><span class="s-name">কাউসার/প্রাচুর্য (Al-Kawthar)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৩ আয়াত</span></div>
+<div class="surah-row" data-bn="অবিশ্বাসী" data-tr="al-kafirun" data-num="109"><span class="s-num">১০৯</span><span class="s-ar" dir="rtl" lang="ar">الكافرون</span><span class="s-name">অবিশ্বাসী (Al-Kafirun)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৬ আয়াত</span></div>
+<div class="surah-row" data-bn="সাহায্য" data-tr="an-nasr" data-num="110"><span class="s-num">১১০</span><span class="s-ar" dir="rtl" lang="ar">النصر</span><span class="s-name">সাহায্য (An-Nasr)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মাদানী · ৩ আয়াত</span></div>
+<div class="surah-row" data-bn="খেজুরের পাকানো (রশি)" data-tr="al-masad" data-num="111"><span class="s-num">১১১</span><span class="s-ar" dir="rtl" lang="ar">المسد</span><span class="s-name">খেজুরের পাকানো (রশি) (Al-Masad)<span class="coming">পর্যায়ক্রমে যোগ হচ্ছে</span></span><span class="s-meta">মক্কী · ৫ আয়াত</span></div>
+<div class="surah-row" data-bn="আন্তরিকতা" data-tr="al-ikhlas" data-num="112"><span class="s-num">১১২</span><span class="s-ar" dir="rtl" lang="ar">الإخلاص</span><span class="s-name"><a href="https://noryvello.github.io/quran/surah-al-ikhlas.html">আন্তরিকতা (Al-Ikhlas)</a></span><span class="s-meta">মক্কী · ৪ আয়াত</span></div>
+<div class="surah-row" data-bn="নিশিভোর" data-tr="al-falaq" data-num="113"><span class="s-num">১১৩</span><span class="s-ar" dir="rtl" lang="ar">الفلق</span><span class="s-name"><a href="https://noryvello.github.io/quran/surah-al-falaq.html">নিশিভোর (Al-Falaq)</a></span><span class="s-meta">মক্কী · ৫ আয়াত</span></div>
+<div class="surah-row" data-bn="মানুষ জাতি" data-tr="an-nas" data-num="114"><span class="s-num">১১৪</span><span class="s-ar" dir="rtl" lang="ar">الناس</span><span class="s-name"><a href="https://noryvello.github.io/quran/surah-an-nas.html">মানুষ জাতি (An-Nas)</a></span><span class="s-meta">মক্কী · ৬ আয়াত</span></div>
+</div>
+<script>
+var inp=document.getElementById("surahSearch");var rows=document.querySelectorAll("#surahList .surah-row");var rc=document.getElementById("resultCount");var nr=document.getElementById("noResults");var BN={"০":"0","১":"1","২":"2","৩":"3","৪":"4","৫":"5","৬":"6","৭":"7","৮":"8","৯":"9"};function norm(s){return s.replace(/\u09af\u09bc/g,"\u09df").replace(/ী/g,"ি").replace(/ূ/g,"ু");}function toBn(n){return String(n).replace(/[0-9]/g,function(d){return "০১২৩৪৫৬৭৮৯"[+d];});}function filter(){var q=inp.value.trim().toLowerCase();var qn=q.replace(/[০-৯]/g,function(d){return BN[d];});var qnorm=norm(q);var shown=0;rows.forEach(function(r){var hit=!q||norm(r.dataset.bn).indexOf(qnorm)!==-1||r.dataset.tr.indexOf(q)!==-1||r.dataset.num.indexOf(qn)!==-1;r.classList.toggle("hide",!hit);if(hit)shown++;});rc.textContent=shown===rows.length?"১১৪টি সূরা":toBn(shown)+"টি সূরা পাওয়া গেছে";nr.classList.toggle("hide",shown>0);}inp.addEventListener("input",filter);filter();
+</script>
+<footer>
+  <div class="foot">
+    <a class="logo" href="../"><span class="logo-mark"></span>noryvello</a>
+    <nav><a href="https://noryvello.github.io/about/">About</a><a href="https://noryvello.github.io/contact/">Contact</a><a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a><a href="https://noryvello.github.io/disclaimer/">Disclaimer</a><a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></nav>
+    <small>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></small>
+  </div>
+<p class="note quran-credits">আরবি পাঠ: উসমানি লিপি, The Noble Qur'an Encyclopedia (quranenc.com) থেকে · বাংলা অনুবাদ: মুহিউদ্দীন খান (tanzil.net) · ইংরেজি অনুবাদ: Umm Muhammad — Saheeh International (tanzil.net) · ডেটা: quran-json v3.1.2 (CC-BY-4.0)</p>
+</footer>
+</div>
+<script>
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', function(){ menu.classList.toggle('open'); });
+  menu.addEventListener('click', function(e){ if(e.target.tagName === 'A') menu.classList.remove('open'); });
+</script>
+</body>
+</html>

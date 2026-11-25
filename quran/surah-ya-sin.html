@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark" />
+<title>সূরা ইয়াসীন (Ya-Sin) | Noryvello</title>
+<meta name="description" content="সূরা ইয়াসীন (Ya-Sin) — ৮৩ আয়াত। আরবি পাঠ, বাংলা ও ইংরেজি অনুবাদসহ পড়ুন।">
+<link rel="canonical" href="https://noryvello.github.io/quran/surah-ya-sin.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="সূরা ইয়াসীন (Ya-Sin)">
+<meta property="og:description" content="সূরা ইয়াসীন (Ya-Sin) — ৮৩ আয়াত। আরবি পাঠ, বাংলা ও ইংরেজি অনুবাদসহ পড়ুন।">
+<meta property="og:url" content="https://noryvello.github.io/quran/surah-ya-sin.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --bg:#060f0a; --bg2:#08160e; --panel:#0b1c12; --panel2:#0d2417;
+    --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.06);
+    --text:#f2f5f1; --muted:#9fb3a6; --muted2:#7d9486;
+    --green:#34e89a; --green2:#1fd67f; --green-dark:#0f3d26;
+    --amber:#ffb020;
+    --radius:24px;
+    --wrap:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:"Manrope",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  button,[role="button"]{min-height:2rem}
+  .mono{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px;position:relative;z-index:2}
+
+  /* ---------- background art: diagonal green line + glow, same as reference ---------- */
+  .bg-art{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+  .bg-art::before{content:"";position:absolute;top:-320px;right:-180px;width:760px;height:760px;background:radial-gradient(circle,rgba(28,120,70,.5),transparent 65%)}
+  .bg-art::after{content:"";position:absolute;bottom:-420px;left:-220px;width:700px;height:700px;background:radial-gradient(circle,rgba(20,90,55,.28),transparent 65%)}
+  .diag{position:absolute;top:-140px;right:16%;width:9px;height:1250px;background:linear-gradient(180deg,rgba(52,232,154,.0),rgba(52,232,154,.85) 18%,rgba(52,232,154,.85) 82%,rgba(52,232,154,0));transform:rotate(19deg);transform-origin:top center;box-shadow:0 0 44px rgba(52,232,154,.35);opacity:.75}
+  .diag.thin{right:calc(16% + 22px);width:2px;opacity:.35;height:1100px}
+  .dot{position:absolute;width:5px;height:5px;background:var(--amber);opacity:.75}
+  .star{position:absolute;width:2px;height:2px;border-radius:50%;background:#cfe8d8;opacity:.5}
+
+  /* ---------- pill nav: same size / shape as reference ---------- */
+  .nav-shell{position:sticky;top:12px;z-index:50;padding:12px 24px 0}
+  .nav{max-width:var(--wrap);margin:0 auto;height:62px;display:flex;align-items:center;gap:34px;padding:7px 7px 7px 14px;border-radius:999px;background:rgba(10,26,17,.78);border:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:-.02em;white-space:nowrap}
+  .logo-mark{width:32px;height:32px;border-radius:9px;background:#0e2e1c;border:1px solid rgba(52,232,154,.35);display:grid;place-items:center;flex:none}
+  .logo-mark::after{content:"";width:15px;height:3px;border-radius:99px;background:var(--green)}
+  .nav-links{display:flex;gap:30px;margin-left:8px}
+  .nav-links a{font-size:14.5px;font-weight:600;color:#c6d4c9;padding:10px 2px}
+  .nav-links a:hover{color:#fff}
+  .nav-cta{margin-left:auto;background:linear-gradient(180deg,#46f2a6,#22cf82);color:#04160c;font-weight:800;font-size:14.5px;padding:0 22px;height:46px;display:inline-flex;align-items:center;border-radius:999px;white-space:nowrap;box-shadow:0 8px 24px rgba(34,207,130,.35)}
+  .burger{display:none;margin-left:auto;width:46px;height:46px;border-radius:999px;border:1px solid var(--line);background:transparent;color:#fff;font-size:19px;cursor:pointer}
+  .mobile-menu{display:none;max-width:var(--wrap);margin:8px auto 0;background:rgba(10,26,17,.96);border:1px solid var(--line);border-radius:20px;padding:10px}
+  .mobile-menu a{display:block;padding:13px 14px;font-weight:700;border-radius:12px}
+  .mobile-menu.open{display:block}
+
+  /* ---------- hero: same proportions ---------- */
+  .hero{position:relative;padding:118px 0 84px}
+  .hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:44px;align-items:start}
+  .eyebrow{display:flex;align-items:center;gap:10px;color:var(--green);font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
+  .eyebrow::before{content:"";width:20px;height:2px;background:var(--green);border-radius:99px;flex:none}
+  h1{font-size:clamp(58px,7.6vw,106px);line-height:.98;letter-spacing:-.045em;font-weight:800;margin:26px 0 0}
+  h1 .u{position:relative;display:inline-block}
+  h1 .u::after{content:"";position:absolute;left:2px;right:2px;bottom:2px;height:9px;border-radius:99px;background:var(--green)}
+  .hero-sub{margin:30px 0 0;font-size:19.5px;line-height:1.55;color:#b9c9bd;max-width:560px;font-weight:500}
+  .hero-btns{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:12px;height:54px;padding:0 28px;border-radius:999px;font-weight:800;font-size:15.5px}
+  .btn-green{background:linear-gradient(180deg,#46f2a6,#22cf82);color:#04160c;box-shadow:0 14px 34px rgba(34,207,130,.32)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.22);color:#fff;background:rgba(255,255,255,.03)}
+  .btn .dash{width:18px;height:2.5px;background:currentColor;border-radius:99px;display:inline-block}
+
+  .hero-cards{display:flex;flex-direction:column;gap:18px;padding-top:118px}
+  .stat-card{border-radius:var(--radius);padding:26px 28px 22px;border:1px solid rgba(52,232,154,.28);background:linear-gradient(150deg,#11452a 0%,#0a2717 58%,#081b10 100%);box-shadow:0 24px 50px rgba(0,0,0,.35)}
+  .stat-card .lbl{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;color:var(--green);text-transform:uppercase}
+  .stat-big{font-size:74px;font-weight:800;letter-spacing:-.04em;line-height:1;margin:14px 0 8px}
+  .stat-big .x{color:var(--amber);font-size:52px;vertical-align:top}
+  .stat-card p{margin:0;color:#a9bfae;font-size:14.5px;font-weight:600}
+  .spark{margin-top:20px;width:100%;height:44px;display:block}
+  .live-card{border-radius:var(--radius);padding:22px 24px;border:1px solid var(--line);background:rgba(13,30,20,.82);backdrop-filter:blur(8px)}
+  .live-card .lbl{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;color:var(--green);text-transform:uppercase;display:flex;align-items:center;gap:8px}
+  .live-card .lbl i{width:7px;height:7px;border-radius:50%;background:var(--amber);display:inline-block}
+  .live-card h3{margin:12px 0 14px;font-size:19px;letter-spacing:-.01em}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:#d7e4da;font-weight:700}
+
+  /* ---------- trusted / platforms strips ---------- */
+  .strip{border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);padding:30px 0}
+  .strip .lbl{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.22em;color:var(--muted2);text-transform:uppercase;text-align:center}
+  .brands{display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap;margin-top:20px}
+  .brands span{font-size:21px;font-weight:800;letter-spacing:-.02em;color:rgba(235,244,237,.62);white-space:nowrap}
+  .platforms{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .platforms span{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.06em;padding:9px 16px;border:1px solid var(--line);border-radius:999px;color:#cfe0d3;font-weight:600}
+
+  /* ---------- generic section ---------- */
+  section{padding:92px 0 0}
+  .sec-head{max-width:640px}
+  .sec-head.center{margin:0 auto;text-align:center}
+  .sec-head.center .eyebrow{justify-content:center}
+  .sec-head.center .eyebrow::after{content:"";width:20px;height:2px;background:var(--green);border-radius:99px}
+  h2{font-size:clamp(34px,4.2vw,50px);line-height:1.08;letter-spacing:-.035em;font-weight:800;margin:20px 0 0}
+  .sec-sub{margin:18px 0 0;font-size:17.5px;line-height:1.6;color:var(--muted);font-weight:500}
+
+  /* ---------- why: 5 items, same count as reference ---------- */
+  .why-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+  .why-list{display:flex;flex-direction:column}
+  .why-item{display:flex;gap:18px;padding:24px 4px;border-bottom:1px solid var(--line2)}
+  .why-item:first-child{padding-top:6px}
+  .why-item .n{width:38px;height:38px;flex:none;border-radius:12px;background:var(--panel2);border:1px solid rgba(52,232,154,.25);display:grid;place-items:center;color:var(--green);font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:700}
+  .why-item h3{margin:2px 0 6px;font-size:18.5px;letter-spacing:-.01em}
+  .why-item p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.55}
+
+  /* ---------- services: 10 cards, same count as reference ---------- */
+  .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:46px}
+  .svc{border:1px solid var(--line2);background:linear-gradient(160deg,#0c1f13,#08160d);border-radius:20px;padding:28px;transition:border-color .2s, transform .2s}
+  .svc:hover{border-color:rgba(52,232,154,.4);transform:translateY(-2px)}
+  .svc .tag{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+  .svc h3{margin:14px 0 8px;font-size:23px;letter-spacing:-.02em}
+  .svc p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6;min-height:50px}
+  .svc a{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-weight:800;font-size:14.5px;color:#fff}
+  .svc a i{font-style:normal;color:var(--green)}
+  .full-link{margin-top:22px;border:1px dashed rgba(52,232,154,.35);border-radius:20px;padding:22px 28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .full-link b{font-size:17px}
+  .full-link span{color:var(--muted);font-size:14.5px;display:block;margin-top:3px}
+
+  /* ---------- stats bar: 4 stats, same as reference ---------- */
+  .stats{margin-top:92px;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);padding:44px 0}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:26px}
+  .stat b{font-size:54px;letter-spacing:-.04em;font-weight:800;display:block;line-height:1}
+  .stat b em{font-style:normal;color:var(--green)}
+  .stat span{display:block;margin-top:10px;color:var(--muted);font-size:14.5px;font-weight:600}
+
+  /* ---------- work: 3 projects, same as reference ---------- */
+  .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:46px}
+  .work{border:1px solid var(--line2);border-radius:22px;overflow:hidden;background:var(--panel)}
+  .work.wide{grid-column:1 / -1;display:grid;grid-template-columns:1.05fr .95fr}
+  .work-art{min-height:230px;position:relative;overflow:hidden}
+  .work.wide .work-art{min-height:300px}
+  .art1{background:radial-gradient(600px 300px at 20% 0%,rgba(52,232,154,.4),transparent 60%),linear-gradient(140deg,#123d24,#081a0f)}
+  .art2{background:radial-gradient(500px 260px at 80% 0%,rgba(255,176,32,.32),transparent 60%),linear-gradient(140deg,#2b2410,#12100a)}
+  .art3{background:radial-gradient(500px 260px at 20% 0%,rgba(80,180,255,.3),transparent 60%),linear-gradient(140deg,#12283d,#0a141f)}
+  .work-art .glyph{position:absolute;inset:0;display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-size:13px;letter-spacing:.3em;color:rgba(255,255,255,.55);text-transform:uppercase;text-align:center;padding:20px}
+  .work-art .ring{position:absolute;width:280px;height:280px;border:1.5px solid rgba(255,255,255,.16);border-radius:50%;right:-70px;bottom:-120px}
+  .work-art .ring2{position:absolute;width:180px;height:180px;border:1.5px solid rgba(255,255,255,.12);border-radius:50%;right:-20px;bottom:-70px}
+  .work-body{padding:28px}
+  .work-body .tags{display:flex;gap:8px;flex-wrap:wrap}
+  .work-body h3{margin:16px 0 8px;font-size:27px;letter-spacing:-.02em}
+  .work-body p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6}
+  .metrics{display:flex;gap:30px;margin-top:22px;flex-wrap:wrap}
+  .metrics div b{font-size:25px;letter-spacing:-.02em;display:block}
+  .metrics div span{font-size:12.5px;color:var(--muted2);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+
+  /* ---------- process: 4 steps, same as reference ---------- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:46px;position:relative}
+  .steps::before{content:"";position:absolute;top:27px;left:4%;right:4%;height:2px;background:linear-gradient(90deg,transparent,rgba(52,232,154,.5),rgba(52,232,154,.5),transparent)}
+  .step{padding:0 6px;position:relative}
+  .step .num{width:54px;height:54px;border-radius:50%;background:var(--bg);border:1.5px solid rgba(52,232,154,.55);display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-weight:700;font-size:14px;color:var(--green);position:relative;z-index:1}
+  .step h3{margin:20px 0 8px;font-size:20px}
+  .step p{margin:0;color:var(--muted);font-size:15px;line-height:1.6}
+
+  /* ---------- CTA + footer ---------- */
+  .cta{margin:100px 0 0;border:1px solid rgba(52,232,154,.25);border-radius:28px;padding:64px 40px;text-align:center;background:radial-gradient(700px 320px at 50% -10%,rgba(52,232,154,.22),transparent 65%),linear-gradient(160deg,#0d2718,#08160d);position:relative;overflow:hidden}
+  .cta h2{font-size:clamp(36px,5vw,58px)}
+  .cta p{margin:18px auto 0;color:var(--muted);font-size:17.5px;max-width:520px;line-height:1.6}
+  .cta .btn{margin-top:32px}
+  footer{margin-top:80px;border-top:1px solid var(--line2);padding:38px 0 44px}
+  .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+  .foot nav{display:flex;gap:26px;flex-wrap:wrap}
+  .foot nav a{font-size:14px;font-weight:600;color:var(--muted);padding:8px 0}
+  .foot small{color:var(--muted2);font-size:13px}
+
+  @media (max-width:900px){
+    .diag{right:-30px;opacity:.32}
+    .diag.thin{display:none}
+    .nav-links{display:none}
+    .nav-cta{display:none}
+    .burger{display:grid;place-items:center}
+    .hero{padding:64px 0 56px}
+    .hero-grid{grid-template-columns:1fr}
+    .hero-cards{padding-top:6px}
+    .why-grid{grid-template-columns:1fr;gap:28px}
+    .svc-grid{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:1fr 1fr}
+    .work-grid{grid-template-columns:1fr}
+    .work.wide{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr 1fr;gap:34px 16px}
+    .steps::before{display:none}
+    .brands{justify-content:center}
+    section{padding:64px 0 0}
+    .cta{padding:48px 24px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* =====================================================================
+   Noryvello theme — extension (part 2 of theme.css)
+   Part 1 above is Suraiya's demo CSS, verbatim, byte for byte — the
+   Greenline-style dark premium theme: same tokens, same components,
+   same sizes and proportions.
+   This part adapts those same tokens to the live site's two page types:
+   - body.hub     — the homepage (1120px, sections, cards)
+   - body.content — every article/tool page (760px reading width)
+   Nothing here changes any page's content — only its look. Page-specific
+   rules from a page's own extra <style> block (buttons, countdowns)
+   keep working: they come after this block and only their colours were
+   remapped to these tokens.
+   ===================================================================== */
+
+/* ---------- shared content components (every page) ---------- */
+.answer{background:linear-gradient(160deg,#0c1f13,#08160d);border:1px solid var(--line2);border-radius:20px;padding:18px 20px;font-size:17px;line-height:1.6;margin:16px 0}
+.byline{font-size:14px;color:var(--muted);margin:6px 0 0}
+.calc{background:linear-gradient(160deg,#0c1f13,#08160d);border:1px solid var(--line2);border-radius:20px;padding:20px;margin:16px 0}
+.calc label{display:block;font-weight:600;margin:12px 0 6px;font-size:14.5px}
+.calc input,.calc select,.calc textarea{width:100%;min-height:56px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font-size:16px;background:#08160e;color:var(--text)}
+.calc input:focus,.calc select:focus,.calc textarea:focus{outline:none;border-color:rgba(52,232,154,.55);box-shadow:0 0 0 3px rgba(52,232,154,.18)}
+.calc button,.copy-btn{min-height:56px;padding:14px 20px;font-size:16px;font-weight:800;border:0;border-radius:999px;background:linear-gradient(180deg,#46f2a6,#22cf82);color:#04160c;cursor:pointer;width:100%;margin-top:14px;box-shadow:0 8px 24px rgba(34,207,130,.3)}
+.calc button.secondary,.clear-btn{background:rgba(255,255,255,.04);color:var(--green);border:1px solid rgba(52,232,154,.4);box-shadow:none}
+.calc .out{font-size:20px;font-weight:800;margin-top:16px}
+.calc .steps{font-size:15px;color:var(--muted);margin-top:8px;white-space:pre-line}
+.calc .msg{font-size:15px;margin-top:10px;color:var(--muted)}
+.warn{background:rgba(255,176,32,.07);border:1px solid rgba(255,176,32,.35);border-radius:20px;padding:16px 20px;margin:16px 0;font-size:15.5px;line-height:1.6}
+.faq{background:linear-gradient(160deg,#0c1f13,#08160d);border:1px solid var(--line2);border-radius:20px;padding:18px 20px;margin:12px 0}
+.faq h3{font-size:17.5px;margin-bottom:6px;letter-spacing:-.01em}
+.faq p{color:var(--muted);font-size:15.5px;line-height:1.6}
+.links{margin-top:20px}
+.links a{color:var(--green);font-weight:600}
+.note{font-size:14px;color:var(--muted2)}
+.countdown{font-size:26px;font-weight:800;text-align:center;margin:8px 0}
+code{background:rgba(52,232,154,.12);color:#b7f5d3;padding:1px 6px;border-radius:6px;font-family:"JetBrains Mono",monospace;font-size:.9em}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{border:1px solid var(--line2);padding:10px 12px;text-align:left}
+th{background:var(--panel2);color:var(--green);font-weight:700}
+ol,ul{margin:10px 0 10px 22px}
+li{margin:6px 0}
+li::marker{color:var(--green)}
+input[type="checkbox"]{width:22px;height:22px;accent-color:var(--green2)}
+p a,li a,td a,h2 a,h3 a{color:var(--green)}
+.hide{display:none!important}
+
+/* ---------- content pages (articles + tools) ---------- */
+body.content{--wrap:760px}
+body.content .wrap{padding:24px 16px 48px}
+body.content section{padding:0}
+body.content h1{font-size:clamp(34px,4.6vw,48px);line-height:1.12;letter-spacing:-.035em;margin:18px 0 12px}
+body.content h2{font-size:24px;line-height:1.3;letter-spacing:-.02em;margin:28px 0 10px}
+body.content footer{margin-top:40px;padding:32px 0 0}
+
+/* ---------- hub ---------- */
+body.hub .wrap{padding:0 24px 48px}
+body.hub .hero{background:linear-gradient(150deg,#11452a 0%,#0a2717 58%,#081b10 100%);border:1px solid rgba(52,232,154,.28);border-radius:var(--radius);padding:32px 28px 28px;margin:26px 0 18px;box-shadow:0 24px 50px rgba(0,0,0,.35)}
+body.hub .hero h1{font-size:clamp(34px,4.6vw,48px);line-height:1.1;letter-spacing:-.035em;margin:0 0 10px}
+body.hub .hero .tag{font-size:17.5px;line-height:1.6;color:#b9c9bd;max-width:640px}
+body.hub .hero .chips{margin-top:16px}
+body.hub .search{margin-top:18px}
+body.hub .search label{display:block;font-size:14px;font-weight:600;color:var(--muted);margin-bottom:6px}
+body.hub .search input{width:100%;padding:14px 20px;border:1px solid var(--line);border-radius:999px;font-size:16px;background:rgba(255,255,255,.06);color:var(--text);outline:0}
+body.hub .search input::placeholder{color:var(--muted2)}
+body.hub .search input:focus{border-color:rgba(52,232,154,.55);box-shadow:0 0 0 3px rgba(52,232,154,.18)}
+body.hub #resultCount{font-size:13.5px;color:var(--muted);margin-top:8px;min-height:18px}
+body.hub #noResults{background:linear-gradient(160deg,#0c1f13,#08160d);border:1px solid var(--line2);border-radius:20px;padding:20px;text-align:center;margin-top:22px;font-size:16px;color:var(--muted)}
+body.hub .note{margin-top:22px}
+body.hub .cats{position:sticky;top:86px;z-index:40;display:flex;gap:8px;overflow-x:auto;padding:10px 2px;margin-bottom:6px;scrollbar-width:none;background:rgba(10,26,17,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:999px}
+body.hub .cats::-webkit-scrollbar{display:none}
+body.hub .cats a{white-space:nowrap;text-decoration:none;font-size:14px;font-weight:600;color:#c6d4c9;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+body.hub .cats a:hover{background:rgba(52,232,154,.14);color:#fff;border-color:rgba(52,232,154,.4)}
+body.hub section.toolsec{padding:0;margin-top:28px;scroll-margin-top:160px}
+body.hub #faqsec{padding:0;margin-top:40px;scroll-margin-top:160px}
+body.hub section.toolsec h2,body.hub #faqsec h2{font-size:26px;line-height:1.25;letter-spacing:-.02em;margin:0 0 4px}
+body.hub .cnt{display:inline-block;vertical-align:middle;background:rgba(52,232,154,.14);color:var(--green);border-radius:999px;font-size:12.5px;font-weight:700;padding:2px 9px;margin-left:8px}
+body.hub .secdesc{font-size:14.5px;color:var(--muted);margin-bottom:12px}
+body.hub .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+body.hub .card{background:linear-gradient(160deg,#0c1f13,#08160d);border:1px solid var(--line2);border-top:3px solid rgba(52,232,154,.45);border-radius:20px;padding:16px;transition:border-color .2s,transform .2s}
+body.hub .card:hover{transform:translateY(-2px);border-color:rgba(52,232,154,.4);border-top-color:var(--green)}
+body.hub .card h3{font-size:17px;line-height:1.35}
+body.hub .card h3 a{color:#fff;text-decoration:none}
+body.hub .card h3 a:hover{color:var(--green)}
+body.hub .card p{font-size:14.5px;color:var(--muted);margin-top:5px}
+body.hub footer{margin-top:48px;padding:32px 0 0}
+
+</style>
+<style>
+.byline{font-size:14px;color:var(--muted);margin:6px 0 0}
+.surah-arabic{font-family:'Amiri','Scheherazade New','Noto Naskh Arabic',serif;font-size:.62em;line-height:1.5;display:block;margin-top:12px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0}
+.facts div{background:linear-gradient(160deg,#0c1f13,#08160d);border:1px solid var(--line2);border-radius:16px;padding:14px 16px;text-align:center}
+.facts span{display:block;font-size:13px;color:var(--muted);font-weight:600}
+.facts b{display:block;font-size:19px;margin-top:4px}
+.lang-toggle{display:flex;gap:10px;margin:20px 0 6px}
+.lang-toggle button{min-height:48px;padding:10px 26px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);font-size:15px;font-weight:700;cursor:pointer}
+.lang-toggle button.active{background:linear-gradient(180deg,#46f2a6,#22cf82);color:#04160c;border-color:transparent}
+.verse{border:1px solid var(--line2);border-radius:20px;padding:18px 20px;margin:14px 0;background:linear-gradient(160deg,#0c1f13,#08160d)}
+.verse-no{font-family:"JetBrains Mono",monospace;color:var(--green);font-size:13px;font-weight:700}
+.arabic{font-family:'Amiri','Scheherazade New','Noto Naskh Arabic',serif;font-size:30px;line-height:2;direction:rtl;text-align:right;margin:10px 0}
+.bn-trans{font-size:16.5px;line-height:1.7;color:var(--text);margin:8px 0 0}
+.en-trans{display:none;font-size:15.5px;line-height:1.6;color:var(--muted);margin:8px 0 0}
+.verses.show-en .en-trans{display:block}
+.verses.show-en .bn-trans{display:none}
+.gold-card{border:2px solid var(--amber);background:linear-gradient(160deg,rgba(255,176,32,.16),rgba(255,176,32,.05))}
+.kursi-intro{background:rgba(255,176,32,.07);border:1px solid rgba(255,176,32,.35);border-radius:20px;padding:16px 20px;margin:22px 0 0}
+.kursi-intro h2{margin:0 0 8px}
+.kursi-link{margin-top:14px}
+.prevnext{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:28px}
+.prevnext a{color:var(--green);font-weight:700}
+.quran-credits{margin-top:18px;line-height:1.7}
+.surah-list{margin-top:18px}
+.surah-row{display:grid;grid-template-columns:44px 1fr 1.4fr 110px;gap:10px;align-items:center;border:1px solid var(--line2);border-radius:14px;padding:12px 14px;margin:8px 0;background:linear-gradient(160deg,#0c1f13,#08160d)}
+.surah-row .s-num{font-family:"JetBrains Mono",monospace;color:var(--green);font-weight:700}
+.surah-row .s-ar{font-family:'Amiri','Scheherazade New','Noto Naskh Arabic',serif;font-size:22px;direction:rtl;text-align:right}
+.surah-row .s-name a{color:#fff;font-weight:700}
+.surah-row .s-name a:hover{color:var(--green)}
+.surah-row .s-meta{font-size:13.5px;color:var(--muted);text-align:right}
+.surah-row .coming{display:block;font-size:12.5px;color:var(--amber);font-weight:600}
+@media (max-width:640px){
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .surah-row{grid-template-columns:36px 1fr 1.2fr;gap:8px}
+  .surah-row .s-meta{grid-column:1 / -1;text-align:left}
+  .arabic{font-size:26px}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "সূরা ইয়াসীন কত নম্বর সূরা এবং এতে কয়টি আয়াত আছে?", "acceptedAnswer": {"@type": "Answer", "text": "সূরা ইয়াসীন কুরআনের ৩৬ নম্বর সূরা। এটি মক্কায় অবতীর্ণ হয়েছে এবং এতে মোট ৮৩টি আয়াত রয়েছে।"}}, {"@type": "Question", "name": "সূরা ইয়াসীনের মূল বিষয় কী?", "acceptedAnswer": {"@type": "Answer", "text": "এই সূরার মূল বিষয় হলো কুরআনের সত্যতা ও নবুওয়তের প্রমাণ, পুনরুত্থান ও পরকালের জীবন, এবং সৃষ্টিজগতের নিদর্শনসমূহ। সূরাটি শুরু হয়েছে কুরআনের শপথ দিয়ে।"}}, {"@type": "Question", "name": "সূরা ইয়াসীনকে কি সত্যিই 'কুরআনের হৃদয়' বলা হয়েছে?", "acceptedAnswer": {"@type": "Answer", "text": "এই কথাটি একটি প্রচলিত বর্ণনার ভিত্তিতে বলা হয়ে থাকে, তবে আলেমগণ সেই বর্ণনাটিকে দুর্বল (জয়িফ) বলে মত দিয়েছেন। তাই এটিকে প্রতিষ্ঠিত ফজিলত হিসেবে ধরা যাবে না। সূরাটির গুরুত্ব এর বিষয়বস্তুতে — তাওহিদ, রিসালাত ও আখিরাত।"}}, {"@type": "Question", "name": "সূরা ইয়াসীনে কোন জনপদের কাহিনি বলা হয়েছে?", "acceptedAnswer": {"@type": "Answer", "text": "সূরায় একটি জনপদের কাহিনি বর্ণিত হয়েছে, যেখানে রাসূলদের পাঠানো হয়েছিল। অধিকাংশ মানুষ তাঁদের প্রত্যাখ্যান করলেও একজন ব্যক্তি দূর থেকে ছুটে এসে নিজের জাতিকে ঈমানের আহ্বান জানিয়েছিলেন।"}}]}</script>
+</head>
+<body class="content">
+
+<div class="bg-art" aria-hidden="true">
+  <div class="diag"></div><div class="diag thin"></div>
+  <span class="dot" style="top:120px;left:52%"></span>
+  <span class="dot" style="top:330px;right:12%"></span>
+  <span class="dot" style="top:520px;right:22%"></span>
+  <span class="star" style="top:180px;left:12%"></span>
+  <span class="star" style="top:420px;left:6%"></span>
+  <span class="star" style="top:260px;right:30%"></span>
+  <span class="star" style="top:640px;left:20%"></span>
+</div>
+
+<div class="nav-shell">
+  <header class="nav">
+    <a class="logo" href="../"><span class="logo-mark"></span>noryvello</a>
+    <nav class="nav-links">
+      <a href="../#calculators">Tools</a>
+      <a href="../#everyday-guides-checklists">Guides</a>
+      <a href="../#ai-guides">AI Guides</a>
+      <a href="../#new-guides">New</a>
+    </nav>
+    <a class="nav-cta" href="../#calculators">Explore tools</a>
+    <button class="burger" id="burger" aria-label="Open menu">☰</button>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../#calculators">Tools</a><a href="../#everyday-guides-checklists">Guides</a><a href="../#ai-guides">AI Guides</a><a href="../#new-guides">New</a><a href="../#calculators">Explore tools</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+<h1>সূরা ইয়াসীন (Ya-Sin)<span class="surah-arabic" dir="rtl" lang="ar">يس</span></h1>
+<p class="byline">সূরা ৩৬ · মক্কী · ৮৩ আয়াত · পারা ২২–২৩</p>
+<p>সূরা ইয়াসীন পবিত্র কুরআনের ছত্রিশতম সূরা। এটি মক্কায় অবতীর্ণ হয়েছে এবং এতে মোট তিরাশিটি আয়াত রয়েছে। সূরাটি শুরু হয়েছে বিচ্ছিন্ন দুটি অক্ষর — ইয়া ও সীন — দিয়ে, যার প্রকৃত অর্থ আল্লাহ ছাড়া কেউ জানে না। এরপরই আল্লাহ প্রজ্ঞাময় কুরআনের শপথ করে ঘোষণা করেছেন যে, মুহাম্মদ (সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম) সত্যিই রাসূলদের একজন এবং সরল পথে প্রতিষ্ঠিত। মক্কার যুগে, যখন কুরাইশরা নবিজির রিসালাতকে অস্বীকার করছিল, তখন এই সূরা রিসালাতের সত্যতা ও পরকালের বাস্তবতার ওপর জোরালো প্রমাণ উপস্থাপন করেছে।</p>
+<p>এই সূরার মূল বিষয়গুলোর মধ্যে রয়েছে কুরআনের সত্যতা ও নবুওয়তের প্রমাণ, পুনরুত্থান ও পরকালের জীবন, এবং সৃষ্টিজগতের নিদর্শনসমূহ। সূরায় একটি জনপদের কাহিনি বর্ণিত হয়েছে — যেখানে রাসূলদের পাঠানো হয়েছিল, অধিকাংশ মানুষ তাঁদের প্রত্যাখ্যান করেছিল, কিন্তু একজন ব্যক্তি দূর থেকে ছুটে এসে নিজের জাতিকে ঈমানের আহ্বান জানিয়েছিলেন এবং শহিদ হয়েছিলেন। এই ঘটনা সত্যের পক্ষে দাঁড়ানোর সাহস ও একনিষ্ঠতার উজ্জ্বল দৃষ্টান্ত।</p>
+<p>পরকাল সম্পর্কে সূরাটি অত্যন্ত স্পষ্ট ও শক্তিশালী ভাষায় কথা বলেছে। মৃত্যুর পর মানুষকে আবার জীবিত করা হবে, প্রত্যেকের আমলের হিসাব নেওয়া হবে — এই সত্যটি বিভিন্ন যুক্তি ও দৃষ্টান্ত দিয়ে বোঝানো হয়েছে। শুকনো মৃত জমি বৃষ্টিতে কীভাবে জীবিত হয়ে ওঠে, মানুষকে এক ফোঁটা শুক্র থেকে কীভাবে সৃষ্টি করা হয়েছে — এসব নিদর্শন দেখিয়ে বলা হয়েছে, যিনি প্রথমবার সৃষ্টি করেছেন, তিনি পুনরায় জীবিত করতেও সক্ষম। সূরার শেষাংশে আল্লাহর অসীম ক্ষমতার কথা স্মরণ করিয়ে দেওয়া হয়েছে: তিনি যখন কোনো কিছু সৃষ্টির ইচ্ছা করেন, তখন কেবল বলেন &#x27;হও&#x27;, আর তা হয়ে যায়।</p>
+<p>সৃষ্টিজগতের নিদর্শন নিয়েও এই সূরায় গভীরভাবে চিন্তা করার আহ্বান জানানো হয়েছে। সূর্য ও চাঁদ নিজ নিজ কক্ষপথে চলছে, রাত ও দিন একে অপরের পর আসছে — এসবের মধ্যে রয়েছে আল্লাহর একত্ব ও প্রজ্ঞার প্রমাণ। মৃত জমি থেকে ফসল ফলানো, নানা জাতের ফল ও জোড়ায় জোড়ায় সৃষ্টি, সাগরে চলমান নৌকা — এসব নিদর্শনও সূরায় উল্লেখ করা হয়েছে, যাতে মানুষ বুঝতে পারে যে, এই সবকিছুর পেছনে এক মহান স্রষ্টার হাত রয়েছে। যে সত্তা এই মহাবিশ্বকে এত নিখুঁতভাবে পরিচালনা করেন, তিনিই একমাত্র ইবাদতের যোগ্য। এই সূরা মানুষকে তার চারপাশের জগতের দিকে তাকিয়ে আল্লাহকে চেনার আহ্বান জানায়।</p>
+<p>সূরা ইয়াসীন সম্পর্কে একটি প্রসিদ্ধ কথা প্রচলিত আছে — একে &#x27;কুরআনের হৃদয়&#x27; বলা হয়। তবে এ বিষয়ে স্পষ্ট করে দেওয়া ভালো যে, এই কথাটি যে বর্ণনার ভিত্তিতে বলা হয়, আলেমগণ সেই বর্ণনাটিকে দুর্বল (জয়িফ) বলে মত দিয়েছেন। তাই এটিকে প্রতিষ্ঠিত ফজিলত হিসেবে ধরা যাবে না। তবু সূরাটির মর্যাদা ও গুরুত্ব নিজের জায়গায় অটুট — কারণ এর বিষয়বস্তু ঈমানের মূল ভিত্তি: তাওহিদ, রিসালাত ও আখিরাত। এই পাতায় সূরাটির সম্পূর্ণ আরবি পাঠ, বাংলা অনুবাদ এবং ইংরেজি অনুবাদ দেওয়া হয়েছে। আয়াতগুলো ধীরে ধীরে পড়ুন, অর্থ নিয়ে চিন্তা করুন এবং পরকালের প্রস্তুতির কথা স্মরণে রাখুন।</p>
+<div class="facts"><div><span>সূরা নম্বর</span><b>৩৬</b></div><div><span>অবতীর্ণ</span><b>মক্কী</b></div><div><span>আয়াত</span><b>৮৩</b></div><div><span>পারা</span><b>২২–২৩</b></div></div>
+<h2>আয়াতসমূহ</h2>
+<div class="lang-toggle"><button id="btnBn" class="active" type="button">বাংলা</button><button id="btnEn" type="button">English</button></div>
+<div class="verses" id="verses">
+<div class="verse" id="v1">
+<div class="verse-no">আয়াত ১</div>
+<p class="arabic" dir="rtl" lang="ar">يسٓ</p>
+<p class="bn-trans">ইয়া-সীন</p>
+<p class="en-trans">Ya, Seen</p>
+</div>
+<div class="verse" id="v2">
+<div class="verse-no">আয়াত ২</div>
+<p class="arabic" dir="rtl" lang="ar">وَٱلۡقُرۡءَانِ ٱلۡحَكِيمِ</p>
+<p class="bn-trans">প্রজ্ঞাময় কোরআনের কসম।</p>
+<p class="en-trans">By the wise Qur&#x27;an</p>
+</div>
+<div class="verse" id="v3">
+<div class="verse-no">আয়াত ৩</div>
+<p class="arabic" dir="rtl" lang="ar">إِنَّكَ لَمِنَ ٱلۡمُرۡسَلِينَ</p>
+<p class="bn-trans">নিশ্চয় আপনি প্রেরিত রসূলগণের একজন।</p>
+<p class="en-trans">Indeed you, [O Muhammad], are from among the messengers</p>
+</div>
+<div class="verse" id="v4">
+<div class="verse-no">আয়াত ৪</div>
+<p class="arabic" dir="rtl" lang="ar">عَلَىٰ صِرَٰطٖ مُّسۡتَقِيمٖ</p>
+<p class="bn-trans">সরল পথে প্রতিষ্ঠিত।</p>
+<p class="en-trans">On a straight path</p>
+</div>
+<div class="verse" id="v5">
+<div class="verse-no">আয়াত ৫</div>
+<p class="arabic" dir="rtl" lang="ar">تَنزِيلَ ٱلۡعَزِيزِ ٱلرَّحِيمِ</p>
+<p class="bn-trans">কোরআন পরাক্রমশালী পরম দয়ালু আল্লাহর তরফ থেকে অবতীর্ণ</p>
+<p class="en-trans">[This is] a revelation of the Exalted in Might, the Merciful</p>
+</div>
+<div class="verse" id="v6">
+<div class="verse-no">আয়াত ৬</div>
+<p class="arabic" dir="rtl" lang="ar">لِتُنذِرَ قَوۡمٗا مَّآ أُنذِرَ ءَابَآؤُهُمۡ فَهُمۡ غَٰفِلُونَ</p>
+<p class="bn-trans">যাতে আপনি এমন এক জাতিকে সতর্ক করেন, যাদের পূর্ব পুরুষগণকেও সতর্ক করা হয়নি। ফলে তারা গাফেল।</p>
+<p class="en-trans">That you may warn a people whose forefathers were not warned, so they are unaware</p>
+</div>
+<div class="verse" id="v7">
+<div class="verse-no">আয়াত ৭</div>
+<p class="arabic" dir="rtl" lang="ar">لَقَدۡ حَقَّ ٱلۡقَوۡلُ عَلَىٰٓ أَكۡثَرِهِمۡ فَهُمۡ لَا يُؤۡمِنُونَ</p>
+<p class="bn-trans">তাদের অধিকাংশের জন্যে শাস্তির বিষয় অবধারিত হয়েছে। সুতরাং তারা বিশ্বাস স্থাপন করবে না।</p>
+<p class="en-trans">Already the word has come into effect upon most of them, so they do not believe</p>
+</div>
+<div class="verse" id="v8">
+<div class="verse-no">আয়াত ৮</div>
+<p class="arabic" dir="rtl" lang="ar">إِنَّا جَعَلۡنَا فِيٓ أَعۡنَٰقِهِمۡ أَغۡلَٰلٗا فَهِيَ إِلَى ٱلۡأَذۡقَانِ فَهُم مُّقۡمَحُونَ</p>
+<p class="bn-trans">আমি তাদের গর্দানে চিবুক পর্যন্ত বেড়ী পরিয়েছি। ফলে তাদের মস্তক উর্দ্ধমুখী হয়ে গেছে।</p>
+<p class="en-trans">Indeed, We have put shackles on their necks, and they are to their chins, so they are with heads [kept] aloft</p>
+</div>
+<div class="verse" id="v9">
+<div class="verse-no">আয়াত ৯</div>
+<p class="arabic" dir="rtl" lang="ar">وَجَعَلۡنَا مِنۢ بَيۡنِ أَيۡدِيهِمۡ سَدّٗا وَمِنۡ خَلۡفِهِمۡ سَدّٗا فَأَغۡشَيۡنَٰهُمۡ فَهُمۡ لَا يُبۡصِرُونَ</p>
+<p class="bn-trans">আমি তাদের সামনে ও পিছনে প্রাচীর স্থাপন করেছি, অতঃপর তাদেরকে আবৃত করে দিয়েছি, ফলে তারা দেখে না।</p>
+<p class="en-trans">And We have put before them a barrier and behind them a barrier and covered them, so they do not see</p>
+</div>
+<div class="verse" id="v10">
+<div class="verse-no">আয়াত ১০</div>
+<p class="arabic" dir="rtl" lang="ar">وَسَوَآءٌ عَلَيۡهِمۡ ءَأَنذَرۡتَهُمۡ أَمۡ لَمۡ تُنذِرۡهُمۡ لَا يُؤۡمِنُونَ</p>
+<p class="bn-trans">আপনি তাদেরকে সতর্ক করুন বা না করুন, তাদের পক্ষে দুয়েই সমান; তারা বিশ্বাস স্থাপন করবে না।</p>
+<p class="en-trans">And it is all the same for them whether you warn them or do not warn them - they will not believe</p>
+</div>
+<div class="verse" id="v11">
+<div class="verse-no">আয়াত ১১</div>
+<p class="arabic" dir="rtl" lang="ar">إِنَّمَا تُنذِرُ مَنِ ٱتَّبَعَ ٱلذِّكۡرَ وَخَشِيَ ٱلرَّحۡمَٰنَ بِٱلۡغَيۡبِۖ فَبَشِّرۡهُ بِمَغۡفِرَةٖ وَأَجۡرٖ كَرِيمٍ</p>
+<p class="bn-trans">আপনি কেবল তাদেরকেই সতর্ক করতে পারেন, যারা উপদেশ অনুসরণ করে এবং দয়াময় আল্লাহকে না দেখে ভয় করে। অতএব আপনি তাদেরকে সুসংবাদ দিয়ে দিন ক্ষমা ও সম্মানজনক পুরস্কারের।</p>
+<p class="en-trans">You can only warn one who follows the message and fears the Most Merciful unseen. So give him good tidings of forgiveness and noble reward</p>
+</div>
+<div class="verse" id="v12">
+<div class="verse-no">আয়াত ১২</div>
+<p class="arabic" dir="rtl" lang="ar">إِنَّا نَحۡنُ نُحۡيِ ٱلۡمَوۡتَىٰ وَنَكۡتُبُ مَا قَدَّمُواْ وَءَاثَٰرَهُمۡۚ وَكُلَّ شَيۡءٍ أَحۡصَيۡنَٰهُ فِيٓ إِمَامٖ مُّبِينٖ</p>
+<p class="bn-trans">আমিই মৃতদেরকে জীবিত করি এবং তাদের কর্ম ও কীর্তিসমূহ লিপিবদ্ধ করি। আমি প্রত্যেক বস্তু স্পষ্ট কিতাবে সংরক্ষিত রেখেছি।</p>
+<p class="en-trans">Indeed, it is We who bring the dead to life and record what they have put forth and what they left behind, and all things We have enumerated in a clear register</p>
+</div>
+<div class="verse" id="v13">
+<div class="verse-no">আয়াত ১৩</div>
+<p class="arabic" dir="rtl" lang="ar">وَٱضۡرِبۡ لَهُم مَّثَلًا أَصۡحَٰبَ ٱلۡقَرۡيَةِ إِذۡ جَآءَهَا ٱلۡمُرۡسَلُونَ</p>
+<p class="bn-trans">আপনি তাদের কাছে সে জনপদের অধিবাসীদের দৃষ্টান্ত বর্ণনা করুন, যখন সেখানে রসূল আগমন করেছিলেন।</p>
+<p class="en-trans">And present to them an example: the people of the city, when the messengers came to it</p>
+</div>
+<div class="verse" id="v14">
+<div class="verse-no">আয়াত ১৪</div>
+<p class="arabic" dir="rtl" lang="ar">إِذۡ أَرۡسَلۡنَآ إِلَيۡهِمُ ٱثۡنَيۡنِ فَكَذَّبُوهُمَا فَعَزَّزۡنَا بِثَالِثٖ فَقَالُوٓاْ إِنَّآ إِلَيۡكُم مُّرۡسَلُونَ</p>
+<p class="bn-trans">আমি তাদের নিকট দুজন রসূল প্রেরণ করেছিলাম, অতঃপর ওরা তাদেরকে মিথ্যা প্রতিপন্ন করল। তখন আমি তাদেরকে শক্তিশালী করলাম তৃতীয় একজনের মাধ্যমে। তারা সবাই বলল, আমরা তোমাদের প্রতি প্রেরিত হয়েছি।</p>
+<p class="en-trans">When We sent to them two but they denied them, so We strengthened them with a third, and they said, &quot;Indeed, we are messengers to you</p>
+</div>
+<div class="verse" id="v15">
+<div class="verse-no">আয়াত ১৫</div>
+<p class="arabic" dir="rtl" lang="ar">قَالُواْ مَآ أَنتُمۡ إِلَّا بَشَرٞ مِّثۡلُنَا وَمَآ أَنزَلَ ٱلرَّحۡمَٰنُ مِن شَيۡءٍ إِنۡ أَنتُمۡ إِلَّا تَكۡذِبُونَ</p>
+<p class="bn-trans">তারা বলল, তোমরা তো আমাদের মতই মানুষ, রহমান আল্লাহ কিছুই নাযিল করেননি। তোমরা কেবল মিথ্যাই বলে যাচ্ছ।</p>
+<p class="en-trans">They said, &quot;You are not but human beings like us, and the Most Merciful has not revealed a thing. You are only telling lies</p>
+</div>
+<div class="verse" id="v16">
+<div class="verse-no">আয়াত ১৬</div>
+<p class="arabic" dir="rtl" lang="ar">قَالُواْ رَبُّنَا يَعۡلَمُ إِنَّآ إِلَيۡكُمۡ لَمُرۡسَلُونَ</p>
+<p class="bn-trans">রাসূলগণ বলল, আমাদের পরওয়ারদেগার জানেন, আমরা অবশ্যই তোমাদের প্রতি প্রেরিত হয়েছি।</p>
+<p class="en-trans">They said, &quot;Our Lord knows that we are messengers to you</p>
+</div>
+<div class="verse" id="v17">
+<div class="verse-no">আয়াত ১৭</div>
+<p class="arabic" dir="rtl" lang="ar">وَمَا عَلَيۡنَآ إِلَّا ٱلۡبَلَٰغُ ٱلۡمُبِينُ</p>
+<p class="bn-trans">পরিস্কারভাবে আল্লাহর বাণী পৌছে দেয়াই আমাদের দায়িত্ব।</p>
+<p class="en-trans">And we are not responsible except for clear notification</p>
+</div>
+<div class="verse" id="v18">
+<div class="verse-no">আয়াত ১৮</div>
+<p class="arabic" dir="rtl" lang="ar">قَالُوٓاْ إِنَّا تَطَيَّرۡنَا بِكُمۡۖ لَئِن لَّمۡ تَنتَهُواْ لَنَرۡجُمَنَّكُمۡ وَلَيَمَسَّنَّكُم مِّنَّا عَذَابٌ أَلِيمٞ</p>
+<p class="bn-trans">তারা বলল, আমরা তোমাদেরকে অশুভ-অকল্যাণকর দেখছি। যদি তোমরা বিরত না হও, তবে অবশ্যই তোমাদেরকে প্রস্তর বর্ষণে হত্যা করব এবং আমাদের পক্ষ থেকে তোমাদেরকে যন্ত্রনাদায়ক শাস্তি স্পর্শ করবে।</p>
+<p class="en-trans">They said, &quot;Indeed, we consider you a bad omen. If you do not desist, we will surely stone you, and there will surely touch you, from us, a painful punishment</p>
+</div>
+<div class="verse" id="v19">
+<div class="verse-no">আয়াত ১৯</div>
+<p class="arabic" dir="rtl" lang="ar">قَالُواْ طَـٰٓئِرُكُم مَّعَكُمۡ أَئِن ذُكِّرۡتُمۚ بَلۡ أَنتُمۡ قَوۡمٞ مُّسۡرِفُونَ</p>
+<p class="bn-trans">রসূলগণ বলল, তোমাদের অকল্যাণ তোমাদের সাথেই! এটা কি এজন্যে যে, আমরা তোমাদেরকে সদুপদেশ দিয়েছি? বস্তুতঃ তোমরা সীমা লংঘনকারী সম্প্রদায় বৈ নও।</p>
+<p class="en-trans">They said, &quot;Your omen is with yourselves. Is it because you were reminded? Rather, you are a transgressing people</p>
+</div>
+<div class="verse" id="v20">
+<div class="verse-no">আয়াত ২০</div>
+<p class="arabic" dir="rtl" lang="ar">وَجَآءَ مِنۡ أَقۡصَا ٱلۡمَدِينَةِ رَجُلٞ يَسۡعَىٰ قَالَ يَٰقَوۡمِ ٱتَّبِعُواْ ٱلۡمُرۡسَلِينَ</p>
+<p class="bn-trans">অতঃপর শহরের প্রান্তভাগ থেকে এক ব্যক্তি দৌড়ে এল। সে বলল, হে আমার সম্প্রদায় তোমরা রসূলগণের অনুসরণ কর।</p>
+<p class="en-trans">And there came from the farthest end of the city a man, running. He said, &quot;O my people, follow the messengers</p>
+</div>
+<div class="verse" id="v21">
+<div class="verse-no">আয়াত ২১</div>
+<p class="arabic" dir="rtl" lang="ar">ٱتَّبِعُواْ مَن لَّا يَسۡـَٔلُكُمۡ أَجۡرٗا وَهُم مُّهۡتَدُونَ</p>
+<p class="bn-trans">অনুসরণ কর তাদের, যারা তোমাদের কাছে কোন বিনিময় কামনা করে না, অথচ তারা সুপথ প্রাপ্ত।</p>
+<p class="en-trans">Follow those who do not ask of you [any] payment, and they are [rightly] guided</p>
+</div>
+<div class="verse" id="v22">
+<div class="verse-no">আয়াত ২২</div>
+<p class="arabic" dir="rtl" lang="ar">وَمَالِيَ لَآ أَعۡبُدُ ٱلَّذِي فَطَرَنِي وَإِلَيۡهِ تُرۡجَعُونَ</p>
+<p class="bn-trans">আমার কি হল যে, যিনি আমাকে সৃষ্টি করেছেন এবং যার কাছে তোমরা প্রত্যাবর্তিত হবে, আমি তাঁর এবাদত করব না</p>
+<p class="en-trans">And why should I not worship He who created me and to whom you will be returned</p>
+</div>
+<div class="verse" id="v23">
+<div class="verse-no">আয়াত ২৩</div>
+<p class="arabic" dir="rtl" lang="ar">ءَأَتَّخِذُ مِن دُونِهِۦٓ ءَالِهَةً إِن يُرِدۡنِ ٱلرَّحۡمَٰنُ بِضُرّٖ لَّا تُغۡنِ عَنِّي شَفَٰعَتُهُمۡ شَيۡـٔٗا وَلَا يُنقِذُونِ</p>
+<p class="bn-trans">আমি কি তাঁর পরিবর্তে অন্যান্যদেরকে উপাস্যরূপে গ্রহণ করব? করুণাময় যদি আমাকে কষ্টে নিপতিত করতে চান, তবে তাদের সুপারিশ আমার কোনই কাজে আসবে না এবং তারা আমাকে রক্ষাও করতে পারবে না।</p>
+<p class="en-trans">Should I take other than Him [false] deities [while], if the Most Merciful intends for me some adversity, their intercession will not avail me at all, nor can they save me</p>
+</div>
+<div class="verse" id="v24">
+<div class="verse-no">আয়াত ২৪</div>
+<p class="arabic" dir="rtl" lang="ar">إِنِّيٓ إِذٗا لَّفِي ضَلَٰلٖ مُّبِينٍ</p>
+<p class="bn-trans">এরূপ করলে আমি প্রকাশ্য পথভ্রষ্টতায় পতিত হব।</p>
+<p class="en-trans">Indeed, I would then be in manifest error</p>
+</div>
+<div class="verse" id="v25">
+<div class="verse-no">আয়াত ২৫</div>
+<p class="arabic" dir="rtl" lang="ar">إِنِّيٓ ءَامَنتُ بِرَبِّكُمۡ فَٱسۡمَعُونِ</p>
+<p class="bn-trans">আমি নিশ্চিতভাবে তোমাদের পালনকর্তার প্রতি বিশ্বাস স্থাপন করলাম। অতএব আমার কাছ থেকে শুনে নাও।</p>
+<p class="en-trans">Indeed, I have believed in your Lord, so listen to me</p>
+</div>
+<div class="verse" id="v26">
+<div class="verse-no">আয়াত ২৬</div>
+<p class="arabic" dir="rtl" lang="ar">قِيلَ ٱدۡخُلِ ٱلۡجَنَّةَۖ قَالَ يَٰلَيۡتَ قَوۡمِي يَعۡلَمُونَ</p>
+<p class="bn-trans">তাকে বলা হল, জান্নাতে প্রবেশ কর। সে বলল হায়, আমার সম্প্রদায় যদি কোন ক্রমে জানতে পারত</p>
+<p class="en-trans">It was said, &quot;Enter Paradise.&quot; He said, &quot;I wish my people could know</p>
+</div>
+<div class="verse" id="v27">
+<div class="verse-no">আয়াত ২৭</div>
+<p class="arabic" dir="rtl" lang="ar">بِمَا غَفَرَ لِي رَبِّي وَجَعَلَنِي مِنَ ٱلۡمُكۡرَمِينَ</p>
+<p class="bn-trans">যে আমার পরওয়ারদেগার আমাকে ক্ষমা করেছেন এবং আমাকে সম্মানিতদের অন্তর্ভুক্ত করেছেন।</p>
+<p class="en-trans">Of how my Lord has forgiven me and placed me among the honored</p>
+</div>
+<div class="verse" id="v28">
+<div class="verse-no">আয়াত ২৮</div>
+<p class="arabic" dir="rtl" lang="ar">۞وَمَآ أَنزَلۡنَا عَلَىٰ قَوۡمِهِۦ مِنۢ بَعۡدِهِۦ مِن جُندٖ مِّنَ ٱلسَّمَآءِ وَمَا كُنَّا مُنزِلِينَ</p>
+<p class="bn-trans">তারপর আমি তার সম্প্রদায়ের উপর আকাশ থেকে কোন বাহিনী অবতীর্ণ করিনি এবং আমি (বাহিনী) অবতরণকারীও না।</p>
+<p class="en-trans">And We did not send down upon his people after him any soldiers from the heaven, nor would We have done so</p>
+</div>
+<div class="verse" id="v29">
+<div class="verse-no">আয়াত ২৯</div>
+<p class="arabic" dir="rtl" lang="ar">إِن كَانَتۡ إِلَّا صَيۡحَةٗ وَٰحِدَةٗ فَإِذَا هُمۡ خَٰمِدُونَ</p>
+<p class="bn-trans">বস্তুতঃ এ ছিল এক মহানাদ। অতঃপর সঙ্গে সঙ্গে সবাই স্তদ্ধ হয়ে গেল।</p>
+<p class="en-trans">It was not but one shout, and immediately they were extinguished</p>
+</div>
+<div class="verse" id="v30">
+<div class="verse-no">আয়াত ৩০</div>
+<p class="arabic" dir="rtl" lang="ar">يَٰحَسۡرَةً عَلَى ٱلۡعِبَادِۚ مَا يَأۡتِيهِم مِّن رَّسُولٍ إِلَّا كَانُواْ بِهِۦ يَسۡتَهۡزِءُونَ</p>
+<p class="bn-trans">বান্দাদের জন্যে আক্ষেপ যে, তাদের কাছে এমন কোন রসূলই আগমন করেনি যাদের প্রতি তারা বিদ্রুপ করে না।</p>
+<p class="en-trans">How regretful for the servants. There did not come to them any messenger except that they used to ridicule him</p>
+</div>
+<div class="verse" id="v31">
+<div class="verse-no">আয়াত ৩১</div>
+<p class="arabic" dir="rtl" lang="ar">أَلَمۡ يَرَوۡاْ كَمۡ أَهۡلَكۡنَا قَبۡلَهُم مِّنَ ٱلۡقُرُونِ أَنَّهُمۡ إِلَيۡهِمۡ لَا يَرۡجِعُونَ</p>
+<p class="bn-trans">তারা কি প্রত্যক্ষ করে না, তাদের পূর্বে আমি কত সম্প্রদায়কে ধ্বংস করেছি যে, তারা তাদের মধ্যে আর ফিরে আসবে না।</p>
+<p class="en-trans">Have they not considered how many generations We destroyed before them - that they to them will not return</p>
+</div>
+<div class="verse" id="v32">
+<div class="verse-no">আয়াত ৩২</div>
+<p class="arabic" dir="rtl" lang="ar">وَإِن كُلّٞ لَّمَّا جَمِيعٞ لَّدَيۡنَا مُحۡضَرُونَ</p>
+<p class="bn-trans">ওদের সবাইকে সমবেত অবস্থায় আমার দরবারে উপস্থিত হতেই হবে।</p>
+<p class="en-trans">And indeed, all of them will yet be brought present before Us</p>
+</div>
+<div class="verse" id="v33">
+<div class="verse-no">আয়াত ৩৩</div>
+<p class="arabic" dir="rtl" lang="ar">وَءَايَةٞ لَّهُمُ ٱلۡأَرۡضُ ٱلۡمَيۡتَةُ أَحۡيَيۡنَٰهَا وَأَخۡرَجۡنَا مِنۡهَا حَبّٗا فَمِنۡهُ يَأۡكُلُونَ</p>
+<p class="bn-trans">তাদের জন্যে একটি নিদর্শন মৃত পৃথিবী। আমি একে সঞ্জীবিত করি এবং তা থেকে উৎপন্ন করি শস্য, তারা তা থেকে ভক্ষণ করে।</p>
+<p class="en-trans">And a sign for them is the dead earth. We have brought it to life and brought forth from it grain, and from it they eat</p>
+</div>
+<div class="verse" id="v34">
+<div class="verse-no">আয়াত ৩৪</div>
+<p class="arabic" dir="rtl" lang="ar">وَجَعَلۡنَا فِيهَا جَنَّـٰتٖ مِّن نَّخِيلٖ وَأَعۡنَٰبٖ وَفَجَّرۡنَا فِيهَا مِنَ ٱلۡعُيُونِ</p>
+<p class="bn-trans">আমি তাতে সৃষ্টি করি খেজুর ও আঙ্গুরের বাগান এবং প্রবাহিত করি তাতে নির্ঝরিণী।</p>
+<p class="en-trans">And We placed therein gardens of palm trees and grapevines and caused to burst forth therefrom some springs</p>
+</div>
+<div class="verse" id="v35">
+<div class="verse-no">আয়াত ৩৫</div>
+<p class="arabic" dir="rtl" lang="ar">لِيَأۡكُلُواْ مِن ثَمَرِهِۦ وَمَا عَمِلَتۡهُ أَيۡدِيهِمۡۚ أَفَلَا يَشۡكُرُونَ</p>
+<p class="bn-trans">যাতে তারা তার ফল খায়। তাদের হাত একে সৃষ্টি করে না। অতঃপর তারা কৃতজ্ঞতা প্রকাশ করে না কেন</p>
+<p class="en-trans">That they may eat of His fruit. And their hands have not produced it, so will they not be grateful</p>
+</div>
+<div class="verse" id="v36">
+<div class="verse-no">আয়াত ৩৬</div>
+<p class="arabic" dir="rtl" lang="ar">سُبۡحَٰنَ ٱلَّذِي خَلَقَ ٱلۡأَزۡوَٰجَ كُلَّهَا مِمَّا تُنۢبِتُ ٱلۡأَرۡضُ وَمِنۡ أَنفُسِهِمۡ وَمِمَّا لَا يَعۡلَمُونَ</p>
+<p class="bn-trans">পবিত্র তিনি যিনি যমীন থেকে উৎপন্ন উদ্ভিদকে, তাদেরই মানুষকে এবং যা তারা জানে না, তার প্রত্যেককে জোড়া জোড়া করে সৃষ্টি করেছেন।</p>
+<p class="en-trans">Exalted is He who created all pairs - from what the earth grows and from themselves and from that which they do not know</p>
+</div>
+<div class="verse" id="v37">
+<div class="verse-no">আয়াত ৩৭</div>
+<p class="arabic" dir="rtl" lang="ar">وَءَايَةٞ لَّهُمُ ٱلَّيۡلُ نَسۡلَخُ مِنۡهُ ٱلنَّهَارَ فَإِذَا هُم مُّظۡلِمُونَ</p>
+<p class="bn-trans">তাদের জন্যে এক নিদর্শন রাত্রি, আমি তা থেকে দিনকে অপসারিত করি, তখনই তারা অন্ধকারে থেকে যায়।</p>
+<p class="en-trans">And a sign for them is the night. We remove from it [the light of] day, so they are [left] in darkness</p>
+</div>
+<div class="verse" id="v38">
+<div class="verse-no">আয়াত ৩৮</div>
+<p class="arabic" dir="rtl" lang="ar">وَٱلشَّمۡسُ تَجۡرِي لِمُسۡتَقَرّٖ لَّهَاۚ ذَٰلِكَ تَقۡدِيرُ ٱلۡعَزِيزِ ٱلۡعَلِيمِ</p>
+<p class="bn-trans">সূর্য তার নির্দিষ্ট অবস্থানে আবর্তন করে। এটা পরাক্রমশালী, সর্বজ্ঞ, আল্লাহর নিয়ন্ত্রণ।</p>
+<p class="en-trans">And the sun runs [on course] toward its stopping point. That is the determination of the Exalted in Might, the Knowing</p>
+</div>
+<div class="verse" id="v39">
+<div class="verse-no">আয়াত ৩৯</div>
+<p class="arabic" dir="rtl" lang="ar">وَٱلۡقَمَرَ قَدَّرۡنَٰهُ مَنَازِلَ حَتَّىٰ عَادَ كَٱلۡعُرۡجُونِ ٱلۡقَدِيمِ</p>
+<p class="bn-trans">চন্দ্রের জন্যে আমি বিভিন্ন মনযিল নির্ধারিত করেছি। অবশেষে সে পুরাতন খর্জুর শাখার অনুরূপ হয়ে যায়।</p>
+<p class="en-trans">And the moon - We have determined for it phases, until it returns [appearing] like the old date stalk</p>
+</div>
+<div class="verse" id="v40">
+<div class="verse-no">আয়াত ৪০</div>
+<p class="arabic" dir="rtl" lang="ar">لَا ٱلشَّمۡسُ يَنۢبَغِي لَهَآ أَن تُدۡرِكَ ٱلۡقَمَرَ وَلَا ٱلَّيۡلُ سَابِقُ ٱلنَّهَارِۚ وَكُلّٞ فِي فَلَكٖ يَسۡبَحُونَ</p>
+<p class="bn-trans">সূর্য নাগাল পেতে পারে না চন্দ্রের এবং রাত্রি অগ্রে চলে না দিনের প্রত্যেকেই আপন আপন কক্ষপথে সন্তরণ করে।</p>
+<p class="en-trans">It is not allowable for the sun to reach the moon, nor does the night overtake the day, but each, in an orbit, is swimming</p>
+</div>
+<div class="verse" id="v41">
+<div class="verse-no">আয়াত ৪১</div>
+<p class="arabic" dir="rtl" lang="ar">وَءَايَةٞ لَّهُمۡ أَنَّا حَمَلۡنَا ذُرِّيَّتَهُمۡ فِي ٱلۡفُلۡكِ ٱلۡمَشۡحُونِ</p>
+<p class="bn-trans">তাদের জন্যে একটি নিদর্শন এই যে, আমি তাদের সন্তান-সন্ততিকে বোঝাই নৌকায় আরোহণ করিয়েছি।</p>
+<p class="en-trans">And a sign for them is that We carried their forefathers in a laden ship</p>
+</div>
+<div class="verse" id="v42">
+<div class="verse-no">আয়াত ৪২</div>
+<p class="arabic" dir="rtl" lang="ar">وَخَلَقۡنَا لَهُم مِّن مِّثۡلِهِۦ مَا يَرۡكَبُونَ</p>
+<p class="bn-trans">এবং তাদের জন্যে নৌকার অনুরূপ যানবাহন সৃষ্টি করেছি, যাতে তারা আরোহণ করে।</p>
+<p class="en-trans">And We created for them from the likes of it that which they ride</p>
+</div>
+<div class="verse" id="v43">
+<div class="verse-no">আয়াত ৪৩</div>
+<p class="arabic" dir="rtl" lang="ar">وَإِن نَّشَأۡ نُغۡرِقۡهُمۡ فَلَا صَرِيخَ لَهُمۡ وَلَا هُمۡ يُنقَذُونَ</p>
+<p class="bn-trans">আমি ইচ্ছা করলে তাদেরকে নিমজ্জত করতে পারি, তখন তাদের জন্যে কোন সাহায্যকারী নেই এবং তারা পরিত্রাণও পাবে না।</p>
+<p class="en-trans">And if We should will, We could drown them; then no one responding to a cry would there be for them, nor would they be saved</p>
+</div>
+<div class="verse" id="v44">
+<div class="verse-no">আয়াত ৪৪</div>
+<p class="arabic" dir="rtl" lang="ar">إِلَّا رَحۡمَةٗ مِّنَّا وَمَتَٰعًا إِلَىٰ حِينٖ</p>
+<p class="bn-trans">কিন্তু আমারই পক্ষ থেকে কৃপা এবং তাদেরকে কিছু কাল জীবনোপভোগ করার সুযোগ দেয়ার কারণে তা করি না।</p>
+<p class="en-trans">Except as a mercy from Us and provision for a time</p>
+</div>
+<div class="verse" id="v45">
+<div class="verse-no">আয়াত ৪৫</div>
+<p class="arabic" dir="rtl" lang="ar">وَإِذَا قِيلَ لَهُمُ ٱتَّقُواْ مَا بَيۡنَ أَيۡدِيكُمۡ وَمَا خَلۡفَكُمۡ لَعَلَّكُمۡ تُرۡحَمُونَ</p>
+<p class="bn-trans">আর যখন তাদেরকে বলা হয়, তোমরা সামনের আযাব ও পেছনের আযাবকে ভয় কর, যাতে তোমাদের প্রতি অনুগ্রহ করা হয়, তখন তারা তা অগ্রাহ্য করে।</p>
+<p class="en-trans">But when it is said to them, &quot;Beware of what is before you and what is behind you; perhaps you will receive mercy</p>
+</div>
+<div class="verse" id="v46">
+<div class="verse-no">আয়াত ৪৬</div>
+<p class="arabic" dir="rtl" lang="ar">وَمَا تَأۡتِيهِم مِّنۡ ءَايَةٖ مِّنۡ ءَايَٰتِ رَبِّهِمۡ إِلَّا كَانُواْ عَنۡهَا مُعۡرِضِينَ</p>
+<p class="bn-trans">যখনই তাদের পালনকর্তার নির্দেশাবলীর মধ্যে থেকে কোন নির্দেশ তাদের কাছে আসে, তখনই তারা তা থেকে মুখে ফিরিয়ে নেয়।</p>
+<p class="en-trans">And no sign comes to them from the signs of their Lord except that they are from it turning away</p>
+</div>
+<div class="verse" id="v47">
+<div class="verse-no">আয়াত ৪৭</div>
+<p class="arabic" dir="rtl" lang="ar">وَإِذَا قِيلَ لَهُمۡ أَنفِقُواْ مِمَّا رَزَقَكُمُ ٱللَّهُ قَالَ ٱلَّذِينَ كَفَرُواْ لِلَّذِينَ ءَامَنُوٓاْ أَنُطۡعِمُ مَن لَّوۡ يَشَآءُ ٱللَّهُ أَطۡعَمَهُۥٓ إِنۡ أَنتُمۡ إِلَّا فِي ضَلَٰلٖ مُّبِينٖ</p>
+<p class="bn-trans">যখন তাদেরকে বলা হয়, আল্লাহ তোমাদেরকে যা দিয়েছেন, তা থেকে ব্যয় কর। তখন কাফেররা মুমিনগণকে বলে, ইচ্ছা করলেই আল্লাহ যাকে খাওয়াতে পারতেন, আমরা তাকে কেন খাওয়াব? তোমরা তো স্পষ্ট বিভ্রান্তিতে পতিত রয়েছ।</p>
+<p class="en-trans">And when it is said to them, &quot;Spend from that which Allah has provided for you,&quot; those who disbelieve say to those who believe, &quot;Should we feed one whom, if Allah had willed, He would have fed? You are not but in clear error</p>
+</div>
+<div class="verse" id="v48">
+<div class="verse-no">আয়াত ৪৮</div>
+<p class="arabic" dir="rtl" lang="ar">وَيَقُولُونَ مَتَىٰ هَٰذَا ٱلۡوَعۡدُ إِن كُنتُمۡ صَٰدِقِينَ</p>
+<p class="bn-trans">তারা বলে, তোমরা সত্যবাদী হলে বল এই ওয়াদা কবে পূর্ণ হবে</p>
+<p class="en-trans">And they say, &quot;When is this promise, if you should be truthful</p>
+</div>
+<div class="verse" id="v49">
+<div class="verse-no">আয়াত ৪৯</div>
+<p class="arabic" dir="rtl" lang="ar">مَا يَنظُرُونَ إِلَّا صَيۡحَةٗ وَٰحِدَةٗ تَأۡخُذُهُمۡ وَهُمۡ يَخِصِّمُونَ</p>
+<p class="bn-trans">তারা কেবল একটা ভয়াবহ শব্দের অপেক্ষা করছে, যা তাদেরকে আঘাত করবে তাদের পারস্পরিক বাকবিতন্ডাকালে।</p>
+<p class="en-trans">They do not await except one blast which will seize them while they are disputing</p>
+</div>
+<div class="verse" id="v50">
+<div class="verse-no">আয়াত ৫০</div>
+<p class="arabic" dir="rtl" lang="ar">فَلَا يَسۡتَطِيعُونَ تَوۡصِيَةٗ وَلَآ إِلَىٰٓ أَهۡلِهِمۡ يَرۡجِعُونَ</p>
+<p class="bn-trans">তখন তারা ওছিয়ত করতেও সক্ষম হবে না। এবং তাদের পরিবার-পরিজনের কাছেও ফিরে যেতে পারবে না।</p>
+<p class="en-trans">And they will not be able [to give] any instruction, nor to their people can they return</p>
+</div>
+<div class="verse" id="v51">
+<div class="verse-no">আয়াত ৫১</div>
+<p class="arabic" dir="rtl" lang="ar">وَنُفِخَ فِي ٱلصُّورِ فَإِذَا هُم مِّنَ ٱلۡأَجۡدَاثِ إِلَىٰ رَبِّهِمۡ يَنسِلُونَ</p>
+<p class="bn-trans">শিংগায় ফুঁক দেয়া হবে, তখনই তারা কবর থেকে তাদের পালনকর্তার দিকে ছুটে চলবে।</p>
+<p class="en-trans">And the Horn will be blown; and at once from the graves to their Lord they will hasten</p>
+</div>
+<div class="verse" id="v52">
+<div class="verse-no">আয়াত ৫২</div>
+<p class="arabic" dir="rtl" lang="ar">قَالُواْ يَٰوَيۡلَنَا مَنۢ بَعَثَنَا مِن مَّرۡقَدِنَاۜۗ هَٰذَا مَا وَعَدَ ٱلرَّحۡمَٰنُ وَصَدَقَ ٱلۡمُرۡسَلُونَ</p>
+<p class="bn-trans">তারা বলবে, হায় আমাদের দুর্ভোগ! কে আমাদেরকে নিদ্রাস্থল থেকে উখিত করল? রহমান আল্লাহ তো এরই ওয়াদা দিয়েছিলেন এবং রসূলগণ সত্য বলেছিলেন।</p>
+<p class="en-trans">They will say, &quot;O woe to us! Who has raised us up from our sleeping place?&quot; [The reply will be], &quot;This is what the Most Merciful had promised, and the messengers told the truth</p>
+</div>
+<div class="verse" id="v53">
+<div class="verse-no">আয়াত ৫৩</div>
+<p class="arabic" dir="rtl" lang="ar">إِن كَانَتۡ إِلَّا صَيۡحَةٗ وَٰحِدَةٗ فَإِذَا هُمۡ جَمِيعٞ لَّدَيۡنَا مُحۡضَرُونَ</p>
+<p class="bn-trans">এটা তো হবে কেবল এক মহানাদ। সে মুহুর্তেই তাদের সবাইকে আমার সামনে উপস্থিত করা হবে।</p>
+<p class="en-trans">It will not be but one blast, and at once they are all brought present before Us</p>
+</div>
+<div class="verse" id="v54">
+<div class="verse-no">আয়াত ৫৪</div>
+<p class="arabic" dir="rtl" lang="ar">فَٱلۡيَوۡمَ لَا تُظۡلَمُ نَفۡسٞ شَيۡـٔٗا وَلَا تُجۡزَوۡنَ إِلَّا مَا كُنتُمۡ تَعۡمَلُونَ</p>
+<p class="bn-trans">আজকের দিনে কারও প্রতি জুলুম করা হবে না এবং তোমরা যা করবে কেবল তারই প্রতিদান পাবে।</p>
+<p class="en-trans">So today no soul will be wronged at all, and you will not be recompensed except for what you used to do</p>
+</div>
+<div class="verse" id="v55">
+<div class="verse-no">আয়াত ৫৫</div>
+<p class="arabic" dir="rtl" lang="ar">إِنَّ أَصۡحَٰبَ ٱلۡجَنَّةِ ٱلۡيَوۡمَ فِي شُغُلٖ فَٰكِهُونَ</p>
+<p class="bn-trans">এদিন জান্নাতীরা আনন্দে মশগুল থাকবে।</p>
+<p class="en-trans">Indeed the companions of Paradise, that Day, will be amused in [joyful] occupation</p>
+</div>
+<div class="verse" id="v56">
+<div class="verse-no">আয়াত ৫৬</div>
+<p class="arabic" dir="rtl" lang="ar">هُمۡ وَأَزۡوَٰجُهُمۡ فِي ظِلَٰلٍ عَلَى ٱلۡأَرَآئِكِ مُتَّكِـُٔونَ</p>
+<p class="bn-trans">তারা এবং তাদের স্ত্রীরা উপবিষ্ট থাকবে ছায়াময় পরিবেশে আসনে হেলান দিয়ে।</p>
+<p class="en-trans">They and their spouses - in shade, reclining on adorned couches</p>
+</div>
+<div class="verse" id="v57">
+<div class="verse-no">আয়াত ৫৭</div>
+<p class="arabic" dir="rtl" lang="ar">لَهُمۡ فِيهَا فَٰكِهَةٞ وَلَهُم مَّا يَدَّعُونَ</p>
+<p class="bn-trans">সেখানে তাদের জন্যে থাকবে ফল-মূল এবং যা চাইবে।</p>
+<p class="en-trans">For them therein is fruit, and for them is whatever they request [or wish]</p>
+</div>
+<div class="verse" id="v58">
+<div class="verse-no">আয়াত ৫৮</div>
+<p class="arabic" dir="rtl" lang="ar">سَلَٰمٞ قَوۡلٗا مِّن رَّبّٖ رَّحِيمٖ</p>
+<p class="bn-trans">করুণাময় পালনকর্তার পক্ষ থেকে তাদেরকে বলা হবে সালাম।</p>
+<p class="en-trans">[And] &quot;Peace,&quot; a word from a Merciful Lord</p>
+</div>
+<div class="verse" id="v59">
+<div class="verse-no">আয়াত ৫৯</div>
+<p class="arabic" dir="rtl" lang="ar">وَٱمۡتَٰزُواْ ٱلۡيَوۡمَ أَيُّهَا ٱلۡمُجۡرِمُونَ</p>
+<p class="bn-trans">হে অপরাধীরা! আজ তোমরা আলাদা হয়ে যাও।</p>
+<p class="en-trans">[Then He will say], &quot;But stand apart today, you criminals</p>
+</div>
+<div class="verse" id="v60">
+<div class="verse-no">আয়াত ৬০</div>
+<p class="arabic" dir="rtl" lang="ar">۞أَلَمۡ أَعۡهَدۡ إِلَيۡكُمۡ يَٰبَنِيٓ ءَادَمَ أَن لَّا تَعۡبُدُواْ ٱلشَّيۡطَٰنَۖ إِنَّهُۥ لَكُمۡ عَدُوّٞ مُّبِينٞ</p>
+<p class="bn-trans">হে বনী-আদম! আমি কি তোমাদেরকে বলে রাখিনি যে, শয়তানের এবাদত করো না, সে তোমাদের প্রকাশ্য শত্রু</p>
+<p class="en-trans">Did I not enjoin upon you, O children of Adam, that you not worship Satan - [for] indeed, he is to you a clear enemy</p>
+</div>
+<div class="verse" id="v61">
+<div class="verse-no">আয়াত ৬১</div>
+<p class="arabic" dir="rtl" lang="ar">وَأَنِ ٱعۡبُدُونِيۚ هَٰذَا صِرَٰطٞ مُّسۡتَقِيمٞ</p>
+<p class="bn-trans">এবং আমার এবাদত কর। এটাই সরল পথ।</p>
+<p class="en-trans">And that you worship [only] Me? This is a straight path</p>
+</div>
+<div class="verse" id="v62">
+<div class="verse-no">আয়াত ৬২</div>
+<p class="arabic" dir="rtl" lang="ar">وَلَقَدۡ أَضَلَّ مِنكُمۡ جِبِلّٗا كَثِيرًاۖ أَفَلَمۡ تَكُونُواْ تَعۡقِلُونَ</p>
+<p class="bn-trans">শয়তান তোমাদের অনেক দলকে পথভ্রষ্ট করেছে। তবুও কি তোমরা বুঝনি</p>
+<p class="en-trans">And he had already led astray from among you much of creation, so did you not use reason</p>
+</div>
+<div class="verse" id="v63">
+<div class="verse-no">আয়াত ৬৩</div>
+<p class="arabic" dir="rtl" lang="ar">هَٰذِهِۦ جَهَنَّمُ ٱلَّتِي كُنتُمۡ تُوعَدُونَ</p>
+<p class="bn-trans">এই সে জাহান্নাম, যার ওয়াদা তোমাদেরকে দেয়া হতো।</p>
+<p class="en-trans">This is the Hellfire which you were promised</p>
+</div>
+<div class="verse" id="v64">
+<div class="verse-no">আয়াত ৬৪</div>
+<p class="arabic" dir="rtl" lang="ar">ٱصۡلَوۡهَا ٱلۡيَوۡمَ بِمَا كُنتُمۡ تَكۡفُرُونَ</p>
+<p class="bn-trans">তোমাদের কুফরের কারণে আজ এতে প্রবেশ কর।</p>
+<p class="en-trans">[Enter to] burn therein today for what you used to deny</p>
+</div>
+<div class="verse" id="v65">
+<div class="verse-no">আয়াত ৬৫</div>
+<p class="arabic" dir="rtl" lang="ar">ٱلۡيَوۡمَ نَخۡتِمُ عَلَىٰٓ أَفۡوَٰهِهِمۡ وَتُكَلِّمُنَآ أَيۡدِيهِمۡ وَتَشۡهَدُ أَرۡجُلُهُم بِمَا كَانُواْ يَكۡسِبُونَ</p>
+<p class="bn-trans">আজ আমি তাদের মুখে মোহর এঁটে দেব তাদের হাত আমার সাথে কথা বলবে এবং তাদের পা তাদের কৃতকর্মের সাক্ষ্য দেবে।</p>
+<p class="en-trans">That Day, We will seal over their mouths, and their hands will speak to Us, and their feet will testify about what they used to earn</p>
+</div>
+<div class="verse" id="v66">
+<div class="verse-no">আয়াত ৬৬</div>
+<p class="arabic" dir="rtl" lang="ar">وَلَوۡ نَشَآءُ لَطَمَسۡنَا عَلَىٰٓ أَعۡيُنِهِمۡ فَٱسۡتَبَقُواْ ٱلصِّرَٰطَ فَأَنَّىٰ يُبۡصِرُونَ</p>
+<p class="bn-trans">আমি ইচ্ছা করলে তাদের দৃষ্টি শক্তি বিলুপ্ত করে দিতে পারতাম, তখন তারা পথের দিকে দৌড়াতে চাইলে কেমন করে দেখতে পেত</p>
+<p class="en-trans">And if We willed, We could have obliterated their eyes, and they would race to [find] the path, and how could they see</p>
+</div>
+<div class="verse" id="v67">
+<div class="verse-no">আয়াত ৬৭</div>
+<p class="arabic" dir="rtl" lang="ar">وَلَوۡ نَشَآءُ لَمَسَخۡنَٰهُمۡ عَلَىٰ مَكَانَتِهِمۡ فَمَا ٱسۡتَطَٰعُواْ مُضِيّٗا وَلَا يَرۡجِعُونَ</p>
+<p class="bn-trans">আমি ইচ্ছা করলে তাদেরকে স্ব স্ব স্থানে আকার বিকৃত করতে পারতাম, ফলে তারা আগেও চলতে পারত না এবং পেছনেও ফিরে যেতে পারত না।</p>
+<p class="en-trans">And if We willed, We could have deformed them, [paralyzing them] in their places so they would not be able to proceed, nor could they return</p>
+</div>
+<div class="verse" id="v68">
+<div class="verse-no">আয়াত ৬৮</div>
+<p class="arabic" dir="rtl" lang="ar">وَمَن نُّعَمِّرۡهُ نُنَكِّسۡهُ فِي ٱلۡخَلۡقِۚ أَفَلَا يَعۡقِلُونَ</p>
+<p class="bn-trans">আমি যাকে দীর্ঘ জীবন দান করি, তাকে সৃষ্টিগত পূর্বাবস্থায় ফিরিয়ে নেই। তবুও কি তারা বুঝে না</p>
+<p class="en-trans">And he to whom We grant long life We reverse in creation; so will they not understand</p>
+</div>
+<div class="verse" id="v69">
+<div class="verse-no">আয়াত ৬৯</div>
+<p class="arabic" dir="rtl" lang="ar">وَمَا عَلَّمۡنَٰهُ ٱلشِّعۡرَ وَمَا يَنۢبَغِي لَهُۥٓۚ إِنۡ هُوَ إِلَّا ذِكۡرٞ وَقُرۡءَانٞ مُّبِينٞ</p>
+<p class="bn-trans">আমি রসূলকে কবিতা শিক্ষা দেইনি এবং তা তার জন্যে শোভনীয়ও নয়। এটা তো এক উপদেশ ও প্রকাশ্য কোরআন।</p>
+<p class="en-trans">And We did not give Prophet Muhammad, knowledge of poetry, nor is it befitting for him. It is not but a message and a clear Qur&#x27;an</p>
+</div>
+<div class="verse" id="v70">
+<div class="verse-no">আয়াত ৭০</div>
+<p class="arabic" dir="rtl" lang="ar">لِّيُنذِرَ مَن كَانَ حَيّٗا وَيَحِقَّ ٱلۡقَوۡلُ عَلَى ٱلۡكَٰفِرِينَ</p>
+<p class="bn-trans">যাতে তিনি সতর্ক করেন জীবিতকে এবং যাতে কাফেরদের বিরুদ্ধে অভিযোগ প্রতিষ্ঠিত হয়।</p>
+<p class="en-trans">To warn whoever is alive and justify the word against the disbelievers</p>
+</div>
+<div class="verse" id="v71">
+<div class="verse-no">আয়াত ৭১</div>
+<p class="arabic" dir="rtl" lang="ar">أَوَلَمۡ يَرَوۡاْ أَنَّا خَلَقۡنَا لَهُم مِّمَّا عَمِلَتۡ أَيۡدِينَآ أَنۡعَٰمٗا فَهُمۡ لَهَا مَٰلِكُونَ</p>
+<p class="bn-trans">তারা কি দেখে না, তাদের জন্যে আমি আমার নিজ হাতের তৈরী বস্তুর দ্বারা চতুস্পদ জন্তু সৃষ্টি করেছি, অতঃপর তারাই এগুলোর মালিক।</p>
+<p class="en-trans">Do they not see that We have created for them from what Our hands have made, grazing livestock, and [then] they are their owners</p>
+</div>
+<div class="verse" id="v72">
+<div class="verse-no">আয়াত ৭২</div>
+<p class="arabic" dir="rtl" lang="ar">وَذَلَّلۡنَٰهَا لَهُمۡ فَمِنۡهَا رَكُوبُهُمۡ وَمِنۡهَا يَأۡكُلُونَ</p>
+<p class="bn-trans">আমি এগুলোকে তাদের হাতে অসহায় করে দিয়েছি। ফলে এদের কতক তাদের বাহন এবং কতক তারা ভক্ষণ করে।</p>
+<p class="en-trans">And We have tamed them for them, so some of them they ride, and some of them they eat</p>
+</div>
+<div class="verse" id="v73">
+<div class="verse-no">আয়াত ৭৩</div>
+<p class="arabic" dir="rtl" lang="ar">وَلَهُمۡ فِيهَا مَنَٰفِعُ وَمَشَارِبُۚ أَفَلَا يَشۡكُرُونَ</p>
+<p class="bn-trans">তাদের জন্যে চতুস্পদ জন্তুর মধ্যে অনেক উপকারিতা ও পানীয় রয়েছে। তবুও কেন তারা শুকরিয়া আদায় করে না</p>
+<p class="en-trans">And for them therein are [other] benefits and drinks, so will they not be grateful</p>
+</div>
+<div class="verse" id="v74">
+<div class="verse-no">আয়াত ৭৪</div>
+<p class="arabic" dir="rtl" lang="ar">وَٱتَّخَذُواْ مِن دُونِ ٱللَّهِ ءَالِهَةٗ لَّعَلَّهُمۡ يُنصَرُونَ</p>
+<p class="bn-trans">তারা আল্লাহর পরিবর্তে অনেক উপাস্য গ্রহণ করেছে যাতে তারা সাহায্যপ্রাপ্ত হতে পারে।</p>
+<p class="en-trans">But they have taken besides Allah [false] deities that perhaps they would be helped</p>
+</div>
+<div class="verse" id="v75">
+<div class="verse-no">আয়াত ৭৫</div>
+<p class="arabic" dir="rtl" lang="ar">لَا يَسۡتَطِيعُونَ نَصۡرَهُمۡ وَهُمۡ لَهُمۡ جُندٞ مُّحۡضَرُونَ</p>
+<p class="bn-trans">অথচ এসব উপাস্য তাদেরকে সাহায্য করতে সক্ষম হবে না এবং এগুলো তাদের বাহিনী রূপে ধৃত হয়ে আসবে।</p>
+<p class="en-trans">They are not able to help them, and they [themselves] are for them soldiers in attendance</p>
+</div>
+<div class="verse" id="v76">
+<div class="verse-no">আয়াত ৭৬</div>
+<p class="arabic" dir="rtl" lang="ar">فَلَا يَحۡزُنكَ قَوۡلُهُمۡۘ إِنَّا نَعۡلَمُ مَا يُسِرُّونَ وَمَا يُعۡلِنُونَ</p>
+<p class="bn-trans">অতএব তাদের কথা যেন আপনাকে দুঃখিত না করে। আমি জানি যা তারা গোপনে করে এবং যা তারা প্রকাশ্যে করে।</p>
+<p class="en-trans">So let not their speech grieve you. Indeed, We know what they conceal and what they declare</p>
+</div>
+<div class="verse" id="v77">
+<div class="verse-no">আয়াত ৭৭</div>
+<p class="arabic" dir="rtl" lang="ar">أَوَلَمۡ يَرَ ٱلۡإِنسَٰنُ أَنَّا خَلَقۡنَٰهُ مِن نُّطۡفَةٖ فَإِذَا هُوَ خَصِيمٞ مُّبِينٞ</p>
+<p class="bn-trans">মানুষ কি দেখে না যে, আমি তাকে সৃষ্টি করেছি বীর্য থেকে? অতঃপর তখনই সে হয়ে গেল প্রকাশ্য বাকবিতন্ডাকারী।</p>
+<p class="en-trans">Does man not consider that We created him from a [mere] sperm-drop - then at once he is a clear adversary</p>
+</div>
+<div class="verse" id="v78">
+<div class="verse-no">আয়াত ৭৮</div>
+<p class="arabic" dir="rtl" lang="ar">وَضَرَبَ لَنَا مَثَلٗا وَنَسِيَ خَلۡقَهُۥۖ قَالَ مَن يُحۡيِ ٱلۡعِظَٰمَ وَهِيَ رَمِيمٞ</p>
+<p class="bn-trans">সে আমার সম্পর্কে এক অদ্ভূত কথা বর্ণনা করে, অথচ সে নিজের সৃষ্টি ভুলে যায়। সে বলে কে জীবিত করবে অস্থিসমূহকে যখন সেগুলো পচে গলে যাবে</p>
+<p class="en-trans">And he presents for Us an example and forgets his [own] creation. He says, &quot;Who will give life to bones while they are disintegrated</p>
+</div>
+<div class="verse" id="v79">
+<div class="verse-no">আয়াত ৭৯</div>
+<p class="arabic" dir="rtl" lang="ar">قُلۡ يُحۡيِيهَا ٱلَّذِيٓ أَنشَأَهَآ أَوَّلَ مَرَّةٖۖ وَهُوَ بِكُلِّ خَلۡقٍ عَلِيمٌ</p>
+<p class="bn-trans">বলুন, যিনি প্রথমবার সেগুলোকে সৃষ্টি করেছেন, তিনিই জীবিত করবেন। তিনি সর্বপ্রকার সৃষ্টি সম্পর্কে সম্যক অবগত।</p>
+<p class="en-trans">Say, &quot;He will give them life who produced them the first time; and He is, of all creation, Knowing</p>
+</div>
+<div class="verse" id="v80">
+<div class="verse-no">আয়াত ৮০</div>
+<p class="arabic" dir="rtl" lang="ar">ٱلَّذِي جَعَلَ لَكُم مِّنَ ٱلشَّجَرِ ٱلۡأَخۡضَرِ نَارٗا فَإِذَآ أَنتُم مِّنۡهُ تُوقِدُونَ</p>
+<p class="bn-trans">যিনি তোমাদের জন্যে সবুজ বৃক্ষ থেকে আগুন উৎপন্ন করেন। তখন তোমরা তা থেকে আগুন জ্বালাও।</p>
+<p class="en-trans">[It is] He who made for you from the green tree, fire, and then from it you ignite</p>
+</div>
+<div class="verse" id="v81">
+<div class="verse-no">আয়াত ৮১</div>
+<p class="arabic" dir="rtl" lang="ar">أَوَلَيۡسَ ٱلَّذِي خَلَقَ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضَ بِقَٰدِرٍ عَلَىٰٓ أَن يَخۡلُقَ مِثۡلَهُمۚ بَلَىٰ وَهُوَ ٱلۡخَلَّـٰقُ ٱلۡعَلِيمُ</p>
+<p class="bn-trans">যিনি নভোমন্ডল ও ভূমন্ডল সৃষ্টি করেছেন, তিনিই কি তাদের অনুরূপ সৃষ্টি করতে সক্ষম নন? হ্যাঁ তিনি মহাস্রষ্টা, সর্বজ্ঞ।</p>
+<p class="en-trans">Is not He who created the heavens and the earth Able to create the likes of them? Yes, [it is so]; and He is the Knowing Creator</p>
+</div>
+<div class="verse" id="v82">
+<div class="verse-no">আয়াত ৮২</div>
+<p class="arabic" dir="rtl" lang="ar">إِنَّمَآ أَمۡرُهُۥٓ إِذَآ أَرَادَ شَيۡـًٔا أَن يَقُولَ لَهُۥ كُن فَيَكُونُ</p>
+<p class="bn-trans">তিনি যখন কোন কিছু করতে ইচ্ছা করেন, তখন তাকে কেবল বলে দেন, ‘হও’ তখনই তা হয়ে যায়।</p>
+<p class="en-trans">His command is only when He intends a thing that He says to it, &quot;Be,&quot; and it is</p>
+</div>
+<div class="verse" id="v83">
+<div class="verse-no">আয়াত ৮৩</div>
+<p class="arabic" dir="rtl" lang="ar">فَسُبۡحَٰنَ ٱلَّذِي بِيَدِهِۦ مَلَكُوتُ كُلِّ شَيۡءٖ وَإِلَيۡهِ تُرۡجَعُونَ</p>
+<p class="bn-trans">অতএব পবিত্র তিনি, যাঁর হাতে সবকিছুর রাজত্ব এবং তাঁরই দিকে তোমরা প্রত্যাবর্তিত হবে।</p>
+<p class="en-trans">So exalted is He in whose hand is the realm of all things, and to Him you will be returned</p>
+</div>
+</div>
+<script>
+var vlist=document.getElementById("verses");var bBn=document.getElementById("btnBn");var bEn=document.getElementById("btnEn");bBn.addEventListener("click",function(){vlist.classList.remove("show-en");bBn.classList.add("active");bEn.classList.remove("active");});bEn.addEventListener("click",function(){vlist.classList.add("show-en");bEn.classList.add("active");bBn.classList.remove("active");});
+</script>
+<h2>প্রশ্নোত্তর</h2>
+<div class="faq"><h3>সূরা ইয়াসীন কত নম্বর সূরা এবং এতে কয়টি আয়াত আছে?</h3><p>সূরা ইয়াসীন কুরআনের ৩৬ নম্বর সূরা। এটি মক্কায় অবতীর্ণ হয়েছে এবং এতে মোট ৮৩টি আয়াত রয়েছে।</p></div>
+<div class="faq"><h3>সূরা ইয়াসীনের মূল বিষয় কী?</h3><p>এই সূরার মূল বিষয় হলো কুরআনের সত্যতা ও নবুওয়তের প্রমাণ, পুনরুত্থান ও পরকালের জীবন, এবং সৃষ্টিজগতের নিদর্শনসমূহ। সূরাটি শুরু হয়েছে কুরআনের শপথ দিয়ে।</p></div>
+<div class="faq"><h3>সূরা ইয়াসীনকে কি সত্যিই &#x27;কুরআনের হৃদয়&#x27; বলা হয়েছে?</h3><p>এই কথাটি একটি প্রচলিত বর্ণনার ভিত্তিতে বলা হয়ে থাকে, তবে আলেমগণ সেই বর্ণনাটিকে দুর্বল (জয়িফ) বলে মত দিয়েছেন। তাই এটিকে প্রতিষ্ঠিত ফজিলত হিসেবে ধরা যাবে না। সূরাটির গুরুত্ব এর বিষয়বস্তুতে — তাওহিদ, রিসালাত ও আখিরাত।</p></div>
+<div class="faq"><h3>সূরা ইয়াসীনে কোন জনপদের কাহিনি বলা হয়েছে?</h3><p>সূরায় একটি জনপদের কাহিনি বর্ণিত হয়েছে, যেখানে রাসূলদের পাঠানো হয়েছিল। অধিকাংশ মানুষ তাঁদের প্রত্যাখ্যান করলেও একজন ব্যক্তি দূর থেকে ছুটে এসে নিজের জাতিকে ঈমানের আহ্বান জানিয়েছিলেন।</p></div>
+<div class="prevnext"><a href="https://noryvello.github.io/quran/surah-al-kahf.html">← আগের সূরা: গুহা (Al-Kahf)</a><a href="https://noryvello.github.io/quran/surah-ar-rahman.html">পরের সূরা: পরম করুণাময় (Ar-Rahman) →</a></div>
+<div class="links"><a href="https://noryvello.github.io/quran/">← সব সূরা (Quran Reader হাব)</a></div>
+<footer>
+  <div class="foot">
+    <a class="logo" href="../"><span class="logo-mark"></span>noryvello</a>
+    <nav><a href="https://noryvello.github.io/about/">About</a><a href="https://noryvello.github.io/contact/">Contact</a><a href="https://noryvello.github.io/privacy-policy/">Privacy Policy</a><a href="https://noryvello.github.io/disclaimer/">Disclaimer</a><a href="https://noryvello.github.io/terms-and-conditions/">Terms</a></nav>
+    <small>© Noryvello — <a href="https://noryvello.github.io/">noryvello.github.io</a></small>
+  </div>
+<p class="note quran-credits">আরবি পাঠ: উসমানি লিপি, The Noble Qur'an Encyclopedia (quranenc.com) থেকে · বাংলা অনুবাদ: মুহিউদ্দীন খান (tanzil.net) · ইংরেজি অনুবাদ: Umm Muhammad — Saheeh International (tanzil.net) · ডেটা: quran-json v3.1.2 (CC-BY-4.0)</p>
+</footer>
+</div>
+<script>
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', function(){ menu.classList.toggle('open'); });
+  menu.addEventListener('click', function(e){ if(e.target.tagName === 'A') menu.classList.remove('open'); });
+</script>
+</body>
+</html>
